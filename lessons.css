@@ -1,0 +1,374 @@
+/* MBA Rock — Lesson Bundle CSS
+ * Loaded site-wide via Squarespace Code Injection (Header).
+ * Scoped to .mr-lesson container — won't leak into other parts of the site.
+ *
+ * Strategy: We do NOT try to override Site Styles globally.
+ * Instead, the lesson container fully replaces the lesson page main content.
+ */
+
+/* --- Font import --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- Reset for the lesson container only --- */
+.mr-lesson, .mr-lesson * {
+  box-sizing: border-box;
+}
+
+.mr-lesson {
+  /* Brand variables */
+  --mr-navy: #0B2545;
+  --mr-navy-deep: #08182F;
+  --mr-gold: #D4AF37;
+  --mr-paper: #FAFAF7;
+  --mr-paper-alt: #F3F2EE;
+  --mr-ink: #1A1A1A;
+  --mr-ink-mid: #3D3D3D;
+  --mr-ink-soft: #5C5C5C;
+  --mr-rule: rgba(11, 37, 69, 0.10);
+  --mr-shadow: 0 4px 24px rgba(11, 37, 69, 0.08);
+  --mr-shadow-lg: 0 12px 48px rgba(11, 37, 69, 0.12);
+  --mr-serif: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
+  --mr-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+
+  font-family: var(--mr-sans);
+  color: var(--mr-ink);
+  line-height: 1.65;
+  background: var(--mr-paper);
+  margin: 0 auto;
+  padding: 64px 24px 96px;
+  max-width: 880px;
+  width: 100%;
+}
+
+/* --- Hero block --- */
+.mr-lesson .mr-hero {
+  text-align: left;
+  padding: 0 0 40px 0;
+  border-bottom: 1px solid var(--mr-rule);
+  margin-bottom: 40px;
+}
+
+.mr-lesson .mr-eyebrow {
+  display: inline-block;
+  font-family: var(--mr-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: var(--mr-navy);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin: 0 0 24px 0;
+}
+
+.mr-lesson .mr-title {
+  font-family: var(--mr-serif);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 600;
+  color: var(--mr-navy);
+  margin: 0 0 12px 0;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.mr-lesson .mr-subtitle {
+  font-family: var(--mr-serif);
+  font-style: italic;
+  font-size: clamp(18px, 2.4vw, 22px);
+  color: var(--mr-ink-soft);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* --- Audio block --- */
+.mr-lesson .mr-audio {
+  background: var(--mr-paper-alt);
+  border: 1px solid var(--mr-rule);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 0 0 40px 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.mr-lesson .mr-audio-icon {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--mr-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mr-gold);
+  font-size: 18px;
+}
+
+.mr-lesson .mr-audio-content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.mr-lesson .mr-audio-label {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mr-ink-soft);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.mr-lesson .mr-audio-song {
+  font-family: var(--mr-serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--mr-navy);
+  line-height: 1.2;
+}
+
+.mr-lesson .mr-audio-player {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.mr-lesson .mr-audio-pending {
+  font-size: 13px;
+  color: var(--mr-ink-soft);
+  font-style: italic;
+}
+
+/* --- Section card --- */
+.mr-lesson .mr-card {
+  background: #FFFFFF;
+  border: 1px solid var(--mr-rule);
+  border-top: 3px solid var(--mr-gold);
+  border-radius: 16px;
+  padding: 36px 40px;
+  margin: 0 0 28px 0;
+  box-shadow: var(--mr-shadow);
+}
+
+.mr-lesson .mr-card h2 {
+  font-family: var(--mr-serif);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--mr-navy);
+  margin: 0 0 18px 0;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.mr-lesson .mr-card h3 {
+  font-family: var(--mr-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mr-gold);
+  margin: 24px 0 12px 0;
+}
+.mr-lesson .mr-card h3:first-child { margin-top: 0; }
+
+.mr-lesson .mr-card p {
+  font-family: var(--mr-sans);
+  font-size: 17px;
+  color: var(--mr-ink);
+  margin: 0 0 14px 0;
+  line-height: 1.65;
+}
+
+.mr-lesson .mr-card p strong {
+  color: var(--mr-navy);
+  font-weight: 600;
+}
+
+/* --- Big quote / pull line --- */
+.mr-lesson .mr-pullquote {
+  font-family: var(--mr-serif);
+  font-style: italic;
+  font-size: clamp(20px, 2.5vw, 26px);
+  line-height: 1.4;
+  color: var(--mr-navy);
+  border-left: 3px solid var(--mr-gold);
+  padding: 4px 0 4px 22px;
+  margin: 24px 0;
+}
+
+/* --- Numbered prompts list --- */
+.mr-lesson .mr-numbered {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: mritem;
+}
+
+.mr-lesson .mr-numbered li {
+  position: relative;
+  padding: 14px 0 14px 56px;
+  border-bottom: 1px solid var(--mr-rule);
+  font-size: 16px;
+  line-height: 1.55;
+  counter-increment: mritem;
+}
+.mr-lesson .mr-numbered li:last-child { border-bottom: none; }
+
+.mr-lesson .mr-numbered li::before {
+  content: counter(mritem);
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--mr-navy);
+  color: var(--mr-gold);
+  font-family: var(--mr-sans);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Worksheet card variant --- */
+.mr-lesson .mr-card.mr-worksheet { background: var(--mr-paper-alt); }
+
+/* --- Embedded form / project brief / button --- */
+.mr-lesson .mr-embed {
+  background: var(--mr-navy);
+  color: #FFFFFF;
+  border-radius: 16px;
+  padding: 32px 36px;
+  margin: 0 0 28px 0;
+  text-align: center;
+  box-shadow: var(--mr-shadow-lg);
+}
+.mr-lesson .mr-embed h2 {
+  color: #FFFFFF;
+  font-family: var(--mr-serif);
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+.mr-lesson .mr-embed p {
+  color: rgba(255,255,255,0.85);
+  font-size: 16px;
+  margin: 0 0 22px 0;
+}
+.mr-lesson .mr-btn {
+  display: inline-block;
+  background: var(--mr-gold);
+  color: var(--mr-navy);
+  font-family: var(--mr-sans);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.mr-lesson .mr-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.35);
+  color: var(--mr-navy);
+  text-decoration: none;
+}
+
+.mr-lesson .mr-iframe-wrap {
+  background: #FFFFFF;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 16px 0 0 0;
+}
+.mr-lesson .mr-iframe-wrap iframe {
+  width: 100%;
+  border: 0;
+  display: block;
+}
+
+/* --- Footer nav --- */
+.mr-lesson .mr-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--mr-rule);
+  font-family: var(--mr-sans);
+  font-size: 13px;
+}
+.mr-lesson .mr-footer-nav a {
+  color: var(--mr-navy);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.mr-lesson .mr-footer-nav a:hover { color: var(--mr-gold); }
+
+/* --- /assessments page styles --- */
+.mr-lesson .mr-assess-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin: 0 0 28px 0;
+}
+.mr-lesson .mr-assess-card {
+  background: #FFFFFF;
+  border: 1px solid var(--mr-rule);
+  border-top: 3px solid var(--mr-gold);
+  border-radius: 14px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: var(--mr-shadow);
+}
+.mr-lesson .mr-assess-card h3 {
+  margin: 0;
+  font-family: var(--mr-serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--mr-navy);
+  letter-spacing: -0.01em;
+}
+.mr-lesson .mr-assess-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--mr-ink-mid);
+  flex: 1 1 auto;
+}
+.mr-lesson .mr-assess-card .mr-btn {
+  align-self: flex-start;
+  font-size: 12px;
+  padding: 10px 18px;
+}
+
+/* --- Hide Squarespace's default lesson title and content
+       on pages where our injection runs.
+       Squarespace course lesson template uses these classes/IDs (varies). --- */
+body.mr-lesson-active .sqs-block-content > .sqs-block-html ~ *,
+body.mr-lesson-active .lesson-content,
+body.mr-lesson-active .course-lesson-default-content,
+body.mr-lesson-active .ProductItem-details {
+  /* Don't hide arbitrary content; we attach our block ourselves. */
+}
+
+/* --- Mobile --- */
+@media (max-width: 720px) {
+  .mr-lesson { padding: 40px 18px 64px; }
+  .mr-lesson .mr-card { padding: 26px 22px; }
+  .mr-lesson .mr-embed { padding: 28px 22px; }
+  .mr-lesson .mr-numbered li { padding: 12px 0 12px 48px; font-size: 15px; }
+  .mr-lesson .mr-numbered li::before { width: 32px; height: 32px; font-size: 13px; top: 12px; }
+}
+
+/* --- Print --- */
+@media print {
+  .mr-lesson { background: white; max-width: 100%; padding: 0; }
+  .mr-lesson .mr-card, .mr-lesson .mr-embed { box-shadow: none; border: 1px solid #ddd; }
+}

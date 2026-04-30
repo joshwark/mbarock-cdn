@@ -1,0 +1,2538 @@
+{
+  "version": "2026-04-30T01",
+  "site_name": "MBA Rock",
+  "lessons": [
+    {
+      "id": "M1L1",
+      "module": 1,
+      "lesson_number": 1,
+      "title": "L1: Money Talks",
+      "type": "Concept",
+      "song": "Money Talks",
+      "slug": "m1l1-money-talks",
+      "url_path": "/m1l1-money-talks",
+      "content": {
+        "song": "Money Talks",
+        "topic": "",
+        "intro": "Money speaks the language every business must learn. From cash to capital, money talks if you listen.",
+        "core": "Three currencies of business: revenue (what you earn), profit (what you keep), and cash (what you can spend). Each tells a different story about company health.",
+        "song_tie_in": "",
+        "cta": "Learn the language of money this module.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M1L2",
+      "module": 1,
+      "lesson_number": 2,
+      "title": "L2: Three Sheets",
+      "type": "Concept",
+      "song": "Three Sheets",
+      "slug": "m1l2-three-sheets",
+      "url_path": "/m1l2-three-sheets",
+      "content": {
+        "song": "Three Sheets",
+        "topic": "",
+        "intro": "Three financial statements tell the complete story of any business.",
+        "core": "Income Statement (P&L) \u2014 profitability over time. Balance Sheet \u2014 financial position at a moment. Cash Flow Statement \u2014 actual cash movement.",
+        "song_tie_in": "",
+        "cta": "Pull your three statements and read them like a story.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M1L3",
+      "module": 1,
+      "lesson_number": 3,
+      "title": "L3: Gross Margin Groove",
+      "type": "Concept",
+      "song": "Gross Margin Groove",
+      "slug": "m1l3-gross-margin-groove",
+      "url_path": "/m1l3-gross-margin-groove",
+      "content": {
+        "song": "Gross Margin Groove",
+        "topic": "",
+        "intro": "Gross margin is the heartbeat of your business model.",
+        "core": "Gross Margin = (Revenue \u2212 COGS) / Revenue. It reveals whether your core economics work before any overhead.",
+        "song_tie_in": "",
+        "cta": "Calculate gross margin by product line.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M1L4",
+      "module": 1,
+      "lesson_number": 4,
+      "title": "L4: Burn Rate Blues",
+      "type": "Concept",
+      "song": "Burn Rate Blues",
+      "slug": "m1l4-burn-rate-blues",
+      "url_path": "/m1l4-burn-rate-blues",
+      "content": {
+        "song": "Burn Rate Blues",
+        "topic": "",
+        "intro": "Burn rate measures how fast you're spending what you have.",
+        "core": "Monthly burn = cash out \u2212 cash in. Runway = cash on hand / monthly burn.",
+        "song_tie_in": "",
+        "cta": "Calculate your runway and stress-test it.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M1L5",
+      "module": 1,
+      "lesson_number": 5,
+      "title": "L5: Bottom Line",
+      "type": "Concept",
+      "song": "Bottom Line",
+      "slug": "m1l5-bottom-line",
+      "url_path": "/m1l5-bottom-line",
+      "content": {
+        "song": "Bottom Line",
+        "topic": "",
+        "intro": "The bottom line \u2014 net income \u2014 is what's left after every cost.",
+        "core": "Net Income = Revenue \u2212 COGS \u2212 OpEx \u2212 Interest \u2212 Taxes. It funds growth, dividends, or reinvestment.",
+        "song_tie_in": "",
+        "cta": "Reconcile your bottom line to your bank balance.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M1L6",
+      "module": 1,
+      "lesson_number": 6,
+      "title": "L6: Cash Runway",
+      "type": "Concept",
+      "song": "Cash Runway",
+      "slug": "m1l6-cash-runway",
+      "url_path": "/m1l6-cash-runway",
+      "content": {
+        "song": "Cash Runway",
+        "topic": "",
+        "intro": "Cash runway is the oxygen tank of every business.",
+        "core": "Runway in months = Cash / Monthly Burn. Below 6 months \u2014 raise. Below 3 \u2014 emergency mode.",
+        "song_tie_in": "",
+        "cta": "Build a 12-month cash runway projection.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M1L7",
+      "module": 1,
+      "lesson_number": 7,
+      "title": "L7: Budget Anthem",
+      "type": "Concept",
+      "song": "Budget Anthem",
+      "slug": "m1l7-budget-anthem",
+      "url_path": "/m1l7-budget-anthem",
+      "content": {
+        "title": "April Cash Timing",
+        "song": "April Cash Timing",
+        "topic": "Cash Flow Timing",
+        "intro": "Cash is king, but timing is everything.",
+        "core": "Revenue recognition vs. cash receipt; accounts receivable aging; cash conversion cycle.",
+        "song_tie_in": "April represents the quarterly crunch when cash timing makes or breaks operations.",
+        "cta": "Map your own cash conversion cycle using the worksheet.",
+        "image_prompts": [
+          "A clock with dollar bills as hands, showing cash flowing at different speeds",
+          "A river with stepping stones labeled \"Invoice,\" \"30 days,\" \"60 days,\" \"Payment\"",
+          "Calendar with April circled, money flowing into and out of a vault"
+        ],
+        "worksheet": [
+          "List your top 5 revenue sources and average days to payment",
+          "Calculate your cash conversion cycle",
+          "Identify which receivables are 30/60/90+ days",
+          "Create a 13-week cash flow forecast",
+          "Reflection: What one change would most improve your cash timing?"
+        ],
+        "calculator_inputs": "Monthly revenue, avg days to collect, avg days to pay suppliers",
+        "calculator_outputs": "Cash conversion cycle, weekly cash position, gap analysis"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M1L8",
+      "module": 1,
+      "lesson_number": 8,
+      "title": "L8: Ratio Riff",
+      "type": "Concept+Quiz",
+      "song": "Ratio Riff",
+      "slug": "m1l8-ratio-riff",
+      "url_path": "/m1l8-ratio-riff",
+      "content": {
+        "title": "Receivables In",
+        "song": "Receivables In",
+        "topic": "Accounts Receivable Management",
+        "intro": "You made the sale, but have you made the money?",
+        "core": "AR aging, collection strategies, bad debt provisioning, days sales outstanding.",
+        "song_tie_in": "The rhythm of receivables coming in keeps the business alive.",
+        "cta": "Audit your AR aging report.",
+        "image_prompts": [
+          "A conveyor belt with invoices turning into cash at different speeds",
+          "A pie chart showing AR aging buckets with color coding",
+          "A mailbox overflowing with checks, some faded (old receivables)"
+        ],
+        "worksheet": [
+          "Pull your current AR aging report",
+          "Calculate DSO (Days Sales Outstanding)",
+          "Categorize by 0-30, 31-60, 61-90, 90+ days",
+          "Identify your top 5 slowest-paying customers",
+          "Draft a collection policy improvement plan"
+        ],
+        "calculator_inputs": "Total AR, revenue, aging buckets",
+        "calculator_outputs": "DSO, bad debt estimate, collection efficiency ratio"
+      },
+      "embed": {
+        "type": "google_form",
+        "label": "Module 1 Quiz",
+        "url": "https://docs.google.com/forms/d/e/PLACEHOLDER_Q1/viewform?embedded=true"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M1L9",
+      "module": 1,
+      "lesson_number": 9,
+      "title": "Project: Financial Dashboard",
+      "type": "Project Brief",
+      "song": "Operating Leverage",
+      "slug": "m1l9-financial-dashboard",
+      "url_path": "/m1l9-financial-dashboard",
+      "content": {
+        "title": "Operating Leverage",
+        "song": "Operating Leverage",
+        "topic": "Operating Leverage",
+        "intro": "The higher your fixed costs, the bigger the swing.",
+        "core": "Degree of operating leverage, fixed vs. variable cost structure, profit sensitivity.",
+        "song_tie_in": "Leverage amplifies both wins and losses.",
+        "cta": "Calculate your DOL.",
+        "image_prompts": [
+          "A seesaw with \"Fixed Costs\" as the fulcrum, profits swinging wildly",
+          "Two businesses side by side: one heavy (high leverage), one light (low leverage)",
+          "An amplifier dial turning from 1 to 11 with profit/loss meters"
+        ],
+        "worksheet": [
+          "List all fixed costs and all variable costs",
+          "Calculate contribution margin",
+          "Calculate DOL \\= Contribution Margin / Operating Income",
+          "Scenario: What happens to profit if revenue increases 10%? Decreases 10%?",
+          "Reflection: Is your current leverage appropriate for your risk tolerance?"
+        ],
+        "calculator_inputs": "Revenue, fixed costs, variable costs",
+        "calculator_outputs": "DOL, profit at various revenue levels, sensitivity table"
+      },
+      "embed": {
+        "type": "project_brief",
+        "label": "Financial Dashboard Project",
+        "url": "https://drive.google.com/file/d/PROJECT_P1_FINANCE/view"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M1L10",
+      "module": 1,
+      "lesson_number": 10,
+      "title": "Module Unit Test",
+      "type": "Unit Test",
+      "song": "",
+      "slug": "m1l10-unit-test",
+      "url_path": "/m1l10-unit-test",
+      "content": {
+        "song": "",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": {
+        "type": "google_form",
+        "label": "Module 1 Unit Test",
+        "url": "https://docs.google.com/forms/d/e/PLACEHOLDER_T1/viewform?embedded=true"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M2L1",
+      "module": 2,
+      "lesson_number": 1,
+      "title": "L1: Strategy Strut",
+      "type": "Concept",
+      "song": "Strategy Strut",
+      "slug": "m2l1-strategy-strut",
+      "url_path": "/m2l1-strategy-strut",
+      "content": {
+        "song": "Strategy Strut",
+        "topic": "",
+        "intro": "Strategy is the bridge between where you are and where you want to be.",
+        "core": "Strategy = goals \u00d7 resources \u00d7 actions. Without choices, strategy doesn't exist.",
+        "song_tie_in": "",
+        "cta": "Write your strategy in one paragraph.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M2L2",
+      "module": 2,
+      "lesson_number": 2,
+      "title": "L2: Moat",
+      "type": "Concept",
+      "song": "Moat",
+      "slug": "m2l2-moat",
+      "url_path": "/m2l2-moat",
+      "content": {
+        "song": "Moat",
+        "topic": "",
+        "intro": "A moat protects your castle from competitors.",
+        "core": "Brand, switching costs, network effects, scale, and patents are the five primary moats.",
+        "song_tie_in": "",
+        "cta": "Identify your strongest moat.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M2L3",
+      "module": 2,
+      "lesson_number": 3,
+      "title": "L3: Five Forces",
+      "type": "Concept",
+      "song": "Five Forces",
+      "slug": "m2l3-five-forces",
+      "url_path": "/m2l3-five-forces",
+      "content": {
+        "song": "Five Forces",
+        "topic": "",
+        "intro": "Five forces define industry attractiveness.",
+        "core": "Rivalry, suppliers, buyers, substitutes, new entrants \u2014 Porter's Five Forces.",
+        "song_tie_in": "",
+        "cta": "Score your industry on each force 1-5.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M2L4",
+      "module": 2,
+      "lesson_number": 4,
+      "title": "L4: SWOT VRIO",
+      "type": "Concept",
+      "song": "SWOT VRIO",
+      "slug": "m2l4-swot-vrio",
+      "url_path": "/m2l4-swot-vrio",
+      "content": {
+        "song": "SWOT VRIO",
+        "topic": "",
+        "intro": "SWOT names the field. VRIO grades your weapons.",
+        "core": "Strengths/Weaknesses (internal), Opportunities/Threats (external). VRIO: Valuable, Rare, Inimitable, Organized.",
+        "song_tie_in": "",
+        "cta": "Run SWOT-VRIO this quarter.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M2L5",
+      "module": 2,
+      "lesson_number": 5,
+      "title": "L5: Differentiate or Die",
+      "type": "Concept",
+      "song": "Differentiate or Die",
+      "slug": "m2l5-differentiate-or-die",
+      "url_path": "/m2l5-differentiate-or-die",
+      "content": {
+        "song": "Differentiate or Die",
+        "topic": "",
+        "intro": "If you don't differentiate, you commoditize.",
+        "core": "Cost leadership, differentiation, focus \u2014 pick one and excel.",
+        "song_tie_in": "",
+        "cta": "Name your one differentiator.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M2L6",
+      "module": 2,
+      "lesson_number": 6,
+      "title": "L6: Blue Ocean",
+      "type": "Concept",
+      "song": "Blue Ocean",
+      "slug": "m2l6-blue-ocean",
+      "url_path": "/m2l6-blue-ocean",
+      "content": {
+        "title": "Beneath the Hood",
+        "song": "Beneath the Hood",
+        "topic": "Strategic Diagnostics",
+        "intro": "Every business looks different under the hood.",
+        "core": "SWOT deep-dive, value chain analysis, core competency identification.",
+        "song_tie_in": "Looking beneath surface metrics to find true strategic health.",
+        "cta": "Run a diagnostic on your own business.",
+        "image_prompts": [
+          "A mechanic lifting the hood of a car shaped like a corporate building",
+          "X-ray view of a business showing internal systems and flows",
+          "Magnifying glass over a balance sheet revealing hidden patterns"
+        ],
+        "worksheet": [
+          "Complete a detailed SWOT for your business",
+          "Map your value chain (primary \\+ support activities)",
+          "Identify 3 core competencies",
+          "Rate each competency: rare, valuable, inimitable, organized?",
+          "Reflection: What did you discover beneath the hood?"
+        ],
+        "calculator_inputs": "SWOT items with impact ratings",
+        "calculator_outputs": "Strategic priority matrix, VRIO scorecard"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M2L7",
+      "module": 2,
+      "lesson_number": 7,
+      "title": "L7: Canvas 9 Blocks",
+      "type": "Concept",
+      "song": "Canvas 9 Blocks",
+      "slug": "m2l7-canvas-9-blocks",
+      "url_path": "/m2l7-canvas-9-blocks",
+      "content": {
+        "title": "Business Model Canvas",
+        "song": "Business Model Canvas",
+        "topic": "Business Model Canvas Deep-Dive",
+        "intro": "Nine building blocks, one complete picture.",
+        "core": "All 9 BMC segments, how they interconnect, iteration.",
+        "song_tie_in": "The canvas is the stage where your business model performs.",
+        "cta": "Fill out your own BMC.",
+        "image_prompts": [
+          "A giant canvas on an easel with 9 colorful sections being painted",
+          "Puzzle pieces fitting together to form a complete business picture",
+          "A band setting up on stage, each member representing a BMC segment"
+        ],
+        "worksheet": [
+          "Key Partners: Who are your critical partners?",
+          "Key Activities: What must you do excellently?",
+          "Value Propositions: What unique value do you deliver?",
+          "Customer Relationships: How do you engage?",
+          "Customer Segments: Who do you serve?",
+          "Key Resources: What assets are essential?",
+          "Channels: How do you reach customers?",
+          "Cost Structure: What are your biggest costs?",
+          "Revenue Streams: How do you earn?"
+        ],
+        "calculator_inputs": "Revenue per stream, cost per category",
+        "calculator_outputs": "Margin by segment, dependency analysis"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M2L8",
+      "module": 2,
+      "lesson_number": 8,
+      "title": "L8: Corporate Climb",
+      "type": "Concept+Quiz",
+      "song": "Corporate Climb",
+      "slug": "m2l8-corporate-climb",
+      "url_path": "/m2l8-corporate-climb",
+      "content": {
+        "title": "Dollar Soldier",
+        "song": "Dollar Soldier",
+        "topic": "Portfolio Strategy",
+        "intro": "Every dollar you invest is a soldier in your strategic army.",
+        "core": "BCG matrix, portfolio allocation, resource deployment across business units.",
+        "song_tie_in": "Deploying capital like soldiers across a strategic battlefield.",
+        "cta": "Map your products/projects on the BCG matrix.",
+        "image_prompts": [
+          "Chess pieces made of dollar bills on a strategic game board",
+          "A military command center with a map showing product portfolio positions",
+          "Stars, cash cows, question marks, and dogs as rock band archetypes"
+        ],
+        "worksheet": [
+          "List all products/business units",
+          "Plot each on BCG matrix (market share vs. market growth)",
+          "Classify: Star, Cash Cow, Question Mark, or Dog",
+          "Allocate investment: Where should your next dollar go?",
+          "Reflection: Which \"soldiers\" should you redeploy?"
+        ],
+        "calculator_inputs": "Product revenue, market share, market growth rate",
+        "calculator_outputs": "BCG classification, recommended allocation %"
+      },
+      "embed": {
+        "type": "google_form",
+        "label": "Module 2 Quiz",
+        "url": "https://docs.google.com/forms/d/e/PLACEHOLDER_Q2/viewform?embedded=true"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M2L9",
+      "module": 2,
+      "lesson_number": 9,
+      "title": "Project: Strategic Memo",
+      "type": "Project Brief",
+      "song": "",
+      "slug": "m2l9-strategic-memo",
+      "url_path": "/m2l9-strategic-memo",
+      "content": {
+        "song": "",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": {
+        "type": "project_brief",
+        "label": "Strategic Memo Project",
+        "url": "https://drive.google.com/file/d/PROJECT_P2_STRATEGY/view"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M2L10",
+      "module": 2,
+      "lesson_number": 10,
+      "title": "Module Unit Test",
+      "type": "Unit Test",
+      "song": "",
+      "slug": "m2l10-unit-test",
+      "url_path": "/m2l10-unit-test",
+      "content": {
+        "song": "",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": {
+        "type": "google_form",
+        "label": "Module 2 Unit Test",
+        "url": "https://docs.google.com/forms/d/e/PLACEHOLDER_T2/viewform?embedded=true"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L1",
+      "module": 3,
+      "lesson_number": 1,
+      "title": "L1: 4 Ps",
+      "type": "Concept",
+      "song": "4 Ps",
+      "slug": "m3l1-4-ps",
+      "url_path": "/m3l1-4-ps",
+      "content": {
+        "song": "4 Ps",
+        "topic": "",
+        "intro": "The 4 Ps are the marketing mix DNA.",
+        "core": "Product, Price, Place, Promotion \u2014 every marketing decision sits in one of these buckets.",
+        "song_tie_in": "",
+        "cta": "Audit your 4 Ps for alignment.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L2",
+      "module": 3,
+      "lesson_number": 2,
+      "title": "L2: STP",
+      "type": "Concept",
+      "song": "STP",
+      "slug": "m3l2-stp",
+      "url_path": "/m3l2-stp",
+      "content": {
+        "song": "STP",
+        "topic": "",
+        "intro": "STP \u2014 Segment, Target, Position \u2014 the marketing strategy core.",
+        "core": "Segment the market, choose targets, position yourself in the prospect's mind.",
+        "song_tie_in": "",
+        "cta": "Run STP for your top product.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L3",
+      "module": 3,
+      "lesson_number": 3,
+      "title": "L3: Brand New",
+      "type": "Concept",
+      "song": "Brand New",
+      "slug": "m3l3-brand-new",
+      "url_path": "/m3l3-brand-new",
+      "content": {
+        "song": "Brand New",
+        "topic": "",
+        "intro": "A brand is everything customers feel when they hear your name.",
+        "core": "Brand = promise + experience + perception. Brand equity is its dollar value.",
+        "song_tie_in": "",
+        "cta": "Audit your brand consistency across touchpoints.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L4",
+      "module": 3,
+      "lesson_number": 4,
+      "title": "L4: Persona",
+      "type": "Concept",
+      "song": "Persona",
+      "slug": "m3l4-persona",
+      "url_path": "/m3l4-persona",
+      "content": {
+        "song": "Persona",
+        "topic": "",
+        "intro": "A persona makes a faceless customer real.",
+        "core": "Demographics, psychographics, jobs-to-be-done, pain points, and a name.",
+        "song_tie_in": "",
+        "cta": "Build 3 customer personas with quotes.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L5",
+      "module": 3,
+      "lesson_number": 5,
+      "title": "L5: Stake Your Claim",
+      "type": "Concept",
+      "song": "Stake Your Claim",
+      "slug": "m3l5-stake-your-claim",
+      "url_path": "/m3l5-stake-your-claim",
+      "content": {
+        "song": "Stake Your Claim",
+        "topic": "",
+        "intro": "Stake your claim in the customer's mind.",
+        "core": "Positioning statement: For [target], we are the [category] that [unique benefit] because [proof].",
+        "song_tie_in": "",
+        "cta": "Write your positioning statement.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L6",
+      "module": 3,
+      "lesson_number": 6,
+      "title": "L6: Whats It Worth",
+      "type": "Concept",
+      "song": "Whats It Worth",
+      "slug": "m3l6-whats-it-worth",
+      "url_path": "/m3l6-whats-it-worth",
+      "content": {
+        "title": "Market Size Mountain",
+        "song": "Market Size Mountain",
+        "topic": "Market Sizing (TAM/SAM/SOM)",
+        "intro": "Before you climb, know how tall the mountain is.",
+        "core": "TAM, SAM, SOM methodology; top-down vs. bottom-up sizing.",
+        "song_tie_in": "The mountain represents total addressable market, with base camp as your serviceable segment.",
+        "cta": "Size your own market.",
+        "image_prompts": [
+          "A mountain with three elevation zones labeled TAM, SAM, SOM",
+          "Telescope looking at a vast landscape with concentric circles",
+          "Rock climber ascending with market data points as handholds"
+        ],
+        "worksheet": [
+          "Define your TAM (total addressable market)",
+          "Narrow to SAM (serviceable addressable market)",
+          "Calculate SOM (serviceable obtainable market)",
+          "Use both top-down and bottom-up methods",
+          "Compare results and identify assumptions"
+        ],
+        "calculator_inputs": "Industry size, target segment %, capture rate",
+        "calculator_outputs": "TAM/SAM/SOM values, growth projections"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L7",
+      "module": 3,
+      "lesson_number": 7,
+      "title": "L7: Channel Surf",
+      "type": "Concept",
+      "song": "Channel Surf",
+      "slug": "m3l7-channel-surf",
+      "url_path": "/m3l7-channel-surf",
+      "content": {
+        "title": "Segmentation Aim",
+        "song": "Segmentation Aim",
+        "topic": "Market Segmentation",
+        "intro": "You can't hit what you can't see.",
+        "core": "Demographic, psychographic, behavioral, geographic segmentation.",
+        "song_tie_in": "Aiming at the right segment is like finding your audience.",
+        "cta": "Define your top 3 customer segments.",
+        "image_prompts": [
+          "An archer aiming at a target with customer profile silhouettes",
+          "A crowd splitting into distinct colored groups",
+          "A concert audience with spotlights highlighting different sections"
+        ],
+        "worksheet": [
+          "List 4 segmentation bases for your market",
+          "Create 3 detailed customer personas",
+          "Score each segment: size, growth, accessibility, fit",
+          "Select your primary target segment",
+          "Reflection: Are you spreading too thin?"
+        ],
+        "calculator_inputs": "Segment size, growth rate, competition intensity",
+        "calculator_outputs": "Segment attractiveness score, priority ranking"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L8",
+      "module": 3,
+      "lesson_number": 8,
+      "title": "L8: Funnel Vision",
+      "type": "Concept+Quiz",
+      "song": "Funnel Vision",
+      "slug": "m3l8-funnel-vision",
+      "url_path": "/m3l8-funnel-vision",
+      "content": {
+        "title": "Don't Be Everything",
+        "song": "Don't Be Everything",
+        "topic": "Positioning and Focus",
+        "intro": "Trying to be everything means being nothing.",
+        "core": "Positioning statement, differentiation, focus strategy, perceptual maps.",
+        "song_tie_in": "The best brands stand for one thing powerfully.",
+        "cta": "Write your positioning statement.",
+        "image_prompts": [
+          "A Swiss Army knife trying to be a guitar, failing at both",
+          "A single bright spotlight vs. a dim floodlight",
+          "A brand standing alone on a mountain peak vs. a crowd in a valley"
+        ],
+        "worksheet": [
+          "Write: \"For \\[target\\], \\[brand\\] is the \\[category\\] that \\[benefit\\] because \\[reason\\]\"",
+          "Create a perceptual map with 2 key dimensions",
+          "List 3 things you will NOT do",
+          "Identify your one key differentiator",
+          "Test: Can you explain your position in 7 words?"
+        ],
+        "calculator_inputs": "Competitor positions, your attributes",
+        "calculator_outputs": "Perceptual map, differentiation gap score"
+      },
+      "embed": {
+        "type": "google_form",
+        "label": "Module 3 Quiz",
+        "url": "https://docs.google.com/forms/d/e/PLACEHOLDER_Q3/viewform?embedded=true"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L9",
+      "module": 3,
+      "lesson_number": 9,
+      "title": "Project: GTM Plan",
+      "type": "Project Brief",
+      "song": "Brand Promise",
+      "slug": "m3l9-gtm-plan",
+      "url_path": "/m3l9-gtm-plan",
+      "content": {
+        "title": "Brand Promise",
+        "song": "Brand Promise",
+        "topic": "Brand Strategy",
+        "intro": "A brand is a promise kept, every single time.",
+        "core": "Brand equity, brand promise, consistency, trust building.",
+        "song_tie_in": "Your brand promise is your song that customers hear every time they interact.",
+        "cta": "Audit your brand promise delivery.",
+        "image_prompts": [
+          "A handshake with a glowing contract labeled \"Brand Promise\"",
+          "A tuning fork vibrating at a consistent frequency",
+          "A rock band's logo carved in stone, enduring through time"
+        ],
+        "worksheet": [
+          "State your brand promise in one sentence",
+          "List 5 touchpoints where you deliver on it",
+          "Rate each touchpoint: consistently delivered? (1-10)",
+          "Identify your biggest promise gap",
+          "Create an action plan to close the gap"
+        ],
+        "calculator_inputs": "Touchpoint ratings, customer satisfaction scores",
+        "calculator_outputs": "Brand consistency index, gap analysis"
+      },
+      "embed": {
+        "type": "project_brief",
+        "label": "GTM Plan Project",
+        "url": "https://drive.google.com/file/d/PROJECT_P3_MARKETING/view"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L10",
+      "module": 3,
+      "lesson_number": 10,
+      "title": "Module Unit Test",
+      "type": "Unit Test",
+      "song": "Worth Align",
+      "slug": "m3l10-unit-test",
+      "url_path": "/m3l10-unit-test",
+      "content": {
+        "title": "Worth Align",
+        "song": "Worth Align",
+        "topic": "Value Proposition Design",
+        "intro": "Alignment between what you offer and what customers value is everything.",
+        "core": "Value proposition canvas, jobs-to-be-done, gain creators, pain relievers.",
+        "song_tie_in": "Worth alignment is the harmony between your product and customer needs.",
+        "cta": "Map your value proposition canvas.",
+        "image_prompts": [
+          "Two puzzle pieces clicking together perfectly",
+          "A tuning dial aligning two frequencies into harmony",
+          "A bridge connecting \"What We Offer\" island to \"What They Need\" island"
+        ],
+        "worksheet": [
+          "Customer Jobs: What are they trying to accomplish?",
+          "Pains: What frustrates them?",
+          "Gains: What would delight them?",
+          "Your Pain Relievers: How do you solve their pains?",
+          "Your Gain Creators: How do you create gains?",
+          "Fit Check: Does your offering align with their needs?"
+        ],
+        "calculator_inputs": "Customer job importance, your solution fit rating",
+        "calculator_outputs": "Value-fit score, priority gap matrix"
+      },
+      "embed": {
+        "type": "google_form",
+        "label": "Module 3 Unit Test",
+        "url": "https://docs.google.com/forms/d/e/PLACEHOLDER_T3/viewform?embedded=true"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M4L1",
+      "module": 4,
+      "lesson_number": 1,
+      "title": "L1: Founders Heart",
+      "type": "Concept",
+      "song": "Founders Heart",
+      "slug": "m4l1-founders-heart",
+      "url_path": "/m4l1-founders-heart",
+      "content": {
+        "song": "Founders Heart",
+        "topic": "",
+        "intro": "Founders run on heart before they run on capital.",
+        "core": "Vision, grit, founder-market fit, and the willingness to be uncomfortable.",
+        "song_tie_in": "",
+        "cta": "Write your founder origin story.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M4L2",
+      "module": 4,
+      "lesson_number": 2,
+      "title": "L2: Validate Me",
+      "type": "Concept",
+      "song": "Validate Me",
+      "slug": "m4l2-validate-me",
+      "url_path": "/m4l2-validate-me",
+      "content": {
+        "song": "Validate Me",
+        "topic": "",
+        "intro": "Validate before you build.",
+        "core": "Customer interviews, problem-solution fit, smoke tests, and falsifiable hypotheses.",
+        "song_tie_in": "",
+        "cta": "Run 10 customer discovery interviews.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M4L3",
+      "module": 4,
+      "lesson_number": 3,
+      "title": "L3: MVP",
+      "type": "Concept",
+      "song": "MVP",
+      "slug": "m4l3-mvp",
+      "url_path": "/m4l3-mvp",
+      "content": {
+        "song": "MVP",
+        "topic": "",
+        "intro": "MVP \u2014 minimum viable product, maximum learning.",
+        "core": "Smallest thing that delivers value and tests the riskiest assumption.",
+        "song_tie_in": "",
+        "cta": "Define and ship your MVP this month.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M4L4",
+      "module": 4,
+      "lesson_number": 4,
+      "title": "L4: Product-Market Fit",
+      "type": "Concept",
+      "song": "Product-Market Fit",
+      "slug": "m4l4-product-market-fit",
+      "url_path": "/m4l4-product-market-fit",
+      "content": {
+        "song": "Product-Market Fit",
+        "topic": "",
+        "intro": "Product-market fit is when pull exceeds push.",
+        "core": "Sean Ellis test: 40%+ would be 'very disappointed' without your product.",
+        "song_tie_in": "",
+        "cta": "Run the Sean Ellis test.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M4L5",
+      "module": 4,
+      "lesson_number": 5,
+      "title": "L5: Pivot",
+      "type": "Concept",
+      "song": "Pivot",
+      "slug": "m4l5-pivot",
+      "url_path": "/m4l5-pivot",
+      "content": {
+        "song": "Pivot",
+        "topic": "",
+        "intro": "When data says pivot, pivot.",
+        "core": "Zoom-in, zoom-out, customer-segment, technology, channel, business-architecture pivots.",
+        "song_tie_in": "",
+        "cta": "Identify which pivot type you may need.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M4L6",
+      "module": 4,
+      "lesson_number": 6,
+      "title": "L6: CAC LTV",
+      "type": "Concept",
+      "song": "CAC LTV",
+      "slug": "m4l6-cac-ltv",
+      "url_path": "/m4l6-cac-ltv",
+      "content": {
+        "title": "Fit",
+        "song": "",
+        "topic": "",
+        "intro": "Product-market fit is when your product and market click.",
+        "core": "PMF signals, Sean Ellis test, retention curves, pivot vs. persevere.",
+        "song_tie_in": "\"Fit\" captures the moment when everything aligns.",
+        "cta": "Run the Sean Ellis test on your customers.",
+        "image_prompts": [
+          "A key sliding perfectly into a lock, glowing with energy",
+          "A puzzle piece clicking into place with sparks",
+          "A crowd cheering wildly as a band hits the perfect note"
+        ],
+        "worksheet": [
+          "Survey: How disappointed would customers be without your product?",
+          "Analyze retention: What % return after 30/60/90 days?",
+          "List the top 3 signals that you have (or lack) PMF",
+          "If no PMF yet: What would you change first?",
+          "Define your PMF milestone metrics"
+        ],
+        "calculator_inputs": "Survey results, retention data, NPS",
+        "calculator_outputs": "PMF score, retention curve, Sean Ellis %"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M4L7",
+      "module": 4,
+      "lesson_number": 7,
+      "title": "L7: Cap Table",
+      "type": "Concept",
+      "song": "Cap Table",
+      "slug": "m4l7-cap-table",
+      "url_path": "/m4l7-cap-table",
+      "content": {
+        "title": "Negotiation",
+        "song": "Negotiation",
+        "topic": "Negotiation Skills",
+        "intro": "Every deal is a negotiation.",
+        "core": "BATNA, ZOPA, anchoring, win-win strategies, principled negotiation.",
+        "song_tie_in": "Negotiation is the duet between two parties finding harmony.",
+        "cta": "Prepare your next negotiation using the BATNA framework.",
+        "image_prompts": [
+          "Two guitarists in a face-off, meeting in the middle for a duet",
+          "A bridge being built from both sides meeting in the center",
+          "A negotiation table with chess-like strategy pieces"
+        ],
+        "worksheet": [
+          "Define your BATNA (best alternative)",
+          "Estimate the other party's BATNA",
+          "Identify the ZOPA (zone of possible agreement)",
+          "Set your anchor point and walk-away point",
+          "List 3 creative win-win options"
+        ],
+        "calculator_inputs": "Your target, reservation price, other party's estimated range",
+        "calculator_outputs": "ZOPA visualization, deal probability score"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M4L8",
+      "module": 4,
+      "lesson_number": 8,
+      "title": "L8: Term Sheet",
+      "type": "Concept+Quiz",
+      "song": "Term Sheet",
+      "slug": "m4l8-term-sheet",
+      "url_path": "/m4l8-term-sheet",
+      "content": {
+        "song": "Term Sheet",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": {
+        "type": "google_form",
+        "label": "Module 4 Quiz",
+        "url": "https://docs.google.com/forms/d/e/PLACEHOLDER_Q4/viewform?embedded=true"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M4L9",
+      "module": 4,
+      "lesson_number": 9,
+      "title": "Project: Pitch Deck",
+      "type": "Project Brief",
+      "song": "",
+      "slug": "m4l9-pitch-deck",
+      "url_path": "/m4l9-pitch-deck",
+      "content": {
+        "song": "",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": {
+        "type": "project_brief",
+        "label": "Pitch Deck Project",
+        "url": "https://drive.google.com/file/d/PROJECT_P4_ENTREPRENEURSHIP/view"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M4L10",
+      "module": 4,
+      "lesson_number": 10,
+      "title": "Module Unit Test",
+      "type": "Unit Test",
+      "song": "",
+      "slug": "m4l10-unit-test",
+      "url_path": "/m4l10-unit-test",
+      "content": {
+        "song": "",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": {
+        "type": "google_form",
+        "label": "Module 4 Unit Test",
+        "url": "https://docs.google.com/forms/d/e/PLACEHOLDER_T4/viewform?embedded=true"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M5L1",
+      "module": 5,
+      "lesson_number": 1,
+      "title": "L1: Lead the Way",
+      "type": "Concept",
+      "song": "Lead the Way",
+      "slug": "m5l1-lead-the-way",
+      "url_path": "/m5l1-lead-the-way",
+      "content": {
+        "song": "Lead the Way",
+        "topic": "",
+        "intro": "Leadership is showing the way and walking it.",
+        "core": "Vision, decision, communication, accountability \u2014 the four leadership levers.",
+        "song_tie_in": "",
+        "cta": "Audit yourself on the four levers this week.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M5L2",
+      "module": 5,
+      "lesson_number": 2,
+      "title": "L2: EQ",
+      "type": "Concept",
+      "song": "EQ",
+      "slug": "m5l2-eq",
+      "url_path": "/m5l2-eq",
+      "content": {
+        "song": "EQ",
+        "topic": "",
+        "intro": "EQ outperforms IQ in leadership.",
+        "core": "Self-awareness, self-regulation, motivation, empathy, social skill.",
+        "song_tie_in": "",
+        "cta": "Score yourself on each EQ dimension 1-10.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M5L3",
+      "module": 5,
+      "lesson_number": 3,
+      "title": "L3: Straight Talk",
+      "type": "Concept",
+      "song": "Straight Talk",
+      "slug": "m5l3-straight-talk",
+      "url_path": "/m5l3-straight-talk",
+      "content": {
+        "song": "Straight Talk",
+        "topic": "",
+        "intro": "Straight talk builds trust faster than soft talk.",
+        "core": "Radical candor: care personally, challenge directly. SBI feedback model.",
+        "song_tie_in": "",
+        "cta": "Deliver one piece of straight feedback this week.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M5L4",
+      "module": 5,
+      "lesson_number": 4,
+      "title": "L4: Build the Band",
+      "type": "Concept",
+      "song": "Build the Band",
+      "slug": "m5l4-build-the-band",
+      "url_path": "/m5l4-build-the-band",
+      "content": {
+        "song": "Build the Band",
+        "topic": "",
+        "intro": "A team is more than a collection of talents.",
+        "core": "Tuckman stages: forming, storming, norming, performing. Roles, rituals, rules.",
+        "song_tie_in": "",
+        "cta": "Map your team's current Tuckman stage.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M5L5",
+      "module": 5,
+      "lesson_number": 5,
+      "title": "L5: Culture Code",
+      "type": "Concept",
+      "song": "Culture Code",
+      "slug": "m5l5-culture-code",
+      "url_path": "/m5l5-culture-code",
+      "content": {
+        "song": "Culture Code",
+        "topic": "",
+        "intro": "Culture is what people do when no one is watching.",
+        "core": "Values, behaviors, rituals, symbols, stories \u2014 the five culture carriers.",
+        "song_tie_in": "",
+        "cta": "Document your culture's five carriers.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M5L6",
+      "module": 5,
+      "lesson_number": 6,
+      "title": "L6: Let It Go Delegate",
+      "type": "Concept",
+      "song": "Let It Go Delegate",
+      "slug": "m5l6-let-it-go-delegate",
+      "url_path": "/m5l6-let-it-go-delegate",
+      "content": {
+        "song": "Let It Go Delegate",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M5L7",
+      "module": 5,
+      "lesson_number": 7,
+      "title": "L7: The Hard Talk",
+      "type": "Concept",
+      "song": "The Hard Talk",
+      "slug": "m5l7-the-hard-talk",
+      "url_path": "/m5l7-the-hard-talk",
+      "content": {
+        "song": "The Hard Talk",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M5L8",
+      "module": 5,
+      "lesson_number": 8,
+      "title": "L8: Grow Together",
+      "type": "Concept+Quiz",
+      "song": "Grow Together",
+      "slug": "m5l8-grow-together",
+      "url_path": "/m5l8-grow-together",
+      "content": {
+        "song": "Grow Together",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": {
+        "type": "google_form",
+        "label": "Module 5 Quiz",
+        "url": "https://docs.google.com/forms/d/e/PLACEHOLDER_Q5/viewform?embedded=true"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M5L9",
+      "module": 5,
+      "lesson_number": 9,
+      "title": "Project: Leadership Charter",
+      "type": "Project Brief",
+      "song": "",
+      "slug": "m5l9-leadership-charter",
+      "url_path": "/m5l9-leadership-charter",
+      "content": {
+        "song": "",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": {
+        "type": "project_brief",
+        "label": "Leadership Charter Project",
+        "url": "https://drive.google.com/file/d/PROJECT_P5_LEADERSHIP/view"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M5L10",
+      "module": 5,
+      "lesson_number": 10,
+      "title": "Module Unit Test",
+      "type": "Unit Test",
+      "song": "",
+      "slug": "m5l10-unit-test",
+      "url_path": "/m5l10-unit-test",
+      "content": {
+        "song": "",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": {
+        "type": "google_form",
+        "label": "Module 5 Unit Test",
+        "url": "https://docs.google.com/forms/d/e/PLACEHOLDER_T5/viewform?embedded=true"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M6L1",
+      "module": 6,
+      "lesson_number": 1,
+      "title": "L1: Ops",
+      "type": "Concept",
+      "song": "Ops",
+      "slug": "m6l1-ops",
+      "url_path": "/m6l1-ops",
+      "content": {
+        "song": "Ops",
+        "topic": "",
+        "intro": "Operations is where strategy meets reality.",
+        "core": "Inputs, processes, outputs. Quality, speed, cost, flexibility.",
+        "song_tie_in": "",
+        "cta": "Map one core process end-to-end.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M6L2",
+      "module": 6,
+      "lesson_number": 2,
+      "title": "L2: Map It Out",
+      "type": "Concept",
+      "song": "Map It Out",
+      "slug": "m6l2-map-it-out",
+      "url_path": "/m6l2-map-it-out",
+      "content": {
+        "song": "Map It Out",
+        "topic": "",
+        "intro": "If you can't map it, you can't manage it.",
+        "core": "SIPOC, value-stream maps, swim-lanes \u2014 three core mapping tools.",
+        "song_tie_in": "",
+        "cta": "Build a SIPOC for your top process.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M6L3",
+      "module": 6,
+      "lesson_number": 3,
+      "title": "L3: Lean Machine",
+      "type": "Concept",
+      "song": "Lean Machine",
+      "slug": "m6l3-lean-machine",
+      "url_path": "/m6l3-lean-machine",
+      "content": {
+        "song": "Lean Machine",
+        "topic": "",
+        "intro": "Lean cuts waste, keeps value.",
+        "core": "Eight wastes: defects, overproduction, waiting, non-utilized talent, transport, inventory, motion, extra processing.",
+        "song_tie_in": "",
+        "cta": "Find and eliminate one waste this week.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M6L4",
+      "module": 6,
+      "lesson_number": 4,
+      "title": "L4: Supply Chain",
+      "type": "Concept",
+      "song": "Supply Chain",
+      "slug": "m6l4-supply-chain",
+      "url_path": "/m6l4-supply-chain",
+      "content": {
+        "song": "Supply Chain",
+        "topic": "",
+        "intro": "A supply chain is only as strong as its weakest link.",
+        "core": "Suppliers, inventory, manufacturing, distribution, customers \u2014 five links.",
+        "song_tie_in": "",
+        "cta": "Score each link's risk 1-5.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M6L5",
+      "module": 6,
+      "lesson_number": 5,
+      "title": "L5: Quality Counts",
+      "type": "Concept",
+      "song": "Quality Counts",
+      "slug": "m6l5-quality-counts",
+      "url_path": "/m6l5-quality-counts",
+      "content": {
+        "song": "Quality Counts",
+        "topic": "",
+        "intro": "Quality counts because customers remember.",
+        "core": "TQM, Six Sigma, statistical process control, and the cost of poor quality.",
+        "song_tie_in": "",
+        "cta": "Calculate your cost of poor quality.",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M6L6",
+      "module": 6,
+      "lesson_number": 6,
+      "title": "L6: Sprint",
+      "type": "Concept",
+      "song": "Sprint",
+      "slug": "m6l6-sprint",
+      "url_path": "/m6l6-sprint",
+      "content": {
+        "title": "Spreadsheet North Star",
+        "song": "Spreadsheet North Star",
+        "topic": "Dashboard and KPI Design",
+        "intro": "Your spreadsheet is your North Star \u2014 if you build it right.",
+        "core": "KPI selection, dashboard design, data storytelling, operational metrics.",
+        "song_tie_in": "The spreadsheet guides your operations like a North Star guides a ship.",
+        "cta": "Build your own KPI dashboard.",
+        "image_prompts": [
+          "A ship's helm with a spreadsheet as the compass rose",
+          "A night sky with KPI metrics as constellations forming the North Star",
+          "A control room dashboard glowing with real-time operational data"
+        ],
+        "worksheet": [
+          "List your top 5 KPIs and why each matters",
+          "For each KPI: current value, target, data source",
+          "Design a one-page dashboard layout (sketch)",
+          "Identify leading vs. lagging indicators",
+          "Set review cadence: daily, weekly, monthly"
+        ],
+        "calculator_inputs": "KPI targets, actuals, time period",
+        "calculator_outputs": "KPI scorecards, trend analysis, red/yellow/green status"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M6L7",
+      "module": 6,
+      "lesson_number": 7,
+      "title": "L7: North Star",
+      "type": "Concept",
+      "song": "North Star",
+      "slug": "m6l7-north-star",
+      "url_path": "/m6l7-north-star",
+      "content": {
+        "song": "North Star",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M6L8",
+      "module": 6,
+      "lesson_number": 8,
+      "title": "L8: Scale Up",
+      "type": "Concept+Quiz",
+      "song": "Scale Up",
+      "slug": "m6l8-scale-up",
+      "url_path": "/m6l8-scale-up",
+      "content": {
+        "song": "Scale Up",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": {
+        "type": "google_form",
+        "label": "Module 6 Quiz",
+        "url": "https://docs.google.com/forms/d/e/PLACEHOLDER_Q6/viewform?embedded=true"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M6L9",
+      "module": 6,
+      "lesson_number": 9,
+      "title": "Project: Ops Playbook",
+      "type": "Project Brief",
+      "song": "",
+      "slug": "m6l9-ops-playbook",
+      "url_path": "/m6l9-ops-playbook",
+      "content": {
+        "song": "",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": {
+        "type": "project_brief",
+        "label": "Ops Playbook Project",
+        "url": "https://drive.google.com/file/d/PROJECT_P6_OPERATIONS/view"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M6L10",
+      "module": 6,
+      "lesson_number": 10,
+      "title": "Module Unit Test",
+      "type": "Unit Test",
+      "song": "",
+      "slug": "m6l10-unit-test",
+      "url_path": "/m6l10-unit-test",
+      "content": {
+        "song": "",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": {
+        "type": "google_form",
+        "label": "Module 6 Unit Test",
+        "url": "https://docs.google.com/forms/d/e/PLACEHOLDER_T6/viewform?embedded=true"
+      },
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "CAPSTONE-1",
+      "module": 7,
+      "lesson_number": 1,
+      "title": "Integration: All Together Now",
+      "type": "Concept",
+      "song": "All Together Now",
+      "slug": "capstone-integration-all-together-now",
+      "url_path": "/capstone-integration-all-together-now",
+      "content": {
+        "song": "All Together Now",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "CAPSTONE-2",
+      "module": 7,
+      "lesson_number": 2,
+      "title": "Capstone Project Brief",
+      "type": "Project",
+      "song": "",
+      "slug": "capstone-capstone-project-brief",
+      "url_path": "/capstone-capstone-project-brief",
+      "content": {
+        "song": "",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "CAPSTONE-3",
+      "module": 7,
+      "lesson_number": 3,
+      "title": "The MBA Rock Encore",
+      "type": "Finale",
+      "song": "Encore",
+      "slug": "capstone-the-mba-rock-encore",
+      "url_path": "/capstone-the-mba-rock-encore",
+      "content": {
+        "song": "Encore",
+        "topic": "",
+        "intro": "",
+        "core": "",
+        "song_tie_in": "",
+        "cta": "",
+        "image_prompts": [],
+        "worksheet": [],
+        "calculator_inputs": "",
+        "calculator_outputs": ""
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M1L7-expansion",
+      "module": 1,
+      "lesson_number": 7,
+      "title": "April Cash Timing",
+      "type": "Concept",
+      "song": "April Cash Timing",
+      "slug": "m1l7-april-cash-timing",
+      "url_path": "/m1l7-april-cash-timing",
+      "content": {
+        "title": "April Cash Timing",
+        "song": "April Cash Timing",
+        "topic": "Cash Flow Timing",
+        "intro": "Cash is king, but timing is everything.",
+        "core": "Revenue recognition vs. cash receipt; accounts receivable aging; cash conversion cycle.",
+        "song_tie_in": "April represents the quarterly crunch when cash timing makes or breaks operations.",
+        "cta": "Map your own cash conversion cycle using the worksheet.",
+        "image_prompts": [
+          "A clock with dollar bills as hands, showing cash flowing at different speeds",
+          "A river with stepping stones labeled \"Invoice,\" \"30 days,\" \"60 days,\" \"Payment\"",
+          "Calendar with April circled, money flowing into and out of a vault"
+        ],
+        "worksheet": [
+          "List your top 5 revenue sources and average days to payment",
+          "Calculate your cash conversion cycle",
+          "Identify which receivables are 30/60/90+ days",
+          "Create a 13-week cash flow forecast",
+          "Reflection: What one change would most improve your cash timing?"
+        ],
+        "calculator_inputs": "Monthly revenue, avg days to collect, avg days to pay suppliers",
+        "calculator_outputs": "Cash conversion cycle, weekly cash position, gap analysis"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M1L8-expansion",
+      "module": 1,
+      "lesson_number": 8,
+      "title": "Receivables In",
+      "type": "Concept",
+      "song": "Receivables In",
+      "slug": "m1l8-receivables-in",
+      "url_path": "/m1l8-receivables-in",
+      "content": {
+        "title": "Receivables In",
+        "song": "Receivables In",
+        "topic": "Accounts Receivable Management",
+        "intro": "You made the sale, but have you made the money?",
+        "core": "AR aging, collection strategies, bad debt provisioning, days sales outstanding.",
+        "song_tie_in": "The rhythm of receivables coming in keeps the business alive.",
+        "cta": "Audit your AR aging report.",
+        "image_prompts": [
+          "A conveyor belt with invoices turning into cash at different speeds",
+          "A pie chart showing AR aging buckets with color coding",
+          "A mailbox overflowing with checks, some faded (old receivables)"
+        ],
+        "worksheet": [
+          "Pull your current AR aging report",
+          "Calculate DSO (Days Sales Outstanding)",
+          "Categorize by 0-30, 31-60, 61-90, 90+ days",
+          "Identify your top 5 slowest-paying customers",
+          "Draft a collection policy improvement plan"
+        ],
+        "calculator_inputs": "Total AR, revenue, aging buckets",
+        "calculator_outputs": "DSO, bad debt estimate, collection efficiency ratio"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M1L9-expansion",
+      "module": 1,
+      "lesson_number": 9,
+      "title": "Operating Leverage",
+      "type": "Concept",
+      "song": "Operating Leverage",
+      "slug": "m1l9-operating-leverage",
+      "url_path": "/m1l9-operating-leverage",
+      "content": {
+        "title": "Operating Leverage",
+        "song": "Operating Leverage",
+        "topic": "Operating Leverage",
+        "intro": "The higher your fixed costs, the bigger the swing.",
+        "core": "Degree of operating leverage, fixed vs. variable cost structure, profit sensitivity.",
+        "song_tie_in": "Leverage amplifies both wins and losses.",
+        "cta": "Calculate your DOL.",
+        "image_prompts": [
+          "A seesaw with \"Fixed Costs\" as the fulcrum, profits swinging wildly",
+          "Two businesses side by side: one heavy (high leverage), one light (low leverage)",
+          "An amplifier dial turning from 1 to 11 with profit/loss meters"
+        ],
+        "worksheet": [
+          "List all fixed costs and all variable costs",
+          "Calculate contribution margin",
+          "Calculate DOL \\= Contribution Margin / Operating Income",
+          "Scenario: What happens to profit if revenue increases 10%? Decreases 10%?",
+          "Reflection: Is your current leverage appropriate for your risk tolerance?"
+        ],
+        "calculator_inputs": "Revenue, fixed costs, variable costs",
+        "calculator_outputs": "DOL, profit at various revenue levels, sensitivity table"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M2L6-expansion",
+      "module": 2,
+      "lesson_number": 6,
+      "title": "Beneath the Hood",
+      "type": "Concept",
+      "song": "Beneath the Hood",
+      "slug": "m2l6-beneath-the-hood",
+      "url_path": "/m2l6-beneath-the-hood",
+      "content": {
+        "title": "Beneath the Hood",
+        "song": "Beneath the Hood",
+        "topic": "Strategic Diagnostics",
+        "intro": "Every business looks different under the hood.",
+        "core": "SWOT deep-dive, value chain analysis, core competency identification.",
+        "song_tie_in": "Looking beneath surface metrics to find true strategic health.",
+        "cta": "Run a diagnostic on your own business.",
+        "image_prompts": [
+          "A mechanic lifting the hood of a car shaped like a corporate building",
+          "X-ray view of a business showing internal systems and flows",
+          "Magnifying glass over a balance sheet revealing hidden patterns"
+        ],
+        "worksheet": [
+          "Complete a detailed SWOT for your business",
+          "Map your value chain (primary \\+ support activities)",
+          "Identify 3 core competencies",
+          "Rate each competency: rare, valuable, inimitable, organized?",
+          "Reflection: What did you discover beneath the hood?"
+        ],
+        "calculator_inputs": "SWOT items with impact ratings",
+        "calculator_outputs": "Strategic priority matrix, VRIO scorecard"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M2L7-expansion",
+      "module": 2,
+      "lesson_number": 7,
+      "title": "Business Model Canvas",
+      "type": "Concept",
+      "song": "Business Model Canvas",
+      "slug": "m2l7-business-model-canvas",
+      "url_path": "/m2l7-business-model-canvas",
+      "content": {
+        "title": "Business Model Canvas",
+        "song": "Business Model Canvas",
+        "topic": "Business Model Canvas Deep-Dive",
+        "intro": "Nine building blocks, one complete picture.",
+        "core": "All 9 BMC segments, how they interconnect, iteration.",
+        "song_tie_in": "The canvas is the stage where your business model performs.",
+        "cta": "Fill out your own BMC.",
+        "image_prompts": [
+          "A giant canvas on an easel with 9 colorful sections being painted",
+          "Puzzle pieces fitting together to form a complete business picture",
+          "A band setting up on stage, each member representing a BMC segment"
+        ],
+        "worksheet": [
+          "Key Partners: Who are your critical partners?",
+          "Key Activities: What must you do excellently?",
+          "Value Propositions: What unique value do you deliver?",
+          "Customer Relationships: How do you engage?",
+          "Customer Segments: Who do you serve?",
+          "Key Resources: What assets are essential?",
+          "Channels: How do you reach customers?",
+          "Cost Structure: What are your biggest costs?",
+          "Revenue Streams: How do you earn?"
+        ],
+        "calculator_inputs": "Revenue per stream, cost per category",
+        "calculator_outputs": "Margin by segment, dependency analysis"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M2L8-expansion",
+      "module": 2,
+      "lesson_number": 8,
+      "title": "Dollar Soldier",
+      "type": "Concept",
+      "song": "Dollar Soldier",
+      "slug": "m2l8-dollar-soldier",
+      "url_path": "/m2l8-dollar-soldier",
+      "content": {
+        "title": "Dollar Soldier",
+        "song": "Dollar Soldier",
+        "topic": "Portfolio Strategy",
+        "intro": "Every dollar you invest is a soldier in your strategic army.",
+        "core": "BCG matrix, portfolio allocation, resource deployment across business units.",
+        "song_tie_in": "Deploying capital like soldiers across a strategic battlefield.",
+        "cta": "Map your products/projects on the BCG matrix.",
+        "image_prompts": [
+          "Chess pieces made of dollar bills on a strategic game board",
+          "A military command center with a map showing product portfolio positions",
+          "Stars, cash cows, question marks, and dogs as rock band archetypes"
+        ],
+        "worksheet": [
+          "List all products/business units",
+          "Plot each on BCG matrix (market share vs. market growth)",
+          "Classify: Star, Cash Cow, Question Mark, or Dog",
+          "Allocate investment: Where should your next dollar go?",
+          "Reflection: Which \"soldiers\" should you redeploy?"
+        ],
+        "calculator_inputs": "Product revenue, market share, market growth rate",
+        "calculator_outputs": "BCG classification, recommended allocation %"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L6-expansion",
+      "module": 3,
+      "lesson_number": 6,
+      "title": "Market Size Mountain",
+      "type": "Concept",
+      "song": "Market Size Mountain",
+      "slug": "m3l6-market-size-mountain",
+      "url_path": "/m3l6-market-size-mountain",
+      "content": {
+        "title": "Market Size Mountain",
+        "song": "Market Size Mountain",
+        "topic": "Market Sizing (TAM/SAM/SOM)",
+        "intro": "Before you climb, know how tall the mountain is.",
+        "core": "TAM, SAM, SOM methodology; top-down vs. bottom-up sizing.",
+        "song_tie_in": "The mountain represents total addressable market, with base camp as your serviceable segment.",
+        "cta": "Size your own market.",
+        "image_prompts": [
+          "A mountain with three elevation zones labeled TAM, SAM, SOM",
+          "Telescope looking at a vast landscape with concentric circles",
+          "Rock climber ascending with market data points as handholds"
+        ],
+        "worksheet": [
+          "Define your TAM (total addressable market)",
+          "Narrow to SAM (serviceable addressable market)",
+          "Calculate SOM (serviceable obtainable market)",
+          "Use both top-down and bottom-up methods",
+          "Compare results and identify assumptions"
+        ],
+        "calculator_inputs": "Industry size, target segment %, capture rate",
+        "calculator_outputs": "TAM/SAM/SOM values, growth projections"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L7-expansion",
+      "module": 3,
+      "lesson_number": 7,
+      "title": "Segmentation Aim",
+      "type": "Concept",
+      "song": "Segmentation Aim",
+      "slug": "m3l7-segmentation-aim",
+      "url_path": "/m3l7-segmentation-aim",
+      "content": {
+        "title": "Segmentation Aim",
+        "song": "Segmentation Aim",
+        "topic": "Market Segmentation",
+        "intro": "You can't hit what you can't see.",
+        "core": "Demographic, psychographic, behavioral, geographic segmentation.",
+        "song_tie_in": "Aiming at the right segment is like finding your audience.",
+        "cta": "Define your top 3 customer segments.",
+        "image_prompts": [
+          "An archer aiming at a target with customer profile silhouettes",
+          "A crowd splitting into distinct colored groups",
+          "A concert audience with spotlights highlighting different sections"
+        ],
+        "worksheet": [
+          "List 4 segmentation bases for your market",
+          "Create 3 detailed customer personas",
+          "Score each segment: size, growth, accessibility, fit",
+          "Select your primary target segment",
+          "Reflection: Are you spreading too thin?"
+        ],
+        "calculator_inputs": "Segment size, growth rate, competition intensity",
+        "calculator_outputs": "Segment attractiveness score, priority ranking"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L8-expansion",
+      "module": 3,
+      "lesson_number": 8,
+      "title": "Don't Be Everything",
+      "type": "Concept",
+      "song": "Don't Be Everything",
+      "slug": "m3l8-dont-be-everything",
+      "url_path": "/m3l8-dont-be-everything",
+      "content": {
+        "title": "Don't Be Everything",
+        "song": "Don't Be Everything",
+        "topic": "Positioning and Focus",
+        "intro": "Trying to be everything means being nothing.",
+        "core": "Positioning statement, differentiation, focus strategy, perceptual maps.",
+        "song_tie_in": "The best brands stand for one thing powerfully.",
+        "cta": "Write your positioning statement.",
+        "image_prompts": [
+          "A Swiss Army knife trying to be a guitar, failing at both",
+          "A single bright spotlight vs. a dim floodlight",
+          "A brand standing alone on a mountain peak vs. a crowd in a valley"
+        ],
+        "worksheet": [
+          "Write: \"For \\[target\\], \\[brand\\] is the \\[category\\] that \\[benefit\\] because \\[reason\\]\"",
+          "Create a perceptual map with 2 key dimensions",
+          "List 3 things you will NOT do",
+          "Identify your one key differentiator",
+          "Test: Can you explain your position in 7 words?"
+        ],
+        "calculator_inputs": "Competitor positions, your attributes",
+        "calculator_outputs": "Perceptual map, differentiation gap score"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L9-expansion",
+      "module": 3,
+      "lesson_number": 9,
+      "title": "Brand Promise",
+      "type": "Concept",
+      "song": "Brand Promise",
+      "slug": "m3l9-brand-promise",
+      "url_path": "/m3l9-brand-promise",
+      "content": {
+        "title": "Brand Promise",
+        "song": "Brand Promise",
+        "topic": "Brand Strategy",
+        "intro": "A brand is a promise kept, every single time.",
+        "core": "Brand equity, brand promise, consistency, trust building.",
+        "song_tie_in": "Your brand promise is your song that customers hear every time they interact.",
+        "cta": "Audit your brand promise delivery.",
+        "image_prompts": [
+          "A handshake with a glowing contract labeled \"Brand Promise\"",
+          "A tuning fork vibrating at a consistent frequency",
+          "A rock band's logo carved in stone, enduring through time"
+        ],
+        "worksheet": [
+          "State your brand promise in one sentence",
+          "List 5 touchpoints where you deliver on it",
+          "Rate each touchpoint: consistently delivered? (1-10)",
+          "Identify your biggest promise gap",
+          "Create an action plan to close the gap"
+        ],
+        "calculator_inputs": "Touchpoint ratings, customer satisfaction scores",
+        "calculator_outputs": "Brand consistency index, gap analysis"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L10-expansion",
+      "module": 3,
+      "lesson_number": 10,
+      "title": "Worth Align",
+      "type": "Concept",
+      "song": "Worth Align",
+      "slug": "m3l10-worth-align",
+      "url_path": "/m3l10-worth-align",
+      "content": {
+        "title": "Worth Align",
+        "song": "Worth Align",
+        "topic": "Value Proposition Design",
+        "intro": "Alignment between what you offer and what customers value is everything.",
+        "core": "Value proposition canvas, jobs-to-be-done, gain creators, pain relievers.",
+        "song_tie_in": "Worth alignment is the harmony between your product and customer needs.",
+        "cta": "Map your value proposition canvas.",
+        "image_prompts": [
+          "Two puzzle pieces clicking together perfectly",
+          "A tuning dial aligning two frequencies into harmony",
+          "A bridge connecting \"What We Offer\" island to \"What They Need\" island"
+        ],
+        "worksheet": [
+          "Customer Jobs: What are they trying to accomplish?",
+          "Pains: What frustrates them?",
+          "Gains: What would delight them?",
+          "Your Pain Relievers: How do you solve their pains?",
+          "Your Gain Creators: How do you create gains?",
+          "Fit Check: Does your offering align with their needs?"
+        ],
+        "calculator_inputs": "Customer job importance, your solution fit rating",
+        "calculator_outputs": "Value-fit score, priority gap matrix"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L11-expansion",
+      "module": 3,
+      "lesson_number": 11,
+      "title": "Distribution Rivers",
+      "type": "Concept",
+      "song": "Distribution Rivers",
+      "slug": "m3l11-distribution-rivers",
+      "url_path": "/m3l11-distribution-rivers",
+      "content": {
+        "title": "Distribution Rivers",
+        "song": "Distribution Rivers",
+        "topic": "Distribution Strategy",
+        "intro": "Your product needs rivers to flow from you to your customer.",
+        "core": "Channel strategy, direct vs. indirect, omnichannel, channel conflicts.",
+        "song_tie_in": "Distribution channels are rivers carrying your value to market.",
+        "cta": "Map your distribution channels.",
+        "image_prompts": [
+          "A river delta with multiple branches leading to different customer islands",
+          "A package surfing down various waterways (online, retail, wholesale)",
+          "An aerial view of interconnected canals representing omnichannel strategy"
+        ],
+        "worksheet": [
+          "List all current distribution channels",
+          "For each: volume, cost, margin, customer preference",
+          "Identify channel conflicts or cannibalization",
+          "Map the ideal customer journey across channels",
+          "Propose one new channel to test"
+        ],
+        "calculator_inputs": "Channel revenue, costs, conversion rates",
+        "calculator_outputs": "Channel profitability, optimal mix recommendation"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L12-expansion",
+      "module": 3,
+      "lesson_number": 12,
+      "title": "Funnel Rate 118",
+      "type": "Concept",
+      "song": "Funnel Rate 118",
+      "slug": "m3l12-funnel-rate-118",
+      "url_path": "/m3l12-funnel-rate-118",
+      "content": {
+        "title": "Funnel Rate 118",
+        "song": "Funnel Rate 118",
+        "topic": "Funnel Optimization",
+        "intro": "118 is the magic number \u2014 the conversion rate that changes everything.",
+        "core": "Marketing funnel stages, conversion rates, drop-off analysis, optimization.",
+        "song_tie_in": "Each stage of the funnel is a verse, and the conversion rate is the beat.",
+        "cta": "Measure your funnel conversion rates.",
+        "image_prompts": [
+          "A funnel with LED numbers showing conversion rates at each stage",
+          "A waterslide with people dropping off at various points",
+          "A concert venue showing crowd flow from entrance to front row"
+        ],
+        "worksheet": [
+          "Map your funnel: Awareness \\> Interest \\> Consideration \\> Purchase \\> Loyalty",
+          "Estimate conversion rate at each stage",
+          "Calculate total funnel efficiency",
+          "Identify the biggest drop-off point",
+          "Design 3 experiments to improve that stage"
+        ],
+        "calculator_inputs": "Visitors at each funnel stage",
+        "calculator_outputs": "Stage conversion rates, overall funnel efficiency, revenue impact of improvements"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M3L13-expansion",
+      "module": 3,
+      "lesson_number": 13,
+      "title": "Unit Economics",
+      "type": "Concept",
+      "song": "",
+      "slug": "m3l13-unit-economics",
+      "url_path": "/m3l13-unit-economics",
+      "content": {
+        "title": "Unit Economics",
+        "song": "",
+        "topic": "",
+        "intro": "If the unit economics don't work, nothing else matters.",
+        "core": "CAC, LTV, LTV/CAC ratio, payback period, contribution margin per unit.",
+        "song_tie_in": "The reggae rhythm represents the steady, repeatable beat of unit economics.",
+        "cta": "Calculate your LTV/CAC ratio.",
+        "image_prompts": [
+          "A single coin being examined under a microscope revealing CAC and LTV",
+          "A reggae drummer with drumsticks labeled \"Revenue\" and \"Cost\"",
+          "A scale balancing customer acquisition cost against lifetime value"
+        ],
+        "worksheet": [
+          "Calculate CAC (total acquisition spend / new customers)",
+          "Calculate LTV (avg revenue per customer x avg lifespan)",
+          "Compute LTV/CAC ratio (target: \\>3)",
+          "Calculate payback period in months",
+          "Reflection: How can you improve each metric by 10%?"
+        ],
+        "calculator_inputs": "Marketing spend, customers acquired, avg revenue, churn rate",
+        "calculator_outputs": "CAC, LTV, LTV/CAC ratio, payback period, break-even point"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M4L6-expansion",
+      "module": 4,
+      "lesson_number": 6,
+      "title": "Fit",
+      "type": "Concept",
+      "song": "",
+      "slug": "m4l6-fit",
+      "url_path": "/m4l6-fit",
+      "content": {
+        "title": "Fit",
+        "song": "",
+        "topic": "",
+        "intro": "Product-market fit is when your product and market click.",
+        "core": "PMF signals, Sean Ellis test, retention curves, pivot vs. persevere.",
+        "song_tie_in": "\"Fit\" captures the moment when everything aligns.",
+        "cta": "Run the Sean Ellis test on your customers.",
+        "image_prompts": [
+          "A key sliding perfectly into a lock, glowing with energy",
+          "A puzzle piece clicking into place with sparks",
+          "A crowd cheering wildly as a band hits the perfect note"
+        ],
+        "worksheet": [
+          "Survey: How disappointed would customers be without your product?",
+          "Analyze retention: What % return after 30/60/90 days?",
+          "List the top 3 signals that you have (or lack) PMF",
+          "If no PMF yet: What would you change first?",
+          "Define your PMF milestone metrics"
+        ],
+        "calculator_inputs": "Survey results, retention data, NPS",
+        "calculator_outputs": "PMF score, retention curve, Sean Ellis %"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M4L7-expansion",
+      "module": 4,
+      "lesson_number": 7,
+      "title": "Negotiation",
+      "type": "Concept",
+      "song": "Negotiation",
+      "slug": "m4l7-negotiation",
+      "url_path": "/m4l7-negotiation",
+      "content": {
+        "title": "Negotiation",
+        "song": "Negotiation",
+        "topic": "Negotiation Skills",
+        "intro": "Every deal is a negotiation.",
+        "core": "BATNA, ZOPA, anchoring, win-win strategies, principled negotiation.",
+        "song_tie_in": "Negotiation is the duet between two parties finding harmony.",
+        "cta": "Prepare your next negotiation using the BATNA framework.",
+        "image_prompts": [
+          "Two guitarists in a face-off, meeting in the middle for a duet",
+          "A bridge being built from both sides meeting in the center",
+          "A negotiation table with chess-like strategy pieces"
+        ],
+        "worksheet": [
+          "Define your BATNA (best alternative)",
+          "Estimate the other party's BATNA",
+          "Identify the ZOPA (zone of possible agreement)",
+          "Set your anchor point and walk-away point",
+          "List 3 creative win-win options"
+        ],
+        "calculator_inputs": "Your target, reservation price, other party's estimated range",
+        "calculator_outputs": "ZOPA visualization, deal probability score"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M5L17-expansion",
+      "module": 5,
+      "lesson_number": 17,
+      "title": "Blank Page Grace",
+      "type": "Concept",
+      "song": "Blank Page Grace",
+      "slug": "m5l17-blank-page-grace",
+      "url_path": "/m5l17-blank-page-grace",
+      "content": {
+        "title": "Blank Page Grace",
+        "song": "Blank Page Grace",
+        "topic": "Creative Leadership",
+        "intro": "The blank page is both the scariest and most beautiful place.",
+        "core": "Creative leadership, fostering innovation, psychological safety, design thinking.",
+        "song_tie_in": "Grace with the blank page means embracing uncertainty as a leader.",
+        "cta": "Lead a design thinking session with your team.",
+        "image_prompts": [
+          "A blank white canvas with a single bold brushstroke beginning",
+          "A leader holding open a door to a bright unknown space",
+          "A band in a recording studio, instruments ready, red light on"
+        ],
+        "worksheet": [
+          "When do you feel most creative as a leader?",
+          "List 3 ways you create psychological safety for your team",
+          "Run a mini design thinking exercise: Empathize, Define, Ideate, Prototype, Test",
+          "Identify one innovation blocker in your organization",
+          "Design a \"blank page\" session for your next team meeting"
+        ],
+        "calculator_inputs": "Team innovation metrics, idea pipeline count",
+        "calculator_outputs": "Innovation rate, time-to-prototype, team creativity index"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M5L18-expansion",
+      "module": 5,
+      "lesson_number": 18,
+      "title": "Resume Clues",
+      "type": "Concept",
+      "song": "Resume Clues",
+      "slug": "m5l18-resume-clues",
+      "url_path": "/m5l18-resume-clues",
+      "content": {
+        "title": "Resume Clues",
+        "song": "Resume Clues",
+        "topic": "Career Design",
+        "intro": "Your resume tells a story, but are you reading the clues?",
+        "core": "Career design, skills inventory, career pivots, personal branding.",
+        "song_tie_in": "The clues in your resume reveal your true career direction.",
+        "cta": "Audit your resume for hidden patterns.",
+        "image_prompts": [
+          "A detective with a magnifying glass examining a resume",
+          "A career path shown as a winding road with signposts",
+          "A jigsaw puzzle of career experiences coming together"
+        ],
+        "worksheet": [
+          "List every role you've held and the top skill from each",
+          "Identify 3 recurring themes across your career",
+          "What would you do if money weren't a factor?",
+          "Map your skills to market demand",
+          "Write your ideal role description for 3 years from now"
+        ],
+        "calculator_inputs": "Skills list, market demand ratings, satisfaction scores",
+        "calculator_outputs": "Career alignment score, skills gap analysis, pivot recommendations"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    },
+    {
+      "id": "M6L6-expansion",
+      "module": 6,
+      "lesson_number": 6,
+      "title": "Spreadsheet North Star",
+      "type": "Concept",
+      "song": "Spreadsheet North Star",
+      "slug": "m6l6-spreadsheet-north-star",
+      "url_path": "/m6l6-spreadsheet-north-star",
+      "content": {
+        "title": "Spreadsheet North Star",
+        "song": "Spreadsheet North Star",
+        "topic": "Dashboard and KPI Design",
+        "intro": "Your spreadsheet is your North Star \u2014 if you build it right.",
+        "core": "KPI selection, dashboard design, data storytelling, operational metrics.",
+        "song_tie_in": "The spreadsheet guides your operations like a North Star guides a ship.",
+        "cta": "Build your own KPI dashboard.",
+        "image_prompts": [
+          "A ship's helm with a spreadsheet as the compass rose",
+          "A night sky with KPI metrics as constellations forming the North Star",
+          "A control room dashboard glowing with real-time operational data"
+        ],
+        "worksheet": [
+          "List your top 5 KPIs and why each matters",
+          "For each KPI: current value, target, data source",
+          "Design a one-page dashboard layout (sketch)",
+          "Identify leading vs. lagging indicators",
+          "Set review cadence: daily, weekly, monthly"
+        ],
+        "calculator_inputs": "KPI targets, actuals, time period",
+        "calculator_outputs": "KPI scorecards, trend analysis, red/yellow/green status"
+      },
+      "embed": null,
+      "audio_url": null,
+      "calculator_url": null
+    }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "title": "Module 1 \u2014 Finance",
+      "color": "#0B2545"
+    },
+    {
+      "id": 2,
+      "title": "Module 2 \u2014 Strategy",
+      "color": "#13315C"
+    },
+    {
+      "id": 3,
+      "title": "Module 3 \u2014 Marketing",
+      "color": "#8DA9C4"
+    },
+    {
+      "id": 4,
+      "title": "Module 4 \u2014 Entrepreneurship",
+      "color": "#D4AF37"
+    },
+    {
+      "id": 5,
+      "title": "Module 5 \u2014 Leadership",
+      "color": "#7B2D26"
+    },
+    {
+      "id": 6,
+      "title": "Module 6 \u2014 Operations",
+      "color": "#33673B"
+    },
+    {
+      "id": 7,
+      "title": "Capstone",
+      "color": "#1A1A1A"
+    }
+  ]
+}
