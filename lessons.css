@@ -363,8 +363,25 @@ body.mr-lesson-active .Content-outer,
 body.mr-lesson-active .Index-page,
 body.mr-lesson-active .Course-item,
 body.mr-lesson-active .course-item,
-body.mr-lesson-active .sqs-layout {
+body.mr-lesson-active .sqs-layout,
+body.mr-lesson-active .section-background,
+body.mr-lesson-active .section-border,
+body.mr-lesson-active .page-section,
+body.mr-lesson-active .page-section .section-background,
+body.mr-lesson-active [data-section-theme],
+body.mr-lesson-active .theme-bg--primary,
+body.mr-lesson-active .theme-bg--secondary,
+body.mr-lesson-active .theme-bg--tertiary,
+body.mr-lesson-active .theme-bg--background {
   background-color: #FAFAF7 !important;
+  background-image: none !important;
+}
+
+/* Override the section-background image/color layer (often an absolute-positioned div) */
+body.mr-lesson-active .section-background > * {
+  background-color: #FAFAF7 !important;
+  background-image: none !important;
+  opacity: 1 !important;
 }
 
 /* Hide any leftover Squarespace lesson title block above our injected hero */
