@@ -348,14 +348,32 @@
   padding: 10px 18px;
 }
 
-/* --- Hide Squarespace's default lesson title and content
-       on pages where our injection runs.
-       Squarespace course lesson template uses these classes/IDs (varies). --- */
-body.mr-lesson-active .sqs-block-content > .sqs-block-html ~ *,
-body.mr-lesson-active .lesson-content,
-body.mr-lesson-active .course-lesson-default-content,
-body.mr-lesson-active .ProductItem-details {
-  /* Don't hide arbitrary content; we attach our block ourselves. */
+/* --- When the bundle is active, override Squarespace's site theme background
+       (yellow / themed) with our cream so the lesson card doesn't sit on
+       a clashing color. Scoped to .mr-lesson-active so other site pages
+       are not affected. --- */
+body.mr-lesson-active,
+body.mr-lesson-active #siteWrapper,
+body.mr-lesson-active main,
+body.mr-lesson-active main#page,
+body.mr-lesson-active main section,
+body.mr-lesson-active article,
+body.mr-lesson-active .Main,
+body.mr-lesson-active .Content-outer,
+body.mr-lesson-active .Index-page,
+body.mr-lesson-active .Course-item,
+body.mr-lesson-active .course-item,
+body.mr-lesson-active .sqs-layout {
+  background-color: #FAFAF7 !important;
+}
+
+/* Hide any leftover Squarespace lesson title block above our injected hero */
+body.mr-lesson-active .sqs-block-html:not(.mr-lesson .sqs-block-html),
+body.mr-lesson-active .sqs-block-markdown:not(.mr-lesson .sqs-block-markdown),
+body.mr-lesson-active .page-title,
+body.mr-lesson-active .Course-item-banner,
+body.mr-lesson-active .course-item-banner {
+  display: none !important;
 }
 
 /* --- Mobile --- */
