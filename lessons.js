@@ -38,13 +38,15 @@
   }
 
   // ---- URL slug extraction ----
+  // Squarespace course lessons live at /mba-rock/<lesson-slug>; some standalone
+  // pages live at root /<slug>. We always take the LAST path segment.
   function currentSlug() {
-    var p = window.location.pathname;
-    // strip leading/trailing slashes
-    p = p.replace(/^\/+|\/+$/g, '');
-    // Squarespace can nest under /config/pages/... in admin; ignore those
+    var p = window.location.pathname.replace(/^\/+|\/+$/g, '');
     if (!p) return '';
-    return p.toLowerCase();
+    // Skip admin/config paths entirely
+    if (/^config(\/|$)/.test(p) || /^settings(\/|$)/.test(p)) return '';
+    var parts = p.split('/');
+    return parts[parts.length - 1].toLowerCase();
   }
 
   // ---- Build lesson HTML ----
@@ -200,31 +202,46 @@
 
   // ---- Inject into the Squarespace page ----
   function injectInto(target, html) {
-    // Wrap in our scoped container
     var wrap = document.createElement('div');
     wrap.className = 'mr-lesson';
     wrap.innerHTML = html;
-    // Replace the target's contents
+    // Replace the target's contents entirely so the old Squarespace Code Blocks
+    // (Watch/See/Do/Calculate raw text) don't render alongside our styled lesson.
     target.innerHTML = '';
     target.appendChild(wrap);
     document.body.classList.add('mr-lesson-active');
+    // Also hide any sibling Squarespace blocks above/below the target that would
+    // duplicate the lesson title (e.g. the page-level page-title/banner block).
+    document.querySelectorAll('.sqs-block-html, .sqs-block-markdown').forEach(function (b) {
+      if (target.contains(b) || b.contains(target)) return;
+      // Only hide ones that are inside the same lesson layout
+      var inMain = b.closest('main, #page, #content');
+      if (inMain) b.style.display = 'none';
+    });
   }
 
-  // Find the best content container in the Squarespace page
+  // Find the best content container in the Squarespace page.
+  // Squarespace 7.1 course lessons live inside a course-lesson layout where
+  // the main content article holds .sqs-layout > .sqs-row > .sqs-block-* blocks.
   function findTarget() {
-    // Common Squarespace content containers, in priority order
     var selectors = [
-      // Course lesson templates
-      '.lesson-content',
+      // Squarespace 7.1 course lesson template — most specific
+      '.course-item-content',
       '.course-lesson-content',
-      '.sqs-block-content[data-mbarock-target]',
-      // 7.1 main content area
+      '.lesson-content',
+      '.lesson__content',
+      'main .course-item article',
+      // 7.1 generic page content
+      'main#page section .sqs-layout',
       'main#page article',
+      'main#page section',
       'main#page',
       'main[role="main"]',
-      // Older fallbacks
+      // 7.0 / older fallbacks
       '#content article',
-      '#content'
+      '#content',
+      // Last resort: the largest .sqs-layout on the page
+      '.sqs-layout'
     ];
     for (var i = 0; i < selectors.length; i++) {
       var el = document.querySelector(selectors[i]);
@@ -250,19 +267,43 @@
         if (slug === 'assessments' || slug === 'assessment' || slug === 'all-assessments') {
           html = renderAssessments(bundle);
         } else {
-          // Match a lesson by slug. Be flexible — try exact match first, then prefix match.
+          // Match a lesson by slug. Try multiple strategies in order of specificity.
           var lesson = bundle.lessons.find(function (l) { return l.slug === slug; });
+          // Squarespace sometimes generates slugs like "39-brand-promise" (no m prefix)
+          // or "3.9-brand-promise". Match by combining digit pattern + title fragment.
           if (!lesson) {
-            // Try slug starts-with: e.g. URL "/m3l9-brand-promise-extra"
+            var idMatch = slug.match(/^(\d)\.?(\d{1,2})\-(.+)$/) || slug.match(/^(\d)(\d)\-(.+)$/);
+            if (idMatch) {
+              var idPart = ('m' + idMatch[1] + 'l' + idMatch[2]).toLowerCase();
+              var titleFrag = idMatch[3];
+              // First: match BOTH id AND title fragment
+              lesson = bundle.lessons.find(function (l) {
+                return l.slug.indexOf(idPart + '-') === 0 && l.slug.indexOf(titleFrag) !== -1;
+              });
+              // Fallback: match by id only
+              if (!lesson) {
+                lesson = bundle.lessons.find(function (l) { return l.slug.indexOf(idPart + '-') === 0; });
+              }
+            }
+          }
+          if (!lesson) {
+            // Try slug starts-with: e.g. URL "m3l9-brand-promise-extra"
             lesson = bundle.lessons.find(function (l) { return slug.indexOf(l.slug) === 0; });
           }
           if (!lesson) {
-            // Try id-only matches: "/m3l9", "/m3l9-anything"
+            // m# l# id at start
             var m = slug.match(/^(m\d+l\d+)/i);
             if (m) {
-              var idPart = m[1].toLowerCase();
-              lesson = bundle.lessons.find(function (l) { return l.slug.indexOf(idPart + '-') === 0; });
+              var idPart2 = m[1].toLowerCase();
+              lesson = bundle.lessons.find(function (l) { return l.slug.indexOf(idPart2 + '-') === 0; });
             }
+          }
+          if (!lesson) {
+            // Match by title slug fragment (last resort): e.g. "brand-promise"
+            lesson = bundle.lessons.find(function (l) {
+              var titleSlug = l.slug.replace(/^m\d+l\d+\-/, '');
+              return titleSlug === slug || slug === titleSlug;
+            });
           }
           if (lesson) {
             html = renderLesson(lesson, bundle.modules);
