@@ -2,27 +2,30 @@
  * Loaded site-wide via Squarespace Code Injection (Header).
  * Reads URL slug, looks up lesson in lessons.json, injects styled lesson block.
  *
- * v3 — Robust injection for Squarespace Members Area course lesson pages.
- *   - findTarget() only returns specific course content selectors (not broad main/section)
- *     to avoid wiping Squarespace nav and layout chrome.
- *   - insertSmartly() is the default path: adds after course nav or before footer.
- *   - Boot retries at 800ms and 2000ms to handle Squarespace client-side rendering.
- *   - Dedup guard prevents double-injection on retry.
+ * v4 — Hardened against Squarespace SPA hydration wiping injected content.
+ *   - BUNDLE_BASE falls back to raw.githubusercontent.com (not jsDelivr) so
+ *     lessons.json is always fetched fresh. document.currentScript is null for
+ *     defer scripts, so jsDelivr was being used — fixed.
+ *   - MutationObserver watches for Squarespace re-rendering wiping .mr-lesson
+ *     and re-injects within a 10s guard window.
+ *   - Retries at 800ms, 2000ms, 5000ms (was 800ms + 2000ms only).
+ *   - findTarget() uses BEM double-underscore selectors matching Squarespace
+ *     Members Area course lesson DOM (.course-item__lesson-content).
+ *   - Dedup guard prevents double-injection across retries.
  */
 (function () {
   'use strict';
 
   // ---- Configuration ----
+  // NOTE: document.currentScript is null for <script defer> at execution time.
+  // We cannot rely on it to locate the CDN base — fall back to raw GitHub directly.
   var BUNDLE_BASE = (function () {
     var s = document.currentScript;
-    if (s && s.src) { return s.src.replace(/lessons\.js.*$/, ''); }
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-    for (var i = 0; i < links.length; i++) {
-      if (links[i].href.indexOf('lessons.css') !== -1) {
-        return links[i].href.replace(/lessons\.css.*$/, '');
-      }
+    if (s && s.src && s.src.indexOf('lessons.js') !== -1) {
+      return s.src.replace(/lessons\.js.*$/, '');
     }
-    return 'https://cdn.jsdelivr.net/gh/joshwark/mbarock-cdn@main/';
+    // defer script: currentScript is null — use raw GitHub (always fresh, no CDN cache)
+    return 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/';
   })();
 
   // ---- HTML escape ----
@@ -315,10 +318,34 @@
     document.body.classList.add('mr-lesson-active');
   }
 
+  // ---- MutationObserver: re-inject if Squarespace hydration wipes our content ----
+  // Squarespace Members Area is an SPA that may re-render the lesson content area
+  // after our initial injection. This observer watches for .mr-lesson being removed
+  // from the DOM and re-injects within a 10-second guard window.
+  function watchForWipe(html) {
+    if (!window.MutationObserver) return;
+    var deadline = Date.now() + 10000; // watch for 10 seconds post-injection
+    var pending = false;
+    var observer = new MutationObserver(function () {
+      if (Date.now() > deadline) { observer.disconnect(); return; }
+      if (!document.querySelector('.mr-lesson') && !pending) {
+        pending = true;
+        setTimeout(function () {
+          pending = false;
+          doInject(html);
+        }, 50);
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+    // Auto-disconnect after guard window
+    setTimeout(function () { observer.disconnect(); }, 10000);
+  }
+
   // ---- Boot ----
-  // Fetches lessons.json once, then attempts injection immediately, at 800ms, and 2000ms.
-  // The retries handle Squarespace SPA pages where course content is rendered client-side
-  // after DOMContentLoaded. The dedup guard in doInject() prevents double-injection.
+  // Fetches lessons.json once, then attempts injection immediately, at 800ms, 2000ms,
+  // and 5000ms. The retries handle Squarespace SPA pages where course content is
+  // rendered client-side after DOMContentLoaded. The MutationObserver catches cases
+  // where Squarespace hydration wipes our content between retries.
   function boot() {
     var slug = currentSlug();
     if (!slug) return;
@@ -348,6 +375,12 @@
 
         // Attempt 3: after 2000ms (catches slow SPA renders and lazy hydration)
         setTimeout(function () { doInject(html); }, 2000);
+
+        // Attempt 4: after 5000ms (catches very slow / throttled renders)
+        setTimeout(function () { doInject(html); }, 5000);
+
+        // MutationObserver: re-inject if Squarespace wipes our content during hydration
+        watchForWipe(html);
       })
       .catch(function (err) {
         if (window.console) console.warn('[MBA Rock]', err);
