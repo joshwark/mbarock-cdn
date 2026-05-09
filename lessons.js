@@ -168,27 +168,30 @@
   }
 
   // ---- Find the best injection target ----
-  // ONLY returns specific, empty course-content containers — NOT broad page wrappers
-  // like main#page. Clearing a broad wrapper destroys Squarespace nav chrome.
-  // If nothing specific found, return null and let insertSmartly() handle it.
+  // Squarespace Members Area course lesson pages use BEM double-underscore classes:
+  //   .course-item__lesson-content  ← the lesson body (replaces video placeholder + empty intro)
+  //   .course-item__content          ← wider content wrapper (fallback)
+  //   .course-item                   ← full lesson container (last resort)
+  // We ONLY target specific course containers — never broad page wrappers like
+  // main#page, which would wipe Squarespace nav chrome.
   function findTarget() {
     var selectors = [
-      // Squarespace Members Area / Course lesson — specific content containers only
+      // ✅ Primary: Squarespace Members Area course lesson body (BEM double-underscore)
+      '.course-item__lesson-content',
+      '.course-item__content',
+      // Legacy / alternate Squarespace course class patterns
       '.course-item-content',
       '.course-lesson-content',
       '.lesson-content',
       '.lesson__content',
-      '[class*="course-item"] [class*="content"]',
+      '[class*="course-item__lesson"]',
+      '[class*="course-item__content"]',
       '[class*="course-lesson"]',
       '[class*="members-area"] [class*="content"]',
-      'main .course-item article',
       // Squarespace 7.1 course player patterns
       '.course-syllabus-player__content',
       '.course-content-wrapper',
       '[data-course-item-content]',
-      // sqs-layout inside a course item (never the top-level sqs-layout)
-      '[class*="course"] .sqs-layout',
-      '[class*="lesson"] .sqs-layout',
     ];
 
     for (var i = 0; i < selectors.length; i++) {
