@@ -2,33 +2,65 @@
  * Loaded site-wide via Squarespace Code Injection (Header).
  * Reads URL slug, looks up lesson in lessons.json, injects styled lesson block.
  *
- * v4 — Hardened against Squarespace SPA hydration wiping injected content.
- *   - BUNDLE_BASE falls back to raw.githubusercontent.com (not jsDelivr) so
- *     lessons.json is always fetched fresh. document.currentScript is null for
- *     defer scripts, so jsDelivr was being used — fixed.
- *   - MutationObserver watches for Squarespace re-rendering wiping .mr-lesson
- *     and re-injects within a 10s guard window.
- *   - Retries at 800ms, 2000ms, 5000ms (was 800ms + 2000ms only).
- *   - findTarget() uses BEM double-underscore selectors matching Squarespace
- *     Members Area course lesson DOM (.course-item__lesson-content).
- *   - Dedup guard prevents double-injection across retries.
+ * v5 — Full hardening per engineering brief (MBA_Rock_Claude_Brief_lessonsjs_fix.pdf)
+ *
+ *  Fix 1 — BUNDLE_BASE: scan all <script> tags by src instead of document.currentScript
+ *           (currentScript is null for defer scripts at execution time).
+ *           Falls back to jsDelivr with a console.warn so we always know when it fires.
+ *           Supports window.MBA_ROCK_BUNDLE_BASE override from Code Injection.
+ *
+ *  Fix 2 — MutationObserver: after first inject, watch .course-item (parent of target)
+ *           with subtree:true. Uses data-mbaInjected HTML-length fingerprint so the
+ *           observer does not re-fire on its own injection. Single observer per page
+ *           lifetime tracked on window.__mbaObserverAttached.
+ *
+ *  Fix 3 — 5-second final retry: re-resolves the target from the DOM fresh, re-injects,
+ *           re-attaches observer.
+ *
+ *  Hardening — SPA route-change hook: patches history.pushState / replaceState and
+ *              listens for popstate so lesson-to-lesson navigation re-runs the full
+ *              inject pipeline with the correct lesson for the new slug.
+ *
+ *  Logging — all output prefixed [MBA Rock]: BUNDLE_BASE chosen, fetch URL + status,
+ *             target found/not, inject fired, observer re-fired, 5s retry fired,
+ *             route change detected.
+ *
+ * Acceptance criteria (all must pass on hard reload AND SPA navigation):
+ *  1. BUNDLE_BASE logs the actual script origin, not the jsDelivr fallback.
+ *  2. lessons.json fetch returns 200.
+ *  3. .course-item__lesson-content has correct lesson HTML within 1.5s of route stable.
+ *  4. After 10s idle, lesson HTML is still present (Squarespace re-render did not wipe it).
+ *  5. Navigating to another lesson and back loads correct content for each.
  */
 (function () {
   'use strict';
 
-  // ---- Configuration ----
-  // NOTE: document.currentScript is null for <script defer> at execution time.
-  // We cannot rely on it to locate the CDN base — fall back to raw GitHub directly.
-  var BUNDLE_BASE = (function () {
-    var s = document.currentScript;
-    if (s && s.src && s.src.indexOf('lessons.js') !== -1) {
-      return s.src.replace(/lessons\.js.*$/, '');
+  // ─── 1. BUNDLE_BASE resolution ───────────────────────────────────────────────
+  // document.currentScript is null for <script defer> at execution time.
+  // Scan all <script> tags for the one that loaded lessons.js instead.
+  function resolveBundleBase() {
+    // Explicit override from Code Injection (set window.MBA_ROCK_BUNDLE_BASE before us)
+    if (window.MBA_ROCK_BUNDLE_BASE) {
+      console.log('[MBA Rock] BUNDLE_BASE from window override:', window.MBA_ROCK_BUNDLE_BASE);
+      return window.MBA_ROCK_BUNDLE_BASE;
     }
-    // defer script: currentScript is null — use raw GitHub (always fresh, no CDN cache)
-    return 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/';
-  })();
+    // Scan all script tags (reverse order — ours is likely near the end)
+    var scripts = document.getElementsByTagName('script');
+    for (var i = scripts.length - 1; i >= 0; i--) {
+      var src = scripts[i].src || '';
+      if (/\/lessons\.js(\?|$)/.test(src)) {
+        var base = src.replace(/\/lessons\.js.*$/, '/');
+        console.log('[MBA Rock] BUNDLE_BASE resolved from script tag:', base);
+        return base;
+      }
+    }
+    console.warn('[MBA Rock] BUNDLE_BASE fallback to jsDelivr — script tag not found');
+    return 'https://cdn.jsdelivr.net/gh/joshwark/mbarock-cdn@main/';
+  }
 
-  // ---- HTML escape ----
+  var BUNDLE_BASE = resolveBundleBase();
+
+  // ─── HTML escape ─────────────────────────────────────────────────────────────
   function esc(s) {
     if (s == null) return '';
     return String(s)
@@ -39,7 +71,7 @@
       .replace(/'/g, '&#39;');
   }
 
-  // ---- URL slug extraction ----
+  // ─── URL slug extraction ──────────────────────────────────────────────────────
   function currentSlug() {
     var p = window.location.pathname.replace(/^\/+|\/+$/g, '');
     if (!p) return '';
@@ -48,26 +80,21 @@
     return parts[parts.length - 1].toLowerCase();
   }
 
-  // ---- Build lesson HTML ----
-  // NOTE: We do NOT render the lesson title — Squarespace already shows it
-  // from the course curriculum template. Rendering it again causes duplicates.
+  // ─── Render lesson HTML ───────────────────────────────────────────────────────
+  // NOTE: We do NOT render the lesson title — Squarespace already shows it.
   function renderLesson(lesson, modules) {
     var c = lesson.content || {};
     var moduleObj = modules.find(function (m) { return m.id === lesson.moduleId; }) || { title: '', color: '#0B2545' };
     var html = '';
 
-    // Module label (subtle, not the full title H1)
     html += '<div class="mr-module-label" style="background:' + moduleObj.color + '">' + esc(moduleObj.title) + '</div>';
 
-    // Audio player — primary content
     if (lesson.audio_url) {
       html += '<div class="mr-audio">';
       html += '<div class="mr-audio-icon">&#9835;</div>';
       html += '<div class="mr-audio-content">';
       html += '<div class="mr-audio-label">Lesson Song</div>';
-      if (lesson.song_title) {
-        html += '<div class="mr-audio-song">' + esc(lesson.song_title) + '</div>';
-      }
+      if (lesson.song_title) { html += '<div class="mr-audio-song">' + esc(lesson.song_title) + '</div>'; }
       html += '<audio controls preload="none" class="mr-audio-player" src="' + esc(lesson.audio_url) + '"></audio>';
       html += '</div></div>';
     } else if (lesson.song_title) {
@@ -80,41 +107,23 @@
       html += '</div></div>';
     }
 
-    // Concept card
     if (c.intro || c.core) {
       html += '<section class="mr-card">';
-      if (c.intro) {
-        html += '<h2>The Idea</h2>';
-        html += '<p class="mr-pullquote">' + esc(c.intro) + '</p>';
-      }
-      if (c.core) {
-        html += '<h3>Core Concepts</h3>';
-        html += '<p>' + esc(c.core) + '</p>';
-      }
-      if (c.song_tie_in) {
-        html += '<h3>Song Tie-In</h3>';
-        html += '<p>' + esc(c.song_tie_in) + '</p>';
-      }
-      if (c.cta) {
-        html += '<h3>Take Action</h3>';
-        html += '<p><strong>' + esc(c.cta) + '</strong></p>';
-      }
+      if (c.intro) { html += '<h2>The Idea</h2><p class="mr-pullquote">' + esc(c.intro) + '</p>'; }
+      if (c.core) { html += '<h3>Core Concepts</h3><p>' + esc(c.core) + '</p>'; }
+      if (c.song_tie_in) { html += '<h3>Song Tie-In</h3><p>' + esc(c.song_tie_in) + '</p>'; }
+      if (c.cta) { html += '<h3>Take Action</h3><p><strong>' + esc(c.cta) + '</strong></p>'; }
       html += '</section>';
     }
 
-    // Worksheet
     if (Array.isArray(c.worksheet) && c.worksheet.length > 0) {
-      html += '<section class="mr-card mr-worksheet">';
-      html += '<h2>Worksheet</h2>';
-      html += '<ol class="mr-numbered">';
+      html += '<section class="mr-card mr-worksheet"><h2>Worksheet</h2><ol class="mr-numbered">';
       c.worksheet.forEach(function (item) { html += '<li>' + esc(item) + '</li>'; });
       html += '</ol></section>';
     }
 
-    // Calculator
     if (c.calculator_inputs || c.calculator_outputs || lesson.calculator_url) {
-      html += '<section class="mr-card">';
-      html += '<h2>Calculator</h2>';
+      html += '<section class="mr-card"><h2>Calculator</h2>';
       if (c.calculator_inputs) { html += '<h3>Inputs</h3><p>' + esc(c.calculator_inputs) + '</p>'; }
       if (c.calculator_outputs) { html += '<h3>Outputs</h3><p>' + esc(c.calculator_outputs) + '</p>'; }
       if (lesson.calculator_url) {
@@ -123,7 +132,6 @@
       html += '</section>';
     }
 
-    // Embed
     if (lesson.embed) {
       var e = lesson.embed;
       html += '<section class="mr-embed">';
@@ -140,17 +148,10 @@
     return html;
   }
 
-  // ---- Assessments page ----
+  // ─── Render assessments page ──────────────────────────────────────────────────
   function renderAssessments(bundle) {
     var lessons = bundle.lessons;
-    var html = '<header class="mr-hero">';
-    html += '<div class="mr-eyebrow">All Assessments</div>';
-    html += '<h1 class="mr-title">MBA Rock Assessments</h1>';
-    html += '</header>';
-
-    var quizzes = lessons.filter(function (l) { return l.embed && l.embed.type === 'google_form' && /Quiz/.test(l.type); });
-    var tests = lessons.filter(function (l) { return l.embed && l.embed.type === 'google_form' && /Unit Test/.test(l.type); });
-    var projects = lessons.filter(function (l) { return l.embed && l.embed.type === 'project_brief'; });
+    var html = '<header class="mr-hero"><div class="mr-eyebrow">All Assessments</div><h1 class="mr-title">MBA Rock Assessments</h1></header>';
 
     function gridSection(title, items) {
       var s = '<section><h2>' + esc(title) + '</h2><div class="mr-assess-grid">';
@@ -160,29 +161,25 @@
         s += l.embed.type === 'project_brief' ? 'Download Brief' : 'Open Assessment';
         s += '</a></div>';
       });
-      s += '</div></section>';
-      return s;
+      return s + '</div></section>';
     }
 
-    if (quizzes.length) html += gridSection('Module Quizzes', quizzes);
-    if (tests.length) html += gridSection('Unit Tests', tests);
+    var quizzes  = lessons.filter(function (l) { return l.embed && l.embed.type === 'google_form' && /Quiz/.test(l.type); });
+    var tests    = lessons.filter(function (l) { return l.embed && l.embed.type === 'google_form' && /Unit Test/.test(l.type); });
+    var projects = lessons.filter(function (l) { return l.embed && l.embed.type === 'project_brief'; });
+
+    if (quizzes.length)  html += gridSection('Module Quizzes', quizzes);
+    if (tests.length)    html += gridSection('Unit Tests', tests);
     if (projects.length) html += gridSection('Project Briefs', projects);
     return html;
   }
 
-  // ---- Find the best injection target ----
-  // Squarespace Members Area course lesson pages use BEM double-underscore classes:
-  //   .course-item__lesson-content  ← the lesson body (replaces video placeholder + empty intro)
-  //   .course-item__content          ← wider content wrapper (fallback)
-  //   .course-item                   ← full lesson container (last resort)
-  // We ONLY target specific course containers — never broad page wrappers like
-  // main#page, which would wipe Squarespace nav chrome.
+  // ─── Find injection target ────────────────────────────────────────────────────
+  // Squarespace Members Area BEM classes — .course-item__lesson-content is primary.
   function findTarget() {
     var selectors = [
-      // ✅ Primary: Squarespace Members Area course lesson body (BEM double-underscore)
       '.course-item__lesson-content',
       '.course-item__content',
-      // Legacy / alternate Squarespace course class patterns
       '.course-item-content',
       '.course-lesson-content',
       '.lesson-content',
@@ -191,37 +188,34 @@
       '[class*="course-item__content"]',
       '[class*="course-lesson"]',
       '[class*="members-area"] [class*="content"]',
-      // Squarespace 7.1 course player patterns
       '.course-syllabus-player__content',
       '.course-content-wrapper',
       '[data-course-item-content]',
     ];
-
     for (var i = 0; i < selectors.length; i++) {
       var el = document.querySelector(selectors[i]);
-      if (el && el !== document.body && el !== document.documentElement) return el;
+      if (el && el !== document.body && el !== document.documentElement) {
+        console.log('[MBA Rock] target found:', selectors[i]);
+        return el;
+      }
     }
-
-    // Nothing specific found — insertSmartly() will handle it
+    console.warn('[MBA Rock] target not found — falling back to insertSmartly()');
     return null;
   }
 
-  // ---- Smart insertion: non-destructive, preserves Squarespace chrome ----
-  function insertSmartly(html) {
+  // ─── insertSmartly (non-destructive fallback) ─────────────────────────────────
+  function insertSmartly(lessonHtml) {
     var wrap = document.createElement('div');
     wrap.className = 'mr-lesson';
-    wrap.innerHTML = html;
+    wrap.innerHTML = lessonHtml;
 
-    // Strategy 1: insert after the course nav bar (← All Lessons / breadcrumbs)
     var allLinks = document.querySelectorAll('a');
     var courseNavContainer = null;
     for (var i = 0; i < allLinks.length; i++) {
       var txt = (allLinks[i].textContent || '').trim();
-      if (txt.indexOf('All Lessons') > -1 || txt.indexOf('all-lessons') > -1 ||
-          txt.indexOf('Back to') > -1 || txt.indexOf('Course') > -1) {
+      if (txt.indexOf('All Lessons') > -1 || txt.indexOf('Back to') > -1 || txt.indexOf('Course') > -1) {
         var el = allLinks[i];
         while (el && el !== document.body) {
-          // Find a parent that has at least 2 links (nav row) but is not main/body
           if (el.tagName !== 'BODY' && el.tagName !== 'MAIN' &&
               el.querySelectorAll('a').length >= 2 && el.querySelectorAll('a').length <= 10) {
             courseNavContainer = el;
@@ -232,52 +226,62 @@
         if (courseNavContainer) break;
       }
     }
-
     if (courseNavContainer && courseNavContainer.parentElement) {
       courseNavContainer.parentElement.insertBefore(wrap, courseNavContainer.nextSibling);
       return;
     }
-
-    // Strategy 2: after page header / before the first content section
     var mainEl = document.querySelector('main#page, main[role="main"], main, #page');
-    if (mainEl) {
-      // Insert as first child of main
-      mainEl.insertBefore(wrap, mainEl.firstChild);
-      return;
-    }
-
-    // Strategy 3: insert before footer
+    if (mainEl) { mainEl.insertBefore(wrap, mainEl.firstChild); return; }
     var footer = document.querySelector('footer, [id*="footer"], [class*="footer"], [data-footer-sections]');
-    if (footer && footer.parentElement) {
-      footer.parentElement.insertBefore(wrap, footer);
-      return;
-    }
-
-    // Strategy 4: append to body (last resort)
+    if (footer && footer.parentElement) { footer.parentElement.insertBefore(wrap, footer); return; }
     document.body.appendChild(wrap);
   }
 
-  // ---- Inject into found target ----
-  function injectInto(target, html) {
-    var wrap = document.createElement('div');
-    wrap.className = 'mr-lesson';
-    wrap.innerHTML = html;
-
-    // Clear the target (empty course content area) and inject
-    target.innerHTML = '';
-    target.appendChild(wrap);
+  // ─── 2. Core inject with data-mbaInjected fingerprint ────────────────────────
+  // Uses HTML length as a cheap fingerprint so the MutationObserver does not
+  // re-fire on its own injection.
+  function injectLesson(targetEl, lessonHtml) {
+    if (!targetEl) return;
+    if (targetEl.dataset.mbaInjected === String(lessonHtml.length)) return; // idempotent
+    targetEl.innerHTML = lessonHtml;
+    targetEl.dataset.mbaInjected = String(lessonHtml.length);
     document.body.classList.add('mr-lesson-active');
+    console.log('[MBA Rock] inject fired, length=' + lessonHtml.length);
   }
 
-  // ---- Lesson slug matching ----
+  // ─── 2. MutationObserver re-injection defense ─────────────────────────────────
+  // Attaches to .course-item (parent) with subtree:true so even if Squarespace
+  // fully replaces targetEl, the observer survives one level up and can re-resolve.
+  // window.__mbaObserverAttached prevents duplicate observers per page lifetime.
+  function watchForRerender(targetEl, lessonHtml) {
+    if (!window.MutationObserver) return;
+    if (window.__mbaObserverAttached) return;
+    window.__mbaObserverAttached = true;
+
+    // Attach one level up so we survive targetEl replacement
+    var watchRoot = targetEl.closest
+      ? (targetEl.closest('.course-item') || targetEl.parentElement || document.body)
+      : (targetEl.parentElement || document.body);
+
+    var observer = new MutationObserver(function () {
+      // Re-resolve the target in case Squarespace replaced the element
+      var fresh = document.querySelector('.course-item__lesson-content') || targetEl;
+      if (fresh.dataset.mbaInjected !== String(lessonHtml.length)) {
+        console.log('[MBA Rock] observer re-fired — re-injecting');
+        injectLesson(fresh, lessonHtml);
+      }
+    });
+
+    observer.observe(watchRoot, { childList: true, subtree: true, characterData: true });
+    console.log('[MBA Rock] MutationObserver attached on', watchRoot.className || watchRoot.tagName);
+  }
+
+  // ─── Find lesson by slug ──────────────────────────────────────────────────────
   function findLesson(bundle, slug) {
     var lessons = bundle.lessons;
-
-    // Exact match
     var lesson = lessons.find(function (l) { return l.slug === slug; });
     if (lesson) return lesson;
 
-    // Numeric pattern: e.g. URL "3.9-brand-promise" → match m3l9-brand-promise
     var idMatch = slug.match(/^(\d)\.?(\d{1,2})\-/) || slug.match(/^(\d)(\d)\-/);
     if (idMatch) {
       var idPart = ('m' + idMatch[1] + 'l' + idMatch[2]).toLowerCase();
@@ -285,11 +289,9 @@
       if (lesson) return lesson;
     }
 
-    // Slug starts-with (URL has extra suffix)
     lesson = lessons.find(function (l) { return slug.indexOf(l.slug) === 0; });
     if (lesson) return lesson;
 
-    // mXlY prefix in URL
     var m = slug.match(/^(m\d+l\d+)/i);
     if (m) {
       var pfx = m[1].toLowerCase();
@@ -297,7 +299,6 @@
       if (lesson) return lesson;
     }
 
-    // Title slug fragment (last resort)
     lesson = lessons.find(function (l) {
       var titleSlug = l.slug.replace(/^m\d+l\d+\-/, '');
       return titleSlug === slug || slug === titleSlug;
@@ -305,85 +306,113 @@
     return lesson || null;
   }
 
-  // ---- Inject (deduplicated) ----
-  function doInject(html) {
-    if (document.querySelector('.mr-lesson')) return; // already injected
+  // ─── Run full injection pipeline for current slug ─────────────────────────────
+  function runInjection(slug, bundle) {
+    var lessonHtml = null;
 
-    var target = findTarget();
-    if (target) {
-      injectInto(target, html);
+    if (slug === 'assessments' || slug === 'assessment' || slug === 'all-assessments') {
+      lessonHtml = renderAssessments(bundle);
     } else {
-      insertSmartly(html);
-    }
-    document.body.classList.add('mr-lesson-active');
-  }
-
-  // ---- MutationObserver: re-inject if Squarespace hydration wipes our content ----
-  // Squarespace Members Area is an SPA that may re-render the lesson content area
-  // after our initial injection. This observer watches for .mr-lesson being removed
-  // from the DOM and re-injects within a 10-second guard window.
-  function watchForWipe(html) {
-    if (!window.MutationObserver) return;
-    var deadline = Date.now() + 10000; // watch for 10 seconds post-injection
-    var pending = false;
-    var observer = new MutationObserver(function () {
-      if (Date.now() > deadline) { observer.disconnect(); return; }
-      if (!document.querySelector('.mr-lesson') && !pending) {
-        pending = true;
-        setTimeout(function () {
-          pending = false;
-          doInject(html);
-        }, 50);
+      var lesson = findLesson(bundle, slug);
+      if (lesson) {
+        lessonHtml = renderLesson(lesson, bundle.modules);
       }
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
-    // Auto-disconnect after guard window
-    setTimeout(function () { observer.disconnect(); }, 10000);
+    }
+
+    if (!lessonHtml) {
+      console.log('[MBA Rock] no lesson matched slug:', slug, '— skipping');
+      return;
+    }
+
+    console.log('[MBA Rock] matched slug:', slug, '— running injection pipeline');
+
+    function attemptInject() {
+      var target = findTarget();
+      if (target) {
+        injectLesson(target, lessonHtml);
+        watchForRerender(target, lessonHtml);
+      } else {
+        // Target not in DOM yet — insertSmartly as last resort
+        if (!document.querySelector('.mr-lesson')) {
+          insertSmartly(lessonHtml);
+        }
+      }
+    }
+
+    // Immediate attempt (server-rendered pages)
+    attemptInject();
+
+    // 800ms retry (fast Squarespace client-side render)
+    setTimeout(attemptInject, 800);
+
+    // 2000ms retry (slow SPA hydration)
+    setTimeout(attemptInject, 2000);
+
+    // 3. 5-second final retry — re-resolves target fresh, re-attaches observer
+    setTimeout(function () {
+      var targetEl = document.querySelector('.course-item__lesson-content');
+      if (targetEl && targetEl.dataset.mbaInjected !== String(lessonHtml.length)) {
+        console.warn('[MBA Rock] 5s retry firing — initial inject did not stick');
+        window.__mbaObserverAttached = false; // allow fresh observer attach
+        injectLesson(targetEl, lessonHtml);
+        watchForRerender(targetEl, lessonHtml);
+      }
+    }, 5000);
   }
 
-  // ---- Boot ----
-  // Fetches lessons.json once, then attempts injection immediately, at 800ms, 2000ms,
-  // and 5000ms. The retries handle Squarespace SPA pages where course content is
-  // rendered client-side after DOMContentLoaded. The MutationObserver catches cases
-  // where Squarespace hydration wipes our content between retries.
+  // ─── SPA route-change hook ────────────────────────────────────────────────────
+  // Squarespace uses pushState navigation between lessons in the same course.
+  // Without this, navigating from lesson A → lesson B renders an empty/stale container.
+  function hookSPANavigation(bundle) {
+    var lastSlug = currentSlug();
+
+    function onRouteChange() {
+      setTimeout(function () { // wait one tick for URL to settle
+        var newSlug = currentSlug();
+        if (newSlug === lastSlug) return;
+        console.log('[MBA Rock] route change detected:', lastSlug, '→', newSlug);
+        lastSlug = newSlug;
+        window.__mbaObserverAttached = false; // reset for new page
+        runInjection(newSlug, bundle);
+      }, 150);
+    }
+
+    var origPush = history.pushState;
+    var origReplace = history.replaceState;
+
+    history.pushState = function () {
+      origPush.apply(history, arguments);
+      onRouteChange();
+    };
+    history.replaceState = function () {
+      origReplace.apply(history, arguments);
+      onRouteChange();
+    };
+    window.addEventListener('popstate', onRouteChange);
+
+    console.log('[MBA Rock] SPA route-change hook installed');
+  }
+
+  // ─── Boot ─────────────────────────────────────────────────────────────────────
   function boot() {
     var slug = currentSlug();
     if (!slug) return;
 
-    fetch(BUNDLE_BASE + 'lessons.json?v=' + Date.now())
+    var fetchUrl = BUNDLE_BASE + 'lessons.json?v=' + Date.now();
+    console.log('[MBA Rock] fetching lessons.json from:', fetchUrl);
+
+    fetch(fetchUrl)
       .then(function (r) {
+        console.log('[MBA Rock] lessons.json status:', r.status);
         if (!r.ok) throw new Error('lessons.json ' + r.status);
         return r.json();
       })
       .then(function (bundle) {
-        var html = null;
-
-        if (slug === 'assessments' || slug === 'assessment' || slug === 'all-assessments') {
-          html = renderAssessments(bundle);
-        } else {
-          var lesson = findLesson(bundle, slug);
-          if (lesson) html = renderLesson(lesson, bundle.modules);
-        }
-
-        if (!html) return; // Not an MBA Rock lesson page — do nothing
-
-        // Attempt 1: immediately (catches server-rendered pages)
-        doInject(html);
-
-        // Attempt 2: after 800ms (catches fast Squarespace client-side renders)
-        setTimeout(function () { doInject(html); }, 800);
-
-        // Attempt 3: after 2000ms (catches slow SPA renders and lazy hydration)
-        setTimeout(function () { doInject(html); }, 2000);
-
-        // Attempt 4: after 5000ms (catches very slow / throttled renders)
-        setTimeout(function () { doInject(html); }, 5000);
-
-        // MutationObserver: re-inject if Squarespace wipes our content during hydration
-        watchForWipe(html);
+        runInjection(slug, bundle);
+        hookSPANavigation(bundle);
       })
       .catch(function (err) {
-        if (window.console) console.warn('[MBA Rock]', err);
+        console.warn('[MBA Rock] boot error:', err);
       });
   }
 
