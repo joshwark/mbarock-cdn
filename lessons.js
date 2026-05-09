@@ -2,10 +2,12 @@
  * Loaded site-wide via Squarespace Code Injection (Header).
  * Reads URL slug, looks up lesson in lessons.json, injects styled lesson block.
  *
- * v2 — Fixed injection strategy for Squarespace Members Area course lesson pages.
- *   - findTarget() now includes Members Area selectors + smart fallback
- *   - injectInto() no longer wipes document.body; inserts before footer instead
- *   - Removed duplicate title/H1 from rendered HTML (Squarespace shows it already)
+ * v3 — Robust injection for Squarespace Members Area course lesson pages.
+ *   - findTarget() only returns specific course content selectors (not broad main/section)
+ *     to avoid wiping Squarespace nav and layout chrome.
+ *   - insertSmartly() is the default path: adds after course nav or before footer.
+ *   - Boot retries at 800ms and 2000ms to handle Squarespace client-side rendering.
+ *   - Dedup guard prevents double-injection on retry.
  */
 (function () {
   'use strict';
@@ -166,33 +168,27 @@
   }
 
   // ---- Find the best injection target ----
-  // For Squarespace Members Area course lesson pages, the content body is
-  // typically inside one of these containers (empty when no blocks added).
-  // We try specific selectors first, then fall through to smart insertion.
+  // ONLY returns specific, empty course-content containers — NOT broad page wrappers
+  // like main#page. Clearing a broad wrapper destroys Squarespace nav chrome.
+  // If nothing specific found, return null and let insertSmartly() handle it.
   function findTarget() {
     var selectors = [
-      // Squarespace Members Area / Course lesson selectors
+      // Squarespace Members Area / Course lesson — specific content containers only
       '.course-item-content',
       '.course-lesson-content',
       '.lesson-content',
       '.lesson__content',
       '[class*="course-item"] [class*="content"]',
       '[class*="course-lesson"]',
-      '[class*="members-area"] main',
-      // Squarespace 7.1 generic page content
+      '[class*="members-area"] [class*="content"]',
       'main .course-item article',
-      'article#page-sections',
-      '#page-sections',
-      'main#page section .sqs-layout',
-      'main#page article',
-      'main#page section',
-      'main#page',
-      'main[role="main"]',
-      'main',
-      // 7.0 fallbacks
-      '#content article',
-      '#content',
-      '.sqs-layout'
+      // Squarespace 7.1 course player patterns
+      '.course-syllabus-player__content',
+      '.course-content-wrapper',
+      '[data-course-item-content]',
+      // sqs-layout inside a course item (never the top-level sqs-layout)
+      '[class*="course"] .sqs-layout',
+      '[class*="lesson"] .sqs-layout',
     ];
 
     for (var i = 0; i < selectors.length; i++) {
@@ -200,32 +196,34 @@
       if (el && el !== document.body && el !== document.documentElement) return el;
     }
 
-    // Nothing specific found — create a container and insert it smartly
+    // Nothing specific found — insertSmartly() will handle it
     return null;
   }
 
-  // ---- Smart insertion when no target found ----
+  // ---- Smart insertion: non-destructive, preserves Squarespace chrome ----
   function insertSmartly(html) {
     var wrap = document.createElement('div');
     wrap.className = 'mr-lesson';
     wrap.innerHTML = html;
 
-    // Strategy 1: insert after the course nav links (← All Lessons)
+    // Strategy 1: insert after the course nav bar (← All Lessons / breadcrumbs)
     var allLinks = document.querySelectorAll('a');
     var courseNavContainer = null;
     for (var i = 0; i < allLinks.length; i++) {
       var txt = (allLinks[i].textContent || '').trim();
-      if (txt.indexOf('All Lessons') > -1 || txt.indexOf('all-lessons') > -1) {
-        // Walk up to find the nav/div containing both lesson nav links
+      if (txt.indexOf('All Lessons') > -1 || txt.indexOf('all-lessons') > -1 ||
+          txt.indexOf('Back to') > -1 || txt.indexOf('Course') > -1) {
         var el = allLinks[i];
         while (el && el !== document.body) {
-          if (el.querySelectorAll('a').length >= 2) {
+          // Find a parent that has at least 2 links (nav row) but is not main/body
+          if (el.tagName !== 'BODY' && el.tagName !== 'MAIN' &&
+              el.querySelectorAll('a').length >= 2 && el.querySelectorAll('a').length <= 10) {
             courseNavContainer = el;
             break;
           }
           el = el.parentElement;
         }
-        break;
+        if (courseNavContainer) break;
       }
     }
 
@@ -234,14 +232,22 @@
       return;
     }
 
-    // Strategy 2: insert before footer
+    // Strategy 2: after page header / before the first content section
+    var mainEl = document.querySelector('main#page, main[role="main"], main, #page');
+    if (mainEl) {
+      // Insert as first child of main
+      mainEl.insertBefore(wrap, mainEl.firstChild);
+      return;
+    }
+
+    // Strategy 3: insert before footer
     var footer = document.querySelector('footer, [id*="footer"], [class*="footer"], [data-footer-sections]');
     if (footer && footer.parentElement) {
       footer.parentElement.insertBefore(wrap, footer);
       return;
     }
 
-    // Strategy 3: append to body (last resort — visible but after footer)
+    // Strategy 4: append to body (last resort)
     document.body.appendChild(wrap);
   }
 
@@ -293,7 +299,23 @@
     return lesson || null;
   }
 
+  // ---- Inject (deduplicated) ----
+  function doInject(html) {
+    if (document.querySelector('.mr-lesson')) return; // already injected
+
+    var target = findTarget();
+    if (target) {
+      injectInto(target, html);
+    } else {
+      insertSmartly(html);
+    }
+    document.body.classList.add('mr-lesson-active');
+  }
+
   // ---- Boot ----
+  // Fetches lessons.json once, then attempts injection immediately, at 800ms, and 2000ms.
+  // The retries handle Squarespace SPA pages where course content is rendered client-side
+  // after DOMContentLoaded. The dedup guard in doInject() prevents double-injection.
   function boot() {
     var slug = currentSlug();
     if (!slug) return;
@@ -315,13 +337,14 @@
 
         if (!html) return; // Not an MBA Rock lesson page — do nothing
 
-        var target = findTarget();
-        if (target) {
-          injectInto(target, html);
-        } else {
-          insertSmartly(html);
-        }
-        document.body.classList.add('mr-lesson-active');
+        // Attempt 1: immediately (catches server-rendered pages)
+        doInject(html);
+
+        // Attempt 2: after 800ms (catches fast Squarespace client-side renders)
+        setTimeout(function () { doInject(html); }, 800);
+
+        // Attempt 3: after 2000ms (catches slow SPA renders and lazy hydration)
+        setTimeout(function () { doInject(html); }, 2000);
       })
       .catch(function (err) {
         if (window.console) console.warn('[MBA Rock]', err);
