@@ -48,7 +48,7 @@
   // from the course curriculum template. Rendering it again causes duplicates.
   function renderLesson(lesson, modules) {
     var c = lesson.content || {};
-    var moduleObj = modules.find(function (m) { return m.id === lesson.module; }) || { title: '', color: '#0B2545' };
+    var moduleObj = modules.find(function (m) { return m.id === lesson.moduleId; }) || { title: '', color: '#0B2545' };
     var html = '';
 
     // Module label (subtle, not the full title H1)
@@ -60,17 +60,17 @@
       html += '<div class="mr-audio-icon">&#9835;</div>';
       html += '<div class="mr-audio-content">';
       html += '<div class="mr-audio-label">Lesson Song</div>';
-      if (lesson.song) {
-        html += '<div class="mr-audio-song">' + esc(lesson.song) + '</div>';
+      if (lesson.song_title) {
+        html += '<div class="mr-audio-song">' + esc(lesson.song_title) + '</div>';
       }
       html += '<audio controls preload="none" class="mr-audio-player" src="' + esc(lesson.audio_url) + '"></audio>';
       html += '</div></div>';
-    } else if (lesson.song) {
+    } else if (lesson.song_title) {
       html += '<div class="mr-audio">';
       html += '<div class="mr-audio-icon">&#9835;</div>';
       html += '<div class="mr-audio-content">';
       html += '<div class="mr-audio-label">Lesson Song</div>';
-      html += '<div class="mr-audio-song">' + esc(lesson.song) + '</div>';
+      html += '<div class="mr-audio-song">' + esc(lesson.song_title) + '</div>';
       html += '<div class="mr-audio-pending">Audio coming soon.</div>';
       html += '</div></div>';
     }
