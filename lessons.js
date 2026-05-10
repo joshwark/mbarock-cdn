@@ -810,3 +810,58 @@ else{setTimeout(init,600);}
     clean(); setTimeout(clean, 1200);
   }
 })();
+
+
+// ============================================================
+// Block 8: Secondary Audio Player (audio_url_2)
+// Injects a second <audio> player for lessons with two tracks
+// e.g. Distribution lesson has two songs
+// ============================================================
+(function injectSecondaryAudio() {
+  function run(lessonData) {
+    var slug = (function() {
+      var parts = window.location.pathname.replace(/\/+$/, '').split('/');
+      return parts[parts.length - 1];
+    })();
+    var lesson = lessonData && lessonData.lessons && lessonData.lessons.find(function(l) { return l.slug === slug; });
+    if (!lesson || !lesson.audio_url_2) return;
+
+    function inject() {
+      var headings = document.querySelectorAll('h2, h3, h4');
+      var listenH = null;
+      headings.forEach(function(h) {
+        if (/^\s*listen\s*$/i.test(h.textContent.trim())) listenH = h;
+      });
+      if (!listenH) return;
+
+      // Find the existing audio player injected by Block 1
+      var section = listenH.closest('[data-section-id], section, .content-block') || listenH.parentElement;
+      var existingAudio = section ? section.querySelector('audio') : document.querySelector('audio');
+
+      var wrapper = document.createElement('div');
+      wrapper.style.cssText = 'margin-top:12px;width:100%;';
+      var label = document.createElement('p');
+      label.style.cssText = 'font-size:12px;color:#888;margin-bottom:4px;font-style:italic;';
+      label.textContent = 'Bonus Track';
+      var audio2 = document.createElement('audio');
+      audio2.controls = true;
+      audio2.style.cssText = 'width:100%;border-radius:8px;';
+      audio2.src = lesson.audio_url_2;
+      wrapper.appendChild(label);
+      wrapper.appendChild(audio2);
+
+      if (existingAudio) {
+        existingAudio.parentElement.insertBefore(wrapper, existingAudio.nextSibling);
+      } else {
+        listenH.parentElement.insertBefore(wrapper, listenH.nextSibling);
+      }
+    }
+
+    setTimeout(inject, 1500);
+  }
+
+  fetch('https://cdn.jsdelivr.net/gh/joshwark/mbarock-cdn@main/lessons.json')
+    .then(function(r) { return r.json(); })
+    .then(run)
+    .catch(function() {});
+})();
