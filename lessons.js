@@ -1,3 +1,22 @@
+/* BLOCK 0 — Remove legacy native audio blocks (jsDelivr-sourced wrong tracks)
+ * These were embedded in prior sessions (tasks 8/9) and play the wrong song.
+ * lessons.js handles all audio injection; native blocks are redundant and wrong.
+ */
+(function() {
+  function removeLegacyAudio() {
+    document.querySelectorAll("audio").forEach(function(a) {
+      var hasBadSrc = Array.from(a.querySelectorAll("source")).some(function(s) {
+        return s.src && s.src.indexOf("cdn.jsdelivr.net") !== -1;
+      });
+      if (hasBadSrc && a.parentNode) a.parentNode.removeChild(a);
+    });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", removeLegacyAudio);
+  } else {
+    removeLegacyAudio();
+  }
+})();
 /* MBA Rock ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Lesson Bundle JS
  * Loaded site-wide via Squarespace Code Injection (Header).
  * Reads URL slug, looks up lesson in lessons.json, injects styled lesson block.
