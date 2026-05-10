@@ -700,3 +700,85 @@ else{setTimeout(init,600);}
     })
     .catch(function () {});
 })();
+
+// ─── MBA Rock Core Concepts + Take Action Renderer ───────────────────────────
+(function () {
+  var CDN = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/';
+  function getSlug() { return window.location.pathname.replace(/^\//, '').replace(/\/$/, ''); }
+
+  function injectStyle() {
+    if (document.getElementById('mr-content-style')) return;
+    var s = document.createElement('style');
+    s.id = 'mr-content-style';
+    s.textContent = [
+      '.mr-concepts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;margin:1.25rem 0 2rem;}',
+      '.mr-concept-card{background:#071e3d;border:1px solid rgba(212,175,55,.2);border-radius:6px;padding:.9rem 1rem;display:flex;align-items:flex-start;gap:.6rem;}',
+      '.mr-concept-num{color:#D4AF37;font-size:.7rem;font-weight:700;letter-spacing:.08em;font-family:\'Instrument Sans\',sans-serif;min-width:1.2rem;padding-top:.05rem;}',
+      '.mr-concept-text{color:#FAFAF7;font-size:.82rem;line-height:1.45;font-family:\'Instrument Sans\',sans-serif;}',
+      '.mr-actions-list{list-style:none;margin:1.25rem 0 2rem;padding:0;display:flex;flex-direction:column;gap:.65rem;}',
+      '.mr-action-item{display:flex;align-items:flex-start;gap:.75rem;background:rgba(7,30,61,.5);border-left:2px solid #D4AF37;border-radius:0 4px 4px 0;padding:.8rem 1rem;}',
+      '.mr-action-bullet{color:#D4AF37;font-size:.75rem;font-weight:700;font-family:\'Instrument Sans\',sans-serif;min-width:1.1rem;padding-top:.1rem;}',
+      '.mr-action-text{color:#FAFAF7;font-size:.84rem;line-height:1.5;font-family:\'Instrument Sans\',sans-serif;}'
+    ].join('');
+    document.head.appendChild(s);
+  }
+
+  function findHeading(text) {
+    var all = document.querySelectorAll('h2, h3, h4');
+    for (var i = 0; i < all.length; i++) {
+      if (all[i].textContent.trim().toLowerCase().indexOf(text.toLowerCase()) !== -1) return all[i];
+    }
+    return null;
+  }
+
+  function insertAfter(ref, el) {
+    if (ref && ref.parentNode) ref.parentNode.insertBefore(el, ref.nextSibling);
+    else document.body.appendChild(el);
+  }
+
+  function inject(lesson) {
+    injectStyle();
+    var slug = getSlug();
+    // Core Concepts
+    if (lesson.core_concepts && lesson.core_concepts.length && !document.getElementById('mr-concepts-' + slug)) {
+      var h = findHeading('core concept');
+      if (h) {
+        var grid = document.createElement('div');
+        grid.id = 'mr-concepts-' + slug;
+        grid.className = 'mr-concepts-grid';
+        grid.innerHTML = lesson.core_concepts.map(function (c, i) {
+          return '<div class="mr-concept-card"><span class="mr-concept-num">0' + (i + 1) + '</span><span class="mr-concept-text">' + c + '</span></div>';
+        }).join('');
+        insertAfter(h, grid);
+      }
+    }
+    // Take Action
+    if (lesson.take_action && lesson.take_action.length && !document.getElementById('mr-actions-' + slug)) {
+      var ah = findHeading('take action');
+      if (ah) {
+        var list = document.createElement('ul');
+        list.id = 'mr-actions-' + slug;
+        list.className = 'mr-actions-list';
+        list.innerHTML = lesson.take_action.map(function (a, i) {
+          return '<li class="mr-action-item"><span class="mr-action-bullet">\u2192' + (i + 1) + '</span><span class="mr-action-text">' + a + '</span></li>';
+        }).join('');
+        insertAfter(ah, list);
+      }
+    }
+  }
+
+  var slug = getSlug();
+  if (!slug) return;
+  fetch(CDN + 'lessons.json')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var arr = Object.values(data.lessons || {});
+      var lesson = arr.filter(function (l) { return l.slug === slug; })[0];
+      if (!lesson || (!lesson.core_concepts && !lesson.take_action)) return;
+      // Watch for headings to appear via MutationObserver
+      var obs = new MutationObserver(function () { inject(lesson); });
+      obs.observe(document.body, { childList: true, subtree: true });
+      inject(lesson); // try immediately too
+    })
+    .catch(function () {});
+})();
