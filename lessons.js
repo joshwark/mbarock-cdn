@@ -573,7 +573,7 @@ else{setTimeout(init,600);}
     var desc = module
       ? 'MBA Rock ' + module + ' — ' + title + '. Learn essential business concepts through music.'
       : title + ' — MBA Rock business education through music.';
-    var img = mId ? CDN + 'images/module_' + mId + '.png' : CDN + 'images/module_m1.png';
+    var img = CDN + 'images/og_' + slug + '.png';
     // Page title
     document.title = title + ' — MBA Rock';
     // Standard meta
