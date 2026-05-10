@@ -782,3 +782,31 @@ else{setTimeout(init,600);}
     })
     .catch(function () {});
 })();
+
+
+// ============================================================
+// Block 7: Image Prompt Placeholder Cleanup
+// Removes curriculum-build "Image Prompt: ..." placeholder text
+// from lesson pages (SEE section)
+// ============================================================
+(function removeImagePromptPlaceholders() {
+  function clean() {
+    document.querySelectorAll('p, li, pre, code, h1, h2, h3, h4, h5, h6').forEach(function(el) {
+      if (/^\s*Image Prompt:/i.test(el.textContent.trim())) {
+        var block = el.closest('[class*="sqs-block"]') || el.parentElement || el;
+        block.style.display = 'none';
+      }
+    });
+    document.querySelectorAll('div, section').forEach(function(el) {
+      if (el.childNodes.length === 1 && el.firstChild && el.firstChild.nodeType === 3 &&
+          /^\s*Image Prompt:/i.test(el.firstChild.nodeValue)) {
+        el.style.display = 'none';
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', clean);
+  } else {
+    clean(); setTimeout(clean, 1200);
+  }
+})();
