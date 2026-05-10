@@ -490,7 +490,7 @@ var v=document.createElement('video');
 v.controls=true;v.setAttribute('data-mba-video','1');
 v.style.cssText='width:100%;max-width:100%;display:block;margin:16px 0;border-radius:6px;background:#111';
 var src=document.createElement('source');
-src.src=CDN+V[s];src.type='video/mp4';
+src.src=(V[s].indexOf('http')===0)?V[s]:(CDN+V[s]);src.type='video/mp4';
 v.appendChild(src);
 hs[i].parentNode.insertBefore(v,hs[i].nextSibling);
 return true;
