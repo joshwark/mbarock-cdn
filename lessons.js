@@ -620,7 +620,7 @@ else{setTimeout(init,600);}
     saveDone(a);
     return idx === -1; // returns true if now complete
   }
-  function getSlug() { return window.location.pathname.replace(/^\//, '').replace(/\/$/, ''); }
+  function getSlug() { var p = window.location.pathname.replace(/^\/|\/$/, '').split('/'); return p[p.length - 1]; }
 
   function buildWidget(lesson, allLessons) {
     var slug = getSlug();
@@ -704,7 +704,7 @@ else{setTimeout(init,600);}
 // ─── MBA Rock Core Concepts + Take Action Renderer ───────────────────────────
 (function () {
   var CDN = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/';
-  function getSlug() { return window.location.pathname.replace(/^\//, '').replace(/\/$/, ''); }
+  function getSlug() { var p = window.location.pathname.replace(/^\/|\/$/, '').split('/'); return p[p.length - 1]; }
 
   function injectStyle() {
     if (document.getElementById('mr-content-style')) return;
