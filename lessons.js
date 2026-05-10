@@ -552,3 +552,57 @@ else{setTimeout(init,600);}
     }
   });
 })();
+
+// ─── MBA Rock SEO / Open Graph Meta Injection ────────────────────────────────
+(function () {
+  var CDN = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/';
+  function getSlug() {
+    return window.location.pathname.replace(/^\//, '').replace(/\/$/, '');
+  }
+  function setMeta(attr, key, val) {
+    var sel = 'meta[' + attr + '="' + key + '"]';
+    var el = document.querySelector(sel);
+    if (!el) { el = document.createElement('meta'); el.setAttribute(attr, key); document.head.appendChild(el); }
+    el.setAttribute('content', val);
+  }
+  function injectMeta(lesson) {
+    var slug = getSlug();
+    var mId = (lesson.moduleId || '').toLowerCase();
+    var title = lesson.title || slug;
+    var module = lesson.moduleId || '';
+    var desc = module
+      ? 'MBA Rock ' + module + ' — ' + title + '. Learn essential business concepts through music.'
+      : title + ' — MBA Rock business education through music.';
+    var img = mId ? CDN + 'images/module_' + mId + '.png' : CDN + 'images/module_m1.png';
+    // Page title
+    document.title = title + ' — MBA Rock';
+    // Standard meta
+    setMeta('name', 'description', desc);
+    // Open Graph
+    setMeta('property', 'og:title', title + ' — MBA Rock');
+    setMeta('property', 'og:description', desc);
+    setMeta('property', 'og:image', img);
+    setMeta('property', 'og:type', 'article');
+    setMeta('property', 'og:site_name', 'MBA Rock');
+    // Twitter card
+    setMeta('name', 'twitter:card', 'summary_large_image');
+    setMeta('name', 'twitter:title', title + ' — MBA Rock');
+    setMeta('name', 'twitter:description', desc);
+    setMeta('name', 'twitter:image', img);
+  }
+  // Lightweight fetch of lessons.json — cached by browser after lessons.js fetches it
+  var slug = getSlug();
+  if (!slug) return; // homepage or non-lesson page
+  fetch(CDN + 'lessons.json')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var lessons = Array.isArray(data) ? data : (data.lessons || []);
+      for (var i = 0; i < lessons.length; i++) {
+        if (lessons[i].slug === slug || lessons[i].id === slug) {
+          injectMeta(lessons[i]);
+          return;
+        }
+      }
+    })
+    .catch(function () {});
+})();
