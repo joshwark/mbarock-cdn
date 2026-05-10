@@ -88,6 +88,7 @@
     var html = '';
 
     html += '<div class="mr-module-label" style="background:' + moduleObj.color + '">' + esc(moduleObj.title) + '</div>';
+    if(lesson.moduleId&&{'M1':1,'M2':1,'M3':1,'M4':1,'M5':1,'M6':1}[lesson.moduleId])html+='<div class="mr-module-img-wrap"><img class="mr-module-img" src="https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/images/module_'+lesson.moduleId.toLowerCase()+'.png" alt="'+esc(lesson.moduleId)+'" loading="lazy"></div>';
 
     if (lesson.audio_url) {
       html += '<div class="mr-audio">';
@@ -451,6 +452,7 @@
  * ============================================================ */
 (function(){
 var CDN='https://cdn.jsdelivr.net/gh/joshwark/mbarock-cdn@main/';
+var IMGCDN='https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/images/';
 var V={
 'm1l1-oxygen-cash-flow':'video/Oxygen__Cash_Flow_Management.mp4',
 'm1l2-three-sheets':'video/The_Top_Line_Lie.mp4',
