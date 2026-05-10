@@ -510,3 +510,45 @@ setTimeout(function(){obs.disconnect();},12000);
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}
 else{setTimeout(init,600);}
 })();
+
+// ─── MBA Rock Calculators Integration ────────────────────────────────────────
+(function () {
+  function getSlug() {
+    return window.location.pathname.replace(/^\//, '').replace(/\/$/, '');
+  }
+  function loadCalcScript(cb) {
+    if (window.MBARockCalc) { cb(); return; }
+    var s = document.createElement('script');
+    s.src = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/calculators.js';
+    s.onload = cb;
+    s.onerror = function () { console.warn('MBARock: calculators.js failed to load'); };
+    document.head.appendChild(s);
+  }
+  function tryInject() {
+    var slug = getSlug();
+    if (!window.MBARockCalc || !window.MBARockCalc.has(slug)) return;
+    if (document.getElementById('mr-calc-' + slug)) return;
+    var heads = document.querySelectorAll('h2, h3');
+    for (var i = 0; i < heads.length; i++) {
+      if (/calculate/i.test(heads[i].textContent)) {
+        var wrap = document.createElement('div');
+        wrap.className = 'mr-calc-wrap';
+        heads[i].parentNode.insertBefore(wrap, heads[i].nextSibling);
+        window.MBARockCalc.render(slug, wrap);
+        return;
+      }
+    }
+  }
+  function startWatcher() {
+    tryInject();
+    var obs = new MutationObserver(function () { tryInject(); });
+    obs.observe(document.body, { childList: true, subtree: true });
+  }
+  loadCalcScript(function () {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', startWatcher);
+    } else {
+      startWatcher();
+    }
+  });
+})();
