@@ -606,3 +606,97 @@ else{setTimeout(init,600);}
     })
     .catch(function () {});
 })();
+
+// ─── MBA Rock Lesson Progress Tracker ────────────────────────────────────────
+(function () {
+  var KEY = 'mbarock_progress';
+  function getDone() { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; } }
+  function saveDone(a) { try { localStorage.setItem(KEY, JSON.stringify(a)); } catch (e) {} }
+  function isDone(slug) { return getDone().indexOf(slug) !== -1; }
+  function toggle(slug) {
+    var a = getDone();
+    var idx = a.indexOf(slug);
+    if (idx === -1) a.push(slug); else a.splice(idx, 1);
+    saveDone(a);
+    return idx === -1; // returns true if now complete
+  }
+  function getSlug() { return window.location.pathname.replace(/^\//, '').replace(/\/$/, ''); }
+
+  function buildWidget(lesson, allLessons) {
+    var slug = getSlug();
+    if (document.getElementById('mr-prog')) return;
+    var modLessons = allLessons.filter(function (l) { return l.moduleId === lesson.moduleId; });
+    function stats() {
+      var d = getDone();
+      var n = modLessons.filter(function (l) { return d.indexOf(l.slug) !== -1; }).length;
+      return { n: n, pct: modLessons.length ? Math.round(n / modLessons.length * 100) : 0, total: modLessons.length };
+    }
+    var s = stats();
+    var done = isDone(slug);
+    var el = document.createElement('div');
+    el.id = 'mr-prog';
+    el.style.cssText = 'margin:3rem 0 2rem;padding:1.5rem 2rem;background:#071e3d;border:1px solid rgba(212,175,55,.25);border-radius:8px;font-family:\'Instrument Sans\',sans-serif;';
+    el.innerHTML =
+      '<div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">' +
+        '<div>' +
+          '<div style="color:#D4AF37;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem;">' + lesson.moduleId + ' Progress</div>' +
+          '<div style="background:rgba(255,255,255,.12);border-radius:99px;height:5px;width:180px;max-width:100%;margin-bottom:.4rem;">' +
+            '<div id="mr-prog-bar" style="background:#D4AF37;height:5px;border-radius:99px;width:' + s.pct + '%;transition:width .4s ease;"></div>' +
+          '</div>' +
+          '<div id="mr-prog-label" style="color:rgba(250,250,247,.5);font-size:.72rem;">' + s.n + ' of ' + s.total + ' complete</div>' +
+        '</div>' +
+        '<button id="mr-prog-btn" style="background:' + (done?'#D4AF37':'transparent') + ';color:' + (done?'#071e3d':'#D4AF37') + ';border:1.5px solid #D4AF37;border-radius:6px;padding:.55rem 1.2rem;font-size:.82rem;font-family:\'Instrument Sans\',sans-serif;letter-spacing:.05em;cursor:pointer;font-weight:600;transition:all .25s;">' +
+          (done ? '\u2713 Completed' : 'Mark Complete') +
+        '</button>' +
+      '</div>';
+    // Wire button
+    el.querySelector('#mr-prog-btn').addEventListener('click', function () {
+      var nowDone = toggle(slug);
+      var btn = document.getElementById('mr-prog-btn');
+      btn.textContent = nowDone ? '\u2713 Completed' : 'Mark Complete';
+      btn.style.background = nowDone ? '#D4AF37' : 'transparent';
+      btn.style.color = nowDone ? '#071e3d' : '#D4AF37';
+      var s2 = stats();
+      var bar = document.getElementById('mr-prog-bar');
+      if (bar) bar.style.width = s2.pct + '%';
+      var lbl = document.getElementById('mr-prog-label');
+      if (lbl) lbl.textContent = s2.n + ' of ' + s2.total + ' complete';
+    });
+    // Insert before footer nav; fallback to before <footer> or end of main
+    var nav = document.querySelector('.mr-footer-nav');
+    if (nav && nav.parentNode) {
+      nav.parentNode.insertBefore(el, nav);
+    } else {
+      var main = document.querySelector('main, [role="main"], #content, .content-wrapper') || document.body;
+      main.appendChild(el);
+    }
+  }
+
+  var slug = getSlug();
+  if (!slug) return;
+  fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.json')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var obj = data.lessons || {};
+      var arr = Object.values(obj);
+      var lesson = arr.filter(function (l) { return l.slug === slug; })[0];
+      if (!lesson) return;
+      // Wait for footer nav to appear (injected by lessons.js)
+      var tries = 0;
+      function attempt() {
+        if (document.getElementById('mr-prog')) return;
+        if (document.querySelector('.mr-footer-nav') || tries > 30) {
+          buildWidget(lesson, arr);
+        } else {
+          tries++;
+          setTimeout(attempt, 300);
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attempt);
+      } else {
+        attempt();
+      }
+    })
+    .catch(function () {});
+})();
