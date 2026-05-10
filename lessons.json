@@ -1,1 +1,1197 @@
-{"modules":[{"id":"M1","title":"Module 1: Financial Foundations","color":"#0B2545"},{"id":"M2","title":"Module 2: Competitive Strategy","color":"#1A3A6B"},{"id":"M3","title":"Module 3: Marketing","color":"#8B1A1A"},{"id":"M4","title":"Module 4: Entrepreneurship","color":"#1A5C2A"},{"id":"M5","title":"Module 5: Leadership & Culture","color":"#4A1A6B"},{"id":"M6","title":"Module 6: Operations & Scale","color":"#6B3A0B"}],"lessons":[{"id":"L01","moduleId":"M1","slug":"m1l1-oxygen-cash-flow","title":"1.1 — Oxygen","song_title":"Oxygen","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/let-the-rivers-run.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Cash Flow vs. Profit","Operating Cash Flow","Gross Profit","Net Cash Flow","Monthly Burn Rate"],"take_action":["Download 3 months of bank statements and map cash in vs. cash out","Calculate your monthly burn rate (total cash out - cash in)","Identify your top 3 cash outflows and ask if each is necessary"]},{"id":"L02","moduleId":"M1","slug":"m1l2-three-sheets","title":"1.2 — Top Line Lie","song_title":"Top Line Lie","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Revenue vs. Profit","The Top Line Fallacy","Gross Margin","Cost of Goods Sold (COGS)","Profitability vs. Scale"],"take_action":["Calculate your gross margin % for last month","List every cost between your revenue line and gross profit","Ask: what would happen if you doubled revenue at the same margin?"]},{"id":"L03","moduleId":"M1","slug":"m1l3-gross-margin-groove","title":"1.3 — The Discount Rate","song_title":"The Discount Rate","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/the-discount-rate.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Time Value of Money","Discount Rate","Present Value","Future Value","Net Present Value (NPV)"],"take_action":["Choose a discount rate for your business (typical range: 8–15%)","Calculate the present value of a payment you expect in 12 months","Apply NPV thinking to one upcoming investment decision"]},{"id":"L04","moduleId":"M1","slug":"m1l4-burn-rate-blues","title":"1.4 — Unit Economics","song_title":"Unit Economics","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Customer Acquisition Cost (CAC)","Lifetime Value (LTV)","LTV:CAC Ratio","Payback Period","Contribution Margin per Customer"],"take_action":["Calculate your CAC from last month's marketing spend","Estimate LTV: avg purchase value × frequency × avg customer lifespan","Target a LTV:CAC ratio of 3:1 or higher as your baseline"]},{"id":"L05","moduleId":"M1","slug":"m1l5-bottom-line","title":"1.5 — Balance Sheet Bones","song_title":"Bones in Spreadsheets","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Assets","Liabilities","Owner's Equity","The Accounting Equation (A = L + E)","Working Capital"],"take_action":["List all business assets with their current values","List all outstanding liabilities","Calculate working capital: current assets minus current liabilities"]},{"id":"L06","moduleId":"M2","slug":"m2l1-strategy-strut","title":"2.1 — What is Strategy","song_title":"Strategy Strut","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Strategic Intent","Competitive Positioning","Resource Allocation","Strategic Trade-offs","Strategy vs. Tactics"],"take_action":["Write a one-sentence strategy statement for your business","List 3 things your strategy requires you NOT to do","Map how your current resources align with your stated strategy"]},{"id":"L07","moduleId":"M2","slug":"m2l2-moat","title":"2.2 — Economic Moats","song_title":"Moat Around My Castle","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/moat-around-my-castle-moats-strategy.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Economic Moat","Switching Costs","Network Effects","Cost Advantage","Intangible Assets","Durable Competitive Advantage"],"take_action":["Identify which type of moat your business has (if any)","Rate your moat's strength from 1–5 with supporting evidence","List what a competitor would need to overcome your advantage"]},{"id":"L08","moduleId":"M2","slug":"m2l3-five-forces","title":"2.3 — Porter's Five Forces","song_title":"Five Forces","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Threat of New Entrants","Buyer Power","Supplier Power","Threat of Substitutes","Competitive Rivalry","Industry Attractiveness"],"take_action":["Rate each of Porter's 5 forces in your industry (High/Medium/Low)","Identify the most dangerous force threatening your business today","Choose one force to actively mitigate this quarter"]},{"id":"L09","moduleId":"M2","slug":"m2l4-swot-vrio","title":"2.4 — Competitive Advantage & VRIO","song_title":"Competitive Moat","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["VRIO Framework","Valuable","Rare","Inimitable","Organized","Sustained Competitive Advantage"],"take_action":["List your top 3 internal capabilities or resources","Run each through VRIO — which create sustained advantage?","Double down on your highest-scoring VRIO capability this quarter"]},{"id":"L10","moduleId":"M2","slug":"m2l5-differentiate-or-die","title":"2.5 — Blue Ocean Strategy","song_title":"Blue Ocean","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Blue Ocean Strategy","Red Ocean vs. Blue Ocean","Value Innovation","ERRC Grid","Non-customers","Uncontested Market Space"],"take_action":["Map your current competitive factors on a strategy canvas","Apply the ERRC grid (Eliminate, Reduce, Raise, Create) to your offering","Identify one segment of non-customers you could realistically attract"]},{"id":"L11","moduleId":"M3","slug":"m3l1-4-ps","title":"Marketing Mix","song_title":"Right Customer Right Story","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Product","Price","Place","Promotion","Marketing Mix","Value Delivery"],"take_action":["Audit each of the 4 Ps for your primary product","Identify which P is your weakest","Make one concrete change to your weakest P this week"]},{"id":"L12","moduleId":"M3","slug":"m3l2-stp","title":"Consumer Behavior","song_title":"Ask, Then Listen","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Segmentation","Targeting","Positioning","Customer Psychographics","Buying Journey","Behavioral Data"],"take_action":["Define 3 distinct customer segments in your market","Choose your primary target and justify it in writing","Write a one-sentence positioning statement for that segment"]},{"id":"L13","moduleId":"M3","slug":"m3l3-brand-new","title":"Brand Strategy","song_title":"Brand Is a Promise","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Brand Identity","Brand Story","Brand Voice","Brand Equity","Emotional Differentiation"],"take_action":["Write your brand story in 3 sentences: origin, mission, why it matters","Define 3 adjectives that capture your brand voice","Audit your last 5 content pieces against your brand identity"]},{"id":"L14","moduleId":"M3","slug":"m3l4-persona","title":"Digital Marketing","song_title":"The Funnel","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Owned Media","Earned Media","Paid Media","Content Marketing","SEO Fundamentals","Conversion Rate Optimization"],"take_action":["Map your current owned, earned, and paid media footprint","Identify your highest-converting digital channel","Set one measurable 30-day digital marketing goal"]},{"id":"L15","moduleId":"M3","slug":"m3l5-stake-your-claim","title":"Pricing Strategy","song_title":"Price Is a Signal","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Value-Based Pricing","Cost-Plus Pricing","Price Elasticity","Pricing Power","Anchoring Effect"],"take_action":["Calculate your current price using 3 different pricing methods","Identify the max price your best customers would pay","Test a price increase on one product or tier this month"]},{"id":"L16","moduleId":"M4","slug":"m4l1-idea-to-mvp","title":"The Leap","song_title":"Risk and Reward","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/risk-and-reward.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Minimum Viable Product (MVP)","Idea Validation","Build-Measure-Learn","Customer Discovery","Lean Startup Methodology"],"take_action":["Define the riskiest assumption underlying your idea","Design the cheapest possible test to validate or invalidate it","Set a 2-week deadline to run the experiment"]},{"id":"L17","moduleId":"M4","slug":"m4l2-product-market-fit","title":"The MVP","song_title":"Fit (Remastered)","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/fit-productmarket-fit-remastered.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Product-Market Fit","Problem-Solution Fit","Feature Prioritization","Iteration","User Feedback Loops"],"take_action":["Define what \"minimum\" means for your MVP — cut everything non-essential","Identify 10 target users to test your MVP with","Set a specific metric that would signal you've found product-market fit"]},{"id":"L18","moduleId":"M4","slug":"m4l3-bootstrap-or-burn","title":"The Pitch","song_title":"Promised Land","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/promised-land.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Startup Pitch Structure","Problem-Solution Narrative","Market Opportunity","Traction Metrics","The Ask"],"take_action":["Build a 10-slide deck following the classic pitch arc","Practice your pitch in under 3 minutes","Get feedback from 3 people outside your industry"]},{"id":"L19","moduleId":"M4","slug":"m4l4-the-pitch","title":"The Pivot","song_title":"Two-Way Door","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/two-way-door.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["The Strategic Pivot","Pivot vs. Persevere Decision","Market Signals","Validated Learning","Strategic Flexibility"],"take_action":["List the signals that would tell you it's time to pivot","Define your \"do not cross\" metrics that trigger a strategy review","Map 3 adjacent pivot opportunities if your current path stalls"]},{"id":"L20","moduleId":"M4","slug":"m4l5-founder-survival","title":"Capstone","song_title":"Graduation Day","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Founder Mindset","Resilience Under Uncertainty","Decision-Making Frameworks","Founder-Market Fit","Sustainable Founder Operating Rhythm"],"take_action":["Write your personal definition of success beyond revenue","Identify your 3 biggest blind spots as a founder","Build a 90-day focus plan anchored to one primary metric"]},{"id":"L21","moduleId":"M5","slug":"m5l1-narrative-weight","title":"Leadership Styles","song_title":"Lewin Way","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/lewin-way.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Leadership Styles","Situational Leadership","Servant Leadership","Transformational Leadership","Adapting Your Style"],"take_action":["Identify your default leadership style under pressure","Map each direct report to the style they need from you right now","Practice one non-default leadership approach this week and reflect on it"]},{"id":"L22","moduleId":"M5","slug":"m5l2-innovation-portfolio","title":"Team Dynamics","song_title":"Tuckman Storming","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Team Dynamics","Forming, Storming, Norming, Performing","Psychological Safety","High-Performing Team Traits","Role Clarity"],"take_action":["Assess which stage your team is currently in","Identify one behavior blocking progression to the next stage","Have one honest conversation about team norms this week"]},{"id":"L23","moduleId":"M5","slug":"m5l3-conflict-cost-estimator","title":"Feedback & Coaching","song_title":"Mirror Map Feedback","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/mirror-map-feedback.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Radical Candor","Feedback Loops","Coaching vs. Directing","SBI Model (Situation, Behavior, Impact)","Growth Mindset in Teams"],"take_action":["Give one specific, behavior-based piece of feedback to a teammate this week","Ask for feedback: \"What's one thing I could do differently?\"","Schedule a monthly 1:1 with structured feedback built in"]},{"id":"L24","moduleId":"M5","slug":"m5l4-eq-360-tracker","title":"Culture","song_title":"Culture Eats Strategy","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/culture-eats-strategy.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Organizational Culture","Culture vs. Climate","Values-Behavior Alignment","Cultural Debt","Culture as Competitive Advantage"],"take_action":["Write your 3–5 actual (not aspirational) organizational values","Identify one behavior that contradicts your stated values","Design one ritual or process that reinforces the culture you want"]},{"id":"L25","moduleId":"M5","slug":"m5l5-leadership-capstone","title":"Capstone","song_title":"Long Game","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/long-game.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Crisis Leadership","Communication Under Pressure","Decision Speed vs. Accuracy","Stakeholder Management in Crisis","The Playbook Mindset"],"take_action":["Write a one-page crisis comms template for your most likely scenario","Run a 30-minute tabletop crisis exercise with your team","Identify who makes decisions when you're unreachable"]},{"id":"L26","moduleId":"M6","slug":"m6l1-hire-slow-fire-fast","title":"Delegation","song_title":"White Knuckled Delegation","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Delegation","Hire Slow Fire Fast","Talent Assessment","Role Clarity","Letting Go to Scale"],"take_action":["List 3 tasks you're doing today that should be delegated","Define success criteria for each before handing off","Schedule a weekly 15-min check-in for each newly delegated responsibility"]},{"id":"L27","moduleId":"M6","slug":"m6l2-org-chart","title":"Scale","song_title":"Six Sigma Ledge","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/six-sigma-ledge.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Organizational Design","Span of Control","Functional vs. Divisional Structure","Scaling Operations","Org Structure for Growth"],"take_action":["Draw your current org chart and identify reporting bottlenecks","Calculate your average span of control","Design the org structure you'll need at 2× your current headcount"]},{"id":"L28","moduleId":"M6","slug":"m6l3-lead-from-the-front","title":"Metrics","song_title":"OKRs Ladder","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Key Performance Indicators (KPIs)","Leading vs. Lagging Indicators","North Star Metric","Operational Cadence","The 90-Day Sprint"],"take_action":["Define your single North Star Metric","Identify 3 leading indicators that predict your North Star","Build a simple weekly metric review ritual with your team"]},{"id":"L29","moduleId":"M6","slug":"m6l4-cap-table","title":"Cap Table","song_title":"Stakeholder Grid","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/stakeholder-grid.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Capitalization Table","Equity Dilution","Vesting Schedule","Option Pool","Fully Diluted Shares","Founder vs. Investor Economics"],"take_action":["Map your current cap table (or create one if you don't have it)","Model your ownership % after a typical seed or Series A round","Understand your vesting cliff and acceleration provisions"]},{"id":"L30","moduleId":"M6","slug":"m6l5-exit-song","title":"Exit","song_title":"Third Way","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Exit Strategy","Valuation Multiples","Strategic vs. Financial Buyers","EBITDA","Letter of Intent (LOI)","Due Diligence Process"],"take_action":["Define your preferred exit path (acquisition, IPO, or lifestyle)","Research comparable exits in your industry and their multiples","Identify the top 5 potential acquirers for your business right now"]},{"id":"L31","moduleId":"M1","slug":"16-cash-runway","title":"Breakeven Analysis","song_title":"Breakeven Proof","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Break-Even Point","Fixed Costs","Variable Costs","Contribution Margin","Contribution Margin Ratio"],"take_action":["List all fixed monthly costs","Calculate contribution margin per unit: Price minus Variable Cost per unit","Find your break-even: Fixed Costs ÷ Contribution Margin per unit"]},{"id":"L32","moduleId":"M1","slug":"17-april-cash-timing","title":"Cash Timing","song_title":"April Cash Timing","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Cash Runway","Net Burn Rate","Default Alive","Revenue Growth Rate","Ramen Profitability"],"take_action":["Calculate net burn rate: monthly operating expenses minus monthly revenue","Determine runway: Cash Balance ÷ Monthly Net Burn","Ask: at current growth, do you reach profitability before cash runs out?"]},{"id":"L33","moduleId":"M1","slug":"18-receivables-in","title":"Receivables","song_title":"Receivables In","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/receivables-in.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Accounts Receivable","Days Sales Outstanding (DSO)","Cash Conversion Cycle","Invoice Timing","Revenue Recognition"],"take_action":["Audit all outstanding invoices — flag anything 30+ days overdue","Calculate DSO: (Accounts Receivable ÷ Annual Revenue) × 365","Implement or enforce a net-15 or net-30 payment policy"]},{"id":"L34","moduleId":"M1","slug":"19-operating-leverage","title":"Operating Leverage","song_title":"Operating Leverage","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/operating-leverage.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Operating Leverage","Degree of Operating Leverage (DOL)","Fixed vs. Variable Cost Mix","Operating Income","Scalability"],"take_action":["Identify the ratio of fixed to variable costs in your business","Calculate DOL: Contribution Margin ÷ Operating Income","Model the impact of a 20% revenue increase on your operating income"]},{"id":"L35","moduleId":"M2","slug":"26-beneath-the-hood","title":"Strategic Diagnostics","song_title":"Beneath the Hood","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/beneath-the-hood.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Strategic Diagnostics","Capability Gap Analysis","Organizational Assessment","Root Cause Thinking","Operational vs. Strategic Problems"],"take_action":["Conduct a 30-minute honest audit of your biggest strategic weakness","Identify one process holding your strategy back","Map the gap between your current state and strategic requirements"]},{"id":"L36","moduleId":"M2","slug":"27-business-model-canvas","title":"Business Model Canvas","song_title":"Business Model Canvas","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Business Model Canvas","Value Proposition","Customer Segments","Revenue Streams","Key Resources","Key Partners","Cost Structure"],"take_action":["Fill out the full Business Model Canvas for your business","Identify your most fragile or at-risk block","Redesign one block to improve overall business model strength"]},{"id":"L37","moduleId":"M2","slug":"28-dollar-soldier","title":"Portfolio Strategy","song_title":"Dollar Soldier","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Portfolio Strategy","BCG Matrix","Stars, Cash Cows, Question Marks, Dogs","Portfolio Balance","Resource Allocation Across Products"],"take_action":["Map all your products or services on the BCG Matrix","Identify your Cash Cow and verify you're protecting it","Decide which Question Mark to invest in and which to exit"]},{"id":"L38","moduleId":"M3","slug":"36-market-size-mountain","title":"Market Sizing TAM/SAM/SOM","song_title":"Market Size Mountain","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/market-size-mountain.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Total Addressable Market (TAM)","Serviceable Addressable Market (SAM)","Serviceable Obtainable Market (SOM)","Top-Down vs. Bottom-Up Sizing","Market Share Targets"],"take_action":["Calculate your TAM using both top-down and bottom-up methods","Define your SAM with realistic geographic and demographic constraints","Set a 3-year SOM target and break it into annual milestones"]},{"id":"L39","moduleId":"M3","slug":"jl2e2jg4mb73rzl98gfjnsr3khh7jb","title":"Segmentation","song_title":"Segmentation Aim","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Market Segmentation","Demographic Segmentation","Psychographic Segmentation","Behavioral Segmentation","Segment Attractiveness Scoring"],"take_action":["Identify 4–6 distinct segments in your market","Score each on size, growth potential, and fit with your offering","Select one new segment to test entering this quarter"]},{"id":"L40","moduleId":"M3","slug":"pdmtcm5jmwfbb57knnkttmj4jd9dec","title":"Positioning & Focus","song_title":"Don't Be Everything","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Positioning Statement","Perceptual Map","Points of Difference","Points of Parity","Focus Strategy"],"take_action":["Draw a 2×2 perceptual map for your category","Write a positioning statement using the standard template","Identify one point of difference you want to own in the market"]},{"id":"L41","moduleId":"M3","slug":"39-brand-promise","title":"Brand Promise","song_title":"Brand Promise","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/brand-promise.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Brand Promise","Customer Expectation Setting","Brand Consistency","Trust Building","Experience Design"],"take_action":["Write your brand promise in one clear sentence","Identify 3 ways you currently deliver or fail on this promise","Design one customer touchpoint that reinforces your promise"]},{"id":"L42","moduleId":"M3","slug":"310-worth-align","title":"Value Proposition","song_title":"Worth Align","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/worth-align.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Value Proposition","Jobs-to-be-Done","Customer Pain Points","Gains","Value Proposition Canvas"],"take_action":["Complete the Value Proposition Canvas for your primary customer","List the top 3 pains your product relieves","Write a value proposition statement and test it with 3 real customers"]},{"id":"L43","moduleId":"M3","slug":"cx6bkyjrl8t58xte5dcxcfw257mlfa","title":"Distribution","song_title":"Distribution Rivers","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Distribution Channels","Channel Strategy","Direct vs. Indirect Distribution","Channel Margin","Last-Mile Delivery"],"take_action":["Map all channels through which customers reach your product","Calculate the margin impact of each channel","Identify one new distribution channel to test this quarter"]},{"id":"L44","moduleId":"M3","slug":"7wmna3a2b9lgrwlm7zlzzf626kdz2t","title":"Funnel Optimization","song_title":"Funnel Rate 118","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Marketing Funnel","Conversion Rate","Funnel Math","TOFU/MOFU/BOFU","Retention vs. Acquisition"],"take_action":["Map your funnel with actual conversion rates at each stage","Identify your biggest leak in the funnel","Run one A/B test to improve conversion at that stage"]},{"id":"L45","moduleId":"M3","slug":"313-unit-economics-reggae","title":"Unit Economics (Reggae Alt)","song_title":"Unit Economics (Reggae)","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Unit Economics","Revenue per Unit","Cost per Unit","Gross Margin per Unit","Economies of Scale"],"take_action":["Calculate unit economics for your primary revenue stream","Project how unit economics shift at 2×, 5×, and 10× scale","Identify one lever that most improves your per-unit margin"]},{"id":"L46","moduleId":"M4","slug":"47-negotiation","title":"Negotiation","song_title":"Negotiation","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["BATNA (Best Alternative to Negotiated Agreement)","Zone of Possible Agreement (ZOPA)","Anchoring","Value Creation vs. Value Claiming","Negotiation Preparation"],"take_action":["Identify your BATNA before your next important negotiation","Research the other party's likely BATNA","Practice anchoring by making the first offer in a low-stakes situation"]},{"id":"L47","moduleId":"M5","slug":"56-blank-page-grace","title":"Creative Leadership","song_title":"Blank Page Grace","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Creative Leadership","Innovation Culture","Divergent Thinking","Psychological Safety for Creativity","Leading Without Formal Authority"],"take_action":["Run a \"bad ideas\" brainstorm with your team — suspend judgment for 15 minutes","Identify one process that suppresses creativity and propose an alternative","Publicly recognize a creative risk taken by someone on your team this week"]},{"id":"L48","moduleId":"M5","slug":"57-resume-clues","title":"Career Design","song_title":"Resume Clues","audio_url":null,"video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Career Design","Ikigai Framework","Skill Stacking","Personal Brand","Intentional Career Development"],"take_action":["Map your current skills and identify the 2–3 to deepen next","Write a one-paragraph personal brand statement","Set one career goal for the next 12 months with 3 concrete milestones"]},{"id":"L49","moduleId":"M6","slug":"66-spreadsheet-north-star","title":"Dashboards","song_title":"Spreadsheet North Star","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/spreadsheet-north-star.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Business Dashboard Design","North Star Metric","KPI Visualization","Data-Driven Decision Making","Spreadsheet Modeling"],"take_action":["Build a one-page weekly metrics dashboard for your business","Identify the 5–7 metrics that matter most to track every week","Automate at least one data pull that currently requires manual work"]},{"id":"L50","moduleId":"M4","slug":"46-coming-soon","title":"Product-Market Fit (Original)","song_title":"Fit (Original)","audio_url":"https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/fit-product-market-fit.mp3","video_url":null,"worksheet_url":null,"lyrics_url":null,"core_concepts":["Product-Market Fit","The 40% Test","Retention as Signal","Net Promoter Score (NPS)","Organic Growth Loops"],"take_action":["Survey users: \"How disappointed would you be if this disappeared?\" (target: 40%+ say Very)","Calculate your 30-day and 90-day user retention rates","Interview 5 customers who use your product without any prompting"]}]}
+{
+  "modules": [
+    {
+      "id": "M1",
+      "title": "Module 1: Financial Foundations",
+      "color": "#0B2545"
+    },
+    {
+      "id": "M2",
+      "title": "Module 2: Competitive Strategy",
+      "color": "#1A3A6B"
+    },
+    {
+      "id": "M3",
+      "title": "Module 3: Marketing",
+      "color": "#8B1A1A"
+    },
+    {
+      "id": "M4",
+      "title": "Module 4: Entrepreneurship",
+      "color": "#1A5C2A"
+    },
+    {
+      "id": "M5",
+      "title": "Module 5: Leadership & Culture",
+      "color": "#4A1A6B"
+    },
+    {
+      "id": "M6",
+      "title": "Module 6: Operations & Scale",
+      "color": "#6B3A0B"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "L01",
+      "moduleId": "M1",
+      "slug": "m1l1-oxygen-cash-flow",
+      "title": "1.1 — Oxygen",
+      "song_title": "Oxygen",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/let-the-rivers-run.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Cash Flow vs. Profit",
+        "Operating Cash Flow",
+        "Gross Profit",
+        "Net Cash Flow",
+        "Monthly Burn Rate"
+      ],
+      "take_action": [
+        "Download 3 months of bank statements and map cash in vs. cash out",
+        "Calculate your monthly burn rate (total cash out - cash in)",
+        "Identify your top 3 cash outflows and ask if each is necessary"
+      ]
+    },
+    {
+      "id": "L02",
+      "moduleId": "M1",
+      "slug": "m1l2-three-sheets",
+      "title": "1.2 — Top Line Lie",
+      "song_title": "Top Line Lie",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Revenue vs. Profit",
+        "The Top Line Fallacy",
+        "Gross Margin",
+        "Cost of Goods Sold (COGS)",
+        "Profitability vs. Scale"
+      ],
+      "take_action": [
+        "Calculate your gross margin % for last month",
+        "List every cost between your revenue line and gross profit",
+        "Ask: what would happen if you doubled revenue at the same margin?"
+      ]
+    },
+    {
+      "id": "L03",
+      "moduleId": "M1",
+      "slug": "m1l3-gross-margin-groove",
+      "title": "1.3 — The Discount Rate",
+      "song_title": "The Discount Rate",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/the-discount-rate.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Time Value of Money",
+        "Discount Rate",
+        "Present Value",
+        "Future Value",
+        "Net Present Value (NPV)"
+      ],
+      "take_action": [
+        "Choose a discount rate for your business (typical range: 8–15%)",
+        "Calculate the present value of a payment you expect in 12 months",
+        "Apply NPV thinking to one upcoming investment decision"
+      ]
+    },
+    {
+      "id": "L04",
+      "moduleId": "M1",
+      "slug": "m1l4-burn-rate-blues",
+      "title": "1.4 — Unit Economics",
+      "song_title": "Unit Economics",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Customer Acquisition Cost (CAC)",
+        "Lifetime Value (LTV)",
+        "LTV:CAC Ratio",
+        "Payback Period",
+        "Contribution Margin per Customer"
+      ],
+      "take_action": [
+        "Calculate your CAC from last month's marketing spend",
+        "Estimate LTV: avg purchase value × frequency × avg customer lifespan",
+        "Target a LTV:CAC ratio of 3:1 or higher as your baseline"
+      ]
+    },
+    {
+      "id": "L05",
+      "moduleId": "M1",
+      "slug": "m1l5-bottom-line",
+      "title": "1.5 — Balance Sheet Bones",
+      "song_title": "Bones in Spreadsheets",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Assets",
+        "Liabilities",
+        "Owner's Equity",
+        "The Accounting Equation (A = L + E)",
+        "Working Capital"
+      ],
+      "take_action": [
+        "List all business assets with their current values",
+        "List all outstanding liabilities",
+        "Calculate working capital: current assets minus current liabilities"
+      ]
+    },
+    {
+      "id": "L06",
+      "moduleId": "M2",
+      "slug": "m2l1-strategy-strut",
+      "title": "2.1 — What is Strategy",
+      "song_title": "Strategy Strut",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Strategic Intent",
+        "Competitive Positioning",
+        "Resource Allocation",
+        "Strategic Trade-offs",
+        "Strategy vs. Tactics"
+      ],
+      "take_action": [
+        "Write a one-sentence strategy statement for your business",
+        "List 3 things your strategy requires you NOT to do",
+        "Map how your current resources align with your stated strategy"
+      ]
+    },
+    {
+      "id": "L07",
+      "moduleId": "M2",
+      "slug": "m2l2-moat",
+      "title": "2.2 — Economic Moats",
+      "song_title": "Moat Around My Castle",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/moat-around-my-castle-moats-strategy.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Economic Moat",
+        "Switching Costs",
+        "Network Effects",
+        "Cost Advantage",
+        "Intangible Assets",
+        "Durable Competitive Advantage"
+      ],
+      "take_action": [
+        "Identify which type of moat your business has (if any)",
+        "Rate your moat's strength from 1–5 with supporting evidence",
+        "List what a competitor would need to overcome your advantage"
+      ]
+    },
+    {
+      "id": "L08",
+      "moduleId": "M2",
+      "slug": "m2l3-five-forces",
+      "title": "2.3 — Porter's Five Forces",
+      "song_title": "Five Forces",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Threat of New Entrants",
+        "Buyer Power",
+        "Supplier Power",
+        "Threat of Substitutes",
+        "Competitive Rivalry",
+        "Industry Attractiveness"
+      ],
+      "take_action": [
+        "Rate each of Porter's 5 forces in your industry (High/Medium/Low)",
+        "Identify the most dangerous force threatening your business today",
+        "Choose one force to actively mitigate this quarter"
+      ]
+    },
+    {
+      "id": "L09",
+      "moduleId": "M2",
+      "slug": "m2l4-swot-vrio",
+      "title": "2.4 — Competitive Advantage & VRIO",
+      "song_title": "Competitive Moat",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "VRIO Framework",
+        "Valuable",
+        "Rare",
+        "Inimitable",
+        "Organized",
+        "Sustained Competitive Advantage"
+      ],
+      "take_action": [
+        "List your top 3 internal capabilities or resources",
+        "Run each through VRIO — which create sustained advantage?",
+        "Double down on your highest-scoring VRIO capability this quarter"
+      ]
+    },
+    {
+      "id": "L10",
+      "moduleId": "M2",
+      "slug": "m2l5-differentiate-or-die",
+      "title": "2.5 — Blue Ocean Strategy",
+      "song_title": "Blue Ocean",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Blue Ocean Strategy",
+        "Red Ocean vs. Blue Ocean",
+        "Value Innovation",
+        "ERRC Grid",
+        "Non-customers",
+        "Uncontested Market Space"
+      ],
+      "take_action": [
+        "Map your current competitive factors on a strategy canvas",
+        "Apply the ERRC grid (Eliminate, Reduce, Raise, Create) to your offering",
+        "Identify one segment of non-customers you could realistically attract"
+      ]
+    },
+    {
+      "id": "L11",
+      "moduleId": "M3",
+      "slug": "m3l1-4-ps",
+      "title": "Marketing Mix",
+      "song_title": "Right Customer Right Story",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Product",
+        "Price",
+        "Place",
+        "Promotion",
+        "Marketing Mix",
+        "Value Delivery"
+      ],
+      "take_action": [
+        "Audit each of the 4 Ps for your primary product",
+        "Identify which P is your weakest",
+        "Make one concrete change to your weakest P this week"
+      ]
+    },
+    {
+      "id": "L12",
+      "moduleId": "M3",
+      "slug": "m3l2-stp",
+      "title": "Consumer Behavior",
+      "song_title": "Ask, Then Listen",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Segmentation",
+        "Targeting",
+        "Positioning",
+        "Customer Psychographics",
+        "Buying Journey",
+        "Behavioral Data"
+      ],
+      "take_action": [
+        "Define 3 distinct customer segments in your market",
+        "Choose your primary target and justify it in writing",
+        "Write a one-sentence positioning statement for that segment"
+      ]
+    },
+    {
+      "id": "L13",
+      "moduleId": "M3",
+      "slug": "m3l3-brand-new",
+      "title": "Brand Strategy",
+      "song_title": "Brand Is a Promise",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Brand Identity",
+        "Brand Story",
+        "Brand Voice",
+        "Brand Equity",
+        "Emotional Differentiation"
+      ],
+      "take_action": [
+        "Write your brand story in 3 sentences: origin, mission, why it matters",
+        "Define 3 adjectives that capture your brand voice",
+        "Audit your last 5 content pieces against your brand identity"
+      ]
+    },
+    {
+      "id": "L14",
+      "moduleId": "M3",
+      "slug": "m3l4-persona",
+      "title": "Digital Marketing",
+      "song_title": "The Funnel",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Owned Media",
+        "Earned Media",
+        "Paid Media",
+        "Content Marketing",
+        "SEO Fundamentals",
+        "Conversion Rate Optimization"
+      ],
+      "take_action": [
+        "Map your current owned, earned, and paid media footprint",
+        "Identify your highest-converting digital channel",
+        "Set one measurable 30-day digital marketing goal"
+      ]
+    },
+    {
+      "id": "L15",
+      "moduleId": "M3",
+      "slug": "m3l5-stake-your-claim",
+      "title": "Pricing Strategy",
+      "song_title": "Price Is a Signal",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Value-Based Pricing",
+        "Cost-Plus Pricing",
+        "Price Elasticity",
+        "Pricing Power",
+        "Anchoring Effect"
+      ],
+      "take_action": [
+        "Calculate your current price using 3 different pricing methods",
+        "Identify the max price your best customers would pay",
+        "Test a price increase on one product or tier this month"
+      ]
+    },
+    {
+      "id": "L16",
+      "moduleId": "M4",
+      "slug": "m4l1-idea-to-mvp",
+      "title": "The Leap",
+      "song_title": "Risk and Reward",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/risk-and-reward.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Minimum Viable Product (MVP)",
+        "Idea Validation",
+        "Build-Measure-Learn",
+        "Customer Discovery",
+        "Lean Startup Methodology"
+      ],
+      "take_action": [
+        "Define the riskiest assumption underlying your idea",
+        "Design the cheapest possible test to validate or invalidate it",
+        "Set a 2-week deadline to run the experiment"
+      ]
+    },
+    {
+      "id": "L17",
+      "moduleId": "M4",
+      "slug": "m4l2-product-market-fit",
+      "title": "The MVP",
+      "song_title": "Fit (Remastered)",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/fit-productmarket-fit-remastered.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Product-Market Fit",
+        "Problem-Solution Fit",
+        "Feature Prioritization",
+        "Iteration",
+        "User Feedback Loops"
+      ],
+      "take_action": [
+        "Define what \"minimum\" means for your MVP — cut everything non-essential",
+        "Identify 10 target users to test your MVP with",
+        "Set a specific metric that would signal you've found product-market fit"
+      ]
+    },
+    {
+      "id": "L18",
+      "moduleId": "M4",
+      "slug": "m4l3-bootstrap-or-burn",
+      "title": "The Pitch",
+      "song_title": "Promised Land",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/promised-land.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Startup Pitch Structure",
+        "Problem-Solution Narrative",
+        "Market Opportunity",
+        "Traction Metrics",
+        "The Ask"
+      ],
+      "take_action": [
+        "Build a 10-slide deck following the classic pitch arc",
+        "Practice your pitch in under 3 minutes",
+        "Get feedback from 3 people outside your industry"
+      ]
+    },
+    {
+      "id": "L19",
+      "moduleId": "M4",
+      "slug": "m4l4-the-pitch",
+      "title": "The Pivot",
+      "song_title": "Two-Way Door",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/two-way-door.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "The Strategic Pivot",
+        "Pivot vs. Persevere Decision",
+        "Market Signals",
+        "Validated Learning",
+        "Strategic Flexibility"
+      ],
+      "take_action": [
+        "List the signals that would tell you it's time to pivot",
+        "Define your \"do not cross\" metrics that trigger a strategy review",
+        "Map 3 adjacent pivot opportunities if your current path stalls"
+      ]
+    },
+    {
+      "id": "L20",
+      "moduleId": "M4",
+      "slug": "m4l5-founder-survival",
+      "title": "Capstone",
+      "song_title": "Graduation Day",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Founder Mindset",
+        "Resilience Under Uncertainty",
+        "Decision-Making Frameworks",
+        "Founder-Market Fit",
+        "Sustainable Founder Operating Rhythm"
+      ],
+      "take_action": [
+        "Write your personal definition of success beyond revenue",
+        "Identify your 3 biggest blind spots as a founder",
+        "Build a 90-day focus plan anchored to one primary metric"
+      ]
+    },
+    {
+      "id": "L21",
+      "moduleId": "M5",
+      "slug": "m5l1-narrative-weight",
+      "title": "Leadership Styles",
+      "song_title": "Lewin Way",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/lewin-way.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Leadership Styles",
+        "Situational Leadership",
+        "Servant Leadership",
+        "Transformational Leadership",
+        "Adapting Your Style"
+      ],
+      "take_action": [
+        "Identify your default leadership style under pressure",
+        "Map each direct report to the style they need from you right now",
+        "Practice one non-default leadership approach this week and reflect on it"
+      ]
+    },
+    {
+      "id": "L22",
+      "moduleId": "M5",
+      "slug": "m5l2-innovation-portfolio",
+      "title": "Team Dynamics",
+      "song_title": "Tuckman Storming",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Team Dynamics",
+        "Forming, Storming, Norming, Performing",
+        "Psychological Safety",
+        "High-Performing Team Traits",
+        "Role Clarity"
+      ],
+      "take_action": [
+        "Assess which stage your team is currently in",
+        "Identify one behavior blocking progression to the next stage",
+        "Have one honest conversation about team norms this week"
+      ]
+    },
+    {
+      "id": "L23",
+      "moduleId": "M5",
+      "slug": "m5l3-conflict-cost-estimator",
+      "title": "Feedback & Coaching",
+      "song_title": "Mirror Map Feedback",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/mirror-map-feedback.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Radical Candor",
+        "Feedback Loops",
+        "Coaching vs. Directing",
+        "SBI Model (Situation, Behavior, Impact)",
+        "Growth Mindset in Teams"
+      ],
+      "take_action": [
+        "Give one specific, behavior-based piece of feedback to a teammate this week",
+        "Ask for feedback: \"What's one thing I could do differently?\"",
+        "Schedule a monthly 1:1 with structured feedback built in"
+      ]
+    },
+    {
+      "id": "L24",
+      "moduleId": "M5",
+      "slug": "m5l4-eq-360-tracker",
+      "title": "Culture",
+      "song_title": "Culture Eats Strategy",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/culture-eats-strategy.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Organizational Culture",
+        "Culture vs. Climate",
+        "Values-Behavior Alignment",
+        "Cultural Debt",
+        "Culture as Competitive Advantage"
+      ],
+      "take_action": [
+        "Write your 3–5 actual (not aspirational) organizational values",
+        "Identify one behavior that contradicts your stated values",
+        "Design one ritual or process that reinforces the culture you want"
+      ]
+    },
+    {
+      "id": "L25",
+      "moduleId": "M5",
+      "slug": "m5l5-leadership-capstone",
+      "title": "Capstone",
+      "song_title": "Long Game",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/long-game.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Crisis Leadership",
+        "Communication Under Pressure",
+        "Decision Speed vs. Accuracy",
+        "Stakeholder Management in Crisis",
+        "The Playbook Mindset"
+      ],
+      "take_action": [
+        "Write a one-page crisis comms template for your most likely scenario",
+        "Run a 30-minute tabletop crisis exercise with your team",
+        "Identify who makes decisions when you're unreachable"
+      ]
+    },
+    {
+      "id": "L26",
+      "moduleId": "M6",
+      "slug": "m6l1-hire-slow-fire-fast",
+      "title": "Delegation",
+      "song_title": "White Knuckled Delegation",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Delegation",
+        "Hire Slow Fire Fast",
+        "Talent Assessment",
+        "Role Clarity",
+        "Letting Go to Scale"
+      ],
+      "take_action": [
+        "List 3 tasks you're doing today that should be delegated",
+        "Define success criteria for each before handing off",
+        "Schedule a weekly 15-min check-in for each newly delegated responsibility"
+      ]
+    },
+    {
+      "id": "L27",
+      "moduleId": "M6",
+      "slug": "m6l2-org-chart",
+      "title": "Scale",
+      "song_title": "Six Sigma Ledge",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/six-sigma-ledge.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Organizational Design",
+        "Span of Control",
+        "Functional vs. Divisional Structure",
+        "Scaling Operations",
+        "Org Structure for Growth"
+      ],
+      "take_action": [
+        "Draw your current org chart and identify reporting bottlenecks",
+        "Calculate your average span of control",
+        "Design the org structure you'll need at 2× your current headcount"
+      ]
+    },
+    {
+      "id": "L28",
+      "moduleId": "M6",
+      "slug": "m6l3-lead-from-the-front",
+      "title": "Metrics",
+      "song_title": "OKRs Ladder",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Key Performance Indicators (KPIs)",
+        "Leading vs. Lagging Indicators",
+        "North Star Metric",
+        "Operational Cadence",
+        "The 90-Day Sprint"
+      ],
+      "take_action": [
+        "Define your single North Star Metric",
+        "Identify 3 leading indicators that predict your North Star",
+        "Build a simple weekly metric review ritual with your team"
+      ]
+    },
+    {
+      "id": "L29",
+      "moduleId": "M6",
+      "slug": "m6l4-cap-table",
+      "title": "Cap Table",
+      "song_title": "Stakeholder Grid",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/stakeholder-grid.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Capitalization Table",
+        "Equity Dilution",
+        "Vesting Schedule",
+        "Option Pool",
+        "Fully Diluted Shares",
+        "Founder vs. Investor Economics"
+      ],
+      "take_action": [
+        "Map your current cap table (or create one if you don't have it)",
+        "Model your ownership % after a typical seed or Series A round",
+        "Understand your vesting cliff and acceleration provisions"
+      ]
+    },
+    {
+      "id": "L30",
+      "moduleId": "M6",
+      "slug": "m6l5-exit-song",
+      "title": "Exit",
+      "song_title": "Third Way",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Exit Strategy",
+        "Valuation Multiples",
+        "Strategic vs. Financial Buyers",
+        "EBITDA",
+        "Letter of Intent (LOI)",
+        "Due Diligence Process"
+      ],
+      "take_action": [
+        "Define your preferred exit path (acquisition, IPO, or lifestyle)",
+        "Research comparable exits in your industry and their multiples",
+        "Identify the top 5 potential acquirers for your business right now"
+      ]
+    },
+    {
+      "id": "L31",
+      "moduleId": "M1",
+      "slug": "16-cash-runway",
+      "title": "Breakeven Analysis",
+      "song_title": "Breakeven Proof",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Break-Even Point",
+        "Fixed Costs",
+        "Variable Costs",
+        "Contribution Margin",
+        "Contribution Margin Ratio"
+      ],
+      "take_action": [
+        "List all fixed monthly costs",
+        "Calculate contribution margin per unit: Price minus Variable Cost per unit",
+        "Find your break-even: Fixed Costs ÷ Contribution Margin per unit"
+      ]
+    },
+    {
+      "id": "L32",
+      "moduleId": "M1",
+      "slug": "17-april-cash-timing",
+      "title": "Cash Timing",
+      "song_title": "April Cash Timing",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Cash Runway",
+        "Net Burn Rate",
+        "Default Alive",
+        "Revenue Growth Rate",
+        "Ramen Profitability"
+      ],
+      "take_action": [
+        "Calculate net burn rate: monthly operating expenses minus monthly revenue",
+        "Determine runway: Cash Balance ÷ Monthly Net Burn",
+        "Ask: at current growth, do you reach profitability before cash runs out?"
+      ]
+    },
+    {
+      "id": "L33",
+      "moduleId": "M1",
+      "slug": "18-receivables-in",
+      "title": "Receivables",
+      "song_title": "Receivables In",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/receivables-in.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Accounts Receivable",
+        "Days Sales Outstanding (DSO)",
+        "Cash Conversion Cycle",
+        "Invoice Timing",
+        "Revenue Recognition"
+      ],
+      "take_action": [
+        "Audit all outstanding invoices — flag anything 30+ days overdue",
+        "Calculate DSO: (Accounts Receivable ÷ Annual Revenue) × 365",
+        "Implement or enforce a net-15 or net-30 payment policy"
+      ]
+    },
+    {
+      "id": "L34",
+      "moduleId": "M1",
+      "slug": "19-operating-leverage",
+      "title": "Operating Leverage",
+      "song_title": "Operating Leverage",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/operating-leverage.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Operating Leverage",
+        "Degree of Operating Leverage (DOL)",
+        "Fixed vs. Variable Cost Mix",
+        "Operating Income",
+        "Scalability"
+      ],
+      "take_action": [
+        "Identify the ratio of fixed to variable costs in your business",
+        "Calculate DOL: Contribution Margin ÷ Operating Income",
+        "Model the impact of a 20% revenue increase on your operating income"
+      ]
+    },
+    {
+      "id": "L35",
+      "moduleId": "M2",
+      "slug": "26-beneath-the-hood",
+      "title": "Strategic Diagnostics",
+      "song_title": "Beneath the Hood",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/beneath-the-hood.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Strategic Diagnostics",
+        "Capability Gap Analysis",
+        "Organizational Assessment",
+        "Root Cause Thinking",
+        "Operational vs. Strategic Problems"
+      ],
+      "take_action": [
+        "Conduct a 30-minute honest audit of your biggest strategic weakness",
+        "Identify one process holding your strategy back",
+        "Map the gap between your current state and strategic requirements"
+      ]
+    },
+    {
+      "id": "L36",
+      "moduleId": "M2",
+      "slug": "27-business-model-canvas",
+      "title": "Business Model Canvas",
+      "song_title": "Business Model Canvas",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Business Model Canvas",
+        "Value Proposition",
+        "Customer Segments",
+        "Revenue Streams",
+        "Key Resources",
+        "Key Partners",
+        "Cost Structure"
+      ],
+      "take_action": [
+        "Fill out the full Business Model Canvas for your business",
+        "Identify your most fragile or at-risk block",
+        "Redesign one block to improve overall business model strength"
+      ]
+    },
+    {
+      "id": "L37",
+      "moduleId": "M2",
+      "slug": "28-dollar-soldier",
+      "title": "Portfolio Strategy",
+      "song_title": "Dollar Soldier",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Portfolio Strategy",
+        "BCG Matrix",
+        "Stars, Cash Cows, Question Marks, Dogs",
+        "Portfolio Balance",
+        "Resource Allocation Across Products"
+      ],
+      "take_action": [
+        "Map all your products or services on the BCG Matrix",
+        "Identify your Cash Cow and verify you're protecting it",
+        "Decide which Question Mark to invest in and which to exit"
+      ]
+    },
+    {
+      "id": "L38",
+      "moduleId": "M3",
+      "slug": "36-market-size-mountain",
+      "title": "Market Sizing TAM/SAM/SOM",
+      "song_title": "Market Size Mountain",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/market-size-mountain.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Total Addressable Market (TAM)",
+        "Serviceable Addressable Market (SAM)",
+        "Serviceable Obtainable Market (SOM)",
+        "Top-Down vs. Bottom-Up Sizing",
+        "Market Share Targets"
+      ],
+      "take_action": [
+        "Calculate your TAM using both top-down and bottom-up methods",
+        "Define your SAM with realistic geographic and demographic constraints",
+        "Set a 3-year SOM target and break it into annual milestones"
+      ]
+    },
+    {
+      "id": "L39",
+      "moduleId": "M3",
+      "slug": "jl2e2jg4mb73rzl98gfjnsr3khh7jb",
+      "title": "Segmentation",
+      "song_title": "Segmentation Aim",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Market Segmentation",
+        "Demographic Segmentation",
+        "Psychographic Segmentation",
+        "Behavioral Segmentation",
+        "Segment Attractiveness Scoring"
+      ],
+      "take_action": [
+        "Identify 4–6 distinct segments in your market",
+        "Score each on size, growth potential, and fit with your offering",
+        "Select one new segment to test entering this quarter"
+      ]
+    },
+    {
+      "id": "L40",
+      "moduleId": "M3",
+      "slug": "pdmtcm5jmwfbb57knnkttmj4jd9dec",
+      "title": "Positioning & Focus",
+      "song_title": "Don't Be Everything",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Positioning Statement",
+        "Perceptual Map",
+        "Points of Difference",
+        "Points of Parity",
+        "Focus Strategy"
+      ],
+      "take_action": [
+        "Draw a 2×2 perceptual map for your category",
+        "Write a positioning statement using the standard template",
+        "Identify one point of difference you want to own in the market"
+      ]
+    },
+    {
+      "id": "L41",
+      "moduleId": "M3",
+      "slug": "39-brand-promise",
+      "title": "Brand Promise",
+      "song_title": "Brand Promise",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/brand-promise.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Brand Promise",
+        "Customer Expectation Setting",
+        "Brand Consistency",
+        "Trust Building",
+        "Experience Design"
+      ],
+      "take_action": [
+        "Write your brand promise in one clear sentence",
+        "Identify 3 ways you currently deliver or fail on this promise",
+        "Design one customer touchpoint that reinforces your promise"
+      ]
+    },
+    {
+      "id": "L42",
+      "moduleId": "M3",
+      "slug": "310-worth-align",
+      "title": "Value Proposition",
+      "song_title": "Worth Align",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/worth-align.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Value Proposition",
+        "Jobs-to-be-Done",
+        "Customer Pain Points",
+        "Gains",
+        "Value Proposition Canvas"
+      ],
+      "take_action": [
+        "Complete the Value Proposition Canvas for your primary customer",
+        "List the top 3 pains your product relieves",
+        "Write a value proposition statement and test it with 3 real customers"
+      ]
+    },
+    {
+      "id": "L43",
+      "moduleId": "M3",
+      "slug": "cx6bkyjrl8t58xte5dcxcfw257mlfa",
+      "title": "Distribution",
+      "song_title": "Distribution Rivers",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Distribution Channels",
+        "Channel Strategy",
+        "Direct vs. Indirect Distribution",
+        "Channel Margin",
+        "Last-Mile Delivery"
+      ],
+      "take_action": [
+        "Map all channels through which customers reach your product",
+        "Calculate the margin impact of each channel",
+        "Identify one new distribution channel to test this quarter"
+      ]
+    },
+    {
+      "id": "L44",
+      "moduleId": "M3",
+      "slug": "7wmna3a2b9lgrwlm7zlzzf626kdz2t",
+      "title": "Funnel Optimization",
+      "song_title": "Funnel Rate 118",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Marketing Funnel",
+        "Conversion Rate",
+        "Funnel Math",
+        "TOFU/MOFU/BOFU",
+        "Retention vs. Acquisition"
+      ],
+      "take_action": [
+        "Map your funnel with actual conversion rates at each stage",
+        "Identify your biggest leak in the funnel",
+        "Run one A/B test to improve conversion at that stage"
+      ]
+    },
+    {
+      "id": "L45",
+      "moduleId": "M3",
+      "slug": "313-unit-economics-reggae",
+      "title": "Unit Economics (Reggae Alt)",
+      "song_title": "Unit Economics (Reggae)",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Unit Economics",
+        "Revenue per Unit",
+        "Cost per Unit",
+        "Gross Margin per Unit",
+        "Economies of Scale"
+      ],
+      "take_action": [
+        "Calculate unit economics for your primary revenue stream",
+        "Project how unit economics shift at 2×, 5×, and 10× scale",
+        "Identify one lever that most improves your per-unit margin"
+      ]
+    },
+    {
+      "id": "L46",
+      "moduleId": "M4",
+      "slug": "47-negotiation",
+      "title": "Negotiation",
+      "song_title": "Negotiation",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "BATNA (Best Alternative to Negotiated Agreement)",
+        "Zone of Possible Agreement (ZOPA)",
+        "Anchoring",
+        "Value Creation vs. Value Claiming",
+        "Negotiation Preparation"
+      ],
+      "take_action": [
+        "Identify your BATNA before your next important negotiation",
+        "Research the other party's likely BATNA",
+        "Practice anchoring by making the first offer in a low-stakes situation"
+      ]
+    },
+    {
+      "id": "L47",
+      "moduleId": "M5",
+      "slug": "56-blank-page-grace",
+      "title": "Creative Leadership",
+      "song_title": "Blank Page Grace",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Creative Leadership",
+        "Innovation Culture",
+        "Divergent Thinking",
+        "Psychological Safety for Creativity",
+        "Leading Without Formal Authority"
+      ],
+      "take_action": [
+        "Run a \"bad ideas\" brainstorm with your team — suspend judgment for 15 minutes",
+        "Identify one process that suppresses creativity and propose an alternative",
+        "Publicly recognize a creative risk taken by someone on your team this week"
+      ]
+    },
+    {
+      "id": "L48",
+      "moduleId": "M5",
+      "slug": "57-resume-clues",
+      "title": "Career Design",
+      "song_title": "Resume Clues",
+      "audio_url": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Career Design",
+        "Ikigai Framework",
+        "Skill Stacking",
+        "Personal Brand",
+        "Intentional Career Development"
+      ],
+      "take_action": [
+        "Map your current skills and identify the 2–3 to deepen next",
+        "Write a one-paragraph personal brand statement",
+        "Set one career goal for the next 12 months with 3 concrete milestones"
+      ]
+    },
+    {
+      "id": "L49",
+      "moduleId": "M6",
+      "slug": "66-spreadsheet-north-star",
+      "title": "Dashboards",
+      "song_title": "Spreadsheet North Star",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/spreadsheet-north-star.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Business Dashboard Design",
+        "North Star Metric",
+        "KPI Visualization",
+        "Data-Driven Decision Making",
+        "Spreadsheet Modeling"
+      ],
+      "take_action": [
+        "Build a one-page weekly metrics dashboard for your business",
+        "Identify the 5–7 metrics that matter most to track every week",
+        "Automate at least one data pull that currently requires manual work"
+      ]
+    },
+    {
+      "id": "L50",
+      "moduleId": "M4",
+      "slug": "46-coming-soon",
+      "title": "4.7 — Product-Market Fit",
+      "song_title": "Product-Market Fit",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/fit-product-market-fit.mp3",
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Product-Market Fit",
+        "The 40% Test",
+        "Retention as Signal",
+        "Net Promoter Score (NPS)",
+        "Organic Growth Loops"
+      ],
+      "take_action": [
+        "Survey users: \"How disappointed would you be if this disappeared?\" (target: 40%+ say Very)",
+        "Calculate your 30-day and 90-day user retention rates",
+        "Interview 5 customers who use your product without any prompting"
+      ]
+    }
+  ]
+}
