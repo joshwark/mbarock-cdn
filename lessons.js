@@ -1054,3 +1054,270 @@ else{setTimeout(init,600);}
     run();
   }
 })();
+
+/* ============================================================
+   MBA ROCK V2 DASHBOARD RENDERER (added 2026-05-11)
+   Activates only on pages with <main data-mr-dashboard="1">.
+   Reads lessons.v2.json, populates per-lesson placeholders,
+   manages per-account progress (localStorage now, backend-ready),
+   handles search filter + active-TOC highlight.
+   Safe: no-op on any page without the marker.
+   ============================================================ */
+(function() {
+  if (!document.querySelector('[data-mr-dashboard="1"]')) return;
+
+  var V2_URL = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json';
+  var PROGRESS_KEY = 'mba-rock-progress-v2';
+  var MEMBER_KEY   = 'mba-rock-member-id';
+
+  // ── Squarespace member detection (best effort) ─────────────
+  function detectMember() {
+    try {
+      var ctx = window.Static && window.Static.SQUARESPACE_CONTEXT;
+      if (ctx && ctx.authenticatedAccount) {
+        var a = ctx.authenticatedAccount;
+        return { id: a.id || a.memberId || a.email, email: a.email, name: a.firstName || a.displayName };
+      }
+      // Fallback: parse a member cookie if present
+      var m = document.cookie.match(/(?:^|; )siteUserDetails=([^;]+)/);
+      if (m) {
+        try { return JSON.parse(decodeURIComponent(m[1])); } catch(e){}
+      }
+    } catch(e) {}
+    return null;
+  }
+
+  // ── Progress store: scoped per member id, falls back to "guest" ─
+  function progressStore() {
+    var member = detectMember();
+    var key = (member && (member.id || member.email)) || localStorage.getItem(MEMBER_KEY) || 'guest';
+    if (member && (member.id || member.email)) {
+      localStorage.setItem(MEMBER_KEY, member.id || member.email);
+    }
+    var full = {};
+    try { full = JSON.parse(localStorage.getItem(PROGRESS_KEY) || '{}'); } catch(e){}
+    if (!full[key]) full[key] = {};
+    return {
+      member: member, key: key,
+      get: function(lid) { return !!full[key][lid]; },
+      set: function(lid, done) {
+        full[key][lid] = done ? Date.now() : 0;
+        localStorage.setItem(PROGRESS_KEY, JSON.stringify(full));
+        // Hook: backend sync — wire this when Supabase/Firebase is set up
+        try { window.MBARockProgress && window.MBARockProgress.sync && window.MBARockProgress.sync(); } catch(e){}
+      },
+      all: function() { return full[key] || {}; },
+    };
+  }
+
+  function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
+
+  // ── Populate a single lesson section with data ─────────────
+  function fillLesson(art, lesson) {
+    if (!lesson) return;
+    var slot;
+
+    // Song player
+    slot = art.querySelector('[data-mr-song]');
+    if (slot) {
+      if (lesson.audio_url) {
+        slot.innerHTML = '<audio controls preload="none" style="width:100%"><source src="' + esc(lesson.audio_url) + '" type="audio/mpeg"></audio>';
+      } else {
+        slot.innerHTML = '<span class="placeholder">Song not yet generated.</span>';
+      }
+    }
+
+    // Audio overview
+    slot = art.querySelector('[data-mr-audio-overview]');
+    if (slot) {
+      if (lesson.audio_overview_url) {
+        slot.innerHTML = '<audio controls preload="none" style="width:100%"><source src="' + esc(lesson.audio_overview_url) + '" type="audio/mp4"></audio>';
+      } else {
+        slot.innerHTML = '<span class="placeholder">Audio overview not yet uploaded.</span>';
+      }
+    }
+
+    // Video (YouTube iframe if video_id; raw URL if video_url)
+    slot = art.querySelector('[data-mr-video]');
+    if (slot) {
+      if (lesson.video_id) {
+        slot.innerHTML = '<iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/' + esc(lesson.video_id) + '?rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Lesson video"></iframe>';
+      } else if (lesson.video_url) {
+        slot.innerHTML = '<video controls preload="none" style="width:100%"><source src="' + esc(lesson.video_url) + '"></video>';
+      } else {
+        slot.innerHTML = '<span class="placeholder">Video pending.</span>';
+      }
+    }
+
+    // Core concepts
+    slot = art.querySelector('[data-mr-core-concepts]');
+    if (slot) {
+      var cc = lesson.core_concepts || [];
+      if (cc.length) {
+        slot.innerHTML = '<div class="core">' + cc.map(function(c) { return '<div class="chip">' + esc(c) + '</div>'; }).join('') + '</div>';
+      } else {
+        slot.innerHTML = '<span class="placeholder">Core concepts pending.</span>';
+      }
+    }
+
+    // Take action
+    slot = art.querySelector('[data-mr-take-action]');
+    if (slot) {
+      var ta = lesson.take_action || [];
+      if (ta.length) {
+        slot.innerHTML = '<ul class="actions">' + ta.map(function(t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>';
+      } else {
+        slot.innerHTML = '<span class="placeholder">Action steps pending.</span>';
+      }
+    }
+  }
+
+  // ── Compute & paint progress bars ──────────────────────────
+  function paintProgress(v2, store) {
+    var byMod = {};
+    var totalDone = 0, totalLess = v2.lessons.length;
+
+    v2.lessons.forEach(function(l) {
+      byMod[l.module_id] = byMod[l.module_id] || { done: 0, total: 0 };
+      byMod[l.module_id].total++;
+      if (store.get(l.id)) { byMod[l.module_id].done++; totalDone++; }
+    });
+
+    // Module bars
+    Object.keys(byMod).forEach(function(mid) {
+      var bar = document.querySelector('[data-mr-module-bar="' + mid + '"]');
+      if (bar) {
+        var pct = byMod[mid].total ? (byMod[mid].done / byMod[mid].total) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      var det = document.querySelector('[data-mr-module="' + mid + '"] [data-mr-module-count]');
+      if (det) det.textContent = byMod[mid].done + ' / ' + byMod[mid].total + ' done';
+    });
+
+    // Overall
+    var overallBar = document.querySelector('[data-mr-overall-bar]');
+    var overallPct = document.querySelector('[data-mr-overall-pct]');
+    var overallCount = document.querySelector('[data-mr-overall-count]');
+    var pct = totalLess ? Math.round((totalDone / totalLess) * 100) : 0;
+    if (overallBar) overallBar.style.width = pct + '%';
+    if (overallPct) overallPct.textContent = pct + '%';
+    if (overallCount) overallCount.textContent = totalDone + ' of ' + totalLess + ' lessons complete';
+  }
+
+  // ── Wire Mark Complete checkboxes ──────────────────────────
+  function wireCheckboxes(v2, store) {
+    document.querySelectorAll('[data-mr-complete]').forEach(function(cb) {
+      var lid = cb.getAttribute('data-mr-complete');
+      cb.checked = store.get(lid);
+      cb.addEventListener('change', function() {
+        store.set(lid, cb.checked);
+        paintProgress(v2, store);
+      });
+      // Don't toggle <details> when checkbox is clicked
+      cb.addEventListener('click', function(e) { e.stopPropagation(); });
+    });
+  }
+
+  // ── Search filter ──────────────────────────────────────────
+  function wireSearch() {
+    var input = document.querySelector('[data-mr-search-input]');
+    if (!input) return;
+    input.addEventListener('input', function() {
+      var q = (input.value || '').toLowerCase().trim();
+      document.querySelectorAll('[data-mr-lesson]').forEach(function(art) {
+        var hay = art.getAttribute('data-mr-search') || '';
+        var show = !q || hay.indexOf(q) !== -1;
+        art.style.display = show ? '' : 'none';
+        // Auto-open the parent module if a child matched
+        if (show && q) {
+          var det = art.closest('[data-mr-module]');
+          if (det) det.open = true;
+          var inner = art.querySelector('details');
+          if (inner) inner.open = true;
+        }
+      });
+    });
+  }
+
+  // ── Active-section highlight in TOC on scroll ─────────────
+  function wireToc() {
+    var links = document.querySelectorAll('.mbarv2-toc a[data-mr-toc]');
+    if (!('IntersectionObserver' in window) || !links.length) return;
+    var byMid = {};
+    links.forEach(function(a) { byMid[a.getAttribute('data-mr-toc')] = a; });
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        var mid = e.target.getAttribute('data-mr-module');
+        if (mid && byMid[mid]) {
+          links.forEach(function(a) { a.classList.remove('is-active'); });
+          byMid[mid].classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -50% 0px' });
+    document.querySelectorAll('[data-mr-module]').forEach(function(d) { io.observe(d); });
+  }
+
+  // ── Show member name in toolbar ─────────────────────────────
+  function paintMember(store) {
+    var el = document.querySelector('[data-mr-member-display]');
+    if (!el) return;
+    if (store.member && (store.member.name || store.member.email)) {
+      el.textContent = store.member.name || store.member.email;
+    } else {
+      el.textContent = 'guest (sign in to save progress across devices)';
+      el.style.color = '#a00';
+    }
+  }
+
+  // ── Public API: hook for future backend sync ───────────────
+  window.MBARockProgress = window.MBARockProgress || {
+    sync: function() { /* no-op until backend is wired (Supabase/Firebase) */ },
+    memberId: function() { return localStorage.getItem(MEMBER_KEY) || null; },
+    snapshot: function() {
+      try { return JSON.parse(localStorage.getItem(PROGRESS_KEY) || '{}'); } catch(e){ return {}; }
+    },
+    reset: function() {
+      localStorage.removeItem(PROGRESS_KEY);
+      location.reload();
+    }
+  };
+
+  // ── Boot ───────────────────────────────────────────────────
+  function boot() {
+    var store = progressStore();
+    paintMember(store);
+    fetch(V2_URL, { cache: 'no-cache' })
+      .then(function(r) { return r.json(); })
+      .then(function(v2) {
+        if (!v2 || !v2.lessons) return;
+        var byId = {};
+        v2.lessons.forEach(function(l) { byId[l.id] = l; });
+        document.querySelectorAll('[data-mr-lesson]').forEach(function(art) {
+          fillLesson(art, byId[art.getAttribute('data-mr-lesson')]);
+        });
+        wireCheckboxes(v2, store);
+        paintProgress(v2, store);
+        wireSearch();
+        wireToc();
+
+        // Deep-link: open the lesson matching the URL hash
+        if (location.hash) {
+          var target = document.getElementById(location.hash.slice(1));
+          if (target && target.tagName === 'DETAILS') {
+            target.open = true;
+            var parent = target.closest('[data-mr-module]');
+            if (parent) parent.open = true;
+            setTimeout(function() { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 200);
+          }
+        }
+      })
+      .catch(function(e) { console.error('[MBA v2] dashboard failed:', e); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
