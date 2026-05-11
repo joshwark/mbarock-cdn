@@ -53,7 +53,8 @@
         "Download 3 months of bank statements and map cash in vs. cash out",
         "Calculate your monthly burn rate (total cash out - cash in)",
         "Identify your top 3 cash outflows and ask if each is necessary"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L02",
@@ -76,7 +77,8 @@
         "Calculate your gross margin % for last month",
         "List every cost between your revenue line and gross profit",
         "Ask: what would happen if you doubled revenue at the same margin?"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L03",
@@ -99,7 +101,8 @@
         "Choose a discount rate for your business (typical range: 8â15%)",
         "Calculate the present value of a payment you expect in 12 months",
         "Apply NPV thinking to one upcoming investment decision"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L04",
@@ -122,7 +125,8 @@
         "Calculate your CAC from last month's marketing spend",
         "Estimate LTV: avg purchase value Ã frequency Ã avg customer lifespan",
         "Target a LTV:CAC ratio of 3:1 or higher as your baseline"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L05",
@@ -145,7 +149,8 @@
         "List all business assets with their current values",
         "List all outstanding liabilities",
         "Calculate working capital: current assets minus current liabilities"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L06",
@@ -168,7 +173,8 @@
         "Write a one-sentence strategy statement for your business",
         "List 3 things your strategy requires you NOT to do",
         "Map how your current resources align with your stated strategy"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L07",
@@ -192,7 +198,8 @@
         "Identify which type of moat your business has (if any)",
         "Rate your moat's strength from 1â5 with supporting evidence",
         "List what a competitor would need to overcome your advantage"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L08",
@@ -216,7 +223,8 @@
         "Rate each of Porter's 5 forces in your industry (High/Medium/Low)",
         "Identify the most dangerous force threatening your business today",
         "Choose one force to actively mitigate this quarter"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L09",
@@ -240,7 +248,8 @@
         "List your top 3 internal capabilities or resources",
         "Run each through VRIO â which create sustained advantage?",
         "Double down on your highest-scoring VRIO capability this quarter"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L10",
@@ -264,7 +273,8 @@
         "Map your current competitive factors on a strategy canvas",
         "Apply the ERRC grid (Eliminate, Reduce, Raise, Create) to your offering",
         "Identify one segment of non-customers you could realistically attract"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L11",
@@ -288,7 +298,8 @@
         "Audit each of the 4 Ps for your primary product",
         "Identify which P is your weakest",
         "Make one concrete change to your weakest P this week"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L12",
@@ -312,7 +323,8 @@
         "Define 3 distinct customer segments in your market",
         "Choose your primary target and justify it in writing",
         "Write a one-sentence positioning statement for that segment"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L13",
@@ -335,7 +347,8 @@
         "Write your brand story in 3 sentences: origin, mission, why it matters",
         "Define 3 adjectives that capture your brand voice",
         "Audit your last 5 content pieces against your brand identity"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L14",
@@ -359,7 +372,8 @@
         "Map your current owned, earned, and paid media footprint",
         "Identify your highest-converting digital channel",
         "Set one measurable 30-day digital marketing goal"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L15",
@@ -382,7 +396,8 @@
         "Calculate your current price using 3 different pricing methods",
         "Identify the max price your best customers would pay",
         "Test a price increase on one product or tier this month"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L16",
@@ -405,7 +420,8 @@
         "Define the riskiest assumption underlying your idea",
         "Design the cheapest possible test to validate or invalidate it",
         "Set a 2-week deadline to run the experiment"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L17",
@@ -428,7 +444,8 @@
         "Define what \"minimum\" means for your MVP â cut everything non-essential",
         "Identify 10 target users to test your MVP with",
         "Set a specific metric that would signal you've found product-market fit"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L18",
@@ -451,7 +468,8 @@
         "Build a 10-slide deck following the classic pitch arc",
         "Practice your pitch in under 3 minutes",
         "Get feedback from 3 people outside your industry"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L19",
@@ -474,7 +492,8 @@
         "List the signals that would tell you it's time to pivot",
         "Define your \"do not cross\" metrics that trigger a strategy review",
         "Map 3 adjacent pivot opportunities if your current path stalls"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L20",
@@ -497,7 +516,8 @@
         "Write your personal definition of success beyond revenue",
         "Identify your 3 biggest blind spots as a founder",
         "Build a 90-day focus plan anchored to one primary metric"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L21",
@@ -520,7 +540,8 @@
         "Identify your default leadership style under pressure",
         "Map each direct report to the style they need from you right now",
         "Practice one non-default leadership approach this week and reflect on it"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L22",
@@ -543,7 +564,8 @@
         "Assess which stage your team is currently in",
         "Identify one behavior blocking progression to the next stage",
         "Have one honest conversation about team norms this week"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L23",
@@ -566,7 +588,8 @@
         "Give one specific, behavior-based piece of feedback to a teammate this week",
         "Ask for feedback: \"What's one thing I could do differently?\"",
         "Schedule a monthly 1:1 with structured feedback built in"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L24",
@@ -589,7 +612,8 @@
         "Write your 3â5 actual (not aspirational) organizational values",
         "Identify one behavior that contradicts your stated values",
         "Design one ritual or process that reinforces the culture you want"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L25",
@@ -612,7 +636,8 @@
         "Write a one-page crisis comms template for your most likely scenario",
         "Run a 30-minute tabletop crisis exercise with your team",
         "Identify who makes decisions when you're unreachable"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L26",
@@ -635,7 +660,8 @@
         "List 3 tasks you're doing today that should be delegated",
         "Define success criteria for each before handing off",
         "Schedule a weekly 15-min check-in for each newly delegated responsibility"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L27",
@@ -658,7 +684,8 @@
         "Draw your current org chart and identify reporting bottlenecks",
         "Calculate your average span of control",
         "Design the org structure you'll need at 2Ã your current headcount"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L28",
@@ -681,7 +708,8 @@
         "Define your single North Star Metric",
         "Identify 3 leading indicators that predict your North Star",
         "Build a simple weekly metric review ritual with your team"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L29",
@@ -705,7 +733,8 @@
         "Map your current cap table (or create one if you don't have it)",
         "Model your ownership % after a typical seed or Series A round",
         "Understand your vesting cliff and acceleration provisions"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L30",
@@ -729,7 +758,8 @@
         "Define your preferred exit path (acquisition, IPO, or lifestyle)",
         "Research comparable exits in your industry and their multiples",
         "Identify the top 5 potential acquirers for your business right now"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L31",
@@ -752,7 +782,8 @@
         "List all fixed monthly costs",
         "Calculate contribution margin per unit: Price minus Variable Cost per unit",
         "Find your break-even: Fixed Costs Ã· Contribution Margin per unit"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L32",
@@ -775,7 +806,8 @@
         "Calculate net burn rate: monthly operating expenses minus monthly revenue",
         "Determine runway: Cash Balance Ã· Monthly Net Burn",
         "Ask: at current growth, do you reach profitability before cash runs out?"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L33",
@@ -798,7 +830,8 @@
         "Audit all outstanding invoices â flag anything 30+ days overdue",
         "Calculate DSO: (Accounts Receivable Ã· Annual Revenue) Ã 365",
         "Implement or enforce a net-15 or net-30 payment policy"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L34",
@@ -821,7 +854,8 @@
         "Identify the ratio of fixed to variable costs in your business",
         "Calculate DOL: Contribution Margin Ã· Operating Income",
         "Model the impact of a 20% revenue increase on your operating income"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L35",
@@ -844,7 +878,8 @@
         "Conduct a 30-minute honest audit of your biggest strategic weakness",
         "Identify one process holding your strategy back",
         "Map the gap between your current state and strategic requirements"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L36",
@@ -869,7 +904,8 @@
         "Fill out the full Business Model Canvas for your business",
         "Identify your most fragile or at-risk block",
         "Redesign one block to improve overall business model strength"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L37",
@@ -892,7 +928,8 @@
         "Map all your products or services on the BCG Matrix",
         "Identify your Cash Cow and verify you're protecting it",
         "Decide which Question Mark to invest in and which to exit"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L38",
@@ -915,7 +952,8 @@
         "Calculate your TAM using both top-down and bottom-up methods",
         "Define your SAM with realistic geographic and demographic constraints",
         "Set a 3-year SOM target and break it into annual milestones"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L39",
@@ -938,7 +976,8 @@
         "Identify 4â6 distinct segments in your market",
         "Score each on size, growth potential, and fit with your offering",
         "Select one new segment to test entering this quarter"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L40",
@@ -961,7 +1000,8 @@
         "Draw a 2Ã2 perceptual map for your category",
         "Write a positioning statement using the standard template",
         "Identify one point of difference you want to own in the market"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L41",
@@ -984,7 +1024,8 @@
         "Write your brand promise in one clear sentence",
         "Identify 3 ways you currently deliver or fail on this promise",
         "Design one customer touchpoint that reinforces your promise"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L42",
@@ -1007,7 +1048,8 @@
         "Complete the Value Proposition Canvas for your primary customer",
         "List the top 3 pains your product relieves",
         "Write a value proposition statement and test it with 3 real customers"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L43",
@@ -1031,7 +1073,8 @@
         "Calculate the margin impact of each channel",
         "Identify one new distribution channel to test this quarter"
       ],
-      "audio_url_2": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/let-the-rivers-run.mp3"
+      "audio_url_2": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/let-the-rivers-run.mp3",
+      "video_id": null
     },
     {
       "id": "L44",
@@ -1054,7 +1097,8 @@
         "Map your funnel with actual conversion rates at each stage",
         "Identify your biggest leak in the funnel",
         "Run one A/B test to improve conversion at that stage"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L45",
@@ -1077,7 +1121,8 @@
         "Calculate unit economics for your primary revenue stream",
         "Project how unit economics shift at 2Ã, 5Ã, and 10Ã scale",
         "Identify one lever that most improves your per-unit margin"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L46",
@@ -1100,7 +1145,8 @@
         "Identify your BATNA before your next important negotiation",
         "Research the other party's likely BATNA",
         "Practice anchoring by making the first offer in a low-stakes situation"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L47",
@@ -1123,7 +1169,8 @@
         "Run a \"bad ideas\" brainstorm with your team â suspend judgment for 15 minutes",
         "Identify one process that suppresses creativity and propose an alternative",
         "Publicly recognize a creative risk taken by someone on your team this week"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L48",
@@ -1146,7 +1193,8 @@
         "Map your current skills and identify the 2â3 to deepen next",
         "Write a one-paragraph personal brand statement",
         "Set one career goal for the next 12 months with 3 concrete milestones"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L49",
@@ -1169,7 +1217,8 @@
         "Build a one-page weekly metrics dashboard for your business",
         "Identify the 5â7 metrics that matter most to track every week",
         "Automate at least one data pull that currently requires manual work"
-      ]
+      ],
+      "video_id": null
     },
     {
       "id": "L50",
@@ -1192,7 +1241,8 @@
         "Survey users: \"How disappointed would you be if this disappeared?\" (target: 40%+ say Very)",
         "Calculate your 30-day and 90-day user retention rates",
         "Interview 5 customers who use your product without any prompting"
-      ]
+      ],
+      "video_id": null
     }
   ]
 }
