@@ -36,7 +36,7 @@
       "id": "L01",
       "moduleId": "M1",
       "slug": "m1l1-oxygen-cash-flow",
-      "title": "1.1 — Oxygen",
+      "title": "1.1 â Oxygen",
       "song_title": "Oxygen",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/oxygen-cash-flow.mp3",
       "video_url": null,
@@ -59,7 +59,7 @@
       "id": "L02",
       "moduleId": "M1",
       "slug": "m1l2-three-sheets",
-      "title": "1.2 — Top Line Lie",
+      "title": "1.2 â Top Line Lie",
       "song_title": "Top Line Lie",
       "audio_url": null,
       "video_url": null,
@@ -82,7 +82,7 @@
       "id": "L03",
       "moduleId": "M1",
       "slug": "m1l3-gross-margin-groove",
-      "title": "1.3 — The Discount Rate",
+      "title": "1.3 â The Discount Rate",
       "song_title": "The Discount Rate",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/the-discount-rate.mp3",
       "video_url": null,
@@ -96,7 +96,7 @@
         "Net Present Value (NPV)"
       ],
       "take_action": [
-        "Choose a discount rate for your business (typical range: 8–15%)",
+        "Choose a discount rate for your business (typical range: 8â15%)",
         "Calculate the present value of a payment you expect in 12 months",
         "Apply NPV thinking to one upcoming investment decision"
       ]
@@ -105,7 +105,7 @@
       "id": "L04",
       "moduleId": "M1",
       "slug": "m1l4-burn-rate-blues",
-      "title": "1.4 — Unit Economics",
+      "title": "1.4 â Unit Economics",
       "song_title": "Unit Economics",
       "audio_url": null,
       "video_url": null,
@@ -120,7 +120,7 @@
       ],
       "take_action": [
         "Calculate your CAC from last month's marketing spend",
-        "Estimate LTV: avg purchase value × frequency × avg customer lifespan",
+        "Estimate LTV: avg purchase value Ã frequency Ã avg customer lifespan",
         "Target a LTV:CAC ratio of 3:1 or higher as your baseline"
       ]
     },
@@ -128,7 +128,7 @@
       "id": "L05",
       "moduleId": "M1",
       "slug": "m1l5-bottom-line",
-      "title": "1.5 — Balance Sheet Bones",
+      "title": "1.5 â Balance Sheet Bones",
       "song_title": "Bones in Spreadsheets",
       "audio_url": null,
       "video_url": null,
@@ -151,7 +151,7 @@
       "id": "L06",
       "moduleId": "M2",
       "slug": "m2l1-strategy-strut",
-      "title": "2.1 — What is Strategy",
+      "title": "2.1 â What is Strategy",
       "song_title": "Strategy Strut",
       "audio_url": null,
       "video_url": null,
@@ -174,7 +174,7 @@
       "id": "L07",
       "moduleId": "M2",
       "slug": "m2l2-moat",
-      "title": "2.2 — Economic Moats",
+      "title": "2.2 â Economic Moats",
       "song_title": "Moat Around My Castle",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/moat-around-my-castle-moats-strategy.mp3",
       "video_url": null,
@@ -190,7 +190,7 @@
       ],
       "take_action": [
         "Identify which type of moat your business has (if any)",
-        "Rate your moat's strength from 1–5 with supporting evidence",
+        "Rate your moat's strength from 1â5 with supporting evidence",
         "List what a competitor would need to overcome your advantage"
       ]
     },
@@ -198,7 +198,7 @@
       "id": "L08",
       "moduleId": "M2",
       "slug": "m2l3-five-forces",
-      "title": "2.3 — Porter's Five Forces",
+      "title": "2.3 â Porter's Five Forces",
       "song_title": "Five Forces",
       "audio_url": null,
       "video_url": null,
@@ -222,7 +222,7 @@
       "id": "L09",
       "moduleId": "M2",
       "slug": "m2l4-swot-vrio",
-      "title": "2.4 — Competitive Advantage & VRIO",
+      "title": "2.4 â Competitive Advantage & VRIO",
       "song_title": "Competitive Moat",
       "audio_url": null,
       "video_url": null,
@@ -238,7 +238,7 @@
       ],
       "take_action": [
         "List your top 3 internal capabilities or resources",
-        "Run each through VRIO — which create sustained advantage?",
+        "Run each through VRIO â which create sustained advantage?",
         "Double down on your highest-scoring VRIO capability this quarter"
       ]
     },
@@ -246,7 +246,7 @@
       "id": "L10",
       "moduleId": "M2",
       "slug": "m2l5-differentiate-or-die",
-      "title": "2.5 — Blue Ocean Strategy",
+      "title": "2.5 â Blue Ocean Strategy",
       "song_title": "Blue Ocean",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/blue-ocean-creating-new-markets.mp3",
       "video_url": null,
@@ -425,7 +425,7 @@
         "User Feedback Loops"
       ],
       "take_action": [
-        "Define what \"minimum\" means for your MVP — cut everything non-essential",
+        "Define what \"minimum\" means for your MVP â cut everything non-essential",
         "Identify 10 target users to test your MVP with",
         "Set a specific metric that would signal you've found product-market fit"
       ]
@@ -586,7 +586,7 @@
         "Culture as Competitive Advantage"
       ],
       "take_action": [
-        "Write your 3–5 actual (not aspirational) organizational values",
+        "Write your 3â5 actual (not aspirational) organizational values",
         "Identify one behavior that contradicts your stated values",
         "Design one ritual or process that reinforces the culture you want"
       ]
@@ -657,7 +657,7 @@
       "take_action": [
         "Draw your current org chart and identify reporting bottlenecks",
         "Calculate your average span of control",
-        "Design the org structure you'll need at 2× your current headcount"
+        "Design the org structure you'll need at 2Ã your current headcount"
       ]
     },
     {
@@ -751,7 +751,7 @@
       "take_action": [
         "List all fixed monthly costs",
         "Calculate contribution margin per unit: Price minus Variable Cost per unit",
-        "Find your break-even: Fixed Costs ÷ Contribution Margin per unit"
+        "Find your break-even: Fixed Costs Ã· Contribution Margin per unit"
       ]
     },
     {
@@ -773,7 +773,7 @@
       ],
       "take_action": [
         "Calculate net burn rate: monthly operating expenses minus monthly revenue",
-        "Determine runway: Cash Balance ÷ Monthly Net Burn",
+        "Determine runway: Cash Balance Ã· Monthly Net Burn",
         "Ask: at current growth, do you reach profitability before cash runs out?"
       ]
     },
@@ -795,8 +795,8 @@
         "Revenue Recognition"
       ],
       "take_action": [
-        "Audit all outstanding invoices — flag anything 30+ days overdue",
-        "Calculate DSO: (Accounts Receivable ÷ Annual Revenue) × 365",
+        "Audit all outstanding invoices â flag anything 30+ days overdue",
+        "Calculate DSO: (Accounts Receivable Ã· Annual Revenue) Ã 365",
         "Implement or enforce a net-15 or net-30 payment policy"
       ]
     },
@@ -819,7 +819,7 @@
       ],
       "take_action": [
         "Identify the ratio of fixed to variable costs in your business",
-        "Calculate DOL: Contribution Margin ÷ Operating Income",
+        "Calculate DOL: Contribution Margin Ã· Operating Income",
         "Model the impact of a 20% revenue increase on your operating income"
       ]
     },
@@ -935,7 +935,7 @@
         "Segment Attractiveness Scoring"
       ],
       "take_action": [
-        "Identify 4–6 distinct segments in your market",
+        "Identify 4â6 distinct segments in your market",
         "Score each on size, growth potential, and fit with your offering",
         "Select one new segment to test entering this quarter"
       ]
@@ -958,7 +958,7 @@
         "Focus Strategy"
       ],
       "take_action": [
-        "Draw a 2×2 perceptual map for your category",
+        "Draw a 2Ã2 perceptual map for your category",
         "Write a positioning statement using the standard template",
         "Identify one point of difference you want to own in the market"
       ]
@@ -1075,7 +1075,7 @@
       ],
       "take_action": [
         "Calculate unit economics for your primary revenue stream",
-        "Project how unit economics shift at 2×, 5×, and 10× scale",
+        "Project how unit economics shift at 2Ã, 5Ã, and 10Ã scale",
         "Identify one lever that most improves your per-unit margin"
       ]
     },
@@ -1120,7 +1120,7 @@
         "Leading Without Formal Authority"
       ],
       "take_action": [
-        "Run a \"bad ideas\" brainstorm with your team — suspend judgment for 15 minutes",
+        "Run a \"bad ideas\" brainstorm with your team â suspend judgment for 15 minutes",
         "Identify one process that suppresses creativity and propose an alternative",
         "Publicly recognize a creative risk taken by someone on your team this week"
       ]
@@ -1143,7 +1143,7 @@
         "Intentional Career Development"
       ],
       "take_action": [
-        "Map your current skills and identify the 2–3 to deepen next",
+        "Map your current skills and identify the 2â3 to deepen next",
         "Write a one-paragraph personal brand statement",
         "Set one career goal for the next 12 months with 3 concrete milestones"
       ]
@@ -1167,7 +1167,7 @@
       ],
       "take_action": [
         "Build a one-page weekly metrics dashboard for your business",
-        "Identify the 5–7 metrics that matter most to track every week",
+        "Identify the 5â7 metrics that matter most to track every week",
         "Automate at least one data pull that currently requires manual work"
       ]
     },
@@ -1175,7 +1175,7 @@
       "id": "L50",
       "moduleId": "M4",
       "slug": "46-coming-soon",
-      "title": "4.7 — Product-Market Fit",
+      "title": "4.7 â Product-Market Fit",
       "song_title": "Product-Market Fit",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/fit-product-market-fit.mp3",
       "video_url": null,
