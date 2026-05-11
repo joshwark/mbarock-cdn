@@ -944,3 +944,113 @@ else{setTimeout(init,600);}
     .then(run)
     .catch(function() {});
 })();
+
+/* ============================================================
+   AUDIO OVERVIEW INJECTION (added 2026-05-11)
+   Reads lesson.audio_overview_url from lessons.json.
+   Injects an <audio> player under any h2 containing "audio overview".
+   Falls back to inserting just after the song's "Listen" section.
+   Safe: no-op when audio_overview_url is null.
+   ============================================================ */
+(function() {
+  var LESSONS_JSON_URL = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.json';
+
+  function getSlug() {
+    var parts = window.location.pathname.split('/').filter(Boolean);
+    return parts[parts.length - 1] || '';
+  }
+
+  function findHeading(text) {
+    var hs = document.querySelectorAll('h1, h2, h3');
+    var needle = String(text).toLowerCase();
+    for (var i = 0; i < hs.length; i++) {
+      if ((hs[i].textContent || '').toLowerCase().indexOf(needle) !== -1) return hs[i];
+    }
+    return null;
+  }
+
+  function alreadyInjected() {
+    return !!document.querySelector('[data-mr-audio-overview="1"]');
+  }
+
+  function buildPlayer(url) {
+    var wrap = document.createElement('div');
+    wrap.setAttribute('data-mr-audio-overview', '1');
+    wrap.style.cssText = 'margin:12px 0 24px 0;width:100%;';
+    var label = document.createElement('p');
+    label.style.cssText = 'font-size:12px;color:#888;margin:0 0 4px 0;font-style:italic;';
+    label.textContent = 'Audio Overview';
+    var audio = document.createElement('audio');
+    audio.controls = true;
+    audio.preload = 'none';
+    audio.style.cssText = 'width:100%;border-radius:8px;';
+    audio.src = url;
+    wrap.appendChild(label);
+    wrap.appendChild(audio);
+    return wrap;
+  }
+
+  function inject(lesson) {
+    if (!lesson || !lesson.audio_overview_url) return;
+    if (alreadyInjected()) return;
+
+    var player = buildPlayer(lesson.audio_overview_url);
+
+    // Preferred anchor: an h2/h3 whose text mentions "audio overview"
+    var anchor = findHeading('audio overview');
+    if (anchor) {
+      anchor.parentNode.insertBefore(player, anchor.nextSibling);
+      return;
+    }
+
+    // Fallback 1: insert after the song's "Listen" heading
+    var listen = findHeading('listen');
+    if (listen) {
+      listen.parentNode.insertBefore(player, listen.nextSibling);
+      return;
+    }
+
+    // Fallback 2: insert just before the first existing <audio> (the song player)
+    var firstAudio = document.querySelector('audio');
+    if (firstAudio && firstAudio.parentNode) {
+      firstAudio.parentNode.insertBefore(player, firstAudio);
+      return;
+    }
+  }
+
+  function run() {
+    var slug = getSlug();
+    if (!slug) return;
+    fetch(LESSONS_JSON_URL, { cache: 'no-cache' })
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(data) {
+        if (!data || !data.lessons) return;
+        var lesson = data.lessons.find(function(l) { return l.slug === slug; });
+        if (!lesson || !lesson.audio_overview_url) return;
+
+        // Try once immediately
+        inject(lesson);
+
+        // Watch for late-rendering Squarespace content blocks
+        if (alreadyInjected()) return;
+        var tries = 0;
+        var obs = new MutationObserver(function() {
+          tries++;
+          inject(lesson);
+          if (alreadyInjected() || tries > 60) obs.disconnect();
+        });
+        obs.observe(document.body, { childList: true, subtree: true });
+
+        // Safety net: also try at 1.5s and 3s
+        setTimeout(function() { inject(lesson); }, 1500);
+        setTimeout(function() { inject(lesson); }, 3000);
+      })
+      .catch(function() {});
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
