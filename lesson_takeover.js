@@ -48,7 +48,7 @@
   //    (anything with LISTEN/WATCH/CORE CONCEPTS/TAKE ACTION/CALCULATE/SEE/DO headings) ──
   function findLessonBodySections() {
     var hits = new Set();
-    var needles = /^(listen|watch|core concepts|take action|the idea|see|do|calculate|lyrics)$/i;
+    var needles = /^(listen|watch|core concepts|take action|the idea|see|do|calculate|lyrics)\b/i;
     document.querySelectorAll('h1, h2, h3').forEach(function(h) {
       var t = (h.textContent || '').trim();
       if (needles.test(t)) {
