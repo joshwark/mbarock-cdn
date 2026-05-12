@@ -1321,3 +1321,143 @@ else{setTimeout(init,600);}
     boot();
   }
 })();
+
+
+/* ============================================================
+   MBA ROCK — SUPABASE PROGRESS SYNC (drop-in)
+   Replaces the no-op window.MBARockProgress.sync() with real
+   per-account sync against Supabase. Requires:
+     - lessons.js dashboard block already loaded
+     - <main data-mr-dashboard="1">
+     - SUPABASE_URL and SUPABASE_ANON_KEY set below
+   Add this block AFTER the dashboard block in lessons.js.
+   ============================================================ */
+(function() {
+  // ↓↓↓ REPLACE THESE TWO VALUES — see SETUP_SUPABASE.md ↓↓↓
+  var SUPABASE_URL = 'https://ciloqphtencjthkedanw.supabase.co';
+  var SUPABASE_ANON_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+  // ↑↑↑ REPLACE THESE TWO VALUES ↑↑↑
+
+  if (SUPABASE_URL.indexOf('__') === 0 || SUPABASE_ANON_KEY.indexOf('__') === 0) {
+    console.log('[MBA progress] Supabase not configured yet — sync disabled.');
+    return;
+  }
+  if (!document.querySelector('[data-mr-dashboard="1"]')) return;
+
+  var PROGRESS_KEY = 'mba-rock-progress-v2';
+  var MEMBER_KEY   = 'mba-rock-member-id';
+  var REST = SUPABASE_URL.replace(/\/$/, '') + '/rest/v1';
+  var HDR = {
+    'apikey': SUPABASE_ANON_KEY,
+    'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+    'Content-Type': 'application/json',
+    'Prefer': 'resolution=merge-duplicates,return=minimal',
+  };
+
+  function currentMemberId() {
+    return localStorage.getItem(MEMBER_KEY) || 'guest';
+  }
+
+  function localSnapshot() {
+    try { return JSON.parse(localStorage.getItem(PROGRESS_KEY) || '{}'); } catch(e){ return {}; }
+  }
+  function saveLocal(full) {
+    localStorage.setItem(PROGRESS_KEY, JSON.stringify(full));
+  }
+
+  // ── PULL — fetch the member's progress from Supabase on boot ──
+  function pull() {
+    var mid = currentMemberId();
+    if (mid === 'guest') return Promise.resolve();
+    var url = REST + '/progress?select=lesson_id,completed_at&member_id=eq.' + encodeURIComponent(mid);
+    return fetch(url, { headers: HDR })
+      .then(function(r) { return r.ok ? r.json() : []; })
+      .then(function(rows) {
+        if (!Array.isArray(rows) || !rows.length) return;
+        var full = localSnapshot();
+        if (!full[mid]) full[mid] = {};
+        rows.forEach(function(row) {
+          var t = Date.parse(row.completed_at) || Date.now();
+          // Only overwrite if remote is newer or local is missing
+          if (!full[mid][row.lesson_id] || t > full[mid][row.lesson_id]) {
+            full[mid][row.lesson_id] = t;
+          }
+        });
+        saveLocal(full);
+        // Re-paint UI now that local has updated
+        document.querySelectorAll('[data-mr-complete]').forEach(function(cb) {
+          cb.checked = !!full[mid][cb.getAttribute('data-mr-complete')];
+          // Fire change so module bars repaint
+          cb.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+      })
+      .catch(function(e) { console.warn('[MBA progress] pull failed:', e); });
+  }
+
+  // ── PUSH — upsert the full local state for the current member ──
+  var pendingPush = null;
+  function push() {
+    if (pendingPush) return pendingPush;
+    var mid = currentMemberId();
+    if (mid === 'guest') return Promise.resolve();
+    var full = localSnapshot();
+    var local = full[mid] || {};
+    var rows = Object.keys(local).filter(function(lid) { return local[lid]; }).map(function(lid) {
+      return { member_id: mid, lesson_id: lid, completed_at: new Date(local[lid]).toISOString() };
+    });
+    // Plus a "members" upsert so we have a directory
+    var memberRow = { member_id: mid, last_seen_at: new Date().toISOString() };
+    var memberMeta = JSON.parse(localStorage.getItem('mba-rock-member-meta') || 'null');
+    if (memberMeta) {
+      if (memberMeta.email) memberRow.email = memberMeta.email;
+      if (memberMeta.name)  memberRow.name = memberMeta.name;
+    }
+
+    var jobs = [];
+    if (rows.length) {
+      jobs.push(fetch(REST + '/progress?on_conflict=member_id,lesson_id', {
+        method: 'POST', headers: HDR, body: JSON.stringify(rows),
+      }));
+    }
+    jobs.push(fetch(REST + '/members?on_conflict=member_id', {
+      method: 'POST', headers: HDR, body: JSON.stringify([memberRow]),
+    }));
+
+    pendingPush = Promise.all(jobs)
+      .catch(function(e) { console.warn('[MBA progress] push failed:', e); })
+      .then(function() { pendingPush = null; });
+    return pendingPush;
+  }
+
+  // ── Wire to MBARockProgress global ─────────────────────────────
+  window.MBARockProgress = window.MBARockProgress || {};
+  window.MBARockProgress.sync = function() {
+    // Debounce a bit so consecutive checkbox clicks coalesce
+    clearTimeout(window.__mbaSyncTimer);
+    window.__mbaSyncTimer = setTimeout(push, 600);
+  };
+  window.MBARockProgress.refresh = pull;
+
+  // Persist member meta if we have it (for the members table)
+  function captureMemberMeta() {
+    try {
+      var ctx = window.Static && window.Static.SQUARESPACE_CONTEXT;
+      if (ctx && ctx.authenticatedAccount) {
+        var a = ctx.authenticatedAccount;
+        localStorage.setItem('mba-rock-member-meta', JSON.stringify({
+          email: a.email, name: a.firstName || a.displayName,
+        }));
+      }
+    } catch(e){}
+  }
+
+  // Boot: pull on load, then schedule an immediate push to register members row
+  captureMemberMeta();
+  pull().then(function() {
+    // No-op pull is fine; push registers the member
+    setTimeout(push, 800);
+  });
+
+  // Save before leaving in case there's a debounce in flight
+  window.addEventListener('beforeunload', function() { push(); });
+})();
