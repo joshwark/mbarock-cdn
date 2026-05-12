@@ -1,5 +1,5 @@
-// MBA Rock — Lesson Page Takeover v6.4 (2026-05-12)
-// v6.4: adds "Need a break? 🕹" link to The Arcade (Whack-a-Vanity-Metric).
+// MBA Rock — Lesson Page Takeover v6.5 (2026-05-12)
+// v6.5: animated logo video plays on lesson complete; arcade URL cache-busted.
 // LISTEN. LEARN. LIVE.
 
 (function() {
@@ -616,8 +616,9 @@
     html += '<p data-cert-body="1">Mark this lesson complete to lock in the playbook and unlock the next track. Your full curriculum certificate is built one lesson at a time.</p>';
     html += '</div>';
 
-    // Break Room — link to the arcade
-    html += '<div class="mr5-arcade-row"><a class="mr5-arcade-btn" href="https://cdn.jsdelivr.net/gh/joshwark/mbarock-cdn@main/arcade/whack-a-vanity-metric.html" target="_blank" rel="noopener"><span class="mr5-arcade-icon">🕹</span><span><span class="mr5-arcade-l">Need a break?</span><span class="mr5-arcade-s">Step into <b>The Arcade</b> — Whack-a-Vanity-Metric, 30 seconds, no business cards required.</span></span><span class="mr5-arcade-chev">→</span></a></div>';
+    // Break Room — link to the arcade (cache-busted)
+    var arcadeUrl = 'https://cdn.jsdelivr.net/gh/joshwark/mbarock-cdn@main/arcade/whack-a-vanity-metric.html?v=20260512c';
+    html += '<div class="mr5-arcade-row"><a class="mr5-arcade-btn" href="' + arcadeUrl + '" target="_blank" rel="noopener"><span class="mr5-arcade-icon">🕹</span><span><span class="mr5-arcade-l">Need a break?</span><span class="mr5-arcade-s">Step into <b>The Arcade</b> — Whack-a-Vanity-Metric, 30 seconds, no business cards required.</span></span><span class="mr5-arcade-chev">→</span></a></div>';
 
     html += '</div>'; // mr5
 
@@ -638,6 +639,29 @@
       cert.classList.add('done');
       cert.querySelector('[data-cert-title="1"]').textContent = 'Lesson complete. Onward.';
       cert.querySelector('[data-cert-body="1"]').textContent = 'Your progress is saved. Keep stacking the playbook — the next lesson is one click away.';
+
+      // v6.5: swap the static logo for the animated logo video — plays once on lesson completion.
+      var img = cert.querySelector('img');
+      if (img && !cert.querySelector('video[data-cert-video]')) {
+        var v = document.createElement('video');
+        v.setAttribute('data-cert-video', '1');
+        v.src = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/brand/mba-rock-logo-video.mp4';
+        v.poster = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/images/brand/mba-rock-logo-poster.jpg';
+        v.setAttribute('playsinline', '');
+        v.preload = 'auto';
+        v.style.cssText = 'width:280px;max-width:80%;height:auto;margin:0 auto 24px;display:block;border-radius:6px;';
+        // Try unmuted first (user gesture from button click should allow it)
+        v.muted = false;
+        img.replaceWith(v);
+        var playPromise = v.play();
+        if (playPromise && playPromise.catch) {
+          playPromise.catch(function() {
+            // Autoplay-with-audio blocked. Fall back to muted autoplay.
+            v.muted = true;
+            v.play().catch(function(){});
+          });
+        }
+      }
     }
     try {
       if (window.MR_PROGRESS && typeof window.MR_PROGRESS.markComplete === 'function') window.MR_PROGRESS.markComplete(lesson.id);
