@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Whack-a-Vanity-Metric · MBA Rock Arcade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A;
+    --ink:#0E1116;
+    --orange:#F26B1F;
+    --orange-soft:#FBE2D0;
+    --cream:#FAF8F5;
+    --green:#1d8444;
+    --green-soft:#cdebd4;
+    --red:#a01a1a;
+    --rule:#22293a;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;background:var(--ink);color:#fff;font-family:'Inter',-apple-system,sans-serif;overflow-x:hidden;min-height:100vh;}
+  .app{max-width:880px;margin:0 auto;padding:28px 20px 48px;min-height:100vh;display:flex;flex-direction:column;}
+
+  /* Top bar */
+  .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;border-bottom:1px solid var(--rule);padding-bottom:18px;}
+  .brand{font-family:'Fraunces',serif;font-size:14px;letter-spacing:-0.005em;color:#aaa;}
+  .brand b{color:#fff;font-weight:600;}
+  .back{color:var(--orange);font-size:11px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;font-weight:700;border:1px solid var(--rule);padding:8px 14px;border-radius:30px;transition:all .15s;}
+  .back:hover{background:var(--orange);color:#fff;border-color:var(--orange);}
+
+  /* Title */
+  .title{font-family:'Fraunces',serif;font-size:46px;letter-spacing:-0.025em;line-height:1.05;margin:0 0 8px;font-weight:600;}
+  .title .pop{color:var(--orange);}
+  .subtitle{font-family:'Fraunces',serif;font-style:italic;color:#999;font-size:18px;margin:0 0 32px;line-height:1.45;}
+
+  /* Status bar */
+  .status{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 22px;}
+  .stat{background:#171c2b;border:1px solid var(--rule);border-radius:12px;padding:14px 18px;}
+  .stat .l{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#888;font-weight:700;margin-bottom:4px;}
+  .stat .v{font-family:'Fraunces',serif;font-size:30px;font-weight:600;line-height:1;letter-spacing:-0.02em;color:#fff;font-variant-numeric:tabular-nums;}
+  .stat.warn .v{color:var(--orange);}
+  .stat.good .v{color:var(--green);}
+
+  /* Grid */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;flex:1;align-content:center;}
+  .hole{
+    position:relative;aspect-ratio:1/1;background:#171c2b;border:1px solid var(--rule);border-radius:14px;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;
+    transition:background .15s,border-color .15s;
+  }
+  .hole:hover{background:#1d2436;}
+  .hole .mole{
+    position:absolute;inset:8%;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:8px 12px;
+    background:var(--orange);color:#fff;font-family:'Inter',sans-serif;font-weight:700;
+    font-size:clamp(13px,2.4vw,18px);letter-spacing:-0.005em;line-height:1.2;
+    transform:scale(0);transition:transform .12s cubic-bezier(.22,1.6,.36,1);
+    box-shadow:0 8px 24px -8px rgba(242,107,31,.5);
+  }
+  .hole.real .mole{background:var(--green);box-shadow:0 8px 24px -8px rgba(29,132,68,.5);}
+  .hole.up .mole{transform:scale(1);}
+  .hole.bonk-vanity .mole{animation:bonkVanity .35s ease-out forwards;}
+  .hole.bonk-real .mole{animation:bonkReal .45s ease-out forwards;}
+  @keyframes bonkVanity{
+    0%{transform:scale(1);background:var(--orange);}
+    30%{transform:scale(1.3) rotate(8deg);background:var(--orange-soft);color:var(--orange);}
+    100%{transform:scale(0);}
+  }
+  @keyframes bonkReal{
+    0%,100%{transform:scale(1);}
+    20%{transform:scale(1.05);background:var(--red);}
+    40%{transform:scale(0.95) translateX(-6px);}
+    60%{transform:scale(1.05) translateX(6px);}
+    80%{transform:scale(0.98) translateX(-3px);}
+  }
+  .hole .float-points{
+    position:absolute;font-family:'Fraunces',serif;font-size:32px;font-weight:700;font-variant-numeric:tabular-nums;
+    pointer-events:none;animation:floatUp .8s ease-out forwards;letter-spacing:-0.02em;z-index:2;
+  }
+  .hole .float-points.plus{color:var(--orange);}
+  .hole .float-points.minus{color:var(--red);}
+  @keyframes floatUp{
+    0%{transform:translateY(0) scale(.6);opacity:0;}
+    20%{transform:translateY(-8px) scale(1.1);opacity:1;}
+    100%{transform:translateY(-60px) scale(.8);opacity:0;}
+  }
+
+  /* Overlay (start/end screens) */
+  .overlay{
+    position:fixed;inset:0;background:rgba(14,17,22,0.92);backdrop-filter:blur(8px);
+    display:flex;align-items:center;justify-content:center;padding:24px;z-index:100;
+  }
+  .overlay-card{
+    background:#171c2b;border:1px solid var(--rule);border-radius:18px;padding:40px 36px;max-width:440px;width:100%;text-align:center;
+  }
+  .overlay h2{font-family:'Fraunces',serif;font-size:34px;line-height:1.1;letter-spacing:-0.02em;margin:0 0 14px;color:#fff;font-weight:600;}
+  .overlay p{font-family:'Fraunces',serif;font-style:italic;color:#aaa;font-size:17px;line-height:1.5;margin:0 0 26px;}
+  .overlay .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 26px;}
+  .overlay .stats-grid .stat{padding:12px 14px;}
+  .overlay .stats-grid .stat .v{font-size:24px;}
+  .overlay .stats-grid .stat.fail .v{color:var(--red);}
+  .btn{
+    display:inline-block;background:var(--orange);color:#fff;border:0;
+    font-family:'Inter',sans-serif;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    padding:16px 36px;border-radius:50px;cursor:pointer;transition:all .15s;
+    text-decoration:none;
+  }
+  .btn:hover{background:#d75a13;transform:translateY(-2px);box-shadow:0 8px 22px -6px rgba(242,107,31,.5);}
+  .btn.ghost{background:transparent;border:1.5px solid #444;color:#aaa;margin-left:8px;}
+  .btn.ghost:hover{border-color:#aaa;color:#fff;background:transparent;box-shadow:none;}
+  .hint{font-size:11px;color:#666;margin-top:18px;letter-spacing:.06em;}
+
+  /* Tips */
+  .tips{display:flex;gap:16px;justify-content:center;margin:18px 0 0;font-size:12.5px;letter-spacing:.04em;color:#999;}
+  .tips span{display:inline-flex;align-items:center;gap:6px;}
+  .tips .swatch{width:10px;height:10px;border-radius:3px;display:inline-block;}
+  .tips .swatch.v{background:var(--orange);}
+  .tips .swatch.r{background:var(--green);}
+
+  /* High score chip */
+  .hs{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#888;font-weight:600;}
+  .hs b{color:var(--orange);font-family:'Fraunces',serif;font-weight:700;letter-spacing:-0.01em;}
+
+  @media(max-width:560px){
+    .title{font-size:32px;}
+    .subtitle{font-size:15px;}
+    .stat .v{font-size:24px;}
+    .stat{padding:10px 12px;}
+    .overlay-card{padding:30px 22px;}
+    .overlay h2{font-size:26px;}
+    .tips{flex-direction:column;align-items:flex-start;gap:8px;}
+  }
+</style>
+</head>
+<body>
+<main class="app">
+  <div class="topbar">
+    <span class="brand"><b>MBA Rock</b> · The Arcade</span>
+    <a class="back" href="/mba-rock" id="exitBtn">← Back to lessons</a>
+  </div>
+
+  <h1 class="title">Whack-a-<span class="pop">Vanity-Metric</span></h1>
+  <p class="subtitle">Bonk the bullshit. Spare the signals.</p>
+
+  <div class="status">
+    <div class="stat" id="scoreBox"><div class="l">Score</div><div class="v" id="score">0</div></div>
+    <div class="stat warn" id="timeBox"><div class="l">Time</div><div class="v" id="time">30</div></div>
+    <div class="stat good" id="bestBox"><div class="l">Best</div><div class="v" id="best">0</div></div>
+  </div>
+
+  <div class="grid" id="grid">
+    <div class="hole" data-h="0"></div>
+    <div class="hole" data-h="1"></div>
+    <div class="hole" data-h="2"></div>
+    <div class="hole" data-h="3"></div>
+    <div class="hole" data-h="4"></div>
+    <div class="hole" data-h="5"></div>
+    <div class="hole" data-h="6"></div>
+    <div class="hole" data-h="7"></div>
+    <div class="hole" data-h="8"></div>
+  </div>
+
+  <div class="tips">
+    <span><span class="swatch v"></span> Orange = vanity metric · BONK IT (+1)</span>
+    <span><span class="swatch r"></span> Green = real signal · DO NOT BONK (−2)</span>
+  </div>
+</main>
+
+<!-- Start overlay -->
+<div class="overlay" id="startOverlay">
+  <div class="overlay-card">
+    <h2>Whack-a-Vanity-Metric</h2>
+    <p>Founders waste years optimizing the wrong numbers. Spend 30 seconds bonking the metrics that don't matter. Just don't bonk the real ones.</p>
+    <div class="stats-grid">
+      <div class="stat"><div class="l">Round</div><div class="v">30s</div></div>
+      <div class="stat good"><div class="l">Best</div><div class="v" id="bestStart">0</div></div>
+    </div>
+    <button class="btn" id="startBtn">Bring 'em on</button>
+    <p class="hint">Click or tap the orange metrics. The green ones are the ones you ACTUALLY want to grow — those will cost you points.</p>
+  </div>
+</div>
+
+<!-- End overlay -->
+<div class="overlay" id="endOverlay" style="display:none">
+  <div class="overlay-card">
+    <h2 id="endTitle">Round over</h2>
+    <p id="endSubtitle">Here's how you did.</p>
+    <div class="stats-grid">
+      <div class="stat"><div class="l">Score</div><div class="v" id="endScore">0</div></div>
+      <div class="stat"><div class="l">Vanity Bonked</div><div class="v" id="endBonked">0</div></div>
+      <div class="stat fail"><div class="l">Real Bonked</div><div class="v" id="endRealBonked">0</div></div>
+      <div class="stat good"><div class="l">Best</div><div class="v" id="endBest">0</div></div>
+    </div>
+    <button class="btn" id="playAgainBtn">Play again</button>
+    <a class="btn ghost" href="/mba-rock">Back to lessons</a>
+  </div>
+</div>
+
+<script>
+const VANITY = [
+  "Followers", "Pageviews", "GMV", "Bookings", "Awards",
+  "MAU", "Beta Signups", "TechCrunch Coverage", "Engagement Score",
+  "Brand Mentions", "Total Downloads", "Logo Wins", "Vanity ARR",
+  "Social Reach", "Total Users", "Hours Worked", "Lines of Code",
+  "Press Hits", "Q4 Momentum", "Vibes"
+];
+const REAL = [
+  "Net Revenue Retention", "Gross Margin", "Cash Flow",
+  "LTV:CAC", "Payback Period", "Operating Cash Flow",
+  "Contribution Margin", "Free Cash Flow", "Customer Lifetime Value"
+];
+
+const GAME_SECONDS = 30;
+const HOLES = 9;
+const SPAWN_MIN = 280;
+const SPAWN_MAX = 700;
+const POPUP_MIN = 750;
+const POPUP_MAX = 1400;
+const REAL_FREQ = 0.22; // 22% of pops are "real" metrics (avoid bonking)
+
+const STORAGE_KEY = 'mr-arcade-vanity-best';
+
+let score = 0;
+let bonkedVanity = 0;
+let bonkedReal = 0;
+let timeLeft = GAME_SECONDS;
+let running = false;
+let timerInt, spawnTimeout;
+const holes = Array.from(document.querySelectorAll('.hole'));
+const activePopups = {}; // holeIndex -> {timeout, isReal}
+
+function loadBest() {
+  try { return parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10); } catch(e) { return 0; }
+}
+function saveBest(v) {
+  try { localStorage.setItem(STORAGE_KEY, String(v)); } catch(e) {}
+}
+let best = loadBest();
+document.getElementById('best').textContent = best;
+document.getElementById('bestStart').textContent = best;
+
+function showMole() {
+  if (!running) return;
+  // pick a free hole
+  const free = holes.filter(h => !h.classList.contains('up') && !h.classList.contains('bonk-vanity') && !h.classList.contains('bonk-real'));
+  if (!free.length) { scheduleSpawn(); return; }
+  const hole = free[Math.floor(Math.random() * free.length)];
+  const idx = parseInt(hole.dataset.h, 10);
+  const isReal = Math.random() < REAL_FREQ;
+  const pool = isReal ? REAL : VANITY;
+  const label = pool[Math.floor(Math.random() * pool.length)];
+
+  hole.classList.toggle('real', isReal);
+  hole.classList.add('up');
+  hole.innerHTML = '<div class="mole">' + label + '</div>';
+
+  const duration = POPUP_MIN + Math.random() * (POPUP_MAX - POPUP_MIN);
+  activePopups[idx] = { isReal };
+  activePopups[idx].timeout = setTimeout(() => { retract(hole, idx); }, duration);
+  scheduleSpawn();
+}
+
+function retract(hole, idx) {
+  if (!hole.classList.contains('up')) return;
+  hole.classList.remove('up');
+  setTimeout(() => {
+    if (!hole.classList.contains('bonk-vanity') && !hole.classList.contains('bonk-real')) {
+      hole.innerHTML = '';
+      hole.classList.remove('real');
+    }
+  }, 200);
+  delete activePopups[idx];
+}
+
+function scheduleSpawn() {
+  const delay = SPAWN_MIN + Math.random() * (SPAWN_MAX - SPAWN_MIN);
+  spawnTimeout = setTimeout(showMole, delay);
+}
+
+function bonk(hole, idx) {
+  const pop = activePopups[idx];
+  if (!pop) return;
+  clearTimeout(pop.timeout);
+  delete activePopups[idx];
+  const isReal = pop.isReal;
+  const delta = isReal ? -2 : 1;
+  if (isReal) bonkedReal++; else bonkedVanity++;
+  score += delta;
+  document.getElementById('score').textContent = score;
+
+  // Animation + floating points
+  hole.classList.remove('up');
+  hole.classList.add(isReal ? 'bonk-real' : 'bonk-vanity');
+  const pts = document.createElement('div');
+  pts.className = 'float-points ' + (delta > 0 ? 'plus' : 'minus');
+  pts.textContent = (delta > 0 ? '+' : '') + delta;
+  hole.appendChild(pts);
+
+  setTimeout(() => {
+    hole.classList.remove('bonk-vanity', 'bonk-real', 'real');
+    hole.innerHTML = '';
+  }, 500);
+}
+
+holes.forEach(h => {
+  h.addEventListener('click', () => bonk(h, parseInt(h.dataset.h, 10)));
+  h.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    bonk(h, parseInt(h.dataset.h, 10));
+  }, { passive: false });
+});
+
+function tick() {
+  timeLeft--;
+  document.getElementById('time').textContent = timeLeft;
+  if (timeLeft <= 0) endGame();
+}
+
+function startGame() {
+  score = 0; bonkedVanity = 0; bonkedReal = 0; timeLeft = GAME_SECONDS; running = true;
+  document.getElementById('score').textContent = '0';
+  document.getElementById('time').textContent = GAME_SECONDS;
+  document.getElementById('startOverlay').style.display = 'none';
+  document.getElementById('endOverlay').style.display = 'none';
+  holes.forEach(h => { h.classList.remove('up','real','bonk-vanity','bonk-real'); h.innerHTML = ''; });
+  Object.values(activePopups).forEach(p => { try { clearTimeout(p.timeout); } catch(e){} });
+  for (const k in activePopups) delete activePopups[k];
+  clearInterval(timerInt); clearTimeout(spawnTimeout);
+  timerInt = setInterval(tick, 1000);
+  scheduleSpawn();
+}
+
+function endGame() {
+  running = false;
+  clearInterval(timerInt); clearTimeout(spawnTimeout);
+  Object.values(activePopups).forEach(p => { try { clearTimeout(p.timeout); } catch(e){} });
+  for (const k in activePopups) delete activePopups[k];
+
+  if (score > best) {
+    best = score;
+    saveBest(best);
+    document.getElementById('best').textContent = best;
+  }
+
+  // Tailor end copy
+  let title = 'Round over.';
+  let sub = 'Decent. Bonk harder next time.';
+  if (bonkedReal === 0 && bonkedVanity >= 15) { title = 'Sharp eyes.'; sub = "You bonked the noise. You spared the signal. That's the job."; }
+  else if (bonkedReal >= 3) { title = 'You bonked the real metrics.'; sub = "That's how founders lose years optimizing the wrong thing. Try again."; }
+  else if (score < 5) { title = 'Slow start.'; sub = 'The vanity metrics never stop coming. Faster next round.'; }
+  else if (score >= 20) { title = 'Operator move.'; sub = 'You know what matters and what doesn\\'t. That instinct compounds.'; }
+
+  document.getElementById('endTitle').textContent = title;
+  document.getElementById('endSubtitle').textContent = sub;
+  document.getElementById('endScore').textContent = score;
+  document.getElementById('endBonked').textContent = bonkedVanity;
+  document.getElementById('endRealBonked').textContent = bonkedReal;
+  document.getElementById('endBest').textContent = best;
+  document.getElementById('endOverlay').style.display = 'flex';
+}
+
+document.getElementById('startBtn').addEventListener('click', startGame);
+document.getElementById('playAgainBtn').addEventListener('click', startGame);
+
+// Allow Squarespace-style back nav (if opened from a lesson page, "Back to lessons" goes to /mba-rock)
+// If the referrer is a lesson, prefer that
+try {
+  const ref = document.referrer;
+  if (ref && /\/mba-rock\//.test(ref)) {
+    document.getElementById('exitBtn').href = ref;
+    document.querySelectorAll('.btn.ghost').forEach(a => a.href = ref);
+  }
+} catch (e) {}
+</script>
+</body>
+</html>
