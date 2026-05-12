@@ -1,5 +1,5 @@
-// MBA Rock — Lesson Page Takeover v5 (2026-05-12)
-// Premium music school direction. Logo system: hero TL + outro/cert.
+// MBA Rock — Lesson Page Takeover v6 (2026-05-12)
+// v6 adds: deeper-dive section, KaTeX-rendered equations, perpetual per-account notes via Supabase.
 // LISTEN. LEARN. LIVE.
 
 (function() {
@@ -48,7 +48,86 @@
 
   var V2_URL = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json';
 
+  // ── Supabase (for per-account notes — same project as progress sync) ──
+  var SUPABASE_URL = 'https://ciloqphtencjthkedanw.supabase.co';
+  var SUPABASE_ANON_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+  var MEMBER_KEY = 'mba-rock-member-id';
+  function memberId() { return localStorage.getItem(MEMBER_KEY) || 'guest'; }
+  var SB_HDR = {
+    'apikey': SUPABASE_ANON_KEY,
+    'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+    'Content-Type': 'application/json',
+    'Prefer': 'resolution=merge-duplicates,return=minimal',
+  };
+
   function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
+
+  // ── Tiny markdown-ish renderer: paragraphs, **bold**, *italic*, line breaks. Preserves $..$ math for KaTeX. ──
+  function mdLite(text) {
+    if (!text) return '';
+    var parts = String(text).split(/\n\s*\n/); // split on blank lines = paragraphs
+    return parts.map(function(p) {
+      p = esc(p.trim());
+      // bold then italic (after escape so HTML is safe)
+      p = p.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+      p = p.replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g, '$1<em>$2</em>');
+      // single newlines → <br>
+      p = p.replace(/\n/g, '<br>');
+      // wrap UL when paragraph starts with "- "
+      if (/^- /.test(p) || /<br>- /.test(p)) {
+        var lines = p.split(/<br>|\n/).map(function(l){ return l.replace(/^- /, ''); });
+        return '<ul>' + lines.map(function(l){ return '<li>' + l + '</li>'; }).join('') + '</ul>';
+      }
+      return '<p>' + p + '</p>';
+    }).join('');
+  }
+
+  // ── KaTeX auto-loader (loads CSS + JS + auto-render extension on demand) ──
+  var katexReady = null;
+  function loadKatex() {
+    if (katexReady) return katexReady;
+    katexReady = new Promise(function(resolve) {
+      // CSS
+      if (!document.querySelector('link[data-mr-katex]')) {
+        var l = document.createElement('link');
+        l.rel = 'stylesheet';
+        l.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css';
+        l.setAttribute('data-mr-katex', '1');
+        document.head.appendChild(l);
+      }
+      // Core JS
+      var s1 = document.createElement('script');
+      s1.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js';
+      s1.onload = function() {
+        // Auto-render extension
+        var s2 = document.createElement('script');
+        s2.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js';
+        s2.onload = function() { resolve(window.renderMathInElement); };
+        s2.onerror = function() { console.warn('[MR v6] KaTeX auto-render failed to load'); resolve(null); };
+        document.head.appendChild(s2);
+      };
+      s1.onerror = function() { console.warn('[MR v6] KaTeX failed to load'); resolve(null); };
+      document.head.appendChild(s1);
+    });
+    return katexReady;
+  }
+
+  function renderMath(scope) {
+    loadKatex().then(function(renderFn) {
+      if (!renderFn) return;
+      try {
+        renderFn(scope, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '\\(', right: '\\)', display: false },
+            { left: '$',  right: '$',  display: false }
+          ],
+          throwOnError: false,
+          errorColor: '#a00',
+        });
+      } catch (e) { console.warn('[MR v6] KaTeX render error', e); }
+    });
+  }
 
   function injectStyles(brand) {
     if (document.getElementById('mr-v5-styles')) return;
@@ -143,6 +222,32 @@
     .mr5-btn-primary:disabled{background:#1d8444;cursor:default;transform:none;}
     .mr5-btn-ghost{background:transparent;color:${c.navy};border:1.5px solid ${c.navy};}
     .mr5-btn-ghost:hover{background:${c.navy};color:#fff;}
+
+    /* Deeper Dive — long-form editorial */
+    .mr5-deepdive{font-family:"Fraunces",serif;color:${c.ink};font-size:18px;line-height:1.75;max-width:780px;}
+    .mr5-deepdive p{margin:0 0 18px;}
+    .mr5-deepdive strong{color:${c.navy};font-weight:600;}
+    .mr5-deepdive em{font-style:italic;color:#444;}
+    .mr5-deepdive ul{padding-left:24px;margin:0 0 18px;}
+    .mr5-deepdive li{margin:0 0 10px;font-size:17px;line-height:1.65;}
+    .mr5-deepdive .katex-display{margin:24px 0;padding:18px 24px;background:${c.cream};border-left:3px solid ${c.orange};border-radius:0 4px 4px 0;overflow-x:auto;}
+    .mr5-deepdive .katex{font-size:1.05em;}
+    .mr5-equation-label{font-family:"Inter",sans-serif;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:${c.orange};font-weight:600;margin-top:-12px;margin-bottom:18px;padding-left:24px;}
+
+    /* Notes — perpetual per-account journal */
+    .mr5-notes{background:${c.cream};border:1px solid ${c.rule};border-radius:8px;padding:6px;}
+    .mr5-notes-textarea{width:100%;min-height:220px;padding:24px 28px;border:0;background:transparent;font-family:"Fraunces",serif;font-size:17px;line-height:1.7;color:${c.ink};resize:vertical;outline:none;letter-spacing:-0.005em;}
+    .mr5-notes-textarea::placeholder{color:#aaa;font-style:italic;}
+    .mr5-notes-bar{display:flex;align-items:center;justify-content:space-between;padding:8px 14px 4px;border-top:1px dashed ${c.rule};margin-top:4px;font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#888;font-weight:600;}
+    .mr5-notes-bar .mr5-notes-status{display:inline-flex;align-items:center;gap:6px;}
+    .mr5-notes-bar .mr5-notes-status::before{content:"";width:7px;height:7px;border-radius:50%;background:${c.rule};transition:background .2s;}
+    .mr5-notes-bar .mr5-notes-status.saving::before{background:#d49f1c;animation:mr5-pulse 1s ease-in-out infinite;}
+    .mr5-notes-bar .mr5-notes-status.saved::before{background:#1d8444;}
+    .mr5-notes-bar .mr5-notes-status.guest::before{background:#a00;}
+    .mr5-notes-bar .mr5-notes-status.error::before{background:#a00;}
+    @keyframes mr5-pulse{0%,100%{opacity:.4;}50%{opacity:1;}}
+    .mr5-notes-bar a{color:${c.navy};border-bottom:1px solid ${c.rule};padding-bottom:1px;text-decoration:none;}
+    .mr5-notes-bar a:hover{border-color:${c.orange};color:${c.orange};}
 
     /* Resources */
     .mr5-res{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;}
@@ -377,6 +482,29 @@
     else          html += '<a class="mr5-btn mr5-btn-ghost" href="/course-dashboard">Back to dashboard</a>';
     html += '</div></div>';
 
+    // 05 Deeper Dive (if lesson has deep_dive content)
+    if (lesson.deep_dive && lesson.deep_dive.trim()) {
+      html += '<div class="mr5-sec" data-mrv6-deepdive="1">' +
+        '<div class="mr5-sec-h"><span class="mr5-num">' + num() + '</span><h2>Deeper dive</h2><span class="mr5-kicker">Behind the concept</span></div>' +
+        '<div class="mr5-deepdive">' + mdLite(lesson.deep_dive) + '</div>' +
+        '</div>';
+    }
+
+    // 06 Your notes (always rendered — perpetual per account)
+    var noteHint = 'Your notes for ' + esc(lesson.id) + ' — what clicked, what didn’t, what to revisit. Saved to your account.';
+    var statusInit = memberId() === 'guest' ? 'guest' : '';
+    var statusLabel = memberId() === 'guest' ? 'Sign in to sync notes (local only)' : 'Loading…';
+    html += '<div class="mr5-sec" data-mrv6-notes="1">' +
+      '<div class="mr5-sec-h"><span class="mr5-num">' + num() + '</span><h2>Your notes</h2><span class="mr5-kicker">Saved to your account</span></div>' +
+      '<div class="mr5-notes">' +
+        '<textarea class="mr5-notes-textarea" data-mr-notes-input="1" placeholder="' + noteHint + '" spellcheck="true"></textarea>' +
+        '<div class="mr5-notes-bar">' +
+          '<span class="mr5-notes-status ' + statusInit + '" data-mr-notes-status="1">' + statusLabel + '</span>' +
+          '<span>Member: <a href="/course-dashboard" data-mr-member-label>' + esc(memberId()) + '</a></span>' +
+        '</div>' +
+      '</div>' +
+      '</div>';
+
     // Resources
     html += buildResources(lesson, mod);
 
@@ -507,14 +635,111 @@
     if (chip) document.body.appendChild(chip);
 
     wireInteractions(lesson, newSection);
+    wireNotes(lesson, newSection);
 
     try {
       if (localStorage.getItem('mr-lesson-complete:' + lesson.id)) markComplete(lesson, newSection);
     } catch (e) {}
 
+    // Render LaTeX in the deeper-dive section (if present)
+    var deepEl = newSection.querySelector('.mr5-deepdive');
+    if (deepEl) renderMath(deepEl);
+
     document.body && document.body.setAttribute('data-mr-v5-applied', '1');
-    console.log('[MBA v5] hid', bodySections.length, 'old sections; rendered premium layout for', lesson.id);
+    console.log('[MBA v6] hid', bodySections.length, 'old sections; rendered premium layout for', lesson.id);
     return true;
+  }
+
+  // ── Notes — perpetual per-account journal via Supabase upsert ──
+  function wireNotes(lesson, container) {
+    var input = container.querySelector('[data-mr-notes-input="1"]');
+    var statusEl = container.querySelector('[data-mr-notes-status="1"]');
+    if (!input || !statusEl) return;
+    var mid = memberId();
+    var saveTimer = null;
+    var lastSaved = '';
+
+    function setStatus(state, text) {
+      statusEl.className = 'mr5-notes-status ' + (state || '');
+      statusEl.textContent = text;
+    }
+
+    // 1. Hydrate — pull notes from Supabase if signed in, else local cache
+    var localKey = 'mr-notes:' + mid + ':' + lesson.id;
+    var localCache = '';
+    try { localCache = localStorage.getItem(localKey) || ''; } catch (e) {}
+
+    if (mid === 'guest') {
+      setStatus('guest', 'Sign in to sync notes (local only)');
+      input.value = localCache;
+      lastSaved = localCache;
+    } else {
+      input.value = localCache; // optimistic from local
+      lastSaved = localCache;
+      setStatus('saving', 'Loading…');
+      var url = SUPABASE_URL + '/rest/v1/user_notes?select=notes,updated_at&member_id=eq.' + encodeURIComponent(mid) + '&lesson_id=eq.' + encodeURIComponent(lesson.id);
+      fetch(url, { headers: SB_HDR })
+        .then(function(r) { return r.ok ? r.json() : []; })
+        .then(function(rows) {
+          if (rows && rows.length && rows[0].notes != null) {
+            input.value = rows[0].notes;
+            lastSaved = rows[0].notes;
+            try { localStorage.setItem(localKey, rows[0].notes); } catch (e) {}
+          }
+          setStatus('saved', 'Saved');
+        })
+        .catch(function(e) {
+          console.warn('[MR v6 notes] pull failed', e);
+          setStatus('error', 'Offline — local only');
+        });
+    }
+
+    // 2. Auto-save on input — debounced 1.2s
+    input.addEventListener('input', function() {
+      if (saveTimer) clearTimeout(saveTimer);
+      setStatus('saving', 'Saving…');
+      try { localStorage.setItem(localKey, input.value); } catch (e) {}
+      if (mid === 'guest') {
+        // local only
+        saveTimer = setTimeout(function() {
+          lastSaved = input.value;
+          setStatus('guest', 'Sign in to sync notes (local only)');
+        }, 800);
+        return;
+      }
+      saveTimer = setTimeout(function() {
+        var body = [{
+          member_id: mid,
+          lesson_id: lesson.id,
+          notes: input.value,
+          updated_at: new Date().toISOString()
+        }];
+        fetch(SUPABASE_URL + '/rest/v1/user_notes?on_conflict=member_id,lesson_id', {
+          method: 'POST', headers: SB_HDR, body: JSON.stringify(body)
+        }).then(function(r) {
+          if (r.ok) { lastSaved = input.value; setStatus('saved', 'Saved · ' + new Date().toLocaleTimeString().slice(0,5)); }
+          else { setStatus('error', 'Save failed ('+r.status+')'); }
+        }).catch(function(e) {
+          console.warn('[MR v6 notes] push failed', e);
+          setStatus('error', 'Offline — local only');
+        });
+      }, 1200);
+    });
+
+    // 3. Save on blur (immediate, no debounce)
+    input.addEventListener('blur', function() {
+      if (input.value === lastSaved) return;
+      if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; }
+      try { localStorage.setItem(localKey, input.value); } catch (e) {}
+      if (mid === 'guest') { lastSaved = input.value; return; }
+      var body = [{ member_id: mid, lesson_id: lesson.id, notes: input.value, updated_at: new Date().toISOString() }];
+      fetch(SUPABASE_URL + '/rest/v1/user_notes?on_conflict=member_id,lesson_id', {
+        method: 'POST', headers: SB_HDR, body: JSON.stringify(body)
+      }).then(function(r) {
+        if (r.ok) { lastSaved = input.value; setStatus('saved', 'Saved'); }
+        else { setStatus('error', 'Save failed'); }
+      }).catch(function() { setStatus('error', 'Offline'); });
+    });
   }
 
   function tokenize(s) {
