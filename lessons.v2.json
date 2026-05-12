@@ -1340,31 +1340,9 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Flow_Not_Force.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "Throughput vs. Capacity",
-          "body": "Throughput is what actually moves through the system. Capacity is what it could theoretically handle. The two diverge dramatically when there's a bottleneck.\n\nA factory line at 80% capacity utilization but only 40% throughput is hemorrhaging value to the constraint."
-        },
-        {
-          "title": "Little's Law",
-          "body": "The fundamental equation of operations:\n\n$$L = \\lambda \\times W$$\n\nWhere L = work-in-progress, \u03bb = throughput rate, W = lead time. The relationship is rigid \u2014 if you increase WIP without increasing throughput, lead time inflates."
-        },
-        {
-          "title": "Theory of Constraints",
-          "body": "Goldratt's insight: every system has exactly one binding constraint at any time. Optimizing anything but the constraint produces no system-level improvement.\n\nIdentify the bottleneck. Subordinate everything else to it. Elevate the bottleneck. When it moves elsewhere, repeat."
-        },
-        {
-          "title": "Push vs. Pull",
-          "body": "Push systems: produce ahead and hope demand catches up. Inventory accumulates; flexibility falls. Pull systems (Toyota, Kanban): produce only what's demanded downstream.\n\nPull is harder to set up; better in steady state. Push is easier; corrosive at scale."
-        },
-        {
-          "title": "Flow as a Mindset",
-          "body": "Most operations problems are flow problems. Smooth flow generates output, builds quality, exposes problems immediately.\n\nThe operator's question every day: where is flow being interrupted? Fix that before adding capacity."
-        }
-      ],
+      "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**Eliyahu Goldratt's Theory of Constraints is the most under-applied operating framework.** Most operators try to improve everything simultaneously. The theory says: improving non-constraint resources produces no system-level gain, and often makes things worse by piling up WIP at the bottleneck.\n\nThe Five Focusing Steps of TOC:\n\n1. **Identify the constraint.** Where does work pile up? Where do downstream resources wait? That's the bottleneck.\n2. **Exploit the constraint.** Get every possible minute of productivity from the bottleneck. No setup time. No interruptions. No unnecessary work.\n3. **Subordinate everything else.** Non-constraint resources should not produce faster than the constraint can absorb. Producing ahead just creates WIP.\n4. **Elevate the constraint.** Once exploited and subordinated, invest in expanding the bottleneck \u2014 more capacity, faster machines, more skilled operators.\n5. **Repeat.** When the bottleneck moves, restart at step 1.\n\n**Little's Law** is the math that ties this together. If WIP (L) goes up and throughput (\u03bb) stays constant, lead time (W) increases. Customers wait longer. Quality drops. Defects compound. The operator's instinct to load up the system with more work backfires \u2014 flow degrades as WIP climbs.\n\nThe practical move:\n\n- **Visualize WIP.** Kanban board, status dashboard, any tool that makes the work-in-progress count visible. The number is a real metric.\n- **Set WIP limits.** Each stage has a hard cap. Pulled by downstream demand, not pushed by upstream supply.\n- **Track lead time.** If lead time is increasing, WIP is climbing or the constraint is degrading. Both deserve immediate attention.\n\nFlow beats force. The operations team that internalizes this generates more output, cleaner quality, and less burnout than the one that just pushes harder."
+      "placeholder": false
     },
     {
       "id": "M5L2",
@@ -1379,31 +1357,9 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Process_Maps__Order_from_Chaos.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "Why Map a Process",
-          "body": "An unmapped process is a process nobody understands the same way. Different team members carry different mental models, which is how errors compound and improvements stall.\n\nMapping forces a single shared picture. The act of mapping reveals more than the final map."
-        },
-        {
-          "title": "Value-Adding vs. Non-Value-Adding Steps",
-          "body": "Walk every step of a process and tag each as: value-adding (the customer would pay for this), necessary non-value-adding (regulatory, accounting), or pure waste.\n\nTypical first map: 30-50% pure waste. The clean-up is operating leverage waiting to be harvested."
-        },
-        {
-          "title": "Handoff Friction",
-          "body": "Most defects and delays happen at handoffs \u2014 between people, teams, systems. Each handoff is a potential information loss and accountability blur.\n\nMinimize handoffs by design. Where handoffs are unavoidable, make them explicit, named, and time-bounded."
-        },
-        {
-          "title": "Swim Lanes",
-          "body": "Process maps with swim lanes show who owns each step. The handoffs are visible as lines crossing lanes.\n\nA process with too many lane crossings is one with too many handoffs. Each crossing is friction."
-        },
-        {
-          "title": "Map the Real Process",
-          "body": "The mapped process is often aspirational. The real process is what people actually do. Both are useful; confusing them is fatal.\n\nMap the real process first. Then design the desired one. The gap is your improvement work."
-        }
-      ],
+      "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**Process maps are not documents. They are diagnostic instruments.** The act of getting a team to agree on a single process map is where most of the value comes from \u2014 long before any optimization happens. People discover they've been doing it differently. Senior leaders discover steps they didn't know existed. Errors get traced to specific handoffs.\n\nThe sequence that works:\n\n1. **Walk the process in person**, end-to-end, with the people who do it. Notebook. No assumptions. Note every step, every handoff, every decision point.\n2. **Draw it on a wall** \u2014 paper, sticky notes, anything visual and rearrangeable. Computer tools come later.\n3. **Tag every step** as value-adding (V), necessary non-value-adding (N), or waste (W). Be ruthless. \"We've always done it that way\" is not value.\n4. **Quantify each step**: cycle time, queue time, error rate. Most steps take 5x longer than people estimate.\n5. **Find the 80/20 of waste.** Most processes have 2-3 steps that account for the majority of delay or defects. Fix those first.\n\n**The handoff principle** deserves its own attention. Each time work passes from one person/team/system to another, three things happen: information gets lost, accountability blurs, time is added. A 5-step process with 0 handoffs runs faster and cleaner than a 5-step process with 4 handoffs. Operations design that minimizes handoffs systematically wins.\n\nThe practical move every operator should make at least once a year: pick the highest-volume process in your business. Walk it end-to-end. Map it on a wall with the people who run it. Tag every step. Eliminate the top 3 waste sources. The exercise pays for itself within a quarter, and the team that maps gets better at noticing waste forever after."
+      "placeholder": false
     },
     {
       "id": "M5L3",
@@ -1418,31 +1374,9 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_Quality_Engine.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "Quality at the Source",
-          "body": "Cheapest quality control: build it right the first time. Inspecting after the fact catches errors but doesn't prevent them, and inspection has its own error rate.\n\nThe Toyota principle: every operator is empowered to stop the line when they see a defect. Quality is owned at the source, not centralized in a QA department."
-        },
-        {
-          "title": "Defect Cost Curve",
-          "body": "A defect caught at the source costs $1. Caught in mid-production: $10. Caught at the customer: $100. Caught in a recall: $1,000+.\n\nThe exponential cost curve makes investment in source-quality the highest-ROI operating investment you can make."
-        },
-        {
-          "title": "Six Sigma Foundations",
-          "body": "Six Sigma = 3.4 defects per million opportunities. The methodology (DMAIC: Define, Measure, Analyze, Improve, Control) is a structured approach to reducing defect rates.\n\n$$\\text{DPMO} = \\frac{\\text{Defects} \\times 1{,}000{,}000}{\\text{Opportunities}}$$\n\nNot every business needs Six Sigma. But the discipline of measuring defects-per-million is universally useful."
-        },
-        {
-          "title": "First Pass Yield",
-          "body": "Percentage of units that pass through the process correctly the first time, with no rework.\n\n$$\\text{FPY} = \\frac{\\text{Units Passed First Time}}{\\text{Total Units Started}}$$\n\nLow FPY = high hidden cost. Rework, scrap, scheduling chaos. The number to track to know if process improvements are landing."
-        },
-        {
-          "title": "Build Quality In",
-          "body": "Quality engineering means designing the process so defects are physically hard to produce. Poka-yoke (error-proofing): make the wrong action impossible.\n\nA USB connector that only inserts one way is poka-yoke. Color-coded surgical instruments so wrong-side surgery is harder is poka-yoke. The design eliminates the error before it can occur."
-        }
-      ],
+      "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**Quality is not a department. It's an architecture.** Businesses that try to inspect quality in \u2014 running defective products past more and more inspectors \u2014 produce mediocre quality at high cost. Businesses that engineer quality in \u2014 designing processes so defects are hard to produce \u2014 produce excellent quality cheaply.\n\nThe shift in mindset happens when you understand the **defect cost curve**:\n\n- Defect prevented at design stage: ~$1\n- Defect caught at source by operator: ~$10\n- Defect caught at internal inspection: ~$100\n- Defect caught by customer: ~$1,000+\n- Defect causes a recall or lawsuit: ~$10,000-$1,000,000+\n\nA company that spends $1,000 on better process design saves an order of magnitude on every downstream stage. The math is unforgiving and consistently ignored.\n\n**Six Sigma's contribution** isn't the specific 3.4-defects-per-million target \u2014 most businesses can't and shouldn't aim there. The contribution is the *discipline of measurement*. You can't improve what you don't measure, and most quality issues are invisible because nobody's counting:\n\n$$\\text{DPMO} = \\frac{\\text{Defects observed} \\times 1{,}000{,}000}{\\text{Opportunities for defect}}$$\n\nIf you don't know your DPMO, you're flying blind on quality.\n\n**First Pass Yield** is the more practical operating metric. What percentage of units, transactions, or deliverables make it through the process without rework? At 95% FPY, 5% of capacity is consumed by rework \u2014 a hidden tax on throughput. At 85% FPY, 15% is rework, with cascading effects on cost, lead time, and customer experience.\n\nThe practical move: pick your highest-volume process. Track FPY for a month. Find the top three causes of rework. Eliminate them via design \u2014 not inspection. Repeat. Compound improvements over a year and the operating leverage is enormous."
+      "placeholder": false
     },
     {
       "id": "M5L4",
@@ -1457,31 +1391,9 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Modern_Tech_Strategy.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "Tech as Strategic Infrastructure",
-          "body": "Technology decisions are 5\u201310 year commitments masquerading as 6-month projects. The architecture you build now determines what's possible (and impossible) for years.\n\nMost tech mistakes are commitments to the wrong abstraction, not bad code. The wrong abstraction compounds; bad code can be refactored."
-        },
-        {
-          "title": "Build vs. Buy vs. Partner",
-          "body": "Three options for every capability:\n\n- **Build**: full control, high cost, slow.\n- **Buy** (off-the-shelf software): fast, lower control, vendor risk.\n- **Partner**: someone else operates it; you integrate.\n\nDefault to buy/partner for commodities; build only what's core differentiation."
-        },
-        {
-          "title": "Technical Debt",
-          "body": "Technical debt is the implementation choices made for short-term speed that will cost long-term productivity. Some debt is good (move fast on uncertain bets); some is poison (compounds against you).\n\nThe operator's job isn't zero debt. It's managing the debt portfolio."
-        },
-        {
-          "title": "AI as Force Multiplier",
-          "body": "In 2026, AI is no longer optional. The question isn't whether to use it but *where* \u2014 drafting, summarizing, coding, customer support, analytics, decision support.\n\nThe operators using AI well are 2-3x more productive. The ones not using it are losing ground daily."
-        },
-        {
-          "title": "Vendor Lock-In",
-          "body": "Every SaaS subscription is a future migration cost. Data formats, API dependencies, integration patterns \u2014 each accumulates switching cost.\n\nFavor vendors with open standards, exportable data, replaceable abstractions. The expensive lesson is learning which vendors you can leave easily."
-        }
-      ],
+      "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**Technology strategy is the most consequential operating decision of the modern business \u2014 and the most under-managed by non-technical founders.** The decisions made about stack, vendors, and abstractions in years 1\u20133 determine the company's flexibility for the next 10. Bad decisions compound silently; good decisions compound quietly.\n\nThe **build/buy/partner** framework is the most useful first filter. For every capability your business needs:\n\n- **Build** when the capability is your differentiated core. The thing customers come to you for. Worth full ownership.\n- **Buy** when the capability is commodity infrastructure. Email, CRM, accounting, HR, infrastructure. Buy the best off-the-shelf option; integrate; move on.\n- **Partner** when the capability is operationally complex and not your core. Payments (Stripe), fulfillment (Shopify Fulfillment Network), telephony (Twilio). Someone else's operating discipline beats yours.\n\nThe mistake most founders make is **building commodity** out of misplaced pride (\"we'll do it better\") and **buying differentiation** out of misplaced humility (\"others know more\"). Reverse both.\n\n**Technical debt** is the second strategic lever. All software has debt \u2014 implementation choices that traded long-term flexibility for short-term speed. Some debt is wise:\n\n- Building an MVP with the cheapest, ugliest possible stack to validate demand. The right call. Refactor when validated.\n- Skipping internationalization for the first year. Right when you only have US customers.\n- Hard-coding values that will need to be configurable later. Right if it ships features now.\n\nSome debt is poison:\n\n- Coupling business logic to a third-party API you can't replace.\n- Building on infrastructure that won't scale past your growth target.\n- Skipping observability and security in the early build.\n\nThe operator's job is **knowing which debts you're carrying and what the payback plan is**. Annual technical debt reviews. Quarterly architecture decisions. The debt that's planned and intentional is fine. The debt that's accidental and forgotten is what kills the company at the worst moment."
+      "placeholder": false
     },
     {
       "id": "M5L5",
@@ -1496,31 +1408,9 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Build_vs.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "Strategic Importance Axis",
-          "body": "How core is this capability to your differentiation? High = customers come to you for this; low = table stakes everyone needs.\n\nHigh-strategic = bias to build. Low-strategic = bias to buy. The simple X-axis of the decision."
-        },
-        {
-          "title": "Implementation Complexity Axis",
-          "body": "How complex is the implementation? High = specialized expertise, infrastructure, ongoing maintenance burden. Low = configure-and-go.\n\nHigh-complexity = bias to buy. Low-complexity = either works. The Y-axis."
-        },
-        {
-          "title": "The 2x2 Matrix",
-          "body": "Build (high strategic, low complexity): your core differentiation.\nBuy (low strategic, low complexity): commodity tools.\nPartner (high strategic, high complexity): leverage a specialist's deep expertise.\nAvoid (low strategic, high complexity): why do you need this at all?"
-        },
-        {
-          "title": "Total Cost of Ownership",
-          "body": "Total Cost of Ownership = purchase price + implementation + ongoing maintenance + opportunity cost of internal time + switching cost when you outgrow it.\n\n$$\\text{TCO}_{3\\text{yr}} = \\text{Initial} + 36 \\times \\text{Monthly} + \\text{Implementation} + \\text{Integration} + \\text{Training}$$\n\nNaive comparisons compare initial price. Sophisticated ones compare 3-year TCO with switching cost."
-        },
-        {
-          "title": "When to Re-Decide",
-          "body": "The decision isn't permanent. Every 18-24 months, revisit: has the capability become more or less strategic? Have buy-side options improved? Is your scale now justifying a build?\n\nMany companies build commodity in year 2 (rational) and never re-decide when buy options mature. Capital trapped."
-        }
-      ],
+      "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**The build-vs-buy decision is one of the most common \u2014 and most poorly made \u2014 strategic decisions in modern business.** Founders default to building (sometimes from misplaced pride, sometimes because they enjoy the work). CFOs default to buying (sometimes from misplaced caution, sometimes for short-term cost optics). Neither default is right; the answer is contextual.\n\nThe 2x2 matrix:\n\n```\n                  Low Strategic    High Strategic\n                  \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nLow Complexity:   BUY              BUILD\nHigh Complexity:  AVOID            PARTNER\n```\n\n- **BUY** (low strategic, low complexity): payroll, email, accounting, basic CRM. Buy the best, move on.\n- **BUILD** (high strategic, low complexity): your core product features. The thing customers come to you for. Build with full ownership.\n- **PARTNER** (high strategic, high complexity): payments, fulfillment, AI infrastructure. The capability is strategic but operationally hard. Use Stripe, not your own card processor.\n- **AVOID** (low strategic, high complexity): why do you need this at all? Often the right answer is to scope the requirement smaller.\n\nThe **Total Cost of Ownership** lens is what trips up most analyses. Naive comparisons look at:\n\n- Buy: $50K/year SaaS subscription\n- Build: $200K of one-time engineering\n\nAnd conclude \"build pays back in 4 years.\" But the real TCO of build includes:\n\n- $200K initial engineering\n- $80K/year ongoing maintenance (a senior engineer's loaded cost)\n- Opportunity cost of that engineer not building differentiation\n- Eventual rewrites when scale changes (Engineering attrition compounds this)\n- Documentation, on-call, security patching, etc.\n\nReal 5-year TCO: $200K + $400K + opportunity cost = $600K+ vs SaaS's $250K. Build was never cheaper.\n\nThe equation worth burning in:\n\n$$\\text{TCO}_{n\\text{yr}} = \\text{Initial} + n \\times \\text{Annual Maintenance} + \\text{Opportunity Cost} + \\text{Switching Cost}$$\n\nThe correct comparison is full TCO, not initial price. Most build decisions don't survive that comparison."
+      "placeholder": false
     },
     {
       "id": "M6L1",
@@ -1536,18 +1426,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Organizational Design",
-        "Span of Control",
-        "Functional vs. Divisional Structure",
-        "Scaling Operations",
-        "Org Structure for Growth"
+        {
+          "title": "Growth Is a System",
+          "body": "Sustained growth comes from one or more *engines* \u2014 repeatable, scalable mechanisms that turn input (capital, attention) into output (customers, revenue). Not from heroic launches or one-off campaigns.\n\nThe operator's question: what's our engine, and how do we widen it?"
+        },
+        {
+          "title": "The Three Growth Engines",
+          "body": "Sean Ellis / Andrew Chen frame:\n\n- **Viral**: each customer brings more customers. K-factor > 1.\n- **Paid**: predictable CAC, repeatable channels.\n- **Sticky**: low churn + expansion revenue.\n\nMost businesses run on a mix. Knowing the dominant engine determines investment focus."
+        },
+        {
+          "title": "The Rule of 40",
+          "body": "For SaaS specifically: revenue growth rate + profit margin should equal 40%+.\n\n$$\\text{Rule of 40} = \\text{Growth \\%} + \\text{Profit Margin \\%} \\geq 40$$\n\nA 30% grower at 10% margin clears it. A 60% grower at -20% margin also clears it. Below 40 = unhealthy mix."
+        },
+        {
+          "title": "Compound Growth Math",
+          "body": "Sustained growth compounds. A business growing 30% annually doubles every 2.6 years. 50% growth doubles every 1.7 years.\n\nThe compounding is where most of the value comes from. Year-1 revenue doesn't matter much. Year-5 revenue (which depends on growth rate) determines outcomes."
+        },
+        {
+          "title": "Quality of Growth",
+          "body": "Not all growth is good. Growth at unhealthy CAC payback is borrowed time. Growth at falling NRR is a leaky bucket. Growth concentrated in one channel or customer is fragility wearing a crown.\n\nDiscount growth by quality. The right question isn't just 'how fast' but 'how durable.'"
+        }
       ],
       "take_action": [
         "Draw your current org chart and identify reporting bottlenecks",
         "Calculate your average span of control",
         "Design the org structure you'll need at 2\u00d7 your current headcount"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Sustained growth is one of the rarest things in business, and almost always the product of an engine \u2014 not effort.** Every market eventually has a winner that built a self-reinforcing system, and runners-up who relied on heroics. The system always wins long-term.\n\nThe three classic growth engines (Sean Ellis, Andrew Chen):\n\n- **Viral growth**: each customer brings n new customers, where n > 1. K-factor of 1.1 means each user brings 1.1 more, compounding to dominance. Examples: Dropbox referrals, WhatsApp, Robinhood waitlist. Hard to engineer; extraordinary when achieved.\n- **Paid growth**: spend money to acquire customers at a known CAC, monetize at a known LTV. Engine works as long as LTV:CAC > 3 and capital is available. Examples: most DTC ecommerce, much of B2B SaaS. Scales linearly with capital.\n- **Sticky growth**: high retention + expansion (NRR > 100%). New customers add; existing customers grow. Net new revenue compounds even without aggressive top-of-funnel. Examples: Slack, Atlassian, Snowflake. The most durable engine.\n\nMost businesses run on a mix. Identifying the **dominant engine** tells you where to invest:\n\n- Viral engine \u2192 invest in mechanisms that amplify K-factor: referral programs, social features, network products.\n- Paid engine \u2192 invest in CAC reduction, payback shortening, LTV expansion. Channel-level optimization.\n- Sticky engine \u2192 invest in onboarding, expansion features, customer success. Retention compounding.\n\n**The Rule of 40** is the public-market filter for SaaS health:\n\n$$\\text{Growth Rate \\%} + \\text{Profit Margin \\%} \\geq 40\\%$$\n\nA company growing 70% at -30% margin clears (it's burning cash but growing fast enough). A company growing 25% at 15% margin clears (it's profitable enough to justify slower growth). The point is the trade-off is acceptable in different mixes. Below 40, the company is neither growing fast enough nor profitable enough.\n\nThe practical move: identify your dominant engine, measure it weekly, and direct >50% of growth investment to widening it. The other half can experiment. The engine is what carries the business; everything else is decoration."
     },
     {
       "id": "M6L2",
@@ -1563,19 +1469,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Capitalization Table",
-        "Equity Dilution",
-        "Vesting Schedule",
-        "Option Pool",
-        "Fully Diluted Shares",
-        "Founder vs. Investor Economics"
+        {
+          "title": "The Capital Stack",
+          "body": "The layered structure of how a business is financed. From top (cheapest, most senior) to bottom (most expensive, most junior):\n\n- Senior debt\n- Junior debt / mezzanine\n- Preferred equity\n- Common equity\n\nEach layer has different cost and different claim priority in liquidation."
+        },
+        {
+          "title": "Weighted Average Cost of Capital",
+          "body": "The blended cost of all capital sources, weighted by their share of total funding.\n\n$$\\text{WACC} = \\frac{E}{V} \\cdot R_e + \\frac{D}{V} \\cdot R_d \\cdot (1 - T)$$\n\nWhere E = equity, D = debt, V = E+D, Re = cost of equity, Rd = cost of debt, T = tax rate. The hurdle rate every project must clear."
+        },
+        {
+          "title": "Debt vs Equity Trade-offs",
+          "body": "Debt: cheaper, must be repaid on schedule, lender has no upside. Equity: more expensive (dilutive), no repayment obligation, investor shares upside.\n\nThe wrong mix breaks businesses. Too much debt = fragile to revenue shocks. Too much equity = excessive dilution."
+        },
+        {
+          "title": "The Preferred Stack",
+          "body": "Preferred equity sits above common in liquidation. Investors get their money back (1x liquidation preference) before founders/employees see anything.\n\nUnderstand the preference structure of your cap table. 1x non-participating is standard; 2x participating is brutal; 3x+ is rare and signals desperation."
+        },
+        {
+          "title": "Cost of Capital Rises With Risk",
+          "body": "The risk-free rate (Treasury) is the floor. Every additional layer of risk adds basis points: corporate bond > junior debt > preferred equity > common equity > venture equity.\n\nStartup equity costs 25-35%+ as a hurdle rate. That's what investors implicitly demand for the risk."
+        }
       ],
       "take_action": [
         "Map your current cap table (or create one if you don't have it)",
         "Model your ownership % after a typical seed or Series A round",
         "Understand your vesting cliff and acceleration provisions"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**The capital stack is the architectural decision that determines what risks the business can absorb.** A company financed entirely with debt can be killed by a single bad quarter; the lender forecloses, and the equity is gone. A company financed entirely with equity has no obligation to anyone but its shareholders \u2014 but it has paid for that flexibility with permanent dilution.\n\nThe **WACC formula** is the bridge:\n\n$$\\text{WACC} = \\frac{E}{V} \\cdot R_e + \\frac{D}{V} \\cdot R_d \\cdot (1 - T)$$\n\nReading: the weighted average cost of capital is the cost of each financing source \u00d7 its share of the total, summed. Debt gets a tax-shield adjustment because interest is tax-deductible.\n\nA typical mature business: 30% debt at 6% cost, 70% equity at 12% cost, 25% tax rate.\nWACC = 0.30 \u00d7 6% \u00d7 0.75 + 0.70 \u00d7 12% = 1.35% + 8.4% = **9.75%**\n\nThat 9.75% is the minimum return every project must clear to create value. Anything below destroys equity value, regardless of how exciting it looks.\n\n**For startups**, the equity portion dominates and the cost is much higher:\n\n- Seed-stage equity cost: 30-40% (investors price it that way given failure rates)\n- Series A equity: 25-30%\n- Late-stage equity: 15-20%\n- Public equity: 8-12%\n\nThis is why **capital efficiency** matters so much for early-stage companies. You're paying a 30% cost of capital. Every dollar that doesn't generate disproportionate return is destroying value at that rate.\n\n**The operating discipline**:\n\n- Know your WACC. If you don't, you can't price projects, M&A, or strategic investments correctly.\n- Match financing type to use. Long-lived assets (equipment, buildings) \u2192 long-term debt. Working capital \u2192 revolving credit. Growth experiments \u2192 equity. Mismatches create cash crises.\n- Resist financing the wrong layer. Equity for an asset you should have debt-financed wastes the most expensive money you have."
     },
     {
       "id": "M6L3",
@@ -1590,9 +1511,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Value_vs.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Valuation Is a Story",
+          "body": "Valuation is the price tag on the story you're telling. It's a function of metrics, comparables, and narrative \u2014 in roughly equal proportion at early stage.\n\nThe valuation you raise at sets the bar for future rounds. Too low = excessive dilution. Too high = down-round risk, talent attraction issues."
+        },
+        {
+          "title": "Pre-Money vs Post-Money",
+          "body": "Pre-money: company value BEFORE new investment. Post-money: pre-money + new investment.\n\n$$\\text{Post-Money} = \\text{Pre-Money} + \\text{New Investment}$$\n\nDilution = New Investment / Post-Money. A $5M raise on $20M pre = 20% dilution. The same $5M on $15M pre = 25%."
+        },
+        {
+          "title": "Liquidation Preferences",
+          "body": "Preferred stock gets paid back before common. 1x non-participating = preferred gets either 1x money back OR converts to common (whichever is higher). 2x participating = preferred gets 2x + share of remainder.\n\nIn a strong outcome, preferences barely matter. In a soft outcome, they determine who gets paid."
+        },
+        {
+          "title": "Anti-Dilution Provisions",
+          "body": "If you raise a down round, previous investors' shares get adjusted to maintain (or partially maintain) their percentage. Two flavors:\n\n- **Full ratchet**: investor gets the new lower price. Brutal.\n- **Weighted average**: investor gets adjusted based on size of down round. Standard.\n\nFull ratchet is rare and a red flag in any term sheet."
+        },
+        {
+          "title": "Terms > Valuation",
+          "body": "A $50M valuation with bad terms (participating preferred, full ratchet, board control) is worse than a $30M valuation with clean terms.\n\nFounders fixate on the headline number. Sophisticated raises focus on terms. The headline impresses the press; the terms determine your outcomes."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**The most common founder mistake in fundraising: optimizing for valuation headline over terms.** A $50M Series A with 2x participating preferred, a 3x liquidation preference, and a board-control provision is a worse deal than a $30M Series A with 1x non-participating and standard governance \u2014 for almost every realistic outcome.\n\nThe asymmetry is in the **payoff math**. In strong outcomes (10x+), preferences barely matter; everybody converts to common and rides the upside. In soft outcomes ($1-3x), the preferences and structure determine who gets paid.\n\n**Worked example**: $30M raise at $120M pre-money, $150M post-money. Founder owns 60%, common.\n\n*Clean terms* (1x non-participating): exit at $200M. Investor takes $30M back OR converts to ~$40M of pro-rata. They convert. Founder takes $120M.\n\n*Bad terms* (2x participating + 3x liquidation cap): exit at $200M. Investor takes $60M (2x preference) + 20% of remaining $140M = $88M. Founder takes $67M. Same exit, **$53M less** to founder.\n\nThe **dilution math** is rigorous but often hand-waved:\n\n$$\\text{Dilution} = \\frac{\\text{New Investment}}{\\text{Pre-Money} + \\text{New Investment}}$$\n\nA $10M raise on $40M pre-money: dilution = 10/50 = 20%. Founders who held 100% before now hold 80%. Each subsequent round dilutes again. By Series D, founders often hold 5-15% of the company they built.\n\n**Terms that matter more than valuation**:\n\n- **Liquidation preference**: 1x non-participating is standard. Anything else is investor protection at founder cost.\n- **Anti-dilution**: weighted-average is standard. Full ratchet is a red flag.\n- **Board composition**: who controls the board determines who controls the company. A founder-controlled board has flexibility; an investor-controlled board doesn't.\n- **Pro-rata rights**: investors get to maintain their ownership in future rounds. Standard.\n- **Information rights**: investors get to demand reports. Standard, usually fine.\n- **Founder vesting**: typically reset on financing. Negotiate this.\n\nThe practical move: have a securities lawyer review every term sheet before signing. Their fee is a rounding error vs. the cost of a bad term. Optimize for terms first, valuation second."
     },
     {
       "id": "M6L4",
@@ -1608,18 +1551,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "BATNA (Best Alternative to Negotiated Agreement)",
-        "Zone of Possible Agreement (ZOPA)",
-        "Anchoring",
-        "Value Creation vs. Value Claiming",
-        "Negotiation Preparation"
+        {
+          "title": "BATNA",
+          "body": "Best Alternative to a Negotiated Agreement. What happens if this deal doesn't close.\n\nYour BATNA is your real negotiating power. Strong BATNA = ability to walk away credibly. Weak BATNA = you'll accept worse terms because you have no alternative."
+        },
+        {
+          "title": "ZOPA \u2014 Zone of Possible Agreement",
+          "body": "The range between the seller's minimum and the buyer's maximum where a deal is possible. If ZOPA exists, deal is possible. If not, walk.\n\nMost failed negotiations are situations where ZOPA didn't exist but parties pretended it did. Honesty about ZOPA upfront saves weeks."
+        },
+        {
+          "title": "Anchoring",
+          "body": "The first number put on the table shapes every subsequent number. Anchor first when you have strong information; let them anchor when you don't.\n\nThe anchor doesn't have to be reasonable to influence \u2014 research shows even absurd anchors pull subsequent offers toward them."
+        },
+        {
+          "title": "Interests vs Positions",
+          "body": "A position is what someone says they want ('I need $100K'). An interest is the underlying need ('I need to make rent and pay tuition').\n\nNegotiate to interests, not positions. Interests are usually compatible; positions usually aren't. The trick is surfacing the interest underneath."
+        },
+        {
+          "title": "The 70% Rule",
+          "body": "If you can solve 70% of what each side actually needs at acceptable cost, you have a deal. Don't optimize for perfect \u2014 optimize for adequate and signable.\n\nDeals die in the last 5%, often because one side insisted on the last point. The math says: take the 70%, leave the rest."
+        }
       ],
       "take_action": [
         "Identify your BATNA before your next important negotiation",
         "Research the other party's likely BATNA",
         "Practice anchoring by making the first offer in a low-stakes situation"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**The negotiation framework that holds up under pressure is built on three concepts: BATNA, ZOPA, and interests.** Master these and most negotiation tactics become obvious applications. Skip them and you'll be tactically clever in deals that shouldn't exist.\n\n**BATNA** (Best Alternative To a Negotiated Agreement) is the foundation. Before you walk into any negotiation, know your BATNA cold. If this deal doesn't happen, what's the next-best path? \n\n- If your BATNA is weak (you'll go bankrupt without this deal), every offer looks tempting and you'll concede too much.\n- If your BATNA is strong (you have three other comparable offers), you can hold positions calmly.\n\nThe negotiation is between your BATNA and theirs. The party with the better BATNA captures more value. Most negotiation tactics are attempts to improve your BATNA or weaken your counterparty's perception of theirs.\n\n**ZOPA** (Zone of Possible Agreement) is the diagnostic: does a deal exist at all?\n\n- Seller's minimum acceptable price: $1M\n- Buyer's maximum willingness to pay: $1.2M\n- ZOPA: $1M \u2013 $1.2M. Deal possible.\n\nIf the seller's minimum is $1M and the buyer's max is $800K, there's no ZOPA. No amount of negotiation will produce a deal \u2014 they're not even in the same range. The honest move: name it and walk.\n\n**Interests vs Positions** is the move that unlocks most stuck negotiations:\n\n- *Position*: \"I won't accept less than $50K signing bonus.\"\n- *Interest*: \"I need to pay off the credit card debt I'm bringing.\"\n\nThe position is rigid. The interest opens options. Maybe the answer is a $30K signing bonus + $20K loan paydown assistance. Maybe it's an accelerated equity vesting schedule that's worth more than $50K over four years. The position blocks; the interest opens.\n\n**The practical sequence**:\n\n1. **Know your BATNA cold.** Have a Plan B ready before you negotiate Plan A.\n2. **Estimate their BATNA.** What's their alternative if this doesn't close?\n3. **Find the ZOPA.** Test ranges to find where overlap exists.\n4. **Surface interests, not positions.** \"Help me understand what's behind that number.\"\n5. **Aim for 70% solutions.** Adequate signed deals beat perfect unsigned ones.\n\nThe deals that compound a career aren't won by tactics. They're won by understanding what each side actually needs and structuring something that's at least 70% acceptable to both."
     },
     {
       "id": "M6L5",
@@ -1635,19 +1594,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Exit Strategy",
-        "Valuation Multiples",
-        "Strategic vs. Financial Buyers",
-        "EBITDA",
-        "Letter of Intent (LOI)",
-        "Due Diligence Process"
+        {
+          "title": "EBITDA Multiples",
+          "body": "Most M&A pricing is a multiple of EBITDA (earnings before interest, taxes, depreciation, amortization). Different industries trade at different multiples \u2014 software 10-15x, manufacturing 5-8x, services 3-6x.\n\n$$\\text{Enterprise Value} = \\text{EBITDA} \\times \\text{Multiple}$$\n\nKnow your industry multiple. Improve EBITDA + improve multiple = compound value creation."
+        },
+        {
+          "title": "Revenue Multiples (SaaS-specific)",
+          "body": "High-growth SaaS often valued on revenue, not EBITDA (which is often negative). Public SaaS multiples range from 5-25x revenue based on growth rate, retention, gross margin.\n\nThe rough rule: 100x revenue per percentage point of NRR above 100%. NRR of 130% justifies ~30x revenue."
+        },
+        {
+          "title": "Strategic vs Financial Buyers",
+          "body": "Strategic buyer: another operating company. Will pay premium because of synergies (revenue, cost, cross-sell).\n\nFinancial buyer (PE): cares about returns. Will pay multiples consistent with their fund return targets.\n\nStrategic typically pays 1.5-2x what a financial buyer would. Build a buyer list that includes both types."
+        },
+        {
+          "title": "Earnouts and Holdbacks",
+          "body": "Part of the purchase price contingent on future performance. Designed to bridge buyer/seller valuation gaps and align incentives post-close.\n\nEarnouts often disappoint. The integration after close changes the conditions that produced your pre-close performance. Negotiate clear, achievable, controllable metrics."
+        },
+        {
+          "title": "The Exit Story",
+          "body": "Buyers don't just buy your numbers. They buy your narrative \u2014 why this business now, why it's worth their multiple, what it does for them strategically.\n\nThe exit story is a 6-12 month construction project. Build it deliberately into board materials, customer wins, talent hires. The story is half the price."
+        }
       ],
       "take_action": [
         "Define your preferred exit path (acquisition, IPO, or lifestyle)",
         "Research comparable exits in your industry and their multiples",
         "Identify the top 5 potential acquirers for your business right now"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**The M&A multiple is the single most consequential number you'll negotiate, and most founders enter the process knowing only fragments of how it's set.** A 1-point swing in multiple on a $50M EBITDA company is a $50M swing in valuation. The deal isn't won at the negotiating table \u2014 it's won in the 18 months leading up to it.\n\nThe **multiple is a function of three things**:\n\n1. **Growth rate**: faster-growing companies trade at higher multiples. The market pays for the compounding.\n2. **Quality of earnings**: recurring, predictable, high-margin earnings trade at 2-3x higher multiples than one-off, cyclical, low-margin earnings.\n3. **Industry comparables**: what are similar businesses fetching right now? Multiples cycle.\n\nFor SaaS specifically:\n\n$$\\text{EV} \\approx \\text{ARR} \\times (\\text{NRR Premium} + \\text{Growth Premium})$$\n\nA 100% NRR business growing 30% trades for ~5x ARR. The same business at 130% NRR and 50% growth might trade for 15x+. The two metrics \u2014 retention and growth \u2014 compound on each other.\n\n**Strategic vs financial buyers**:\n\n- **Strategic** buyers (operating companies) pay for synergies. Revenue synergies (sell your product to their customer base), cost synergies (consolidate operations), strategic synergies (block a competitor, fill a portfolio gap). Strategic premiums can be 30-100% above financial.\n- **Financial** buyers (private equity, growth equity) pay for stand-alone returns. They model your business assuming no synergies, target a fund-level IRR (20-25%), and work backward to entry price.\n\nMost exits underprice because the seller only ran a financial process. A well-run process invites 3-5 strategic buyers in parallel, creating competition that pulls the multiple up.\n\n**The exit story** is the 18-month preparation. Buyers buy narrative, not just numbers. The story includes:\n\n- Why this business is uniquely positioned\n- Why now is the right moment to acquire\n- What the buyer can do with it that the seller couldn't\n- Quantifiable proof of the trajectory\n\nFounders who treat their last 18 months as the exit-narrative build win materially higher multiples. The board meetings, the analyst briefings, the customer references \u2014 they're not just operating. They're constructing the asset's value in the eyes of future buyers."
     },
     {
       "id": "M6L6",
@@ -1662,9 +1636,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Startup_Operating_System.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Stage-Specific Operating Systems",
+          "body": "The operating practices that work at $1M ARR break at $10M, and break worse at $100M. Every stage has its own OS.\n\nFounders who try to scale the same playbook hit a wall around 50 employees, 50 customers, or 50 transactions per day. The playbook has to change."
+        },
+        {
+          "title": "The 0-1, 1-10, 10-100 Frame",
+          "body": "Reid Hoffman's lens. 0-1: founders do everything, no process needed. 1-10: first hires, light process, founder still in every call. 10-100: real management, real processes, founder mostly out of operations.\n\nMost founders stuck at 1-10 don't know how to make the jump to 10-100. The jump is about systems, not effort."
+        },
+        {
+          "title": "Hiring Ahead of Pain",
+          "body": "Most founders hire reactively \u2014 when they can no longer keep up. The result: chronic understaffing, exhausted teams, missed opportunities.\n\nThe right cadence: hire 3-6 months ahead of when you'll need the person, so they ramp before the crisis arrives. Costs more in the short run; saves you in the long run."
+        },
+        {
+          "title": "Delegate to the Future Org",
+          "body": "Hire and structure for the company you'll be in 12-18 months, not the company you are today. Otherwise you're constantly restructuring.\n\nThe delegation pattern: instead of hiring a manager for the existing 3 people, hire someone who can build the function for the future 15. The bar is different."
+        },
+        {
+          "title": "Founder Mode Doesn't Scale",
+          "body": "The founder's habit of being in everything works at 5 people, fails at 50. The hardest scaling skill is letting go \u2014 choosing what NOT to be in.\n\nThe founders who scale to large companies make this trade consciously. The ones who don't end up as bottlenecks in their own businesses."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Most startups die between 30 and 80 employees.** Not from bad markets, not from competitor moves. They die from inability to translate the founder's operating style into systems and management that work at scale. The same intensity that worked at 10 people becomes a chokepoint at 50.\n\n**The 0-1 / 1-10 / 10-100 frame** (Reid Hoffman) describes the three operating systems most companies need to navigate:\n\n- **0-1** (founding through ~10 people): founders do everything. No process. Direct communication. Speed is the only thing that matters. Heroics work.\n- **1-10** (~10 to ~50 people): first dedicated hires emerge. Light process \u2014 onboarding, weekly meetings, a CRM. Founder still in every important call. Bottlenecks start appearing.\n- **10-100** (~50 to ~500 people): real management layer. Real processes. Real OKRs. Founders make strategic and capital decisions; functional leaders run day-to-day. The transition kills most founders' operational involvement.\n\nThe failures at each transition:\n\n- **0-1 \u2192 1-10**: founder won't write things down, won't hire functional leadership, won't accept that a process beats a hero.\n- **1-10 \u2192 10-100**: founder can't let go of decision-making, fights direct reports' authority, creates parallel decision systems, becomes a bottleneck.\n- **10-100 \u2192 beyond**: leadership doesn't update operating cadence, treats a 500-person company like a 50-person one.\n\n**The hiring-ahead-of-pain principle** is the most under-applied scaling practice. Most teams hire when overwhelmed \u2014 by which point the person they need has to be high-performing on day 1 (impossible for anyone). The pattern that works: model your needs 6-9 months out. Hire the person now. They have time to ramp before the wave hits. Cost: 6 months of salary before they're \"needed.\" Benefit: smooth operations, no burned-out heroes, customer experience that doesn't degrade.\n\nThe practical move: pick the next bottleneck function 12 months out. Start the search now, even if you don't \"need\" the role yet. You will. The hiring market doesn't move at your urgency."
     },
     {
       "id": "M6L7",
@@ -1679,9 +1675,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Value_Creation_Journey.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Capital Allocation as Highest-Leverage Decision",
+          "body": "Where you put each marginal dollar \u2014 reinvest, return, acquire \u2014 compounds for decades. Buffett's claim: capital allocation is the most important skill a CEO can develop.\n\nMost businesses are well-run operationally and poorly-run from a capital allocation perspective. The deltas come from where the money goes, not how hard people work."
+        },
+        {
+          "title": "The Five Options",
+          "body": "Every dollar of cash flow has five possible homes:\n\n1. Reinvest in the existing business\n2. Acquire other businesses\n3. Pay down debt\n4. Return cash via dividends\n5. Buy back stock\n\nThe right mix depends on relative returns. Cash spent on Option 1 should earn more than Option 5 \u2014 or you should be buying back stock."
+        },
+        {
+          "title": "IRR vs ROIC",
+          "body": "Internal Rate of Return is the annualized return on a single project. Return on Invested Capital is the return on the total invested base.\n\n$$\\text{IRR} = \\text{discount rate where NPV} = 0$$\n\nProjects: rank by IRR. Capital allocation across projects: optimize ROIC of the portfolio."
+        },
+        {
+          "title": "MOIC (Multiple on Invested Capital)",
+          "body": "Total cash returned \u00f7 total cash invested. The simple version of investment performance.\n\n$$\\text{MOIC} = \\frac{\\text{Total Distributions}}{\\text{Total Invested}}$$\n\nA $10M investment that returns $35M = 3.5x MOIC. MOIC ignores time; IRR captures it."
+        },
+        {
+          "title": "Hurdle Rates",
+          "body": "Every potential use of cash should clear a hurdle rate \u2014 your minimum acceptable return. If a project doesn't clear it, the cash should go to the next-best option.\n\nMost businesses do projects that earn 5-8% returns when their cost of capital is 12%. Every such project destroys value. They just don't realize it."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Capital allocation is the most under-appreciated CEO skill.** Operational excellence sets the floor. Capital allocation determines the ceiling. The companies that compound over decades \u2014 Berkshire, Apple, Visa, Costco \u2014 share an obsession with where the marginal dollar goes.\n\nBuffett's framework: every business generates cash. The CEO has **five options** for every dollar of free cash flow:\n\n1. **Reinvest** in the existing business (organic growth \u2014 new products, new markets, more capacity)\n2. **Acquire** other businesses (inorganic growth \u2014 M&A)\n3. **Pay down debt** (de-risking the balance sheet)\n4. **Pay dividends** (return cash to shareholders)\n5. **Buy back stock** (return cash by reducing share count)\n\nThe correct choice depends on which generates the highest risk-adjusted return for shareholders. If reinvestment in the business yields 25% IRR and your stock is undervalued at 10% implied return, buybacks lose. If reinvestment yields 8% and your stock is fairly priced, buybacks win. The discipline is doing the comparison every quarter and acting on it.\n\nThe equations that drive the analysis:\n\n$$\\text{IRR} = \\text{discount rate at which NPV} = 0$$\n\n$$\\text{MOIC} = \\frac{\\text{Total Cash Returned}}{\\text{Total Cash Invested}}$$\n\nIRR captures the time value (a 2x return in 2 years beats a 2x return in 5 years). MOIC captures the absolute scale (a 4x on $1M is worse than a 2x on $100M in dollar terms).\n\n**The hurdle rate** is the minimum IRR you'll accept. It should be set above your cost of capital \u2014 typically 15-25% for growth-stage businesses. Anything below the hurdle rate destroys value: you're spending 12-cent dollars on 8-cent returns.\n\nMost businesses fail this test routinely. They invest in product extensions that earn 5% IRRs when they could buy back stock at implied 12% returns. They acquire businesses at 15x EBITDA when the same capital could fund organic growth at 30% IRR. The errors are invisible because each individual decision looks reasonable in isolation \u2014 but the aggregate is corrosive.\n\n**The practical discipline**:\n\n- Set an explicit hurdle rate. Make it public to the leadership team.\n- For every material capital deployment, compute IRR or MOIC and compare to hurdle.\n- Review the capital allocation track record annually. What did you actually earn on the money deployed?\n- When uncertain, default to share buybacks at fair value. They're the lowest-risk, highest-clarity option."
     },
     {
       "id": "M6L8",
@@ -1696,9 +1714,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Managing_Uncertainty.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Expected Value",
+          "body": "The probability-weighted return across all possible outcomes.\n\n$$\\text{EV} = \\sum_{i=1}^{n} P_i \\times \\text{Outcome}_i$$\n\nA 30% chance of $1M + 70% chance of -$100K = EV of $230K. Positive EV bets compound over time even when individual bets lose."
+        },
+        {
+          "title": "Probability of Ruin",
+          "body": "The chance the bet kills you if it loses. Different from expected value \u2014 a positive-EV bet with high ruin probability is still wrong.\n\nNever bet what you can't afford to lose, even at favorable odds. One ruin event ends the game."
+        },
+        {
+          "title": "Optionality",
+          "body": "Strategic bets that preserve future choices are worth more than bets that lock you in. Maintain optionality whenever the cost is reasonable.\n\nA $1M investment that gives you the right (not obligation) to do something later is often worth more than $1M deployed immediately."
+        },
+        {
+          "title": "Asymmetric Bets",
+          "body": "Bets where the upside is much larger than the downside. Limited downside, unbounded upside.\n\nVenture capital is built on this \u2014 most investments go to zero, but the ones that don't return 100x. Look for asymmetric bets in operating decisions too."
+        },
+        {
+          "title": "Process Over Outcome",
+          "body": "In high-uncertainty domains, judge bets by the quality of the process, not the outcome.\n\nA well-reasoned bet that loses is still a good bet. A poorly-reasoned bet that wins was still a bad bet. Outcome bias destroys learning."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Most strategic decisions are bets, and most operators don't think about them probabilistically.** They imagine a single most-likely outcome and plan against it. The result: surprise when reality diverges, no contingency thinking, no quantification of risk-adjusted return.\n\nThe foundational equation:\n\n$$\\text{Expected Value} = \\sum_{i=1}^{n} P_i \\times \\text{Outcome}_i$$\n\nFor every important decision, ask: what are the possible outcomes? What's the probability of each? What's the value (or cost) of each? Multiply and sum.\n\n**Worked example**: should we launch the new product?\n\n- Big hit (20% chance): +$10M revenue over 3 years\n- Modest success (40% chance): +$2M revenue\n- Flop (40% chance): -$1M investment lost\n\nEV = 0.2 \u00d7 $10M + 0.4 \u00d7 $2M + 0.4 \u00d7 -$1M = $2M + $0.8M - $0.4M = **+$2.4M EV**\n\nPositive EV. Worth doing, even though the most likely individual outcome (modest success) is much smaller than the bet's full value.\n\n**The probability of ruin filter** sits on top of EV. Some positive-EV bets are still bad bets because the loss case is fatal. The math:\n\n- A 99% chance of +$1M and a 1% chance of -$1B is **massively positive EV** ($1M \u2212 $10M = -$9M actually NEGATIVE \u2014 but stay with the example) but also catastrophic \u2014 that 1% loss can't be absorbed.\n\nThe rule: **never bet what you can't afford to lose, regardless of odds**. One ruin event ends the game.\n\n**Asymmetric bets** are the operator's lottery ticket: limited downside, unbounded upside. The exception to most bet sizing. A $50K marketing experiment that might either lose $50K or unlock a $5M channel is asymmetric. Make a portfolio of these.\n\n**Process beats outcome** is the discipline that compounds the most. In domains with high uncertainty, you can't grade decisions by results \u2014 bad outcomes happen to good processes (variance) and good outcomes happen to bad processes (luck). Judge the *reasoning* at the time of the decision, given the information available. Were the assumptions reasonable? Was the EV positive? Was the ruin risk acceptable? If yes, it was a good bet regardless of what happened.\n\nThe practical move: keep a decision journal. For every significant bet, write down the EV calc, the assumptions, the ruin risk. Six months later, review what you knew vs. what played out. Process improvements come from this loop. Without it, you're learning the wrong lessons from each outcome."
     },
     {
       "id": "M6L9",
@@ -1713,9 +1753,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Intelligent_Risk_Selection.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Risk vs Uncertainty",
+          "body": "Knight's distinction. Risk: probabilities are known (or can be estimated from data). Uncertainty: probabilities are unknown.\n\nFinancial markets, machine reliability \u2014 risk. Most strategic decisions \u2014 uncertainty. Different tools required for each."
+        },
+        {
+          "title": "Risk-Adjusted Return",
+          "body": "Return per unit of risk. The Sharpe Ratio formalization:\n\n$$\\text{Sharpe} = \\frac{R_p - R_f}{\\sigma_p}$$\n\nWhere Rp = portfolio return, Rf = risk-free rate, \u03c3 = standard deviation. Higher Sharpe = more return per unit of volatility. Used for investment portfolios; generalizes to operating decisions."
+        },
+        {
+          "title": "Risk Mapping",
+          "body": "Plot known risks on a 2x2 matrix: probability (low/high) by impact (low/high).\n\n- High prob \u00d7 high impact: address immediately.\n- High prob \u00d7 low impact: monitor and accept.\n- Low prob \u00d7 high impact: have a plan ready (insurance, contingency).\n- Low prob \u00d7 low impact: ignore."
+        },
+        {
+          "title": "Tail Risks",
+          "body": "Low-probability, high-impact events. Black swans. The 1-in-100 year flood, the cyber breach, the regulatory shock.\n\nMost organizations under-prepare for tail risks because they look unlikely. Don't insure against them at full cost, but have plans ready. The cost of being wrong is asymmetric."
+        },
+        {
+          "title": "Risk Capital",
+          "body": "The portion of capital you can lose without breaking the company. Bets sized to risk capital can be aggressive; bets sized to total capital must be conservative.\n\nThe operator's question: what's our risk capital, and what fraction of it are we deploying on this bet?"
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Frank Knight's 1921 distinction between *risk* and *uncertainty* is one of the most useful frames in business decision-making.** Risk = probabilities are knowable. You can put numbers on outcomes. Insurance, financial markets, manufacturing defect rates \u2014 all risk. Uncertainty = probabilities are unknowable. You can't put a confidence interval on it. New market entry, regulatory change, technology disruption \u2014 all uncertainty.\n\nThe two demand different tools:\n\n- **Risk** can be priced and hedged. Insurance, diversification, derivatives, statistical models.\n- **Uncertainty** can only be navigated. Scenario planning, optionality, robust strategies (work in many futures), antifragility (gets stronger from shocks).\n\nThe Sharpe Ratio formalizes risk-adjusted return:\n\n$$\\text{Sharpe Ratio} = \\frac{R_p - R_f}{\\sigma_p}$$\n\nA portfolio earning 15% with 20% volatility has a Sharpe of (15-3)/20 = 0.6. The same return with 10% volatility has a Sharpe of 1.2 \u2014 twice as efficient. The lesson generalizes: returns aren't free; they're priced in volatility. Strategies that produce returns with less variance are worth more than strategies producing the same returns with more.\n\n**The risk map** is the practical operating tool:\n\n```\n              Low Impact          High Impact\nLow Prob:     IGNORE              PREPARE\nHigh Prob:    MONITOR             MITIGATE NOW\n```\n\nFor every category of risk facing the business, place it in the matrix. The actions follow:\n\n- **High probability, high impact**: drop everything and address. These are the active threats.\n- **High probability, low impact**: monitor. Accept the cost; don't over-invest in mitigation.\n- **Low probability, high impact (tail risk)**: have a plan, even if you don't fully insure. Cyber breach, key executive departure, regulatory ruling. The cost of being unprepared is asymmetric.\n- **Low probability, low impact**: ignore. Most organizational risk theater is here.\n\n**Risk capital** is the under-used framing for sizing bets:\n\n- *Total capital*: everything the company owns. Don't lose this.\n- *Risk capital*: the portion you can lose without breaking the business. This is what you bet.\n\nFounders who don't distinguish bet aggressively with total capital. The bets pay off statistically over many companies \u2014 but each individual company can be ruined by a single loss. The operators who compound careers and businesses size each bet to risk capital, accept that some will fail, and keep playing.\n\nThe practical move: define your risk capital explicitly. \"We can deploy $2M on speculative bets per year. Above that, we need higher confidence.\" The number forces discipline. Without it, every bet feels like the right size \u2014 until one isn't."
     },
     {
       "id": "M6L10",
@@ -1730,9 +1792,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Exit_Strategy.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Build a Saleable Asset",
+          "body": "Many great-operating businesses are unsellable. Owner-dependent, no transferable systems, no clean financials.\n\nThe goal of exit-readiness isn't to sell \u2014 it's to *be able* to sell. Optionality. The business is more valuable when it doesn't depend on you."
+        },
+        {
+          "title": "The Exit Narrative",
+          "body": "Buyers buy a story, not just a balance sheet. The story includes why this business now, why it's worth a premium, what the buyer can do with it.\n\nThe story takes 12-24 months to build deliberately. The mistake is starting it 3 months before the process opens."
+        },
+        {
+          "title": "Strategic vs Financial Exit",
+          "body": "Strategic buyer: another operating company. Pays for synergies. Higher multiples. Slower process.\n\nFinancial buyer (PE): cares about returns. Pays for stand-alone economics. Faster process; lower price."
+        },
+        {
+          "title": "The Process Premium",
+          "body": "A well-run process with 4-6 bidders typically clears 30-50% higher than a one-on-one negotiation.\n\nProcess premium comes from competition. Hire a banker who runs structured processes for businesses your size. Their fee (1-3%) usually returns 10-30x in higher clearing price."
+        },
+        {
+          "title": "Post-Exit Reality",
+          "body": "Most founders are unprepared for life after exit. Identity tied to the business, sudden liquidity, freedom that feels like vertigo.\n\nPlan the next chapter before you close. The founders who do well post-exit have something they're moving toward, not away from."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Most founders think about exit too late and too narrowly.** They think about it 3 months before they want to sell, and they think of it as a single transaction. The founders who maximize outcomes \u2014 and who don't regret what comes after \u2014 think about exit-readiness from year 3, treat it as a multi-year construction project, and plan their post-exit life with the same discipline they brought to building the business.\n\n**Exit-readiness \u2260 exiting.** The same disciplines that make a business saleable also make it well-run:\n\n- Clean financials (audited statements, predictable accruals, no surprises)\n- Transferable systems (process documentation, not founder-in-everyone's-head)\n- Bench strength (next layer of leadership can run the business)\n- Customer concentration manageable (<25% from any one customer)\n- Contracts solid (no auto-renewal traps, key supplier terms documented)\n\nIf you build for sellability, you build for resilience. Even if you never sell.\n\n**The exit story** is the deliberate construction of narrative:\n\n- **Why this business**: what's the structural advantage? Why can't this be replicated?\n- **Why now**: market timing, growth trajectory, technology shift, regulatory tailwind\n- **What the buyer gets**: defensible market position, profitable growth, talent\n- **What the buyer can do with it**: synergies, expansion, geographic scaling\n\nBuyers pay for the story. They commission the diligence to confirm the numbers, but they're sold on the story first. Build it deliberately into board materials, customer references, analyst briefings over 18-24 months before a process opens.\n\n**The process premium** is real and measurable. A structured process with 4-6 invited bidders, run by a competent banker, clears 30-50% higher than a one-on-one with a single buyer who approached you first. The banker fee (1-3% of transaction value) returns 10-30x by creating competitive tension. The founders who run a single-buyer process \"to save the fee\" routinely leave 7-figures on the table.\n\n**Post-exit reality** is the unsung consideration. The exit closes. The wire hits. The freedom that felt like the goal turns out to feel like vertigo. Founders without a Plan B drift for 6-18 months in identity crisis. The ones who do well post-exit:\n\n- Have a personal mission that's bigger than the company\n- Took some time before the exit to map their next decade\n- Maintained relationships outside the company that survive its sale\n- Have hobbies, intellectual interests, or family commitments to anchor identity\n\nThe practical move 12 months before exit: schedule recurring conversations with founders who exited 2-5 years ago. What did they wish they'd known? What did they do well in the year after? The patterns repeat. Learn before you live them."
     },
     {
       "id": "M6L11",
@@ -1747,9 +1831,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Complex_Human_Systems.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "The Ethical Override",
+          "body": "Some decisions are not optimization problems. They're constraints. Don't lie to customers. Don't shortcut safety. Don't exploit information asymmetry.\n\nThe ethical override sits above strategy. Violating it for short-term gain destroys long-term value, every time."
+        },
+        {
+          "title": "Stakeholder Map",
+          "body": "Every business decision affects multiple stakeholders: customers, employees, investors, suppliers, community.\n\nDecisions optimized for one stakeholder often impose costs on others. Sustainable businesses balance the map; extractive businesses don't."
+        },
+        {
+          "title": "The Newspaper Test",
+          "body": "Before any consequential decision, ask: how would I feel if this decision was the front-page story in the local paper tomorrow?\n\nIf the answer is 'embarrassed,' you have your answer. The exercise surfaces the rationalizations you've been making."
+        },
+        {
+          "title": "Short-term vs Long-term Trade-offs",
+          "body": "Most ethical breakdowns trade short-term gains for long-term costs. Lying to a customer wins this deal; loses the next 10 referrals.\n\nDiscount long-term costs less than short-term gains. The math almost always favors the ethical path."
+        },
+        {
+          "title": "Building Ethical Infrastructure",
+          "body": "Individual willpower fails. Build systems that make the ethical choice the default \u2014 clear policies, independent audits, accessible whistleblower channels, leadership that visibly punishes violations.\n\nCulture eats individual ethics for breakfast, in both directions."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Ethics in business isn't a separate domain from operations \u2014 it's an operating decision with longer payback periods.** The companies that compound over decades \u2014 Costco, Patagonia, Stripe, Visa \u2014 share a discipline around the few decisions that look optionally ethical and turn out to be foundational.\n\nThe most useful ethics frame for operators is **the long-term cost vs short-term gain trade-off**. Most ethical breakdowns aren't theatrical \u2014 they're small choices that look efficient in the moment and corrosive over years:\n\n- Lying (or shading) in customer pitch \u2192 wins the deal, costs the referral and the renewal\n- Cutting corners on safety \u2192 saves a week of build, costs years of trust if it surfaces\n- Pushing through a decision the team objects to \u2192 wins this fight, loses moral authority for the next\n- Treating a vendor unfairly \u2192 saves margin once, kills the supplier relationship\n\nIn each case, the short-term math looks fine; the long-term math is catastrophic. The discipline is **discounting the long-term cost at a low enough rate that it dominates the short-term gain**. Many founders implicitly discount future costs at 50-100% \u2014 which means anything more than 12 months out doesn't factor. That's how short-term thinking masquerades as rational decision-making.\n\n**The newspaper test** is one of the cleanest filters available: would I be embarrassed if this decision were front-page tomorrow? The test surfaces the rationalizations we've been making. The decisions that fail it almost always fail other tests too \u2014 they just fail the newspaper test first and loudest.\n\n**Stakeholder mapping** keeps the analysis honest. Every decision affects:\n\n- *Customers*: experience, trust, value delivered\n- *Employees*: workload, autonomy, dignity, growth\n- *Investors*: returns, risk, transparency\n- *Suppliers*: terms, predictability, fairness\n- *Community*: externalities, contributions, footprint\n\nDecisions that optimize for one stakeholder at the expense of others may look efficient quarter-to-quarter but accumulate technical debt across the relationships. The sustainable model balances the map. The extractive model concentrates value to one party until the relationship breaks.\n\n**The infrastructure level** matters because individual willpower is unreliable under pressure. The companies that maintain ethics in tough quarters have built systems:\n\n- Clear written policies on the high-risk decisions (customer claims, hiring, contract terms)\n- Independent audit functions or external advisors\n- Accessible whistleblower channels with credible follow-through\n- Public leadership response to violations \u2014 visible enough to deter\n\nWithout the infrastructure, ethics depends on the next leader. With it, ethics depends on the institution.\n\nThe practical move: write down the three decisions in the last quarter that you're least comfortable with. Run each through the newspaper test and the long-term cost lens. If any fail, you have a system problem, not a willpower problem. Fix the system."
     },
     {
       "id": "M6L12",
@@ -1764,9 +1870,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Business_Anatomy_Masterclass.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "The CEO's Three Jobs",
+          "body": "Patrick Collison's framing. The CEO has three irreducible jobs:\n\n1. Set the strategy\n2. Build the team\n3. Don't run out of money\n\nEverything else can be delegated. These three cannot. The CEO who delegates these has stopped being CEO."
+        },
+        {
+          "title": "Calendar as Strategy",
+          "body": "Where you put your time is your real strategy, regardless of what your strategy doc says. Audit your last 4 weeks of calendar.\n\nIf the audit doesn't match your stated priorities, the calendar is the truth. Restructure or rewrite the strategy to match."
+        },
+        {
+          "title": "Energy Management Over Time Management",
+          "body": "Time is a constraint; energy is the variable. A high-energy 4 hours beats a low-energy 10 hours.\n\nProtect the energy peaks. Schedule deep work for the hours when you're sharpest. Schedule meetings for the rest."
+        },
+        {
+          "title": "The Two-Question Filter",
+          "body": "For every commitment: (1) am I the only person who can do this? (2) is this the highest-leverage use of my time right now?\n\nIf the answer to either is no, delegate or decline. Most CEOs say yes to too much because saying no feels rude. Saying yes to the wrong things is worse."
+        },
+        {
+          "title": "Personal Operating System",
+          "body": "The set of rituals, defaults, and decisions you don't have to remake each day. Sleep, exercise, reading, deep work, family time.\n\nThe more decisions you automate at the personal level, the more attention you have for the high-stakes ones."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**The CEO's operating system is the meta-operating system of the business.** A poorly-run CEO operating system produces a poorly-run company, regardless of how good the strategy or team is. The opposite is also true: a deliberate CEO OS leverages mediocre conditions into great outcomes.\n\nThe **three irreducible jobs** (Patrick Collison):\n\n1. **Set the strategy** \u2014 where are we going, what are we doing, what are we not doing? Can be informed by the team but ultimately the CEO's call.\n2. **Build the team** \u2014 who runs each function, how they work together, who's missing, who needs to go. The most consequential decisions a CEO makes.\n3. **Don't run out of money** \u2014 cash management, capital allocation, runway awareness. Financial fragility ends companies.\n\nEverything else \u2014 operations, sales, product, customer success \u2014 can be delegated to functional leaders. The CEO who's in the weeds on those has stopped doing CEO work.\n\n**Calendar audit** is the most useful diagnostic. Take your last 4 weeks of calendar. Categorize every block:\n\n- Strategy (where are we going)\n- Team (who works here, how they're doing)\n- Capital (runway, fundraising, investor relations)\n- Customer (talking to customers, understanding the market)\n- Operations (what should be delegated)\n- Reactive (firefighting, responses, meetings I shouldn't be in)\n\nThe split reveals the truth. If 60% is operations and reactive, you're a senior operator, not a CEO. Rebalance.\n\n**Energy management** is the under-discussed companion to time management. Time is finite (24 hours, 7 days). Energy is variable (4 great hours can produce more than 10 mediocre ones). The disciplines:\n\n- Sleep \u2265 7 hours. Non-negotiable. The cost of less sleep is invisible but real.\n- Schedule deep work for energy peaks (usually mornings for most people).\n- Schedule low-energy work (admin, status meetings, light reading) for energy troughs.\n- Build recovery rituals \u2014 exercise, walks, breaks between intense calls.\n\nThe CEOs who burn out tend to be the ones who treated energy as a constant. The ones who compound over decades treat it as the variable to protect.\n\n**The two-question filter** for every commitment request:\n\n- *Am I the only one who can do this?* Most things, no.\n- *Is this the highest-leverage use of my time right now?* Most things, no.\n\nDelegate or decline. The hard part is the social cost of declining \u2014 but the cost of saying yes to the wrong thing is higher and silent.\n\nThe practical move: design your week as a default schedule. Mondays = strategy + reading. Tuesdays = team. Wednesdays = customer. Thursdays = operations review (delegated, you mostly listen). Fridays = personal admin + retro. The default schedule means most weeks don't need designing \u2014 exceptions are conscious choices, not drift."
     },
     {
       "id": "M6L13",
@@ -1781,9 +1909,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Capstone_Encore__90-Day_Plan.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "The 90-Day Forcing Function",
+          "body": "Set 90-day plans, not annual ones. The cycle is short enough to be concrete, long enough to do real work.\n\nAt the end of every 90 days: audit, adjust, set the next 90. Compound over years."
+        },
+        {
+          "title": "Three Bets Per Quarter",
+          "body": "Each 90-day cycle has three big bets. Not 12. Not 5. Three.\n\nThe three are aligned with the year's strategy. They have measurable outcomes. They're owned by named people. Focus is what makes quarterly planning work."
+        },
+        {
+          "title": "Weekly Cadence",
+          "body": "The 90-day plan executes through weekly rhythms. Monday: set the week's priorities. Friday: review what shipped, what slipped, why.\n\nThe weekly cadence is the connective tissue. Plans without rhythm produce slogans without execution."
+        },
+        {
+          "title": "The Retrospective Discipline",
+          "body": "Every 90-day cycle ends with an honest retrospective. What worked, what didn't, what we'd do differently.\n\nMost retros are theater. Make this one substantive \u2014 name specific decisions, specific people, specific lessons. Pattern recognition compounds."
+        },
+        {
+          "title": "The Long Game",
+          "body": "Career-changing companies are built by people who execute 40+ consecutive 90-day cycles with discipline. Most flame out after 5-10.\n\nThe difference isn't intensity. It's sustainable rhythm. The marathon, not the sprint."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**The 90-day plan is the most useful forcing function in modern operating practice.** Annual plans are too long \u2014 by month 6, the situation has changed and the plan is obsolete. Weekly plans are too short \u2014 you can't accomplish anything strategic in 5 days. The 90-day cycle is the sweet spot: long enough to do meaningful work, short enough to stay current with reality.\n\n**The three-bet structure** is the discipline that makes 90-day plans work:\n\n- Three big bets, not five, not ten.\n- Each bet has a named owner.\n- Each bet has a measurable outcome.\n- Each bet aligns with the year's strategy.\n\nThe constraint to three forces prioritization. Most organizations try to do everything and accomplish nothing. The teams that say \"these three matter; nothing else gets attention this quarter\" ship more than the teams trying to advance on 12 fronts.\n\n**The weekly cadence** is the connective tissue between the quarterly plan and daily work:\n\n- **Monday**: 30-minute leadership review. What's the week's focus? What's at risk?\n- **Wednesday**: midweek check-in. What's changed? Any blockers needing escalation?\n- **Friday**: review. What shipped? What slipped? Why?\n\nThe rhythm is non-negotiable. Plans without rhythm are slogans. Rhythm without plans is busy-ness. The two together produce execution.\n\n**The retrospective discipline** is what separates compounders from drifters. At the end of every 90-day cycle, take 90 minutes for a serious retro:\n\n- What did we set out to do? (Refer to the plan, no rewriting history.)\n- What did we actually accomplish?\n- What worked well? What patterns are we seeing?\n- What didn't work? What do we keep doing wrong?\n- What changes are we making in the next 90?\n\nMost retros are theater because they're framed as \"any feedback?\" and produce nothing concrete. Make this one specific: name decisions, name people, name lessons. The pattern recognition compounds across quarters. Year 3 of this discipline produces qualitatively better decisions than year 1.\n\n**The long-game framing** is the closing principle. Companies that change industries \u2014 Stripe, Airbnb, Amazon, Patagonia \u2014 were built by founders who executed 40+ consecutive 90-day cycles. They didn't make better individual bets than competitors. They made comparable bets, sustained the discipline of planning-executing-retroing, and the compounding did the work.\n\nThe practical move: this Sunday, write your next 90-day plan. Three bets. Named owners. Measurable outcomes. Schedule the weekly cadence. Schedule the closing retro on the calendar 90 days out. Do this 40 times. Then look at what you've built."
     },
     {
       "id": "M7L1",
