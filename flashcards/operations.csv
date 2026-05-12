@@ -1,0 +1,71 @@
+"In the context of Operations Excellence, what is the core definition of the discipline?",Consistently delivering customer value with the lowest possible waste.
+"Operational excellence is defined not as perfection, but as _____.",Repeatability
+"According to the Module 8 framework, excellence is what remains when _____ are removed.",Heroics
+Pillar of Ops Excellence: The documented best-known method for a task is known as _____.,Standard Work
+Pillar of Ops Excellence: Making the state of the system visible at a glance is known as _____.,Visual Management
+"What is the Japanese term for small, daily continuous improvements involving everyone?",Kaizen
+"In the 'Respect for People' pillar of Operations Excellence, who is considered the owner of the process?",The operator
+"In the 'DOWNTIME' acronym for the 8 wastes, what does 'D' represent?",Defects
+"In the 'DOWNTIME' acronym for the 8 wastes, what does 'O' represent?",Overproduction
+"In the 'DOWNTIME' acronym for the 8 wastes, what does 'W' represent?",Waiting
+"In the 'DOWNTIME' acronym for the 8 wastes, what does 'N' represent?",Non-utilized talent
+"In the 'DOWNTIME' acronym for the 8 wastes, what does 'T' represent?",Transportation
+"In the 'DOWNTIME' acronym for the 8 wastes, what does 'I' represent?",Inventory
+"In the 'DOWNTIME' acronym for the 8 wastes, what does 'M' represent?",Motion
+"In the 'DOWNTIME' acronym for the 8 wastes, what does 'E' represent?",Excess processing
+Which tier of the Daily Management System involves the team meeting for 15 minutes to discuss blockers?,Tier 1
+Which tier of the Daily Management System involves managers meeting for 30 minutes to discuss escalations?,Tier 2
+Which tier of the Daily Management System involves leadership meeting for 45 minutes for strategic decisions?,Tier 3
+"In physical business operations, the supply chain is metaphorically described as the _____.",Circulatory system
+What functional role does inventory play between uncertain demand and uncertain supply?,It acts as a buffer.
+"Which inventory type is used to cover normal, expected demand?",Cycle Stock
+Which inventory type serves as protection against variability in supply or demand?,Safety Stock
+Inventory that has been ordered but not yet received is classified as _____.,In-Transit
+Which inventory type is held specifically as protection against rare disruptions?,Strategic Stock
+Provide the formula for Inventory Turns.,$Inventory\ Turns = \frac{COGS}{Average\ Inventory}$
+Provide the formula for Days of Inventory.,$Days\ of\ Inventory = \frac{365}{Inventory\ Turns}$
+How is the Stockout Rate calculated?,$\frac{orders\ not\ filled\ on\ time}{total\ orders}$
+Provide the formula for Forecast Accuracy.,$Forecast\ Accuracy = 1 - \frac{|Actual - Forecast|}{Actual}$
+What term describes the phenomenon where small demand changes amplify as they move upstream?,The Bullwhip Effect
+"To counter the Bullwhip Effect, businesses should share _____ with upstream partners.",Forecasts
+"Supply chain resilience involves buffering the _____, rather than buffering everything.",Bottleneck
+How is Quality defined in the Six Sigma framework?,Conformance to customer requirements delivered with predictable variation.
+Six Sigma is the discipline of reducing defects to a maximum of _____ per million opportunities.,3.4
+"In the Six Sigma mindset, every defect is viewed as a(n) _____ failure.",System
+"In the DMAIC cycle, what does the 'D' step require the leader to do?",Define the problem in customer terms.
+"In the DMAIC cycle, what does the 'M' step require the leader to do?",Measure baseline performance with data.
+Which step of DMAIC utilizes tools like the '5 Whys' or 'Fishbone' diagram?,Analyze
+"In the DMAIC cycle, what does the 'I' step involve?",Targeted countermeasures to address root causes.
+"In the DMAIC cycle, what is the purpose of the 'Control' step?",To lock in the gain using standard work.
+Training and design are examples of which category of the Cost of Quality?,Prevention cost
+Inspection and audits are examples of which category of the Cost of Quality?,Appraisal cost
+Rework and scrap are categorized as _____ failure costs.,Internal
+Warranty claims and brand damage are categorized as _____ failure costs.,External
+The maturity index of an organization is the ratio of _____ costs to failure costs.,Prevention
+Variation that is inherent to a system and requires system changes to fix is called _____.,Common cause variation
+"Variation caused by a specific, non-inherent event is called _____.",Special cause variation
+What is the primary difference between a project and a program?,"A project is a temporary effort, while a program is a set of related projects managed for collective benefits."
+What are the three corners of the Project Management Iron Triangle?,"Scope, Time, and Cost."
+Which factor sits in the center of the Iron Triangle as the non-sacrificable constraint?,Quality
+Establishing a charter and success criteria occurs in which stage of the project lifecycle?,Initiate
+Creating a Work Breakdown Structure (WBS) and RACI matrix occurs in which stage of the project lifecycle?,Plan
+Status reporting and change control are key activities in which project lifecycle stage?,Monitor & Control
+"In risk assessment, risk score is calculated as _____ multiplied by impact.",Probability
+Response to risk: Using insurance or contracts to shift risk to another party is called _____.,Transfer
+Response to risk: Choosing not to enter a market to eliminate a specific risk is called _____.,Avoid
+Response to risk: Implementing controls or redundancy to lower risk is called _____.,Reduce
+Response to risk: Acknowledging a risk and creating a trigger plan for it is called _____.,Accept
+Project methodology: Which style is used when requirements are stable and delivery is sequential?,Waterfall
+Project methodology: Which style is used when requirements evolve and delivery is iterative?,Agile
+Vendor Management Goal: Obtaining maximum capability with minimum _____.,Dependency
+Partnership Spectrum: Which type is price-driven and easily swappable?,Transactional vendors
+Partnership Spectrum: Which type involves shared roadmaps and shared risks?,Strategic partners
+Vendor Selection: The 'Capability' criterion asks if the vendor can _____.,Actually deliver
+Vendor Selection: The 'Capacity' criterion asks if the vendor has sufficient _____.,Bandwidth
+Vendor Selection: The 'Commitment' criterion asks if the business is _____ to the vendor.,Strategic
+Vendor Selection: The 'Cost' criterion focuses on total cost of _____ rather than unit price.,Ownership
+What governance rhythm for vendors typically occurs monthly to review SLAs and incidents?,Operational reviews
+What governance rhythm for vendors occurs annually to discuss renewals and expansion?,Strategic reviews
+"In vendor contracts, what does the acronym SLA stand for?",Service Level Agreement
+"In vendor contracts, what term defines the right to end a contract without cause?",Termination for convenience
+What statistical concept is ignored when a forecast assumes a company will be 'the exception' to historical trends?,The Base-Rate
