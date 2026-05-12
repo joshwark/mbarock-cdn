@@ -98,6 +98,26 @@
     .mr5-audio-sub{display:block;font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#999;font-weight:600;margin-top:6px;}
     .mr5-audio-row audio{width:100%;height:42px;}
 
+    /* Song lyrics disclosure */
+    .mr5-song-block{padding:22px 0;border-bottom:1px solid ${c.rule};}
+    .mr5-song-block:last-child{border-bottom:0;}
+    .mr5-song-block .mr5-audio-row{padding:0;border-bottom:0;}
+    .mr5-lyrics{margin-top:14px;border-top:1px dashed ${c.rule};padding-top:14px;}
+    .mr5-lyrics-btn{display:inline-flex;align-items:center;gap:10px;background:transparent;border:0;padding:6px 0;cursor:pointer;font-family:"Inter",sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:${c.navy};transition:color .15s;}
+    .mr5-lyrics-btn:hover{color:${c.orange};}
+    .mr5-lyrics-btn .mr5-chev{width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;transition:transform .25s ease;color:${c.orange};font-size:10px;}
+    .mr5-lyrics-btn[aria-expanded="true"] .mr5-chev{transform:rotate(180deg);}
+    .mr5-lyrics-panel{max-height:0;overflow:hidden;transition:max-height .35s ease, opacity .25s ease, margin .25s;opacity:0;margin-top:0;}
+    .mr5-lyrics-panel.open{max-height:4000px;opacity:1;margin-top:16px;}
+    .mr5-lyrics-body{background:${c.cream};border-left:3px solid ${c.orange};padding:24px 28px;border-radius:0 4px 4px 0;font-family:"Fraunces",serif;font-size:16px;line-height:1.85;color:${c.ink};letter-spacing:-0.005em;white-space:pre-wrap;word-break:break-word;}
+    .mr5-lyrics-body em{font-style:italic;color:#555;}
+    .mr5-lyrics-body .mr5-stanza-break{display:block;height:14px;}
+    .mr5-lyrics-meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-family:"Inter",sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#999;font-weight:600;}
+    .mr5-lyrics-meta a{color:${c.navy};text-decoration:none;border-bottom:1px solid ${c.rule};padding-bottom:1px;}
+    .mr5-lyrics-meta a:hover{border-color:${c.orange};color:${c.orange};}
+    .mr5-lyrics-empty{font-family:"Fraunces",serif;font-style:italic;color:#999;font-size:15px;padding:18px 22px;background:${c.cream};border-radius:4px;margin:0;}
+    .mr5-lyrics-loading{font-family:"Inter",sans-serif;font-size:13px;color:#999;padding:18px 22px;}
+
     /* Concepts — strict 2-col grid, every row aligned */
     .mr5-concepts{display:grid;grid-template-columns:1fr 1fr;column-gap:32px;border-top:1px solid ${c.rule};}
     .mr5-concept{display:grid;grid-template-columns:32px 1fr;column-gap:14px;align-items:start;padding:22px 0;border-bottom:1px solid ${c.rule};}
@@ -335,7 +355,13 @@
         html += '<div class="mr5-audio-row"><div><div class="mr5-audio-label">Audio overview</div><span class="mr5-audio-sub">Concept walkthrough</span></div>' + audioPlayer(lesson.audio_overview_url, 'audio/mp4') + '</div>';
       }
       if (lesson.audio_url) {
+        html += '<div class="mr5-song-block">';
         html += '<div class="mr5-audio-row"><div><div class="mr5-audio-label">The song</div><span class="mr5-audio-sub">Original track · mnemonic</span></div>' + audioPlayer(lesson.audio_url, 'audio/mpeg') + '</div>';
+        html += '<div class="mr5-lyrics">';
+        html += '<button class="mr5-lyrics-btn" data-lyrics-toggle="1" aria-expanded="false" aria-controls="mr5-lyrics-panel"><span>View lyrics</span><span class="mr5-chev">▾</span></button>';
+        html += '<div class="mr5-lyrics-panel" id="mr5-lyrics-panel" data-lyrics-panel="1"></div>';
+        html += '</div>';
+        html += '</div>';
       }
       html += '</div>';
     }
@@ -388,12 +414,71 @@
     } catch (e) { console.warn('progress sync failed', e); }
   }
 
+  // Format raw lyrics text into HTML — preserve stanza breaks (blank lines), preserve [Hook]/[Verse] tags
+  function formatLyrics(text) {
+    if (!text || typeof text !== 'string') return '';
+    var safe = esc(text.trim());
+    // Wrap section tags like [Verse 1], [Chorus], [Hook] in italic em
+    safe = safe.replace(/(\[[^\]]+\])/g, '<em>$1</em>');
+    // Multiple blank lines → stanza break spacer
+    safe = safe.replace(/\n\s*\n/g, '<span class="mr5-stanza-break"></span>');
+    return safe;
+  }
+
+  function expandLyrics(lesson, btn, panel) {
+    if (panel.dataset.loaded === '1') {
+      panel.classList.toggle('open');
+      btn.setAttribute('aria-expanded', panel.classList.contains('open') ? 'true' : 'false');
+      btn.querySelector('span:first-child').textContent = panel.classList.contains('open') ? 'Hide lyrics' : 'View lyrics';
+      return;
+    }
+    // First open — render content
+    panel.dataset.loaded = '1';
+    // 1. Inline string field
+    if (lesson.lyrics) {
+      panel.innerHTML = '<div class="mr5-lyrics-body">' + formatLyrics(lesson.lyrics) + '</div>' +
+                        '<div class="mr5-lyrics-meta"><span>Lyrics · ' + esc(lesson.id) + '</span><span>© MBA Rock</span></div>';
+      panel.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      btn.querySelector('span:first-child').textContent = 'Hide lyrics';
+      return;
+    }
+    // 2. Fetch from lyrics_url
+    if (lesson.lyrics_url) {
+      panel.innerHTML = '<div class="mr5-lyrics-loading">Loading lyrics…</div>';
+      panel.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      btn.querySelector('span:first-child').textContent = 'Hide lyrics';
+      fetch(lesson.lyrics_url, { cache: 'force-cache' })
+        .then(function(r){ return r.ok ? r.text() : Promise.reject(r.status); })
+        .then(function(txt) {
+          panel.innerHTML = '<div class="mr5-lyrics-body">' + formatLyrics(txt) + '</div>' +
+            '<div class="mr5-lyrics-meta"><span>Lyrics · ' + esc(lesson.id) + '</span><a href="' + esc(lesson.lyrics_url) + '" target="_blank" rel="noopener">Open source</a></div>';
+        })
+        .catch(function(err) {
+          panel.innerHTML = '<p class="mr5-lyrics-empty">Couldn’t load lyrics (error ' + esc(err) + '). <a href="' + esc(lesson.lyrics_url) + '" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid currentColor;">Open file directly</a>.</p>';
+        });
+      return;
+    }
+    // 3. Empty state
+    panel.innerHTML = '<p class="mr5-lyrics-empty">Lyrics for this track are still being written. Check back soon.</p>';
+    panel.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.querySelector('span:first-child').textContent = 'Hide lyrics';
+  }
+
   function wireInteractions(lesson, container) {
     container.addEventListener('click', function(e) {
       var t = e.target;
       if (t.classList && t.classList.contains('mr5-check')) t.classList.toggle('done');
       if ((t.dataset && t.dataset.action === 'complete') || (t.closest && t.closest('[data-chip="1"]'))) {
         markComplete(lesson, container);
+      }
+      // Lyrics disclosure
+      var lyricsBtn = t.closest && t.closest('[data-lyrics-toggle="1"]');
+      if (lyricsBtn) {
+        var panel = container.querySelector('[data-lyrics-panel="1"]');
+        if (panel) expandLyrics(lesson, lyricsBtn, panel);
       }
     });
   }
