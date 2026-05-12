@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your Business · MBA Rock Capstone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1F3A;
+  --ink:#0E1116;
+  --orange:#F26B1F;
+  --orange-soft:#FBE2D0;
+  --cream:#FAF8F5;
+  --paper:#FFFFFF;
+  --rule:#E5E0D6;
+  --green:#1d8444;
+  --muted:#8a8a8a;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:'Inter',-apple-system,sans-serif;line-height:1.55;}
+h1,h2,h3,h4{font-family:'Fraunces',serif;letter-spacing:-0.018em;color:var(--navy);margin:0;font-weight:600;}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);font-weight:700;}
+
+/* Top hero */
+.app{max-width:1080px;margin:0 auto;padding:48px 28px 80px;}
+.hero{padding:0 0 36px;border-bottom:1px solid var(--rule);margin-bottom:48px;}
+.hero .eyebrow{margin-bottom:14px;}
+.hero h1{font-size:52px;line-height:1.05;letter-spacing:-0.025em;margin-bottom:14px;}
+.hero p.sub{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:#444;max-width:760px;line-height:1.5;margin:0 0 24px;}
+.hero .meta-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:24px;}
+.hero .stat{padding:0;}
+.hero .stat .l{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:4px;}
+.hero .stat .v{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--navy);font-variant-numeric:tabular-nums;letter-spacing:-0.015em;}
+.hero .stat .v small{font-size:14px;color:var(--muted);font-weight:400;}
+.progress-bar{height:6px;background:var(--rule);border-radius:3px;overflow:hidden;margin-top:18px;}
+.progress-bar i{display:block;height:100%;background:var(--orange);width:0;transition:width .4s;}
+
+/* Section card */
+.section{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:32px 36px;margin-bottom:24px;}
+.section-head{display:flex;align-items:baseline;gap:18px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--rule);}
+.section-num{font-family:'Fraunces',serif;font-size:42px;line-height:1;color:var(--orange);font-weight:600;letter-spacing:-0.04em;}
+.section-meta{flex:1;}
+.section-meta h2{font-size:30px;line-height:1.1;margin-bottom:4px;}
+.section-meta .label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.section-progress{font-family:'Fraunces',serif;font-size:14px;color:var(--orange);font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-0.01em;}
+.section-summary{font-family:'Fraunces',serif;font-style:italic;color:#555;font-size:16px;margin:0 0 20px;line-height:1.5;}
+
+/* Field */
+.field{margin-bottom:22px;padding-bottom:22px;border-bottom:1px dashed var(--rule);}
+.field:last-child{border-bottom:0;padding-bottom:0;}
+.field-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:8px;}
+.field-title{font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--navy);letter-spacing:-0.005em;}
+.field-ref{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--cream);padding:4px 9px;border-radius:30px;flex-shrink:0;}
+.field-hint{font-size:13px;color:#666;margin:0 0 10px;line-height:1.5;}
+.field-input{width:100%;padding:12px 16px;border:1px solid var(--rule);border-radius:8px;font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.55;background:#fff;color:var(--ink);resize:vertical;font-variant-numeric:tabular-nums;}
+.field-input:focus{outline:none;border-color:var(--orange);background:#fffaf5;}
+.field-input.long{min-height:90px;}
+.field-status{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:11px;letter-spacing:.04em;color:var(--muted);}
+.field-status .saved{color:var(--green);font-weight:600;display:inline-flex;align-items:center;gap:5px;}
+.field-status .saved::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green);}
+.field-status .saving{color:#d49f1c;}
+.field-status .err{color:#a01a1a;}
+.field-locked{padding:14px 16px;background:var(--cream);border-left:3px solid var(--rule);border-radius:0 6px 6px 0;font-size:13px;color:#666;font-family:'Fraunces',serif;font-style:italic;}
+.field-locked a{color:var(--orange);text-decoration:none;font-weight:600;font-family:'Inter',sans-serif;font-style:normal;letter-spacing:.04em;}
+
+/* Section colors per module */
+.section.bet .section-num{color:#0b6b9d;}
+.section.edge .section-num{color:#7a3f9e;}
+.section.team .section-num{color:#1d8444;}
+.section.story .section-num{color:var(--orange);}
+.section.engine .section-num{color:#a86b1a;}
+.section.capital .section-num{color:#b13a3a;}
+.section.plan .section-num{color:#444;}
+
+/* Exports */
+.exports{background:var(--navy);color:#fff;border-radius:14px;padding:36px 40px;margin-top:32px;}
+.exports h3{color:#fff;font-size:24px;margin-bottom:8px;}
+.exports p{font-family:'Fraunces',serif;font-style:italic;color:rgba(255,255,255,0.8);margin:0 0 24px;font-size:16px;line-height:1.5;}
+.exports .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+.export-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:18px 20px;cursor:pointer;transition:all .15s;}
+.export-card:hover{background:rgba(242,107,31,0.15);border-color:var(--orange);transform:translateY(-2px);}
+.export-card .name{font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin-bottom:4px;color:#fff;}
+.export-card .who{font-size:12px;color:rgba(255,255,255,0.7);margin-bottom:8px;line-height:1.4;}
+.export-card .status{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);font-weight:700;}
+
+.member-bar{background:#fff;border:1px solid var(--rule);border-radius:30px;padding:8px 18px;display:inline-flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);}
+.member-bar b{color:var(--navy);font-weight:600;}
+
+@media(max-width:680px){
+  .app{padding:28px 18px 60px;}
+  .hero h1{font-size:34px;}
+  .hero p.sub{font-size:17px;}
+  .section{padding:24px 22px;}
+  .section-num{font-size:32px;}
+  .section-meta h2{font-size:22px;}
+  .exports{padding:24px 22px;}
+}
+</style>
+</head>
+<body>
+<main class="app">
+  <div class="hero">
+    <div class="eyebrow">MBA Rock · Your Business · The Capstone</div>
+    <h1 id="businessName">Your business, one section at a time</h1>
+    <p class="sub">Every Take Action you complete becomes a piece of this document. Finish the course and you have the operating system, the pitch, and the 90-day plan to launch.</p>
+    <div class="meta-strip">
+      <div class="stat"><div class="l">Progress</div><div class="v"><span id="progressN">0</span><small>/45</small></div></div>
+      <div class="stat"><div class="l">Sections active</div><div class="v" id="sectionsActive">0<small>/7</small></div></div>
+      <div class="stat"><div class="l">Last updated</div><div class="v" id="lastUpdated" style="font-size:14px;">Never</div></div>
+      <div class="stat"><div class="l">Status</div><div class="v" id="memberStatus" style="font-size:14px;">—</div></div>
+    </div>
+    <div class="progress-bar"><i id="progressBar"></i></div>
+  </div>
+
+  <div id="sections"></div>
+
+  <div class="exports">
+    <h3>Three exports, same source</h3>
+    <p>Once your sections fill in, the same data composes three deliverables. You don't write three documents — you fill in seven sections, once.</p>
+    <div class="grid">
+      <div class="export-card" data-export="bos">
+        <div class="name">The Operating System</div>
+        <div class="who">Your daily doc. 30–50 pages. Branded PDF. The complete business plan you actually run from.</div>
+        <div class="status" id="bosStatus">Coming with v3</div>
+      </div>
+      <div class="export-card" data-export="pitch">
+        <div class="name">The Pitch</div>
+        <div class="who">10-slide deck for investors, partners, or recruits. Auto-assembled from §1, §2, §6 key fields.</div>
+        <div class="status" id="pitchStatus">Coming with v3</div>
+      </div>
+      <div class="export-card" data-export="sprint">
+        <div class="name">The 90-Day Sprint</div>
+        <div class="who">One-pager. Week-by-week action plan. Stuck on your wall. Updated quarterly.</div>
+        <div class="status" id="sprintStatus">Coming with v3</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+console.log('[Capstone] v1 loaded');
+
+// ── Supabase ──
+const SB_URL = 'https://ciloqphtencjthkedanw.supabase.co';
+const SB_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+const SB_HDR = {
+  'apikey': SB_KEY,
+  'Authorization': 'Bearer ' + SB_KEY,
+  'Content-Type': 'application/json',
+  'Prefer': 'resolution=merge-duplicates,return=minimal'
+};
+function memberId() { return localStorage.getItem('mba-rock-member-id') || 'guest'; }
+
+// ── The 7-section schema ──
+const SECTIONS = [
+  {
+    id: 'bet', num: '01', label: 'Finance', title: 'The Bet',
+    sectionClass: 'bet',
+    summary: 'The economic reality of your business. Unit economics, cash plan, runway. The numbers that make the bet make sense.',
+    fields: [
+      { id:'one_liner', title:'Your business in one sentence', hint:'"We make X for Y so they can Z." If you can\'t say it in one line, you haven\'t locked the bet yet.', ref:'M1L1', input:'text-long' },
+      { id:'target_market', title:'Target market & size', hint:'Who specifically. How many of them exist. How you sized it (top-down vs bottom-up).', ref:'M1L2', input:'text-long' },
+      { id:'revenue_model', title:'Revenue model', hint:'How you charge. Per unit, subscription, marketplace take rate, license, etc.', ref:'M1L2', input:'text-long' },
+      { id:'unit_economics', title:'Unit economics', hint:'CAC, LTV, payback period, gross margin. Use the Operator\'s Console to calculate.', ref:'M1L4', input:'text-long' },
+      { id:'cash_position', title:'Cash position (today)', hint:'How much you have. Cash + near-term receivables.', ref:'M1L1', input:'text-short' },
+      { id:'monthly_burn', title:'Monthly net burn', hint:'Cash out minus cash in, per month.', ref:'M1L1.7', input:'text-short' },
+      { id:'runway', title:'Runway', hint:'Months until cash runs out at current burn. Calculated.', ref:'M1L1', input:'text-short', locked: true, lockedRef: 'M1L1' },
+      { id:'breakeven', title:'Breakeven point', hint:'Units or revenue where you cover costs.', ref:'M1L1.5', input:'text-short', locked: true, lockedRef: 'M1L1.5' },
+      { id:'forecast_12mo', title:'12-month revenue forecast', hint:'Best case, base case, low case. With assumptions.', ref:'M1L2', input:'text-long', locked: true, lockedRef: 'M1L2' },
+    ],
+  },
+  {
+    id: 'edge', num: '02', label: 'Strategy', title: 'The Edge',
+    sectionClass: 'edge',
+    summary: 'Your strategic position. Which moat you\'re building and why competitors can\'t copy it.',
+    fields: [
+      { id:'moat_type', title:'Your moat type', hint:'Pick one: Intangible asset (brand/patent/regulatory) · Switching costs · Network effects · Cost advantage · Efficient scale', ref:'M2L0.5', input:'text-short' },
+      { id:'moat_thesis', title:'Moat thesis', hint:'In 3-5 sentences: why this is your structural advantage, and what compounds over time to widen it.', ref:'M2L1', input:'text-long' },
+      { id:'five_forces', title:'Five Forces of your industry', hint:'For each: new entrants, suppliers, buyers, substitutes, rivalry. Mark each favorable/neutral/unfavorable.', ref:'M2L2', input:'text-long', locked:true, lockedRef:'M2L2' },
+      { id:'positioning', title:'Positioning one-liner', hint:'"For [audience] we are the [category] that [differentiator]."', ref:'M2L4', input:'text-short', locked:true, lockedRef:'M2L4' },
+      { id:'errc_grid', title:'ERRC Grid', hint:'Eliminate / Reduce / Raise / Create vs incumbents. How do you break the trade-off?', ref:'M2L4', input:'text-long', locked:true, lockedRef:'M2L4' },
+      { id:'disruption_stance', title:'Disrupt or defend', hint:'Are you the incumbent or the new entrant? What\'s your stance?', ref:'M2L5', input:'text-long', locked:true, lockedRef:'M2L5' },
+    ],
+  },
+  {
+    id: 'team', num: '03', label: 'People & Leadership', title: 'The Team',
+    sectionClass: 'team',
+    summary: 'Who you hire, when, and how you lead. The operating rhythm that scales.',
+    fields: [
+      { id:'90_day_blueprint', title:'Your 90-day blueprint', hint:'First 30 days listen; days 30-60 quick wins; days 60-90 set rhythm. Customize per your STARS situation.', ref:'M3L1', input:'text-long' },
+      { id:'next_3_hires', title:'Next 3 hires', hint:'Role, timing, budget, why they\'re needed before the pain hits.', ref:'M3L3', input:'text-long', locked:true, lockedRef:'M3L3' },
+      { id:'org_chart_12mo', title:'12-month org structure', hint:'Boxes-and-lines for the company you\'ll be in 12 months — not today.', ref:'M3L3', input:'text-long', locked:true, lockedRef:'M3L3' },
+      { id:'operating_rhythm', title:'Leadership operating rhythm', hint:'1:1 cadence. Weekly reviews. Quarterly planning. Retrospectives.', ref:'M3L2.5', input:'text-long', locked:true, lockedRef:'M3L2.5' },
+      { id:'culture_principles', title:'Culture principles', hint:'3-5 lines that describe how you operate, what gets rewarded, what gets fired.', ref:'M3L5', input:'text-long', locked:true, lockedRef:'M3L5' },
+    ],
+  },
+  {
+    id: 'story', num: '04', label: 'Marketing & Brand', title: 'The Story',
+    sectionClass: 'story',
+    summary: 'Who you serve and how you reach them. The brand promise and the funnel that makes it work.',
+    fields: [
+      { id:'customer_jtbd', title:'Customer\'s job to be done', hint:'In the customer\'s words, not yours. What are they hiring your product to do?', ref:'M4L1', input:'text-long' },
+      { id:'brand_promise', title:'Brand promise (5-word version)', hint:'What every interaction with your brand commits to deliver.', ref:'M4L2', input:'text-short', locked:true, lockedRef:'M4L2' },
+      { id:'funnel_design', title:'Funnel design', hint:'Channels you\'ll use. Stage-by-stage conversion targets. Use the Console for funnel math.', ref:'M4L3', input:'text-long', locked:true, lockedRef:'M4L3' },
+      { id:'pricing_strategy', title:'Pricing strategy', hint:'How you set it, how you\'ll test elasticity, your tier structure.', ref:'M4L4', input:'text-long', locked:true, lockedRef:'M4L4' },
+      { id:'early_persona', title:'Early adopter persona', hint:'Who buys first, before the mainstream. Specific enough to picture.', ref:'M4L1', input:'text-long', locked:true, lockedRef:'M4L1' },
+    ],
+  },
+  {
+    id: 'engine', num: '05', label: 'Operations & Tech', title: 'The Engine',
+    sectionClass: 'engine',
+    summary: 'How you operate at quality and scale. Processes, automation, tech stack, build/buy/partner decisions.',
+    fields: [
+      { id:'core_process', title:'Your core process — mapped', hint:'Pick the most important repeatable process. Map it end-to-end.', ref:'M5L2', input:'text-long' },
+      { id:'automation_priority', title:'Automation priority list', hint:'5+/week tasks tagged red (data-loss risk) and yellow (time-loss). Reds first.', ref:'M5L2.5', input:'text-long', locked:true, lockedRef:'M5L2.5' },
+      { id:'quality_metrics', title:'Quality metrics', hint:'First Pass Yield. DPMO. Customer-facing quality KPIs.', ref:'M5L3', input:'text-long', locked:true, lockedRef:'M5L3' },
+      { id:'tech_stack_decisions', title:'Tech stack: build / buy / partner', hint:'For each capability layer: which path you chose and why.', ref:'M5L5', input:'text-long', locked:true, lockedRef:'M5L5' },
+    ],
+  },
+  {
+    id: 'capital', num: '06', label: 'Capital & Scaling', title: 'The Capital',
+    sectionClass: 'capital',
+    summary: 'How you fund growth. The pitch, the cap table, the exit story.',
+    fields: [
+      { id:'growth_engine', title:'Your growth engine', hint:'Viral / paid / sticky. Or a mix. Which one dominates? Where do you invest growth dollars?', ref:'M6L1', input:'text-long' },
+      { id:'capital_stack', title:'Capital stack plan', hint:'Debt / preferred / common. Sources. WACC.', ref:'M6L2', input:'text-long', locked:true, lockedRef:'M6L2' },
+      { id:'next_raise', title:'Next raise: size + terms', hint:'How much. At what valuation. What clean terms look like.', ref:'M6L3', input:'text-long', locked:true, lockedRef:'M6L3' },
+      { id:'pitch_summary', title:'10-slide pitch outline', hint:'Title · Problem · Solution · Why now · Market · Product · Traction · Business model · Team · Ask. One line per slide.', ref:'M6L4', input:'text-long', locked:true, lockedRef:'M6L4' },
+      { id:'exit_thesis', title:'Exit thesis', hint:'Likely acquirer types. EBITDA / revenue multiples. Strategic vs financial buyer.', ref:'M6L5', input:'text-long', locked:true, lockedRef:'M6L5' },
+    ],
+  },
+  {
+    id: 'plan', num: '07', label: 'Plan & Architecture', title: 'The Plan',
+    sectionClass: 'plan',
+    summary: 'The action layer. 90-day sprint, 12-month milestones, top risks, success definition.',
+    fields: [
+      { id:'week_1_actions', title:'Week 1: the first 5 specific actions', hint:'Concrete moves you make Monday-Friday after the course ends.', ref:'M6L13', input:'text-long' },
+      { id:'90_day_milestones', title:'90-day milestones', hint:'3-5 measurable outcomes by day 90. Bear-trap binary: hit or miss, no maybe.', ref:'M6L13', input:'text-long', locked:true, lockedRef:'M6L13' },
+      { id:'12_month_okrs', title:'12-month OKRs', hint:'3 objectives. Each with measurable key results. The annual plan.', ref:'M9L1', input:'text-long', locked:true, lockedRef:'M9L1' },
+      { id:'top_risks', title:'Top 5 risks (probability × impact)', hint:'Run the risk map. Tag each with current mitigation.', ref:'M6L9', input:'text-long', locked:true, lockedRef:'M6L9' },
+      { id:'success_definition', title:'Year-2 success definition', hint:'What does it look like, smell like, feel like when this works?', ref:'M10L1', input:'text-long', locked:true, lockedRef:'M10L1' },
+    ],
+  },
+];
+
+// ── State ──
+let state = {}; // { sectionId: { fieldId: value } }
+let saveTimers = {};
+let savedFlags = {};
+
+// ── Render ──
+function renderSections() {
+  const root = document.getElementById('sections');
+  root.innerHTML = '';
+  SECTIONS.forEach(s => {
+    const filled = s.fields.filter(f => state[s.id] && state[s.id][f.id] && String(state[s.id][f.id]).trim()).length;
+    const total = s.fields.length;
+    const sec = document.createElement('div');
+    sec.className = 'section ' + s.sectionClass;
+    sec.innerHTML = '<div class="section-head">' +
+      '<div class="section-num">' + s.num + '</div>' +
+      '<div class="section-meta"><div class="label">§ ' + s.label + '</div><h2>' + s.title + '</h2></div>' +
+      '<div class="section-progress">' + filled + ' / ' + total + '</div>' +
+      '</div>' +
+      '<p class="section-summary">' + s.summary + '</p>' +
+      '<div class="fields"></div>';
+    const fieldsContainer = sec.querySelector('.fields');
+    s.fields.forEach(f => {
+      const value = (state[s.id] && state[s.id][f.id]) || '';
+      const fEl = document.createElement('div');
+      fEl.className = 'field';
+      if (f.locked) {
+        fEl.innerHTML = '<div class="field-head"><div class="field-title">' + escapeHtml(f.title) + '</div><div class="field-ref">' + f.ref + '</div></div>' +
+          '<p class="field-hint">' + escapeHtml(f.hint) + '</p>' +
+          '<div class="field-locked">Built when you complete the take-action steps in <a href="#" data-lesson="' + f.lockedRef + '">' + f.lockedRef + '</a>. <em>Coming with v2.</em></div>';
+      } else {
+        const isLong = f.input === 'text-long';
+        fEl.innerHTML = '<div class="field-head"><div class="field-title">' + escapeHtml(f.title) + '</div><div class="field-ref">' + f.ref + '</div></div>' +
+          '<p class="field-hint">' + escapeHtml(f.hint) + '</p>' +
+          '<' + (isLong ? 'textarea' : 'input') + ' class="field-input ' + (isLong ? 'long' : '') + '" data-section="' + s.id + '" data-field="' + f.id + '" placeholder="Write here…">' + (isLong ? escapeHtml(value) : '') + (isLong ? '</textarea>' : '" value="' + escapeHtml(value) + '">') +
+          '<div class="field-status"><span data-status="' + s.id + ':' + f.id + '">' + (value ? '<span class="saved">Saved</span>' : '') + '</span><span>' + (value ? value.length + ' chars' : '') + '</span></div>';
+      }
+      fieldsContainer.appendChild(fEl);
+    });
+    root.appendChild(sec);
+  });
+
+  // Wire input listeners
+  document.querySelectorAll('.field-input').forEach(el => {
+    el.addEventListener('input', () => onFieldChange(el));
+    el.addEventListener('blur', () => onFieldChange(el, true));
+  });
+  updateProgress();
+}
+
+function onFieldChange(el, immediate) {
+  const sectionId = el.dataset.section;
+  const fieldId = el.dataset.field;
+  const value = el.value;
+  state[sectionId] = state[sectionId] || {};
+  state[sectionId][fieldId] = value;
+  const statusKey = sectionId + ':' + fieldId;
+  setStatus(statusKey, 'saving', 'Saving…');
+  if (saveTimers[statusKey]) clearTimeout(saveTimers[statusKey]);
+  const delay = immediate ? 0 : 1200;
+  saveTimers[statusKey] = setTimeout(() => save(sectionId, fieldId, value, statusKey), delay);
+  // Update progress count
+  updateProgress();
+}
+
+function setStatus(key, cls, text) {
+  const el = document.querySelector('[data-status="' + key + '"]');
+  if (el) el.innerHTML = '<span class="' + cls + '">' + text + '</span>';
+}
+
+function save(sectionId, fieldId, value, statusKey) {
+  const mid = memberId();
+  // localStorage cache always
+  const lsKey = 'mr-capstone:' + mid;
+  let cache = {};
+  try { cache = JSON.parse(localStorage.getItem(lsKey) || '{}'); } catch(e){}
+  cache[sectionId] = cache[sectionId] || {};
+  cache[sectionId][fieldId] = value;
+  try { localStorage.setItem(lsKey, JSON.stringify(cache)); } catch(e){}
+  setStatus(statusKey, 'saved', '<span class="saved">Saved</span>');
+
+  if (mid === 'guest') return;
+  fetch(SB_URL + '/rest/v1/user_capstone?on_conflict=member_id', {
+    method: 'POST', headers: SB_HDR,
+    body: JSON.stringify([{member_id: mid, capstone_data: cache, updated_at: new Date().toISOString()}])
+  }).then(r => {
+    if (!r.ok) setStatus(statusKey, 'err', 'Save failed');
+  }).catch(e => {
+    console.warn('[Capstone] save failed', e);
+    setStatus(statusKey, 'err', 'Offline — local only');
+  });
+}
+
+function updateProgress() {
+  let total = 0, filled = 0, activeSections = 0;
+  SECTIONS.forEach(s => {
+    const sectionFilled = s.fields.filter(f => state[s.id] && state[s.id][f.id] && String(state[s.id][f.id]).trim()).length;
+    if (sectionFilled > 0) activeSections++;
+    total += s.fields.length;
+    filled += sectionFilled;
+  });
+  document.getElementById('progressN').textContent = filled;
+  document.getElementById('progressBar').style.width = (filled/total*100) + '%';
+  document.getElementById('sectionsActive').innerHTML = activeSections + '<small>/' + SECTIONS.length + '</small>';
+  const mid = memberId();
+  document.getElementById('memberStatus').textContent = mid === 'guest' ? 'Guest — sign in to save' : 'Signed in';
+}
+
+function loadState() {
+  const mid = memberId();
+  // First, optimistically load from localStorage
+  try { state = JSON.parse(localStorage.getItem('mr-capstone:' + mid) || '{}'); } catch(e) { state = {}; }
+  renderSections();
+  if (mid === 'guest') return;
+  // Then pull from Supabase
+  fetch(SB_URL + '/rest/v1/user_capstone?select=capstone_data,updated_at&member_id=eq.' + encodeURIComponent(mid), { headers: SB_HDR })
+    .then(r => r.ok ? r.json() : [])
+    .then(rows => {
+      if (rows && rows[0] && rows[0].capstone_data) {
+        // Merge remote into local (remote wins for conflicts since we save-on-write)
+        Object.keys(rows[0].capstone_data).forEach(sid => {
+          state[sid] = Object.assign({}, state[sid] || {}, rows[0].capstone_data[sid]);
+        });
+        try { localStorage.setItem('mr-capstone:' + mid, JSON.stringify(state)); } catch(e){}
+        renderSections();
+        if (rows[0].updated_at) {
+          const d = new Date(rows[0].updated_at);
+          document.getElementById('lastUpdated').textContent = d.toLocaleDateString() + ' ' + d.toLocaleTimeString().slice(0,5);
+        }
+      }
+    }).catch(e => console.warn('[Capstone] pull failed', e));
+}
+
+function escapeHtml(s) {
+  const d = document.createElement('div');
+  d.textContent = s == null ? '' : String(s);
+  return d.innerHTML;
+}
+
+// ── Init ──
+loadState();
+</script>
+</body>
+</html>
