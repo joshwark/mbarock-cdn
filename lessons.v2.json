@@ -264,6 +264,33 @@
       "placeholder": false
     },
     {
+      "id": "M1L1.7",
+      "module_id": "M1",
+      "lesson_number": "M1L1.7",
+      "title": "Cash Runway and Timing",
+      "slug_v2": "m1l1-7-cash-runway-and-timing",
+      "legacy_slug": "cash-timing",
+      "audio_url": null,
+      "audio_overview_url": null,
+      "video_id": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Cash_Runway_and_Timing__Securing_Your_Business_Oxygen.mp4",
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Cash Runway",
+        "Burn Rate",
+        "Working Capital",
+        "Cash Timing",
+        "Survival Math"
+      ],
+      "take_action": [
+        "Calculate your cash runway: cash on hand ÷ monthly burn",
+        "Map AR and AP timing to spot the cash crunch points",
+        "Build a 13-week cash forecast and update it weekly"
+      ],
+      "placeholder": false
+    },
+    {
       "id": "M1L2",
       "module_id": "M1",
       "lesson_number": "M1L2",
@@ -426,6 +453,33 @@
       "placeholder": false
     },
     {
+      "id": "M2L0.5",
+      "module_id": "M2",
+      "lesson_number": "M2L0.5",
+      "title": "Economic Moats (Foundation)",
+      "slug_v2": "m2l0-5-economic-moats-foundation",
+      "legacy_slug": "economic-moats",
+      "audio_url": null,
+      "audio_overview_url": null,
+      "video_id": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Economic_Moats.mp4",
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Sustainable Competitive Advantage",
+        "Moat",
+        "Defensibility",
+        "Switching Costs",
+        "Network Effects"
+      ],
+      "take_action": [
+        "Identify your single most defensible moat",
+        "Score each moat type 1–5 for your business",
+        "Plan one investment in the highest-leverage moat"
+      ],
+      "placeholder": false
+    },
+    {
       "id": "M2L1",
       "module_id": "M2",
       "lesson_number": "M2L1",
@@ -509,62 +563,6 @@
       "placeholder": false
     },
     {
-      "id": "M2L2.1.5",
-      "module_id": "M2",
-      "lesson_number": "M2L2.1.5",
-      "title": "Strategic Diagnostics (Beneath the Hood)",
-      "slug_v2": "m2l2-1-5-strategic-diagnostics-beneath-the-hood",
-      "legacy_slug": "strategic-diagnostics",
-      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/beneath-the-hood.mp3",
-      "audio_overview_url": null,
-      "video_id": null,
-      "video_url": null,
-      "worksheet_url": null,
-      "lyrics_url": null,
-      "core_concepts": [
-        "Strategic Diagnostics",
-        "Capability Gap Analysis",
-        "Organizational Assessment",
-        "Root Cause Thinking",
-        "Operational vs. Strategic Problems"
-      ],
-      "take_action": [
-        "Conduct a 30-minute honest audit of your biggest strategic weakness",
-        "Identify one process holding your strategy back",
-        "Map the gap between your current state and strategic requirements"
-      ],
-      "placeholder": false
-    },
-    {
-      "id": "M2L2.3.5",
-      "module_id": "M2",
-      "lesson_number": "M2L2.3.5",
-      "title": "Business Model Canvas",
-      "slug_v2": "m2l2-3-5-business-model-canvas",
-      "legacy_slug": "business-model-canvas",
-      "audio_url": null,
-      "audio_overview_url": null,
-      "video_id": null,
-      "video_url": null,
-      "worksheet_url": null,
-      "lyrics_url": null,
-      "core_concepts": [
-        "Business Model Canvas",
-        "Value Proposition",
-        "Customer Segments",
-        "Revenue Streams",
-        "Key Resources",
-        "Key Partners",
-        "Cost Structure"
-      ],
-      "take_action": [
-        "Fill out the full Business Model Canvas for your business",
-        "Identify your most fragile or at-risk block",
-        "Redesign one block to improve overall business model strength"
-      ],
-      "placeholder": false
-    },
-    {
       "id": "M2L3",
       "module_id": "M2",
       "lesson_number": "M2L3",
@@ -635,6 +633,62 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
+      "placeholder": false
+    },
+    {
+      "id": "M2L2.1.5",
+      "module_id": "M2",
+      "lesson_number": "M2L2.1.5",
+      "title": "Strategic Diagnostics (Beneath the Hood)",
+      "slug_v2": "m2l2-1-5-strategic-diagnostics-beneath-the-hood",
+      "legacy_slug": "strategic-diagnostics",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/beneath-the-hood.mp3",
+      "audio_overview_url": null,
+      "video_id": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Strategic Diagnostics",
+        "Capability Gap Analysis",
+        "Organizational Assessment",
+        "Root Cause Thinking",
+        "Operational vs. Strategic Problems"
+      ],
+      "take_action": [
+        "Conduct a 30-minute honest audit of your biggest strategic weakness",
+        "Identify one process holding your strategy back",
+        "Map the gap between your current state and strategic requirements"
+      ],
+      "placeholder": false
+    },
+    {
+      "id": "M2L2.3.5",
+      "module_id": "M2",
+      "lesson_number": "M2L2.3.5",
+      "title": "Business Model Canvas",
+      "slug_v2": "m2l2-3-5-business-model-canvas",
+      "legacy_slug": "business-model-canvas",
+      "audio_url": null,
+      "audio_overview_url": null,
+      "video_id": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        "Business Model Canvas",
+        "Value Proposition",
+        "Customer Segments",
+        "Revenue Streams",
+        "Key Resources",
+        "Key Partners",
+        "Cost Structure"
+      ],
+      "take_action": [
+        "Fill out the full Business Model Canvas for your business",
+        "Identify your most fragile or at-risk block",
+        "Redesign one block to improve overall business model strength"
+      ],
       "placeholder": false
     },
     {
@@ -1221,6 +1275,57 @@
       "lesson_number": "M6L13",
       "title": "[Video pending generation]",
       "slug_v2": "m6l13-video-pending-generation",
+      "legacy_slug": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "video_id": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "placeholder": true
+    },
+    {
+      "id": "M7L1",
+      "module_id": "M7",
+      "lesson_number": "M7L1",
+      "title": "Stop Burning Cash on Leaky Funnels",
+      "slug_v2": "m7l1-stop-burning-cash-on-leaky-funnels",
+      "legacy_slug": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "video_id": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "placeholder": true
+    },
+    {
+      "id": "M8L1",
+      "module_id": "M8",
+      "lesson_number": "M8L1",
+      "title": "Repeatability Without Employee Heroics",
+      "slug_v2": "m8l1-repeatability-without-employee-heroics",
+      "legacy_slug": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "video_id": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "placeholder": true
+    },
+    {
+      "id": "M9L1",
+      "module_id": "M9",
+      "lesson_number": "M9L1",
+      "title": "Analytics for Decision Speed and Risk",
+      "slug_v2": "m9l1-analytics-for-decision-speed-and-risk",
       "legacy_slug": null,
       "audio_url": null,
       "audio_overview_url": null,
