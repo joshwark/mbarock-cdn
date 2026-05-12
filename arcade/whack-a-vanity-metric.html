@@ -350,7 +350,7 @@ function endGame() {
   if (bonkedReal === 0 && bonkedVanity >= 15) { title = 'Sharp eyes.'; sub = "You bonked the noise. You spared the signal. That's the job."; }
   else if (bonkedReal >= 3) { title = 'You bonked the real metrics.'; sub = "That's how founders lose years optimizing the wrong thing. Try again."; }
   else if (score < 5) { title = 'Slow start.'; sub = 'The vanity metrics never stop coming. Faster next round.'; }
-  else if (score >= 20) { title = 'Operator move.'; sub = 'You know what matters and what doesn\\'t. That instinct compounds.'; }
+  else if (score >= 20) { title = 'Operator move.'; sub = 'You know what matters and what doesn’t. That instinct compounds.'; }
 
   document.getElementById('endTitle').textContent = title;
   document.getElementById('endSubtitle').textContent = sub;
