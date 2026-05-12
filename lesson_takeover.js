@@ -256,8 +256,36 @@
     var slug = Object.keys(SLUG_TO_V2).find(function(k){ return SLUG_TO_V2[k] === lesson.id; });
     return slug ? '/mba-rock/' + slug : null;
   }
+  // Squarespace module totals (the lesson counts you see in the sidebar)
+  var SQ_MODULE_SIZE = { M1:9, M2:8, M3:13, M4:7, M5:7, M6:6, M7:0, M8:0, M9:0, M10:0 };
+
+  // Derive Squarespace position from the URL slug.
+  //   "m1l3-gross-margin-groove"     → 3
+  //   "16-cash-runway"               → 6   (lesson 1.6)
+  //   "310-worth-align"              → 10  (lesson 3.10)
+  //   "313-unit-economics-reggae"    → 13  (lesson 3.13)
+  //   random-hash slugs              → null (fall back to v2 sort order)
+  function squarespacePositionFromSlug(slug, moduleId) {
+    var m = slug.match(/^m(\d+)l(\d+(?:\.\d+)?)/i);
+    if (m) return parseFloat(m[2]);
+    m = slug.match(/^(\d+)-/);
+    if (m) {
+      var n = m[1];
+      // First digit = module, rest = lesson position (e.g. "310" = 3.10)
+      if (n.length >= 2) return parseInt(n.substring(1), 10);
+    }
+    return null;
+  }
+
   function moduleProgressLabel(v2, lesson) {
     var mod = v2.modules.find(function(m){ return m.id === lesson.module_id; });
+    var sqTotal = SQ_MODULE_SIZE[lesson.module_id];
+    var sqPos = squarespacePositionFromSlug(sqSlug, lesson.module_id);
+    if (sqPos != null && sqTotal) {
+      // Use Squarespace's numbering — what the sidebar shows
+      return { moduleTitle: mod ? mod.title : lesson.module_id, position: sqPos, total: sqTotal, mod: mod };
+    }
+    // Fallback: v2 sort order
     var lessons = v2.lessons.filter(function(l){ return l.module_id === lesson.module_id; })
       .sort(function(a,b){ return String(a.id).localeCompare(String(b.id), undefined, {numeric:true}); });
     var pos = lessons.findIndex(function(l){ return l.id === lesson.id; }) + 1;
