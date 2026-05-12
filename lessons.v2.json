@@ -297,18 +297,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Break-Even Point",
-        "Fixed Costs",
-        "Variable Costs",
-        "Contribution Margin",
-        "Contribution Margin Ratio"
+        {
+          "title": "Fixed vs. Variable Costs",
+          "body": "Fixed costs don't change with volume \u2014 rent, salaries, software. Variable costs scale with each unit sold \u2014 materials, transaction fees, hourly labor. Knowing which is which is the first move in any margin analysis.\n\nThe trap: many founders treat semi-fixed costs (like a sales team) as variable when they're really fixed in the short run. That hides the real breakeven."
+        },
+        {
+          "title": "Contribution Margin",
+          "body": "What every additional unit contributes toward covering fixed costs and generating profit.\n\n$$\\text{Contribution Margin per Unit} = \\text{Price} - \\text{Variable Cost per Unit}$$\n\nIf you sell at $50 and each unit costs $30 to make, every sale contributes $20 toward the rent. A business with high contribution margin tolerates lots of fixed cost. Low contribution margin businesses live on volume."
+        },
+        {
+          "title": "Breakeven Point",
+          "body": "The number of units (or revenue) where you exactly cover all costs \u2014 no profit, no loss.\n\n$$\\text{Breakeven Units} = \\frac{\\text{Fixed Costs}}{\\text{Contribution Margin per Unit}}$$\n\nAt $50K monthly fixed cost and $20 per-unit contribution, you need 2,500 units a month to break even. Everything below that is funded by cash reserves; everything above is profit."
+        },
+        {
+          "title": "Margin of Safety",
+          "body": "How far above breakeven you're operating. The cushion before a small decline puts you in the red.\n\n$$\\text{Margin of Safety} = \\frac{\\text{Actual Sales} - \\text{Breakeven Sales}}{\\text{Actual Sales}}$$\n\nA 30% margin of safety means revenue can drop 30% before you start losing money. Below 10% and you're operating one bad quarter from trouble."
+        },
+        {
+          "title": "The Operating Lever",
+          "body": "Once you cross breakeven, each additional dollar of revenue throws off proportionally more profit, because fixed costs are already covered.\n\nThis is why scaling matters in fixed-cost businesses \u2014 software, media, manufacturing. The 10,001st unit costs almost nothing to make and is almost pure profit."
+        }
       ],
       "take_action": [
         "List all fixed monthly costs",
         "Calculate contribution margin per unit: Price minus Variable Cost per unit",
         "Find your break-even: Fixed Costs \u00f7 Contribution Margin per unit"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Breakeven isn't a number \u2014 it's a frame.** Knowing your breakeven point answers a different question than knowing your profit: it tells you the *minimum* business you need to keep the doors open. Below breakeven you're funding the business with cash reserves. Above it, fixed costs are paid and contribution margin flows to profit.\n\nThe two numbers that change everything:\n\n- **Contribution margin %** \u2014 the slope of profit-on-revenue once you're past breakeven\n- **Fixed-cost base** \u2014 the size of the gap you must close before profit starts\n\nA business with 80% contribution margin and $50K fixed cost breaks even at $62.5K in revenue. The same fixed cost with 20% contribution margin needs $250K \u2014 four times the volume to keep the lights on. Same dollar of fixed cost, vastly different business model implications.\n\n**Two strategic moves come straight out of this:**\n\n1. **Raise contribution margin before scaling.** Every dollar of margin lift reduces breakeven and increases optionality. Often you can charge more (pricing power) or cut variable cost (better suppliers, automation) without much pain.\n\n2. **Resist fixed-cost commitments until contribution margin is proven.** Office leases, full-time salaries, and software annuities ratchet up your breakeven. They make sense when contribution margin is strong and predictable. They're traps when neither is true.\n\nThe equation that keeps you honest:\n\n$$\\text{Breakeven Revenue} = \\frac{\\text{Fixed Costs}}{\\text{Contribution Margin \\%}}$$\n\nKnow that number. Know what would have to change to cut it in half."
     },
     {
       "id": "M1L1.7",
@@ -324,18 +340,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Cash Runway",
-        "Burn Rate",
-        "Working Capital",
-        "Cash Timing",
-        "Survival Math"
+        {
+          "title": "Burn Rate",
+          "body": "The monthly net cash outflow \u2014 what you're losing each month after all the in-and-out.\n\n$$\\text{Burn Rate} = \\text{Cash Out} - \\text{Cash In (per month)}$$\n\nGross burn is total cash spent. Net burn nets revenue against it. When investors ask about burn, they want net burn \u2014 that's the runway-defining number."
+        },
+        {
+          "title": "Cash Runway",
+          "body": "How many months you have until the cash runs out, holding burn constant.\n\n$$\\text{Runway (months)} = \\frac{\\text{Cash on Hand}}{\\text{Monthly Net Burn}}$$\n\nUnder 6 months: emergency mode, raise or cut. 6\u201312 months: focus, don't make big bets. 12\u201318 months: room to experiment. 18+ months: strategic optionality."
+        },
+        {
+          "title": "Timing of Cash Flows",
+          "body": "Cash doesn't arrive on schedule. Customers pay 30, 60, sometimes 90 days late. Suppliers want their money in 15. Payroll runs every other Friday whether revenue showed up or not.\n\nA profitable business can run out of cash if the timing between cash-in and cash-out goes negative for too long. Cash flow is plumbing, not magic."
+        },
+        {
+          "title": "Working Capital Cycle",
+          "body": "The time it takes between paying for inputs and getting paid for outputs.\n\n$$\\text{Cash Conversion Cycle} = \\text{DSO} + \\text{DIO} - \\text{DPO}$$\n\nDays Sales Outstanding (how long customers take to pay) + Days Inventory Outstanding (how long products sit) \u2212 Days Payable Outstanding (how long you take to pay suppliers). Shorter = better. Negative = the customer is funding your business."
+        },
+        {
+          "title": "The 13-Week Cash Forecast",
+          "body": "The single most useful tool in operating finance. Week-by-week projection of every dollar in and out for the next quarter. Updated weekly.\n\nIt catches problems before they're emergencies. It forces honest assumptions about timing. It's boring and it works."
+        }
       ],
       "take_action": [
         "Calculate your cash runway: cash on hand \u00f7 monthly burn",
         "Map AR and AP timing to spot the cash crunch points",
         "Build a 13-week cash forecast and update it weekly"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Profitability is a year-long story. Cash is a Friday-night story.** Every Friday afternoon, somebody on the team should be able to tell you exactly how many weeks of cash you have left at current burn. If nobody knows, you don't have an operating finance function \u2014 you have a P&L tribute act.\n\nThe difference between a healthy business and a fragile one isn't whether profit eventually materializes. It's whether *cash arrival* and *cash departure* are aligned in time. SaaS businesses with annual prepayments operate with negative working capital \u2014 customers fund the business before any expense is incurred. Job-shop manufacturers operate with deeply positive working capital \u2014 they pay for steel today, ship in 60 days, get paid 30 days after that, sometimes 120 days from initial outlay.\n\nThe practical takeaway:\n\n- **Build a rolling 13-week cash forecast.** Update it weekly. Every Monday you look at next 13 Fridays and you know.\n- **Track the cash conversion cycle.** If it's getting longer, your operating cash is being siphoned into working capital \u2014 even if revenue is growing. That's how growing businesses fail.\n- **Negotiate timing, not just price.** A 60-day payment terms move on a $1M PO is worth more than a 5% discount.\n\nThe runway formula again, in operating terms:\n\n$$\\text{Runway} = \\frac{\\text{Cash} + \\text{Receivables Coming In} - \\text{Payables Going Out}}{\\text{Net Monthly Burn}}$$\n\nThat's the real number. Pure cash divided by burn is the conservative version. The version that includes near-term receivables and payables is what actually predicts trouble."
     },
     {
       "id": "M1L2",
@@ -351,18 +383,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Revenue vs. Profit",
-        "The Top Line Fallacy",
-        "Gross Margin",
-        "Cost of Goods Sold (COGS)",
-        "Profitability vs. Scale"
+        {
+          "title": "Revenue Recognition vs. Cash Receipt",
+          "body": "Accountants record revenue when it's *earned* \u2014 when goods ship or services deliver \u2014 not when cash arrives. So your P&L can show $10M revenue while your bank shows $3M deposits.\n\nThe gap is sitting in accounts receivable. Some of it never collects. Some collects slow. None of it pays salaries."
+        },
+        {
+          "title": "Revenue Quality",
+          "body": "Not all revenue is equal. Recurring revenue from happy paying customers is gold. One-time revenue from a desperate quarter-end discount is wood.\n\nMetrics that reveal quality: net revenue retention, gross margin per customer, paid customer churn, customer concentration (% of revenue from top 5). A growing top line with falling quality is a slow-motion fire."
+        },
+        {
+          "title": "Vanity Metrics",
+          "body": "Metrics that go up and to the right while telling you nothing useful. Total users (without engagement). Total pageviews (without conversion). GMV (without take rate). \"Bookings\" (without delivered services).\n\nVanity metrics are pitch-deck props. They are not operating signals."
+        },
+        {
+          "title": "Channel Quality",
+          "body": "Where revenue comes from matters as much as how much. A customer acquired through paid ads at a 12-month payback period is structurally weaker than the same customer from organic referral.\n\nSegment revenue by channel + cohort. Manage to the mix, not the total."
+        },
+        {
+          "title": "The Top Line Trap",
+          "body": "When founders optimize the top line at the expense of every other metric \u2014 taking unprofitable deals, lowering pricing to win logos, recognizing revenue aggressively \u2014 they end up with a vanity P&L and a balance sheet that won't fund growth.\n\nGrow revenue, but grow durable revenue."
+        }
       ],
       "take_action": [
         "Calculate your gross margin % for last month",
         "List every cost between your revenue line and gross profit",
         "Ask: what would happen if you doubled revenue at the same margin?"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Revenue is the most lied-about number in business.** Not always maliciously \u2014 sometimes through self-deception. \"We're a $5M ARR company\" is a statement that conceals: which 5M? Recurring? Annual run-rate of one good quarter? Bookings yet to be delivered? Total contract value of multi-year deals?\n\nThe healthiest founders treat their own revenue with suspicion. They ask:\n\n- **How much of this revenue will be here next year if nothing changes?** That's *recurring* revenue. Everything else is one-time and shouldn't be confused with annuity value.\n- **What percentage came from the top 5 customers?** Customer concentration above 30% means the business doesn't have a market \u2014 it has a relationship.\n- **What did it cost to win this revenue?** Revenue at a CAC payback over 24 months can be worth less than zero in cash terms.\n- **What's the gross margin?** $1M in revenue at 10% gross margin is $100K of fuel to run the company. $1M at 80% is $800K. Don't compare the top lines as if they were equal.\n\nThe move:\n\n- Use **net revenue retention (NRR)** as your truth metric. It captures expansion, churn, and downgrade in one number. NRR > 100% means existing customers are growing their spend; new logos are pure upside. NRR < 90% means you have a leaky bucket; new logos are replacing old ones, not adding.\n- Pair revenue with **gross profit dollars** in every dashboard. The dollar that pays salaries is the gross profit dollar, not the revenue dollar.\n\n$$\\text{NRR} = \\frac{\\text{Starting ARR} + \\text{Expansion} - \\text{Churn} - \\text{Downgrade}}{\\text{Starting ARR}}$$\n\nKnow your NRR. Know your gross profit. Stop celebrating revenue alone \u2014 it's the most flattering and most misleading number you own."
     },
     {
       "id": "M1L3",
@@ -378,18 +426,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Time Value of Money",
-        "Discount Rate",
-        "Present Value",
-        "Future Value",
-        "Net Present Value (NPV)"
+        {
+          "title": "Present Value of Future Cash",
+          "body": "A dollar today is worth more than a dollar a year from now. Inflation, opportunity cost, and risk all conspire to discount future money.\n\n$$\\text{PV} = \\frac{\\text{FV}}{(1 + r)^n}$$\n\nWhere $r$ is the discount rate (your required return) and $n$ is years out. A $1,000 cash flow five years from now at a 10% discount rate is worth $620 today."
+        },
+        {
+          "title": "The Discount Rate",
+          "body": "The interest rate that converts future dollars to present dollars. For a public company it's the weighted average cost of capital (WACC). For a startup it's typically 15-25%+ depending on stage and risk.\n\nA higher discount rate punishes far-future cash flows more. Startups discount aggressively because their cash flows are uncertain and the cost of capital is high."
+        },
+        {
+          "title": "Net Present Value (NPV)",
+          "body": "Sum of all future discounted cash flows minus the upfront investment.\n\n$$\\text{NPV} = -C_0 + \\sum_{t=1}^{n} \\frac{C_t}{(1+r)^t}$$\n\nIf NPV > 0, the project creates value at your required return. NPV is the cleanest single-number filter for capital allocation decisions."
+        },
+        {
+          "title": "Internal Rate of Return (IRR)",
+          "body": "The discount rate that makes NPV exactly zero. Conceptually: the effective annualized return of the project.\n\nCompare to your hurdle rate. If IRR > hurdle rate, do it. If IRR < hurdle rate, don't. Be cautious with IRR alone \u2014 it has known mathematical quirks for non-standard cash flow patterns."
+        },
+        {
+          "title": "Why It Matters Operationally",
+          "body": "Every \"should I invest in X\" question \u2014 a new hire, a marketing channel, a piece of equipment \u2014 is implicitly a discount-rate question. You're trading present cash for future cash. The discount rate is the price.\n\nWhen the cost of capital rises (rates go up, your investors get pickier), every project's NPV falls. Suddenly things you would have done last year don't make the cut."
+        }
       ],
       "take_action": [
         "Choose a discount rate for your business (typical range: 8\u201315%)",
         "Calculate the present value of a payment you expect in 12 months",
         "Apply NPV thinking to one upcoming investment decision"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Every decision to spend money today is a bet on future money.** Operating finance asks: is the future money, properly discounted, worth more than the cash I'm spending? That's it. Every CAC payback, every plant expansion, every hiring decision, every R&D investment.\n\nThe discount rate is the heartbeat. Why it matters operationally:\n\n- **In low-rate environments**, distant cash flows count for almost as much as near cash flows. A 50-year mortgage at 3% looks reasonable. A 10-year SaaS payback looks fine. Growth investments are richly valued because their long-tail cash flows aren't punished much.\n- **In high-rate environments**, the math punishes anything far in the future. The same 10-year payback project at a 20% discount rate is worth a fraction of what it was at 10%. \"Growth at any cost\" stops working not because the business changed, but because the discount rate did.\n\nThe practical translation:\n\n- Use **realistic discount rates for your stage**. Seed-stage founders should be discounting at 25\u201335%+. Late-stage at 15\u201320%. Public companies at WACC, typically 8\u201312%.\n- Always compute **NPV at two rates** \u2014 your base case and one 1.5x higher. If the project survives the stress rate, it's robust.\n- Distrust IRR alone. NPV at a known discount rate is the cleaner metric for go/no-go decisions.\n\nThe simple version of the formula, worth memorizing:\n\n$$\\text{PV} = \\frac{\\text{FV}}{(1+r)^n}$$\n\nFold a million dollars five years out at a 20% discount rate, and you have $401K today. At 10%, it's $621K. At 5%, it's $784K. The discount rate isn't a number on a spreadsheet \u2014 it's the price of impatience, and it moves with the cost of capital."
     },
     {
       "id": "M1L3.5",
@@ -405,18 +469,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Accounts Receivable",
-        "Days Sales Outstanding (DSO)",
-        "Cash Conversion Cycle",
-        "Invoice Timing",
-        "Revenue Recognition"
+        {
+          "title": "Accounts Receivable (AR)",
+          "body": "Money owed to you by customers who've been invoiced but haven't paid yet. Shows on the balance sheet as a current asset, but it's not the same as cash \u2014 receivables are a *claim* on future cash, dependent on customers actually paying.\n\nThe larger AR grows relative to revenue, the more cash is tied up waiting."
+        },
+        {
+          "title": "Days Sales Outstanding (DSO)",
+          "body": "Average number of days between invoicing a customer and getting paid.\n\n$$\\text{DSO} = \\frac{\\text{Accounts Receivable}}{\\text{Daily Revenue}}$$\n\nLow DSO (under 30 days) = healthy collections. High DSO (over 60\u201390 days) = customers floating you, or collections process broken. Track it monthly; trend matters more than absolute level."
+        },
+        {
+          "title": "Aging Analysis",
+          "body": "Receivables grouped by how overdue they are: current, 1-30 days late, 31-60, 61-90, 90+. The shape of the aging tells you the health of the book.\n\nA healthy AR is concentrated in current and 1-30. Anything in 90+ should trigger collections action \u2014 it's already partially bad debt."
+        },
+        {
+          "title": "The Collections Discipline",
+          "body": "Receivables don't collect themselves. The systems that work: invoice the day work delivers (don't batch monthly), automated reminders at 7/14/28 days, personal phone call at 45 days, formal demand at 60.\n\nNothing fancy. But the founders who do this have working capital. The founders who don't, don't."
+        },
+        {
+          "title": "Payment Terms as Strategy",
+          "body": "Shorter terms accelerate cash. Longer terms can be a sales lever for big deals. Discounts for early payment (2% net 10) move cash forward at known cost.\n\nThe optimum is contextual. Default to shorter unless a strategic reason exists for longer. Never give long terms because nobody pushed back on Net 60 in the first conversation."
+        }
       ],
       "take_action": [
         "Audit all outstanding invoices \u2014 flag anything 30+ days overdue",
         "Calculate DSO: (Accounts Receivable \u00f7 Annual Revenue) \u00d7 365",
         "Implement or enforce a net-15 or net-30 payment policy"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Sales are a thesis. Collections are a fact.** A signed contract is not money. A delivered service is not money. An invoice is not money. The wire hitting the bank is money. Everything else is a story.\n\nReceivables management is the unglamorous, decisive practice of converting the story to the fact. Most early-stage operators systematically underestimate how much cash is parked in receivables once revenue passes about $1M:\n\n- $1M ARR at 90 days DSO = $250K parked in AR. That's a quarter of your annual revenue not earning anything.\n- The same business at 30 days DSO = $83K parked. The $167K difference can fund a hire, a marketing push, a runway extension.\n\nReceivables aren't a finance back-office problem. They're a working capital weapon. The companies that compound \u2014 bootstrapped or VC-backed \u2014 get good at this fast.\n\nThree moves that change the picture:\n\n- **Invoice instantly.** The clock starts when the invoice goes out. Every day you batch is a day you've donated.\n- **Automate the reminder cadence.** A scheduled email at day 7, 14, 28, and a personal touch at day 45. Use a billing tool; don't hand-roll it.\n- **Make late-payment friction high.** A small late fee in the contract, predictably enforced, changes customer behavior more than threats.\n\nThe formula to track:\n\n$$\\text{Cash Conversion Cycle} = \\text{DSO} + \\text{DIO} - \\text{DPO}$$\n\nThe target is shorter, ideally negative. A negative CCC means your customers are funding your operations. SaaS, marketplaces, and subscription businesses can engineer this. Traditional B2B services rarely can \u2014 they just have to manage the cycle aggressively."
     },
     {
       "id": "M1L4",
@@ -432,18 +512,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Customer Acquisition Cost (CAC)",
-        "Lifetime Value (LTV)",
-        "LTV:CAC Ratio",
-        "Payback Period",
-        "Contribution Margin per Customer"
+        {
+          "title": "Customer Acquisition Cost (CAC)",
+          "body": "Total sales and marketing spend divided by new customers acquired in that period.\n\n$$\\text{CAC} = \\frac{\\text{Total S\\&M Spend}}{\\text{New Customers Acquired}}$$\n\nInclude all channels, all salaries, all ad spend, all content. CAC is the *blended* number. Segment by channel and cohort for operational decisions."
+        },
+        {
+          "title": "Lifetime Value (LTV)",
+          "body": "The total gross profit a customer generates over their full lifetime with you.\n\n$$\\text{LTV} = \\text{ARPU} \\times \\text{Gross Margin} \\times \\text{Lifetime}$$\n\nWhere lifetime is typically estimated as $1 / \\text{churn rate}$. A 5% monthly churn means a 20-month average lifetime. ARPU \u00d7 GM \u00d7 20 = LTV."
+        },
+        {
+          "title": "LTV:CAC Ratio",
+          "body": "The single most-used unit economics metric. How many dollars of lifetime gross profit you generate per dollar spent acquiring the customer.\n\n- LTV:CAC < 1: you lose money on every customer\n- 1\u20133: tight, fragile\n- 3\u20135: healthy\n- 5+: under-investing in growth (CAC could go higher and still pencil)\n\n3x is the conventional minimum for venture-backable SaaS."
+        },
+        {
+          "title": "CAC Payback Period",
+          "body": "Months until a customer's contribution margin equals their acquisition cost.\n\n$$\\text{CAC Payback} = \\frac{\\text{CAC}}{\\text{ARPU} \\times \\text{Gross Margin}}$$\n\nSub-12 months: capital-efficient growth. 12\u201324 months: investible with patient capital. 24+ months: brutal \u2014 every customer is a cash loss for two years before pencilling."
+        },
+        {
+          "title": "Channel Unit Economics",
+          "body": "Blended CAC hides the truth. Paid Google might be 18-month payback; organic might be 3-month; partner-driven might be 6.\n\nManage channel mix to the unit economics. Pour fuel on what pencils. Cut the ones that don't, regardless of volume. Volume from a bad channel is just borrowed time."
+        }
       ],
       "take_action": [
         "Calculate your CAC from last month\u2019s marketing spend",
         "Estimate LTV: avg purchase value \u00d7 frequency \u00d7 avg customer lifespan",
         "Target a LTV:CAC ratio of 3:1 or higher as your baseline"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Unit economics are the OS of every growth business.** They answer: when I spend $1 to acquire a customer, how much do I get back, and how soon? Everything else \u2014 fundraising, hiring, scaling \u2014 flows from that answer.\n\nThe trap most operators fall into: looking at LTV:CAC as a single number. The number works at *cohort* level \u2014 customers acquired in the same period through the same channel. Blended LTV:CAC is a starting point, not an answer.\n\nThe sharp questions:\n\n- **Which cohort?** Cohorts from 2023 may have different retention than cohorts from 2026. Always compare same-vintage. A worsening retention curve hidden by new-cohort growth is how good companies die slowly.\n- **Which channel?** Organic referrals don't have a CAC at all (or it's tiny). Paid ads have a defined CAC. Sales-led has a high CAC. Each channel has its own LTV:CAC profile.\n- **Which segment?** Enterprise customers have higher LTV and higher CAC. SMB customers have lower both. The ratio can be similar; the cash dynamics radically different.\n\nThe LTV formula expanded, for SaaS:\n\n$$\\text{LTV} = \\frac{\\text{ARPU} \\times \\text{Gross Margin}}{\\text{Monthly Churn}}$$\n\nA $100/month customer at 80% gross margin and 3% monthly churn has $80 \u00d7 33 = $2,640 LTV. If CAC is $500, ratio is 5.3 \u2014 strong. Payback is $500 / ($100 \u00d7 0.8) = 6.25 months. Healthy.\n\nThe practical move:\n\n- **Compute LTV:CAC by channel every month.** Cut the ones below 3:1. Fund the ones above 5:1.\n- **Watch payback period more than LTV:CAC.** LTV is a forecast; payback is observable. A 9-month payback that you can verify with bank deposits is more useful than a 4x LTV:CAC that depends on a 40-month retention assumption.\n- **Don't optimize LTV via price hikes alone.** Higher price often comes with higher churn. The two move together more than founders expect."
     },
     {
       "id": "M1L4.5",
@@ -459,18 +555,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Operating Leverage",
-        "Degree of Operating Leverage (DOL)",
-        "Fixed vs. Variable Cost Mix",
-        "Operating Income",
-        "Scalability"
+        {
+          "title": "What Operating Leverage Is",
+          "body": "The degree to which fixed costs amplify the profit impact of revenue changes. High operating leverage = small revenue changes produce big profit swings (in either direction).\n\nSoftware businesses have high operating leverage. Job-shop services have low. Restaurants are somewhere in between \u2014 depends on rent vs. food cost mix."
+        },
+        {
+          "title": "Degree of Operating Leverage (DOL)",
+          "body": "The mathematical measure of how sensitive EBIT (operating profit) is to a change in sales.\n\n$$\\text{DOL} = \\frac{\\text{Contribution Margin}}{\\text{EBIT}}$$\n\nA DOL of 3 means a 10% revenue increase yields a 30% EBIT increase. Same 10% revenue *decline* yields 30% EBIT decline. Cuts both ways."
+        },
+        {
+          "title": "The Fixed-Cost Bet",
+          "body": "Building fixed-cost infrastructure (factories, software, salaried teams) is a bet that future volume will be high enough to spread that cost thin. If volume materializes, profit explodes. If it doesn't, fixed costs crush margins.\n\nThis is why software valuations are so volatile to revenue growth surprises \u2014 a small revenue beat at high operating leverage is a disproportionate profit beat."
+        },
+        {
+          "title": "Operating Leverage as Strategy",
+          "body": "Choosing your operating leverage profile is a strategic choice. Build a high-leverage business (software, IP) when you're confident in scale and want explosive upside. Build a low-leverage business (services, contracted labor) when you want resilience and predictability."
+        },
+        {
+          "title": "The Downside",
+          "body": "High operating leverage in a downturn is brutal. Costs you can't cut continue to drain cash while revenue evaporates. The bigger the fixed-cost base, the longer it takes to right-size.\n\nWhich is why operating leverage should be earned with proof, not assumed in the projection."
+        }
       ],
       "take_action": [
         "Identify the ratio of fixed to variable costs in your business",
         "Calculate DOL: Contribution Margin \u00f7 Operating Income",
         "Model the impact of a 20% revenue increase on your operating income"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Operating leverage is the secret amplifier of every business model.** Two companies can have the same revenue and the same gross margin, but if one has $5M in fixed costs and the other has $500K, their profit profiles look nothing alike \u2014 and their fragility profiles look nothing alike either.\n\nThe math is unforgiving in both directions:\n\n$$\\text{\\% Change in EBIT} = \\text{DOL} \\times \\text{\\% Change in Revenue}$$\n\nWith DOL = 4 and revenue up 10%, EBIT is up 40%. With the same DOL and revenue down 10%, EBIT is down 40%. The leverage doesn't care about direction.\n\nWhy this shapes strategy:\n\n- **In growth mode, high operating leverage is fuel.** Every incremental dollar of revenue drops disproportionately to the bottom line. This is the SaaS magic \u2014 once you've built the platform, the 10,001st customer costs you almost nothing to serve.\n- **In contraction, high operating leverage is poison.** Fixed costs become anchors. Reducing them takes time (lease termination, layoffs, contract negotiation) while revenue can disappear in a quarter.\n\nThe operator's playbook:\n\n- **Earn fixed-cost commitments.** Don't commit to a 10-person team before the revenue is in place to service it. Don't sign a 5-year lease before product-market fit is proven. Use contractors and short leases until contribution margin and volume are real.\n- **Match operating leverage to confidence.** High confidence in scale \u2192 bias toward fixed costs (you'll be glad you did). Uncertain demand \u2192 bias toward variable costs (you can right-size quickly).\n- **Measure your DOL.** It's a strategic tell. A founder who can't quote their DOL doesn't know how exposed their P&L is to a revenue surprise.\n\nThe simple version of the question every time you commit to a fixed cost: *what's the volume I need to justify this, and how confident am I that I'll hit it on time?* If you can't answer cleanly, you're guessing \u2014 and operating leverage doesn't forgive guesses."
     },
     {
       "id": "M1L5",
@@ -486,18 +598,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Assets",
-        "Liabilities",
-        "Owner\u2019s Equity",
-        "The Accounting Equation (A = L + E)",
-        "Working Capital"
+        {
+          "title": "The Accounting Equation",
+          "body": "The bedrock identity. Every transaction in every business in history balances against this:\n\n$$\\text{Assets} = \\text{Liabilities} + \\text{Equity}$$\n\nWhat you own equals what you owe plus what's left over for the owners. The balance sheet is the snapshot. The P&L and cash flow statement are the two ways the snapshot changes."
+        },
+        {
+          "title": "The Three Statements",
+          "body": "Income statement (P&L) shows performance over a period \u2014 revenue, costs, profit. Balance sheet shows position at a point in time \u2014 assets, liabilities, equity. Cash flow statement reconciles the two \u2014 how cash moved through operating, investing, financing.\n\nAll three are needed. Each lies a little; together they tell the truth."
+        },
+        {
+          "title": "Income Statement Structure",
+          "body": "Revenue minus COGS = Gross Profit. Minus operating expenses = EBIT. Minus interest and tax = Net Income.\n\nEach line down the page is a question: how much top-line did we generate? How much survived the cost of delivery? How much survived operating costs? How much actually belongs to shareholders?"
+        },
+        {
+          "title": "Balance Sheet Structure",
+          "body": "Assets split into current (cash, AR, inventory) and long-term (property, equipment, intangibles). Liabilities into current (AP, short-term debt) and long-term. Equity is the residual \u2014 paid-in capital plus retained earnings.\n\nThe ratios that matter: current ratio (current assets / current liabilities), debt-to-equity, working capital."
+        },
+        {
+          "title": "Cash Flow Statement Structure",
+          "body": "Three sections: operating cash flow (the business itself), investing cash flow (capex, acquisitions, divestitures), financing cash flow (debt, equity, dividends).\n\nThe number every operator should know weekly is cash from operations. Strong OCF + reasonable capex = a business that funds itself. Negative OCF year after year means you're surviving on the kindness of strangers."
+        }
       ],
       "take_action": [
         "List all business assets with their current values",
         "List all outstanding liabilities",
         "Calculate working capital: current assets minus current liabilities"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**The three statements are not three statements. They are three views of the same thing.** Every transaction touches all three: revenue lands on the P&L, accounts receivable on the balance sheet, and (eventually) cash on the cash flow statement. The art of reading financials is moving fluidly across all three to see what actually happened.\n\nThe most useful habit: pick any line on any statement and trace it through the other two. \"Why did inventory go up $200K?\" should make you check whether COGS on the P&L matches, whether the increase shows up in operating cash flow as a use, whether AP balances expanded to absorb part of the cost.\n\nWhen the three statements don't reconcile, somebody is lying \u2014 usually unintentionally:\n\n- **P&L profit but no cash flow growth?** Cash is stuck in receivables, inventory, or prepaid expenses. The accountant says you made money; the bank disagrees.\n- **Strong cash flow but weak P&L?** You may be collecting on past revenue, harvesting depreciation tax shields, or running an extraction strategy on a declining business.\n- **Big balance sheet, small P&L?** Capital tied up generating low return. Either the assets are productive and revenue should catch up, or you've built a tomb of unproductive investment.\n\nThe operating finance discipline is to read all three, every month, and make sure the story they tell is the same story you'd tell about the business out loud. When the financials say something different from what the operators say, the financials are right.\n\nThe single equation underneath everything:\n\n$$\\text{Assets} = \\text{Liabilities} + \\text{Equity}$$\n\nIt's not a formula to apply. It's a constraint that's true in every period. Every accountant's job, ultimately, is making sure this identity holds \u2014 and translating that constraint into the three statements that operators can actually use."
     },
     {
       "id": "M2L0.5",
