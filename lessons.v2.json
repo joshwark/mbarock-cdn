@@ -1362,6 +1362,54 @@
       "placeholder": false
     },
     {
+      "id": "M5L2.5",
+      "module_id": "M5",
+      "lesson_number": "M5L2.5",
+      "title": "The Automation Stack",
+      "slug_v2": "m5l2-5-automation-stack",
+      "legacy_slug": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "video_id": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "song_title": "The Automation Stack",
+      "core_concepts": [
+        {
+          "title": "The 5\u00d7/Week Rule",
+          "body": "Automate any repetitive task that happens 5 or more times a week. The threshold is empirical: at five times, the build cost of automation pays back inside a quarter and the cognitive savings compound."
+        },
+        {
+          "title": "Data Loss > Time Loss",
+          "body": "Workflows that LOSE data (records dropped between systems, leads that go cold, customers handed off incorrectly) are RED. Workflows that just WASTE time are YELLOW.\n\nFix the red ones first. Time you can recover; data you can't."
+        },
+        {
+          "title": "The 5-Layer Automation Stack",
+          "body": "**Capture** the input (form, email, signal). **Sync** to system of record. **Trigger** the right next step. **Notify** the right human. **Decide** what gets human approval vs autonomous execution.\n\nEvery automation maps to these five layers. Skipping any creates fragility."
+        },
+        {
+          "title": "AI Augmentation Layer",
+          "body": "AI lifts the judgment-light parts of workflows: classifying, drafting, summarizing, routing. It does NOT (yet) handle the judgment-heavy parts: edge cases, high-stakes approval, customer trust calls.\n\nDeploy AI as augmentation, not replacement."
+        },
+        {
+          "title": "Human-in-the-Loop Checkpoints",
+          "body": "What stays human, what gets delegated to the system. The rule: anything irreversible or high-stakes stays human. Anything reversible and bounded gets automated.\n\nThe automation should make humans more powerful, not absent."
+        }
+      ],
+      "take_action": [
+        "List every repetitive task you did 5+ times in the past 7 days",
+        "Tag each task RED (loses data) or YELLOW (wastes time)",
+        "Pick the highest-impact RED task \u2014 automate it this sprint",
+        "Map the 5-layer stack for that workflow: Capture \u2192 Sync \u2192 Trigger \u2192 Notify \u2192 Decide",
+        "Identify where AI lifts judgment vs. where humans still own approval",
+        "Set a 30-day automation review \u2014 did exceptions creep in?",
+        "Write the runbook so the next operator doesn't reinvent the workflow"
+      ],
+      "deep_dive": "**Most operators undervalue automation because they think about it wrong.** They imagine giant projects, big software builds, expensive consultants. The right frame is much smaller: every workflow you do 5+ times a week is a candidate.\n\nThe **triage rule** is what makes this tractable:\n\n- **RED workflows** lose data when humans handle the hand-off. An order falls between sales and operations. A customer email gets lost. Records exist in three systems but never the same one. These cost more than time \u2014 they cost trust and revenue.\n- **YELLOW workflows** waste time but don't lose data. Filing receipts, generating reports, scheduling meetings. Time-expensive but recoverable.\n\nFix the reds first. Always.\n\n**The 5-layer automation stack** is the architectural pattern that scales:\n\n1. **Capture**: the entry point. Form submission, email arrival, API webhook, button click.\n2. **Sync**: write to the system of record.\n3. **Trigger**: based on what was captured, what happens next? Route to a queue. Start a sequence. Open a ticket.\n4. **Notify**: tell the right human at the right moment.\n5. **Decide**: what gets autonomous resolution vs human review?\n\n**The AI augmentation layer** sits inside this stack, not parallel to it. AI is great at the judgment-light parts: classification, drafting, summarization. It's not yet trustworthy for the judgment-heavy parts: approvals, customer trust calls, signing agreements.\n\nThe principle: **automate the gruntwork, keep the calls human**. The combination produces 2-5x productivity gains.",
+      "placeholder": false
+    },
+    {
       "id": "M5L3",
       "module_id": "M5",
       "lesson_number": "M5L3",
@@ -1948,9 +1996,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Integrated_Marketing_Mix.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "The Leaky Funnel Diagnostic",
+          "body": "Most marketing spend is wasted on funnels with broken stages. Top-of-funnel attracts traffic that drops off before conversion. The waste is invisible because the top-of-funnel metrics look fine.\n\nThe diagnostic: track conversion at every stage. The lowest-conversion stage is the leak. Fix it before adding more spend."
+        },
+        {
+          "title": "Channel Mix Audit",
+          "body": "Different acquisition channels have different funnel profiles. Paid social may produce 10x the volume at 1/10th the conversion. Referrals produce less volume but convert 5-10x higher.\n\nAudit channel by full-funnel value, not top-of-funnel cost."
+        },
+        {
+          "title": "The 'Stop Spending' Move",
+          "body": "When a channel's full-funnel economics don't work, the right move is to stop spending \u2014 not to spend more efficiently. Optimization can't rescue an unworkable channel.\n\nMost growth teams resist this move because it feels like losing. The math says it's winning."
+        },
+        {
+          "title": "Compounding Channels",
+          "body": "Content, SEO, referrals, brand \u2014 slow-build channels that compound over years. Once they take hold, they produce traffic at near-zero marginal cost.\n\nThe paradox: investing in compounding channels feels bad short-term (low immediate ROI) and great long-term."
+        },
+        {
+          "title": "Attribution Reality",
+          "body": "Most attribution models lie. Customers touch multiple channels. The 'last touch' that gets credit was likely shaped by 5 earlier touches.\n\nUse attribution models to inform, not prescribe. The full-funnel data tells more truth than any single attribution view."
+        }
+      ],
       "take_action": [],
-      "placeholder": true
+      "placeholder": true,
+      "deep_dive": "**Most growth teams burn money on broken funnels because the broken stages are invisible until measured deliberately.** Top-of-funnel metrics (impressions, clicks, visits) are easy to track and easy to improve. Bottom-of-funnel metrics (conversion, retention, NRR) are harder to track and harder to move. The result: budgets pour into channels that look fine at the top and fail at the bottom.\n\nThe **diagnostic discipline** is mapping every funnel by stage and tracking the conversion rate of each. The lowest stage is the leak \u2014 adding more top-of-funnel volume just wastes more money on the leak.\n\nTypical SaaS funnel:\n\n- Visitor \u2192 Lead (signup): 5%\n- Lead \u2192 Activated (used the product): 30%\n- Activated \u2192 Paid: 8%\n- Paid \u2192 Retained (90 days): 70%\n\nOverall: 0.05 \u00d7 0.30 \u00d7 0.08 \u00d7 0.70 = **0.084%** of visitors become retained customers.\n\nWhere's the leak? Activated \u2192 Paid at 8% is the constraint. Improving Visitor \u2192 Lead from 5% to 10% doubles the front of the funnel but only doubles the overall (0.168%) \u2014 and it costs 2x more in spend. Improving Activated \u2192 Paid from 8% to 16% does the same \u2014 but doesn't require any additional spend. **Bottleneck fixes are free leverage.**\n\nThe **channel audit** is the second discipline. Most teams report channel-level cost (CAC) without channel-level retention (LTV). The result: channels look good at the top and bleed cash at the bottom.\n\nThe corrective frame: every channel must be evaluated on **full-funnel value**:\n\n$$\\text{Channel Value} = \\text{LTV}_{channel} - \\text{CAC}_{channel}$$\n\nA channel with $200 CAC and $1,000 LTV is a winner. A channel with $50 CAC and $100 LTV is a loser. Counter-intuitively, the \"expensive\" channel is the better investment.\n\nThe **compounding channels** rule: 30% of growth budget should go to channels that compound (content, SEO, referrals, brand). 70% to paid channels with predictable economics. Most teams reverse this and starve the compounders. After 3 years, the teams that funded compounders have 10x cheaper acquisition than the teams that only paid for clicks."
     },
     {
       "id": "M8L1",
@@ -1965,9 +2035,31 @@
       "video_url": null,
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Heroes Don't Scale",
+          "body": "Every early-stage organization runs on heroes \u2014 individuals who carry processes in their heads, fix everything by sheer effort.\n\nHeroes are essential at 10 employees and impossible at 100. The transition to repeatable systems is the hardest organizational pivot."
+        },
+        {
+          "title": "Process as Memory",
+          "body": "A process is institutional memory written down. It lets the organization remember what works even when the people who figured it out leave.\n\nWithout written processes, every departure is a knowledge loss. With them, the system survives turnover."
+        },
+        {
+          "title": "The 5x/Week Threshold",
+          "body": "Any task done 5+ times a week deserves a process. Below that threshold, ad hoc is fine. Above it, ad hoc becomes the constraint.\n\nThe 5x/week rule cuts through the false choice between 'over-process everything' and 'process is bureaucracy.'"
+        },
+        {
+          "title": "Templates Beat Memos",
+          "body": "A process document that's a long memo will be ignored. A process document that's a one-page checklist gets used.\n\nFormat for use, not for completeness. Templates that fit on a single page beat 10-page SOPs every time."
+        },
+        {
+          "title": "Continuous Improvement",
+          "body": "Once a process exists, the goal isn't to freeze it \u2014 it's to improve it. Quarterly review: what's working, what's friction, what should change.\n\nFrozen processes become bureaucracy. Living processes are operating leverage."
+        }
+      ],
       "take_action": [],
-      "placeholder": true
+      "placeholder": true,
+      "deep_dive": "**Repeatability is the boring discipline that separates compounding companies from one-quarter wonders.** Most early-stage successes are driven by heroes \u2014 founders, key engineers, lucky timing. The transition to repeatability \u2014 where the company doesn't depend on heroes \u2014 is the hardest organizational shift.\n\n**Heroes are essential at startup phase.** Someone has to figure out how to do things for the first time. They make calls without documentation. They fix problems no process exists for. The hero phase is unavoidable and even desirable in the first year or two.\n\nThe trap is when heroes become permanent. The company gets stuck at the size of the hero's bandwidth. New hires can't ramp because the knowledge is in someone's head. Customer experience varies by which hero shows up. The hero burns out, and the dependency surfaces brutally.\n\n**The transition discipline** is converting hero knowledge into process documentation:\n\n- **The hero writes** the first version of the process. They know how it actually works.\n- **A non-hero runs the process** using only the documentation. If they can't, the doc is incomplete.\n- **The non-hero refines** the doc based on what was unclear or missing.\n- **The process gets owned by a role**, not a person. Whoever fills the role inherits the process.\n\nThe **5x/week threshold** is the practical filter for what deserves a process. Tasks done occasionally don't need documentation; the cost of process exceeds the benefit. Tasks done frequently absolutely need documentation; the cost of ad-hoc compounds fast.\n\nThe **format principle**: process docs are only valuable if they get used. A 10-page SOP gets ignored. A one-page checklist gets used. The form factor matters more than the comprehensiveness.\n\nTemplates that work:\n\n- **Checklists** for sequence-sensitive tasks (close a deal, onboard a customer, deploy code)\n- **Decision trees** for branching logic (when to escalate, which path for which input)\n- **Rubrics** for quality calibration (what does a great hire look like, what does great writing look like)\n- **Playbooks** for cross-functional workflows (incident response, launch planning)\n\nThe **continuous improvement layer** is what keeps processes alive. Frozen processes become bureaucracy: \"we do it this way because we've always done it this way.\" Living processes are reviewed quarterly. What's friction? What changed in our business that requires updating the process? Who's the new process owner?\n\nThe practical move: list every task in your business that happens 5+ times a week. For each, ask: is there a written process? If yes, when was it last reviewed? If no, who should write the first version? The list itself is the operating leverage. Working through it is the path to repeatability."
     },
     {
       "id": "M9L1",
@@ -1982,9 +2074,31 @@
       "video_url": null,
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Data \u2260 Decision",
+          "body": "Most organizations confuse data infrastructure with decision-making. They build dashboards, hire analysts, run experiments \u2014 and still make decisions by HiPPO (highest-paid person's opinion).\n\nThe gap is closing the loop: data \u2192 insight \u2192 decision \u2192 action \u2192 measurement. Most companies stop at insight."
+        },
+        {
+          "title": "Speed vs Quality Trade-off",
+          "body": "Slow careful analysis produces better decisions; the world has moved before you decide.\n\nFast lower-quality decisions execute against today's reality.\n\nThe right balance depends on reversibility. Two-way doors: bias to speed. One-way doors: invest in quality."
+        },
+        {
+          "title": "Leading vs Lagging Indicators",
+          "body": "Lagging: what happened (revenue, churn, NPS at quarter-end). Leading: what will happen (pipeline coverage, product engagement, support ticket volume).\n\nManage the business with leading indicators. The lagging ones tell you what you already saw coming."
+        },
+        {
+          "title": "Statistical Significance \u2260 Practical Significance",
+          "body": "An A/B test can show a statistically significant 1% improvement at high confidence. If the absolute lift is small, the win isn't worth the operational complexity.\n\nDon't optimize for significance. Optimize for impact. Most A/B test wins below 5% don't survive contact with production."
+        },
+        {
+          "title": "The 80/20 of Metrics",
+          "body": "Most businesses have 3-5 metrics that capture 80% of what's happening. Pick them. Track them ruthlessly. Ignore everything else for the weekly operating cadence.\n\nMetric proliferation creates noise. Discipline picks the signals."
+        }
+      ],
       "take_action": [],
-      "placeholder": true
+      "placeholder": true,
+      "deep_dive": "**Analytics is the discipline of asking the right question, getting the right answer, and making the decision the answer implies \u2014 fast enough that the world hasn't moved.** Most organizations are bad at one or more of those three steps, and bad analytics is more expensive than no analytics.\n\nThe **decision speed vs decision quality** trade-off is the foundational dimension. In normal operating contexts, *speed beats marginal quality* \u2014 a 75% decision today usually beats a 90% decision in three weeks because the situation has moved. The exception: irreversible decisions, which deserve slow careful analysis.\n\nBezos's framing: **two-way doors vs one-way doors**. Two-way: you can walk back. Hire fast, deploy fast, launch fast. One-way: you can't undo. Sale of the company, major architectural commitments, public statements. Take time.\n\nMost organizational decision drag comes from treating two-way doors like one-way doors. Multiple committees, six weeks of analysis, three approvals \u2014 for a decision that could be reversed in a week if it didn't work. The drag compounds across hundreds of decisions and produces glacial organizational pace.\n\n**Leading vs lagging indicators** is the second discipline. Lagging indicators (revenue, profit, churn at quarter-end) tell you what already happened. Leading indicators (product engagement, pipeline coverage, support ticket trends) tell you what's about to happen. The lagging ones are easier to measure; the leading ones are more useful.\n\nThe operator's question for every metric: *what does this tell me about the future? What action does it imply?* Metrics that only describe the past are vanity. Metrics that change today's decisions are operational.\n\n**Statistical vs practical significance** trips up most A/B testing programs:\n\n- A test shows +1.2% conversion improvement with 95% statistical confidence.\n- Is this a win? **Maybe not.**\n- The operational complexity of shipping the change might exceed the value.\n- Variation between days/weeks/seasons often dwarfs the +1.2%.\n- The 1.2% might not persist after segment shifts.\n\nThe filter: **statistical significance is necessary but not sufficient**. Practical significance \u2014 does the change matter enough to ship and maintain? \u2014 is the harder question. Most teams optimize for the former and forget the latter.\n\n**The 80/20 of metrics**: every business has 3-5 metrics that capture 80% of what matters. For SaaS: ARR, growth rate, NRR, CAC payback, gross margin. For e-commerce: revenue, gross margin, repeat purchase rate, AOV, marketing efficiency. For a marketplace: GMV, take rate, both-side retention, liquidity.\n\nPick yours. Track them religiously in weekly operating reviews. Other metrics are useful for diagnostics; only the core 3-5 drive decisions.\n\nThe practical move: write down your business's 5 core metrics. Make them the focal point of every weekly leadership meeting. Track trend (not just level). Set targets quarterly. The discipline of focusing on the right metrics is more valuable than any tooling \u2014 and most organizations skip it."
     },
     {
       "id": "M10L1",
@@ -1999,9 +2113,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_Strategic_Blueprint.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Strategy as Architecture",
+          "body": "Strategy isn't a deck or a slogan. It's the architecture of choices a business has made and will keep making. Each choice constrains future choices and shapes future opportunities.\n\nThe businesses with coherent strategies have decision-making that aligns across hundreds of small calls. The ones without have decision-making that contradicts itself constantly."
+        },
+        {
+          "title": "Three Strategic Questions",
+          "body": "From Roger Martin: every strategy must answer three questions:\n\n1. **Where will we play?** What market, customer, geography.\n2. **How will we win?** What advantage will we have.\n3. **What capabilities and systems must we have?** What we'll need to build."
+        },
+        {
+          "title": "Coherence Test",
+          "body": "Strategy fails when components don't reinforce each other. Premium pricing + low-cost manufacturing = incoherent. Brand-driven differentiation + commodity distribution = incoherent.\n\nThe coherence test: does each piece of the strategy support the others? If yes, the strategy compounds. If no, internal contradictions erode advantage."
+        },
+        {
+          "title": "Strategy \u2260 Aspirations",
+          "body": "Aspirations are what you want. Strategy is the choices you'll make to get there.\n\n'Be the leading provider of X' is an aspiration. 'Focus on enterprise customers with high switching costs through a partner-led go-to-market' is a strategy."
+        },
+        {
+          "title": "Strategy as Evolving Bet",
+          "body": "Strategies must survive contact with reality. The plan that survives is the plan that updates as conditions change.\n\nReview strategy quarterly: what assumptions have changed? What's working? What's not? The plan that's reviewed and adjusted regularly is the plan that compounds."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Strategy is the most-discussed and least-understood word in business.** Most documents called \"strategy\" are aspirations dressed in jargon. Real strategy is the architecture of choices: where you'll play, how you'll win, what you'll build to make winning sustainable.\n\nRoger Martin's three-question framework is the cleanest distillation:\n\n1. **Where will we play?** Geography. Segment. Category. Customer type. The choice not just of where you'll be, but of where you *won't* be. Most strategies fail because they try to be everywhere.\n\n2. **How will we win?** What's the source of advantage? Lower cost? Better experience? Network effects? Brand premium? The advantage has to be defensible \u2014 otherwise it's a moment, not a strategy.\n\n3. **What capabilities and systems must we have?** Given where and how, what do we need to build? What functions need to be world-class? What can be commodity?\n\nThe **coherence test** is what most strategies fail. A strategy whose components don't reinforce each other dissipates energy:\n\n- Premium pricing + low-cost manufacturing: the brand can't justify the price; the cost structure can't support the brand.\n- Enterprise customers + self-serve product: the customers want hand-holding; the product is designed for the opposite.\n- Innovation focus + waterfall planning processes: the planning prevents the innovation.\n\nGreat strategies have **mutually reinforcing components**:\n\n- *Costco*: low prices + limited SKUs + membership fees + thin operating margin + treasure-hunt experience. Each piece supports the others. Trying to copy any one without the others fails.\n- *Apple*: premium pricing + integrated hardware/software + design obsession + retail experience + ecosystem lock-in. Pieces reinforce.\n- *Patagonia*: environmental mission + premium pricing + lifetime guarantees + activist customers + sustainable supply chain. Mission and economics align.\n\n**Strategy \u2260 aspirations** is the litmus test. \"We will be the leading provider of X by 2027\" is an aspiration \u2014 what you want to be true. \"We will focus on mid-market customers in financial services with a partner-led go-to-market, supported by deep vertical expertise and a curated app ecosystem\" is a strategy \u2014 choices that shape decisions.\n\nThe difference: aspirations don't tell you what to say no to. Strategies do.\n\n**Strategy is evolving, not fixed**. The plan must survive contact with reality, which means it must be updated as reality reveals itself. Quarterly strategy reviews:\n\n- What assumptions did we make 90 days ago that turned out to be wrong?\n- What's working better than expected? Should we double down?\n- What's not working? Stop or revise?\n- What's new in the market that we should integrate?\n\nThe strategy that doesn't update is a fossil. The strategy that updates without anchor is chaos. The discipline is updating at quarterly cadence with clear logic for what's changing and why.\n\nThe practical move: write your strategy in three sentences. Where we play. How we win. What we'll build. If the three sentences contradict each other, the strategy is incoherent. If they're vague aspirations, you don't have a strategy. If they're clear and reinforcing, you have one \u2014 and you can use them to make better decisions across the business every day."
     }
   ]
 }
