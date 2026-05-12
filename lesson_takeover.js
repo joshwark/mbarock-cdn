@@ -1,5 +1,5 @@
-// MBA Rock — Lesson Page Takeover v6.2 (2026-05-12)
-// v6.2: removed crumb-row (was colliding with Squarespace nav), hid URL diagnostic chip, cleaner kicker.
+// MBA Rock — Lesson Page Takeover v6.3 (2026-05-12)
+// v6.3: song row now shows actual song title (e.g. "Oxygen" not "Original track").
 // LISTEN. LEARN. LIVE.
 
 (function() {
@@ -556,8 +556,9 @@
         html += '<div class="mr5-audio-row"><div><div class="mr5-audio-label">Audio overview</div><span class="mr5-audio-sub">Concept walkthrough</span></div>' + audioPlayer(lesson.audio_overview_url, 'audio/mp4') + '</div>';
       }
       if (lesson.audio_url) {
+        var songLabel = lesson.song_title ? esc(lesson.song_title) : 'The song';
         html += '<div class="mr5-song-block">';
-        html += '<div class="mr5-audio-row"><div><div class="mr5-audio-label">The song</div><span class="mr5-audio-sub">Original track · mnemonic</span></div>' + audioPlayer(lesson.audio_url, 'audio/mpeg') + '</div>';
+        html += '<div class="mr5-audio-row"><div><div class="mr5-audio-label" style="font-style:italic;">"' + songLabel + '"</div><span class="mr5-audio-sub">Song · original track</span></div>' + audioPlayer(lesson.audio_url, 'audio/mpeg') + '</div>';
         html += '<div class="mr5-lyrics">';
         html += '<button class="mr5-lyrics-btn" data-lyrics-toggle="1" aria-expanded="false" aria-controls="mr5-lyrics-panel"><span>View lyrics</span><span class="mr5-chev">▾</span></button>';
         html += '<div class="mr5-lyrics-panel" id="mr5-lyrics-panel" data-lyrics-panel="1"></div>';
