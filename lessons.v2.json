@@ -1023,31 +1023,9 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_90-Day_Blueprint.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "Why First 90 Days Matter Disproportionately",
-          "body": "Reputations form fast. The story your team tells about you after 90 days is the story they tell forever. Patterns set in the first quarter compound for years; correcting them later costs 10x.\n\nThe 90-day window is not for results \u2014 it's for credibility and read."
-        },
-        {
-          "title": "Diagnosis Before Action",
-          "body": "Spend the first 30 days listening, not deciding. Map the org, the unspoken rules, the political fault lines, the actual cash flows. Most new leaders fail because they prescribe before diagnosing.\n\nThe one early move that's always right: shut up and ask questions."
-        },
-        {
-          "title": "Quick Wins vs. Right Wins",
-          "body": "Pick 2-3 quick wins in the first 60 days \u2014 visible, low-risk, broadly useful. They buy you the credibility to make harder calls later.\n\nResist the temptation to swing for the fences in week one. Quick wins are about building trust, not impressing anyone."
-        },
-        {
-          "title": "STARS Framework",
-          "body": "Michael Watkins's situation typology: **S**tartup, **T**urnaround, **A**ccelerated growth, **R**ealignment, **S**ustaining success. Each demands a different playbook.\n\nDiagnose which one you're inheriting BEFORE choosing tactics. A turnaround playbook in a sustaining-success situation breaks the team."
-        },
-        {
-          "title": "The Communication Cadence",
-          "body": "Set up weekly 1:1s with every direct report in week one. Monthly skip-levels with rising contributors. A regular all-hands by day 30.\n\nThe rituals create the relational substrate. Without them, you're a stranger making decisions about people you don't know."
-        }
-      ],
+      "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**Michael Watkins's *The First 90 Days* is the most-quoted leadership book for one reason: he proved that early-tenure leaders fail at predictable patterns.** Most failures aren't capability problems \u2014 they're sequencing problems. New leaders take action before they've diagnosed. They prescribe before they understand. They miss that the *type* of situation they've inherited determines the right play.\n\nThe STARS framework gives you five archetypes, each with a different playbook:\n\n- **Startup**: build from zero. Energy and pace are your assets; everything is greenfield.\n- **Turnaround**: business is in crisis. Speed, decisiveness, and willingness to make unpopular calls. Cut deep early.\n- **Accelerated growth**: business is winning; the challenge is scaling without breaking it. Hire ahead, systematize, raise the bar.\n- **Realignment**: business looks healthy but is on a slow decline. Hardest of all \u2014 the team doesn't see the problem yet, so they resist change.\n- **Sustaining success**: protect what works. Resist the urge to make changes for change's sake.\n\nMost failed transitions are realignment situations where the new leader played a turnaround playbook (alienating the team that was performing) or sustaining-success (missing the slow decline). Diagnosis is half the work.\n\n**The operating discipline for the first 90 days**: spend Week 1 on listening tours. Map the actual org chart, the influence network (not the formal one), the recent history, the cash, the customers. Make zero major decisions. Earn the right to lead by demonstrating you understand the place before you change it."
+      "placeholder": false
     },
     {
       "id": "M3L1.5",
@@ -1062,31 +1040,9 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Worth_Aligned.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "Value Proposition for Talent",
-          "body": "Why would top talent come work for you instead of the higher-paying option? Comp is table stakes; the differentiation is meaning, growth, autonomy, and the people they'll work with.\n\nIf you can't articulate your talent value proposition, you'll lose every contested hire to a competitor with deeper pockets."
-        },
-        {
-          "title": "Mission Alignment",
-          "body": "People do their best work when the mission lines up with what they want their life to be about. Mission isn't a slogan \u2014 it's a filter for who joins and who stays.\n\nThe sharper the mission, the smaller the candidate pool. That's a feature, not a bug. Narrow missions attract zealots."
-        },
-        {
-          "title": "Worth Beyond Comp",
-          "body": "Money matters until it doesn't. Above market-rate, marginal dollars buy less and less. Growth, autonomy, ownership, and meaning compound over careers.\n\nThe team you want includes people for whom worth is calculated this way. The team you don't want optimizes purely for cash."
-        },
-        {
-          "title": "The Equity Conversation",
-          "body": "Equity is the long-term alignment mechanism. Give it generously and meaningfully \u2014 not as a substitute for fair cash comp but in addition.\n\nThe employees who think about equity correctly will help you build the company. The ones who don't will leave the day the price tag is offered elsewhere."
-        },
-        {
-          "title": "Cultural Fit (Carefully)",
-          "body": "Cultural fit is real, but it's the most-abused hiring criterion. \"Fit\" too easily becomes a euphemism for \"comfortable with me.\" That's how teams become monocultures.\n\nThe right test: does this person make the culture stronger AND bring something the team is missing?"
-        }
-      ],
+      "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**Talent doesn't sort by salary alone. It sorts by what feels worth it.** The mediocre engineer might take an extra $30K to switch jobs. The top 1% engineer is choosing between offers that are functionally identical on compensation. What tips the decision is everything else: the problem space, the team, the autonomy, the trajectory.\n\nThe operator's instinct to win every candidate on cash is expensive and ultimately ineffective. The companies that build the best teams over time \u2014 Stripe, Vercel, Anthropic, Linear \u2014 articulate a worth proposition that competes on dimensions deeper than salary:\n\n- **Problem space**: \"You'll work on the most important problem in [domain].\" Mission for the technically ambitious.\n- **Team**: \"You'll work with the best people you've ever met.\" Reference checks and peer signals do the recruiting.\n- **Autonomy**: \"You'll own this end-to-end, not implement someone else's spec.\" Trade rigor for ownership in the right roles.\n- **Trajectory**: \"In two years you'll have done things you couldn't have done elsewhere.\" Compound career growth.\n\nThis isn't soft branding. It's a strategic choice. Every candidate decision is a function of `(comp + worth - opportunity cost)`. The companies that win contested hires understand that worth compounds \u2014 and they invest in it.\n\nThe practical move: write your talent value proposition in three sentences. \"Come work here because X, Y, Z.\" If those three sentences are interchangeable with any competitor's, you have a talent problem you can't solve with salary."
+      "placeholder": false
     },
     {
       "id": "M3L2",
@@ -1102,34 +1058,18 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        {
-          "title": "Acknowledge Reality Fast",
-          "body": "Crisis demands rapid public acknowledgment. Denial or delay multiplies damage exponentially. The first 24 hours set the trajectory of the recovery.\n\nThe template: 'Here's what happened. Here's what we know. Here's what we don't know yet. Here's what we're doing.' Plain English. No spin."
-        },
-        {
-          "title": "Single Source of Truth",
-          "body": "In crisis, multiple narratives breed faster than reality. Designate one internal channel for facts (Slack channel, doc, dashboard) and update it relentlessly.\n\nThe alternative is rumor markets where the worst story wins. Truth markets need active maintenance."
-        },
-        {
-          "title": "Decision Speed Over Decision Quality",
-          "body": "In normal times, slow careful decisions are better. In crisis, a 70% decision made immediately beats a 95% decision made in three days.\n\nUse reversible decisions liberally. Use irreversible ones sparingly and with the most senior input you have."
-        },
-        {
-          "title": "Inner Circle Discipline",
-          "body": "Crisis tempts leaders to consult everyone for reassurance. Resist. Designate a small core (3-5 people) for fast loop decisions. Communicate broadly; decide narrowly.\n\nLarger groups slow decisions, leak information, and dilute accountability. The core has clear authority and clear blame."
-        },
-        {
-          "title": "After-Action Review",
-          "body": "Every crisis is also a learning opportunity if you debrief honestly. Within 48 hours of resolution, the inner circle plus 1-2 outside perspectives review: what did we miss, what worked, what would we change?\n\nMost organizations skip this step and repeat the mistake."
-        }
+        "Crisis Leadership",
+        "Communication Under Pressure",
+        "Decision Speed vs. Accuracy",
+        "Stakeholder Management in Crisis",
+        "The Playbook Mindset"
       ],
       "take_action": [
         "Write a one-page crisis comms template for your most likely scenario",
         "Run a 30-minute tabletop crisis exercise with your team",
         "Identify who makes decisions when you're unreachable"
       ],
-      "placeholder": false,
-      "deep_dive": "**The single most useful crisis frame: distinguish between the *event* and the *crisis*.** The event is what happened. The crisis is the period of uncertainty, accelerated decisions, and reputational stakes that follows. The event might last a day; the crisis can last months.\n\nMost organizations fail crisis management not because the event was unmanageable but because they treated the crisis like business as usual. The cardinal sins:\n\n- **Slow public acknowledgment.** Every hour the official story is silent, unofficial stories fill the void. The first version of the narrative usually wins.\n- **Distributed decision-making.** \"We need consensus\" in a crisis means \"we will be slower than the situation requires.\"\n- **Optimizing for non-crisis values.** Patience, thoroughness, broad input \u2014 all virtues in normal times, all liabilities in crisis.\n\nThe crisis playbook is short and ugly:\n\n1. **Name the crisis** publicly within hours, not days.\n2. **Designate an Incident Commander** with explicit authority to make decisions for the duration.\n3. **Single channel of truth** for facts. Update at known cadence (every 4 hours initially).\n4. **Decide on reversible actions fast**, irreversible ones with the highest available input.\n5. **Communicate inwardly and outwardly on a clock**, not when convenient.\n6. **Debrief within 48 hours** of resolution. Don't let the lessons disperse with the urgency.\n\nThe difference between organizations that emerge from crisis stronger and those that emerge weaker is rarely the original event. It's whether they treated the crisis itself as a structured, time-bound mode with its own playbook \u2014 or whether they tried to keep doing normal operations under pressure."
+      "placeholder": false
     },
     {
       "id": "M3L2.5",
@@ -1145,34 +1085,18 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        {
-          "title": "Feedback as a Habit, Not an Event",
-          "body": "Most organizations treat feedback as an annual ritual. The best treat it as a daily texture: small, specific, immediate, two-way.\n\nThe annual review is necessary for HR but useless for growth. The growth happens in the 5-second comment after a meeting, not the 30-minute conversation in March."
-        },
-        {
-          "title": "Direct Beats Diplomatic",
-          "body": "Most managers soften feedback to the point of unintelligibility. The receiver doesn't get the signal, doesn't change, and is more frustrated when consequences arrive later.\n\nKim Scott's 'radical candor': care personally, challenge directly. Both. Neither alone works."
-        },
-        {
-          "title": "Feedback Up, Not Just Down",
-          "body": "Leaders need feedback more than reports do, and get it less. Build mechanisms that reward \u2014 not punish \u2014 upward signal: skip-levels, anonymous channels, structured 360s.\n\nMost CEOs become disconnected from reality not from malice but from filtered information."
-        },
-        {
-          "title": "The Mirror Map",
-          "body": "Most feedback failures are not delivery problems \u2014 they're calibration problems. The leader thinks the team is performing better or worse than they actually are.\n\nThe mirror map: write down where you think each person is on a 5-point scale, then ask their peers to do the same. The deltas are where attention is needed."
-        },
-        {
-          "title": "Closing the Loop",
-          "body": "Feedback without follow-up is theater. After delivering it, schedule a check-in 30 days out: did the behavior change? Did the situation improve?\n\nThe loop closes \u2014 or it doesn't. Either way, you've learned something about the person, the feedback, and yourself."
-        }
+        "Radical Candor",
+        "Feedback Loops",
+        "Coaching vs. Directing",
+        "SBI Model (Situation, Behavior, Impact)",
+        "Growth Mindset in Teams"
       ],
       "take_action": [
         "Give one specific, behavior-based piece of feedback to a teammate this week",
         "Ask for feedback: 'What's one thing I could do differently?'",
         "Schedule a monthly 1:1 with structured feedback built in"
       ],
-      "placeholder": false,
-      "deep_dive": "**Feedback is the highest-leverage management activity. Most leaders are bad at it because they conflate three different practices.**\n\n1. **Coaching feedback** is forward-looking, growth-oriented, and continuous. \"Here's what would have made that presentation land harder.\" Daily texture.\n2. **Performance feedback** is backward-looking, evaluative, and discrete. \"Here's how I'd rate this quarter relative to your goals.\" Quarterly cadence.\n3. **Termination feedback** is binary, final, and structured for legal and humane outcomes. Rare and grave.\n\nMost feedback failures come from blending types. Coaching delivered with the gravity of performance feedback creates anxiety for trivial issues. Performance feedback delivered in coaching tone undersignals the stakes. Termination feedback delivered as coaching creates surprise and litigation.\n\nThe **mirror map** is one of the most useful private exercises a leader can do. Take a sheet of paper. For each direct report, write down where you think they sit on three scales: technical quality, judgment under uncertainty, and team contribution. Score 1-5 on each. Then independently ask 2-3 of their peers to do the same exercise blind.\n\nThe deltas reveal:\n\n- **Where your view diverges from peers** \u2014 you might be wrong, or you might be the only one seeing something.\n- **Where peer views diverge from each other** \u2014 the contributor is sending different signals to different audiences.\n- **Where everyone agrees but the contributor disagrees** \u2014 calibration problem on the contributor's side, often the deepest issue.\n\nMost feedback is wasted because it lands without context. The mirror map gives you the context before the conversation. Then the conversation can be specific, calibrated, and actionable instead of generic and dismissable."
+      "placeholder": false
     },
     {
       "id": "M3L3",
@@ -1187,31 +1111,9 @@
       "video_url": null,
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "Cost of a Bad Hire",
-          "body": "A wrong hire at mid-level costs 1.5\u20133x annual salary in cash and an immeasurable amount in team morale, opportunity cost, and culture erosion.\n\nThe true cost isn't the salary you paid \u2014 it's the work that didn't happen, the teammates who left, and the time it takes to remediate."
-        },
-        {
-          "title": "Slow Means Calibrated",
-          "body": "Slow hiring isn't bureaucratic \u2014 it's deliberately calibrated. Multiple interviews. Structured rubrics. Reference checks that aren't perfunctory. Decision committees, not lone deciders.\n\nThe goal is high signal, not high friction."
-        },
-        {
-          "title": "Reference Checks That Matter",
-          "body": "Don't ask references for opinions \u2014 ask for stories. \"Tell me about a time X faced an ambiguous problem. What did they do?\" Specific behavioral evidence over generic praise.\n\nAlso: back-channel references (people the candidate didn't list). They are 10x more honest."
-        },
-        {
-          "title": "Fire Fast Is Compassion",
-          "body": "Keeping someone in a role they can't succeed in is cruel \u2014 to them, to the team, to the work. The longer you wait, the worse the eventual departure.\n\nFire when the conviction forms, not when the documentation is complete. Documentation can catch up. Trust deteriorates while you wait."
-        },
-        {
-          "title": "Document Performance Issues Early",
-          "body": "If you might need to manage someone out, the conversation should start the moment you notice the gap \u2014 not three months later when you're considering termination.\n\nWritten feedback, with specific examples, given in real time. It's the documentation AND the path to improvement at the same time."
-        }
-      ],
+      "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**The single highest-leverage management decision is who you hire. The second-highest is how fast you correct mistakes.**\n\nBoth are routinely botched. Hiring fails because operators optimize for speed (we need someone NOW) over fit (the right person for this role, this team, this stage). Firing fails because operators optimize for comfort (avoiding the hard conversation) over honesty (the situation isn't working and waiting won't fix it).\n\nThe asymmetry of consequences is what makes both calls feel hard:\n\n- **Hiring decision**: false positive (hiring wrong) is costly and slow to discover. False negative (passing on right candidate) is invisible. Bias is to false positive.\n- **Firing decision**: false negative (keeping wrong person) is costly and invisible (you can't see the better team you would have had). False positive (firing right person) is visible and painful. Bias is to false negative.\n\nThe disciplines that compound:\n\n- **Calibrated interview loops**. Multiple interviewers, structured rubrics, decision meeting with rubric scores compared. A confident hire requires 3+ strong yes signals; one no can veto.\n- **Probation period as real probation**. The 90 days post-hire are the cheapest window to course-correct or part ways. After 6 months, the cost of separation triples.\n- **Performance conversations in real time**. If you find yourself building a private file of concerns, the concerns belong in front of the person. Either they course-correct, or you have a clearer basis for the decision.\n- **The 'would you re-hire this person today?' test**. Asked privately by each manager about each report once a quarter. The first time the answer is no, the management process kicks in. Waiting longer is just expensive avoidance.\n\nThe organizations that build great teams over decades \u2014 not just great quarters \u2014 get good at both moves. Slow hiring is the high-quality intake. Fast firing is the high-quality maintenance. Neither alone is enough."
+      "placeholder": false
     },
     {
       "id": "M3L4",
@@ -1226,31 +1128,9 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Velocity_of_Decision.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "Decision Quality vs. Decision Speed",
-          "body": "In most operating contexts, speed beats marginal quality. A 75% decision today is usually better than a 90% decision in two weeks \u2014 because the situation has moved.\n\nThe exception: irreversible decisions. Slow down on the ones you can't take back."
-        },
-        {
-          "title": "RAPID Framework",
-          "body": "Bain's role assignment for decisions: **R**ecommend, **A**gree, **P**erform, **I**nput, **D**ecide.\n\n- Recommend: drives the analysis\n- Input: provides expertise\n- Agree: sign-off authority on specific dimensions (legal, finance)\n- Decide: single point of accountability\n- Perform: executes the decision\n\nWithout role clarity, decisions stall in 'who's deciding?' loops."
-        },
-        {
-          "title": "Reversible vs. Irreversible",
-          "body": "Bezos's two-way vs one-way door framing. Two-way doors (you can walk back) deserve fast decisions and bias toward action. One-way doors (you can't undo) deserve careful decisions with the highest available input.\n\nMost decisions are two-way doors disguised as one-way doors by anxious organizations."
-        },
-        {
-          "title": "Single Threaded Owner",
-          "body": "Every important decision has exactly one Decider. Not a committee. Not a consensus. One person whose name is on it.\n\nCommittees create plausible deniability for everyone. Single owners create accountability and speed."
-        },
-        {
-          "title": "Disagree and Commit",
-          "body": "Once the Decider has decided, the dissenters commit fully to execution. Disagreement before the decision is healthy. Continued disagreement after the decision is poison.\n\nThe contract: speak honestly while the decision is open. Execute fully once it's closed."
-        }
-      ],
+      "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**Decision velocity is one of the most under-measured operational metrics, and it predicts performance more than most KPIs.** Every organization has a decision-making clock speed. Some make every decision in a meeting in 20 minutes; others take 6 weeks for the same call. The slow ones don't make better decisions \u2014 they just make slower ones.\n\nThe **RAPID framework** addresses the most common cause of decision drag: role ambiguity. \"Who decides?\" is a question that should never come up mid-meeting. RAPID assigns five distinct roles before the meeting:\n\n- **Recommend**: drives the analysis and brings the proposal.\n- **Input**: relevant subject-matter experts who must be consulted.\n- **Agree**: people with veto on specific dimensions (legal sign-off, finance sign-off).\n- **Decide**: the single accountable decision-maker.\n- **Perform**: the team that executes after.\n\nWhen the roles are clear, the decision happens. When they're ambiguous, the meeting becomes a status update and the decision rolls forward.\n\n**Bezos's two-way door framing** is the second highest-leverage decision discipline. Most decisions are reversible \u2014 you can hire and then move someone; you can launch and then iterate; you can enter a market and then exit. These deserve speed and a bias to action. A small number of decisions are irreversible \u2014 sale of the company, irreversible legal commitments, public statements with reputation stakes. These deserve the highest available input and unhurried care.\n\nThe mistake organizations make is treating all decisions like one-way doors. The result: a culture that's slow on everything, especially the things that don't matter. The fix is naming the door explicitly: \"This is a two-way door. We'll decide today and revisit in 60 days if it's not working.\""
+      "placeholder": false
     },
     {
       "id": "M3L5",
@@ -1266,34 +1146,18 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        {
-          "title": "Culture Is Behavior, Not Values",
-          "body": "Culture isn't what's on the poster. It's the patterns of behavior that get rewarded, ignored, or punished. The gap between stated values and actual behavior is your real culture.\n\nIf you want to know a company's culture, watch what happens when someone does the wrong thing. Or the right thing. The response IS the culture."
-        },
-        {
-          "title": "Hiring + Firing = Architecture",
-          "body": "Every hire and every termination is a culture vote. Over time, the people who stay shape the culture more than any document.\n\nManagers who hire and fire well are doing the most important culture work. The ones who write values statements but tolerate misbehavior are doing the opposite."
-        },
-        {
-          "title": "Rituals as Carriers",
-          "body": "Culture transmits through repeated rituals: how meetings start, how decisions are announced, how mistakes are processed, how wins are celebrated.\n\nIntentional rituals shape culture. Accidental rituals shape it too \u2014 usually toward the lowest common behavior pattern."
-        },
-        {
-          "title": "Stories You Tell",
-          "body": "The stories that get retold are the ones that encode the culture. The hero story (someone who exemplified the values), the cautionary tale (someone who didn't), the founding myth.\n\nLeaders who don't curate the story-telling get the stories the team chooses. Often not the ones you'd want."
-        },
-        {
-          "title": "The Bar Conversation Test",
-          "body": "If two employees are at a bar after work, what do they say about your company? That's your culture, in plain language, with nothing performative.\n\nIf the bar version diverges sharply from the LinkedIn version, the culture you've architected isn't the culture you have."
-        }
+        "Organizational Culture",
+        "Culture vs. Climate",
+        "Values-Behavior Alignment",
+        "Cultural Debt",
+        "Culture as Competitive Advantage"
       ],
       "take_action": [
         "Write your 3\u20135 actual (not aspirational) organizational values",
         "Identify one behavior that contradicts your stated values",
         "Design one ritual or process that reinforces the culture you want"
       ],
-      "placeholder": false,
-      "deep_dive": "**Culture isn't a thing you have \u2014 it's a thing you continually construct.** Every decision a leader makes either reinforces or contradicts the culture they claim. The construction happens whether you're paying attention or not. The question is whether you architect deliberately or let it emerge by default.\n\nThe most useful frame for culture isn't \"values\" \u2014 it's **the behavior that gets rewarded, the behavior that's ignored, and the behavior that gets punished**. Look at any organization through that lens and the real culture becomes visible:\n\n- A company that says it values \"work-life balance\" but promotes the people who work 80-hour weeks doesn't have that value. It has the opposite.\n- A company that says it values \"speaking up\" but quietly retaliates against dissenters doesn't have that value either.\n- A company that punishes mistakes generally doesn't have a \"learning culture,\" even if the wall posters say otherwise.\n\nThe gap between stated culture and operational culture is the trust gap. Closing it requires either changing behavior or changing what you claim. The worst position is wide gap.\n\n**The architecture levers**:\n\n- **Hiring rubrics**: every new hire is a behavior pattern joining the organization. Write the rubric, calibrate against it, hire deliberately.\n- **Promotion criteria**: people pay attention to who gets promoted more than to any values document. If promotions reward behavior you'd describe negatively, your culture is whatever the promoted people do.\n- **Firing and managing out**: removing people who violate the culture is the loudest culture signal you can send. Tolerating them is the loudest contradictory signal.\n- **Rituals**: how meetings open, how decisions are announced, how mistakes are debriefed, how wins are shared. Each ritual is a tiny culture-transmitter, repeated thousands of times.\n- **Stories**: which stories get retold, by whom, with what emphasis. The story-curating function is one of the founder's highest-leverage cultural roles.\n\nThe practical move: every quarter, run a culture audit. Pick three stated values. For each, list 5 specific examples from the last quarter that either reinforced or contradicted it. The list reveals the actual culture. The work is closing the gaps that the list reveals."
+      "placeholder": false
     },
     {
       "id": "M4L1",
@@ -1308,9 +1172,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Customer_Obsession.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Working Backward From the Customer",
+          "body": "Amazon's foundational principle: start from customer pain, work backward to product. Not the other way around. Not from competitor analysis. Not from internal capability.\n\nIf you can't articulate the customer problem in one sentence \u2014 not the product, the customer's actual problem \u2014 you don't have a starting point."
+        },
+        {
+          "title": "Jobs to Be Done",
+          "body": "Customers don't buy products. They hire products to do jobs in their lives. The job is the unit of analysis, not the product.\n\nThe milkshake example: customers \"hired\" the morning milkshake to make a boring commute survivable. The product team optimizing for taste was solving the wrong problem; the right question was about commute boredom."
+        },
+        {
+          "title": "The Five Whys for Customer Pain",
+          "body": "Most stated customer requests are surface symptoms. Ask 'why' five times to get to the actual underlying job.\n\nCustomer: 'We need faster reports.' Why? 'Because we're missing month-end deadlines.' Why? 'Because data extraction takes 3 days.' Why? 'Because the source systems don't talk.' The actual problem is integration, not reporting."
+        },
+        {
+          "title": "Customer Proximity Discipline",
+          "body": "Founders and executives drift away from real customers over time. Calendar-block customer conversations weekly. Not surveys \u2014 actual conversations.\n\nAt Amazon, every leader is required to read customer service emails. At Stripe, founders spend hours weekly with developers. The discipline is institutional."
+        },
+        {
+          "title": "Customer Advocacy Internal",
+          "body": "Pick someone \u2014 often a senior PM or operator \u2014 whose explicit job is to represent the customer voice in every internal meeting.\n\nWithout this role, decisions get made for internal convenience. The customer advocate stops bad decisions before they ship."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Customer obsession is the highest-leverage concept in business, and the most often confused with customer worship.** Obsession means making the customer's actual job the central organizing principle. Worship means giving customers whatever they say they want.\n\nThe difference is decisive. Henry Ford never asked customers what they wanted \u2014 they'd have said faster horses. Steve Jobs famously dismissed customer research \u2014 but he was deeply obsessed with what customers actually struggled with in their lives. The trick is *understanding* the customer's job better than they do themselves, then engineering a solution they didn't know was possible.\n\n**The jobs-to-be-done frame** (Christensen, Ulwick) reframes the entire product process:\n\n- Customers don't buy quarter-inch drills; they buy quarter-inch holes.\n- They don't buy MBAs; they buy career mobility and network access.\n- They don't buy software; they buy time, control, or status.\n\nThe job is the constant. The products that satisfy it change over centuries. Whoever owns the job owns the business \u2014 until somebody satisfies the same job in a way that makes the current product obsolete.\n\n**The operating discipline**:\n\n- **Define the customer's job in their own words.** Not jargon, not marketing copy. The exact phrase a customer would use.\n- **Map the job's full journey** \u2014 the moments before, during, and after the product is used. Most products solve a moment; the job covers a journey.\n- **Identify the worst point in the journey.** That's where the biggest opportunity is, and usually where competitors are weakest.\n- **Engineer the solution to that point.** Not the entire journey \u2014 the leverage point.\n\nThe companies that win categories don't have the best products. They have the best understanding of what the product is *for*."
     },
     {
       "id": "M4L2",
@@ -1326,18 +1212,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Brand Identity",
-        "Brand Story",
-        "Brand Voice",
-        "Brand Equity",
-        "Emotional Differentiation"
+        {
+          "title": "Brand Is Memory Plus Promise",
+          "body": "A brand is the cluster of memories, expectations, and meanings a customer attaches to your name. Not your logo. Not your slogan. The full pattern in their head when they encounter you.\n\nYou can't directly control this \u2014 but you can shape what experiences and stories build it."
+        },
+        {
+          "title": "Story Beats Specs",
+          "body": "Customers don't remember feature lists. They remember stories \u2014 origin, transformation, conflict, victory. Stories are how human memory works.\n\nThe best brands have a story that customers can retell in one sentence. Patagonia: clothes that don't destroy the planet. Tesla: electric cars that beat gas cars. Apple: technology that's actually for humans."
+        },
+        {
+          "title": "Brand Promise",
+          "body": "What every interaction with your brand commits to deliver. The implicit guarantee. Volvo promises safety; Herm\u00e8s promises craftsmanship; Disney promises magic.\n\nIf you can articulate your promise in five words AND consistently deliver against it, you have a brand. If not, you have a logo."
+        },
+        {
+          "title": "Consistency Over Genius",
+          "body": "Brands are built through 10,000 small consistent experiences, not 10 brilliant campaigns. The boring discipline of doing the same thing the same way every time.\n\nMost brands fail through inconsistency before they fail through bad strategy."
+        },
+        {
+          "title": "Brand As Premium License",
+          "body": "Strong brands command price premiums. The customer pays more for the same functional product because of what the brand means.\n\nApple's gross margins are 40%+ versus PC manufacturers' 5-10% \u2014 same chips, similar features, vastly different brand premium."
+        }
       ],
       "take_action": [
         "Write your brand story in 3 sentences: origin, mission, why it matters",
         "Define 3 adjectives that capture your brand voice",
         "Audit your last 5 content pieces against your brand identity"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**A brand is the most defensible economic asset you can build, and the hardest one to measure.** It doesn't appear on the balance sheet, but it shows up in every other number: gross margin (pricing power), retention (loyalty), CAC (organic pull), and resilience (forgiveness of mistakes).\n\nThe most common confusion is between brand and *branding*. Branding is the visual identity \u2014 logo, colors, typography, voice. Brand is what those visual cues *trigger* in the customer's head. Strong branding without substance is just better-looking commodity. Strong brand without polished branding still works; weak brand with great branding doesn't.\n\n**The four levers that build brand:**\n\n- **A clear promise.** Volvo: safety. Patagonia: planet-friendly outdoor gear. Herm\u00e8s: silent luxury. Five-word promises that every product and communication reinforces.\n- **Consistency over decades.** Coca-Cola's promise has been the same since 1900. The medium changes; the meaning doesn't.\n- **Story.** An origin myth, a founder's mission, a moment of transformation. Customers retell stories. They don't retell value propositions.\n- **Standards.** What gets rejected from the brand matters more than what gets included. The taste-level of your worst product is the brand's actual position.\n\n**The economic value of brand** is measurable indirectly:\n\n- **Pricing power**: can you charge 20-50% more than commodity alternatives? That premium is the brand's annuity.\n- **Trust forgiveness**: when you mess up, how much grace do customers extend before they leave? Strong brands get years; weak brands get one chance.\n- **Recruiting magnet**: does your brand attract talent that wouldn't take a similar role at a no-name company? That's brand operating in the labor market.\n\nThe practical move: write your brand promise in five words. Audit the last 10 customer-facing decisions against that promise. The decisions that don't reinforce it are the brand erosion you're not seeing."
     },
     {
       "id": "M4L3",
@@ -1353,18 +1255,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Marketing Funnel",
-        "Conversion Rate",
-        "Funnel Math",
-        "TOFU/MOFU/BOFU",
-        "Retention vs. Acquisition"
+        {
+          "title": "The Funnel Multiplier",
+          "body": "Total conversion is the product of each stage's conversion rate.\n\n$$\\text{Overall Conversion} = \\prod_{i=1}^{n} \\text{Stage}_i \\text{ Conversion Rate}$$\n\nA 4-stage funnel where each stage converts at 50% yields 6.25% overall. Improve one stage by 10 points and the entire funnel improves multiplicatively."
+        },
+        {
+          "title": "Conversion Rate vs. Volume",
+          "body": "Two ways to grow funnel output: more volume in (top of funnel), or higher conversion through. Volume scales linearly with cost. Conversion improvements scale through the entire downstream funnel.\n\nA 10% improvement in mid-funnel conversion can be worth more than doubling top-of-funnel spend."
+        },
+        {
+          "title": "The Highest-Drop-Off Stage",
+          "body": "Map your funnel. Find the stage where customers drop off most. That's almost always your highest-leverage optimization point.\n\nMost teams optimize the stage they care about; the winners optimize the stage the data points to."
+        },
+        {
+          "title": "Channel \u00d7 Stage Matrix",
+          "body": "Different acquisition channels have different funnel profiles. Paid social often has high top-of-funnel volume, low qualification, low conversion. Referrals have lower volume, much higher conversion.\n\nManage channels to funnel-output, not channel-output. A channel with 10x lower volume but 30x higher conversion is winning."
+        },
+        {
+          "title": "Cohort Conversion Curves",
+          "body": "Some funnels complete in minutes (e-commerce). Some complete over months (enterprise sales). Cohort the funnel by entry date and track conversion progression over time.\n\nA 90-day conversion view reveals what a 30-day snapshot hides."
+        }
       ],
       "take_action": [
         "Map your funnel with actual conversion rates at each stage",
         "Identify your biggest leak in the funnel",
         "Run one A/B test to improve conversion at that stage"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**The funnel multiplier is the most under-appreciated math in marketing.** Most operators look at conversion stage by stage, optimizing each in isolation. The multiplicative truth is that improvements compound dramatically, and bottleneck stages drag everything else down \u2014 no matter how good the other stages are.\n\nConsider a typical e-commerce funnel:\n\n- Visit \u2192 Product page view: 60%\n- Product page \u2192 Add to cart: 15%\n- Add to cart \u2192 Checkout: 40%\n- Checkout \u2192 Purchase: 70%\n\nOverall conversion: 0.60 \u00d7 0.15 \u00d7 0.40 \u00d7 0.70 = **2.52%**\n\nIf you double-down on top-of-funnel ad spend, you get 2x visitors and 2x revenue \u2014 for 2x the cost. Linear scaling.\n\nIf you improve the bottleneck (Product page \u2192 Add to cart, the 15% stage) to 25%, your overall conversion goes to 4.2% \u2014 a **67% revenue increase** with no change to traffic or ad spend. That's the funnel multiplier at work.\n\n**The operator's playbook:**\n\n1. **Map every stage.** Most teams have 4-7 stages they can identify by name.\n2. **Measure each stage's conversion rate** over a stable window (at least 4 weeks of data).\n3. **Identify the worst stage** \u2014 the one with the lowest conversion that's also a high-volume bottleneck.\n4. **Run experiments on that stage exclusively** for a quarter. Resist the temptation to spread effort across stages.\n5. **Re-baseline after each improvement.** The bottleneck moves as you fix the previous one.\n\n**The compounding math:** if you can improve each stage of a 4-stage funnel by 20% over a year (a steady-but-modest pace), your overall conversion improves by 1.2\u2074 = **2.07x**. Doubled output with the same top of funnel. This is why funnel obsession beats ad budget growth in the long run.\n\nThe equation worth burning in:\n\n$$\\text{Overall Conversion} = \\prod_{i=1}^{n} \\text{Conversion}_i$$\n\nThe funnel is multiplicative. Treat it that way."
     },
     {
       "id": "M4L4",
@@ -1380,18 +1298,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Value-Based Pricing",
-        "Cost-Plus Pricing",
-        "Price Elasticity",
-        "Pricing Power",
-        "Anchoring Effect"
+        {
+          "title": "Price Elasticity of Demand",
+          "body": "How much demand changes when price changes. Mathematically:\n\n$$\\text{PED} = \\frac{\\% \\Delta \\text{Quantity}}{\\% \\Delta \\text{Price}}$$\n\nIf PED > 1 in absolute value, demand is elastic (price-sensitive). Below 1, inelastic (less sensitive). Luxury goods often inelastic; commodity goods elastic. Knowing your category tells you how much pricing power exists."
+        },
+        {
+          "title": "Value-Based vs Cost-Plus Pricing",
+          "body": "Cost-plus: take your cost, add margin, that's your price. Value-based: estimate the value the customer captures from your product, capture a fraction of that.\n\nCost-plus floors your price at cost. Value-based ceilings it at the customer's willingness to pay. The gap is your pricing-strategy upside."
+        },
+        {
+          "title": "Willingness to Pay",
+          "body": "The maximum price a customer would accept before walking away. Different for every customer; different for the same customer in different contexts.\n\nVan Westendorp's price-sensitivity meter, conjoint analysis, A/B price tests \u2014 all techniques for revealing WTP. The naive question 'what would you pay?' produces lies, not data."
+        },
+        {
+          "title": "Price as a Signal",
+          "body": "Price doesn't just clear markets \u2014 it signals quality, exclusivity, and positioning. A $50 wine is judged differently from a $25 wine even if the bottle is identical.\n\nLow prices can repel premium customers as effectively as high prices repel value customers. Pricing IS positioning."
+        },
+        {
+          "title": "Pricing Power as the Test",
+          "body": "Warren Buffett's litmus test: can you raise prices 10% without losing customers? If yes, you have a moat. If no, you're in a commodity.\n\nMost businesses can't honestly answer yes. The ones that can are worth multiples of revenue more than the ones that can't."
+        }
       ],
       "take_action": [
         "Calculate your current price using 3 different pricing methods",
         "Identify the max price your best customers would pay",
         "Test a price increase on one product or tier this month"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Pricing is the single highest-leverage operating decision and the most under-managed.** A 1% price increase, holding volume constant, drops directly to profit. A 1% volume increase requires absorbing variable cost. A 1% cost reduction requires operational pain. Yet most businesses set prices once, leave them for years, and underprice everything.\n\nThe foundational equation:\n\n$$\\text{Price Elasticity} = \\frac{\\% \\Delta \\text{Quantity Demanded}}{\\% \\Delta \\text{Price}}$$\n\nWhen elasticity is **less than 1 in absolute value** (inelastic), you have pricing power \u2014 you can raise prices without losing much volume, so price increases drop almost entirely to profit. When it's **greater than 1** (elastic), volume drops faster than price rises, and you can't raise without absorbing volume loss.\n\nMost categories sit somewhere between elastic and inelastic. The operator's question is: *where are we, and how can we move toward inelasticity?*\n\nThe ways to build pricing power:\n\n- **Differentiation**: customers can't easily compare you to alternatives. Brand, switching costs, unique features.\n- **Bundling**: harder to comparison-shop a bundle than a line-item.\n- **Segmentation**: charge different prices to different segments based on their WTP. The high-WTP customer subsidizes price discovery.\n- **Versioning**: good/better/best tiering reveals customer self-selection. Most customers anchor to middle; high-WTP customers self-segment to top.\n- **Anchor pricing**: showing a high-price option (which few buy) makes the middle option feel reasonable. Pure perception.\n\n**The Buffett test** is the cleanest diagnostic: *can you raise prices 10% without losing >5% of customers?* If yes, you're in a business with pricing power and a moat. If no, you're in a commodity (regardless of what your marketing says).\n\nThe practical move: run a structured pricing review every 12-18 months. Look at price changes since last review, monitor competitor positions, audit churn-by-price-tier, test 5-10% increases on a cohort. Most businesses leave 15-30% of revenue on the table from undermanaged pricing. The audit reveals it."
     },
     {
       "id": "M5L1",
