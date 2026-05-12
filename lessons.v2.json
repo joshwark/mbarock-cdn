@@ -253,11 +253,26 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Cash Flow vs. Profit",
-        "Operating Cash Flow",
-        "Gross Profit",
-        "Net Cash Flow",
-        "Monthly Burn Rate"
+        {
+          "title": "Cash Flow vs. Profit",
+          "body": "Profit is what your accountant says happened. Cash is what's in the bank. They diverge because of timing: revenue is recognized when you earn it, not when the customer pays. Inventory shows as a current asset, not an expense. Depreciation is an expense without a cash outflow. A profitable business can run out of cash, and a cash-flush business can be unprofitable.\n\n**Track both. Never trust one without the other.**"
+        },
+        {
+          "title": "Operating Cash Flow (OCF)",
+          "body": "The cash your business generates from its core operations \u2014 not from financing or investing. It's the cleanest signal of whether the business model actually works.\n\n$$\\text{OCF} = \\text{Net Income} + \\text{D\\&A} - \\Delta \\text{Working Capital}$$\n\nIf OCF is consistently positive and growing, you have a real business. If OCF is negative while revenue grows, you're funding growth with cash you don't have \u2014 and the clock is ticking."
+        },
+        {
+          "title": "Gross Profit & Gross Margin",
+          "body": "Gross profit is revenue minus the cost of delivering that revenue (cost of goods sold). Gross margin is that profit expressed as a percentage of revenue.\n\n$$\\text{Gross Margin} = \\frac{\\text{Revenue} - \\text{COGS}}{\\text{Revenue}}$$\n\nGross margin is the ceiling. Everything else \u2014 operating expenses, marketing, salaries \u2014 gets paid from this pool. Low gross margin means you can't out-spend competitors no matter how big you get. High gross margin gives you optionality."
+        },
+        {
+          "title": "Net Cash Flow",
+          "body": "The change in your cash balance from end of one period to the next, after EVERYTHING \u2014 operations, investments, financing. This is the number you can verify against your bank statement.\n\nNet cash flow is what survives the spin. If your bank balance went down $50K this month, that's your net cash flow. No accounting opinion can hide it."
+        },
+        {
+          "title": "Cash Runway",
+          "body": "How many months you have until you run out of cash, assuming nothing changes.\n\n$$\\text{Runway} = \\frac{\\text{Cash on Hand}}{\\text{Monthly Burn Rate}}$$\n\nBurn rate is monthly OCF if it's negative \u2014 the cash you're losing each month. Runway under 6 months is an emergency. Runway under 12 months is a yellow flag. Runway over 18 months gives you decision-making freedom.\n\n*Knowing this number every Friday changes how you spend Monday.*"
+        }
       ],
       "take_action": [
         "Download 3 months of bank statements and map cash in vs. cash out",
