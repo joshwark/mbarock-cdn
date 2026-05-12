@@ -62,7 +62,7 @@
       "title": "Module 2: Strategy & Competitive Advantage",
       "audio_overview_title": "Moats Five Forces and VRIO Strategy",
       "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/modules/M2.m4a",
-      "study_guide_title": "Study Guide: Module 2 — Strategy & Competitive Advantage",
+      "study_guide_title": "Study Guide: Module 2 \u2014 Strategy & Competitive Advantage",
       "study_guide_url": null,
       "infographic_title": "MBA Business Strategy Toolkit",
       "infographic_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/images/infographics/M2.png",
@@ -79,7 +79,7 @@
       "title": "Module 3: People & Leadership",
       "audio_overview_title": "90 day blueprint and crisis leadership",
       "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/modules/M3.m4a",
-      "study_guide_title": "Study Guide: Module 3 — People & Leadership",
+      "study_guide_title": "Study Guide: Module 3 \u2014 People & Leadership",
       "study_guide_url": null,
       "infographic_title": "Mastering People and Leadership",
       "infographic_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/images/infographics/M3.png",
@@ -96,7 +96,7 @@
       "title": "Module 4: Unit Economics & Growth Metrics",
       "audio_overview_title": "How to scale without going bankrupt",
       "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/modules/M4.m4a",
-      "study_guide_title": "Study Guide: Module 4 — Brand Positioning and Strategic Decision Frameworks",
+      "study_guide_title": "Study Guide: Module 4 \u2014 Brand Positioning and Strategic Decision Frameworks",
       "study_guide_url": null,
       "infographic_title": "Mastering Unit Economics and Growth",
       "infographic_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/images/infographics/M4.png",
@@ -234,7 +234,7 @@
       ],
       "take_action": [
         "Download 3 months of bank statements and map cash in vs. cash out",
-        "Calculate your monthly burn rate (total cash out − cash in)",
+        "Calculate your monthly burn rate (total cash out \u2212 cash in)",
         "Identify your top 3 cash outflows and ask if each is necessary"
       ],
       "placeholder": false
@@ -262,7 +262,7 @@
       "take_action": [
         "List all fixed monthly costs",
         "Calculate contribution margin per unit: Price minus Variable Cost per unit",
-        "Find your break-even: Fixed Costs ÷ Contribution Margin per unit"
+        "Find your break-even: Fixed Costs \u00f7 Contribution Margin per unit"
       ],
       "placeholder": false
     },
@@ -287,7 +287,7 @@
         "Survival Math"
       ],
       "take_action": [
-        "Calculate your cash runway: cash on hand ÷ monthly burn",
+        "Calculate your cash runway: cash on hand \u00f7 monthly burn",
         "Map AR and AP timing to spot the cash crunch points",
         "Build a 13-week cash forecast and update it weekly"
       ],
@@ -341,7 +341,7 @@
         "Net Present Value (NPV)"
       ],
       "take_action": [
-        "Choose a discount rate for your business (typical range: 8–15%)",
+        "Choose a discount rate for your business (typical range: 8\u201315%)",
         "Calculate the present value of a payment you expect in 12 months",
         "Apply NPV thinking to one upcoming investment decision"
       ],
@@ -368,8 +368,8 @@
         "Revenue Recognition"
       ],
       "take_action": [
-        "Audit all outstanding invoices — flag anything 30+ days overdue",
-        "Calculate DSO: (Accounts Receivable ÷ Annual Revenue) × 365",
+        "Audit all outstanding invoices \u2014 flag anything 30+ days overdue",
+        "Calculate DSO: (Accounts Receivable \u00f7 Annual Revenue) \u00d7 365",
         "Implement or enforce a net-15 or net-30 payment policy"
       ],
       "placeholder": false
@@ -395,8 +395,8 @@
         "Contribution Margin per Customer"
       ],
       "take_action": [
-        "Calculate your CAC from last month’s marketing spend",
-        "Estimate LTV: avg purchase value × frequency × avg customer lifespan",
+        "Calculate your CAC from last month\u2019s marketing spend",
+        "Estimate LTV: avg purchase value \u00d7 frequency \u00d7 avg customer lifespan",
         "Target a LTV:CAC ratio of 3:1 or higher as your baseline"
       ],
       "placeholder": false
@@ -423,7 +423,7 @@
       ],
       "take_action": [
         "Identify the ratio of fixed to variable costs in your business",
-        "Calculate DOL: Contribution Margin ÷ Operating Income",
+        "Calculate DOL: Contribution Margin \u00f7 Operating Income",
         "Model the impact of a 20% revenue increase on your operating income"
       ],
       "placeholder": false
@@ -444,7 +444,7 @@
       "core_concepts": [
         "Assets",
         "Liabilities",
-        "Owner’s Equity",
+        "Owner\u2019s Equity",
         "The Accounting Equation (A = L + E)",
         "Working Capital"
       ],
@@ -477,7 +477,7 @@
       ],
       "take_action": [
         "Identify your single most defensible moat",
-        "Score each moat type 1–5 for your business",
+        "Score each moat type 1\u20135 for your business",
         "Plan one investment in the highest-leverage moat"
       ],
       "placeholder": false
@@ -505,7 +505,7 @@
       ],
       "take_action": [
         "Identify which type of moat your business has (if any)",
-        "Rate your moat’s strength from 1–5 with supporting evidence",
+        "Rate your moat\u2019s strength from 1\u20135 with supporting evidence",
         "List what a competitor would need to overcome your advantage"
       ],
       "placeholder": false
@@ -520,7 +520,7 @@
       "audio_url": null,
       "audio_overview_url": null,
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_Strategic_Playbook.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
@@ -559,7 +559,7 @@
         "Industry Attractiveness"
       ],
       "take_action": [
-        "Rate each of Porter’s 5 forces in your industry (High/Medium/Low)",
+        "Rate each of Porter\u2019s 5 forces in your industry (High/Medium/Low)",
         "Identify the most dangerous force threatening your business today",
         "Choose one force to actively mitigate this quarter"
       ],
@@ -588,7 +588,7 @@
       ],
       "take_action": [
         "List your top 3 internal capabilities or resources",
-        "Run each through VRIO — which create sustained advantage?",
+        "Run each through VRIO \u2014 which create sustained advantage?",
         "Double down on your highest-scoring VRIO capability this quarter"
       ],
       "placeholder": false
@@ -648,7 +648,7 @@
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/beneath-the-hood.mp3",
       "audio_overview_url": null,
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Strategic_Diagnostics.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
@@ -809,7 +809,7 @@
       "audio_url": null,
       "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/velocity-of-decision.mp4",
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Velocity_of_Decision.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [],
@@ -837,7 +837,7 @@
         "Culture as Competitive Advantage"
       ],
       "take_action": [
-        "Write your 3–5 actual (not aspirational) organizational values",
+        "Write your 3\u20135 actual (not aspirational) organizational values",
         "Identify one behavior that contradicts your stated values",
         "Design one ritual or process that reinforces the culture you want"
       ],
@@ -1049,7 +1049,7 @@
       "take_action": [
         "Draw your current org chart and identify reporting bottlenecks",
         "Calculate your average span of control",
-        "Design the org structure you'll need at 2× your current headcount"
+        "Design the org structure you'll need at 2\u00d7 your current headcount"
       ],
       "placeholder": false
     },
@@ -1063,7 +1063,7 @@
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/stakeholder-grid.mp3",
       "audio_overview_url": null,
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_Capital_Stack.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
@@ -1091,7 +1091,7 @@
       "audio_url": null,
       "audio_overview_url": null,
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Value_vs.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [],
@@ -1108,7 +1108,7 @@
       "audio_url": null,
       "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/architecture-of-agreement.mp4",
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Architecture_of_Agreement.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
@@ -1135,7 +1135,7 @@
       "audio_url": null,
       "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/exit-strategy-architecture.mp4",
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Exit_Strategy_Architecture.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
@@ -1163,7 +1163,7 @@
       "audio_url": null,
       "audio_overview_url": null,
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Startup_Operating_System.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [],
@@ -1180,7 +1180,7 @@
       "audio_url": null,
       "audio_overview_url": null,
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Value_Creation_Journey.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [],
@@ -1197,7 +1197,7 @@
       "audio_url": null,
       "audio_overview_url": null,
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Managing_Uncertainty.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [],
@@ -1214,7 +1214,7 @@
       "audio_url": null,
       "audio_overview_url": null,
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Intelligent_Risk_Selection.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [],
