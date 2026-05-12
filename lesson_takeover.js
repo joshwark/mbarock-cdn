@@ -1,5 +1,5 @@
-// MBA Rock — Lesson Page Takeover v6.8 (2026-05-12)
-// v6.8: arcade modal escapes Squarespace iframe + fills full browser viewport.
+// MBA Rock — Lesson Page Takeover v6.9 (2026-05-12)
+// v6.9: arcade desktop sizing — capped widths + height-aware media queries so the grid stays in viewport.
 // LISTEN. LEARN. LIVE.
 
 (function() {
@@ -153,10 +153,31 @@
     hostDoc.body.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
 
-    // Inject a small CSS override into the embedded game so it fills the iframe width
+    // Inject CSS override into the embedded game so it fits the iframe gracefully on both mobile (✓) and desktop
     var gameHtml = ARCADE_GAME_HTML.replace(
       '</head>',
-      '<style>html,body{height:100%;}body{display:flex;align-items:stretch;justify-content:center;}main.app{max-width:980px;width:100%;padding:22px 18px 32px;}</style></head>'
+      '<style>' +
+        'html,body{height:100%;margin:0;overflow:hidden;}' +
+        'body{display:flex;align-items:stretch;justify-content:center;}' +
+        // Cap width tighter on desktop so 3x3 squares fit vertically without overflow
+        'main.app{max-width:680px;width:100%;padding:18px 24px 24px;min-height:0;height:100%;box-sizing:border-box;display:flex;flex-direction:column;}' +
+        // Tighter title for shorter desktop viewports
+        '.title{font-size:36px!important;margin-bottom:2px!important;}' +
+        '.subtitle{font-size:15px!important;margin:0 0 18px!important;}' +
+        // Smaller stat cards
+        '.status{margin-bottom:14px!important;gap:10px;}' +
+        '.stat{padding:10px 14px!important;}' +
+        '.stat .v{font-size:24px!important;}' +
+        // Grid: cap max-height so squares stay reasonable; center inside available space
+        '.grid{flex:1 1 auto;min-height:0;align-content:center;max-width:520px;margin:0 auto;width:100%;gap:10px;}' +
+        '.hole{aspect-ratio:1/1;}' +
+        // Tighter tips row
+        '.tips{margin:14px 0 0;font-size:11.5px;}' +
+        // Wide-screen: keep things from getting ridiculous on big monitors
+        '@media(min-width:1200px){main.app{max-width:720px;}}' +
+        // Short height: shrink title aggressively to keep grid in view
+        '@media(max-height:720px){.title{font-size:28px!important;}.subtitle{font-size:14px!important;margin-bottom:12px!important;}.status{margin-bottom:10px!important;}.stat .v{font-size:20px!important;}.tips{margin-top:10px;}.grid{max-width:460px;}}' +
+      '</style></head>'
     );
     var frame = overlay.querySelector('#mr5-arcade-frame');
     frame.srcdoc = gameHtml;
