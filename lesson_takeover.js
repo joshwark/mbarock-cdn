@@ -1,5 +1,5 @@
-// MBA Rock — Lesson Page Takeover v6.3 (2026-05-12)
-// v6.3: song row now shows actual song title (e.g. "Oxygen" not "Original track").
+// MBA Rock — Lesson Page Takeover v6.4 (2026-05-12)
+// v6.4: adds "Need a break? 🕹" link to The Arcade (Whack-a-Vanity-Metric).
 // LISTEN. LEARN. LIVE.
 
 (function() {
@@ -341,6 +341,24 @@
     /* Empty states */
     .mr5-empty{font-family:"Fraunces",serif;font-style:italic;color:#999;font-size:16px;margin:0;}
 
+    /* Arcade row — "Need a break?" link to the game */
+    .mr5-arcade-row{margin:32px 0 0;}
+    .mr5-arcade-btn{display:flex;align-items:center;gap:18px;padding:22px 28px;background:#0E1116;color:#fff;border-radius:14px;text-decoration:none;transition:all .15s;border:1px solid transparent;}
+    .mr5-arcade-btn:hover{background:#1d2436;border-color:${c.orange};transform:translateY(-1px);box-shadow:0 12px 28px -10px rgba(242,107,31,0.3);}
+    .mr5-arcade-icon{font-size:36px;line-height:1;flex-shrink:0;}
+    .mr5-arcade-l{display:block;font-family:"Fraunces",serif;font-size:20px;font-weight:600;letter-spacing:-0.01em;color:#fff;margin-bottom:4px;}
+    .mr5-arcade-s{display:block;font-family:"Inter",sans-serif;font-size:13px;color:#aaa;line-height:1.45;}
+    .mr5-arcade-s b{color:${c.orange};font-weight:600;}
+    .mr5-arcade-chev{margin-left:auto;font-family:"Fraunces",serif;font-size:28px;color:${c.orange};font-weight:600;flex-shrink:0;transition:transform .2s;}
+    .mr5-arcade-btn:hover .mr5-arcade-chev{transform:translateX(4px);}
+    @media(max-width:680px){
+      .mr5-arcade-btn{padding:18px 20px;gap:14px;}
+      .mr5-arcade-icon{font-size:28px;}
+      .mr5-arcade-l{font-size:17px;}
+      .mr5-arcade-s{font-size:12.5px;}
+      .mr5-arcade-chev{font-size:22px;}
+    }
+
     /* Floating progress chip */
     .mr5-chip{position:fixed;bottom:24px;right:24px;background:${c.navy};color:#fff;padding:14px 20px;border-radius:50px;box-shadow:0 12px 32px -8px rgba(11,31,58,0.4);font-family:"Inter",sans-serif;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;z-index:9999;display:flex;align-items:center;gap:10px;transition:all .2s;border:0;}
     .mr5-chip:hover{background:${c.orange};transform:translateY(-2px);}
@@ -597,6 +615,9 @@
     html += '<h3 data-cert-title="1">When you’re done</h3>';
     html += '<p data-cert-body="1">Mark this lesson complete to lock in the playbook and unlock the next track. Your full curriculum certificate is built one lesson at a time.</p>';
     html += '</div>';
+
+    // Break Room — link to the arcade
+    html += '<div class="mr5-arcade-row"><a class="mr5-arcade-btn" href="https://cdn.jsdelivr.net/gh/joshwark/mbarock-cdn@main/arcade/whack-a-vanity-metric.html" target="_blank" rel="noopener"><span class="mr5-arcade-icon">🕹</span><span><span class="mr5-arcade-l">Need a break?</span><span class="mr5-arcade-s">Step into <b>The Arcade</b> — Whack-a-Vanity-Metric, 30 seconds, no business cards required.</span></span><span class="mr5-arcade-chev">→</span></a></div>';
 
     html += '</div>'; // mr5
 
