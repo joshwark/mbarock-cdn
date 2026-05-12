@@ -1,5 +1,5 @@
-// MBA Rock — Lesson Page Takeover v6.10 (2026-05-12)
-// v6.10: adds The Operator's Console (calculator gallery, 18 calcs, inline modal).
+// MBA Rock — Lesson Page Takeover v6.11 (2026-05-12)
+// v6.11: adds the Capstone "Build my Business" link (7-section operator's plan).
 // LISTEN. LEARN. LIVE.
 
 (function() {
@@ -740,6 +740,9 @@
     html += '<h3 data-cert-title="1">When you’re done</h3>';
     html += '<p data-cert-body="1">Mark this lesson complete to lock in the playbook and unlock the next track. Your full curriculum certificate is built one lesson at a time.</p>';
     html += '</div>';
+
+    // The Capstone — your business, built across the course
+    html += '<div class="mr5-arcade-row"><a class="mr5-arcade-btn mr5-capstone-btn" href="https://joshwark.github.io/mbarock-cdn/capstone/" target="_blank" rel="noopener"><span class="mr5-arcade-icon">⚐</span><span><span class="mr5-arcade-l">Build my Business</span><span class="mr5-arcade-s">Every Take Action becomes a section of <b>your</b> operating system. Finish the course and you have a launchable business — not just notes.</span></span><span class="mr5-arcade-chev">→</span></a></div>';
 
     // The Operator's Console — calculator gallery
     html += '<div class="mr5-arcade-row"><button type="button" class="mr5-arcade-btn mr5-console-btn" data-mr-console="1"><span class="mr5-arcade-icon">⚙</span><span><span class="mr5-arcade-l">The Operator&rsquo;s Console</span><span class="mr5-arcade-s">Every equation in the course, ready to run against <b>your</b> numbers. Save scenarios. Revisit weekly.</span></span><span class="mr5-arcade-chev">→</span></button></div>';
