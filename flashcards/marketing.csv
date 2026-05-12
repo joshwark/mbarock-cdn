@@ -1,0 +1,77 @@
+"According to the marketing funnel model, which stage is defined by the prospect learning that a business exists?",Awareness.
+What specific metrics are used to measure the 'Awareness' stage of a marketing funnel?,Impressions and reach.
+"In the AICDA+ funnel model, what stage involves the prospect exploring the solution via metrics like click-through rate (CTR)?",Interest.
+What are two key metrics for tracking the 'Consideration' stage of a marketing funnel?,Demo requests and trial signups.
+The 'Decision' stage of a marketing funnel is primarily measured by conversion rate and _____.,Customer Acquisition Cost (CAC).
+Which stage of the marketing funnel focuses on customer referrals and is measured by Net Promoter Score (NPS)?,Advocacy.
+"According to the 'Bottleneck Principle,' which stage of a marketing funnel should be optimized first?",The single weakest stage relative to industry benchmarks.
+How does a $2x$ improvement at any single stage of a marketing funnel affect the total output?,It doubles the total output.
+Concept: Marketing Funnel,Definition: A map of the customer journey from first awareness to repeat advocacy.
+"In brand strategy, how is 'Positioning' defined relative to the customer?",The single sentence a customer thinks when they hear a brand's name.
+What are the four components of the 'Positioning Statement Formula'?,"Target customer, key need, brand category, and unique benefit."
+"In the messaging hierarchy, what is the 'Tagline'?","A short emotional hook, typically five words or fewer."
+"According to the 'Four Tests of Great Positioning,' what does it mean for positioning to be 'Differentiated'?",A competitor cannot truthfully claim the same thing.
+What part of the messaging hierarchy provides evidence to support a brand's claims?,Proof points.
+Term: Value Proposition,Definition: A single-sentence rational benefit within the messaging hierarchy.
+"Under the 'Four Tests of Great Positioning,' what is the 'Important' test?",Ensuring the benefit matters enough to the customer to justify switching.
+What percentage lift in profit can a captured $1\%$ price increase generate in most business models?,Between $8\%$ and $12\%$.
+"In pricing strategy, what represents the 'Floor' or minimum price a business should set?",Cost-Plus pricing.
+Which pricing anchor acts as the 'Ceiling' based on customer willingness-to-pay?,Value-based pricing.
+What is the 'Pricing Playground'?,The gap between the cost of production and the value perceived by the customer.
+What is the first step in the four-step 'Value-Based Pricing' process?,Quantifying the customer outcome in dollars.
+"When using value-based pricing, what fraction of the quantified customer outcome should the price typically be anchored to?",$10\%$ to $30\%$.
+Pricing Tactic: Anchoring,Definition: Showing a higher price first to influence the perception of subsequent prices.
+What is a 'Decoy' in pricing strategy?,A deliberately bad option that makes the target option look more attractive.
+Which pricing tactic is used to expand the addressable market curve by offering 'Good/Better/Best' options?,Tiered packaging.
+Term: Demand Generation,Definition: The discipline of creating durable interest in a category and solution before a buyer self-identifies.
+"In the Demand Pyramid, which layer targets the broadest audience with low intent?",Category education.
+What type of content belongs at the 'Bottom' of the Demand Pyramid to address high-intent buyers?,"Product proof, such as case studies and demos."
+What is the '3-2-1 Content Cadence' ratio?,3 educational pieces to 2 thought leadership pieces to 1 product piece.
+What is the primary 'output' of a successful demand generation engine?,Trust.
+Which distribution channels are best suited for the 'Awareness' stage of demand generation?,"Organic social, podcasts, and SEO."
+What distribution tools are used during the 'Consideration' stage of the demand pyramid?,"Sales-led nurture, peer reviews, and ROI tools."
+"In demand generation measurement, what is an example of a 'Leading' indicator?",Engaged accounts or content-attributed pipeline.
+What are 'Lagging' indicators in demand generation measurement?,"Sales Qualified Leads (SQLs), win rates, and time-to-close."
+"According to Bain, what percentage lift in profit can a $5\%$ lift in customer retention produce?",$25\%$ to $95\%$.
+Why is acquisition considered 'Rented Growth' while retention is 'Owned Growth'?,Retention compounds because existing customers spend more and refer others at a lower cost.
+What is the first stage of the 'Retention Stack'?,Onboarding.
+"In the retention stack, what is the 'Activation' moment?",The moment a customer experiences their first real value from the product.
+Which stage of the retention stack involves turning usage into an automatic behavior?,Habit.
+Formula: Gross Retention (GRR),"Definition: The percentage of revenue retained from existing customers, excluding any expansion revenue."
+What does 'Net Retention (NRR)' measure?,Revenue retained from existing customers plus revenue from expansion (upsells/cross-sells).
+A business can grow without new acquisition if its Net Retention Rate (NRR) is higher than _____.,$110\%$.
+"According to the 'Leaky-Bucket Diagnostic,' a business cannot grow profitably if its Gross Retention Rate (GRR) is below _____.",$85\%$.
+Loyalty Lever: Status,Example: Using recognition or tiers to keep customers engaged.
+Which loyalty lever focuses on customer skill growth through the use of a product?,Mastery.
+What are the four 'Loyalty Levers' used to drive customer retention?,"Status, Savings, Belonging, and Mastery."
+What is the 'North Star' metric in a KPI hierarchy?,"The single metric that best proves customer value (e.g., Weekly Active Users)."
+"In a KPI hierarchy, what are 'Input Metrics'?",The levers that can be directly moved to influence the North Star metric.
+What is the difference between leading and lagging metrics?,"Leading metrics are predictors of future results, while lagging metrics measure outcomes."
+What is the 'Rule' for automating tasks in an operations stack?,Automate any task that happens $5$ or more times per week.
+"In 'Funnel Math,' how is the overall conversion rate calculated for a sequence of stages?",By multiplying the conversion rates of each individual stage together.
+"In brand positioning, why must a 'Reason to Believe' be included in the formula?",To provide a credible basis for the unique benefit claimed by the brand.
+What is 'Usage-based' pricing?,A model where the price scales directly with the amount of value or volume delivered to the customer.
+"According to the Demand Pyramid, what is the goal of 'Problem-Solution Fit' content?",To narrow the focus to how a specific solution addresses a buyer's identified problem.
+How long should a specific channel be dominated before evaluating its success in a demand gen strategy?,$90$ days.
+"In the context of retention, what does 'Expansion' refer to?",Increasing the depth or breadth of usage within an existing customer account.
+What is the 'Integration Test' for a business strategy?,"Being able to answer questions about strategy, North Star, moat, constraint, and next bet in one sentence each."
+"Under the 'Five Leadership Tensions,' what is the tension regarding customers?",Balancing the needs of today's customer versus tomorrow's customer.
+What is the 'North Star' metric for Netflix mentioned in the materials?,Weekly Active Users or ARR.
+Concept: 3-2-1 Content Cadence,Purpose: To earn a buyer's attention through education and leadership before asking for it through product promotion.
+"In the 'Retention Stack,' which phase predicts long-term retention based on the first $30$ days?",Onboarding.
+What is the goal of the 'Health Metrics' in a KPI dashboard?,"To act as guardrails, such as monitoring NPS, latency, or error rates."
+How does 'Belonging' act as a loyalty lever?,By connecting the customer to a community or identity associated with the brand.
+What is the '1% price increase' stat used for in director notes?,To demonstrate that price is the founder's most underused lever for growth.
+"According to the materials, what does 'Positioning' primarily aim to achieve when a founder is 'not in the room'?",It ensures the customer remembers the specific value the brand provides.
+What is the primary risk of an 'unbalanced' pricing strategy that ignores the competition?,Losing customers to reference points they use to judge market fairness.
+"In demand generation, why is 'Distribution' called the 'fuel'?",Because it carries the 'engine' (content) to the target audience to produce 'output' (trust).
+What happens to the cost of acquisition when the 'Advocacy' stage of the funnel is high?,It decreases due to customer referrals.
+What is the 'Specific' test in brand positioning?,"Naming a real customer segment with a real, identifiable pain point."
+"In 'Funnel Math,' if Awareness has $10,000$ impressions and Interest has $500$ visits, what is the click-through rate (CTR)?",$5\%$.
+Which marketing model uses the acronym AARRR?,"The Pirate Metrics funnel (Acquisition, Activation, Retention, Referral, Revenue)."
+Term: LTV/CAC Ratio,"Definition: A metric comparing the total value of a customer to the cost of acquiring them, with a healthy target being $3$ or higher."
+What is the 'Payback Period' in unit economics?,The number of months it takes to recover the cost of acquiring a customer (target is under $12$ months).
+"In 'Funnel Math,' how is the 'overall conversion' of the entire funnel calculated?","Total output (e.g., referrals) divided by total top-of-funnel input (e.g., impressions)."
+What is the strategic implication of a Net Retention Rate (NRR) over $100\%$?,The business can grow even if it acquires zero new customers.
+Why is the '3-2-1 ratio' said to 'earn attention'?,By providing five pieces of non-promotional value for every one promotional piece.
+What operation should follow the identification of a funnel bottleneck?,Designing an experiment to lift that specific stage's conversion rate.
