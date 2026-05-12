@@ -61,18 +61,16 @@
     .mr5 a{color:${c.navy};text-decoration:none;}
     .mr5 ::selection{background:${c.orange_soft};color:${c.navy};}
 
-    /* Top brand bar */
-    .mr5-bar{display:flex;align-items:center;justify-content:space-between;padding:22px 0 18px;border-bottom:1px solid ${c.rule};margin-bottom:36px;}
-    .mr5-mark{display:flex;align-items:center;gap:12px;}
-    .mr5-mark img{width:38px;height:38px;border-radius:8px;background:#000;padding:3px;flex-shrink:0;}
-    .mr5-mark-meta{line-height:1.15;}
-    .mr5-mark-name{font-family:"Fraunces",serif;font-size:17px;font-weight:600;color:${c.navy};letter-spacing:-0.01em;}
-    .mr5-mark-tag{font-size:10.5px;font-weight:600;letter-spacing:.22em;color:${c.orange};text-transform:uppercase;}
-    .mr5-crumb{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#7a7a7a;font-weight:600;}
+    /* Slim module crumb (no logo — Squarespace nav has the brand mark) */
+    .mr5-crumb-row{display:flex;align-items:center;justify-content:flex-start;padding:32px 0 0;margin-bottom:0;}
+    .mr5-crumb{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#999;font-weight:600;}
+    .mr5-crumb a{color:#999;text-decoration:none;transition:color .15s;}
+    .mr5-crumb a:hover{color:${c.orange};}
     .mr5-crumb b{color:${c.navy};font-weight:700;}
+    .mr5-crumb-sep{margin:0 10px;color:#ccc;}
 
     /* Hero */
-    .mr5-hero{margin:0 0 44px;padding:0;}
+    .mr5-hero{margin:18px 0 44px;padding:0;}
     .mr5-hero-kicker{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:${c.orange};margin:0 0 22px;}
     .mr5-hero-kicker::before{content:"";width:36px;height:1.5px;background:${c.orange};}
     .mr5-hero h1{font-size:54px;line-height:1.05;margin:0 0 22px;color:${c.navy};font-weight:600;letter-spacing:-0.028em;}
@@ -157,10 +155,9 @@
 
     @media(max-width:780px){
       .mr5{padding:0 18px 100px;}
-      .mr5-bar{padding:16px 0 12px;margin-bottom:26px;}
-      .mr5-mark img{width:34px;height:34px;}
-      .mr5-mark-name{font-size:15px;}
-      .mr5-crumb{font-size:10px;letter-spacing:.12em;}
+      .mr5-crumb-row{padding:18px 0 0;}
+      .mr5-crumb{font-size:10px;letter-spacing:.16em;}
+      .mr5-crumb-sep{margin:0 6px;}
       .mr5-hero h1{font-size:34px;line-height:1.08;}
       .mr5-hero-sub{font-size:17px;}
       .mr5-hero-meta{gap:22px;}
@@ -305,11 +302,8 @@
 
     var html = '<div class="mr5">';
 
-    // Top brand bar
-    html += '<div class="mr5-bar"><a class="mr5-mark" href="/course-dashboard">';
-    if (logoUrl) html += '<img src="' + esc(logoUrl) + '" alt="MBA Rock">';
-    html += '<span class="mr5-mark-meta"><span class="mr5-mark-name">' + esc(brand.name || 'MBA Rock') + '</span><span class="mr5-mark-tag">' + esc(brand.tagline || 'Listen. Learn. Live.') + '</span></span></a>';
-    html += '<span class="mr5-crumb">' + esc(prog.moduleTitle) + ' &nbsp;·&nbsp; <b>Lesson ' + prog.position + ' / ' + prog.total + '</b></span></div>';
+    // Slim module crumb — no logo (Squarespace's site nav already has the brand)
+    html += '<div class="mr5-crumb-row"><span class="mr5-crumb"><a href="/course-dashboard">' + esc(brand.name || 'MBA Rock') + '</a><span class="mr5-crumb-sep">/</span>' + esc(prog.moduleTitle) + '<span class="mr5-crumb-sep">/</span><b>Lesson ' + prog.position + ' of ' + prog.total + '</b></span></div>';
 
     // Hero (editorial, no card)
     html += '<div class="mr5-hero">';
