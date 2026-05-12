@@ -1,5 +1,5 @@
-// MBA Rock — Lesson Page Takeover v6.7 (2026-05-12)
-// v6.7: clears any prior cached render (v5+) before applying — fixes the bootstrap race condition.
+// MBA Rock — Lesson Page Takeover v6.8 (2026-05-12)
+// v6.8: arcade modal escapes Squarespace iframe + fills full browser viewport.
 // LISTEN. LEARN. LIVE.
 
 (function() {
@@ -135,22 +135,43 @@
 
   function openArcadeModal() {
     if (document.getElementById('mr5-arcade-modal')) return;
-    var overlay = document.createElement('div');
+
+    // Try to break out of Squarespace's course-player iframe and cover the FULL browser viewport.
+    // Same-origin parents allow this; cross-origin throws, in which case we fall back to local body.
+    var hostDoc = document;
+    try {
+      if (window.top && window.top !== window && window.top.document && window.top.document.body) {
+        hostDoc = window.top.document;
+      }
+    } catch (e) { /* cross-origin parent — stay in local */ }
+
+    var overlay = hostDoc.createElement('div');
     overlay.id = 'mr5-arcade-modal';
-    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(14,17,22,0.94);z-index:99999;display:flex;flex-direction:column;padding:18px;backdrop-filter:blur(6px);';
-    overlay.innerHTML = '<div style="display:flex;justify-content:flex-end;margin-bottom:12px;"><button type="button" id="mr5-arcade-close" style="background:transparent;border:1px solid #444;color:#fff;font-family:Inter,sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:10px 18px;border-radius:30px;cursor:pointer;">Close ×</button></div><iframe id="mr5-arcade-frame" style="flex:1;width:100%;border:0;border-radius:14px;background:#0E1116;" allow="autoplay"></iframe>';
-    document.body.appendChild(overlay);
+    overlay.style.cssText = 'position:fixed;inset:0;width:100vw;height:100vh;background:rgba(14,17,22,0.94);z-index:2147483647;display:flex;flex-direction:column;padding:14px;box-sizing:border-box;backdrop-filter:blur(6px);';
+    overlay.innerHTML = '<div style="flex:0 0 auto;display:flex;justify-content:flex-end;margin-bottom:10px;"><button type="button" id="mr5-arcade-close" style="background:transparent;border:1px solid #555;color:#fff;font-family:Inter,sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:10px 18px;border-radius:30px;cursor:pointer;">Close ×</button></div><iframe id="mr5-arcade-frame" style="flex:1 1 auto;width:100%;height:100%;min-height:0;border:0;border-radius:12px;background:#0E1116;display:block;" allow="autoplay"></iframe>';
+    hostDoc.body.appendChild(overlay);
+    hostDoc.body.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
+
+    // Inject a small CSS override into the embedded game so it fills the iframe width
+    var gameHtml = ARCADE_GAME_HTML.replace(
+      '</head>',
+      '<style>html,body{height:100%;}body{display:flex;align-items:stretch;justify-content:center;}main.app{max-width:980px;width:100%;padding:22px 18px 32px;}</style></head>'
+    );
     var frame = overlay.querySelector('#mr5-arcade-frame');
-    // Use srcdoc so the iframe renders as text/html natively
-    frame.srcdoc = ARCADE_GAME_HTML;
+    frame.srcdoc = gameHtml;
     overlay.querySelector('#mr5-arcade-close').addEventListener('click', closeArcadeModal);
-    // ESC to close
     document.addEventListener('keydown', escCloseArcade);
+    overlay._hostDoc = hostDoc;
   }
   function closeArcadeModal() {
     var o = document.getElementById('mr5-arcade-modal');
-    if (o) { o.remove(); document.body.style.overflow = ''; }
+    if (o) {
+      var hostDoc = o._hostDoc || document;
+      o.remove();
+      try { hostDoc.body.style.overflow = ''; } catch(e){}
+      document.body.style.overflow = '';
+    }
     document.removeEventListener('keydown', escCloseArcade);
   }
   function escCloseArcade(e) { if (e.key === 'Escape') closeArcadeModal(); }
