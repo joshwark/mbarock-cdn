@@ -1340,9 +1340,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Flow_Not_Force.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Throughput vs. Capacity",
+          "body": "Throughput is what actually moves through the system. Capacity is what it could theoretically handle. The two diverge dramatically when there's a bottleneck.\n\nA factory line at 80% capacity utilization but only 40% throughput is hemorrhaging value to the constraint."
+        },
+        {
+          "title": "Little's Law",
+          "body": "The fundamental equation of operations:\n\n$$L = \\lambda \\times W$$\n\nWhere L = work-in-progress, \u03bb = throughput rate, W = lead time. The relationship is rigid \u2014 if you increase WIP without increasing throughput, lead time inflates."
+        },
+        {
+          "title": "Theory of Constraints",
+          "body": "Goldratt's insight: every system has exactly one binding constraint at any time. Optimizing anything but the constraint produces no system-level improvement.\n\nIdentify the bottleneck. Subordinate everything else to it. Elevate the bottleneck. When it moves elsewhere, repeat."
+        },
+        {
+          "title": "Push vs. Pull",
+          "body": "Push systems: produce ahead and hope demand catches up. Inventory accumulates; flexibility falls. Pull systems (Toyota, Kanban): produce only what's demanded downstream.\n\nPull is harder to set up; better in steady state. Push is easier; corrosive at scale."
+        },
+        {
+          "title": "Flow as a Mindset",
+          "body": "Most operations problems are flow problems. Smooth flow generates output, builds quality, exposes problems immediately.\n\nThe operator's question every day: where is flow being interrupted? Fix that before adding capacity."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Eliyahu Goldratt's Theory of Constraints is the most under-applied operating framework.** Most operators try to improve everything simultaneously. The theory says: improving non-constraint resources produces no system-level gain, and often makes things worse by piling up WIP at the bottleneck.\n\nThe Five Focusing Steps of TOC:\n\n1. **Identify the constraint.** Where does work pile up? Where do downstream resources wait? That's the bottleneck.\n2. **Exploit the constraint.** Get every possible minute of productivity from the bottleneck. No setup time. No interruptions. No unnecessary work.\n3. **Subordinate everything else.** Non-constraint resources should not produce faster than the constraint can absorb. Producing ahead just creates WIP.\n4. **Elevate the constraint.** Once exploited and subordinated, invest in expanding the bottleneck \u2014 more capacity, faster machines, more skilled operators.\n5. **Repeat.** When the bottleneck moves, restart at step 1.\n\n**Little's Law** is the math that ties this together. If WIP (L) goes up and throughput (\u03bb) stays constant, lead time (W) increases. Customers wait longer. Quality drops. Defects compound. The operator's instinct to load up the system with more work backfires \u2014 flow degrades as WIP climbs.\n\nThe practical move:\n\n- **Visualize WIP.** Kanban board, status dashboard, any tool that makes the work-in-progress count visible. The number is a real metric.\n- **Set WIP limits.** Each stage has a hard cap. Pulled by downstream demand, not pushed by upstream supply.\n- **Track lead time.** If lead time is increasing, WIP is climbing or the constraint is degrading. Both deserve immediate attention.\n\nFlow beats force. The operations team that internalizes this generates more output, cleaner quality, and less burnout than the one that just pushes harder."
     },
     {
       "id": "M5L2",
@@ -1357,9 +1379,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Process_Maps__Order_from_Chaos.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Why Map a Process",
+          "body": "An unmapped process is a process nobody understands the same way. Different team members carry different mental models, which is how errors compound and improvements stall.\n\nMapping forces a single shared picture. The act of mapping reveals more than the final map."
+        },
+        {
+          "title": "Value-Adding vs. Non-Value-Adding Steps",
+          "body": "Walk every step of a process and tag each as: value-adding (the customer would pay for this), necessary non-value-adding (regulatory, accounting), or pure waste.\n\nTypical first map: 30-50% pure waste. The clean-up is operating leverage waiting to be harvested."
+        },
+        {
+          "title": "Handoff Friction",
+          "body": "Most defects and delays happen at handoffs \u2014 between people, teams, systems. Each handoff is a potential information loss and accountability blur.\n\nMinimize handoffs by design. Where handoffs are unavoidable, make them explicit, named, and time-bounded."
+        },
+        {
+          "title": "Swim Lanes",
+          "body": "Process maps with swim lanes show who owns each step. The handoffs are visible as lines crossing lanes.\n\nA process with too many lane crossings is one with too many handoffs. Each crossing is friction."
+        },
+        {
+          "title": "Map the Real Process",
+          "body": "The mapped process is often aspirational. The real process is what people actually do. Both are useful; confusing them is fatal.\n\nMap the real process first. Then design the desired one. The gap is your improvement work."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Process maps are not documents. They are diagnostic instruments.** The act of getting a team to agree on a single process map is where most of the value comes from \u2014 long before any optimization happens. People discover they've been doing it differently. Senior leaders discover steps they didn't know existed. Errors get traced to specific handoffs.\n\nThe sequence that works:\n\n1. **Walk the process in person**, end-to-end, with the people who do it. Notebook. No assumptions. Note every step, every handoff, every decision point.\n2. **Draw it on a wall** \u2014 paper, sticky notes, anything visual and rearrangeable. Computer tools come later.\n3. **Tag every step** as value-adding (V), necessary non-value-adding (N), or waste (W). Be ruthless. \"We've always done it that way\" is not value.\n4. **Quantify each step**: cycle time, queue time, error rate. Most steps take 5x longer than people estimate.\n5. **Find the 80/20 of waste.** Most processes have 2-3 steps that account for the majority of delay or defects. Fix those first.\n\n**The handoff principle** deserves its own attention. Each time work passes from one person/team/system to another, three things happen: information gets lost, accountability blurs, time is added. A 5-step process with 0 handoffs runs faster and cleaner than a 5-step process with 4 handoffs. Operations design that minimizes handoffs systematically wins.\n\nThe practical move every operator should make at least once a year: pick the highest-volume process in your business. Walk it end-to-end. Map it on a wall with the people who run it. Tag every step. Eliminate the top 3 waste sources. The exercise pays for itself within a quarter, and the team that maps gets better at noticing waste forever after."
     },
     {
       "id": "M5L3",
@@ -1374,9 +1418,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_Quality_Engine.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Quality at the Source",
+          "body": "Cheapest quality control: build it right the first time. Inspecting after the fact catches errors but doesn't prevent them, and inspection has its own error rate.\n\nThe Toyota principle: every operator is empowered to stop the line when they see a defect. Quality is owned at the source, not centralized in a QA department."
+        },
+        {
+          "title": "Defect Cost Curve",
+          "body": "A defect caught at the source costs $1. Caught in mid-production: $10. Caught at the customer: $100. Caught in a recall: $1,000+.\n\nThe exponential cost curve makes investment in source-quality the highest-ROI operating investment you can make."
+        },
+        {
+          "title": "Six Sigma Foundations",
+          "body": "Six Sigma = 3.4 defects per million opportunities. The methodology (DMAIC: Define, Measure, Analyze, Improve, Control) is a structured approach to reducing defect rates.\n\n$$\\text{DPMO} = \\frac{\\text{Defects} \\times 1{,}000{,}000}{\\text{Opportunities}}$$\n\nNot every business needs Six Sigma. But the discipline of measuring defects-per-million is universally useful."
+        },
+        {
+          "title": "First Pass Yield",
+          "body": "Percentage of units that pass through the process correctly the first time, with no rework.\n\n$$\\text{FPY} = \\frac{\\text{Units Passed First Time}}{\\text{Total Units Started}}$$\n\nLow FPY = high hidden cost. Rework, scrap, scheduling chaos. The number to track to know if process improvements are landing."
+        },
+        {
+          "title": "Build Quality In",
+          "body": "Quality engineering means designing the process so defects are physically hard to produce. Poka-yoke (error-proofing): make the wrong action impossible.\n\nA USB connector that only inserts one way is poka-yoke. Color-coded surgical instruments so wrong-side surgery is harder is poka-yoke. The design eliminates the error before it can occur."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Quality is not a department. It's an architecture.** Businesses that try to inspect quality in \u2014 running defective products past more and more inspectors \u2014 produce mediocre quality at high cost. Businesses that engineer quality in \u2014 designing processes so defects are hard to produce \u2014 produce excellent quality cheaply.\n\nThe shift in mindset happens when you understand the **defect cost curve**:\n\n- Defect prevented at design stage: ~$1\n- Defect caught at source by operator: ~$10\n- Defect caught at internal inspection: ~$100\n- Defect caught by customer: ~$1,000+\n- Defect causes a recall or lawsuit: ~$10,000-$1,000,000+\n\nA company that spends $1,000 on better process design saves an order of magnitude on every downstream stage. The math is unforgiving and consistently ignored.\n\n**Six Sigma's contribution** isn't the specific 3.4-defects-per-million target \u2014 most businesses can't and shouldn't aim there. The contribution is the *discipline of measurement*. You can't improve what you don't measure, and most quality issues are invisible because nobody's counting:\n\n$$\\text{DPMO} = \\frac{\\text{Defects observed} \\times 1{,}000{,}000}{\\text{Opportunities for defect}}$$\n\nIf you don't know your DPMO, you're flying blind on quality.\n\n**First Pass Yield** is the more practical operating metric. What percentage of units, transactions, or deliverables make it through the process without rework? At 95% FPY, 5% of capacity is consumed by rework \u2014 a hidden tax on throughput. At 85% FPY, 15% is rework, with cascading effects on cost, lead time, and customer experience.\n\nThe practical move: pick your highest-volume process. Track FPY for a month. Find the top three causes of rework. Eliminate them via design \u2014 not inspection. Repeat. Compound improvements over a year and the operating leverage is enormous."
     },
     {
       "id": "M5L4",
@@ -1391,9 +1457,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Modern_Tech_Strategy.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Tech as Strategic Infrastructure",
+          "body": "Technology decisions are 5\u201310 year commitments masquerading as 6-month projects. The architecture you build now determines what's possible (and impossible) for years.\n\nMost tech mistakes are commitments to the wrong abstraction, not bad code. The wrong abstraction compounds; bad code can be refactored."
+        },
+        {
+          "title": "Build vs. Buy vs. Partner",
+          "body": "Three options for every capability:\n\n- **Build**: full control, high cost, slow.\n- **Buy** (off-the-shelf software): fast, lower control, vendor risk.\n- **Partner**: someone else operates it; you integrate.\n\nDefault to buy/partner for commodities; build only what's core differentiation."
+        },
+        {
+          "title": "Technical Debt",
+          "body": "Technical debt is the implementation choices made for short-term speed that will cost long-term productivity. Some debt is good (move fast on uncertain bets); some is poison (compounds against you).\n\nThe operator's job isn't zero debt. It's managing the debt portfolio."
+        },
+        {
+          "title": "AI as Force Multiplier",
+          "body": "In 2026, AI is no longer optional. The question isn't whether to use it but *where* \u2014 drafting, summarizing, coding, customer support, analytics, decision support.\n\nThe operators using AI well are 2-3x more productive. The ones not using it are losing ground daily."
+        },
+        {
+          "title": "Vendor Lock-In",
+          "body": "Every SaaS subscription is a future migration cost. Data formats, API dependencies, integration patterns \u2014 each accumulates switching cost.\n\nFavor vendors with open standards, exportable data, replaceable abstractions. The expensive lesson is learning which vendors you can leave easily."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Technology strategy is the most consequential operating decision of the modern business \u2014 and the most under-managed by non-technical founders.** The decisions made about stack, vendors, and abstractions in years 1\u20133 determine the company's flexibility for the next 10. Bad decisions compound silently; good decisions compound quietly.\n\nThe **build/buy/partner** framework is the most useful first filter. For every capability your business needs:\n\n- **Build** when the capability is your differentiated core. The thing customers come to you for. Worth full ownership.\n- **Buy** when the capability is commodity infrastructure. Email, CRM, accounting, HR, infrastructure. Buy the best off-the-shelf option; integrate; move on.\n- **Partner** when the capability is operationally complex and not your core. Payments (Stripe), fulfillment (Shopify Fulfillment Network), telephony (Twilio). Someone else's operating discipline beats yours.\n\nThe mistake most founders make is **building commodity** out of misplaced pride (\"we'll do it better\") and **buying differentiation** out of misplaced humility (\"others know more\"). Reverse both.\n\n**Technical debt** is the second strategic lever. All software has debt \u2014 implementation choices that traded long-term flexibility for short-term speed. Some debt is wise:\n\n- Building an MVP with the cheapest, ugliest possible stack to validate demand. The right call. Refactor when validated.\n- Skipping internationalization for the first year. Right when you only have US customers.\n- Hard-coding values that will need to be configurable later. Right if it ships features now.\n\nSome debt is poison:\n\n- Coupling business logic to a third-party API you can't replace.\n- Building on infrastructure that won't scale past your growth target.\n- Skipping observability and security in the early build.\n\nThe operator's job is **knowing which debts you're carrying and what the payback plan is**. Annual technical debt reviews. Quarterly architecture decisions. The debt that's planned and intentional is fine. The debt that's accidental and forgotten is what kills the company at the worst moment."
     },
     {
       "id": "M5L5",
@@ -1408,9 +1496,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Build_vs.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Strategic Importance Axis",
+          "body": "How core is this capability to your differentiation? High = customers come to you for this; low = table stakes everyone needs.\n\nHigh-strategic = bias to build. Low-strategic = bias to buy. The simple X-axis of the decision."
+        },
+        {
+          "title": "Implementation Complexity Axis",
+          "body": "How complex is the implementation? High = specialized expertise, infrastructure, ongoing maintenance burden. Low = configure-and-go.\n\nHigh-complexity = bias to buy. Low-complexity = either works. The Y-axis."
+        },
+        {
+          "title": "The 2x2 Matrix",
+          "body": "Build (high strategic, low complexity): your core differentiation.\nBuy (low strategic, low complexity): commodity tools.\nPartner (high strategic, high complexity): leverage a specialist's deep expertise.\nAvoid (low strategic, high complexity): why do you need this at all?"
+        },
+        {
+          "title": "Total Cost of Ownership",
+          "body": "Total Cost of Ownership = purchase price + implementation + ongoing maintenance + opportunity cost of internal time + switching cost when you outgrow it.\n\n$$\\text{TCO}_{3\\text{yr}} = \\text{Initial} + 36 \\times \\text{Monthly} + \\text{Implementation} + \\text{Integration} + \\text{Training}$$\n\nNaive comparisons compare initial price. Sophisticated ones compare 3-year TCO with switching cost."
+        },
+        {
+          "title": "When to Re-Decide",
+          "body": "The decision isn't permanent. Every 18-24 months, revisit: has the capability become more or less strategic? Have buy-side options improved? Is your scale now justifying a build?\n\nMany companies build commodity in year 2 (rational) and never re-decide when buy options mature. Capital trapped."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**The build-vs-buy decision is one of the most common \u2014 and most poorly made \u2014 strategic decisions in modern business.** Founders default to building (sometimes from misplaced pride, sometimes because they enjoy the work). CFOs default to buying (sometimes from misplaced caution, sometimes for short-term cost optics). Neither default is right; the answer is contextual.\n\nThe 2x2 matrix:\n\n```\n                  Low Strategic    High Strategic\n                  \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nLow Complexity:   BUY              BUILD\nHigh Complexity:  AVOID            PARTNER\n```\n\n- **BUY** (low strategic, low complexity): payroll, email, accounting, basic CRM. Buy the best, move on.\n- **BUILD** (high strategic, low complexity): your core product features. The thing customers come to you for. Build with full ownership.\n- **PARTNER** (high strategic, high complexity): payments, fulfillment, AI infrastructure. The capability is strategic but operationally hard. Use Stripe, not your own card processor.\n- **AVOID** (low strategic, high complexity): why do you need this at all? Often the right answer is to scope the requirement smaller.\n\nThe **Total Cost of Ownership** lens is what trips up most analyses. Naive comparisons look at:\n\n- Buy: $50K/year SaaS subscription\n- Build: $200K of one-time engineering\n\nAnd conclude \"build pays back in 4 years.\" But the real TCO of build includes:\n\n- $200K initial engineering\n- $80K/year ongoing maintenance (a senior engineer's loaded cost)\n- Opportunity cost of that engineer not building differentiation\n- Eventual rewrites when scale changes (Engineering attrition compounds this)\n- Documentation, on-call, security patching, etc.\n\nReal 5-year TCO: $200K + $400K + opportunity cost = $600K+ vs SaaS's $250K. Build was never cheaper.\n\nThe equation worth burning in:\n\n$$\\text{TCO}_{n\\text{yr}} = \\text{Initial} + n \\times \\text{Annual Maintenance} + \\text{Opportunity Cost} + \\text{Switching Cost}$$\n\nThe correct comparison is full TCO, not initial price. Most build decisions don't survive that comparison."
     },
     {
       "id": "M6L1",
