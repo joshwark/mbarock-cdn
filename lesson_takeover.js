@@ -1,9 +1,32 @@
-// MBA Rock — Lesson Page Takeover v6.6 (2026-05-12)
-// v6.6: arcade embedded inline as iframe srcdoc modal (no Content-Type issues from external host).
+// MBA Rock — Lesson Page Takeover v6.7 (2026-05-12)
+// v6.7: clears any prior cached render (v5+) before applying — fixes the bootstrap race condition.
 // LISTEN. LEARN. LIVE.
 
 (function() {
   if (document.querySelector('[data-mr-dashboard="1"]')) return;
+
+  // ── v6.7 RESET: a stale (cached) version of this script may have run first.
+  // Tear down its render before we re-apply, so the freshest version always wins.
+  try {
+    document.querySelectorAll('[data-mrv5-replacement]').forEach(function(el){ el.remove(); });
+    document.querySelectorAll('[data-mrv4-replacement]').forEach(function(el){ el.remove(); });
+    document.querySelectorAll('[data-chip="1"]').forEach(function(el){ el.remove(); });
+    document.querySelectorAll('[data-mrv5-hidden]').forEach(function(el){
+      el.style.display = '';
+      el.removeAttribute('data-mrv5-hidden');
+    });
+    document.querySelectorAll('[data-mrv4-hidden]').forEach(function(el){
+      el.style.display = '';
+      el.removeAttribute('data-mrv4-hidden');
+    });
+    if (document.body) {
+      document.body.removeAttribute('data-mr-v5-applied');
+      document.body.removeAttribute('data-mr-v4-applied');
+    }
+    // Remove any prior arcade modal too
+    var prior = document.getElementById('mr5-arcade-modal');
+    if (prior) prior.remove();
+  } catch (e) { console.warn('[MR v6.7 reset] skipped', e); }
   var path = window.location.pathname || '';
   if (!/\/mba-rock\//.test(path)) return;
   var slugMatch = path.match(/\/mba-rock\/([^/?#]+)/);
