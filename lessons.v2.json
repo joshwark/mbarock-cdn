@@ -1023,9 +1023,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_90-Day_Blueprint.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Why First 90 Days Matter Disproportionately",
+          "body": "Reputations form fast. The story your team tells about you after 90 days is the story they tell forever. Patterns set in the first quarter compound for years; correcting them later costs 10x.\n\nThe 90-day window is not for results \u2014 it's for credibility and read."
+        },
+        {
+          "title": "Diagnosis Before Action",
+          "body": "Spend the first 30 days listening, not deciding. Map the org, the unspoken rules, the political fault lines, the actual cash flows. Most new leaders fail because they prescribe before diagnosing.\n\nThe one early move that's always right: shut up and ask questions."
+        },
+        {
+          "title": "Quick Wins vs. Right Wins",
+          "body": "Pick 2-3 quick wins in the first 60 days \u2014 visible, low-risk, broadly useful. They buy you the credibility to make harder calls later.\n\nResist the temptation to swing for the fences in week one. Quick wins are about building trust, not impressing anyone."
+        },
+        {
+          "title": "STARS Framework",
+          "body": "Michael Watkins's situation typology: **S**tartup, **T**urnaround, **A**ccelerated growth, **R**ealignment, **S**ustaining success. Each demands a different playbook.\n\nDiagnose which one you're inheriting BEFORE choosing tactics. A turnaround playbook in a sustaining-success situation breaks the team."
+        },
+        {
+          "title": "The Communication Cadence",
+          "body": "Set up weekly 1:1s with every direct report in week one. Monthly skip-levels with rising contributors. A regular all-hands by day 30.\n\nThe rituals create the relational substrate. Without them, you're a stranger making decisions about people you don't know."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Michael Watkins's *The First 90 Days* is the most-quoted leadership book for one reason: he proved that early-tenure leaders fail at predictable patterns.** Most failures aren't capability problems \u2014 they're sequencing problems. New leaders take action before they've diagnosed. They prescribe before they understand. They miss that the *type* of situation they've inherited determines the right play.\n\nThe STARS framework gives you five archetypes, each with a different playbook:\n\n- **Startup**: build from zero. Energy and pace are your assets; everything is greenfield.\n- **Turnaround**: business is in crisis. Speed, decisiveness, and willingness to make unpopular calls. Cut deep early.\n- **Accelerated growth**: business is winning; the challenge is scaling without breaking it. Hire ahead, systematize, raise the bar.\n- **Realignment**: business looks healthy but is on a slow decline. Hardest of all \u2014 the team doesn't see the problem yet, so they resist change.\n- **Sustaining success**: protect what works. Resist the urge to make changes for change's sake.\n\nMost failed transitions are realignment situations where the new leader played a turnaround playbook (alienating the team that was performing) or sustaining-success (missing the slow decline). Diagnosis is half the work.\n\n**The operating discipline for the first 90 days**: spend Week 1 on listening tours. Map the actual org chart, the influence network (not the formal one), the recent history, the cash, the customers. Make zero major decisions. Earn the right to lead by demonstrating you understand the place before you change it."
     },
     {
       "id": "M3L1.5",
@@ -1040,9 +1062,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Worth_Aligned.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Value Proposition for Talent",
+          "body": "Why would top talent come work for you instead of the higher-paying option? Comp is table stakes; the differentiation is meaning, growth, autonomy, and the people they'll work with.\n\nIf you can't articulate your talent value proposition, you'll lose every contested hire to a competitor with deeper pockets."
+        },
+        {
+          "title": "Mission Alignment",
+          "body": "People do their best work when the mission lines up with what they want their life to be about. Mission isn't a slogan \u2014 it's a filter for who joins and who stays.\n\nThe sharper the mission, the smaller the candidate pool. That's a feature, not a bug. Narrow missions attract zealots."
+        },
+        {
+          "title": "Worth Beyond Comp",
+          "body": "Money matters until it doesn't. Above market-rate, marginal dollars buy less and less. Growth, autonomy, ownership, and meaning compound over careers.\n\nThe team you want includes people for whom worth is calculated this way. The team you don't want optimizes purely for cash."
+        },
+        {
+          "title": "The Equity Conversation",
+          "body": "Equity is the long-term alignment mechanism. Give it generously and meaningfully \u2014 not as a substitute for fair cash comp but in addition.\n\nThe employees who think about equity correctly will help you build the company. The ones who don't will leave the day the price tag is offered elsewhere."
+        },
+        {
+          "title": "Cultural Fit (Carefully)",
+          "body": "Cultural fit is real, but it's the most-abused hiring criterion. \"Fit\" too easily becomes a euphemism for \"comfortable with me.\" That's how teams become monocultures.\n\nThe right test: does this person make the culture stronger AND bring something the team is missing?"
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Talent doesn't sort by salary alone. It sorts by what feels worth it.** The mediocre engineer might take an extra $30K to switch jobs. The top 1% engineer is choosing between offers that are functionally identical on compensation. What tips the decision is everything else: the problem space, the team, the autonomy, the trajectory.\n\nThe operator's instinct to win every candidate on cash is expensive and ultimately ineffective. The companies that build the best teams over time \u2014 Stripe, Vercel, Anthropic, Linear \u2014 articulate a worth proposition that competes on dimensions deeper than salary:\n\n- **Problem space**: \"You'll work on the most important problem in [domain].\" Mission for the technically ambitious.\n- **Team**: \"You'll work with the best people you've ever met.\" Reference checks and peer signals do the recruiting.\n- **Autonomy**: \"You'll own this end-to-end, not implement someone else's spec.\" Trade rigor for ownership in the right roles.\n- **Trajectory**: \"In two years you'll have done things you couldn't have done elsewhere.\" Compound career growth.\n\nThis isn't soft branding. It's a strategic choice. Every candidate decision is a function of `(comp + worth - opportunity cost)`. The companies that win contested hires understand that worth compounds \u2014 and they invest in it.\n\nThe practical move: write your talent value proposition in three sentences. \"Come work here because X, Y, Z.\" If those three sentences are interchangeable with any competitor's, you have a talent problem you can't solve with salary."
     },
     {
       "id": "M3L2",
@@ -1058,18 +1102,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Crisis Leadership",
-        "Communication Under Pressure",
-        "Decision Speed vs. Accuracy",
-        "Stakeholder Management in Crisis",
-        "The Playbook Mindset"
+        {
+          "title": "Acknowledge Reality Fast",
+          "body": "Crisis demands rapid public acknowledgment. Denial or delay multiplies damage exponentially. The first 24 hours set the trajectory of the recovery.\n\nThe template: 'Here's what happened. Here's what we know. Here's what we don't know yet. Here's what we're doing.' Plain English. No spin."
+        },
+        {
+          "title": "Single Source of Truth",
+          "body": "In crisis, multiple narratives breed faster than reality. Designate one internal channel for facts (Slack channel, doc, dashboard) and update it relentlessly.\n\nThe alternative is rumor markets where the worst story wins. Truth markets need active maintenance."
+        },
+        {
+          "title": "Decision Speed Over Decision Quality",
+          "body": "In normal times, slow careful decisions are better. In crisis, a 70% decision made immediately beats a 95% decision made in three days.\n\nUse reversible decisions liberally. Use irreversible ones sparingly and with the most senior input you have."
+        },
+        {
+          "title": "Inner Circle Discipline",
+          "body": "Crisis tempts leaders to consult everyone for reassurance. Resist. Designate a small core (3-5 people) for fast loop decisions. Communicate broadly; decide narrowly.\n\nLarger groups slow decisions, leak information, and dilute accountability. The core has clear authority and clear blame."
+        },
+        {
+          "title": "After-Action Review",
+          "body": "Every crisis is also a learning opportunity if you debrief honestly. Within 48 hours of resolution, the inner circle plus 1-2 outside perspectives review: what did we miss, what worked, what would we change?\n\nMost organizations skip this step and repeat the mistake."
+        }
       ],
       "take_action": [
         "Write a one-page crisis comms template for your most likely scenario",
         "Run a 30-minute tabletop crisis exercise with your team",
         "Identify who makes decisions when you're unreachable"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**The single most useful crisis frame: distinguish between the *event* and the *crisis*.** The event is what happened. The crisis is the period of uncertainty, accelerated decisions, and reputational stakes that follows. The event might last a day; the crisis can last months.\n\nMost organizations fail crisis management not because the event was unmanageable but because they treated the crisis like business as usual. The cardinal sins:\n\n- **Slow public acknowledgment.** Every hour the official story is silent, unofficial stories fill the void. The first version of the narrative usually wins.\n- **Distributed decision-making.** \"We need consensus\" in a crisis means \"we will be slower than the situation requires.\"\n- **Optimizing for non-crisis values.** Patience, thoroughness, broad input \u2014 all virtues in normal times, all liabilities in crisis.\n\nThe crisis playbook is short and ugly:\n\n1. **Name the crisis** publicly within hours, not days.\n2. **Designate an Incident Commander** with explicit authority to make decisions for the duration.\n3. **Single channel of truth** for facts. Update at known cadence (every 4 hours initially).\n4. **Decide on reversible actions fast**, irreversible ones with the highest available input.\n5. **Communicate inwardly and outwardly on a clock**, not when convenient.\n6. **Debrief within 48 hours** of resolution. Don't let the lessons disperse with the urgency.\n\nThe difference between organizations that emerge from crisis stronger and those that emerge weaker is rarely the original event. It's whether they treated the crisis itself as a structured, time-bound mode with its own playbook \u2014 or whether they tried to keep doing normal operations under pressure."
     },
     {
       "id": "M3L2.5",
@@ -1085,18 +1145,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Radical Candor",
-        "Feedback Loops",
-        "Coaching vs. Directing",
-        "SBI Model (Situation, Behavior, Impact)",
-        "Growth Mindset in Teams"
+        {
+          "title": "Feedback as a Habit, Not an Event",
+          "body": "Most organizations treat feedback as an annual ritual. The best treat it as a daily texture: small, specific, immediate, two-way.\n\nThe annual review is necessary for HR but useless for growth. The growth happens in the 5-second comment after a meeting, not the 30-minute conversation in March."
+        },
+        {
+          "title": "Direct Beats Diplomatic",
+          "body": "Most managers soften feedback to the point of unintelligibility. The receiver doesn't get the signal, doesn't change, and is more frustrated when consequences arrive later.\n\nKim Scott's 'radical candor': care personally, challenge directly. Both. Neither alone works."
+        },
+        {
+          "title": "Feedback Up, Not Just Down",
+          "body": "Leaders need feedback more than reports do, and get it less. Build mechanisms that reward \u2014 not punish \u2014 upward signal: skip-levels, anonymous channels, structured 360s.\n\nMost CEOs become disconnected from reality not from malice but from filtered information."
+        },
+        {
+          "title": "The Mirror Map",
+          "body": "Most feedback failures are not delivery problems \u2014 they're calibration problems. The leader thinks the team is performing better or worse than they actually are.\n\nThe mirror map: write down where you think each person is on a 5-point scale, then ask their peers to do the same. The deltas are where attention is needed."
+        },
+        {
+          "title": "Closing the Loop",
+          "body": "Feedback without follow-up is theater. After delivering it, schedule a check-in 30 days out: did the behavior change? Did the situation improve?\n\nThe loop closes \u2014 or it doesn't. Either way, you've learned something about the person, the feedback, and yourself."
+        }
       ],
       "take_action": [
         "Give one specific, behavior-based piece of feedback to a teammate this week",
         "Ask for feedback: 'What's one thing I could do differently?'",
         "Schedule a monthly 1:1 with structured feedback built in"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Feedback is the highest-leverage management activity. Most leaders are bad at it because they conflate three different practices.**\n\n1. **Coaching feedback** is forward-looking, growth-oriented, and continuous. \"Here's what would have made that presentation land harder.\" Daily texture.\n2. **Performance feedback** is backward-looking, evaluative, and discrete. \"Here's how I'd rate this quarter relative to your goals.\" Quarterly cadence.\n3. **Termination feedback** is binary, final, and structured for legal and humane outcomes. Rare and grave.\n\nMost feedback failures come from blending types. Coaching delivered with the gravity of performance feedback creates anxiety for trivial issues. Performance feedback delivered in coaching tone undersignals the stakes. Termination feedback delivered as coaching creates surprise and litigation.\n\nThe **mirror map** is one of the most useful private exercises a leader can do. Take a sheet of paper. For each direct report, write down where you think they sit on three scales: technical quality, judgment under uncertainty, and team contribution. Score 1-5 on each. Then independently ask 2-3 of their peers to do the same exercise blind.\n\nThe deltas reveal:\n\n- **Where your view diverges from peers** \u2014 you might be wrong, or you might be the only one seeing something.\n- **Where peer views diverge from each other** \u2014 the contributor is sending different signals to different audiences.\n- **Where everyone agrees but the contributor disagrees** \u2014 calibration problem on the contributor's side, often the deepest issue.\n\nMost feedback is wasted because it lands without context. The mirror map gives you the context before the conversation. Then the conversation can be specific, calibrated, and actionable instead of generic and dismissable."
     },
     {
       "id": "M3L3",
@@ -1111,9 +1187,31 @@
       "video_url": null,
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Cost of a Bad Hire",
+          "body": "A wrong hire at mid-level costs 1.5\u20133x annual salary in cash and an immeasurable amount in team morale, opportunity cost, and culture erosion.\n\nThe true cost isn't the salary you paid \u2014 it's the work that didn't happen, the teammates who left, and the time it takes to remediate."
+        },
+        {
+          "title": "Slow Means Calibrated",
+          "body": "Slow hiring isn't bureaucratic \u2014 it's deliberately calibrated. Multiple interviews. Structured rubrics. Reference checks that aren't perfunctory. Decision committees, not lone deciders.\n\nThe goal is high signal, not high friction."
+        },
+        {
+          "title": "Reference Checks That Matter",
+          "body": "Don't ask references for opinions \u2014 ask for stories. \"Tell me about a time X faced an ambiguous problem. What did they do?\" Specific behavioral evidence over generic praise.\n\nAlso: back-channel references (people the candidate didn't list). They are 10x more honest."
+        },
+        {
+          "title": "Fire Fast Is Compassion",
+          "body": "Keeping someone in a role they can't succeed in is cruel \u2014 to them, to the team, to the work. The longer you wait, the worse the eventual departure.\n\nFire when the conviction forms, not when the documentation is complete. Documentation can catch up. Trust deteriorates while you wait."
+        },
+        {
+          "title": "Document Performance Issues Early",
+          "body": "If you might need to manage someone out, the conversation should start the moment you notice the gap \u2014 not three months later when you're considering termination.\n\nWritten feedback, with specific examples, given in real time. It's the documentation AND the path to improvement at the same time."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**The single highest-leverage management decision is who you hire. The second-highest is how fast you correct mistakes.**\n\nBoth are routinely botched. Hiring fails because operators optimize for speed (we need someone NOW) over fit (the right person for this role, this team, this stage). Firing fails because operators optimize for comfort (avoiding the hard conversation) over honesty (the situation isn't working and waiting won't fix it).\n\nThe asymmetry of consequences is what makes both calls feel hard:\n\n- **Hiring decision**: false positive (hiring wrong) is costly and slow to discover. False negative (passing on right candidate) is invisible. Bias is to false positive.\n- **Firing decision**: false negative (keeping wrong person) is costly and invisible (you can't see the better team you would have had). False positive (firing right person) is visible and painful. Bias is to false negative.\n\nThe disciplines that compound:\n\n- **Calibrated interview loops**. Multiple interviewers, structured rubrics, decision meeting with rubric scores compared. A confident hire requires 3+ strong yes signals; one no can veto.\n- **Probation period as real probation**. The 90 days post-hire are the cheapest window to course-correct or part ways. After 6 months, the cost of separation triples.\n- **Performance conversations in real time**. If you find yourself building a private file of concerns, the concerns belong in front of the person. Either they course-correct, or you have a clearer basis for the decision.\n- **The 'would you re-hire this person today?' test**. Asked privately by each manager about each report once a quarter. The first time the answer is no, the management process kicks in. Waiting longer is just expensive avoidance.\n\nThe organizations that build great teams over decades \u2014 not just great quarters \u2014 get good at both moves. Slow hiring is the high-quality intake. Fast firing is the high-quality maintenance. Neither alone is enough."
     },
     {
       "id": "M3L4",
@@ -1128,9 +1226,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Velocity_of_Decision.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Decision Quality vs. Decision Speed",
+          "body": "In most operating contexts, speed beats marginal quality. A 75% decision today is usually better than a 90% decision in two weeks \u2014 because the situation has moved.\n\nThe exception: irreversible decisions. Slow down on the ones you can't take back."
+        },
+        {
+          "title": "RAPID Framework",
+          "body": "Bain's role assignment for decisions: **R**ecommend, **A**gree, **P**erform, **I**nput, **D**ecide.\n\n- Recommend: drives the analysis\n- Input: provides expertise\n- Agree: sign-off authority on specific dimensions (legal, finance)\n- Decide: single point of accountability\n- Perform: executes the decision\n\nWithout role clarity, decisions stall in 'who's deciding?' loops."
+        },
+        {
+          "title": "Reversible vs. Irreversible",
+          "body": "Bezos's two-way vs one-way door framing. Two-way doors (you can walk back) deserve fast decisions and bias toward action. One-way doors (you can't undo) deserve careful decisions with the highest available input.\n\nMost decisions are two-way doors disguised as one-way doors by anxious organizations."
+        },
+        {
+          "title": "Single Threaded Owner",
+          "body": "Every important decision has exactly one Decider. Not a committee. Not a consensus. One person whose name is on it.\n\nCommittees create plausible deniability for everyone. Single owners create accountability and speed."
+        },
+        {
+          "title": "Disagree and Commit",
+          "body": "Once the Decider has decided, the dissenters commit fully to execution. Disagreement before the decision is healthy. Continued disagreement after the decision is poison.\n\nThe contract: speak honestly while the decision is open. Execute fully once it's closed."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Decision velocity is one of the most under-measured operational metrics, and it predicts performance more than most KPIs.** Every organization has a decision-making clock speed. Some make every decision in a meeting in 20 minutes; others take 6 weeks for the same call. The slow ones don't make better decisions \u2014 they just make slower ones.\n\nThe **RAPID framework** addresses the most common cause of decision drag: role ambiguity. \"Who decides?\" is a question that should never come up mid-meeting. RAPID assigns five distinct roles before the meeting:\n\n- **Recommend**: drives the analysis and brings the proposal.\n- **Input**: relevant subject-matter experts who must be consulted.\n- **Agree**: people with veto on specific dimensions (legal sign-off, finance sign-off).\n- **Decide**: the single accountable decision-maker.\n- **Perform**: the team that executes after.\n\nWhen the roles are clear, the decision happens. When they're ambiguous, the meeting becomes a status update and the decision rolls forward.\n\n**Bezos's two-way door framing** is the second highest-leverage decision discipline. Most decisions are reversible \u2014 you can hire and then move someone; you can launch and then iterate; you can enter a market and then exit. These deserve speed and a bias to action. A small number of decisions are irreversible \u2014 sale of the company, irreversible legal commitments, public statements with reputation stakes. These deserve the highest available input and unhurried care.\n\nThe mistake organizations make is treating all decisions like one-way doors. The result: a culture that's slow on everything, especially the things that don't matter. The fix is naming the door explicitly: \"This is a two-way door. We'll decide today and revisit in 60 days if it's not working.\""
     },
     {
       "id": "M3L5",
@@ -1146,18 +1266,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Organizational Culture",
-        "Culture vs. Climate",
-        "Values-Behavior Alignment",
-        "Cultural Debt",
-        "Culture as Competitive Advantage"
+        {
+          "title": "Culture Is Behavior, Not Values",
+          "body": "Culture isn't what's on the poster. It's the patterns of behavior that get rewarded, ignored, or punished. The gap between stated values and actual behavior is your real culture.\n\nIf you want to know a company's culture, watch what happens when someone does the wrong thing. Or the right thing. The response IS the culture."
+        },
+        {
+          "title": "Hiring + Firing = Architecture",
+          "body": "Every hire and every termination is a culture vote. Over time, the people who stay shape the culture more than any document.\n\nManagers who hire and fire well are doing the most important culture work. The ones who write values statements but tolerate misbehavior are doing the opposite."
+        },
+        {
+          "title": "Rituals as Carriers",
+          "body": "Culture transmits through repeated rituals: how meetings start, how decisions are announced, how mistakes are processed, how wins are celebrated.\n\nIntentional rituals shape culture. Accidental rituals shape it too \u2014 usually toward the lowest common behavior pattern."
+        },
+        {
+          "title": "Stories You Tell",
+          "body": "The stories that get retold are the ones that encode the culture. The hero story (someone who exemplified the values), the cautionary tale (someone who didn't), the founding myth.\n\nLeaders who don't curate the story-telling get the stories the team chooses. Often not the ones you'd want."
+        },
+        {
+          "title": "The Bar Conversation Test",
+          "body": "If two employees are at a bar after work, what do they say about your company? That's your culture, in plain language, with nothing performative.\n\nIf the bar version diverges sharply from the LinkedIn version, the culture you've architected isn't the culture you have."
+        }
       ],
       "take_action": [
         "Write your 3\u20135 actual (not aspirational) organizational values",
         "Identify one behavior that contradicts your stated values",
         "Design one ritual or process that reinforces the culture you want"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Culture isn't a thing you have \u2014 it's a thing you continually construct.** Every decision a leader makes either reinforces or contradicts the culture they claim. The construction happens whether you're paying attention or not. The question is whether you architect deliberately or let it emerge by default.\n\nThe most useful frame for culture isn't \"values\" \u2014 it's **the behavior that gets rewarded, the behavior that's ignored, and the behavior that gets punished**. Look at any organization through that lens and the real culture becomes visible:\n\n- A company that says it values \"work-life balance\" but promotes the people who work 80-hour weeks doesn't have that value. It has the opposite.\n- A company that says it values \"speaking up\" but quietly retaliates against dissenters doesn't have that value either.\n- A company that punishes mistakes generally doesn't have a \"learning culture,\" even if the wall posters say otherwise.\n\nThe gap between stated culture and operational culture is the trust gap. Closing it requires either changing behavior or changing what you claim. The worst position is wide gap.\n\n**The architecture levers**:\n\n- **Hiring rubrics**: every new hire is a behavior pattern joining the organization. Write the rubric, calibrate against it, hire deliberately.\n- **Promotion criteria**: people pay attention to who gets promoted more than to any values document. If promotions reward behavior you'd describe negatively, your culture is whatever the promoted people do.\n- **Firing and managing out**: removing people who violate the culture is the loudest culture signal you can send. Tolerating them is the loudest contradictory signal.\n- **Rituals**: how meetings open, how decisions are announced, how mistakes are debriefed, how wins are shared. Each ritual is a tiny culture-transmitter, repeated thousands of times.\n- **Stories**: which stories get retold, by whom, with what emphasis. The story-curating function is one of the founder's highest-leverage cultural roles.\n\nThe practical move: every quarter, run a culture audit. Pick three stated values. For each, list 5 specific examples from the last quarter that either reinforced or contradicted it. The list reveals the actual culture. The work is closing the gaps that the list reveals."
     },
     {
       "id": "M4L1",
@@ -1340,9 +1476,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Flow_Not_Force.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Throughput vs. Capacity",
+          "body": "Throughput is what actually moves through the system. Capacity is what it could theoretically handle. The two diverge dramatically when there's a bottleneck.\n\nA factory line at 80% capacity utilization but only 40% throughput is hemorrhaging value to the constraint."
+        },
+        {
+          "title": "Little's Law",
+          "body": "The fundamental equation of operations:\n\n$$L = \\lambda \\times W$$\n\nWhere L = work-in-progress, \u03bb = throughput rate, W = lead time. The relationship is rigid \u2014 if you increase WIP without increasing throughput, lead time inflates."
+        },
+        {
+          "title": "Theory of Constraints",
+          "body": "Goldratt's insight: every system has exactly one binding constraint at any time. Optimizing anything but the constraint produces no system-level improvement.\n\nIdentify the bottleneck. Subordinate everything else to it. Elevate the bottleneck. When it moves elsewhere, repeat."
+        },
+        {
+          "title": "Push vs. Pull",
+          "body": "Push systems: produce ahead and hope demand catches up. Inventory accumulates; flexibility falls. Pull systems (Toyota, Kanban): produce only what's demanded downstream.\n\nPull is harder to set up; better in steady state. Push is easier; corrosive at scale."
+        },
+        {
+          "title": "Flow as a Mindset",
+          "body": "Most operations problems are flow problems. Smooth flow generates output, builds quality, exposes problems immediately.\n\nThe operator's question every day: where is flow being interrupted? Fix that before adding capacity."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Eliyahu Goldratt's Theory of Constraints is the most under-applied operating framework.** Most operators try to improve everything simultaneously. The theory says: improving non-constraint resources produces no system-level gain, and often makes things worse by piling up WIP at the bottleneck.\n\nThe Five Focusing Steps of TOC:\n\n1. **Identify the constraint.** Where does work pile up? Where do downstream resources wait? That's the bottleneck.\n2. **Exploit the constraint.** Get every possible minute of productivity from the bottleneck. No setup time. No interruptions. No unnecessary work.\n3. **Subordinate everything else.** Non-constraint resources should not produce faster than the constraint can absorb. Producing ahead just creates WIP.\n4. **Elevate the constraint.** Once exploited and subordinated, invest in expanding the bottleneck \u2014 more capacity, faster machines, more skilled operators.\n5. **Repeat.** When the bottleneck moves, restart at step 1.\n\n**Little's Law** is the math that ties this together. If WIP (L) goes up and throughput (\u03bb) stays constant, lead time (W) increases. Customers wait longer. Quality drops. Defects compound. The operator's instinct to load up the system with more work backfires \u2014 flow degrades as WIP climbs.\n\nThe practical move:\n\n- **Visualize WIP.** Kanban board, status dashboard, any tool that makes the work-in-progress count visible. The number is a real metric.\n- **Set WIP limits.** Each stage has a hard cap. Pulled by downstream demand, not pushed by upstream supply.\n- **Track lead time.** If lead time is increasing, WIP is climbing or the constraint is degrading. Both deserve immediate attention.\n\nFlow beats force. The operations team that internalizes this generates more output, cleaner quality, and less burnout than the one that just pushes harder."
     },
     {
       "id": "M5L2",
@@ -1357,9 +1515,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Process_Maps__Order_from_Chaos.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Why Map a Process",
+          "body": "An unmapped process is a process nobody understands the same way. Different team members carry different mental models, which is how errors compound and improvements stall.\n\nMapping forces a single shared picture. The act of mapping reveals more than the final map."
+        },
+        {
+          "title": "Value-Adding vs. Non-Value-Adding Steps",
+          "body": "Walk every step of a process and tag each as: value-adding (the customer would pay for this), necessary non-value-adding (regulatory, accounting), or pure waste.\n\nTypical first map: 30-50% pure waste. The clean-up is operating leverage waiting to be harvested."
+        },
+        {
+          "title": "Handoff Friction",
+          "body": "Most defects and delays happen at handoffs \u2014 between people, teams, systems. Each handoff is a potential information loss and accountability blur.\n\nMinimize handoffs by design. Where handoffs are unavoidable, make them explicit, named, and time-bounded."
+        },
+        {
+          "title": "Swim Lanes",
+          "body": "Process maps with swim lanes show who owns each step. The handoffs are visible as lines crossing lanes.\n\nA process with too many lane crossings is one with too many handoffs. Each crossing is friction."
+        },
+        {
+          "title": "Map the Real Process",
+          "body": "The mapped process is often aspirational. The real process is what people actually do. Both are useful; confusing them is fatal.\n\nMap the real process first. Then design the desired one. The gap is your improvement work."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Process maps are not documents. They are diagnostic instruments.** The act of getting a team to agree on a single process map is where most of the value comes from \u2014 long before any optimization happens. People discover they've been doing it differently. Senior leaders discover steps they didn't know existed. Errors get traced to specific handoffs.\n\nThe sequence that works:\n\n1. **Walk the process in person**, end-to-end, with the people who do it. Notebook. No assumptions. Note every step, every handoff, every decision point.\n2. **Draw it on a wall** \u2014 paper, sticky notes, anything visual and rearrangeable. Computer tools come later.\n3. **Tag every step** as value-adding (V), necessary non-value-adding (N), or waste (W). Be ruthless. \"We've always done it that way\" is not value.\n4. **Quantify each step**: cycle time, queue time, error rate. Most steps take 5x longer than people estimate.\n5. **Find the 80/20 of waste.** Most processes have 2-3 steps that account for the majority of delay or defects. Fix those first.\n\n**The handoff principle** deserves its own attention. Each time work passes from one person/team/system to another, three things happen: information gets lost, accountability blurs, time is added. A 5-step process with 0 handoffs runs faster and cleaner than a 5-step process with 4 handoffs. Operations design that minimizes handoffs systematically wins.\n\nThe practical move every operator should make at least once a year: pick the highest-volume process in your business. Walk it end-to-end. Map it on a wall with the people who run it. Tag every step. Eliminate the top 3 waste sources. The exercise pays for itself within a quarter, and the team that maps gets better at noticing waste forever after."
     },
     {
       "id": "M5L2.5",
@@ -1422,9 +1602,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_Quality_Engine.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Quality at the Source",
+          "body": "Cheapest quality control: build it right the first time. Inspecting after the fact catches errors but doesn't prevent them, and inspection has its own error rate.\n\nThe Toyota principle: every operator is empowered to stop the line when they see a defect. Quality is owned at the source, not centralized in a QA department."
+        },
+        {
+          "title": "Defect Cost Curve",
+          "body": "A defect caught at the source costs $1. Caught in mid-production: $10. Caught at the customer: $100. Caught in a recall: $1,000+.\n\nThe exponential cost curve makes investment in source-quality the highest-ROI operating investment you can make."
+        },
+        {
+          "title": "Six Sigma Foundations",
+          "body": "Six Sigma = 3.4 defects per million opportunities. The methodology (DMAIC: Define, Measure, Analyze, Improve, Control) is a structured approach to reducing defect rates.\n\n$$\\text{DPMO} = \\frac{\\text{Defects} \\times 1{,}000{,}000}{\\text{Opportunities}}$$\n\nNot every business needs Six Sigma. But the discipline of measuring defects-per-million is universally useful."
+        },
+        {
+          "title": "First Pass Yield",
+          "body": "Percentage of units that pass through the process correctly the first time, with no rework.\n\n$$\\text{FPY} = \\frac{\\text{Units Passed First Time}}{\\text{Total Units Started}}$$\n\nLow FPY = high hidden cost. Rework, scrap, scheduling chaos. The number to track to know if process improvements are landing."
+        },
+        {
+          "title": "Build Quality In",
+          "body": "Quality engineering means designing the process so defects are physically hard to produce. Poka-yoke (error-proofing): make the wrong action impossible.\n\nA USB connector that only inserts one way is poka-yoke. Color-coded surgical instruments so wrong-side surgery is harder is poka-yoke. The design eliminates the error before it can occur."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Quality is not a department. It's an architecture.** Businesses that try to inspect quality in \u2014 running defective products past more and more inspectors \u2014 produce mediocre quality at high cost. Businesses that engineer quality in \u2014 designing processes so defects are hard to produce \u2014 produce excellent quality cheaply.\n\nThe shift in mindset happens when you understand the **defect cost curve**:\n\n- Defect prevented at design stage: ~$1\n- Defect caught at source by operator: ~$10\n- Defect caught at internal inspection: ~$100\n- Defect caught by customer: ~$1,000+\n- Defect causes a recall or lawsuit: ~$10,000-$1,000,000+\n\nA company that spends $1,000 on better process design saves an order of magnitude on every downstream stage. The math is unforgiving and consistently ignored.\n\n**Six Sigma's contribution** isn't the specific 3.4-defects-per-million target \u2014 most businesses can't and shouldn't aim there. The contribution is the *discipline of measurement*. You can't improve what you don't measure, and most quality issues are invisible because nobody's counting:\n\n$$\\text{DPMO} = \\frac{\\text{Defects observed} \\times 1{,}000{,}000}{\\text{Opportunities for defect}}$$\n\nIf you don't know your DPMO, you're flying blind on quality.\n\n**First Pass Yield** is the more practical operating metric. What percentage of units, transactions, or deliverables make it through the process without rework? At 95% FPY, 5% of capacity is consumed by rework \u2014 a hidden tax on throughput. At 85% FPY, 15% is rework, with cascading effects on cost, lead time, and customer experience.\n\nThe practical move: pick your highest-volume process. Track FPY for a month. Find the top three causes of rework. Eliminate them via design \u2014 not inspection. Repeat. Compound improvements over a year and the operating leverage is enormous."
     },
     {
       "id": "M5L4",
@@ -1439,9 +1641,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Modern_Tech_Strategy.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Tech as Strategic Infrastructure",
+          "body": "Technology decisions are 5\u201310 year commitments masquerading as 6-month projects. The architecture you build now determines what's possible (and impossible) for years.\n\nMost tech mistakes are commitments to the wrong abstraction, not bad code. The wrong abstraction compounds; bad code can be refactored."
+        },
+        {
+          "title": "Build vs. Buy vs. Partner",
+          "body": "Three options for every capability:\n\n- **Build**: full control, high cost, slow.\n- **Buy** (off-the-shelf software): fast, lower control, vendor risk.\n- **Partner**: someone else operates it; you integrate.\n\nDefault to buy/partner for commodities; build only what's core differentiation."
+        },
+        {
+          "title": "Technical Debt",
+          "body": "Technical debt is the implementation choices made for short-term speed that will cost long-term productivity. Some debt is good (move fast on uncertain bets); some is poison (compounds against you).\n\nThe operator's job isn't zero debt. It's managing the debt portfolio."
+        },
+        {
+          "title": "AI as Force Multiplier",
+          "body": "In 2026, AI is no longer optional. The question isn't whether to use it but *where* \u2014 drafting, summarizing, coding, customer support, analytics, decision support.\n\nThe operators using AI well are 2-3x more productive. The ones not using it are losing ground daily."
+        },
+        {
+          "title": "Vendor Lock-In",
+          "body": "Every SaaS subscription is a future migration cost. Data formats, API dependencies, integration patterns \u2014 each accumulates switching cost.\n\nFavor vendors with open standards, exportable data, replaceable abstractions. The expensive lesson is learning which vendors you can leave easily."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Technology strategy is the most consequential operating decision of the modern business \u2014 and the most under-managed by non-technical founders.** The decisions made about stack, vendors, and abstractions in years 1\u20133 determine the company's flexibility for the next 10. Bad decisions compound silently; good decisions compound quietly.\n\nThe **build/buy/partner** framework is the most useful first filter. For every capability your business needs:\n\n- **Build** when the capability is your differentiated core. The thing customers come to you for. Worth full ownership.\n- **Buy** when the capability is commodity infrastructure. Email, CRM, accounting, HR, infrastructure. Buy the best off-the-shelf option; integrate; move on.\n- **Partner** when the capability is operationally complex and not your core. Payments (Stripe), fulfillment (Shopify Fulfillment Network), telephony (Twilio). Someone else's operating discipline beats yours.\n\nThe mistake most founders make is **building commodity** out of misplaced pride (\"we'll do it better\") and **buying differentiation** out of misplaced humility (\"others know more\"). Reverse both.\n\n**Technical debt** is the second strategic lever. All software has debt \u2014 implementation choices that traded long-term flexibility for short-term speed. Some debt is wise:\n\n- Building an MVP with the cheapest, ugliest possible stack to validate demand. The right call. Refactor when validated.\n- Skipping internationalization for the first year. Right when you only have US customers.\n- Hard-coding values that will need to be configurable later. Right if it ships features now.\n\nSome debt is poison:\n\n- Coupling business logic to a third-party API you can't replace.\n- Building on infrastructure that won't scale past your growth target.\n- Skipping observability and security in the early build.\n\nThe operator's job is **knowing which debts you're carrying and what the payback plan is**. Annual technical debt reviews. Quarterly architecture decisions. The debt that's planned and intentional is fine. The debt that's accidental and forgotten is what kills the company at the worst moment."
     },
     {
       "id": "M5L5",
@@ -1456,9 +1680,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Build_vs.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Strategic Importance Axis",
+          "body": "How core is this capability to your differentiation? High = customers come to you for this; low = table stakes everyone needs.\n\nHigh-strategic = bias to build. Low-strategic = bias to buy. The simple X-axis of the decision."
+        },
+        {
+          "title": "Implementation Complexity Axis",
+          "body": "How complex is the implementation? High = specialized expertise, infrastructure, ongoing maintenance burden. Low = configure-and-go.\n\nHigh-complexity = bias to buy. Low-complexity = either works. The Y-axis."
+        },
+        {
+          "title": "The 2x2 Matrix",
+          "body": "Build (high strategic, low complexity): your core differentiation.\nBuy (low strategic, low complexity): commodity tools.\nPartner (high strategic, high complexity): leverage a specialist's deep expertise.\nAvoid (low strategic, high complexity): why do you need this at all?"
+        },
+        {
+          "title": "Total Cost of Ownership",
+          "body": "Total Cost of Ownership = purchase price + implementation + ongoing maintenance + opportunity cost of internal time + switching cost when you outgrow it.\n\n$$\\text{TCO}_{3\\text{yr}} = \\text{Initial} + 36 \\times \\text{Monthly} + \\text{Implementation} + \\text{Integration} + \\text{Training}$$\n\nNaive comparisons compare initial price. Sophisticated ones compare 3-year TCO with switching cost."
+        },
+        {
+          "title": "When to Re-Decide",
+          "body": "The decision isn't permanent. Every 18-24 months, revisit: has the capability become more or less strategic? Have buy-side options improved? Is your scale now justifying a build?\n\nMany companies build commodity in year 2 (rational) and never re-decide when buy options mature. Capital trapped."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**The build-vs-buy decision is one of the most common \u2014 and most poorly made \u2014 strategic decisions in modern business.** Founders default to building (sometimes from misplaced pride, sometimes because they enjoy the work). CFOs default to buying (sometimes from misplaced caution, sometimes for short-term cost optics). Neither default is right; the answer is contextual.\n\nThe 2x2 matrix:\n\n```\n                  Low Strategic    High Strategic\n                  \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nLow Complexity:   BUY              BUILD\nHigh Complexity:  AVOID            PARTNER\n```\n\n- **BUY** (low strategic, low complexity): payroll, email, accounting, basic CRM. Buy the best, move on.\n- **BUILD** (high strategic, low complexity): your core product features. The thing customers come to you for. Build with full ownership.\n- **PARTNER** (high strategic, high complexity): payments, fulfillment, AI infrastructure. The capability is strategic but operationally hard. Use Stripe, not your own card processor.\n- **AVOID** (low strategic, high complexity): why do you need this at all? Often the right answer is to scope the requirement smaller.\n\nThe **Total Cost of Ownership** lens is what trips up most analyses. Naive comparisons look at:\n\n- Buy: $50K/year SaaS subscription\n- Build: $200K of one-time engineering\n\nAnd conclude \"build pays back in 4 years.\" But the real TCO of build includes:\n\n- $200K initial engineering\n- $80K/year ongoing maintenance (a senior engineer's loaded cost)\n- Opportunity cost of that engineer not building differentiation\n- Eventual rewrites when scale changes (Engineering attrition compounds this)\n- Documentation, on-call, security patching, etc.\n\nReal 5-year TCO: $200K + $400K + opportunity cost = $600K+ vs SaaS's $250K. Build was never cheaper.\n\nThe equation worth burning in:\n\n$$\\text{TCO}_{n\\text{yr}} = \\text{Initial} + n \\times \\text{Annual Maintenance} + \\text{Opportunity Cost} + \\text{Switching Cost}$$\n\nThe correct comparison is full TCO, not initial price. Most build decisions don't survive that comparison."
     },
     {
       "id": "M6L1",
