@@ -281,8 +281,7 @@
       ],
       "placeholder": false,
       "lyrics": "[Verse 1]\nYou can show me profit on a paper page\nBut the ink won't keep the lights on stage\nRevenue rolls in but it's locked up tight\nNeed that cash if you're gonna survive the night\n\n[Pre-Chorus]\nProfit don't pay the rent\nMargin can't make payroll\nYou can win the quarter\nAnd still lose the soul\n\n[Chorus]\nOxygen, oxygen \u2014 cash is oxygen\nEvery breath you take is operating cash flow\nHold it tight, watch it move\nEvery dollar in and out\nOxygen, oxygen \u2014 that's what business runs on\n\n[Verse 2]\nReceivables stretched ninety days long\nSuppliers wanna get paid in twenty \u2014 wrong\nWorking capital's a tightrope walk\nRun outta runway and you're done, no more talk\n\n[Bridge]\nThree months of statements on the table tonight\nCash in, cash out \u2014 read the label right\nBurn rate ticking loud, count it down\nStack the runway, stand your ground\n\n[Chorus]\nOxygen, oxygen \u2014 cash is oxygen\nEvery breath you take is operating cash flow\nHold it tight, watch it move\nEvery dollar in and out\nOxygen, oxygen \u2014 that's what business runs on\n\n[Outro]\nYou can be profitable and still go broke\nYou can be growing and still choke\nWatch the cash, watch the cash\nWatch the cash \u2014 that's the lesson",
-      "deep_dive": "A profitable company can run out of cash. A cash-rich company can be unprofitable. Both happen all the time, and most founders learn this the hard way.\n\n**Profit is an opinion. Cash is a fact.** Net income is what your accountant says happened after assumptions about depreciation, accruals, and revenue recognition. Cash is the money in the bank \u2014 and only the money in the bank.\n\nThe gap between them is **working capital**: money tied up in receivables, inventory, and prepaid expenses. When you grow, working capital usually grows faster than revenue, and that growth sucks cash out of the business even when the P&L looks great.\n\nThe formula that matters:\n\n$$\\text{Operating Cash Flow} = \\text{Net Income} + \\text{D\\&A} - \\Delta \\text{Working Capital}$$\n\nNet income tells you the business model works on paper. Operating cash flow tells you whether it can pay the bills next month.\n\nTwo rules that flow from this:\n\n- **Track cash weekly, not monthly.** The variance between a P&L month-end and a real bank balance can swallow a quarter.\n- **Negative working capital is a superpower.** When customers pay before you pay suppliers (SaaS prepayment, gym memberships, Amazon's float), growth FUNDS itself instead of starving it. Build for negative working capital wherever you can.\n\nYour runway \u2014 the literal number of months you have left if nothing changes \u2014 is the most important number on the dashboard:\n\n$$\\text{Runway (months)} = \\frac{\\text{Cash on Hand}}{\\text{Monthly Burn Rate}}$$\n\nKnowing this number every Friday changes how you spend on Monday.",
-      "song_title": "Oxygen"
+      "deep_dive": "A profitable company can run out of cash. A cash-rich company can be unprofitable. Both happen all the time, and most founders learn this the hard way.\n\n**Profit is an opinion. Cash is a fact.** Net income is what your accountant says happened after assumptions about depreciation, accruals, and revenue recognition. Cash is the money in the bank \u2014 and only the money in the bank.\n\nThe gap between them is **working capital**: money tied up in receivables, inventory, and prepaid expenses. When you grow, working capital usually grows faster than revenue, and that growth sucks cash out of the business even when the P&L looks great.\n\nThe formula that matters:\n\n$$\\text{Operating Cash Flow} = \\text{Net Income} + \\text{D\\&A} - \\Delta \\text{Working Capital}$$\n\nNet income tells you the business model works on paper. Operating cash flow tells you whether it can pay the bills next month.\n\nTwo rules that flow from this:\n\n- **Track cash weekly, not monthly.** The variance between a P&L month-end and a real bank balance can swallow a quarter.\n- **Negative working capital is a superpower.** When customers pay before you pay suppliers (SaaS prepayment, gym memberships, Amazon's float), growth FUNDS itself instead of starving it. Build for negative working capital wherever you can.\n\nYour runway \u2014 the literal number of months you have left if nothing changes \u2014 is the most important number on the dashboard:\n\n$$\\text{Runway (months)} = \\frac{\\text{Cash on Hand}}{\\text{Monthly Burn Rate}}$$\n\nKnowing this number every Friday changes how you spend on Monday."
     },
     {
       "id": "M1L1.5",
@@ -325,8 +324,7 @@
         "Find your break-even: Fixed Costs \u00f7 Contribution Margin per unit"
       ],
       "placeholder": false,
-      "deep_dive": "**Breakeven isn't a number \u2014 it's a frame.** Knowing your breakeven point answers a different question than knowing your profit: it tells you the *minimum* business you need to keep the doors open. Below breakeven you're funding the business with cash reserves. Above it, fixed costs are paid and contribution margin flows to profit.\n\nThe two numbers that change everything:\n\n- **Contribution margin %** \u2014 the slope of profit-on-revenue once you're past breakeven\n- **Fixed-cost base** \u2014 the size of the gap you must close before profit starts\n\nA business with 80% contribution margin and $50K fixed cost breaks even at $62.5K in revenue. The same fixed cost with 20% contribution margin needs $250K \u2014 four times the volume to keep the lights on. Same dollar of fixed cost, vastly different business model implications.\n\n**Two strategic moves come straight out of this:**\n\n1. **Raise contribution margin before scaling.** Every dollar of margin lift reduces breakeven and increases optionality. Often you can charge more (pricing power) or cut variable cost (better suppliers, automation) without much pain.\n\n2. **Resist fixed-cost commitments until contribution margin is proven.** Office leases, full-time salaries, and software annuities ratchet up your breakeven. They make sense when contribution margin is strong and predictable. They're traps when neither is true.\n\nThe equation that keeps you honest:\n\n$$\\text{Breakeven Revenue} = \\frac{\\text{Fixed Costs}}{\\text{Contribution Margin \\%}}$$\n\nKnow that number. Know what would have to change to cut it in half.",
-      "song_title": "Breakeven Proof"
+      "deep_dive": "**Breakeven isn't a number \u2014 it's a frame.** Knowing your breakeven point answers a different question than knowing your profit: it tells you the *minimum* business you need to keep the doors open. Below breakeven you're funding the business with cash reserves. Above it, fixed costs are paid and contribution margin flows to profit.\n\nThe two numbers that change everything:\n\n- **Contribution margin %** \u2014 the slope of profit-on-revenue once you're past breakeven\n- **Fixed-cost base** \u2014 the size of the gap you must close before profit starts\n\nA business with 80% contribution margin and $50K fixed cost breaks even at $62.5K in revenue. The same fixed cost with 20% contribution margin needs $250K \u2014 four times the volume to keep the lights on. Same dollar of fixed cost, vastly different business model implications.\n\n**Two strategic moves come straight out of this:**\n\n1. **Raise contribution margin before scaling.** Every dollar of margin lift reduces breakeven and increases optionality. Often you can charge more (pricing power) or cut variable cost (better suppliers, automation) without much pain.\n\n2. **Resist fixed-cost commitments until contribution margin is proven.** Office leases, full-time salaries, and software annuities ratchet up your breakeven. They make sense when contribution margin is strong and predictable. They're traps when neither is true.\n\nThe equation that keeps you honest:\n\n$$\\text{Breakeven Revenue} = \\frac{\\text{Fixed Costs}}{\\text{Contribution Margin \\%}}$$\n\nKnow that number. Know what would have to change to cut it in half."
     },
     {
       "id": "M1L1.7",
@@ -369,8 +367,7 @@
         "Build a 13-week cash forecast and update it weekly"
       ],
       "placeholder": false,
-      "deep_dive": "**Profitability is a year-long story. Cash is a Friday-night story.** Every Friday afternoon, somebody on the team should be able to tell you exactly how many weeks of cash you have left at current burn. If nobody knows, you don't have an operating finance function \u2014 you have a P&L tribute act.\n\nThe difference between a healthy business and a fragile one isn't whether profit eventually materializes. It's whether *cash arrival* and *cash departure* are aligned in time. SaaS businesses with annual prepayments operate with negative working capital \u2014 customers fund the business before any expense is incurred. Job-shop manufacturers operate with deeply positive working capital \u2014 they pay for steel today, ship in 60 days, get paid 30 days after that, sometimes 120 days from initial outlay.\n\nThe practical takeaway:\n\n- **Build a rolling 13-week cash forecast.** Update it weekly. Every Monday you look at next 13 Fridays and you know.\n- **Track the cash conversion cycle.** If it's getting longer, your operating cash is being siphoned into working capital \u2014 even if revenue is growing. That's how growing businesses fail.\n- **Negotiate timing, not just price.** A 60-day payment terms move on a $1M PO is worth more than a 5% discount.\n\nThe runway formula again, in operating terms:\n\n$$\\text{Runway} = \\frac{\\text{Cash} + \\text{Receivables Coming In} - \\text{Payables Going Out}}{\\text{Net Monthly Burn}}$$\n\nThat's the real number. Pure cash divided by burn is the conservative version. The version that includes near-term receivables and payables is what actually predicts trouble.",
-      "song_title": "April Cash Timing"
+      "deep_dive": "**Profitability is a year-long story. Cash is a Friday-night story.** Every Friday afternoon, somebody on the team should be able to tell you exactly how many weeks of cash you have left at current burn. If nobody knows, you don't have an operating finance function \u2014 you have a P&L tribute act.\n\nThe difference between a healthy business and a fragile one isn't whether profit eventually materializes. It's whether *cash arrival* and *cash departure* are aligned in time. SaaS businesses with annual prepayments operate with negative working capital \u2014 customers fund the business before any expense is incurred. Job-shop manufacturers operate with deeply positive working capital \u2014 they pay for steel today, ship in 60 days, get paid 30 days after that, sometimes 120 days from initial outlay.\n\nThe practical takeaway:\n\n- **Build a rolling 13-week cash forecast.** Update it weekly. Every Monday you look at next 13 Fridays and you know.\n- **Track the cash conversion cycle.** If it's getting longer, your operating cash is being siphoned into working capital \u2014 even if revenue is growing. That's how growing businesses fail.\n- **Negotiate timing, not just price.** A 60-day payment terms move on a $1M PO is worth more than a 5% discount.\n\nThe runway formula again, in operating terms:\n\n$$\\text{Runway} = \\frac{\\text{Cash} + \\text{Receivables Coming In} - \\text{Payables Going Out}}{\\text{Net Monthly Burn}}$$\n\nThat's the real number. Pure cash divided by burn is the conservative version. The version that includes near-term receivables and payables is what actually predicts trouble."
     },
     {
       "id": "M1L2",
@@ -413,8 +410,7 @@
         "Ask: what would happen if you doubled revenue at the same margin?"
       ],
       "placeholder": false,
-      "deep_dive": "**Revenue is the most lied-about number in business.** Not always maliciously \u2014 sometimes through self-deception. \"We're a $5M ARR company\" is a statement that conceals: which 5M? Recurring? Annual run-rate of one good quarter? Bookings yet to be delivered? Total contract value of multi-year deals?\n\nThe healthiest founders treat their own revenue with suspicion. They ask:\n\n- **How much of this revenue will be here next year if nothing changes?** That's *recurring* revenue. Everything else is one-time and shouldn't be confused with annuity value.\n- **What percentage came from the top 5 customers?** Customer concentration above 30% means the business doesn't have a market \u2014 it has a relationship.\n- **What did it cost to win this revenue?** Revenue at a CAC payback over 24 months can be worth less than zero in cash terms.\n- **What's the gross margin?** $1M in revenue at 10% gross margin is $100K of fuel to run the company. $1M at 80% is $800K. Don't compare the top lines as if they were equal.\n\nThe move:\n\n- Use **net revenue retention (NRR)** as your truth metric. It captures expansion, churn, and downgrade in one number. NRR > 100% means existing customers are growing their spend; new logos are pure upside. NRR < 90% means you have a leaky bucket; new logos are replacing old ones, not adding.\n- Pair revenue with **gross profit dollars** in every dashboard. The dollar that pays salaries is the gross profit dollar, not the revenue dollar.\n\n$$\\text{NRR} = \\frac{\\text{Starting ARR} + \\text{Expansion} - \\text{Churn} - \\text{Downgrade}}{\\text{Starting ARR}}$$\n\nKnow your NRR. Know your gross profit. Stop celebrating revenue alone \u2014 it's the most flattering and most misleading number you own.",
-      "song_title": "Top Line Lie"
+      "deep_dive": "**Revenue is the most lied-about number in business.** Not always maliciously \u2014 sometimes through self-deception. \"We're a $5M ARR company\" is a statement that conceals: which 5M? Recurring? Annual run-rate of one good quarter? Bookings yet to be delivered? Total contract value of multi-year deals?\n\nThe healthiest founders treat their own revenue with suspicion. They ask:\n\n- **How much of this revenue will be here next year if nothing changes?** That's *recurring* revenue. Everything else is one-time and shouldn't be confused with annuity value.\n- **What percentage came from the top 5 customers?** Customer concentration above 30% means the business doesn't have a market \u2014 it has a relationship.\n- **What did it cost to win this revenue?** Revenue at a CAC payback over 24 months can be worth less than zero in cash terms.\n- **What's the gross margin?** $1M in revenue at 10% gross margin is $100K of fuel to run the company. $1M at 80% is $800K. Don't compare the top lines as if they were equal.\n\nThe move:\n\n- Use **net revenue retention (NRR)** as your truth metric. It captures expansion, churn, and downgrade in one number. NRR > 100% means existing customers are growing their spend; new logos are pure upside. NRR < 90% means you have a leaky bucket; new logos are replacing old ones, not adding.\n- Pair revenue with **gross profit dollars** in every dashboard. The dollar that pays salaries is the gross profit dollar, not the revenue dollar.\n\n$$\\text{NRR} = \\frac{\\text{Starting ARR} + \\text{Expansion} - \\text{Churn} - \\text{Downgrade}}{\\text{Starting ARR}}$$\n\nKnow your NRR. Know your gross profit. Stop celebrating revenue alone \u2014 it's the most flattering and most misleading number you own."
     },
     {
       "id": "M1L3",
@@ -457,8 +453,7 @@
         "Apply NPV thinking to one upcoming investment decision"
       ],
       "placeholder": false,
-      "deep_dive": "**Every decision to spend money today is a bet on future money.** Operating finance asks: is the future money, properly discounted, worth more than the cash I'm spending? That's it. Every CAC payback, every plant expansion, every hiring decision, every R&D investment.\n\nThe discount rate is the heartbeat. Why it matters operationally:\n\n- **In low-rate environments**, distant cash flows count for almost as much as near cash flows. A 50-year mortgage at 3% looks reasonable. A 10-year SaaS payback looks fine. Growth investments are richly valued because their long-tail cash flows aren't punished much.\n- **In high-rate environments**, the math punishes anything far in the future. The same 10-year payback project at a 20% discount rate is worth a fraction of what it was at 10%. \"Growth at any cost\" stops working not because the business changed, but because the discount rate did.\n\nThe practical translation:\n\n- Use **realistic discount rates for your stage**. Seed-stage founders should be discounting at 25\u201335%+. Late-stage at 15\u201320%. Public companies at WACC, typically 8\u201312%.\n- Always compute **NPV at two rates** \u2014 your base case and one 1.5x higher. If the project survives the stress rate, it's robust.\n- Distrust IRR alone. NPV at a known discount rate is the cleaner metric for go/no-go decisions.\n\nThe simple version of the formula, worth memorizing:\n\n$$\\text{PV} = \\frac{\\text{FV}}{(1+r)^n}$$\n\nFold a million dollars five years out at a 20% discount rate, and you have $401K today. At 10%, it's $621K. At 5%, it's $784K. The discount rate isn't a number on a spreadsheet \u2014 it's the price of impatience, and it moves with the cost of capital.",
-      "song_title": "The Discount Rate"
+      "deep_dive": "**Every decision to spend money today is a bet on future money.** Operating finance asks: is the future money, properly discounted, worth more than the cash I'm spending? That's it. Every CAC payback, every plant expansion, every hiring decision, every R&D investment.\n\nThe discount rate is the heartbeat. Why it matters operationally:\n\n- **In low-rate environments**, distant cash flows count for almost as much as near cash flows. A 50-year mortgage at 3% looks reasonable. A 10-year SaaS payback looks fine. Growth investments are richly valued because their long-tail cash flows aren't punished much.\n- **In high-rate environments**, the math punishes anything far in the future. The same 10-year payback project at a 20% discount rate is worth a fraction of what it was at 10%. \"Growth at any cost\" stops working not because the business changed, but because the discount rate did.\n\nThe practical translation:\n\n- Use **realistic discount rates for your stage**. Seed-stage founders should be discounting at 25\u201335%+. Late-stage at 15\u201320%. Public companies at WACC, typically 8\u201312%.\n- Always compute **NPV at two rates** \u2014 your base case and one 1.5x higher. If the project survives the stress rate, it's robust.\n- Distrust IRR alone. NPV at a known discount rate is the cleaner metric for go/no-go decisions.\n\nThe simple version of the formula, worth memorizing:\n\n$$\\text{PV} = \\frac{\\text{FV}}{(1+r)^n}$$\n\nFold a million dollars five years out at a 20% discount rate, and you have $401K today. At 10%, it's $621K. At 5%, it's $784K. The discount rate isn't a number on a spreadsheet \u2014 it's the price of impatience, and it moves with the cost of capital."
     },
     {
       "id": "M1L3.5",
@@ -501,8 +496,7 @@
         "Implement or enforce a net-15 or net-30 payment policy"
       ],
       "placeholder": false,
-      "deep_dive": "**Sales are a thesis. Collections are a fact.** A signed contract is not money. A delivered service is not money. An invoice is not money. The wire hitting the bank is money. Everything else is a story.\n\nReceivables management is the unglamorous, decisive practice of converting the story to the fact. Most early-stage operators systematically underestimate how much cash is parked in receivables once revenue passes about $1M:\n\n- $1M ARR at 90 days DSO = $250K parked in AR. That's a quarter of your annual revenue not earning anything.\n- The same business at 30 days DSO = $83K parked. The $167K difference can fund a hire, a marketing push, a runway extension.\n\nReceivables aren't a finance back-office problem. They're a working capital weapon. The companies that compound \u2014 bootstrapped or VC-backed \u2014 get good at this fast.\n\nThree moves that change the picture:\n\n- **Invoice instantly.** The clock starts when the invoice goes out. Every day you batch is a day you've donated.\n- **Automate the reminder cadence.** A scheduled email at day 7, 14, 28, and a personal touch at day 45. Use a billing tool; don't hand-roll it.\n- **Make late-payment friction high.** A small late fee in the contract, predictably enforced, changes customer behavior more than threats.\n\nThe formula to track:\n\n$$\\text{Cash Conversion Cycle} = \\text{DSO} + \\text{DIO} - \\text{DPO}$$\n\nThe target is shorter, ideally negative. A negative CCC means your customers are funding your operations. SaaS, marketplaces, and subscription businesses can engineer this. Traditional B2B services rarely can \u2014 they just have to manage the cycle aggressively.",
-      "song_title": "Receivables In"
+      "deep_dive": "**Sales are a thesis. Collections are a fact.** A signed contract is not money. A delivered service is not money. An invoice is not money. The wire hitting the bank is money. Everything else is a story.\n\nReceivables management is the unglamorous, decisive practice of converting the story to the fact. Most early-stage operators systematically underestimate how much cash is parked in receivables once revenue passes about $1M:\n\n- $1M ARR at 90 days DSO = $250K parked in AR. That's a quarter of your annual revenue not earning anything.\n- The same business at 30 days DSO = $83K parked. The $167K difference can fund a hire, a marketing push, a runway extension.\n\nReceivables aren't a finance back-office problem. They're a working capital weapon. The companies that compound \u2014 bootstrapped or VC-backed \u2014 get good at this fast.\n\nThree moves that change the picture:\n\n- **Invoice instantly.** The clock starts when the invoice goes out. Every day you batch is a day you've donated.\n- **Automate the reminder cadence.** A scheduled email at day 7, 14, 28, and a personal touch at day 45. Use a billing tool; don't hand-roll it.\n- **Make late-payment friction high.** A small late fee in the contract, predictably enforced, changes customer behavior more than threats.\n\nThe formula to track:\n\n$$\\text{Cash Conversion Cycle} = \\text{DSO} + \\text{DIO} - \\text{DPO}$$\n\nThe target is shorter, ideally negative. A negative CCC means your customers are funding your operations. SaaS, marketplaces, and subscription businesses can engineer this. Traditional B2B services rarely can \u2014 they just have to manage the cycle aggressively."
     },
     {
       "id": "M1L4",
@@ -545,8 +539,7 @@
         "Target a LTV:CAC ratio of 3:1 or higher as your baseline"
       ],
       "placeholder": false,
-      "deep_dive": "**Unit economics are the OS of every growth business.** They answer: when I spend $1 to acquire a customer, how much do I get back, and how soon? Everything else \u2014 fundraising, hiring, scaling \u2014 flows from that answer.\n\nThe trap most operators fall into: looking at LTV:CAC as a single number. The number works at *cohort* level \u2014 customers acquired in the same period through the same channel. Blended LTV:CAC is a starting point, not an answer.\n\nThe sharp questions:\n\n- **Which cohort?** Cohorts from 2023 may have different retention than cohorts from 2026. Always compare same-vintage. A worsening retention curve hidden by new-cohort growth is how good companies die slowly.\n- **Which channel?** Organic referrals don't have a CAC at all (or it's tiny). Paid ads have a defined CAC. Sales-led has a high CAC. Each channel has its own LTV:CAC profile.\n- **Which segment?** Enterprise customers have higher LTV and higher CAC. SMB customers have lower both. The ratio can be similar; the cash dynamics radically different.\n\nThe LTV formula expanded, for SaaS:\n\n$$\\text{LTV} = \\frac{\\text{ARPU} \\times \\text{Gross Margin}}{\\text{Monthly Churn}}$$\n\nA $100/month customer at 80% gross margin and 3% monthly churn has $80 \u00d7 33 = $2,640 LTV. If CAC is $500, ratio is 5.3 \u2014 strong. Payback is $500 / ($100 \u00d7 0.8) = 6.25 months. Healthy.\n\nThe practical move:\n\n- **Compute LTV:CAC by channel every month.** Cut the ones below 3:1. Fund the ones above 5:1.\n- **Watch payback period more than LTV:CAC.** LTV is a forecast; payback is observable. A 9-month payback that you can verify with bank deposits is more useful than a 4x LTV:CAC that depends on a 40-month retention assumption.\n- **Don't optimize LTV via price hikes alone.** Higher price often comes with higher churn. The two move together more than founders expect.",
-      "song_title": "Unit Economics"
+      "deep_dive": "**Unit economics are the OS of every growth business.** They answer: when I spend $1 to acquire a customer, how much do I get back, and how soon? Everything else \u2014 fundraising, hiring, scaling \u2014 flows from that answer.\n\nThe trap most operators fall into: looking at LTV:CAC as a single number. The number works at *cohort* level \u2014 customers acquired in the same period through the same channel. Blended LTV:CAC is a starting point, not an answer.\n\nThe sharp questions:\n\n- **Which cohort?** Cohorts from 2023 may have different retention than cohorts from 2026. Always compare same-vintage. A worsening retention curve hidden by new-cohort growth is how good companies die slowly.\n- **Which channel?** Organic referrals don't have a CAC at all (or it's tiny). Paid ads have a defined CAC. Sales-led has a high CAC. Each channel has its own LTV:CAC profile.\n- **Which segment?** Enterprise customers have higher LTV and higher CAC. SMB customers have lower both. The ratio can be similar; the cash dynamics radically different.\n\nThe LTV formula expanded, for SaaS:\n\n$$\\text{LTV} = \\frac{\\text{ARPU} \\times \\text{Gross Margin}}{\\text{Monthly Churn}}$$\n\nA $100/month customer at 80% gross margin and 3% monthly churn has $80 \u00d7 33 = $2,640 LTV. If CAC is $500, ratio is 5.3 \u2014 strong. Payback is $500 / ($100 \u00d7 0.8) = 6.25 months. Healthy.\n\nThe practical move:\n\n- **Compute LTV:CAC by channel every month.** Cut the ones below 3:1. Fund the ones above 5:1.\n- **Watch payback period more than LTV:CAC.** LTV is a forecast; payback is observable. A 9-month payback that you can verify with bank deposits is more useful than a 4x LTV:CAC that depends on a 40-month retention assumption.\n- **Don't optimize LTV via price hikes alone.** Higher price often comes with higher churn. The two move together more than founders expect."
     },
     {
       "id": "M1L4.5",
@@ -589,8 +582,7 @@
         "Model the impact of a 20% revenue increase on your operating income"
       ],
       "placeholder": false,
-      "deep_dive": "**Operating leverage is the secret amplifier of every business model.** Two companies can have the same revenue and the same gross margin, but if one has $5M in fixed costs and the other has $500K, their profit profiles look nothing alike \u2014 and their fragility profiles look nothing alike either.\n\nThe math is unforgiving in both directions:\n\n$$\\text{\\% Change in EBIT} = \\text{DOL} \\times \\text{\\% Change in Revenue}$$\n\nWith DOL = 4 and revenue up 10%, EBIT is up 40%. With the same DOL and revenue down 10%, EBIT is down 40%. The leverage doesn't care about direction.\n\nWhy this shapes strategy:\n\n- **In growth mode, high operating leverage is fuel.** Every incremental dollar of revenue drops disproportionately to the bottom line. This is the SaaS magic \u2014 once you've built the platform, the 10,001st customer costs you almost nothing to serve.\n- **In contraction, high operating leverage is poison.** Fixed costs become anchors. Reducing them takes time (lease termination, layoffs, contract negotiation) while revenue can disappear in a quarter.\n\nThe operator's playbook:\n\n- **Earn fixed-cost commitments.** Don't commit to a 10-person team before the revenue is in place to service it. Don't sign a 5-year lease before product-market fit is proven. Use contractors and short leases until contribution margin and volume are real.\n- **Match operating leverage to confidence.** High confidence in scale \u2192 bias toward fixed costs (you'll be glad you did). Uncertain demand \u2192 bias toward variable costs (you can right-size quickly).\n- **Measure your DOL.** It's a strategic tell. A founder who can't quote their DOL doesn't know how exposed their P&L is to a revenue surprise.\n\nThe simple version of the question every time you commit to a fixed cost: *what's the volume I need to justify this, and how confident am I that I'll hit it on time?* If you can't answer cleanly, you're guessing \u2014 and operating leverage doesn't forgive guesses.",
-      "song_title": "Operating Leverage"
+      "deep_dive": "**Operating leverage is the secret amplifier of every business model.** Two companies can have the same revenue and the same gross margin, but if one has $5M in fixed costs and the other has $500K, their profit profiles look nothing alike \u2014 and their fragility profiles look nothing alike either.\n\nThe math is unforgiving in both directions:\n\n$$\\text{\\% Change in EBIT} = \\text{DOL} \\times \\text{\\% Change in Revenue}$$\n\nWith DOL = 4 and revenue up 10%, EBIT is up 40%. With the same DOL and revenue down 10%, EBIT is down 40%. The leverage doesn't care about direction.\n\nWhy this shapes strategy:\n\n- **In growth mode, high operating leverage is fuel.** Every incremental dollar of revenue drops disproportionately to the bottom line. This is the SaaS magic \u2014 once you've built the platform, the 10,001st customer costs you almost nothing to serve.\n- **In contraction, high operating leverage is poison.** Fixed costs become anchors. Reducing them takes time (lease termination, layoffs, contract negotiation) while revenue can disappear in a quarter.\n\nThe operator's playbook:\n\n- **Earn fixed-cost commitments.** Don't commit to a 10-person team before the revenue is in place to service it. Don't sign a 5-year lease before product-market fit is proven. Use contractors and short leases until contribution margin and volume are real.\n- **Match operating leverage to confidence.** High confidence in scale \u2192 bias toward fixed costs (you'll be glad you did). Uncertain demand \u2192 bias toward variable costs (you can right-size quickly).\n- **Measure your DOL.** It's a strategic tell. A founder who can't quote their DOL doesn't know how exposed their P&L is to a revenue surprise.\n\nThe simple version of the question every time you commit to a fixed cost: *what's the volume I need to justify this, and how confident am I that I'll hit it on time?* If you can't answer cleanly, you're guessing \u2014 and operating leverage doesn't forgive guesses."
     },
     {
       "id": "M1L5",
@@ -633,8 +625,7 @@
         "Calculate working capital: current assets minus current liabilities"
       ],
       "placeholder": false,
-      "deep_dive": "**The three statements are not three statements. They are three views of the same thing.** Every transaction touches all three: revenue lands on the P&L, accounts receivable on the balance sheet, and (eventually) cash on the cash flow statement. The art of reading financials is moving fluidly across all three to see what actually happened.\n\nThe most useful habit: pick any line on any statement and trace it through the other two. \"Why did inventory go up $200K?\" should make you check whether COGS on the P&L matches, whether the increase shows up in operating cash flow as a use, whether AP balances expanded to absorb part of the cost.\n\nWhen the three statements don't reconcile, somebody is lying \u2014 usually unintentionally:\n\n- **P&L profit but no cash flow growth?** Cash is stuck in receivables, inventory, or prepaid expenses. The accountant says you made money; the bank disagrees.\n- **Strong cash flow but weak P&L?** You may be collecting on past revenue, harvesting depreciation tax shields, or running an extraction strategy on a declining business.\n- **Big balance sheet, small P&L?** Capital tied up generating low return. Either the assets are productive and revenue should catch up, or you've built a tomb of unproductive investment.\n\nThe operating finance discipline is to read all three, every month, and make sure the story they tell is the same story you'd tell about the business out loud. When the financials say something different from what the operators say, the financials are right.\n\nThe single equation underneath everything:\n\n$$\\text{Assets} = \\text{Liabilities} + \\text{Equity}$$\n\nIt's not a formula to apply. It's a constraint that's true in every period. Every accountant's job, ultimately, is making sure this identity holds \u2014 and translating that constraint into the three statements that operators can actually use.",
-      "song_title": "Bones in Spreadsheets"
+      "deep_dive": "**The three statements are not three statements. They are three views of the same thing.** Every transaction touches all three: revenue lands on the P&L, accounts receivable on the balance sheet, and (eventually) cash on the cash flow statement. The art of reading financials is moving fluidly across all three to see what actually happened.\n\nThe most useful habit: pick any line on any statement and trace it through the other two. \"Why did inventory go up $200K?\" should make you check whether COGS on the P&L matches, whether the increase shows up in operating cash flow as a use, whether AP balances expanded to absorb part of the cost.\n\nWhen the three statements don't reconcile, somebody is lying \u2014 usually unintentionally:\n\n- **P&L profit but no cash flow growth?** Cash is stuck in receivables, inventory, or prepaid expenses. The accountant says you made money; the bank disagrees.\n- **Strong cash flow but weak P&L?** You may be collecting on past revenue, harvesting depreciation tax shields, or running an extraction strategy on a declining business.\n- **Big balance sheet, small P&L?** Capital tied up generating low return. Either the assets are productive and revenue should catch up, or you've built a tomb of unproductive investment.\n\nThe operating finance discipline is to read all three, every month, and make sure the story they tell is the same story you'd tell about the business out loud. When the financials say something different from what the operators say, the financials are right.\n\nThe single equation underneath everything:\n\n$$\\text{Assets} = \\text{Liabilities} + \\text{Equity}$$\n\nIt's not a formula to apply. It's a constraint that's true in every period. Every accountant's job, ultimately, is making sure this identity holds \u2014 and translating that constraint into the three statements that operators can actually use."
     },
     {
       "id": "M2L0.5",
@@ -677,8 +668,7 @@
         "Plan one investment in the highest-leverage moat"
       ],
       "placeholder": false,
-      "deep_dive": "**The single highest-leverage strategic question for any business: do you have a moat, and what kind?** Everything else \u2014 pricing, hiring, capital allocation \u2014 flows from the answer.\n\nWarren Buffett popularized the term, but the concept is older. Economists call it \"abnormal returns persistence.\" In competitive markets, profitable businesses attract competitors who drive profit toward the cost of capital. A moat is whatever prevents that natural decay.\n\n**The financial test** is unforgiving: ROIC above WACC, sustained for a decade. Most businesses fail this test. The ones that pass \u2014 Coca-Cola, Microsoft, Visa, Costco \u2014 share a common pattern: some structural feature that competitors can see clearly and still cannot replicate.\n\n**The strategic question for operators**: of the four moat sources (intangible assets, switching costs, network effects, cost advantages), which one is achievable in your business given current resources? Some are unbuildable in any reasonable timeframe (regulatory monopolies). Some are buildable but only with time and discipline (brand). Some can be engineered into the product itself (switching costs through data and integrations).\n\nThe practical move: pick the one that's both achievable and defensible, and direct every product and operating decision to widen it. A business with no moat in pursuit can still build one through deliberate compounding. A business with a moat and no plan to widen it will lose it.",
-      "song_title": "Moat Around My Castle"
+      "deep_dive": "**The single highest-leverage strategic question for any business: do you have a moat, and what kind?** Everything else \u2014 pricing, hiring, capital allocation \u2014 flows from the answer.\n\nWarren Buffett popularized the term, but the concept is older. Economists call it \"abnormal returns persistence.\" In competitive markets, profitable businesses attract competitors who drive profit toward the cost of capital. A moat is whatever prevents that natural decay.\n\n**The financial test** is unforgiving: ROIC above WACC, sustained for a decade. Most businesses fail this test. The ones that pass \u2014 Coca-Cola, Microsoft, Visa, Costco \u2014 share a common pattern: some structural feature that competitors can see clearly and still cannot replicate.\n\n**The strategic question for operators**: of the four moat sources (intangible assets, switching costs, network effects, cost advantages), which one is achievable in your business given current resources? Some are unbuildable in any reasonable timeframe (regulatory monopolies). Some are buildable but only with time and discipline (brand). Some can be engineered into the product itself (switching costs through data and integrations).\n\nThe practical move: pick the one that's both achievable and defensible, and direct every product and operating decision to widen it. A business with no moat in pursuit can still build one through deliberate compounding. A business with a moat and no plan to widen it will lose it."
     },
     {
       "id": "M2L1",
@@ -721,8 +711,7 @@
         "List what a competitor would need to overcome your advantage"
       ],
       "placeholder": false,
-      "deep_dive": "**Of the five moat types, only some are buildable by founders. The others are inheritable.** Regulatory moats \u2014 pharma patents, casino licenses, energy infrastructure rights \u2014 come from being earlier or politically connected. They're real, but you can't reverse-engineer your way into one mid-game.\n\nThe four moat types that operators can actually engineer:\n\n- **Switching costs**: this is the most under-appreciated lever for software founders. Every integration the customer builds against your API, every data point they store, every workflow that depends on you \u2014 that's switching cost being deposited. Build a product with deep integration points and data gravity, and the moat builds itself.\n- **Network effects**: hardest to start, strongest when achieved. Marketplaces, communication tools, payment networks. If your product's value to each user grows with the number of other users, you have a structural advantage that can't be out-spent.\n- **Cost advantages from scale**: Amazon-style. Process and distribution efficiency that competitors can't match without matching the scale first.\n- **Brand-as-intangible**: takes years and consistency. Apple, Patagonia, Hermes. The customer pays a premium for the trust mark.\n\nThe operator's actual question: *which moat type matches your business model, and how do you compound it?* Most startups have a thin version of one of these and are trying to thicken it. The strategy is to recognize which one you have and direct every product decision to widen it. \"We have a moat\" is too abstract. \"We have a switching cost moat that compounds with the data we accumulate per customer\" is actionable.",
-      "song_title": "Five Economic Moats"
+      "deep_dive": "**Of the five moat types, only some are buildable by founders. The others are inheritable.** Regulatory moats \u2014 pharma patents, casino licenses, energy infrastructure rights \u2014 come from being earlier or politically connected. They're real, but you can't reverse-engineer your way into one mid-game.\n\nThe four moat types that operators can actually engineer:\n\n- **Switching costs**: this is the most under-appreciated lever for software founders. Every integration the customer builds against your API, every data point they store, every workflow that depends on you \u2014 that's switching cost being deposited. Build a product with deep integration points and data gravity, and the moat builds itself.\n- **Network effects**: hardest to start, strongest when achieved. Marketplaces, communication tools, payment networks. If your product's value to each user grows with the number of other users, you have a structural advantage that can't be out-spent.\n- **Cost advantages from scale**: Amazon-style. Process and distribution efficiency that competitors can't match without matching the scale first.\n- **Brand-as-intangible**: takes years and consistency. Apple, Patagonia, Hermes. The customer pays a premium for the trust mark.\n\nThe operator's actual question: *which moat type matches your business model, and how do you compound it?* Most startups have a thin version of one of these and are trying to thicken it. The strategy is to recognize which one you have and direct every product decision to widen it. \"We have a moat\" is too abstract. \"We have a switching cost moat that compounds with the data we accumulate per customer\" is actionable."
     },
     {
       "id": "M2L1.5",
@@ -765,8 +754,7 @@
         "Map how your current resources align with your stated strategy"
       ],
       "placeholder": false,
-      "deep_dive": "**PESTEL is a hygiene practice, not a strategy framework.** It doesn't tell you what to do; it tells you what not to miss. Every six months, sit down with the six lenses and ask: what has changed in each that could affect us in the next 3\u20135 years?\n\nThe trap most operators fall into is treating external scanning as a one-time exercise during strategic planning. The scan should be continuous, light, and habitual:\n\n- **Political**: who's in power, what are they prioritizing, what's pending legislation?\n- **Economic**: what's the cost of capital, what's the consumer doing, what are early indicators of recession or recovery?\n- **Social**: what behavior is shifting that could change demand for what you sell?\n- **Technological**: what's becoming dramatically cheaper or newly possible?\n- **Environmental**: what physical-world constraints are tightening \u2014 water, energy, materials?\n- **Legal**: what court rulings or settlements are setting new precedents in your space?\n\nThe practical output is a short list of *signals worth watching* and *prepared responses* for the ones most likely to materialize. The biggest mistakes in business strategy are not bad bets \u2014 they're missed signals that should have prompted defensive moves earlier. PESTEL is a discipline for catching those signals while they're cheap to act on.",
-      "song_title": "Strategic Strut"
+      "deep_dive": "**PESTEL is a hygiene practice, not a strategy framework.** It doesn't tell you what to do; it tells you what not to miss. Every six months, sit down with the six lenses and ask: what has changed in each that could affect us in the next 3\u20135 years?\n\nThe trap most operators fall into is treating external scanning as a one-time exercise during strategic planning. The scan should be continuous, light, and habitual:\n\n- **Political**: who's in power, what are they prioritizing, what's pending legislation?\n- **Economic**: what's the cost of capital, what's the consumer doing, what are early indicators of recession or recovery?\n- **Social**: what behavior is shifting that could change demand for what you sell?\n- **Technological**: what's becoming dramatically cheaper or newly possible?\n- **Environmental**: what physical-world constraints are tightening \u2014 water, energy, materials?\n- **Legal**: what court rulings or settlements are setting new precedents in your space?\n\nThe practical output is a short list of *signals worth watching* and *prepared responses* for the ones most likely to materialize. The biggest mistakes in business strategy are not bad bets \u2014 they're missed signals that should have prompted defensive moves earlier. PESTEL is a discipline for catching those signals while they're cheap to act on."
     },
     {
       "id": "M2L2",
@@ -809,8 +797,7 @@
         "Choose one force to actively mitigate this quarter"
       ],
       "placeholder": false,
-      "deep_dive": "**Porter's Five Forces is not a checklist. It's a lens for understanding why some industries make money and others don't.** The pharmaceutical industry has high margins because all five forces are favorable: entry is hard (patents, regulation), suppliers are weak, buyers are fragmented, substitutes are limited, rivalry is muted by patent protection. Airlines have terrible margins because all five forces are unfavorable: low entry barriers, powerful suppliers (Boeing, Airbus), concentrated buyers (corporate travel), substitutes (video calls), and brutal rivalry.\n\nThe insight that changes how you operate: **industry structure determines profitability more than execution.** A mediocre operator in a great industry will out-earn a brilliant operator in a terrible industry. This is why category selection matters before founder talent, before product, before market timing.\n\n**The practical move** for an existing business: do a five-forces assessment honestly. For each force, mark it as favorable, neutral, or unfavorable. Count the favorables. If three or more are unfavorable, your problem is structural \u2014 execution alone won't fix it. The strategic options become: change the structure (vertical integration, regulatory protection, network effects to lock in customers), or change the game you're playing (move to an adjacent market with better structure).\n\nThe second-order insight: every strategic move is an attempt to change one of the five forces in your favor. Brand-building reduces buyer power. Patent filing reduces entrant threat. Acquisition reduces rivalry. Every play in strategy is a Porter play.",
-      "song_title": "Five Forces"
+      "deep_dive": "**Porter's Five Forces is not a checklist. It's a lens for understanding why some industries make money and others don't.** The pharmaceutical industry has high margins because all five forces are favorable: entry is hard (patents, regulation), suppliers are weak, buyers are fragmented, substitutes are limited, rivalry is muted by patent protection. Airlines have terrible margins because all five forces are unfavorable: low entry barriers, powerful suppliers (Boeing, Airbus), concentrated buyers (corporate travel), substitutes (video calls), and brutal rivalry.\n\nThe insight that changes how you operate: **industry structure determines profitability more than execution.** A mediocre operator in a great industry will out-earn a brilliant operator in a terrible industry. This is why category selection matters before founder talent, before product, before market timing.\n\n**The practical move** for an existing business: do a five-forces assessment honestly. For each force, mark it as favorable, neutral, or unfavorable. Count the favorables. If three or more are unfavorable, your problem is structural \u2014 execution alone won't fix it. The strategic options become: change the structure (vertical integration, regulatory protection, network effects to lock in customers), or change the game you're playing (move to an adjacent market with better structure).\n\nThe second-order insight: every strategic move is an attempt to change one of the five forces in your favor. Brand-building reduces buyer power. Patent filing reduces entrant threat. Acquisition reduces rivalry. Every play in strategy is a Porter play."
     },
     {
       "id": "M2L3",
@@ -853,8 +840,7 @@
         "Double down on your highest-scoring VRIO capability this quarter"
       ],
       "placeholder": false,
-      "deep_dive": "**VRIO is the most rigorous framework for testing whether something actually constitutes a competitive advantage.** Jay Barney's four-question filter rules out the casual claims that infest strategy decks.\n\nThe key insight is the conjunction: all four must be yes. Most competitive-advantage claims fail at one of them:\n\n- *\"Our team is amazing.\"* Valuable, sometimes rare \u2014 but inimitable? Talent moves. Imitable.\n- *\"Our brand is iconic.\"* Valuable, rare, and inimitable. But is the organization built to leverage it? Often companies with great brands underprice them.\n- *\"We have proprietary data.\"* Valuable, possibly rare \u2014 but inimitable depends on whether competitors can collect equivalent data from other sources.\n\nThe organizational filter (O) is where most theoretical advantages die. Kodak had patents on digital photography in the 1970s. Xerox PARC invented the personal computer paradigm. Both companies failed to capture the value because their organizations weren't structured to deploy what they owned. The resource without the organization is decoration.\n\n**The practical exercise**: list every resource and capability you claim as a competitive advantage. Run each one through V-R-I-O. The ones that fail any test are not real moats \u2014 they're either parity (table stakes) or temporary advantages (will erode). The ones that pass all four are where you direct capital and management attention.\n\nThe second-order insight: VRIO doesn't just diagnose what you have. It tells you what to build. Want a sustained advantage? Find something that's valuable and rare, and then design the path to make it inimitable \u2014 usually through compounding investments and organizational learning.",
-      "song_title": "Competitive Moat"
+      "deep_dive": "**VRIO is the most rigorous framework for testing whether something actually constitutes a competitive advantage.** Jay Barney's four-question filter rules out the casual claims that infest strategy decks.\n\nThe key insight is the conjunction: all four must be yes. Most competitive-advantage claims fail at one of them:\n\n- *\"Our team is amazing.\"* Valuable, sometimes rare \u2014 but inimitable? Talent moves. Imitable.\n- *\"Our brand is iconic.\"* Valuable, rare, and inimitable. But is the organization built to leverage it? Often companies with great brands underprice them.\n- *\"We have proprietary data.\"* Valuable, possibly rare \u2014 but inimitable depends on whether competitors can collect equivalent data from other sources.\n\nThe organizational filter (O) is where most theoretical advantages die. Kodak had patents on digital photography in the 1970s. Xerox PARC invented the personal computer paradigm. Both companies failed to capture the value because their organizations weren't structured to deploy what they owned. The resource without the organization is decoration.\n\n**The practical exercise**: list every resource and capability you claim as a competitive advantage. Run each one through V-R-I-O. The ones that fail any test are not real moats \u2014 they're either parity (table stakes) or temporary advantages (will erode). The ones that pass all four are where you direct capital and management attention.\n\nThe second-order insight: VRIO doesn't just diagnose what you have. It tells you what to build. Want a sustained advantage? Find something that's valuable and rare, and then design the path to make it inimitable \u2014 usually through compounding investments and organizational learning."
     },
     {
       "id": "M2L4",
@@ -897,8 +883,7 @@
         "Identify one segment of non-customers you could realistically attract"
       ],
       "placeholder": false,
-      "deep_dive": "**Blue Ocean Strategy is about making competition irrelevant, not winning it.** W. Chan Kim and Ren\u00e9e Mauborgne studied how some companies create new markets while others compete in existing ones \u2014 and consistently found that value creation comes from breaking industry trade-offs, not optimizing within them.\n\nThe foundational move is the **ERRC grid**: a structured exercise to redesign an industry's value curve. Take a sheet of paper. List the factors your industry competes on. Then for each factor ask:\n\n- **Eliminate**: what does this industry assume is necessary that the customer doesn't actually want?\n- **Reduce**: what's been over-delivered (more features, more service, more channels) beyond what creates value?\n- **Raise**: what's been under-delivered, where lifting the bar would create disproportionate value?\n- **Create**: what does no one in this industry offer that customers would value?\n\n[example] Cirque du Soleil eliminated star performers, animals, multiple show arenas. Reduced fun and humor, danger. Raised unique venue, theme. Created refined environment, multiple productions, artistic music and dance. The result wasn't a better circus \u2014 it was a new category, with premium pricing and no direct competitor.\n\n**The hard truth**: most companies can't execute Blue Ocean because their organization is optimized for the red ocean they're in. The cost structure, the sales channels, the talent \u2014 all calibrated for the existing game. Breaking out requires accepting that the old playbook becomes the wrong playbook. That's an organizational change, not a strategy memo.\n\nThe practical filter: if your ERRC grid yields incremental changes (\"reduce price by 10%, raise service by 15%\"), you're still in the red ocean. Blue ocean changes are large and asymmetric \u2014 eliminate something the industry assumes is essential, create something the industry has never offered.",
-      "song_title": "Blue Ocean"
+      "deep_dive": "**Blue Ocean Strategy is about making competition irrelevant, not winning it.** W. Chan Kim and Ren\u00e9e Mauborgne studied how some companies create new markets while others compete in existing ones \u2014 and consistently found that value creation comes from breaking industry trade-offs, not optimizing within them.\n\nThe foundational move is the **ERRC grid**: a structured exercise to redesign an industry's value curve. Take a sheet of paper. List the factors your industry competes on. Then for each factor ask:\n\n- **Eliminate**: what does this industry assume is necessary that the customer doesn't actually want?\n- **Reduce**: what's been over-delivered (more features, more service, more channels) beyond what creates value?\n- **Raise**: what's been under-delivered, where lifting the bar would create disproportionate value?\n- **Create**: what does no one in this industry offer that customers would value?\n\n[example] Cirque du Soleil eliminated star performers, animals, multiple show arenas. Reduced fun and humor, danger. Raised unique venue, theme. Created refined environment, multiple productions, artistic music and dance. The result wasn't a better circus \u2014 it was a new category, with premium pricing and no direct competitor.\n\n**The hard truth**: most companies can't execute Blue Ocean because their organization is optimized for the red ocean they're in. The cost structure, the sales channels, the talent \u2014 all calibrated for the existing game. Breaking out requires accepting that the old playbook becomes the wrong playbook. That's an organizational change, not a strategy memo.\n\nThe practical filter: if your ERRC grid yields incremental changes (\"reduce price by 10%, raise service by 15%\"), you're still in the red ocean. Blue ocean changes are large and asymmetric \u2014 eliminate something the industry assumes is essential, create something the industry has never offered."
     },
     {
       "id": "M2L5",
@@ -937,8 +922,7 @@
       ],
       "take_action": [],
       "placeholder": false,
-      "deep_dive": "**Clayton Christensen's disruption theory is the most misunderstood framework in modern business writing.** Every new entrant is called a \"disruptor.\" Uber wasn't, by Christensen's definition \u2014 it served high-end customers with a better experience, not low-end customers with a worse one. Tesla wasn't, initially \u2014 it targeted luxury, not budget. Real disruption is rarer and quieter.\n\nThe diagnostic pattern: a new entrant targets the *least profitable* segment of an established market with a product that is *worse on every metric the incumbent cares about* but *better on a new metric* the incumbent dismisses (price, accessibility, simplicity). The incumbent ignores them rationally. Five years later, the new metric has improved enough to attract mainstream customers, and the incumbent has no ground to defend.\n\n**Personal computers** disrupted minicomputers \u2014 worse on processing power, cheaper and personal. **Discount retailers** disrupted full-service department stores \u2014 worse on selection and service, cheaper and faster. **Online education** is currently disrupting traditional colleges \u2014 worse on prestige and network, cheaper and more accessible.\n\n**The operator's question**: are you the incumbent or the disruptor? The answer determines your strategy:\n\n- *Incumbent.* Establish a separate business unit, with separate metrics and economics, to compete on the disruptor's terms. Insulate it from your existing P&L logic. This is what GM tried (and failed) with Saturn. It's what Adobe succeeded at with Creative Cloud.\n- *Disruptor.* Stay in the underserved segment until your performance crosses the threshold where mainstream customers will switch. Don't get pulled upmarket too fast \u2014 that's where incumbents will beat you. Compound on the new metric.\n\nThe insight that changes how you read industries: the next disruption is happening right now, somewhere obvious, being dismissed by smart people for entirely defensible reasons. Find the dismissed product. That's your next move \u2014 either to invest in or defend against.",
-      "song_title": "Dollar Soldier"
+      "deep_dive": "**Clayton Christensen's disruption theory is the most misunderstood framework in modern business writing.** Every new entrant is called a \"disruptor.\" Uber wasn't, by Christensen's definition \u2014 it served high-end customers with a better experience, not low-end customers with a worse one. Tesla wasn't, initially \u2014 it targeted luxury, not budget. Real disruption is rarer and quieter.\n\nThe diagnostic pattern: a new entrant targets the *least profitable* segment of an established market with a product that is *worse on every metric the incumbent cares about* but *better on a new metric* the incumbent dismisses (price, accessibility, simplicity). The incumbent ignores them rationally. Five years later, the new metric has improved enough to attract mainstream customers, and the incumbent has no ground to defend.\n\n**Personal computers** disrupted minicomputers \u2014 worse on processing power, cheaper and personal. **Discount retailers** disrupted full-service department stores \u2014 worse on selection and service, cheaper and faster. **Online education** is currently disrupting traditional colleges \u2014 worse on prestige and network, cheaper and more accessible.\n\n**The operator's question**: are you the incumbent or the disruptor? The answer determines your strategy:\n\n- *Incumbent.* Establish a separate business unit, with separate metrics and economics, to compete on the disruptor's terms. Insulate it from your existing P&L logic. This is what GM tried (and failed) with Saturn. It's what Adobe succeeded at with Creative Cloud.\n- *Disruptor.* Stay in the underserved segment until your performance crosses the threshold where mainstream customers will switch. Don't get pulled upmarket too fast \u2014 that's where incumbents will beat you. Compound on the new metric.\n\nThe insight that changes how you read industries: the next disruption is happening right now, somewhere obvious, being dismissed by smart people for entirely defensible reasons. Find the dismissed product. That's your next move \u2014 either to invest in or defend against."
     },
     {
       "id": "M2L2.1.5",
@@ -981,8 +965,7 @@
         "Map the gap between your current state and strategic requirements"
       ],
       "placeholder": false,
-      "deep_dive": "**Most strategies fail not because of bad execution but because they were never actually strategies.** Richard Rumelt's diagnosis: corporate America has confused strategy with goal-setting. \"We will be the leading provider of X by 2027\" is a goal. It's not a strategy. A strategy explains *how* \u2014 what's the situation, what's the leverage point, what's the move.\n\nRumelt's kernel of good strategy:\n\n- **Diagnosis**: a clear-eyed understanding of what's actually going on. What's the binding constraint? Where's the leverage? What's preventing progress today?\n- **Guiding policy**: the overall approach. Not a tactical plan \u2014 a direction that shapes all subsequent choices.\n- **Coherent actions**: specific moves that implement the policy, each reinforcing the others.\n\nThe diagnostic step is where most strategies break. Operators don't want to face the real problem because it's politically awkward, embarrassing, or implies past errors. So they paper over it with aspirational language and call the result a strategy. The result is a document that sounds plausible and accomplishes nothing.\n\n**The practical exercise**: for any strategic question, force yourself to answer in three sentences. \"The diagnosis is X. The guiding policy is Y. The coherent actions are A, B, C.\" If you can't compress to three sentences, you don't have a strategy yet \u2014 you have a wish list. The compression forces clarity that PowerPoint actively prevents.\n\nThe rarest skill in strategy is the diagnosis. Anyone can come up with a guiding policy once the diagnosis is in place. The discipline is naming the actual problem, in plain language, even when nobody wants to.",
-      "song_title": "Beneath the Hood"
+      "deep_dive": "**Most strategies fail not because of bad execution but because they were never actually strategies.** Richard Rumelt's diagnosis: corporate America has confused strategy with goal-setting. \"We will be the leading provider of X by 2027\" is a goal. It's not a strategy. A strategy explains *how* \u2014 what's the situation, what's the leverage point, what's the move.\n\nRumelt's kernel of good strategy:\n\n- **Diagnosis**: a clear-eyed understanding of what's actually going on. What's the binding constraint? Where's the leverage? What's preventing progress today?\n- **Guiding policy**: the overall approach. Not a tactical plan \u2014 a direction that shapes all subsequent choices.\n- **Coherent actions**: specific moves that implement the policy, each reinforcing the others.\n\nThe diagnostic step is where most strategies break. Operators don't want to face the real problem because it's politically awkward, embarrassing, or implies past errors. So they paper over it with aspirational language and call the result a strategy. The result is a document that sounds plausible and accomplishes nothing.\n\n**The practical exercise**: for any strategic question, force yourself to answer in three sentences. \"The diagnosis is X. The guiding policy is Y. The coherent actions are A, B, C.\" If you can't compress to three sentences, you don't have a strategy yet \u2014 you have a wish list. The compression forces clarity that PowerPoint actively prevents.\n\nThe rarest skill in strategy is the diagnosis. Anyone can come up with a guiding policy once the diagnosis is in place. The discipline is naming the actual problem, in plain language, even when nobody wants to."
     },
     {
       "id": "M2L2.3.5",
@@ -1025,8 +1008,7 @@
         "Redesign one block to improve overall business model strength"
       ],
       "placeholder": false,
-      "deep_dive": "**The Business Model Canvas is one frame on a sheet of paper that captures more strategic clarity than most 40-page business plans.** Alexander Osterwalder's nine boxes force you to articulate every essential dimension of a business \u2014 and crucially, to see whether they fit together.\n\nThe boxes:\n\n- **Right side (value creation)**: Customer Segments, Value Proposition, Channels, Customer Relationships, Revenue Streams\n- **Left side (cost & operations)**: Key Activities, Key Resources, Key Partners, Cost Structure\n\nThe insight is that the boxes must be *coherent*. A high-touch enterprise sales model (high customer relationship cost) requires a high-priced subscription or annual contract (sufficient revenue per customer to support it). A self-service freemium model requires viral or content-driven channels (low CAC) and a value proposition strong enough to convert free to paid. Mismatched boxes \u2014 premium pricing with self-service delivery, or enterprise sales with low ACVs \u2014 break the model.\n\n**The practical exercise**: fill in all nine boxes for your business. Then walk around the canvas asking \"does this fit with that?\" The misalignments are your strategic problems. Often the fix isn't all nine \u2014 it's one or two boxes that need to change to make the others work.\n\nThe canvas is also a powerful diagnostic for competitors and acquisition targets. Mapping a competitor's canvas reveals exactly where their model is weak \u2014 and where yours can attack.",
-      "song_title": "Business Model Canvas"
+      "deep_dive": "**The Business Model Canvas is one frame on a sheet of paper that captures more strategic clarity than most 40-page business plans.** Alexander Osterwalder's nine boxes force you to articulate every essential dimension of a business \u2014 and crucially, to see whether they fit together.\n\nThe boxes:\n\n- **Right side (value creation)**: Customer Segments, Value Proposition, Channels, Customer Relationships, Revenue Streams\n- **Left side (cost & operations)**: Key Activities, Key Resources, Key Partners, Cost Structure\n\nThe insight is that the boxes must be *coherent*. A high-touch enterprise sales model (high customer relationship cost) requires a high-priced subscription or annual contract (sufficient revenue per customer to support it). A self-service freemium model requires viral or content-driven channels (low CAC) and a value proposition strong enough to convert free to paid. Mismatched boxes \u2014 premium pricing with self-service delivery, or enterprise sales with low ACVs \u2014 break the model.\n\n**The practical exercise**: fill in all nine boxes for your business. Then walk around the canvas asking \"does this fit with that?\" The misalignments are your strategic problems. Often the fix isn't all nine \u2014 it's one or two boxes that need to change to make the others work.\n\nThe canvas is also a powerful diagnostic for competitors and acquisition targets. Mapping a competitor's canvas reveals exactly where their model is weak \u2014 and where yours can attack."
     },
     {
       "id": "M3L1",
@@ -1041,10 +1023,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_90-Day_Blueprint.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Why First 90 Days Matter Disproportionately",
+          "body": "Reputations form fast. The story your team tells about you after 90 days is the story they tell forever. Patterns set in the first quarter compound for years; correcting them later costs 10x.\n\nThe 90-day window is not for results \u2014 it's for credibility and read."
+        },
+        {
+          "title": "Diagnosis Before Action",
+          "body": "Spend the first 30 days listening, not deciding. Map the org, the unspoken rules, the political fault lines, the actual cash flows. Most new leaders fail because they prescribe before diagnosing.\n\nThe one early move that's always right: shut up and ask questions."
+        },
+        {
+          "title": "Quick Wins vs. Right Wins",
+          "body": "Pick 2-3 quick wins in the first 60 days \u2014 visible, low-risk, broadly useful. They buy you the credibility to make harder calls later.\n\nResist the temptation to swing for the fences in week one. Quick wins are about building trust, not impressing anyone."
+        },
+        {
+          "title": "STARS Framework",
+          "body": "Michael Watkins's situation typology: **S**tartup, **T**urnaround, **A**ccelerated growth, **R**ealignment, **S**ustaining success. Each demands a different playbook.\n\nDiagnose which one you're inheriting BEFORE choosing tactics. A turnaround playbook in a sustaining-success situation breaks the team."
+        },
+        {
+          "title": "The Communication Cadence",
+          "body": "Set up weekly 1:1s with every direct report in week one. Monthly skip-levels with rising contributors. A regular all-hands by day 30.\n\nThe rituals create the relational substrate. Without them, you're a stranger making decisions about people you don't know."
+        }
+      ],
       "take_action": [],
       "placeholder": false,
-      "song_title": "The 90-Day Blueprint"
+      "deep_dive": "**Michael Watkins's *The First 90 Days* is the most-quoted leadership book for one reason: he proved that early-tenure leaders fail at predictable patterns.** Most failures aren't capability problems \u2014 they're sequencing problems. New leaders take action before they've diagnosed. They prescribe before they understand. They miss that the *type* of situation they've inherited determines the right play.\n\nThe STARS framework gives you five archetypes, each with a different playbook:\n\n- **Startup**: build from zero. Energy and pace are your assets; everything is greenfield.\n- **Turnaround**: business is in crisis. Speed, decisiveness, and willingness to make unpopular calls. Cut deep early.\n- **Accelerated growth**: business is winning; the challenge is scaling without breaking it. Hire ahead, systematize, raise the bar.\n- **Realignment**: business looks healthy but is on a slow decline. Hardest of all \u2014 the team doesn't see the problem yet, so they resist change.\n- **Sustaining success**: protect what works. Resist the urge to make changes for change's sake.\n\nMost failed transitions are realignment situations where the new leader played a turnaround playbook (alienating the team that was performing) or sustaining-success (missing the slow decline). Diagnosis is half the work.\n\n**The operating discipline for the first 90 days**: spend Week 1 on listening tours. Map the actual org chart, the influence network (not the formal one), the recent history, the cash, the customers. Make zero major decisions. Earn the right to lead by demonstrating you understand the place before you change it."
     },
     {
       "id": "M3L1.5",
@@ -1059,10 +1062,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Worth_Aligned.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Value Proposition for Talent",
+          "body": "Why would top talent come work for you instead of the higher-paying option? Comp is table stakes; the differentiation is meaning, growth, autonomy, and the people they'll work with.\n\nIf you can't articulate your talent value proposition, you'll lose every contested hire to a competitor with deeper pockets."
+        },
+        {
+          "title": "Mission Alignment",
+          "body": "People do their best work when the mission lines up with what they want their life to be about. Mission isn't a slogan \u2014 it's a filter for who joins and who stays.\n\nThe sharper the mission, the smaller the candidate pool. That's a feature, not a bug. Narrow missions attract zealots."
+        },
+        {
+          "title": "Worth Beyond Comp",
+          "body": "Money matters until it doesn't. Above market-rate, marginal dollars buy less and less. Growth, autonomy, ownership, and meaning compound over careers.\n\nThe team you want includes people for whom worth is calculated this way. The team you don't want optimizes purely for cash."
+        },
+        {
+          "title": "The Equity Conversation",
+          "body": "Equity is the long-term alignment mechanism. Give it generously and meaningfully \u2014 not as a substitute for fair cash comp but in addition.\n\nThe employees who think about equity correctly will help you build the company. The ones who don't will leave the day the price tag is offered elsewhere."
+        },
+        {
+          "title": "Cultural Fit (Carefully)",
+          "body": "Cultural fit is real, but it's the most-abused hiring criterion. \"Fit\" too easily becomes a euphemism for \"comfortable with me.\" That's how teams become monocultures.\n\nThe right test: does this person make the culture stronger AND bring something the team is missing?"
+        }
+      ],
       "take_action": [],
       "placeholder": false,
-      "song_title": "Worth Aligned"
+      "deep_dive": "**Talent doesn't sort by salary alone. It sorts by what feels worth it.** The mediocre engineer might take an extra $30K to switch jobs. The top 1% engineer is choosing between offers that are functionally identical on compensation. What tips the decision is everything else: the problem space, the team, the autonomy, the trajectory.\n\nThe operator's instinct to win every candidate on cash is expensive and ultimately ineffective. The companies that build the best teams over time \u2014 Stripe, Vercel, Anthropic, Linear \u2014 articulate a worth proposition that competes on dimensions deeper than salary:\n\n- **Problem space**: \"You'll work on the most important problem in [domain].\" Mission for the technically ambitious.\n- **Team**: \"You'll work with the best people you've ever met.\" Reference checks and peer signals do the recruiting.\n- **Autonomy**: \"You'll own this end-to-end, not implement someone else's spec.\" Trade rigor for ownership in the right roles.\n- **Trajectory**: \"In two years you'll have done things you couldn't have done elsewhere.\" Compound career growth.\n\nThis isn't soft branding. It's a strategic choice. Every candidate decision is a function of `(comp + worth - opportunity cost)`. The companies that win contested hires understand that worth compounds \u2014 and they invest in it.\n\nThe practical move: write your talent value proposition in three sentences. \"Come work here because X, Y, Z.\" If those three sentences are interchangeable with any competitor's, you have a talent problem you can't solve with salary."
     },
     {
       "id": "M3L2",
@@ -1078,11 +1102,26 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Crisis Leadership",
-        "Communication Under Pressure",
-        "Decision Speed vs. Accuracy",
-        "Stakeholder Management in Crisis",
-        "The Playbook Mindset"
+        {
+          "title": "Acknowledge Reality Fast",
+          "body": "Crisis demands rapid public acknowledgment. Denial or delay multiplies damage exponentially. The first 24 hours set the trajectory of the recovery.\n\nThe template: 'Here's what happened. Here's what we know. Here's what we don't know yet. Here's what we're doing.' Plain English. No spin."
+        },
+        {
+          "title": "Single Source of Truth",
+          "body": "In crisis, multiple narratives breed faster than reality. Designate one internal channel for facts (Slack channel, doc, dashboard) and update it relentlessly.\n\nThe alternative is rumor markets where the worst story wins. Truth markets need active maintenance."
+        },
+        {
+          "title": "Decision Speed Over Decision Quality",
+          "body": "In normal times, slow careful decisions are better. In crisis, a 70% decision made immediately beats a 95% decision made in three days.\n\nUse reversible decisions liberally. Use irreversible ones sparingly and with the most senior input you have."
+        },
+        {
+          "title": "Inner Circle Discipline",
+          "body": "Crisis tempts leaders to consult everyone for reassurance. Resist. Designate a small core (3-5 people) for fast loop decisions. Communicate broadly; decide narrowly.\n\nLarger groups slow decisions, leak information, and dilute accountability. The core has clear authority and clear blame."
+        },
+        {
+          "title": "After-Action Review",
+          "body": "Every crisis is also a learning opportunity if you debrief honestly. Within 48 hours of resolution, the inner circle plus 1-2 outside perspectives review: what did we miss, what worked, what would we change?\n\nMost organizations skip this step and repeat the mistake."
+        }
       ],
       "take_action": [
         "Write a one-page crisis comms template for your most likely scenario",
@@ -1090,7 +1129,7 @@
         "Identify who makes decisions when you're unreachable"
       ],
       "placeholder": false,
-      "song_title": "The Crisis Playbook"
+      "deep_dive": "**The single most useful crisis frame: distinguish between the *event* and the *crisis*.** The event is what happened. The crisis is the period of uncertainty, accelerated decisions, and reputational stakes that follows. The event might last a day; the crisis can last months.\n\nMost organizations fail crisis management not because the event was unmanageable but because they treated the crisis like business as usual. The cardinal sins:\n\n- **Slow public acknowledgment.** Every hour the official story is silent, unofficial stories fill the void. The first version of the narrative usually wins.\n- **Distributed decision-making.** \"We need consensus\" in a crisis means \"we will be slower than the situation requires.\"\n- **Optimizing for non-crisis values.** Patience, thoroughness, broad input \u2014 all virtues in normal times, all liabilities in crisis.\n\nThe crisis playbook is short and ugly:\n\n1. **Name the crisis** publicly within hours, not days.\n2. **Designate an Incident Commander** with explicit authority to make decisions for the duration.\n3. **Single channel of truth** for facts. Update at known cadence (every 4 hours initially).\n4. **Decide on reversible actions fast**, irreversible ones with the highest available input.\n5. **Communicate inwardly and outwardly on a clock**, not when convenient.\n6. **Debrief within 48 hours** of resolution. Don't let the lessons disperse with the urgency.\n\nThe difference between organizations that emerge from crisis stronger and those that emerge weaker is rarely the original event. It's whether they treated the crisis itself as a structured, time-bound mode with its own playbook \u2014 or whether they tried to keep doing normal operations under pressure."
     },
     {
       "id": "M3L2.5",
@@ -1106,11 +1145,26 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Radical Candor",
-        "Feedback Loops",
-        "Coaching vs. Directing",
-        "SBI Model (Situation, Behavior, Impact)",
-        "Growth Mindset in Teams"
+        {
+          "title": "Feedback as a Habit, Not an Event",
+          "body": "Most organizations treat feedback as an annual ritual. The best treat it as a daily texture: small, specific, immediate, two-way.\n\nThe annual review is necessary for HR but useless for growth. The growth happens in the 5-second comment after a meeting, not the 30-minute conversation in March."
+        },
+        {
+          "title": "Direct Beats Diplomatic",
+          "body": "Most managers soften feedback to the point of unintelligibility. The receiver doesn't get the signal, doesn't change, and is more frustrated when consequences arrive later.\n\nKim Scott's 'radical candor': care personally, challenge directly. Both. Neither alone works."
+        },
+        {
+          "title": "Feedback Up, Not Just Down",
+          "body": "Leaders need feedback more than reports do, and get it less. Build mechanisms that reward \u2014 not punish \u2014 upward signal: skip-levels, anonymous channels, structured 360s.\n\nMost CEOs become disconnected from reality not from malice but from filtered information."
+        },
+        {
+          "title": "The Mirror Map",
+          "body": "Most feedback failures are not delivery problems \u2014 they're calibration problems. The leader thinks the team is performing better or worse than they actually are.\n\nThe mirror map: write down where you think each person is on a 5-point scale, then ask their peers to do the same. The deltas are where attention is needed."
+        },
+        {
+          "title": "Closing the Loop",
+          "body": "Feedback without follow-up is theater. After delivering it, schedule a check-in 30 days out: did the behavior change? Did the situation improve?\n\nThe loop closes \u2014 or it doesn't. Either way, you've learned something about the person, the feedback, and yourself."
+        }
       ],
       "take_action": [
         "Give one specific, behavior-based piece of feedback to a teammate this week",
@@ -1118,7 +1172,7 @@
         "Schedule a monthly 1:1 with structured feedback built in"
       ],
       "placeholder": false,
-      "song_title": "Mirror Map Feedback"
+      "deep_dive": "**Feedback is the highest-leverage management activity. Most leaders are bad at it because they conflate three different practices.**\n\n1. **Coaching feedback** is forward-looking, growth-oriented, and continuous. \"Here's what would have made that presentation land harder.\" Daily texture.\n2. **Performance feedback** is backward-looking, evaluative, and discrete. \"Here's how I'd rate this quarter relative to your goals.\" Quarterly cadence.\n3. **Termination feedback** is binary, final, and structured for legal and humane outcomes. Rare and grave.\n\nMost feedback failures come from blending types. Coaching delivered with the gravity of performance feedback creates anxiety for trivial issues. Performance feedback delivered in coaching tone undersignals the stakes. Termination feedback delivered as coaching creates surprise and litigation.\n\nThe **mirror map** is one of the most useful private exercises a leader can do. Take a sheet of paper. For each direct report, write down where you think they sit on three scales: technical quality, judgment under uncertainty, and team contribution. Score 1-5 on each. Then independently ask 2-3 of their peers to do the same exercise blind.\n\nThe deltas reveal:\n\n- **Where your view diverges from peers** \u2014 you might be wrong, or you might be the only one seeing something.\n- **Where peer views diverge from each other** \u2014 the contributor is sending different signals to different audiences.\n- **Where everyone agrees but the contributor disagrees** \u2014 calibration problem on the contributor's side, often the deepest issue.\n\nMost feedback is wasted because it lands without context. The mirror map gives you the context before the conversation. Then the conversation can be specific, calibrated, and actionable instead of generic and dismissable."
     },
     {
       "id": "M3L3",
@@ -1133,10 +1187,31 @@
       "video_url": null,
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Cost of a Bad Hire",
+          "body": "A wrong hire at mid-level costs 1.5\u20133x annual salary in cash and an immeasurable amount in team morale, opportunity cost, and culture erosion.\n\nThe true cost isn't the salary you paid \u2014 it's the work that didn't happen, the teammates who left, and the time it takes to remediate."
+        },
+        {
+          "title": "Slow Means Calibrated",
+          "body": "Slow hiring isn't bureaucratic \u2014 it's deliberately calibrated. Multiple interviews. Structured rubrics. Reference checks that aren't perfunctory. Decision committees, not lone deciders.\n\nThe goal is high signal, not high friction."
+        },
+        {
+          "title": "Reference Checks That Matter",
+          "body": "Don't ask references for opinions \u2014 ask for stories. \"Tell me about a time X faced an ambiguous problem. What did they do?\" Specific behavioral evidence over generic praise.\n\nAlso: back-channel references (people the candidate didn't list). They are 10x more honest."
+        },
+        {
+          "title": "Fire Fast Is Compassion",
+          "body": "Keeping someone in a role they can't succeed in is cruel \u2014 to them, to the team, to the work. The longer you wait, the worse the eventual departure.\n\nFire when the conviction forms, not when the documentation is complete. Documentation can catch up. Trust deteriorates while you wait."
+        },
+        {
+          "title": "Document Performance Issues Early",
+          "body": "If you might need to manage someone out, the conversation should start the moment you notice the gap \u2014 not three months later when you're considering termination.\n\nWritten feedback, with specific examples, given in real time. It's the documentation AND the path to improvement at the same time."
+        }
+      ],
       "take_action": [],
       "placeholder": false,
-      "song_title": "White Knuckled Delegation"
+      "deep_dive": "**The single highest-leverage management decision is who you hire. The second-highest is how fast you correct mistakes.**\n\nBoth are routinely botched. Hiring fails because operators optimize for speed (we need someone NOW) over fit (the right person for this role, this team, this stage). Firing fails because operators optimize for comfort (avoiding the hard conversation) over honesty (the situation isn't working and waiting won't fix it).\n\nThe asymmetry of consequences is what makes both calls feel hard:\n\n- **Hiring decision**: false positive (hiring wrong) is costly and slow to discover. False negative (passing on right candidate) is invisible. Bias is to false positive.\n- **Firing decision**: false negative (keeping wrong person) is costly and invisible (you can't see the better team you would have had). False positive (firing right person) is visible and painful. Bias is to false negative.\n\nThe disciplines that compound:\n\n- **Calibrated interview loops**. Multiple interviewers, structured rubrics, decision meeting with rubric scores compared. A confident hire requires 3+ strong yes signals; one no can veto.\n- **Probation period as real probation**. The 90 days post-hire are the cheapest window to course-correct or part ways. After 6 months, the cost of separation triples.\n- **Performance conversations in real time**. If you find yourself building a private file of concerns, the concerns belong in front of the person. Either they course-correct, or you have a clearer basis for the decision.\n- **The 'would you re-hire this person today?' test**. Asked privately by each manager about each report once a quarter. The first time the answer is no, the management process kicks in. Waiting longer is just expensive avoidance.\n\nThe organizations that build great teams over decades \u2014 not just great quarters \u2014 get good at both moves. Slow hiring is the high-quality intake. Fast firing is the high-quality maintenance. Neither alone is enough."
     },
     {
       "id": "M3L4",
@@ -1151,10 +1226,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Velocity_of_Decision.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Decision Quality vs. Decision Speed",
+          "body": "In most operating contexts, speed beats marginal quality. A 75% decision today is usually better than a 90% decision in two weeks \u2014 because the situation has moved.\n\nThe exception: irreversible decisions. Slow down on the ones you can't take back."
+        },
+        {
+          "title": "RAPID Framework",
+          "body": "Bain's role assignment for decisions: **R**ecommend, **A**gree, **P**erform, **I**nput, **D**ecide.\n\n- Recommend: drives the analysis\n- Input: provides expertise\n- Agree: sign-off authority on specific dimensions (legal, finance)\n- Decide: single point of accountability\n- Perform: executes the decision\n\nWithout role clarity, decisions stall in 'who's deciding?' loops."
+        },
+        {
+          "title": "Reversible vs. Irreversible",
+          "body": "Bezos's two-way vs one-way door framing. Two-way doors (you can walk back) deserve fast decisions and bias toward action. One-way doors (you can't undo) deserve careful decisions with the highest available input.\n\nMost decisions are two-way doors disguised as one-way doors by anxious organizations."
+        },
+        {
+          "title": "Single Threaded Owner",
+          "body": "Every important decision has exactly one Decider. Not a committee. Not a consensus. One person whose name is on it.\n\nCommittees create plausible deniability for everyone. Single owners create accountability and speed."
+        },
+        {
+          "title": "Disagree and Commit",
+          "body": "Once the Decider has decided, the dissenters commit fully to execution. Disagreement before the decision is healthy. Continued disagreement after the decision is poison.\n\nThe contract: speak honestly while the decision is open. Execute fully once it's closed."
+        }
+      ],
       "take_action": [],
       "placeholder": false,
-      "song_title": "Velocity of Decision"
+      "deep_dive": "**Decision velocity is one of the most under-measured operational metrics, and it predicts performance more than most KPIs.** Every organization has a decision-making clock speed. Some make every decision in a meeting in 20 minutes; others take 6 weeks for the same call. The slow ones don't make better decisions \u2014 they just make slower ones.\n\nThe **RAPID framework** addresses the most common cause of decision drag: role ambiguity. \"Who decides?\" is a question that should never come up mid-meeting. RAPID assigns five distinct roles before the meeting:\n\n- **Recommend**: drives the analysis and brings the proposal.\n- **Input**: relevant subject-matter experts who must be consulted.\n- **Agree**: people with veto on specific dimensions (legal sign-off, finance sign-off).\n- **Decide**: the single accountable decision-maker.\n- **Perform**: the team that executes after.\n\nWhen the roles are clear, the decision happens. When they're ambiguous, the meeting becomes a status update and the decision rolls forward.\n\n**Bezos's two-way door framing** is the second highest-leverage decision discipline. Most decisions are reversible \u2014 you can hire and then move someone; you can launch and then iterate; you can enter a market and then exit. These deserve speed and a bias to action. A small number of decisions are irreversible \u2014 sale of the company, irreversible legal commitments, public statements with reputation stakes. These deserve the highest available input and unhurried care.\n\nThe mistake organizations make is treating all decisions like one-way doors. The result: a culture that's slow on everything, especially the things that don't matter. The fix is naming the door explicitly: \"This is a two-way door. We'll decide today and revisit in 60 days if it's not working.\""
     },
     {
       "id": "M3L5",
@@ -1170,11 +1266,26 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Organizational Culture",
-        "Culture vs. Climate",
-        "Values-Behavior Alignment",
-        "Cultural Debt",
-        "Culture as Competitive Advantage"
+        {
+          "title": "Culture Is Behavior, Not Values",
+          "body": "Culture isn't what's on the poster. It's the patterns of behavior that get rewarded, ignored, or punished. The gap between stated values and actual behavior is your real culture.\n\nIf you want to know a company's culture, watch what happens when someone does the wrong thing. Or the right thing. The response IS the culture."
+        },
+        {
+          "title": "Hiring + Firing = Architecture",
+          "body": "Every hire and every termination is a culture vote. Over time, the people who stay shape the culture more than any document.\n\nManagers who hire and fire well are doing the most important culture work. The ones who write values statements but tolerate misbehavior are doing the opposite."
+        },
+        {
+          "title": "Rituals as Carriers",
+          "body": "Culture transmits through repeated rituals: how meetings start, how decisions are announced, how mistakes are processed, how wins are celebrated.\n\nIntentional rituals shape culture. Accidental rituals shape it too \u2014 usually toward the lowest common behavior pattern."
+        },
+        {
+          "title": "Stories You Tell",
+          "body": "The stories that get retold are the ones that encode the culture. The hero story (someone who exemplified the values), the cautionary tale (someone who didn't), the founding myth.\n\nLeaders who don't curate the story-telling get the stories the team chooses. Often not the ones you'd want."
+        },
+        {
+          "title": "The Bar Conversation Test",
+          "body": "If two employees are at a bar after work, what do they say about your company? That's your culture, in plain language, with nothing performative.\n\nIf the bar version diverges sharply from the LinkedIn version, the culture you've architected isn't the culture you have."
+        }
       ],
       "take_action": [
         "Write your 3\u20135 actual (not aspirational) organizational values",
@@ -1182,7 +1293,7 @@
         "Design one ritual or process that reinforces the culture you want"
       ],
       "placeholder": false,
-      "song_title": "Culture Eats Strategy"
+      "deep_dive": "**Culture isn't a thing you have \u2014 it's a thing you continually construct.** Every decision a leader makes either reinforces or contradicts the culture they claim. The construction happens whether you're paying attention or not. The question is whether you architect deliberately or let it emerge by default.\n\nThe most useful frame for culture isn't \"values\" \u2014 it's **the behavior that gets rewarded, the behavior that's ignored, and the behavior that gets punished**. Look at any organization through that lens and the real culture becomes visible:\n\n- A company that says it values \"work-life balance\" but promotes the people who work 80-hour weeks doesn't have that value. It has the opposite.\n- A company that says it values \"speaking up\" but quietly retaliates against dissenters doesn't have that value either.\n- A company that punishes mistakes generally doesn't have a \"learning culture,\" even if the wall posters say otherwise.\n\nThe gap between stated culture and operational culture is the trust gap. Closing it requires either changing behavior or changing what you claim. The worst position is wide gap.\n\n**The architecture levers**:\n\n- **Hiring rubrics**: every new hire is a behavior pattern joining the organization. Write the rubric, calibrate against it, hire deliberately.\n- **Promotion criteria**: people pay attention to who gets promoted more than to any values document. If promotions reward behavior you'd describe negatively, your culture is whatever the promoted people do.\n- **Firing and managing out**: removing people who violate the culture is the loudest culture signal you can send. Tolerating them is the loudest contradictory signal.\n- **Rituals**: how meetings open, how decisions are announced, how mistakes are debriefed, how wins are shared. Each ritual is a tiny culture-transmitter, repeated thousands of times.\n- **Stories**: which stories get retold, by whom, with what emphasis. The story-curating function is one of the founder's highest-leverage cultural roles.\n\nThe practical move: every quarter, run a culture audit. Pick three stated values. For each, list 5 specific examples from the last quarter that either reinforced or contradicted it. The list reveals the actual culture. The work is closing the gaps that the list reveals."
     },
     {
       "id": "M4L1",
@@ -1199,8 +1310,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "Right Customer Right Story"
+      "placeholder": false
     },
     {
       "id": "M4L2",
@@ -1227,8 +1337,7 @@
         "Define 3 adjectives that capture your brand voice",
         "Audit your last 5 content pieces against your brand identity"
       ],
-      "placeholder": false,
-      "song_title": "Brand Is a Promise"
+      "placeholder": false
     },
     {
       "id": "M4L3",
@@ -1255,8 +1364,7 @@
         "Identify your biggest leak in the funnel",
         "Run one A/B test to improve conversion at that stage"
       ],
-      "placeholder": false,
-      "song_title": "Funnel Math"
+      "placeholder": false
     },
     {
       "id": "M4L4",
@@ -1283,8 +1391,7 @@
         "Identify the max price your best customers would pay",
         "Test a price increase on one product or tier this month"
       ],
-      "placeholder": false,
-      "song_title": "Price Is a Signal"
+      "placeholder": false
     },
     {
       "id": "M5L1",
@@ -1301,8 +1408,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "Flow Not Force"
+      "placeholder": false
     },
     {
       "id": "M5L2",
@@ -1319,8 +1425,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "Process Maps"
+      "placeholder": false
     },
     {
       "id": "M5L3",
@@ -1337,8 +1442,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "The Quality Engine"
+      "placeholder": false
     },
     {
       "id": "M5L4",
@@ -1355,8 +1459,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "Modern Tech Strategy"
+      "placeholder": false
     },
     {
       "id": "M5L5",
@@ -1373,8 +1476,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "Build vs. Buy"
+      "placeholder": false
     },
     {
       "id": "M6L1",
@@ -1401,8 +1503,7 @@
         "Calculate your average span of control",
         "Design the org structure you'll need at 2\u00d7 your current headcount"
       ],
-      "placeholder": false,
-      "song_title": "Risk and Reward"
+      "placeholder": false
     },
     {
       "id": "M6L2",
@@ -1430,8 +1531,7 @@
         "Model your ownership % after a typical seed or Series A round",
         "Understand your vesting cliff and acceleration provisions"
       ],
-      "placeholder": false,
-      "song_title": "The Capital Stack"
+      "placeholder": false
     },
     {
       "id": "M6L3",
@@ -1448,8 +1548,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "Value vs. Terms"
+      "placeholder": false
     },
     {
       "id": "M6L4",
@@ -1476,8 +1575,7 @@
         "Research the other party's likely BATNA",
         "Practice anchoring by making the first offer in a low-stakes situation"
       ],
-      "placeholder": false,
-      "song_title": "Architecture of Agreement"
+      "placeholder": false
     },
     {
       "id": "M6L5",
@@ -1505,8 +1603,7 @@
         "Research comparable exits in your industry and their multiples",
         "Identify the top 5 potential acquirers for your business right now"
       ],
-      "placeholder": false,
-      "song_title": "Exit Strategy Architecture"
+      "placeholder": false
     },
     {
       "id": "M6L6",
@@ -1523,8 +1620,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "Fit (Remastered)"
+      "placeholder": false
     },
     {
       "id": "M6L7",
@@ -1541,8 +1637,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "Value Creation Journey"
+      "placeholder": false
     },
     {
       "id": "M6L8",
@@ -1559,8 +1654,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "Managing Uncertainty"
+      "placeholder": false
     },
     {
       "id": "M6L9",
@@ -1577,8 +1671,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "Intelligent Risk Selection"
+      "placeholder": false
     },
     {
       "id": "M6L10",
@@ -1595,8 +1688,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "Third Way"
+      "placeholder": false
     },
     {
       "id": "M6L11",
@@ -1613,8 +1705,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "Complex Human Systems"
+      "placeholder": false
     },
     {
       "id": "M6L12",
@@ -1631,8 +1722,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "Business Anatomy Masterclass"
+      "placeholder": false
     },
     {
       "id": "M6L13",
@@ -1649,8 +1739,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "Promised Land"
+      "placeholder": false
     },
     {
       "id": "M7L1",
@@ -1667,8 +1756,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": true,
-      "song_title": "Stop Burning Cash"
+      "placeholder": true
     },
     {
       "id": "M8L1",
@@ -1685,8 +1773,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": true,
-      "song_title": "Repeatability"
+      "placeholder": true
     },
     {
       "id": "M9L1",
@@ -1703,8 +1790,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": true,
-      "song_title": "Spreadsheet North Star"
+      "placeholder": true
     },
     {
       "id": "M10L1",
@@ -1721,8 +1807,7 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false,
-      "song_title": "Graduation Day"
+      "placeholder": false
     }
   ]
 }
