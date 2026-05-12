@@ -1461,3 +1461,170 @@ else{setTimeout(init,600);}
   // Save before leaving in case there's a debounce in flight
   window.addEventListener('beforeunload', function() { push(); });
 })();
+
+
+/* ============================================================
+   MBA ROCK — V1 LESSON PAGE → V2 CONTENT TRANSLATOR (2026-05-12)
+   When a member visits a v1 lesson page like /mba-rock/curriculum/oxygen,
+   look up the matching v2 lesson by legacy_slug, replace the page's
+   audio overview / video / core_concepts / take_action with v2 data.
+
+   Gated: only runs on v1 course curriculum pages. Skips /course-dashboard.
+   Idempotent: marks the DOM with [data-mr-v2-applied] so it doesn't double-run.
+   ============================================================ */
+(function() {
+  // Don't run on the v2 single-page dashboard
+  if (document.querySelector('[data-mr-dashboard="1"]')) return;
+
+  // Only run on lesson curriculum pages (URL contains '/curriculum/' OR has v1 lesson markers)
+  var path = window.location.pathname || '';
+  var onCurriculum = /\/curriculum\//.test(path) || /\/mba-rock\//.test(path);
+  if (!onCurriculum) return;
+
+  var V2_URL = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json';
+
+  function getV1Slug() {
+    var parts = path.split('/').filter(Boolean);
+    return parts[parts.length - 1] || '';
+  }
+
+  function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
+
+  // Find heading whose text contains needle (case-insensitive)
+  function findHeading(needle) {
+    var hs = document.querySelectorAll('h1, h2, h3, h4');
+    var n = String(needle).toLowerCase();
+    for (var i = 0; i < hs.length; i++) {
+      if ((hs[i].textContent || '').toLowerCase().indexOf(n) !== -1) return hs[i];
+    }
+    return null;
+  }
+
+  function insertAfter(refNode, newNode) {
+    if (!refNode || !refNode.parentNode) return;
+    refNode.parentNode.insertBefore(newNode, refNode.nextSibling);
+  }
+
+  function injectAudioOverview(url) {
+    if (!url) return;
+    if (document.querySelector('[data-mrv2-audio-overview]')) return;
+    var anchor = findHeading('audio overview') || findHeading('listen');
+    if (!anchor) return;
+    var wrap = document.createElement('div');
+    wrap.setAttribute('data-mrv2-audio-overview', '1');
+    wrap.style.cssText = 'margin:12px 0 24px 0;width:100%;';
+    var label = document.createElement('p');
+    label.style.cssText = 'font-size:12px;color:#888;margin:0 0 4px 0;font-style:italic;';
+    label.textContent = 'Audio Overview (v2)';
+    var audio = document.createElement('audio');
+    audio.controls = true; audio.preload = 'none';
+    audio.style.cssText = 'width:100%;border-radius:8px;';
+    audio.src = url;
+    wrap.appendChild(label); wrap.appendChild(audio);
+    insertAfter(anchor, wrap);
+  }
+
+  function injectVideo(videoUrl, videoId) {
+    if (!videoUrl && !videoId) return;
+    if (document.querySelector('[data-mrv2-video]')) return;
+    var anchor = findHeading('watch');
+    if (!anchor) return;
+    var wrap = document.createElement('div');
+    wrap.setAttribute('data-mrv2-video', '1');
+    wrap.style.cssText = 'margin:12px 0 24px 0;width:100%;border-radius:8px;overflow:hidden;background:#000;';
+    if (videoId) {
+      wrap.innerHTML = '<div style="position:relative;width:100%;padding-bottom:56.25%;height:0;"><iframe loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" src="https://www.youtube-nocookie.com/embed/' + esc(videoId) + '?rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Lesson video"></iframe></div>';
+    } else {
+      var v = document.createElement('video');
+      v.controls = true; v.preload = 'none';
+      v.style.cssText = 'width:100%;display:block;';
+      v.src = videoUrl;
+      wrap.appendChild(v);
+    }
+    insertAfter(anchor, wrap);
+  }
+
+  function injectConcepts(concepts) {
+    if (!concepts || !concepts.length) return;
+    if (document.querySelector('[data-mrv2-concepts]')) return;
+    var anchor = findHeading('core concept');
+    if (!anchor) return;
+    var grid = document.createElement('div');
+    grid.setAttribute('data-mrv2-concepts', '1');
+    grid.style.cssText = 'display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;margin:8px 0 16px;';
+    concepts.forEach(function(c) {
+      var chip = document.createElement('div');
+      chip.style.cssText = 'padding:10px 12px;background:#f4f6fa;border-radius:6px;font-size:14px;color:#0b2545;font-weight:500;';
+      chip.textContent = c;
+      grid.appendChild(chip);
+    });
+    insertAfter(anchor, grid);
+  }
+
+  function injectTakeAction(items) {
+    if (!items || !items.length) return;
+    if (document.querySelector('[data-mrv2-take-action]')) return;
+    var anchor = findHeading('take action') || findHeading('do');
+    if (!anchor) return;
+    var list = document.createElement('ul');
+    list.setAttribute('data-mrv2-take-action', '1');
+    list.style.cssText = 'margin:8px 0 16px;padding-left:24px;';
+    items.forEach(function(it) {
+      var li = document.createElement('li');
+      li.style.cssText = 'margin:6px 0;font-size:15px;';
+      li.textContent = it;
+      list.appendChild(li);
+    });
+    insertAfter(anchor, list);
+  }
+
+  function applyV2(lesson) {
+    if (!lesson) return;
+    if (document.body && document.body.getAttribute('data-mr-v2-applied') === '1') return;
+    injectAudioOverview(lesson.audio_overview_url);
+    injectVideo(lesson.video_url, lesson.video_id);
+    injectConcepts(lesson.core_concepts);
+    injectTakeAction(lesson.take_action);
+    document.body && document.body.setAttribute('data-mr-v2-applied', '1');
+  }
+
+  function findV2(v2, slug) {
+    if (!v2 || !v2.lessons) return null;
+    // 1. Direct legacy_slug match
+    var hit = v2.lessons.find(function(l) { return l.legacy_slug === slug; });
+    if (hit) return hit;
+    // 2. slug_v2 endswith slug
+    hit = v2.lessons.find(function(l) { return l.slug_v2 && l.slug_v2.indexOf(slug) >= 0; });
+    if (hit) return hit;
+    return null;
+  }
+
+  function run() {
+    var slug = getV1Slug();
+    if (!slug) return;
+    fetch(V2_URL, { cache: 'no-cache' })
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(v2) {
+        var lesson = findV2(v2, slug);
+        if (!lesson) { console.log('[MBA v1→v2] no v2 match for slug:', slug); return; }
+        console.log('[MBA v1→v2] applying v2 content for', slug, '→', lesson.id, lesson.title);
+        applyV2(lesson);
+
+        // Retry once after a delay in case Squarespace renders headers late
+        setTimeout(function() { applyV2(lesson); }, 1200);
+        setTimeout(function() { applyV2(lesson); }, 2500);
+
+        // Mutation observer fallback for late DOM
+        var obs = new MutationObserver(function() { applyV2(lesson); });
+        obs.observe(document.body, { childList: true, subtree: true });
+        setTimeout(function() { try { obs.disconnect(); } catch(e){} }, 6000);
+      })
+      .catch(function(e) { console.error('[MBA v1→v2] fetch failed:', e); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
