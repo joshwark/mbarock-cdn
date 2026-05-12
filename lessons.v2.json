@@ -641,18 +641,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Sustainable Competitive Advantage",
-        "Moat",
-        "Defensibility",
-        "Switching Costs",
-        "Network Effects"
+        {
+          "title": "What a Moat Actually Is",
+          "body": "A structural advantage that lets a company earn returns above its cost of capital for years, not months. Not a product feature. Not a marketing campaign. A reason the business stays profitable even when competitors copy what's visible.\n\nIf you can describe your moat in a slogan, it's not a moat."
+        },
+        {
+          "title": "ROIC > WACC, Sustained",
+          "body": "The financial signature of a moat. Return on invested capital persistently exceeds the weighted average cost of capital.\n\n$$\\text{Moat exists if } \\text{ROIC} > \\text{WACC} \\text{ for } 10+ \\text{ years}$$\n\nIn competitive markets, ROIC mean-reverts to WACC. When it doesn't, something is structurally preventing competition from eroding profit. Find that something. That's your moat."
+        },
+        {
+          "title": "Moat vs Lead",
+          "body": "A lead is being further along. A moat is a barrier competitors can't cross at all. Most \"competitive advantages\" are actually leads \u2014 first-mover, more features, better team. Leads close.\n\nMoats \u2014 network effects, switching costs, regulatory, scale economies \u2014 don't close just because someone shows up with capital and intent."
+        },
+        {
+          "title": "The Four Moat Origins",
+          "body": "Moats come from four structural sources: intangible assets (brand, patents, regulatory), switching costs (the customer would have to break things to leave), network effects (each new user makes the product more valuable), and cost advantages (scale, process, location).\n\nKnow which of the four your business has \u2014 or could engineer."
+        },
+        {
+          "title": "Earned, Not Claimed",
+          "body": "Moats are diagnosed, not declared. You see them in customer behavior over time \u2014 retention curves, pricing power, market share stability. They show up in the financials before they show up in the deck.\n\nIf you have to convince yourself you have one, you probably don't yet."
+        }
       ],
       "take_action": [
         "Identify your single most defensible moat",
         "Score each moat type 1\u20135 for your business",
         "Plan one investment in the highest-leverage moat"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**The single highest-leverage strategic question for any business: do you have a moat, and what kind?** Everything else \u2014 pricing, hiring, capital allocation \u2014 flows from the answer.\n\nWarren Buffett popularized the term, but the concept is older. Economists call it \"abnormal returns persistence.\" In competitive markets, profitable businesses attract competitors who drive profit toward the cost of capital. A moat is whatever prevents that natural decay.\n\n**The financial test** is unforgiving: ROIC above WACC, sustained for a decade. Most businesses fail this test. The ones that pass \u2014 Coca-Cola, Microsoft, Visa, Costco \u2014 share a common pattern: some structural feature that competitors can see clearly and still cannot replicate.\n\n**The strategic question for operators**: of the four moat sources (intangible assets, switching costs, network effects, cost advantages), which one is achievable in your business given current resources? Some are unbuildable in any reasonable timeframe (regulatory monopolies). Some are buildable but only with time and discipline (brand). Some can be engineered into the product itself (switching costs through data and integrations).\n\nThe practical move: pick the one that's both achievable and defensible, and direct every product and operating decision to widen it. A business with no moat in pursuit can still build one through deliberate compounding. A business with a moat and no plan to widen it will lose it."
     },
     {
       "id": "M2L1",
@@ -668,19 +684,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Economic Moat",
-        "Switching Costs",
-        "Network Effects",
-        "Cost Advantage",
-        "Intangible Assets",
-        "Durable Competitive Advantage"
+        {
+          "title": "Intangible Assets",
+          "body": "Brand recognition, patents, regulatory licenses, proprietary data. Things competitors can't replicate even with unlimited capital, because the asset is locked up by law, scarcity, or perception.\n\nA pharmaceutical patent is the cleanest example. A consumer brand that customers will pay 30% more for is fuzzier but real."
+        },
+        {
+          "title": "Switching Costs",
+          "body": "The customer would have to absorb pain \u2014 financial, behavioral, technical \u2014 to leave. Enterprise SaaS migrations, banking relationships, deep workflow integration. Once they're in, they stay.\n\nThe best switching cost moats are quiet. Customers don't feel locked in. They just notice it would be hard to leave and don't try."
+        },
+        {
+          "title": "Network Effects",
+          "body": "Each new user makes the product more valuable for existing users. Marketplaces (eBay), social networks (Instagram), payment rails (Visa).\n\nNetwork effects flip a one-sided market into a winner-take-most market. Once a critical mass forms, growth becomes self-reinforcing and competitors can't catch up by spending \u2014 they need the users themselves."
+        },
+        {
+          "title": "Cost Advantages",
+          "body": "You can deliver the same product at a lower cost than competitors, structurally. Scale economies (Amazon distribution), process advantages (Toyota production system), location (a quarry next to the customer).\n\nThis is the rarest moat to engineer from scratch but the most durable when achieved."
+        },
+        {
+          "title": "Efficient Scale",
+          "body": "A market small enough that one or two players satisfy it. Adding a third would unprofitably split returns. Pipelines, regional rail, niche industrial categories.\n\nNot \"big company in a big market\" \u2014 that's just market share. Efficient scale is the *size* of the market itself preventing competitive entry."
+        }
       ],
       "take_action": [
         "Identify which type of moat your business has (if any)",
         "Rate your moat\u2019s strength from 1\u20135 with supporting evidence",
         "List what a competitor would need to overcome your advantage"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Of the five moat types, only some are buildable by founders. The others are inheritable.** Regulatory moats \u2014 pharma patents, casino licenses, energy infrastructure rights \u2014 come from being earlier or politically connected. They're real, but you can't reverse-engineer your way into one mid-game.\n\nThe four moat types that operators can actually engineer:\n\n- **Switching costs**: this is the most under-appreciated lever for software founders. Every integration the customer builds against your API, every data point they store, every workflow that depends on you \u2014 that's switching cost being deposited. Build a product with deep integration points and data gravity, and the moat builds itself.\n- **Network effects**: hardest to start, strongest when achieved. Marketplaces, communication tools, payment networks. If your product's value to each user grows with the number of other users, you have a structural advantage that can't be out-spent.\n- **Cost advantages from scale**: Amazon-style. Process and distribution efficiency that competitors can't match without matching the scale first.\n- **Brand-as-intangible**: takes years and consistency. Apple, Patagonia, Hermes. The customer pays a premium for the trust mark.\n\nThe operator's actual question: *which moat type matches your business model, and how do you compound it?* Most startups have a thin version of one of these and are trying to thicken it. The strategy is to recognize which one you have and direct every product decision to widen it. \"We have a moat\" is too abstract. \"We have a switching cost moat that compounds with the data we accumulate per customer\" is actionable."
     },
     {
       "id": "M2L1.5",
@@ -696,18 +727,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Strategic Intent",
-        "Competitive Positioning",
-        "Resource Allocation",
-        "Strategic Trade-offs",
-        "Strategy vs. Tactics"
+        {
+          "title": "PESTEL Framework",
+          "body": "Six external forces to scan before strategic moves: **P**olitical, **E**conomic, **S**ocial, **T**echnological, **E**nvironmental, **L**egal.\n\nEvery industry has tailwinds and headwinds operating outside your control. Founders who don't scan systematically miss obvious signals."
+        },
+        {
+          "title": "Political & Regulatory",
+          "body": "Government policy direction, tax regimes, geopolitical stability, regulatory enforcement priorities. Especially decisive in healthcare, energy, finance, food, and anything cross-border.\n\nA pending regulation can create a TAM or close one. Operators who plan in 5-year horizons need to follow the slow-moving political signals."
+        },
+        {
+          "title": "Economic & Macro",
+          "body": "Interest rates, employment, consumer confidence, capital availability. Cost of capital tightening (2022-2023) re-priced every growth business overnight.\n\nThe macro is the weather \u2014 it sets the conditions for every operational decision. You don't control it. You can prepare for it."
+        },
+        {
+          "title": "Social & Cultural",
+          "body": "Demographic shifts, generational values, cultural permission. The slow but unstoppable currents \u2014 aging populations in Japan, urbanization in India, wellness as identity in the US.\n\nSocial trends create category-defining opportunities a decade before they're obvious."
+        },
+        {
+          "title": "Technological & Disruptive",
+          "body": "Adjacent capabilities that could collapse cost curves or unlock new behaviors. AI, blockchain, biotech, robotics. The technology shifts that re-write industry boundaries.\n\nThe risk isn't that your competitor will out-execute you. It's that a technology shift will make your category irrelevant before you finish executing."
+        }
       ],
       "take_action": [
         "Write a one-sentence strategy statement for your business",
         "List 3 things your strategy requires you NOT to do",
         "Map how your current resources align with your stated strategy"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**PESTEL is a hygiene practice, not a strategy framework.** It doesn't tell you what to do; it tells you what not to miss. Every six months, sit down with the six lenses and ask: what has changed in each that could affect us in the next 3\u20135 years?\n\nThe trap most operators fall into is treating external scanning as a one-time exercise during strategic planning. The scan should be continuous, light, and habitual:\n\n- **Political**: who's in power, what are they prioritizing, what's pending legislation?\n- **Economic**: what's the cost of capital, what's the consumer doing, what are early indicators of recession or recovery?\n- **Social**: what behavior is shifting that could change demand for what you sell?\n- **Technological**: what's becoming dramatically cheaper or newly possible?\n- **Environmental**: what physical-world constraints are tightening \u2014 water, energy, materials?\n- **Legal**: what court rulings or settlements are setting new precedents in your space?\n\nThe practical output is a short list of *signals worth watching* and *prepared responses* for the ones most likely to materialize. The biggest mistakes in business strategy are not bad bets \u2014 they're missed signals that should have prompted defensive moves earlier. PESTEL is a discipline for catching those signals while they're cheap to act on."
     },
     {
       "id": "M2L2",
@@ -723,19 +770,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Threat of New Entrants",
-        "Buyer Power",
-        "Supplier Power",
-        "Threat of Substitutes",
-        "Competitive Rivalry",
-        "Industry Attractiveness"
+        {
+          "title": "Threat of New Entrants",
+          "body": "How easily new competitors can enter the market. Low barriers (online courses, e-commerce) = high threat. High barriers (regulated industries, capital-intensive infrastructure) = low threat.\n\nNew entrants compete profit away. Industries with low entry barriers tend to have lower long-term margins."
+        },
+        {
+          "title": "Bargaining Power of Suppliers",
+          "body": "How much leverage your inputs have over you. One supplier of a critical component, no alternatives, switching cost high = the supplier captures your margin.\n\nDual-source critical inputs. Vertically integrate where supplier power is structural. Or pick a category where supplier power is naturally low."
+        },
+        {
+          "title": "Bargaining Power of Buyers",
+          "body": "How much leverage customers have. Concentrated buyers (a few big customers) extract terms. Fragmented buyers (millions of consumers) take what's offered.\n\nCustomer concentration above 30% means the customer has more power than you. The relationship is closer to vendor than partner."
+        },
+        {
+          "title": "Threat of Substitutes",
+          "body": "Different products that solve the same customer job. Netflix vs cable. Email vs postal mail. Plant-based meat vs beef.\n\nSubstitutes cap your pricing power. The customer's question is not \"which provider?\" but \"do I even need this category?\""
+        },
+        {
+          "title": "Competitive Rivalry",
+          "body": "The intensity of competition among existing players. Fragmented industries with similar players and slow growth = brutal rivalry, price wars, low margins.\n\nThe most attractive markets are concentrated, growing, and differentiated. The least attractive are fragmented, mature, and commoditized."
+        }
       ],
       "take_action": [
         "Rate each of Porter\u2019s 5 forces in your industry (High/Medium/Low)",
         "Identify the most dangerous force threatening your business today",
         "Choose one force to actively mitigate this quarter"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Porter's Five Forces is not a checklist. It's a lens for understanding why some industries make money and others don't.** The pharmaceutical industry has high margins because all five forces are favorable: entry is hard (patents, regulation), suppliers are weak, buyers are fragmented, substitutes are limited, rivalry is muted by patent protection. Airlines have terrible margins because all five forces are unfavorable: low entry barriers, powerful suppliers (Boeing, Airbus), concentrated buyers (corporate travel), substitutes (video calls), and brutal rivalry.\n\nThe insight that changes how you operate: **industry structure determines profitability more than execution.** A mediocre operator in a great industry will out-earn a brilliant operator in a terrible industry. This is why category selection matters before founder talent, before product, before market timing.\n\n**The practical move** for an existing business: do a five-forces assessment honestly. For each force, mark it as favorable, neutral, or unfavorable. Count the favorables. If three or more are unfavorable, your problem is structural \u2014 execution alone won't fix it. The strategic options become: change the structure (vertical integration, regulatory protection, network effects to lock in customers), or change the game you're playing (move to an adjacent market with better structure).\n\nThe second-order insight: every strategic move is an attempt to change one of the five forces in your favor. Brand-building reduces buyer power. Patent filing reduces entrant threat. Acquisition reduces rivalry. Every play in strategy is a Porter play."
     },
     {
       "id": "M2L3",
@@ -751,19 +813,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "VRIO Framework",
-        "Valuable",
-        "Rare",
-        "Inimitable",
-        "Organized",
-        "Sustained Competitive Advantage"
+        {
+          "title": "Valuable",
+          "body": "Does the resource help you exploit an opportunity or neutralize a threat? Resources that don't connect to a real value proposition are decorative, not strategic.\n\nA proprietary database is valuable only if it powers something customers will pay for. Otherwise it's an asset on the balance sheet that costs to maintain."
+        },
+        {
+          "title": "Rare",
+          "body": "Do few competitors possess this resource? Even a valuable resource confers no advantage if everyone has it.\n\nCommodity resources \u2014 generic engineering talent, off-the-shelf software, public market data \u2014 are valuable but not rare. They're table stakes, not advantages."
+        },
+        {
+          "title": "Inimitable",
+          "body": "Can competitors duplicate the resource without high cost or time? The barriers come from history (irreversible investments), causal ambiguity (competitors can't tell what makes you good), social complexity (culture, relationships), or scale.\n\nThe best moats are the ones competitors can see clearly and still can't copy."
+        },
+        {
+          "title": "Organized to Capture Value",
+          "body": "Has the company structured itself to actually exploit the resource? Many companies own valuable, rare, inimitable resources but can't extract value because of organizational misalignment.\n\nThe famous Xerox PARC case: they invented the GUI, the mouse, ethernet \u2014 and captured almost none of the value. Apple did."
+        },
+        {
+          "title": "The VRIO Test",
+          "body": "Run every claimed competitive advantage through all four filters. If all four are yes \u2192 sustained competitive advantage. Drop any one \u2192 temporary advantage or parity at best.\n\nMost \"competitive advantages\" fail at the I (Inimitable) \u2014 easy to copy \u2014 or the O (Organized) \u2014 possessed but not deployed."
+        }
       ],
       "take_action": [
         "List your top 3 internal capabilities or resources",
         "Run each through VRIO \u2014 which create sustained advantage?",
         "Double down on your highest-scoring VRIO capability this quarter"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**VRIO is the most rigorous framework for testing whether something actually constitutes a competitive advantage.** Jay Barney's four-question filter rules out the casual claims that infest strategy decks.\n\nThe key insight is the conjunction: all four must be yes. Most competitive-advantage claims fail at one of them:\n\n- *\"Our team is amazing.\"* Valuable, sometimes rare \u2014 but inimitable? Talent moves. Imitable.\n- *\"Our brand is iconic.\"* Valuable, rare, and inimitable. But is the organization built to leverage it? Often companies with great brands underprice them.\n- *\"We have proprietary data.\"* Valuable, possibly rare \u2014 but inimitable depends on whether competitors can collect equivalent data from other sources.\n\nThe organizational filter (O) is where most theoretical advantages die. Kodak had patents on digital photography in the 1970s. Xerox PARC invented the personal computer paradigm. Both companies failed to capture the value because their organizations weren't structured to deploy what they owned. The resource without the organization is decoration.\n\n**The practical exercise**: list every resource and capability you claim as a competitive advantage. Run each one through V-R-I-O. The ones that fail any test are not real moats \u2014 they're either parity (table stakes) or temporary advantages (will erode). The ones that pass all four are where you direct capital and management attention.\n\nThe second-order insight: VRIO doesn't just diagnose what you have. It tells you what to build. Want a sustained advantage? Find something that's valuable and rare, and then design the path to make it inimitable \u2014 usually through compounding investments and organizational learning."
     },
     {
       "id": "M2L4",
@@ -779,19 +856,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Blue Ocean Strategy",
-        "Red Ocean vs. Blue Ocean",
-        "Value Innovation",
-        "ERRC Grid",
-        "Non-customers",
-        "Uncontested Market Space"
+        {
+          "title": "Red Oceans vs Blue Oceans",
+          "body": "Red oceans = existing market spaces where boundaries are defined and competition is fierce. Players fight for shrinking pools of demand. Margins compress.\n\nBlue oceans = uncontested market space where competition is irrelevant. Demand is created, not fought over. Value innovation makes the rules."
+        },
+        {
+          "title": "Value Innovation",
+          "body": "The simultaneous pursuit of differentiation AND low cost. Conventional wisdom says you choose one. Blue Ocean says creating a new market means breaking that trade-off \u2014 offering buyers something dramatically different AND cheaper.\n\nNetflix did this to Blockbuster. Cirque du Soleil did this to traditional circus."
+        },
+        {
+          "title": "The ERRC Grid",
+          "body": "Four actions that create a blue ocean:\n\n- **Eliminate**: which factors taken for granted should be eliminated?\n- **Reduce**: which factors should be reduced well below industry standard?\n- **Raise**: which factors should be raised well above standard?\n- **Create**: which factors should be created that the industry has never offered?"
+        },
+        {
+          "title": "Strategy Canvas",
+          "body": "A visual that plots competing industries against the factors they compete on. Reveals the convergence \u2014 where everyone competes on the same things \u2014 and the opportunity to break away.\n\nIf your strategy canvas overlays your competitors' nearly identically, you're in a red ocean."
+        },
+        {
+          "title": "Sequence of Strategic Moves",
+          "body": "Buyer utility \u2192 price \u2192 cost \u2192 adoption. Test each step in sequence.\n\nIf buyer utility is exceptional, set a strategic price that captures the mass market, then engineer the cost structure to hit that price profitably, then anticipate adoption hurdles. Reversing the sequence (starting from cost) yields incremental products, not blue oceans."
+        }
       ],
       "take_action": [
         "Map your current competitive factors on a strategy canvas",
         "Apply the ERRC grid (Eliminate, Reduce, Raise, Create) to your offering",
         "Identify one segment of non-customers you could realistically attract"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Blue Ocean Strategy is about making competition irrelevant, not winning it.** W. Chan Kim and Ren\u00e9e Mauborgne studied how some companies create new markets while others compete in existing ones \u2014 and consistently found that value creation comes from breaking industry trade-offs, not optimizing within them.\n\nThe foundational move is the **ERRC grid**: a structured exercise to redesign an industry's value curve. Take a sheet of paper. List the factors your industry competes on. Then for each factor ask:\n\n- **Eliminate**: what does this industry assume is necessary that the customer doesn't actually want?\n- **Reduce**: what's been over-delivered (more features, more service, more channels) beyond what creates value?\n- **Raise**: what's been under-delivered, where lifting the bar would create disproportionate value?\n- **Create**: what does no one in this industry offer that customers would value?\n\n[example] Cirque du Soleil eliminated star performers, animals, multiple show arenas. Reduced fun and humor, danger. Raised unique venue, theme. Created refined environment, multiple productions, artistic music and dance. The result wasn't a better circus \u2014 it was a new category, with premium pricing and no direct competitor.\n\n**The hard truth**: most companies can't execute Blue Ocean because their organization is optimized for the red ocean they're in. The cost structure, the sales channels, the talent \u2014 all calibrated for the existing game. Breaking out requires accepting that the old playbook becomes the wrong playbook. That's an organizational change, not a strategy memo.\n\nThe practical filter: if your ERRC grid yields incremental changes (\"reduce price by 10%, raise service by 15%\"), you're still in the red ocean. Blue ocean changes are large and asymmetric \u2014 eliminate something the industry assumes is essential, create something the industry has never offered."
     },
     {
       "id": "M2L5",
@@ -806,9 +898,31 @@
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Disrupt_or_Defend.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
-      "core_concepts": [],
+      "core_concepts": [
+        {
+          "title": "Disruption Defined",
+          "body": "Christensen's narrow definition: a new entrant targets overlooked or underserved customers with a worse-on-traditional-metrics, better-on-new-metrics product. Incumbents ignore it because their best customers don't want it. Then the disruptor moves upmarket.\n\n\"Better\" doesn't disrupt. \"Worse but cheaper, accessible, and improving\" does."
+        },
+        {
+          "title": "Why Incumbents Ignore",
+          "body": "The rational managerial choice. Investing in the disruptive product would cannibalize existing high-margin business and serve lower-revenue customers. Every spreadsheet says: don't.\n\nThe incumbent's strengths \u2014 listening to best customers, allocating to highest-margin opportunities \u2014 become the trap. Right answers, wrong question."
+        },
+        {
+          "title": "The Window Closes",
+          "body": "Disruptors improve on the new metric faster than they need to. They acquire customers cheaper. They build moats while incumbents look away. By the time the incumbent notices, the disruptor has scale, learning curve, and brand.\n\nWindow to respond: typically 3\u20137 years from emergence to threat. Often missed."
+        },
+        {
+          "title": "Defend or Embrace",
+          "body": "Two responses to a disruption-class threat. Defend = double down on the high-end where the disruptor isn't yet competitive (Intel's strategy in the 2000s). Embrace = build or buy the disruptive offering as a separate unit, isolated from the parent organization's economics.\n\nMixing the two \u2014 defending while half-heartedly embracing \u2014 usually fails at both."
+        },
+        {
+          "title": "Innovator's Dilemma",
+          "body": "Christensen's title and core insight: the practices that made incumbents great are exactly what makes them vulnerable. Listening to existing customers, optimizing existing margins, investing in proven markets \u2014 all reasonable, all blind spots for disruption.\n\nThe dilemma isn't a strategy mistake. It's the natural output of being good at what you do."
+        }
+      ],
       "take_action": [],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Clayton Christensen's disruption theory is the most misunderstood framework in modern business writing.** Every new entrant is called a \"disruptor.\" Uber wasn't, by Christensen's definition \u2014 it served high-end customers with a better experience, not low-end customers with a worse one. Tesla wasn't, initially \u2014 it targeted luxury, not budget. Real disruption is rarer and quieter.\n\nThe diagnostic pattern: a new entrant targets the *least profitable* segment of an established market with a product that is *worse on every metric the incumbent cares about* but *better on a new metric* the incumbent dismisses (price, accessibility, simplicity). The incumbent ignores them rationally. Five years later, the new metric has improved enough to attract mainstream customers, and the incumbent has no ground to defend.\n\n**Personal computers** disrupted minicomputers \u2014 worse on processing power, cheaper and personal. **Discount retailers** disrupted full-service department stores \u2014 worse on selection and service, cheaper and faster. **Online education** is currently disrupting traditional colleges \u2014 worse on prestige and network, cheaper and more accessible.\n\n**The operator's question**: are you the incumbent or the disruptor? The answer determines your strategy:\n\n- *Incumbent.* Establish a separate business unit, with separate metrics and economics, to compete on the disruptor's terms. Insulate it from your existing P&L logic. This is what GM tried (and failed) with Saturn. It's what Adobe succeeded at with Creative Cloud.\n- *Disruptor.* Stay in the underserved segment until your performance crosses the threshold where mainstream customers will switch. Don't get pulled upmarket too fast \u2014 that's where incumbents will beat you. Compound on the new metric.\n\nThe insight that changes how you read industries: the next disruption is happening right now, somewhere obvious, being dismissed by smart people for entirely defensible reasons. Find the dismissed product. That's your next move \u2014 either to invest in or defend against."
     },
     {
       "id": "M2L2.1.5",
@@ -824,18 +938,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Strategic Diagnostics",
-        "Capability Gap Analysis",
-        "Organizational Assessment",
-        "Root Cause Thinking",
-        "Operational vs. Strategic Problems"
+        {
+          "title": "Strategy as Diagnosis",
+          "body": "Good strategy starts with an honest diagnosis of the situation. What's the real problem? What's the root cause? What's the binding constraint?\n\nMost \"strategies\" are aspirations dressed up as plans. A real strategy starts with naming what's actually broken or what's actually available to exploit."
+        },
+        {
+          "title": "Guiding Policy",
+          "body": "Once diagnosed, the guiding policy is the overall approach to addressing the problem. Not the tactics \u2014 the *direction*.\n\nApple under Jobs: focus on the few products that matter, designed end-to-end. That's a guiding policy, not a slogan. Everything else flows from it."
+        },
+        {
+          "title": "Coherent Actions",
+          "body": "The tactics that implement the guiding policy. Each action should reinforce the others. Mutually reinforcing actions create compound effects; contradictory actions create drag.\n\nThe test: if any one action could be reversed without affecting the others, the actions aren't coherent."
+        },
+        {
+          "title": "Bad Strategy Signals",
+          "body": "Fluff (jargon-rich, content-poor). Failure to face the actual problem. Mistaking goals for strategy. Bad strategic objectives (impossible or unconnected to the situation).\n\nWhen the strategy document doesn't name what's actually wrong, it's not strategy \u2014 it's wishful thinking."
+        },
+        {
+          "title": "The Kernel",
+          "body": "Diagnosis + Guiding Policy + Coherent Actions. Richard Rumelt's three-part definition of strategy.\n\nAll three are required. Diagnosis without action is analysis. Action without diagnosis is busy-ness. Policy without diagnosis is theater."
+        }
       ],
       "take_action": [
         "Conduct a 30-minute honest audit of your biggest strategic weakness",
         "Identify one process holding your strategy back",
         "Map the gap between your current state and strategic requirements"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**Most strategies fail not because of bad execution but because they were never actually strategies.** Richard Rumelt's diagnosis: corporate America has confused strategy with goal-setting. \"We will be the leading provider of X by 2027\" is a goal. It's not a strategy. A strategy explains *how* \u2014 what's the situation, what's the leverage point, what's the move.\n\nRumelt's kernel of good strategy:\n\n- **Diagnosis**: a clear-eyed understanding of what's actually going on. What's the binding constraint? Where's the leverage? What's preventing progress today?\n- **Guiding policy**: the overall approach. Not a tactical plan \u2014 a direction that shapes all subsequent choices.\n- **Coherent actions**: specific moves that implement the policy, each reinforcing the others.\n\nThe diagnostic step is where most strategies break. Operators don't want to face the real problem because it's politically awkward, embarrassing, or implies past errors. So they paper over it with aspirational language and call the result a strategy. The result is a document that sounds plausible and accomplishes nothing.\n\n**The practical exercise**: for any strategic question, force yourself to answer in three sentences. \"The diagnosis is X. The guiding policy is Y. The coherent actions are A, B, C.\" If you can't compress to three sentences, you don't have a strategy yet \u2014 you have a wish list. The compression forces clarity that PowerPoint actively prevents.\n\nThe rarest skill in strategy is the diagnosis. Anyone can come up with a guiding policy once the diagnosis is in place. The discipline is naming the actual problem, in plain language, even when nobody wants to."
     },
     {
       "id": "M2L2.3.5",
@@ -851,20 +981,34 @@
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
-        "Business Model Canvas",
-        "Value Proposition",
-        "Customer Segments",
-        "Revenue Streams",
-        "Key Resources",
-        "Key Partners",
-        "Cost Structure"
+        {
+          "title": "Customer Segments",
+          "body": "Who you serve. The people or organizations you create value for. Mass market, niche, segmented, diversified, multi-sided platforms.\n\nThe sharpest segmentations are around shared *jobs to be done*, not demographics. \"Founders with 6-figure revenue running operations alone\" is sharper than \"small business owners.\""
+        },
+        {
+          "title": "Value Proposition",
+          "body": "The bundle of products and services that creates value for a specific customer segment. What pains you relieve, what gains you enable.\n\nIf customers can't articulate your value proposition in their own words, it's not landing. You're describing what you do \u2014 they need to describe what they get."
+        },
+        {
+          "title": "Channels & Customer Relationships",
+          "body": "How you reach customers and what relationship you build with them. Self-service vs personal assistance vs automated services. Communities, co-creation, dedicated personal assistance.\n\nThe channel and relationship choices shape unit economics more than founders usually realize."
+        },
+        {
+          "title": "Revenue Streams & Cost Structure",
+          "body": "How you make money and what it costs to deliver. Asset sales, subscriptions, licensing, brokerage fees. Fixed vs variable, economies of scale vs scope.\n\nThe revenue stream determines the predictability of cash. The cost structure determines the leverage of growth."
+        },
+        {
+          "title": "Key Resources, Activities, & Partnerships",
+          "body": "What you must own, do, and partner around. Intellectual property, key personnel, manufacturing relationships, distribution networks.\n\nThe assets and activities that are critical to your value proposition \u2014 and the partners who provide what you don't own."
+        }
       ],
       "take_action": [
         "Fill out the full Business Model Canvas for your business",
         "Identify your most fragile or at-risk block",
         "Redesign one block to improve overall business model strength"
       ],
-      "placeholder": false
+      "placeholder": false,
+      "deep_dive": "**The Business Model Canvas is one frame on a sheet of paper that captures more strategic clarity than most 40-page business plans.** Alexander Osterwalder's nine boxes force you to articulate every essential dimension of a business \u2014 and crucially, to see whether they fit together.\n\nThe boxes:\n\n- **Right side (value creation)**: Customer Segments, Value Proposition, Channels, Customer Relationships, Revenue Streams\n- **Left side (cost & operations)**: Key Activities, Key Resources, Key Partners, Cost Structure\n\nThe insight is that the boxes must be *coherent*. A high-touch enterprise sales model (high customer relationship cost) requires a high-priced subscription or annual contract (sufficient revenue per customer to support it). A self-service freemium model requires viral or content-driven channels (low CAC) and a value proposition strong enough to convert free to paid. Mismatched boxes \u2014 premium pricing with self-service delivery, or enterprise sales with low ACVs \u2014 break the model.\n\n**The practical exercise**: fill in all nine boxes for your business. Then walk around the canvas asking \"does this fit with that?\" The misalignments are your strategic problems. Often the fix isn't all nine \u2014 it's one or two boxes that need to change to make the others work.\n\nThe canvas is also a powerful diagnostic for competitors and acquisition targets. Mapping a competitor's canvas reveals exactly where their model is weak \u2014 and where yours can attack."
     },
     {
       "id": "M3L1",
