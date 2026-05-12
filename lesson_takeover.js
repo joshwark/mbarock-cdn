@@ -1,5 +1,5 @@
-// MBA Rock — Lesson Page Takeover v6 (2026-05-12)
-// v6 adds: deeper-dive section, KaTeX-rendered equations, perpetual per-account notes via Supabase.
+// MBA Rock — Lesson Page Takeover v6.1 (2026-05-12)
+// v6.1: expandable concepts with body content, notes under video, better member-id detection.
 // LISTEN. LEARN. LIVE.
 
 (function() {
@@ -52,7 +52,60 @@
   var SUPABASE_URL = 'https://ciloqphtencjthkedanw.supabase.co';
   var SUPABASE_ANON_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
   var MEMBER_KEY = 'mba-rock-member-id';
-  function memberId() { return localStorage.getItem(MEMBER_KEY) || 'guest'; }
+
+  // Try a series of Squarespace signals to detect a logged-in member before falling back to guest.
+  // First match wins. Caches detected member-id back to localStorage so subsequent loads are instant.
+  function detectMemberId() {
+    // 1. Already stored in localStorage (from dashboard, prior session, or manual set)
+    var stored = localStorage.getItem(MEMBER_KEY);
+    if (stored && stored !== 'guest' && stored !== 'null') return stored;
+
+    // 2. Squarespace member-area context (sometimes exposed on window)
+    try {
+      var ctx = window.Static && window.Static.SQUARESPACE_CONTEXT;
+      var mem = ctx && (ctx.authenticatedAccount || ctx.member || ctx.memberArea);
+      if (mem) {
+        var email = mem.email || mem.emailAddress || (mem.account && mem.account.email);
+        if (email) {
+          localStorage.setItem(MEMBER_KEY, email);
+          console.log('[MR v6.1] detected member via SQUARESPACE_CONTEXT:', email);
+          return email;
+        }
+      }
+    } catch (e) {}
+
+    // 3. Squarespace member-area DOM hints (the email may sit in a sign-out link or profile menu)
+    try {
+      var emailEl = document.querySelector('[data-member-email], .sqs-account-email, .user-account-email');
+      if (emailEl && emailEl.textContent) {
+        var t = emailEl.textContent.trim();
+        if (/@/.test(t)) {
+          localStorage.setItem(MEMBER_KEY, t);
+          console.log('[MR v6.1] detected member via DOM hint:', t);
+          return t;
+        }
+      }
+    } catch (e) {}
+
+    // 4. Cookie sniff — Squarespace sets a cookie like 'crumb' + 'SiteUserSecureAuthToken' when logged in,
+    //    but doesn't expose email. We can at least know if a member is signed in.
+    try {
+      if (/SiteUserSecure/.test(document.cookie)) {
+        // Logged in but we don't have an email yet — generate a pseudo-id that's stable per browser
+        var bid = localStorage.getItem('mba-rock-browser-id');
+        if (!bid) {
+          bid = 'browser-' + Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
+          localStorage.setItem('mba-rock-browser-id', bid);
+        }
+        localStorage.setItem(MEMBER_KEY, bid);
+        return bid;
+      }
+    } catch (e) {}
+
+    return 'guest';
+  }
+
+  function memberId() { return detectMemberId(); }
   var SB_HDR = {
     'apikey': SUPABASE_ANON_KEY,
     'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
@@ -197,11 +250,27 @@
     .mr5-lyrics-empty{font-family:"Fraunces",serif;font-style:italic;color:#999;font-size:15px;padding:18px 22px;background:${c.cream};border-radius:4px;margin:0;}
     .mr5-lyrics-loading{font-family:"Inter",sans-serif;font-size:13px;color:#999;padding:18px 22px;}
 
-    /* Concepts — strict 2-col grid, every row aligned */
-    .mr5-concepts{display:grid;grid-template-columns:1fr 1fr;column-gap:32px;border-top:1px solid ${c.rule};}
-    .mr5-concept{display:grid;grid-template-columns:32px 1fr;column-gap:14px;align-items:start;padding:22px 0;border-bottom:1px solid ${c.rule};}
-    .mr5-concept-n{font-family:"Fraunces",serif;font-size:13px;color:${c.orange};font-weight:700;letter-spacing:.08em;line-height:1.6;padding-top:2px;}
-    .mr5-concept-body{font-family:"Fraunces",serif;font-size:18px;line-height:1.45;color:${c.navy};font-weight:500;letter-spacing:-0.005em;}
+    /* Concepts — expandable disclosure rows */
+    .mr5-concepts-list{border-top:1px solid ${c.rule};}
+    .mr5-concept-row{border-bottom:1px solid ${c.rule};}
+    .mr5-concept-head{display:grid;grid-template-columns:48px 1fr 32px;align-items:center;width:100%;background:transparent;border:0;padding:22px 4px;text-align:left;cursor:pointer;font-family:"Fraunces",serif;color:${c.navy};transition:background .15s;}
+    .mr5-concept-head:hover{background:${c.cream};}
+    .mr5-concept-head[disabled]{cursor:default;opacity:.85;}
+    .mr5-concept-head[disabled]:hover{background:transparent;}
+    .mr5-concept-n{font-family:"Fraunces",serif;font-size:14px;color:${c.orange};font-weight:700;letter-spacing:.08em;}
+    .mr5-concept-title{font-family:"Fraunces",serif;font-size:19px;line-height:1.35;color:${c.navy};font-weight:500;letter-spacing:-0.005em;}
+    .mr5-concept-chev{font-family:"Fraunces",serif;font-size:22px;color:${c.orange};font-weight:600;line-height:1;text-align:right;transition:transform .25s ease;}
+    .mr5-concept-head[aria-expanded="true"] .mr5-concept-chev{transform:rotate(45deg);}
+    .mr5-concept-panel{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+    .mr5-concept-panel.open{max-height:2000px;}
+    .mr5-concept-body{padding:0 4px 22px 56px;font-family:"Fraunces",serif;font-size:17px;line-height:1.7;color:${c.ink};letter-spacing:-0.005em;}
+    .mr5-concept-body p{margin:0 0 12px;}
+    .mr5-concept-body p:last-child{margin-bottom:0;}
+    .mr5-concept-body strong{color:${c.navy};font-weight:600;}
+    .mr5-concept-body em{font-style:italic;color:#444;}
+    .mr5-concept-body ul{padding-left:22px;margin:6px 0 12px;}
+    .mr5-concept-body li{margin:0 0 8px;font-size:16px;line-height:1.6;}
+    .mr5-concept-body .katex-display{margin:14px 0;padding:14px 18px;background:${c.cream};border-left:3px solid ${c.orange};border-radius:0 4px 4px 0;}
 
     /* Actions — strict 3-column grid, every cell explicitly placed */
     .mr5-actions{counter-reset:mr-step;margin:0;padding:0;list-style:none;}
@@ -339,8 +408,20 @@
   }
   function buildConcepts(arr) {
     if (!arr || !arr.length) return '<p class="mr5-empty">Core concepts pending.</p>';
-    return '<div class="mr5-concepts">' + arr.map(function(c, i){
-      return '<div class="mr5-concept"><span class="mr5-concept-n">0' + (i+1) + '</span><span class="mr5-concept-body">' + esc(c) + '</span></div>';
+    return '<div class="mr5-concepts-list">' + arr.map(function(c, i){
+      var title, body;
+      if (typeof c === 'string') { title = c; body = null; }
+      else { title = c.title || ''; body = c.body || null; }
+      var num = String(i + 1).padStart(2, '0');
+      var hasBody = !!(body && body.trim());
+      return '<div class="mr5-concept-row' + (hasBody ? ' has-body' : '') + '">' +
+        '<button class="mr5-concept-head" ' + (hasBody ? 'data-concept-toggle="1" aria-expanded="false"' : 'disabled') + '>' +
+          '<span class="mr5-concept-n">' + num + '</span>' +
+          '<span class="mr5-concept-title">' + esc(title) + '</span>' +
+          (hasBody ? '<span class="mr5-concept-chev">+</span>' : '') +
+        '</button>' +
+        (hasBody ? '<div class="mr5-concept-panel"><div class="mr5-concept-body">' + mdLite(body) + '</div></div>' : '') +
+        '</div>';
     }).join('') + '</div>';
   }
   function buildActions(arr) {
@@ -453,6 +534,21 @@
     // 01 Watch
     html += '<div class="mr5-sec"><div class="mr5-sec-h"><span class="mr5-num">' + num() + '</span><h2>Watch the lesson</h2><span class="mr5-kicker">Video</span></div>' + videoEmbed(lesson.video_url, lesson.video_id) + '</div>';
 
+    // Notes — directly below the video so students can take notes while watching
+    var noteHint = 'Your notes for ' + esc(lesson.id) + ' — what clicked, what didn’t, what to revisit. Saved to your account.';
+    var statusInit = memberId() === 'guest' ? 'guest' : '';
+    var statusLabel = memberId() === 'guest' ? 'Sign in to sync notes (local only)' : 'Loading…';
+    html += '<div class="mr5-sec" data-mrv6-notes="1">' +
+      '<div class="mr5-sec-h"><span class="mr5-num">' + num() + '</span><h2>Your notes</h2><span class="mr5-kicker">Saved to your account</span></div>' +
+      '<div class="mr5-notes">' +
+        '<textarea class="mr5-notes-textarea" data-mr-notes-input="1" placeholder="' + noteHint + '" spellcheck="true"></textarea>' +
+        '<div class="mr5-notes-bar">' +
+          '<span class="mr5-notes-status ' + statusInit + '" data-mr-notes-status="1">' + statusLabel + '</span>' +
+          '<span>Member: <a href="/course-dashboard" data-mr-member-label>' + esc(memberId()) + '</a></span>' +
+        '</div>' +
+      '</div>' +
+      '</div>';
+
     // 02 Listen
     if (lesson.audio_overview_url || lesson.audio_url) {
       html += '<div class="mr5-sec"><div class="mr5-sec-h"><span class="mr5-num">' + num() + '</span><h2>Listen</h2><span class="mr5-kicker">Audio</span></div>';
@@ -489,21 +585,6 @@
         '<div class="mr5-deepdive">' + mdLite(lesson.deep_dive) + '</div>' +
         '</div>';
     }
-
-    // 06 Your notes (always rendered — perpetual per account)
-    var noteHint = 'Your notes for ' + esc(lesson.id) + ' — what clicked, what didn’t, what to revisit. Saved to your account.';
-    var statusInit = memberId() === 'guest' ? 'guest' : '';
-    var statusLabel = memberId() === 'guest' ? 'Sign in to sync notes (local only)' : 'Loading…';
-    html += '<div class="mr5-sec" data-mrv6-notes="1">' +
-      '<div class="mr5-sec-h"><span class="mr5-num">' + num() + '</span><h2>Your notes</h2><span class="mr5-kicker">Saved to your account</span></div>' +
-      '<div class="mr5-notes">' +
-        '<textarea class="mr5-notes-textarea" data-mr-notes-input="1" placeholder="' + noteHint + '" spellcheck="true"></textarea>' +
-        '<div class="mr5-notes-bar">' +
-          '<span class="mr5-notes-status ' + statusInit + '" data-mr-notes-status="1">' + statusLabel + '</span>' +
-          '<span>Member: <a href="/course-dashboard" data-mr-member-label>' + esc(memberId()) + '</a></span>' +
-        '</div>' +
-      '</div>' +
-      '</div>';
 
     // Resources
     html += buildResources(lesson, mod);
@@ -607,6 +688,17 @@
       if (lyricsBtn) {
         var panel = container.querySelector('[data-lyrics-panel="1"]');
         if (panel) expandLyrics(lesson, lyricsBtn, panel);
+      }
+      // Concept disclosure
+      var conceptBtn = t.closest && t.closest('[data-concept-toggle="1"]');
+      if (conceptBtn) {
+        var row = conceptBtn.closest('.mr5-concept-row');
+        var panel = row && row.querySelector('.mr5-concept-panel');
+        if (panel) {
+          var open = panel.classList.toggle('open');
+          conceptBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          if (open) renderMath(panel); // render any LaTeX inside the concept body
+        }
       }
     });
   }
