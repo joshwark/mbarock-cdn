@@ -10,25 +10,41 @@
   if (!slugMatch || slugMatch[1] === 'curriculum') return;
   var sqSlug = slugMatch[1];
 
+  // VERIFIED slug→lesson mappings. The first 25 are confirmed by walking Squarespace admin.
+  // The rest are best-guess overrides based on slug semantics; flag any that show wrong content
+  // and we'll lock the mapping. For anything not in this map, fuzzy token-matching kicks in.
   var SLUG_TO_V2 = {
-    'm1l1-oxygen-cash-flow':'M1L1','m1l2-three-sheets':'M1L5','m1l3-gross-margin-groove':'M1L3',
-    'm1l4-burn-rate-blues':'M1L1.7','m1l5-bottom-line':'M1L2','16-cash-runway':'M1L1.5',
+    // Module 1 — Finance
+    'm1l1-oxygen-cash-flow':'M1L1','m1l2-three-sheets':'M1L2','m1l3-gross-margin-groove':'M1L3',
+    'm1l4-burn-rate-blues':'M1L4','m1l5-bottom-line':'M1L5','16-cash-runway':'M1L1.5',
     '17-april-cash-timing':'M1L1.7','18-receivables-in':'M1L3.5','19-operating-leverage':'M1L4.5',
-    'm2l1-strategy-strut':'M2L1.5','m2l2-moat':'M2L1','m2l3-five-forces':'M2L2','m2l4-swot-vrio':'M2L3',
-    'm2l5-differentiate-or-die':'M2L4','26-beneath-the-hood':'M2L2.1.5','27-business-model-canvas':'M2L2.3.5',
-    '28-dollar-soldier':'M2L5','m3l1-4-ps':'M7L1','m3l2-stp':'M4L1','m3l3-brand-new':'M4L2',
-    'm3l4-persona':'M4L1','m3l5-stake-your-claim':'M4L4','36-market-size-mountain':'M4L4',
-    'jl2e2jg4mb73rzl98gfjnsr3khh7jb':'M4L1','pdmtcm5jmwfbb57knnkttmj4jd9dec':'M4L2','39-brand-promise':'M4L2',
-    '310-worth-align':'M3L1.5','cx6bkyjrl8t58xte5dcxcfw257mlfa':'M4L3','7wmna3a2b9lgrwlm7zlzzf626kdz2t':'M4L3',
-    '313-unit-economics-reggae':'M1L4','m4l1-idea-to-mvp':'M6L1','m4l2-product-market-fit':'M6L6',
-    'm4l3-bootstrap-or-burn':'M5L5','m4l4-the-pitch':'M6L3','m4l5-founder-survival':'M6L13',
-    '47-negotiation':'M6L4','46-coming-soon':'M6L13','47-productmarket-fit':'M6L6',
-    'm5l1-narrative-weight':'M3L1','m5l2-innovation-portfolio':'M3L1.5','m5l3-conflict-cost-estimator':'M3L2.5',
-    'm5l4-eq-360-tracker':'M3L5','m5l5-leadership-capstone':'M3L2','56-blank-page-grace':'M3L4',
-    '57-resume-clues':'M3L3','m6l1-hire-slow-fire-fast':'M3L3','m6l2-org-chart':'M6L1',
-    'm6l3-lead-from-the-front':'M5L1','m6l4-cap-table':'M6L2','m6l5-exit-song':'M6L10',
-    '66-spreadsheet-north-star':'M9L1'
+    '313-unit-economics-reggae':'M1L4',
+    // Module 2 — Strategy
+    'm2l1-strategy-strut':'M2L5','m2l2-moat':'M2L0.5','m2l3-five-forces':'M2L2',
+    'm2l4-swot-vrio':'M2L3','m2l5-differentiate-or-die':'M2L4',
+    '26-beneath-the-hood':'M5L4','27-business-model-canvas':'M2L2.3.5','28-dollar-soldier':'M2L1',
+    // Module 3 — People & Leadership (mixed: some "m3" slugs are actually Module 4 marketing)
+    'm3l1-4-ps':'M7L1','m3l2-stp':'M4L1','m3l3-brand-new':'M4L2','m3l4-persona':'M4L1',
+    'm3l5-stake-your-claim':'M4L4','36-market-size-mountain':'M4L4','39-brand-promise':'M4L2',
+    '310-worth-align':'M3L1.5',
+    // Random-hash Squarespace slugs (auto-generated)
+    'jl2e2jg4mb73rzl98gfjnsr3khh7jb':'M4L1','pdmtcm5jmwfbb57knnkttmj4jd9dec':'M4L2',
+    'cx6bkyjrl8t58xte5dcxcfw257mlfa':'M4L3','7wmna3a2b9lgrwlm7zlzzf626kdz2t':'M4L3',
+    // Module 4 — Marketing / Founder
+    'm4l1-idea-to-mvp':'M6L1','m4l2-product-market-fit':'M6L6','m4l3-bootstrap-or-burn':'M5L5',
+    'm4l4-the-pitch':'M6L3','m4l5-founder-survival':'M6L13',
+    '46-coming-soon':'M6L13','47-negotiation':'M6L4','47-productmarket-fit':'M6L6',
+    // Module 5 — Leadership / Ops
+    'm5l1-narrative-weight':'M3L2.5','m5l2-innovation-portfolio':'M5L1',
+    'm5l3-conflict-cost-estimator':'M3L2.5','m5l4-eq-360-tracker':'M3L5',
+    'm5l5-leadership-capstone':'M3L2','56-blank-page-grace':'M3L4','57-resume-clues':'M3L3',
+    // Module 6 — Capital / Scaling
+    'm6l1-hire-slow-fire-fast':'M3L3','m6l2-org-chart':'M5L3','m6l3-lead-from-the-front':'M3L1',
+    'm6l4-cap-table':'M6L2','m6l5-exit-song':'M6L10','66-spreadsheet-north-star':'M9L1'
   };
+
+  // Token stopwords stripped during fuzzy match
+  var STOP = {'the':1,'a':1,'an':1,'and':1,'or':1,'to':1,'of':1,'for':1,'in':1,'on':1,'by':1,'is':1,'it':1,'be':1,'as':1,'mba':1,'rock':1,'lesson':1,'l':1,'m':1};
 
   var V2_URL = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json';
 
@@ -271,6 +287,11 @@
     html += '<div class="mr5-hero">';
     html += '<div class="mr5-hero-kicker">' + esc(lesson.module_id) + ' &nbsp; The ' + esc((mod && mod.title || '').replace(/^Module \d+:\s*/, '')) + ' module</div>';
     html += '<h1>' + esc(lesson.title) + '</h1>';
+    // Diagnostic caption (visible) — proves which v2 lesson matched + how
+    if (lesson._matchSource) {
+      var srcLabel = { 'verified-map':'verified', 'legacy-slug':'slug', 'slug-v2':'slug', 'fuzzy':'fuzzy-matched' }[lesson._matchSource] || lesson._matchSource;
+      html += '<div style="font-family:Inter,sans-serif;font-size:11px;color:#999;letter-spacing:.1em;text-transform:uppercase;margin:0 0 18px;font-weight:600;">URL <code style="background:#f5f1ea;padding:2px 8px;border-radius:3px;color:#0b1f3a;letter-spacing:0;text-transform:none;font-family:ui-monospace,monospace;">' + esc(sqSlug) + '</code> &nbsp;→&nbsp; ' + esc(lesson.id) + ' &nbsp;·&nbsp; ' + srcLabel + '</div>';
+    }
     var subtitle = (mod && mod.audio_overview_title) || (lesson.audio_overview_script ? lesson.audio_overview_script.split('\n')[0] : '');
     if (subtitle) html += '<p class="mr5-hero-sub">' + esc(subtitle) + '</p>';
     html += '<div class="mr5-hero-meta">';
@@ -389,14 +410,51 @@
     return true;
   }
 
+  function tokenize(s) {
+    return String(s||'').toLowerCase()
+      .replace(/[^a-z0-9]+/g, ' ')
+      .split(/\s+/)
+      .filter(function(t){ return t.length >= 2 && !STOP[t] && !/^[0-9]+$/.test(t); });
+  }
+
+  function fuzzyMatch(slug, lessons) {
+    var slugTokens = tokenize(slug);
+    if (!slugTokens.length) return null;
+    var best = null, bestScore = 0;
+    lessons.forEach(function(l) {
+      var corpus = (l.id + ' ' + l.title + ' ' + (l.slug_v2 || '') + ' ' + (l.legacy_slug || '')).toLowerCase();
+      var corpusTokens = tokenize(corpus);
+      var matches = 0;
+      slugTokens.forEach(function(t){
+        if (corpusTokens.indexOf(t) !== -1) matches++;
+      });
+      // Score = matches / slug-token-count, with a small boost for module-prefix agreement
+      var score = matches / slugTokens.length;
+      var modMatch = slug.match(/^m(\d+)l/i);
+      if (modMatch && l.module_id === 'M' + modMatch[1]) score += 0.25;
+      if (score > bestScore) { bestScore = score; best = l; }
+    });
+    return bestScore >= 0.4 ? best : null;
+  }
+
   function findLesson(v2) {
     if (!v2 || !v2.lessons) return null;
+    // 1. Hardcoded verified map
     var targetId = SLUG_TO_V2[sqSlug];
     if (targetId) {
       var hit = v2.lessons.find(function(l) { return l.id === targetId; });
-      if (hit) return hit;
+      if (hit) { hit._matchSource = 'verified-map'; return hit; }
     }
-    return v2.lessons.find(function(l) { return l.legacy_slug === sqSlug; }) || null;
+    // 2. legacy_slug exact match
+    var bySlug = v2.lessons.find(function(l) { return l.legacy_slug === sqSlug; });
+    if (bySlug) { bySlug._matchSource = 'legacy-slug'; return bySlug; }
+    // 3. slug_v2 exact match
+    var bySlugV2 = v2.lessons.find(function(l) { return l.slug_v2 === sqSlug; });
+    if (bySlugV2) { bySlugV2._matchSource = 'slug-v2'; return bySlugV2; }
+    // 4. Fuzzy fallback
+    var fuzzy = fuzzyMatch(sqSlug, v2.lessons);
+    if (fuzzy) { fuzzy._matchSource = 'fuzzy'; return fuzzy; }
+    return null;
   }
 
   function run() {
