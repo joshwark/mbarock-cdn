@@ -1,5 +1,5 @@
-// MBA Rock — Lesson Page Takeover v6.1 (2026-05-12)
-// v6.1: expandable concepts with body content, notes under video, better member-id detection.
+// MBA Rock — Lesson Page Takeover v6.2 (2026-05-12)
+// v6.2: removed crumb-row (was colliding with Squarespace nav), hid URL diagnostic chip, cleaner kicker.
 // LISTEN. LEARN. LIVE.
 
 (function() {
@@ -201,8 +201,8 @@
     .mr5-crumb b{color:${c.navy};font-weight:700;}
     .mr5-crumb-sep{margin:0 10px;color:#ccc;}
 
-    /* Hero */
-    .mr5-hero{margin:18px 0 44px;padding:0;}
+    /* Hero — generous top margin so it doesn't crash into Squarespace's site nav */
+    .mr5-hero{margin:48px 0 44px;padding:0;}
     .mr5-hero-kicker{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:${c.orange};margin:0 0 22px;}
     .mr5-hero-kicker::before{content:"";width:36px;height:1.5px;background:${c.orange};}
     .mr5-hero h1{font-size:54px;line-height:1.05;margin:0 0 22px;color:${c.navy};font-weight:600;letter-spacing:-0.028em;}
@@ -508,17 +508,17 @@
 
     var html = '<div class="mr5">';
 
-    // Slim module crumb — no logo (Squarespace's site nav already has the brand)
-    html += '<div class="mr5-crumb-row"><span class="mr5-crumb"><a href="/course-dashboard">' + esc(brand.name || 'MBA Rock') + '</a><span class="mr5-crumb-sep">/</span>' + esc(prog.moduleTitle) + '<span class="mr5-crumb-sep">/</span><b>Lesson ' + prog.position + ' of ' + prog.total + '</b></span></div>';
+    // Crumb row removed in v6.2 — was colliding with Squarespace's own top nav.
+    // The kicker below ("M1 · Finance Fundamentals") + the meta strip already convey module + position.
 
-    // Hero (editorial, no card)
+    // Hero (editorial, no card) — clean kicker without "The X module" awkwardness
     html += '<div class="mr5-hero">';
-    html += '<div class="mr5-hero-kicker">' + esc(lesson.module_id) + ' &nbsp; The ' + esc((mod && mod.title || '').replace(/^Module \d+:\s*/, '')) + ' module</div>';
+    var modTitle = (mod && mod.title || '').replace(/^Module \d+:\s*/, '');
+    html += '<div class="mr5-hero-kicker">' + esc(lesson.module_id) + ' · ' + esc(modTitle) + '</div>';
     html += '<h1>' + esc(lesson.title) + '</h1>';
-    // Diagnostic caption (visible) — proves which v2 lesson matched + how
+    // Diagnostic match-source is logged to console only — not visible on the page
     if (lesson._matchSource) {
-      var srcLabel = { 'verified-map':'verified', 'legacy-slug':'slug', 'slug-v2':'slug', 'fuzzy':'fuzzy-matched' }[lesson._matchSource] || lesson._matchSource;
-      html += '<div style="font-family:Inter,sans-serif;font-size:11px;color:#999;letter-spacing:.1em;text-transform:uppercase;margin:0 0 18px;font-weight:600;">URL <code style="background:#f5f1ea;padding:2px 8px;border-radius:3px;color:#0b1f3a;letter-spacing:0;text-transform:none;font-family:ui-monospace,monospace;">' + esc(sqSlug) + '</code> &nbsp;→&nbsp; ' + esc(lesson.id) + ' &nbsp;·&nbsp; ' + srcLabel + '</div>';
+      try { console.log('[MR v6.2 match]', sqSlug, '→', lesson.id, '·', lesson._matchSource); } catch (e) {}
     }
     var subtitle = (mod && mod.audio_overview_title) || (lesson.audio_overview_script ? lesson.audio_overview_script.split('\n')[0] : '');
     if (subtitle) html += '<p class="mr5-hero-sub">' + esc(subtitle) + '</p>';
