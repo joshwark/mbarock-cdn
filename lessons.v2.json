@@ -37,6 +37,33 @@
     "mind_map_app": {
       "title": "Business Toolkit (Interactive Mind Map)",
       "type": "app"
+    },
+    "brand": {
+      "name": "MBA Rock",
+      "long_name": "Musical Business Album Rock",
+      "tagline": "Listen. Learn. Live.",
+      "logo_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/images/brand/mba-rock-logo.png",
+      "logo_vol1_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/images/brand/mba-rock-logo-vol1.png",
+      "colors": {
+        "navy": "#0B1F3A",
+        "ink": "#0E1116",
+        "orange": "#F26B1F",
+        "orange_soft": "#FBE2D0",
+        "cream": "#FAF8F5",
+        "paper": "#FFFFFF",
+        "rule": "#E5E0D6"
+      },
+      "type": {
+        "serif": "\"Tiempos Headline\", \"Georgia\", \"Times New Roman\", serif",
+        "sans": "-apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Inter\", sans-serif",
+        "mono": "ui-monospace, \"SF Mono\", Menlo, monospace"
+      },
+      "voice": [
+        "Confident, plainspoken, never preachy.",
+        "Hooks come from music. Concepts come from business.",
+        "Short sentences over long ones. Verbs over adjectives.",
+        "Refer to the course as 'MBA Rock' \u2014 never 'the program' or 'the platform'."
+      ]
     }
   },
   "modules": [
@@ -973,45 +1000,6 @@
       "lyrics_url": null,
       "core_concepts": [],
       "take_action": [],
-      "placeholder": false
-    },
-    {
-      "id": "M5L2.5",
-      "module_id": "M5",
-      "lesson_number": "M5L2.5",
-      "title": "The Automation Stack",
-      "slug_v2": "m5l2-5-automation-stack",
-      "legacy_slug": null,
-      "audio_url": null,
-      "audio_overview_url": null,
-      "video_id": null,
-      "video_url": null,
-      "worksheet_url": null,
-      "lyrics_url": null,
-      "core_concepts": [
-        "The 5\u00d7/Week Rule \u2014 automate any repetitive task that happens 5 or more times a week",
-        "Data Loss > Time Loss \u2014 fix workflows that LOSE data before workflows that just take time",
-        "Workflow Triage Matrix \u2014 Frequency \u00d7 Pain \u00d7 Data Risk",
-        "The 5-Layer Automation Stack: Capture \u2192 Sync \u2192 Trigger \u2192 Notify \u2192 Decide",
-        "AI Augmentation Layer \u2014 where LLMs replace judgment, drafting, and classification",
-        "Human-in-the-Loop Checkpoints \u2014 what stays human, what gets delegated to the system"
-      ],
-      "take_action": [
-        "List every repetitive task you did 5+ times in the past 7 days \u2014 operator and leader work both count",
-        "Tag each task RED (loses data when humans hand off) or YELLOW (just wastes time)",
-        "Pick the highest-impact RED task \u2014 automate it this sprint, even if the build is ugly",
-        "Map the 5-layer stack for that workflow: Capture \u2192 Sync \u2192 Trigger \u2192 Notify \u2192 Decide",
-        "Identify where AI lifts judgment (categorize, summarize, draft) vs. where humans still own approval",
-        "Set a 30-day automation review \u2014 did exceptions creep in? Did the system hold or did people work around it?",
-        "Write the runbook so the next operator doesn't reinvent the workflow you just automated"
-      ],
-      "audio_overview_script": "If you're losing one customer record a week to a manual hand-off, you're hemorrhaging. Time you can recover. Data you can't.\n\nThe rule is simple: anything you do five or more times a week gets automated. Five is the threshold where the cost of building the automation pays back inside a quarter.\n\nBut not everything is equal. Workflows that LOSE data \u2014 orders that fall through, leads that go cold, customers that get dropped between systems \u2014 those are red. Fix those first. Workflows that just WASTE time are yellow. Fix those next.\n\nThe stack has five layers. CAPTURE the input \u2014 a form, an email, a signal. SYNC it to the system of record. TRIGGER the right next step. NOTIFY the right human. DECIDE what gets human approval and what runs autonomously.\n\nAI is your augmentation layer \u2014 not your replacement layer. LLMs are great at drafting, classifying, and summarizing. They are weak at edge-case judgment and high-stakes approval. Keep the human in the loop for the calls that, if wrong, would burn customer trust.\n\nAutomate what loses data. Then automate what loses time. Then sleep.",
-      "song_concept": {
-        "title": "The Automation Stack",
-        "vibe": "Funk/synth groove. Tight pocket. Builds layer by layer like the stack itself.",
-        "hook": "Five times a week / it's gotta automate / five layers deep / get the data straight",
-        "stanza_arc": "Verse 1: the 5x rule. Verse 2: data loss vs time loss. Chorus: the 5 layers. Bridge: AI augments, doesn't replace. Outro: sleep."
-      },
       "placeholder": false
     },
     {
