@@ -1,5 +1,5 @@
 {
-  "schema_version": "v2.10sections",
+  "schema_version": "v2.10sections.55lessons",
   "generated_from": "Josh's 2026-05-11 LMS Deployment Guide",
   "global": {
     "textbook": {
@@ -878,6 +878,92 @@
       "deep_dive": "**Porter's Five Forces is not a checklist. It's a lens for understanding why some industries make money and others don't.** The pharmaceutical industry has high margins because all five forces are favorable: entry is hard (patents, regulation), suppliers are weak, buyers are fragmented, substitutes are limited, rivalry is muted by patent protection. Airlines have terrible margins because all five forces are unfavorable: low entry barriers, powerful suppliers (Boeing, Airbus), concentrated buyers (corporate travel), substitutes (video calls), and brutal rivalry.\n\nThe insight that changes how you operate: **industry structure determines profitability more than execution.** A mediocre operator in a great industry will out-earn a brilliant operator in a terrible industry. This is why category selection matters before founder talent, before product, before market timing.\n\n**The practical move** for an existing business: do a five-forces assessment honestly. For each force, mark it as favorable, neutral, or unfavorable. Count the favorables. If three or more are unfavorable, your problem is structural — execution alone won't fix it. The strategic options become: change the structure (vertical integration, regulatory protection, network effects to lock in customers), or change the game you're playing (move to an adjacent market with better structure).\n\nThe second-order insight: every strategic move is an attempt to change one of the five forces in your favor. Brand-building reduces buyer power. Patent filing reduces entrant threat. Acquisition reduces rivalry. Every play in strategy is a Porter play."
     },
     {
+      "id": "M2L2.1.5",
+      "module_id": "M2",
+      "lesson_number": "M2L2.1.5",
+      "title": "Strategic Diagnostics (Beneath the Hood)",
+      "slug_v2": "m2l2-1-5-strategic-diagnostics-beneath-the-hood",
+      "legacy_slug": "strategic-diagnostics",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/beneath-the-hood.mp3",
+      "audio_overview_url": null,
+      "video_id": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Strategic_Diagnostics.mp4",
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        {
+          "title": "Strategy as Diagnosis",
+          "body": "Good strategy starts with an honest diagnosis of the situation. What's the real problem? What's the root cause? What's the binding constraint?\n\nMost \"strategies\" are aspirations dressed up as plans. A real strategy starts with naming what's actually broken or what's actually available to exploit."
+        },
+        {
+          "title": "Guiding Policy",
+          "body": "Once diagnosed, the guiding policy is the overall approach to addressing the problem. Not the tactics — the *direction*.\n\nApple under Jobs: focus on the few products that matter, designed end-to-end. That's a guiding policy, not a slogan. Everything else flows from it."
+        },
+        {
+          "title": "Coherent Actions",
+          "body": "The tactics that implement the guiding policy. Each action should reinforce the others. Mutually reinforcing actions create compound effects; contradictory actions create drag.\n\nThe test: if any one action could be reversed without affecting the others, the actions aren't coherent."
+        },
+        {
+          "title": "Bad Strategy Signals",
+          "body": "Fluff (jargon-rich, content-poor). Failure to face the actual problem. Mistaking goals for strategy. Bad strategic objectives (impossible or unconnected to the situation).\n\nWhen the strategy document doesn't name what's actually wrong, it's not strategy — it's wishful thinking."
+        },
+        {
+          "title": "The Kernel",
+          "body": "Diagnosis + Guiding Policy + Coherent Actions. Richard Rumelt's three-part definition of strategy.\n\nAll three are required. Diagnosis without action is analysis. Action without diagnosis is busy-ness. Policy without diagnosis is theater."
+        }
+      ],
+      "take_action": [
+        "Conduct a 30-minute honest audit of your biggest strategic weakness",
+        "Identify one process holding your strategy back",
+        "Map the gap between your current state and strategic requirements"
+      ],
+      "placeholder": false,
+      "deep_dive": "**Most strategies fail not because of bad execution but because they were never actually strategies.** Richard Rumelt's diagnosis: corporate America has confused strategy with goal-setting. \"We will be the leading provider of X by 2027\" is a goal. It's not a strategy. A strategy explains *how* — what's the situation, what's the leverage point, what's the move.\n\nRumelt's kernel of good strategy:\n\n- **Diagnosis**: a clear-eyed understanding of what's actually going on. What's the binding constraint? Where's the leverage? What's preventing progress today?\n- **Guiding policy**: the overall approach. Not a tactical plan — a direction that shapes all subsequent choices.\n- **Coherent actions**: specific moves that implement the policy, each reinforcing the others.\n\nThe diagnostic step is where most strategies break. Operators don't want to face the real problem because it's politically awkward, embarrassing, or implies past errors. So they paper over it with aspirational language and call the result a strategy. The result is a document that sounds plausible and accomplishes nothing.\n\n**The practical exercise**: for any strategic question, force yourself to answer in three sentences. \"The diagnosis is X. The guiding policy is Y. The coherent actions are A, B, C.\" If you can't compress to three sentences, you don't have a strategy yet — you have a wish list. The compression forces clarity that PowerPoint actively prevents.\n\nThe rarest skill in strategy is the diagnosis. Anyone can come up with a guiding policy once the diagnosis is in place. The discipline is naming the actual problem, in plain language, even when nobody wants to."
+    },
+    {
+      "id": "M2L2.3.5",
+      "module_id": "M2",
+      "lesson_number": "M2L2.3.5",
+      "title": "Business Model Canvas",
+      "slug_v2": "m2l2-3-5-business-model-canvas",
+      "legacy_slug": "business-model-canvas",
+      "audio_url": null,
+      "audio_overview_url": null,
+      "video_id": null,
+      "video_url": null,
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        {
+          "title": "Customer Segments",
+          "body": "Who you serve. The people or organizations you create value for. Mass market, niche, segmented, diversified, multi-sided platforms.\n\nThe sharpest segmentations are around shared *jobs to be done*, not demographics. \"Founders with 6-figure revenue running operations alone\" is sharper than \"small business owners.\""
+        },
+        {
+          "title": "Value Proposition",
+          "body": "The bundle of products and services that creates value for a specific customer segment. What pains you relieve, what gains you enable.\n\nIf customers can't articulate your value proposition in their own words, it's not landing. You're describing what you do — they need to describe what they get."
+        },
+        {
+          "title": "Channels & Customer Relationships",
+          "body": "How you reach customers and what relationship you build with them. Self-service vs personal assistance vs automated services. Communities, co-creation, dedicated personal assistance.\n\nThe channel and relationship choices shape unit economics more than founders usually realize."
+        },
+        {
+          "title": "Revenue Streams & Cost Structure",
+          "body": "How you make money and what it costs to deliver. Asset sales, subscriptions, licensing, brokerage fees. Fixed vs variable, economies of scale vs scope.\n\nThe revenue stream determines the predictability of cash. The cost structure determines the leverage of growth."
+        },
+        {
+          "title": "Key Resources, Activities, & Partnerships",
+          "body": "What you must own, do, and partner around. Intellectual property, key personnel, manufacturing relationships, distribution networks.\n\nThe assets and activities that are critical to your value proposition — and the partners who provide what you don't own."
+        }
+      ],
+      "take_action": [
+        "Fill out the full Business Model Canvas for your business",
+        "Identify your most fragile or at-risk block",
+        "Redesign one block to improve overall business model strength"
+      ],
+      "placeholder": false,
+      "deep_dive": "**The Business Model Canvas is one frame on a sheet of paper that captures more strategic clarity than most 40-page business plans.** Alexander Osterwalder's nine boxes force you to articulate every essential dimension of a business — and crucially, to see whether they fit together.\n\nThe boxes:\n\n- **Right side (value creation)**: Customer Segments, Value Proposition, Channels, Customer Relationships, Revenue Streams\n- **Left side (cost & operations)**: Key Activities, Key Resources, Key Partners, Cost Structure\n\nThe insight is that the boxes must be *coherent*. A high-touch enterprise sales model (high customer relationship cost) requires a high-priced subscription or annual contract (sufficient revenue per customer to support it). A self-service freemium model requires viral or content-driven channels (low CAC) and a value proposition strong enough to convert free to paid. Mismatched boxes — premium pricing with self-service delivery, or enterprise sales with low ACVs — break the model.\n\n**The practical exercise**: fill in all nine boxes for your business. Then walk around the canvas asking \"does this fit with that?\" The misalignments are your strategic problems. Often the fix isn't all nine — it's one or two boxes that need to change to make the others work.\n\nThe canvas is also a powerful diagnostic for competitors and acquisition targets. Mapping a competitor's canvas reveals exactly where their model is weak — and where yours can attack."
+    },
+    {
       "id": "M2L3",
       "module_id": "M2",
       "lesson_number": "M2L3",
@@ -1001,92 +1087,6 @@
       "take_action": [],
       "placeholder": false,
       "deep_dive": "**Clayton Christensen's disruption theory is the most misunderstood framework in modern business writing.** Every new entrant is called a \"disruptor.\" Uber wasn't, by Christensen's definition — it served high-end customers with a better experience, not low-end customers with a worse one. Tesla wasn't, initially — it targeted luxury, not budget. Real disruption is rarer and quieter.\n\nThe diagnostic pattern: a new entrant targets the *least profitable* segment of an established market with a product that is *worse on every metric the incumbent cares about* but *better on a new metric* the incumbent dismisses (price, accessibility, simplicity). The incumbent ignores them rationally. Five years later, the new metric has improved enough to attract mainstream customers, and the incumbent has no ground to defend.\n\n**Personal computers** disrupted minicomputers — worse on processing power, cheaper and personal. **Discount retailers** disrupted full-service department stores — worse on selection and service, cheaper and faster. **Online education** is currently disrupting traditional colleges — worse on prestige and network, cheaper and more accessible.\n\n**The operator's question**: are you the incumbent or the disruptor? The answer determines your strategy:\n\n- *Incumbent.* Establish a separate business unit, with separate metrics and economics, to compete on the disruptor's terms. Insulate it from your existing P&L logic. This is what GM tried (and failed) with Saturn. It's what Adobe succeeded at with Creative Cloud.\n- *Disruptor.* Stay in the underserved segment until your performance crosses the threshold where mainstream customers will switch. Don't get pulled upmarket too fast — that's where incumbents will beat you. Compound on the new metric.\n\nThe insight that changes how you read industries: the next disruption is happening right now, somewhere obvious, being dismissed by smart people for entirely defensible reasons. Find the dismissed product. That's your next move — either to invest in or defend against."
-    },
-    {
-      "id": "M2L2.1.5",
-      "module_id": "M2",
-      "lesson_number": "M2L2.1.5",
-      "title": "Strategic Diagnostics (Beneath the Hood)",
-      "slug_v2": "m2l2-1-5-strategic-diagnostics-beneath-the-hood",
-      "legacy_slug": "strategic-diagnostics",
-      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/beneath-the-hood.mp3",
-      "audio_overview_url": null,
-      "video_id": null,
-      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Strategic_Diagnostics.mp4",
-      "worksheet_url": null,
-      "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "Strategy as Diagnosis",
-          "body": "Good strategy starts with an honest diagnosis of the situation. What's the real problem? What's the root cause? What's the binding constraint?\n\nMost \"strategies\" are aspirations dressed up as plans. A real strategy starts with naming what's actually broken or what's actually available to exploit."
-        },
-        {
-          "title": "Guiding Policy",
-          "body": "Once diagnosed, the guiding policy is the overall approach to addressing the problem. Not the tactics — the *direction*.\n\nApple under Jobs: focus on the few products that matter, designed end-to-end. That's a guiding policy, not a slogan. Everything else flows from it."
-        },
-        {
-          "title": "Coherent Actions",
-          "body": "The tactics that implement the guiding policy. Each action should reinforce the others. Mutually reinforcing actions create compound effects; contradictory actions create drag.\n\nThe test: if any one action could be reversed without affecting the others, the actions aren't coherent."
-        },
-        {
-          "title": "Bad Strategy Signals",
-          "body": "Fluff (jargon-rich, content-poor). Failure to face the actual problem. Mistaking goals for strategy. Bad strategic objectives (impossible or unconnected to the situation).\n\nWhen the strategy document doesn't name what's actually wrong, it's not strategy — it's wishful thinking."
-        },
-        {
-          "title": "The Kernel",
-          "body": "Diagnosis + Guiding Policy + Coherent Actions. Richard Rumelt's three-part definition of strategy.\n\nAll three are required. Diagnosis without action is analysis. Action without diagnosis is busy-ness. Policy without diagnosis is theater."
-        }
-      ],
-      "take_action": [
-        "Conduct a 30-minute honest audit of your biggest strategic weakness",
-        "Identify one process holding your strategy back",
-        "Map the gap between your current state and strategic requirements"
-      ],
-      "placeholder": false,
-      "deep_dive": "**Most strategies fail not because of bad execution but because they were never actually strategies.** Richard Rumelt's diagnosis: corporate America has confused strategy with goal-setting. \"We will be the leading provider of X by 2027\" is a goal. It's not a strategy. A strategy explains *how* — what's the situation, what's the leverage point, what's the move.\n\nRumelt's kernel of good strategy:\n\n- **Diagnosis**: a clear-eyed understanding of what's actually going on. What's the binding constraint? Where's the leverage? What's preventing progress today?\n- **Guiding policy**: the overall approach. Not a tactical plan — a direction that shapes all subsequent choices.\n- **Coherent actions**: specific moves that implement the policy, each reinforcing the others.\n\nThe diagnostic step is where most strategies break. Operators don't want to face the real problem because it's politically awkward, embarrassing, or implies past errors. So they paper over it with aspirational language and call the result a strategy. The result is a document that sounds plausible and accomplishes nothing.\n\n**The practical exercise**: for any strategic question, force yourself to answer in three sentences. \"The diagnosis is X. The guiding policy is Y. The coherent actions are A, B, C.\" If you can't compress to three sentences, you don't have a strategy yet — you have a wish list. The compression forces clarity that PowerPoint actively prevents.\n\nThe rarest skill in strategy is the diagnosis. Anyone can come up with a guiding policy once the diagnosis is in place. The discipline is naming the actual problem, in plain language, even when nobody wants to."
-    },
-    {
-      "id": "M2L2.3.5",
-      "module_id": "M2",
-      "lesson_number": "M2L2.3.5",
-      "title": "Business Model Canvas",
-      "slug_v2": "m2l2-3-5-business-model-canvas",
-      "legacy_slug": "business-model-canvas",
-      "audio_url": null,
-      "audio_overview_url": null,
-      "video_id": null,
-      "video_url": null,
-      "worksheet_url": null,
-      "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "Customer Segments",
-          "body": "Who you serve. The people or organizations you create value for. Mass market, niche, segmented, diversified, multi-sided platforms.\n\nThe sharpest segmentations are around shared *jobs to be done*, not demographics. \"Founders with 6-figure revenue running operations alone\" is sharper than \"small business owners.\""
-        },
-        {
-          "title": "Value Proposition",
-          "body": "The bundle of products and services that creates value for a specific customer segment. What pains you relieve, what gains you enable.\n\nIf customers can't articulate your value proposition in their own words, it's not landing. You're describing what you do — they need to describe what they get."
-        },
-        {
-          "title": "Channels & Customer Relationships",
-          "body": "How you reach customers and what relationship you build with them. Self-service vs personal assistance vs automated services. Communities, co-creation, dedicated personal assistance.\n\nThe channel and relationship choices shape unit economics more than founders usually realize."
-        },
-        {
-          "title": "Revenue Streams & Cost Structure",
-          "body": "How you make money and what it costs to deliver. Asset sales, subscriptions, licensing, brokerage fees. Fixed vs variable, economies of scale vs scope.\n\nThe revenue stream determines the predictability of cash. The cost structure determines the leverage of growth."
-        },
-        {
-          "title": "Key Resources, Activities, & Partnerships",
-          "body": "What you must own, do, and partner around. Intellectual property, key personnel, manufacturing relationships, distribution networks.\n\nThe assets and activities that are critical to your value proposition — and the partners who provide what you don't own."
-        }
-      ],
-      "take_action": [
-        "Fill out the full Business Model Canvas for your business",
-        "Identify your most fragile or at-risk block",
-        "Redesign one block to improve overall business model strength"
-      ],
-      "placeholder": false,
-      "deep_dive": "**The Business Model Canvas is one frame on a sheet of paper that captures more strategic clarity than most 40-page business plans.** Alexander Osterwalder's nine boxes force you to articulate every essential dimension of a business — and crucially, to see whether they fit together.\n\nThe boxes:\n\n- **Right side (value creation)**: Customer Segments, Value Proposition, Channels, Customer Relationships, Revenue Streams\n- **Left side (cost & operations)**: Key Activities, Key Resources, Key Partners, Cost Structure\n\nThe insight is that the boxes must be *coherent*. A high-touch enterprise sales model (high customer relationship cost) requires a high-priced subscription or annual contract (sufficient revenue per customer to support it). A self-service freemium model requires viral or content-driven channels (low CAC) and a value proposition strong enough to convert free to paid. Mismatched boxes — premium pricing with self-service delivery, or enterprise sales with low ACVs — break the model.\n\n**The practical exercise**: fill in all nine boxes for your business. Then walk around the canvas asking \"does this fit with that?\" The misalignments are your strategic problems. Often the fix isn't all nine — it's one or two boxes that need to change to make the others work.\n\nThe canvas is also a powerful diagnostic for competitors and acquisition targets. Mapping a competitor's canvas reveals exactly where their model is weak — and where yours can attack."
     },
     {
       "id": "M3L1",
@@ -1542,6 +1542,60 @@
       "deep_dive": "**Pricing is the single highest-leverage operating decision and the most under-managed.** A 1% price increase, holding volume constant, drops directly to profit. A 1% volume increase requires absorbing variable cost. A 1% cost reduction requires operational pain. Yet most businesses set prices once, leave them for years, and underprice everything.\n\nThe foundational equation:\n\n$$\\text{Price Elasticity} = \\frac{\\% \\Delta \\text{Quantity Demanded}}{\\% \\Delta \\text{Price}}$$\n\nWhen elasticity is **less than 1 in absolute value** (inelastic), you have pricing power — you can raise prices without losing much volume, so price increases drop almost entirely to profit. When it's **greater than 1** (elastic), volume drops faster than price rises, and you can't raise without absorbing volume loss.\n\nMost categories sit somewhere between elastic and inelastic. The operator's question is: *where are we, and how can we move toward inelasticity?*\n\nThe ways to build pricing power:\n\n- **Differentiation**: customers can't easily compare you to alternatives. Brand, switching costs, unique features.\n- **Bundling**: harder to comparison-shop a bundle than a line-item.\n- **Segmentation**: charge different prices to different segments based on their WTP. The high-WTP customer subsidizes price discovery.\n- **Versioning**: good/better/best tiering reveals customer self-selection. Most customers anchor to middle; high-WTP customers self-segment to top.\n- **Anchor pricing**: showing a high-price option (which few buy) makes the middle option feel reasonable. Pure perception.\n\n**The Buffett test** is the cleanest diagnostic: *can you raise prices 10% without losing >5% of customers?* If yes, you're in a business with pricing power and a moat. If no, you're in a commodity (regardless of what your marketing says).\n\nThe practical move: run a structured pricing review every 12-18 months. Look at price changes since last review, monitor competitor positions, audit churn-by-price-tier, test 5-10% increases on a cohort. Most businesses leave 15-30% of revenue on the table from undermanaged pricing. The audit reveals it."
     },
     {
+      "id": "M4L5",
+      "module_id": "M4",
+      "lesson_number": "M4L5",
+      "title": "Customer Retention",
+      "slug_v2": "customer-retention",
+      "legacy_slug": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "video_id": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Customer_Retention.mp4",
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        {
+          "title": "Churn is the inverse of retention",
+          "body": "Monthly churn of 5% = ~46% lost in a year. Compound effects are huge. Track both — churn for the alarm bell, retention for the steady-state."
+        },
+        {
+          "title": "Cohorts beat averages",
+          "body": "Average retention hides the truth. Group customers by acquisition month and plot retention curves — the shape tells you whether the product fits the market or leaks."
+        },
+        {
+          "title": "Retention compounds LTV",
+          "body": "Doubling retention can 2-3× LTV without changing acquisition spend. The inside lever is bigger than most outside levers."
+        },
+        {
+          "title": "The retention stack",
+          "body": "Onboarding (week 1) · Activation (the aha moment) · Habit (recurring use) · Expansion (paid upgrades). Each has its own playbook."
+        },
+        {
+          "title": "Earn the renewal",
+          "body": "For subscription, every renewal is a re-sale. For transactional, every repeat is a vote. Build the cadence of value that earns the next yes."
+        }
+      ],
+      "take_action": [
+        "Pull your customer list. Calculate monthly churn for the last 6 months. Note the trend.",
+        "Pick one customer cohort. Plot what % are still active each month. Stop when the curve flattens.",
+        {
+          "text": "Identify your activation event — the action that, when a customer does it, predicts they’ll stick. One sentence.",
+          "capstone_field": "engine.activation_event"
+        },
+        {
+          "text": "Pick ONE retention lever you can move this quarter. Onboarding email? Faster time-to-value? Quarterly check-in? Pick one and ship.",
+          "capstone_field": "engine.retention_lever"
+        }
+      ],
+      "placeholder": false,
+      "deep_dive": {
+        "intro": "Retention is the unsung hero of unit economics. CAC gets you a customer once; retention turns one customer into ten purchases. This lesson breaks down churn, cohort lenses, and the leverage points that compound LTV without spending more on acquisition.",
+        "sections": []
+      },
+      "audio_overview_script": "Retention is the unsung hero of unit economics. CAC gets you a customer once; retention turns one customer into ten purchases. This lesson breaks down churn, cohort lenses, and the leverage points that compound LTV without spending more on acquisition."
+    },
+    {
       "id": "M5L1",
       "module_id": "M5",
       "lesson_number": "M5L1",
@@ -1826,6 +1880,162 @@
       ],
       "placeholder": false,
       "deep_dive": "**Sustained growth is one of the rarest things in business, and almost always the product of an engine — not effort.** Every market eventually has a winner that built a self-reinforcing system, and runners-up who relied on heroics. The system always wins long-term.\n\nThe three classic growth engines (Sean Ellis, Andrew Chen):\n\n- **Viral growth**: each customer brings n new customers, where n > 1. K-factor of 1.1 means each user brings 1.1 more, compounding to dominance. Examples: Dropbox referrals, WhatsApp, Robinhood waitlist. Hard to engineer; extraordinary when achieved.\n- **Paid growth**: spend money to acquire customers at a known CAC, monetize at a known LTV. Engine works as long as LTV:CAC > 3 and capital is available. Examples: most DTC ecommerce, much of B2B SaaS. Scales linearly with capital.\n- **Sticky growth**: high retention + expansion (NRR > 100%). New customers add; existing customers grow. Net new revenue compounds even without aggressive top-of-funnel. Examples: Slack, Atlassian, Snowflake. The most durable engine.\n\nMost businesses run on a mix. Identifying the **dominant engine** tells you where to invest:\n\n- Viral engine → invest in mechanisms that amplify K-factor: referral programs, social features, network products.\n- Paid engine → invest in CAC reduction, payback shortening, LTV expansion. Channel-level optimization.\n- Sticky engine → invest in onboarding, expansion features, customer success. Retention compounding.\n\n**The Rule of 40** is the public-market filter for SaaS health:\n\n$$\\text{Growth Rate \\%} + \\text{Profit Margin \\%} \\geq 40\\%$$\n\nA company growing 70% at -30% margin clears (it's burning cash but growing fast enough). A company growing 25% at 15% margin clears (it's profitable enough to justify slower growth). The point is the trade-off is acceptable in different mixes. Below 40, the company is neither growing fast enough nor profitable enough.\n\nThe practical move: identify your dominant engine, measure it weekly, and direct >50% of growth investment to widening it. The other half can experiment. The engine is what carries the business; everything else is decoration."
+    },
+    {
+      "id": "M6L10",
+      "module_id": "M6",
+      "lesson_number": "M6L10",
+      "title": "Exit Strategy (Exit Story)",
+      "slug_v2": "m6l10-exit-strategy-exit-story",
+      "legacy_slug": "exit",
+      "audio_url": null,
+      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/exit-strategy.mp4",
+      "video_id": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Exit_Strategy.mp4",
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        {
+          "title": "Build a Saleable Asset",
+          "body": "Many great-operating businesses are unsellable. Owner-dependent, no transferable systems, no clean financials.\n\nThe goal of exit-readiness isn't to sell — it's to *be able* to sell. Optionality. The business is more valuable when it doesn't depend on you."
+        },
+        {
+          "title": "The Exit Narrative",
+          "body": "Buyers buy a story, not just a balance sheet. The story includes why this business now, why it's worth a premium, what the buyer can do with it.\n\nThe story takes 12-24 months to build deliberately. The mistake is starting it 3 months before the process opens."
+        },
+        {
+          "title": "Strategic vs Financial Exit",
+          "body": "Strategic buyer: another operating company. Pays for synergies. Higher multiples. Slower process.\n\nFinancial buyer (PE): cares about returns. Pays for stand-alone economics. Faster process; lower price."
+        },
+        {
+          "title": "The Process Premium",
+          "body": "A well-run process with 4-6 bidders typically clears 30-50% higher than a one-on-one negotiation.\n\nProcess premium comes from competition. Hire a banker who runs structured processes for businesses your size. Their fee (1-3%) usually returns 10-30x in higher clearing price."
+        },
+        {
+          "title": "Post-Exit Reality",
+          "body": "Most founders are unprepared for life after exit. Identity tied to the business, sudden liquidity, freedom that feels like vertigo.\n\nPlan the next chapter before you close. The founders who do well post-exit have something they're moving toward, not away from."
+        }
+      ],
+      "take_action": [],
+      "placeholder": false,
+      "deep_dive": "**Most founders think about exit too late and too narrowly.** They think about it 3 months before they want to sell, and they think of it as a single transaction. The founders who maximize outcomes — and who don't regret what comes after — think about exit-readiness from year 3, treat it as a multi-year construction project, and plan their post-exit life with the same discipline they brought to building the business.\n\n**Exit-readiness ≠ exiting.** The same disciplines that make a business saleable also make it well-run:\n\n- Clean financials (audited statements, predictable accruals, no surprises)\n- Transferable systems (process documentation, not founder-in-everyone's-head)\n- Bench strength (next layer of leadership can run the business)\n- Customer concentration manageable (<25% from any one customer)\n- Contracts solid (no auto-renewal traps, key supplier terms documented)\n\nIf you build for sellability, you build for resilience. Even if you never sell.\n\n**The exit story** is the deliberate construction of narrative:\n\n- **Why this business**: what's the structural advantage? Why can't this be replicated?\n- **Why now**: market timing, growth trajectory, technology shift, regulatory tailwind\n- **What the buyer gets**: defensible market position, profitable growth, talent\n- **What the buyer can do with it**: synergies, expansion, geographic scaling\n\nBuyers pay for the story. They commission the diligence to confirm the numbers, but they're sold on the story first. Build it deliberately into board materials, customer references, analyst briefings over 18-24 months before a process opens.\n\n**The process premium** is real and measurable. A structured process with 4-6 invited bidders, run by a competent banker, clears 30-50% higher than a one-on-one with a single buyer who approached you first. The banker fee (1-3% of transaction value) returns 10-30x by creating competitive tension. The founders who run a single-buyer process \"to save the fee\" routinely leave 7-figures on the table.\n\n**Post-exit reality** is the unsung consideration. The exit closes. The wire hits. The freedom that felt like the goal turns out to feel like vertigo. Founders without a Plan B drift for 6-18 months in identity crisis. The ones who do well post-exit:\n\n- Have a personal mission that's bigger than the company\n- Took some time before the exit to map their next decade\n- Maintained relationships outside the company that survive its sale\n- Have hobbies, intellectual interests, or family commitments to anchor identity\n\nThe practical move 12 months before exit: schedule recurring conversations with founders who exited 2-5 years ago. What did they wish they'd known? What did they do well in the year after? The patterns repeat. Learn before you live them."
+    },
+    {
+      "id": "M6L11",
+      "module_id": "M6",
+      "lesson_number": "M6L11",
+      "title": "Complex Human Systems (Ethics Compass)",
+      "slug_v2": "m6l11-complex-human-systems-ethics-compass",
+      "legacy_slug": null,
+      "audio_url": null,
+      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/complex-human-systems.mp4",
+      "video_id": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Complex_Human_Systems.mp4",
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        {
+          "title": "The Ethical Override",
+          "body": "Some decisions are not optimization problems. They're constraints. Don't lie to customers. Don't shortcut safety. Don't exploit information asymmetry.\n\nThe ethical override sits above strategy. Violating it for short-term gain destroys long-term value, every time."
+        },
+        {
+          "title": "Stakeholder Map",
+          "body": "Every business decision affects multiple stakeholders: customers, employees, investors, suppliers, community.\n\nDecisions optimized for one stakeholder often impose costs on others. Sustainable businesses balance the map; extractive businesses don't."
+        },
+        {
+          "title": "The Newspaper Test",
+          "body": "Before any consequential decision, ask: how would I feel if this decision was the front-page story in the local paper tomorrow?\n\nIf the answer is 'embarrassed,' you have your answer. The exercise surfaces the rationalizations you've been making."
+        },
+        {
+          "title": "Short-term vs Long-term Trade-offs",
+          "body": "Most ethical breakdowns trade short-term gains for long-term costs. Lying to a customer wins this deal; loses the next 10 referrals.\n\nDiscount long-term costs less than short-term gains. The math almost always favors the ethical path."
+        },
+        {
+          "title": "Building Ethical Infrastructure",
+          "body": "Individual willpower fails. Build systems that make the ethical choice the default — clear policies, independent audits, accessible whistleblower channels, leadership that visibly punishes violations.\n\nCulture eats individual ethics for breakfast, in both directions."
+        }
+      ],
+      "take_action": [],
+      "placeholder": false,
+      "deep_dive": "**Ethics in business isn't a separate domain from operations — it's an operating decision with longer payback periods.** The companies that compound over decades — Costco, Patagonia, Stripe, Visa — share a discipline around the few decisions that look optionally ethical and turn out to be foundational.\n\nThe most useful ethics frame for operators is **the long-term cost vs short-term gain trade-off**. Most ethical breakdowns aren't theatrical — they're small choices that look efficient in the moment and corrosive over years:\n\n- Lying (or shading) in customer pitch → wins the deal, costs the referral and the renewal\n- Cutting corners on safety → saves a week of build, costs years of trust if it surfaces\n- Pushing through a decision the team objects to → wins this fight, loses moral authority for the next\n- Treating a vendor unfairly → saves margin once, kills the supplier relationship\n\nIn each case, the short-term math looks fine; the long-term math is catastrophic. The discipline is **discounting the long-term cost at a low enough rate that it dominates the short-term gain**. Many founders implicitly discount future costs at 50-100% — which means anything more than 12 months out doesn't factor. That's how short-term thinking masquerades as rational decision-making.\n\n**The newspaper test** is one of the cleanest filters available: would I be embarrassed if this decision were front-page tomorrow? The test surfaces the rationalizations we've been making. The decisions that fail it almost always fail other tests too — they just fail the newspaper test first and loudest.\n\n**Stakeholder mapping** keeps the analysis honest. Every decision affects:\n\n- *Customers*: experience, trust, value delivered\n- *Employees*: workload, autonomy, dignity, growth\n- *Investors*: returns, risk, transparency\n- *Suppliers*: terms, predictability, fairness\n- *Community*: externalities, contributions, footprint\n\nDecisions that optimize for one stakeholder at the expense of others may look efficient quarter-to-quarter but accumulate technical debt across the relationships. The sustainable model balances the map. The extractive model concentrates value to one party until the relationship breaks.\n\n**The infrastructure level** matters because individual willpower is unreliable under pressure. The companies that maintain ethics in tough quarters have built systems:\n\n- Clear written policies on the high-risk decisions (customer claims, hiring, contract terms)\n- Independent audit functions or external advisors\n- Accessible whistleblower channels with credible follow-through\n- Public leadership response to violations — visible enough to deter\n\nWithout the infrastructure, ethics depends on the next leader. With it, ethics depends on the institution.\n\nThe practical move: write down the three decisions in the last quarter that you're least comfortable with. Run each through the newspaper test and the long-term cost lens. If any fail, you have a system problem, not a willpower problem. Fix the system."
+    },
+    {
+      "id": "M6L12",
+      "module_id": "M6",
+      "lesson_number": "M6L12",
+      "title": "Business Anatomy Masterclass (Personal OS)",
+      "slug_v2": "m6l12-business-anatomy-masterclass-personal-os",
+      "legacy_slug": null,
+      "audio_url": null,
+      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/business-anatomy-masterclass.mp4",
+      "video_id": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Business_Anatomy_Masterclass.mp4",
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        {
+          "title": "The CEO's Three Jobs",
+          "body": "Patrick Collison's framing. The CEO has three irreducible jobs:\n\n1. Set the strategy\n2. Build the team\n3. Don't run out of money\n\nEverything else can be delegated. These three cannot. The CEO who delegates these has stopped being CEO."
+        },
+        {
+          "title": "Calendar as Strategy",
+          "body": "Where you put your time is your real strategy, regardless of what your strategy doc says. Audit your last 4 weeks of calendar.\n\nIf the audit doesn't match your stated priorities, the calendar is the truth. Restructure or rewrite the strategy to match."
+        },
+        {
+          "title": "Energy Management Over Time Management",
+          "body": "Time is a constraint; energy is the variable. A high-energy 4 hours beats a low-energy 10 hours.\n\nProtect the energy peaks. Schedule deep work for the hours when you're sharpest. Schedule meetings for the rest."
+        },
+        {
+          "title": "The Two-Question Filter",
+          "body": "For every commitment: (1) am I the only person who can do this? (2) is this the highest-leverage use of my time right now?\n\nIf the answer to either is no, delegate or decline. Most CEOs say yes to too much because saying no feels rude. Saying yes to the wrong things is worse."
+        },
+        {
+          "title": "Personal Operating System",
+          "body": "The set of rituals, defaults, and decisions you don't have to remake each day. Sleep, exercise, reading, deep work, family time.\n\nThe more decisions you automate at the personal level, the more attention you have for the high-stakes ones."
+        }
+      ],
+      "take_action": [],
+      "placeholder": false,
+      "deep_dive": "**The CEO's operating system is the meta-operating system of the business.** A poorly-run CEO operating system produces a poorly-run company, regardless of how good the strategy or team is. The opposite is also true: a deliberate CEO OS leverages mediocre conditions into great outcomes.\n\nThe **three irreducible jobs** (Patrick Collison):\n\n1. **Set the strategy** — where are we going, what are we doing, what are we not doing? Can be informed by the team but ultimately the CEO's call.\n2. **Build the team** — who runs each function, how they work together, who's missing, who needs to go. The most consequential decisions a CEO makes.\n3. **Don't run out of money** — cash management, capital allocation, runway awareness. Financial fragility ends companies.\n\nEverything else — operations, sales, product, customer success — can be delegated to functional leaders. The CEO who's in the weeds on those has stopped doing CEO work.\n\n**Calendar audit** is the most useful diagnostic. Take your last 4 weeks of calendar. Categorize every block:\n\n- Strategy (where are we going)\n- Team (who works here, how they're doing)\n- Capital (runway, fundraising, investor relations)\n- Customer (talking to customers, understanding the market)\n- Operations (what should be delegated)\n- Reactive (firefighting, responses, meetings I shouldn't be in)\n\nThe split reveals the truth. If 60% is operations and reactive, you're a senior operator, not a CEO. Rebalance.\n\n**Energy management** is the under-discussed companion to time management. Time is finite (24 hours, 7 days). Energy is variable (4 great hours can produce more than 10 mediocre ones). The disciplines:\n\n- Sleep ≥ 7 hours. Non-negotiable. The cost of less sleep is invisible but real.\n- Schedule deep work for energy peaks (usually mornings for most people).\n- Schedule low-energy work (admin, status meetings, light reading) for energy troughs.\n- Build recovery rituals — exercise, walks, breaks between intense calls.\n\nThe CEOs who burn out tend to be the ones who treated energy as a constant. The ones who compound over decades treat it as the variable to protect.\n\n**The two-question filter** for every commitment request:\n\n- *Am I the only one who can do this?* Most things, no.\n- *Is this the highest-leverage use of my time right now?* Most things, no.\n\nDelegate or decline. The hard part is the social cost of declining — but the cost of saying yes to the wrong thing is higher and silent.\n\nThe practical move: design your week as a default schedule. Mondays = strategy + reading. Tuesdays = team. Wednesdays = customer. Thursdays = operations review (delegated, you mostly listen). Fridays = personal admin + retro. The default schedule means most weeks don't need designing — exceptions are conscious choices, not drift."
+    },
+    {
+      "id": "M6L13",
+      "module_id": "M6",
+      "lesson_number": "M6L13",
+      "title": "Capstone Encore: 90-Day Plan",
+      "slug_v2": "m6l13-video-pending-generation",
+      "legacy_slug": "m4-capstone",
+      "audio_url": null,
+      "audio_overview_url": null,
+      "video_id": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Capstone_Encore__90-Day_Plan.mp4",
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        {
+          "title": "The 90-Day Forcing Function",
+          "body": "Set 90-day plans, not annual ones. The cycle is short enough to be concrete, long enough to do real work.\n\nAt the end of every 90 days: audit, adjust, set the next 90. Compound over years."
+        },
+        {
+          "title": "Three Bets Per Quarter",
+          "body": "Each 90-day cycle has three big bets. Not 12. Not 5. Three.\n\nThe three are aligned with the year's strategy. They have measurable outcomes. They're owned by named people. Focus is what makes quarterly planning work."
+        },
+        {
+          "title": "Weekly Cadence",
+          "body": "The 90-day plan executes through weekly rhythms. Monday: set the week's priorities. Friday: review what shipped, what slipped, why.\n\nThe weekly cadence is the connective tissue. Plans without rhythm produce slogans without execution."
+        },
+        {
+          "title": "The Retrospective Discipline",
+          "body": "Every 90-day cycle ends with an honest retrospective. What worked, what didn't, what we'd do differently.\n\nMost retros are theater. Make this one substantive — name specific decisions, specific people, specific lessons. Pattern recognition compounds."
+        },
+        {
+          "title": "The Long Game",
+          "body": "Career-changing companies are built by people who execute 40+ consecutive 90-day cycles with discipline. Most flame out after 5-10.\n\nThe difference isn't intensity. It's sustainable rhythm. The marathon, not the sprint."
+        }
+      ],
+      "take_action": [],
+      "placeholder": false,
+      "deep_dive": "**The 90-day plan is the most useful forcing function in modern operating practice.** Annual plans are too long — by month 6, the situation has changed and the plan is obsolete. Weekly plans are too short — you can't accomplish anything strategic in 5 days. The 90-day cycle is the sweet spot: long enough to do meaningful work, short enough to stay current with reality.\n\n**The three-bet structure** is the discipline that makes 90-day plans work:\n\n- Three big bets, not five, not ten.\n- Each bet has a named owner.\n- Each bet has a measurable outcome.\n- Each bet aligns with the year's strategy.\n\nThe constraint to three forces prioritization. Most organizations try to do everything and accomplish nothing. The teams that say \"these three matter; nothing else gets attention this quarter\" ship more than the teams trying to advance on 12 fronts.\n\n**The weekly cadence** is the connective tissue between the quarterly plan and daily work:\n\n- **Monday**: 30-minute leadership review. What's the week's focus? What's at risk?\n- **Wednesday**: midweek check-in. What's changed? Any blockers needing escalation?\n- **Friday**: review. What shipped? What slipped? Why?\n\nThe rhythm is non-negotiable. Plans without rhythm are slogans. Rhythm without plans is busy-ness. The two together produce execution.\n\n**The retrospective discipline** is what separates compounders from drifters. At the end of every 90-day cycle, take 90 minutes for a serious retro:\n\n- What did we set out to do? (Refer to the plan, no rewriting history.)\n- What did we actually accomplish?\n- What worked well? What patterns are we seeing?\n- What didn't work? What do we keep doing wrong?\n- What changes are we making in the next 90?\n\nMost retros are theater because they're framed as \"any feedback?\" and produce nothing concrete. Make this one specific: name decisions, name people, name lessons. The pattern recognition compounds across quarters. Year 3 of this discipline produces qualitatively better decisions than year 1.\n\n**The long-game framing** is the closing principle. Companies that change industries — Stripe, Airbnb, Amazon, Patagonia — were built by founders who executed 40+ consecutive 90-day cycles. They didn't make better individual bets than competitors. They made comparable bets, sustained the discipline of planning-executing-retroing, and the compounding did the work.\n\nThe practical move: this Sunday, write your next 90-day plan. Three bets. Named owners. Measurable outcomes. Schedule the weekly cadence. Schedule the closing retro on the calendar 90 days out. Do this 40 times. Then look at what you've built."
     },
     {
       "id": "M6L2",
@@ -2152,162 +2362,6 @@
       "deep_dive": "**Frank Knight's 1921 distinction between *risk* and *uncertainty* is one of the most useful frames in business decision-making.** Risk = probabilities are knowable. You can put numbers on outcomes. Insurance, financial markets, manufacturing defect rates — all risk. Uncertainty = probabilities are unknowable. You can't put a confidence interval on it. New market entry, regulatory change, technology disruption — all uncertainty.\n\nThe two demand different tools:\n\n- **Risk** can be priced and hedged. Insurance, diversification, derivatives, statistical models.\n- **Uncertainty** can only be navigated. Scenario planning, optionality, robust strategies (work in many futures), antifragility (gets stronger from shocks).\n\nThe Sharpe Ratio formalizes risk-adjusted return:\n\n$$\\text{Sharpe Ratio} = \\frac{R_p - R_f}{\\sigma_p}$$\n\nA portfolio earning 15% with 20% volatility has a Sharpe of (15-3)/20 = 0.6. The same return with 10% volatility has a Sharpe of 1.2 — twice as efficient. The lesson generalizes: returns aren't free; they're priced in volatility. Strategies that produce returns with less variance are worth more than strategies producing the same returns with more.\n\n**The risk map** is the practical operating tool:\n\n```\n              Low Impact          High Impact\nLow Prob:     IGNORE              PREPARE\nHigh Prob:    MONITOR             MITIGATE NOW\n```\n\nFor every category of risk facing the business, place it in the matrix. The actions follow:\n\n- **High probability, high impact**: drop everything and address. These are the active threats.\n- **High probability, low impact**: monitor. Accept the cost; don't over-invest in mitigation.\n- **Low probability, high impact (tail risk)**: have a plan, even if you don't fully insure. Cyber breach, key executive departure, regulatory ruling. The cost of being unprepared is asymmetric.\n- **Low probability, low impact**: ignore. Most organizational risk theater is here.\n\n**Risk capital** is the under-used framing for sizing bets:\n\n- *Total capital*: everything the company owns. Don't lose this.\n- *Risk capital*: the portion you can lose without breaking the business. This is what you bet.\n\nFounders who don't distinguish bet aggressively with total capital. The bets pay off statistically over many companies — but each individual company can be ruined by a single loss. The operators who compound careers and businesses size each bet to risk capital, accept that some will fail, and keep playing.\n\nThe practical move: define your risk capital explicitly. \"We can deploy $2M on speculative bets per year. Above that, we need higher confidence.\" The number forces discipline. Without it, every bet feels like the right size — until one isn't."
     },
     {
-      "id": "M6L10",
-      "module_id": "M6",
-      "lesson_number": "M6L10",
-      "title": "Exit Strategy (Exit Story)",
-      "slug_v2": "m6l10-exit-strategy-exit-story",
-      "legacy_slug": "exit",
-      "audio_url": null,
-      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/exit-strategy.mp4",
-      "video_id": null,
-      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Exit_Strategy.mp4",
-      "worksheet_url": null,
-      "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "Build a Saleable Asset",
-          "body": "Many great-operating businesses are unsellable. Owner-dependent, no transferable systems, no clean financials.\n\nThe goal of exit-readiness isn't to sell — it's to *be able* to sell. Optionality. The business is more valuable when it doesn't depend on you."
-        },
-        {
-          "title": "The Exit Narrative",
-          "body": "Buyers buy a story, not just a balance sheet. The story includes why this business now, why it's worth a premium, what the buyer can do with it.\n\nThe story takes 12-24 months to build deliberately. The mistake is starting it 3 months before the process opens."
-        },
-        {
-          "title": "Strategic vs Financial Exit",
-          "body": "Strategic buyer: another operating company. Pays for synergies. Higher multiples. Slower process.\n\nFinancial buyer (PE): cares about returns. Pays for stand-alone economics. Faster process; lower price."
-        },
-        {
-          "title": "The Process Premium",
-          "body": "A well-run process with 4-6 bidders typically clears 30-50% higher than a one-on-one negotiation.\n\nProcess premium comes from competition. Hire a banker who runs structured processes for businesses your size. Their fee (1-3%) usually returns 10-30x in higher clearing price."
-        },
-        {
-          "title": "Post-Exit Reality",
-          "body": "Most founders are unprepared for life after exit. Identity tied to the business, sudden liquidity, freedom that feels like vertigo.\n\nPlan the next chapter before you close. The founders who do well post-exit have something they're moving toward, not away from."
-        }
-      ],
-      "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**Most founders think about exit too late and too narrowly.** They think about it 3 months before they want to sell, and they think of it as a single transaction. The founders who maximize outcomes — and who don't regret what comes after — think about exit-readiness from year 3, treat it as a multi-year construction project, and plan their post-exit life with the same discipline they brought to building the business.\n\n**Exit-readiness ≠ exiting.** The same disciplines that make a business saleable also make it well-run:\n\n- Clean financials (audited statements, predictable accruals, no surprises)\n- Transferable systems (process documentation, not founder-in-everyone's-head)\n- Bench strength (next layer of leadership can run the business)\n- Customer concentration manageable (<25% from any one customer)\n- Contracts solid (no auto-renewal traps, key supplier terms documented)\n\nIf you build for sellability, you build for resilience. Even if you never sell.\n\n**The exit story** is the deliberate construction of narrative:\n\n- **Why this business**: what's the structural advantage? Why can't this be replicated?\n- **Why now**: market timing, growth trajectory, technology shift, regulatory tailwind\n- **What the buyer gets**: defensible market position, profitable growth, talent\n- **What the buyer can do with it**: synergies, expansion, geographic scaling\n\nBuyers pay for the story. They commission the diligence to confirm the numbers, but they're sold on the story first. Build it deliberately into board materials, customer references, analyst briefings over 18-24 months before a process opens.\n\n**The process premium** is real and measurable. A structured process with 4-6 invited bidders, run by a competent banker, clears 30-50% higher than a one-on-one with a single buyer who approached you first. The banker fee (1-3% of transaction value) returns 10-30x by creating competitive tension. The founders who run a single-buyer process \"to save the fee\" routinely leave 7-figures on the table.\n\n**Post-exit reality** is the unsung consideration. The exit closes. The wire hits. The freedom that felt like the goal turns out to feel like vertigo. Founders without a Plan B drift for 6-18 months in identity crisis. The ones who do well post-exit:\n\n- Have a personal mission that's bigger than the company\n- Took some time before the exit to map their next decade\n- Maintained relationships outside the company that survive its sale\n- Have hobbies, intellectual interests, or family commitments to anchor identity\n\nThe practical move 12 months before exit: schedule recurring conversations with founders who exited 2-5 years ago. What did they wish they'd known? What did they do well in the year after? The patterns repeat. Learn before you live them."
-    },
-    {
-      "id": "M6L11",
-      "module_id": "M6",
-      "lesson_number": "M6L11",
-      "title": "Complex Human Systems (Ethics Compass)",
-      "slug_v2": "m6l11-complex-human-systems-ethics-compass",
-      "legacy_slug": null,
-      "audio_url": null,
-      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/complex-human-systems.mp4",
-      "video_id": null,
-      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Complex_Human_Systems.mp4",
-      "worksheet_url": null,
-      "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "The Ethical Override",
-          "body": "Some decisions are not optimization problems. They're constraints. Don't lie to customers. Don't shortcut safety. Don't exploit information asymmetry.\n\nThe ethical override sits above strategy. Violating it for short-term gain destroys long-term value, every time."
-        },
-        {
-          "title": "Stakeholder Map",
-          "body": "Every business decision affects multiple stakeholders: customers, employees, investors, suppliers, community.\n\nDecisions optimized for one stakeholder often impose costs on others. Sustainable businesses balance the map; extractive businesses don't."
-        },
-        {
-          "title": "The Newspaper Test",
-          "body": "Before any consequential decision, ask: how would I feel if this decision was the front-page story in the local paper tomorrow?\n\nIf the answer is 'embarrassed,' you have your answer. The exercise surfaces the rationalizations you've been making."
-        },
-        {
-          "title": "Short-term vs Long-term Trade-offs",
-          "body": "Most ethical breakdowns trade short-term gains for long-term costs. Lying to a customer wins this deal; loses the next 10 referrals.\n\nDiscount long-term costs less than short-term gains. The math almost always favors the ethical path."
-        },
-        {
-          "title": "Building Ethical Infrastructure",
-          "body": "Individual willpower fails. Build systems that make the ethical choice the default — clear policies, independent audits, accessible whistleblower channels, leadership that visibly punishes violations.\n\nCulture eats individual ethics for breakfast, in both directions."
-        }
-      ],
-      "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**Ethics in business isn't a separate domain from operations — it's an operating decision with longer payback periods.** The companies that compound over decades — Costco, Patagonia, Stripe, Visa — share a discipline around the few decisions that look optionally ethical and turn out to be foundational.\n\nThe most useful ethics frame for operators is **the long-term cost vs short-term gain trade-off**. Most ethical breakdowns aren't theatrical — they're small choices that look efficient in the moment and corrosive over years:\n\n- Lying (or shading) in customer pitch → wins the deal, costs the referral and the renewal\n- Cutting corners on safety → saves a week of build, costs years of trust if it surfaces\n- Pushing through a decision the team objects to → wins this fight, loses moral authority for the next\n- Treating a vendor unfairly → saves margin once, kills the supplier relationship\n\nIn each case, the short-term math looks fine; the long-term math is catastrophic. The discipline is **discounting the long-term cost at a low enough rate that it dominates the short-term gain**. Many founders implicitly discount future costs at 50-100% — which means anything more than 12 months out doesn't factor. That's how short-term thinking masquerades as rational decision-making.\n\n**The newspaper test** is one of the cleanest filters available: would I be embarrassed if this decision were front-page tomorrow? The test surfaces the rationalizations we've been making. The decisions that fail it almost always fail other tests too — they just fail the newspaper test first and loudest.\n\n**Stakeholder mapping** keeps the analysis honest. Every decision affects:\n\n- *Customers*: experience, trust, value delivered\n- *Employees*: workload, autonomy, dignity, growth\n- *Investors*: returns, risk, transparency\n- *Suppliers*: terms, predictability, fairness\n- *Community*: externalities, contributions, footprint\n\nDecisions that optimize for one stakeholder at the expense of others may look efficient quarter-to-quarter but accumulate technical debt across the relationships. The sustainable model balances the map. The extractive model concentrates value to one party until the relationship breaks.\n\n**The infrastructure level** matters because individual willpower is unreliable under pressure. The companies that maintain ethics in tough quarters have built systems:\n\n- Clear written policies on the high-risk decisions (customer claims, hiring, contract terms)\n- Independent audit functions or external advisors\n- Accessible whistleblower channels with credible follow-through\n- Public leadership response to violations — visible enough to deter\n\nWithout the infrastructure, ethics depends on the next leader. With it, ethics depends on the institution.\n\nThe practical move: write down the three decisions in the last quarter that you're least comfortable with. Run each through the newspaper test and the long-term cost lens. If any fail, you have a system problem, not a willpower problem. Fix the system."
-    },
-    {
-      "id": "M6L12",
-      "module_id": "M6",
-      "lesson_number": "M6L12",
-      "title": "Business Anatomy Masterclass (Personal OS)",
-      "slug_v2": "m6l12-business-anatomy-masterclass-personal-os",
-      "legacy_slug": null,
-      "audio_url": null,
-      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/business-anatomy-masterclass.mp4",
-      "video_id": null,
-      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Business_Anatomy_Masterclass.mp4",
-      "worksheet_url": null,
-      "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "The CEO's Three Jobs",
-          "body": "Patrick Collison's framing. The CEO has three irreducible jobs:\n\n1. Set the strategy\n2. Build the team\n3. Don't run out of money\n\nEverything else can be delegated. These three cannot. The CEO who delegates these has stopped being CEO."
-        },
-        {
-          "title": "Calendar as Strategy",
-          "body": "Where you put your time is your real strategy, regardless of what your strategy doc says. Audit your last 4 weeks of calendar.\n\nIf the audit doesn't match your stated priorities, the calendar is the truth. Restructure or rewrite the strategy to match."
-        },
-        {
-          "title": "Energy Management Over Time Management",
-          "body": "Time is a constraint; energy is the variable. A high-energy 4 hours beats a low-energy 10 hours.\n\nProtect the energy peaks. Schedule deep work for the hours when you're sharpest. Schedule meetings for the rest."
-        },
-        {
-          "title": "The Two-Question Filter",
-          "body": "For every commitment: (1) am I the only person who can do this? (2) is this the highest-leverage use of my time right now?\n\nIf the answer to either is no, delegate or decline. Most CEOs say yes to too much because saying no feels rude. Saying yes to the wrong things is worse."
-        },
-        {
-          "title": "Personal Operating System",
-          "body": "The set of rituals, defaults, and decisions you don't have to remake each day. Sleep, exercise, reading, deep work, family time.\n\nThe more decisions you automate at the personal level, the more attention you have for the high-stakes ones."
-        }
-      ],
-      "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**The CEO's operating system is the meta-operating system of the business.** A poorly-run CEO operating system produces a poorly-run company, regardless of how good the strategy or team is. The opposite is also true: a deliberate CEO OS leverages mediocre conditions into great outcomes.\n\nThe **three irreducible jobs** (Patrick Collison):\n\n1. **Set the strategy** — where are we going, what are we doing, what are we not doing? Can be informed by the team but ultimately the CEO's call.\n2. **Build the team** — who runs each function, how they work together, who's missing, who needs to go. The most consequential decisions a CEO makes.\n3. **Don't run out of money** — cash management, capital allocation, runway awareness. Financial fragility ends companies.\n\nEverything else — operations, sales, product, customer success — can be delegated to functional leaders. The CEO who's in the weeds on those has stopped doing CEO work.\n\n**Calendar audit** is the most useful diagnostic. Take your last 4 weeks of calendar. Categorize every block:\n\n- Strategy (where are we going)\n- Team (who works here, how they're doing)\n- Capital (runway, fundraising, investor relations)\n- Customer (talking to customers, understanding the market)\n- Operations (what should be delegated)\n- Reactive (firefighting, responses, meetings I shouldn't be in)\n\nThe split reveals the truth. If 60% is operations and reactive, you're a senior operator, not a CEO. Rebalance.\n\n**Energy management** is the under-discussed companion to time management. Time is finite (24 hours, 7 days). Energy is variable (4 great hours can produce more than 10 mediocre ones). The disciplines:\n\n- Sleep ≥ 7 hours. Non-negotiable. The cost of less sleep is invisible but real.\n- Schedule deep work for energy peaks (usually mornings for most people).\n- Schedule low-energy work (admin, status meetings, light reading) for energy troughs.\n- Build recovery rituals — exercise, walks, breaks between intense calls.\n\nThe CEOs who burn out tend to be the ones who treated energy as a constant. The ones who compound over decades treat it as the variable to protect.\n\n**The two-question filter** for every commitment request:\n\n- *Am I the only one who can do this?* Most things, no.\n- *Is this the highest-leverage use of my time right now?* Most things, no.\n\nDelegate or decline. The hard part is the social cost of declining — but the cost of saying yes to the wrong thing is higher and silent.\n\nThe practical move: design your week as a default schedule. Mondays = strategy + reading. Tuesdays = team. Wednesdays = customer. Thursdays = operations review (delegated, you mostly listen). Fridays = personal admin + retro. The default schedule means most weeks don't need designing — exceptions are conscious choices, not drift."
-    },
-    {
-      "id": "M6L13",
-      "module_id": "M6",
-      "lesson_number": "M6L13",
-      "title": "Capstone Encore: 90-Day Plan",
-      "slug_v2": "m6l13-video-pending-generation",
-      "legacy_slug": "m4-capstone",
-      "audio_url": null,
-      "audio_overview_url": null,
-      "video_id": null,
-      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Capstone_Encore__90-Day_Plan.mp4",
-      "worksheet_url": null,
-      "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "The 90-Day Forcing Function",
-          "body": "Set 90-day plans, not annual ones. The cycle is short enough to be concrete, long enough to do real work.\n\nAt the end of every 90 days: audit, adjust, set the next 90. Compound over years."
-        },
-        {
-          "title": "Three Bets Per Quarter",
-          "body": "Each 90-day cycle has three big bets. Not 12. Not 5. Three.\n\nThe three are aligned with the year's strategy. They have measurable outcomes. They're owned by named people. Focus is what makes quarterly planning work."
-        },
-        {
-          "title": "Weekly Cadence",
-          "body": "The 90-day plan executes through weekly rhythms. Monday: set the week's priorities. Friday: review what shipped, what slipped, why.\n\nThe weekly cadence is the connective tissue. Plans without rhythm produce slogans without execution."
-        },
-        {
-          "title": "The Retrospective Discipline",
-          "body": "Every 90-day cycle ends with an honest retrospective. What worked, what didn't, what we'd do differently.\n\nMost retros are theater. Make this one substantive — name specific decisions, specific people, specific lessons. Pattern recognition compounds."
-        },
-        {
-          "title": "The Long Game",
-          "body": "Career-changing companies are built by people who execute 40+ consecutive 90-day cycles with discipline. Most flame out after 5-10.\n\nThe difference isn't intensity. It's sustainable rhythm. The marathon, not the sprint."
-        }
-      ],
-      "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**The 90-day plan is the most useful forcing function in modern operating practice.** Annual plans are too long — by month 6, the situation has changed and the plan is obsolete. Weekly plans are too short — you can't accomplish anything strategic in 5 days. The 90-day cycle is the sweet spot: long enough to do meaningful work, short enough to stay current with reality.\n\n**The three-bet structure** is the discipline that makes 90-day plans work:\n\n- Three big bets, not five, not ten.\n- Each bet has a named owner.\n- Each bet has a measurable outcome.\n- Each bet aligns with the year's strategy.\n\nThe constraint to three forces prioritization. Most organizations try to do everything and accomplish nothing. The teams that say \"these three matter; nothing else gets attention this quarter\" ship more than the teams trying to advance on 12 fronts.\n\n**The weekly cadence** is the connective tissue between the quarterly plan and daily work:\n\n- **Monday**: 30-minute leadership review. What's the week's focus? What's at risk?\n- **Wednesday**: midweek check-in. What's changed? Any blockers needing escalation?\n- **Friday**: review. What shipped? What slipped? Why?\n\nThe rhythm is non-negotiable. Plans without rhythm are slogans. Rhythm without plans is busy-ness. The two together produce execution.\n\n**The retrospective discipline** is what separates compounders from drifters. At the end of every 90-day cycle, take 90 minutes for a serious retro:\n\n- What did we set out to do? (Refer to the plan, no rewriting history.)\n- What did we actually accomplish?\n- What worked well? What patterns are we seeing?\n- What didn't work? What do we keep doing wrong?\n- What changes are we making in the next 90?\n\nMost retros are theater because they're framed as \"any feedback?\" and produce nothing concrete. Make this one specific: name decisions, name people, name lessons. The pattern recognition compounds across quarters. Year 3 of this discipline produces qualitatively better decisions than year 1.\n\n**The long-game framing** is the closing principle. Companies that change industries — Stripe, Airbnb, Amazon, Patagonia — were built by founders who executed 40+ consecutive 90-day cycles. They didn't make better individual bets than competitors. They made comparable bets, sustained the discipline of planning-executing-retroing, and the compounding did the work.\n\nThe practical move: this Sunday, write your next 90-day plan. Three bets. Named owners. Measurable outcomes. Schedule the weekly cadence. Schedule the closing retro on the calendar 90 days out. Do this 40 times. Then look at what you've built."
-    },
-    {
       "id": "M7L1",
       "module_id": "M7",
       "lesson_number": "M7L1",
@@ -2384,6 +2438,114 @@
       "take_action": [],
       "placeholder": true,
       "deep_dive": "**Repeatability is the boring discipline that separates compounding companies from one-quarter wonders.** Most early-stage successes are driven by heroes — founders, key engineers, lucky timing. The transition to repeatability — where the company doesn't depend on heroes — is the hardest organizational shift.\n\n**Heroes are essential at startup phase.** Someone has to figure out how to do things for the first time. They make calls without documentation. They fix problems no process exists for. The hero phase is unavoidable and even desirable in the first year or two.\n\nThe trap is when heroes become permanent. The company gets stuck at the size of the hero's bandwidth. New hires can't ramp because the knowledge is in someone's head. Customer experience varies by which hero shows up. The hero burns out, and the dependency surfaces brutally.\n\n**The transition discipline** is converting hero knowledge into process documentation:\n\n- **The hero writes** the first version of the process. They know how it actually works.\n- **A non-hero runs the process** using only the documentation. If they can't, the doc is incomplete.\n- **The non-hero refines** the doc based on what was unclear or missing.\n- **The process gets owned by a role**, not a person. Whoever fills the role inherits the process.\n\nThe **5x/week threshold** is the practical filter for what deserves a process. Tasks done occasionally don't need documentation; the cost of process exceeds the benefit. Tasks done frequently absolutely need documentation; the cost of ad-hoc compounds fast.\n\nThe **format principle**: process docs are only valuable if they get used. A 10-page SOP gets ignored. A one-page checklist gets used. The form factor matters more than the comprehensiveness.\n\nTemplates that work:\n\n- **Checklists** for sequence-sensitive tasks (close a deal, onboard a customer, deploy code)\n- **Decision trees** for branching logic (when to escalate, which path for which input)\n- **Rubrics** for quality calibration (what does a great hire look like, what does great writing look like)\n- **Playbooks** for cross-functional workflows (incident response, launch planning)\n\nThe **continuous improvement layer** is what keeps processes alive. Frozen processes become bureaucracy: \"we do it this way because we've always done it this way.\" Living processes are reviewed quarterly. What's friction? What changed in our business that requires updating the process? Who's the new process owner?\n\nThe practical move: list every task in your business that happens 5+ times a week. For each, ask: is there a written process? If yes, when was it last reviewed? If no, who should write the first version? The list itself is the operating leverage. Working through it is the path to repeatability."
+    },
+    {
+      "id": "M8L2",
+      "module_id": "M8",
+      "lesson_number": "M8L2",
+      "title": "The Buffer Paradox",
+      "slug_v2": "the-buffer-paradox",
+      "legacy_slug": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "video_id": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_Buffer_Paradox.mp4",
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        {
+          "title": "100% utilization breaks systems",
+          "body": "Queuing theory: as utilization approaches 100%, wait times approach infinity. Reliable systems run at 70-85% utilization on purpose."
+        },
+        {
+          "title": "Variability is the real enemy",
+          "body": "It’s not load that breaks operations — it’s variability in load. Buffers absorb variability so the constraint stays fed without overloading."
+        },
+        {
+          "title": "Three places a buffer lives",
+          "body": "Time buffer (slack in schedule), inventory buffer (WIP in front of the constraint), capacity buffer (under-utilized resources)."
+        },
+        {
+          "title": "Buffer at the constraint, not everywhere",
+          "body": "Buffering every step inflates cost and hides the real bottleneck. Identify the constraint, buffer upstream of it, expose the rest."
+        },
+        {
+          "title": "The paradox in one line",
+          "body": "To go faster, slow down on purpose at the right point. The slack you build is what gives the system speed when it matters."
+        }
+      ],
+      "take_action": [
+        "Walk one of your processes end-to-end. Identify the one resource that limits throughput. That’s your constraint.",
+        "Look at your team’s calendar utilization. Anyone at 95%+ booked is a fragile node — variability will collapse their throughput first.",
+        {
+          "text": "Decide where you’ll add a buffer this month — schedule, inventory, or capacity. Name the size and why.",
+          "capstone_field": "playbook.buffer_strategy"
+        },
+        {
+          "text": "Pick one place to remove a buffer that isn’t protecting the constraint — hidden waste. Ship the change.",
+          "capstone_field": "playbook.waste_removal"
+        }
+      ],
+      "placeholder": false,
+      "deep_dive": {
+        "intro": "Theory of Constraints meets daily operations. The Buffer Paradox: adding slack (time, inventory, capacity) makes a system more reliable and faster overall — not slower. Why high-utilization systems break, where to put buffers, how to size them.",
+        "sections": []
+      },
+      "audio_overview_script": "Theory of Constraints meets daily operations. The Buffer Paradox: adding slack (time, inventory, capacity) makes a system more reliable and faster overall — not slower. Why high-utilization systems break, where to put buffers, how to size them."
+    },
+    {
+      "id": "M8L3",
+      "module_id": "M8",
+      "lesson_number": "M8L3",
+      "title": "Operations Excellence",
+      "slug_v2": "operations-excellence",
+      "legacy_slug": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "video_id": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Operations_Excellence.mp4",
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        {
+          "title": "OpEx = standard work + improvement",
+          "body": "Two pillars: every team has a documented standard, and a regular cadence to challenge it. Without the first, chaos. Without the second, decay."
+        },
+        {
+          "title": "Process before tools",
+          "body": "A new tool on a broken process amplifies the breakage. Map and standardize first, then automate the parts that earn it."
+        },
+        {
+          "title": "Lead measures over lag measures",
+          "body": "Revenue is a lag measure. OpEx tracks the daily/weekly inputs that predict it — call volume, on-time delivery, defect rate, response time."
+        },
+        {
+          "title": "Visible work creates ownership",
+          "body": "If you can’t see the work, you can’t manage it. Boards, dashboards, daily huddles — the same information in front of the same people, every day."
+        },
+        {
+          "title": "Continuous improvement compounds",
+          "body": "1% better per week = 67% better per year. Discipline = the rhythm: weekly retros, monthly process reviews, quarterly resets."
+        }
+      ],
+      "take_action": [
+        {
+          "text": "Pick your most important repeatable process. Write a 1-page SOP. Hand it to someone who’s never run the process — can they execute it?",
+          "capstone_field": "playbook.first_sop"
+        },
+        "Define 3 lead measures for that process. Each = a daily/weekly input number you can track on a whiteboard.",
+        "Schedule a weekly 15-minute retro for the team running that process. What worked, what didn’t, what we’ll change.",
+        {
+          "text": "Identify the metric you’d want a dashboard to surface every Monday. Build the query (or the spreadsheet) this week.",
+          "capstone_field": "dashboard.weekly_kpis"
+        }
+      ],
+      "placeholder": false,
+      "deep_dive": {
+        "intro": "Operations Excellence is the discipline of making the standard the default. Not perfection — repeatability. SOPs, rhythms, metrics, and the cultural muscle of getting the same good result every time.",
+        "sections": []
+      },
+      "audio_overview_script": "Operations Excellence is the discipline of making the standard the default. Not perfection — repeatability. SOPs, rhythms, metrics, and the cultural muscle of getting the same good result every time."
     },
     {
       "id": "M9L1",
@@ -2536,5 +2698,5 @@
       "what_you_ship": "1-page plan + 90-day execution roadmap"
     }
   ],
-  "last_migration": "2026-05-12: 7-section Capstone → 10-section 1:1 with modules"
+  "last_migration": "2026-05-12: + M4L5 Customer Retention, M8L2 Buffer Paradox, M8L3 Operations Excellence"
 }
