@@ -751,8 +751,9 @@
     var n = 1;
     function num() { return String(n++).padStart(2, '0'); }
 
-    // v6.13 — Module color spine: every accent reads from --mr5-accent. Falls back to brand orange if module lacks color.
-    var modAccent = (mod && mod.color) || c.orange;
+    // v6.13.1 — Module color spine: every accent reads from --mr5-accent. Falls back to brand orange if module lacks color.
+    // FIX 2026-05-12: c.orange was out of scope here — crashed renderPage(). Use literal hex.
+    var modAccent = (mod && mod.color) || '#F26B1F';
     var html = '<div class="mr5" style="--mr5-accent:' + modAccent + ';">';
 
     // Crumb row removed in v6.2 — was colliding with Squarespace's own top nav.
