@@ -121,6 +121,13 @@ em.serif,.serif-it{font-family:'Fraunces',serif;font-style:italic;color:var(--na
   .exec .summary-grid{grid-template-columns:1fr}
   .section-head h2{font-size:26px}
   .field .ftitle{flex-direction:column;gap:4px}
+  /* Mobile control strip — stack title above the buttons so nothing wraps awkwardly */
+  .controls{flex-direction:column;align-items:stretch;gap:10px;padding:12px 16px}
+  .controls .left{justify-content:space-between}
+  .controls .left h2{font-size:16px}
+  .controls .right{justify-content:flex-end}
+  .controls .btn{padding:8px 12px;font-size:12px;white-space:nowrap}
+  .member-pill{font-size:11px;padding:4px 8px;max-width:55%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 }
 </style>
 </head>
@@ -425,10 +432,34 @@ function loadFromSupabase(){
     }).catch(e => console.warn('[Dossier] pull failed', e));
 }
 
+// Helper: count total filled fields across all sections
+function totalFilled(){
+  let n = 0;
+  SECTIONS.forEach(s => { s.fields.forEach(f => { if (val(s.id, f.id)) n++; }); });
+  return n;
+}
+
 // ── Init ──
 loadFromCache();
+// Default: if nothing is filled (new member, guest), show empty fields so the
+// document has real structure to look at. Otherwise default to clean "hide empty".
+hideEmpty = totalFilled() > 0;
 render();
-loadFromSupabase().then(render);
+// Sync the toggle button label to match initial state
+(function(){
+  const btn = document.getElementById('toggleEmpty');
+  if (btn) btn.textContent = hideEmpty ? 'Hide empty fields' : 'Show empty fields';
+})();
+loadFromSupabase().then(() => {
+  // After remote pull, re-evaluate the default
+  if (totalFilled() > 0 && !hideEmpty) {
+    // user now has data — switch to clean view automatically
+    hideEmpty = true;
+    const btn = document.getElementById('toggleEmpty');
+    if (btn) btn.textContent = 'Hide empty fields';
+  }
+  render();
+});
 
 // ── Controls ──
 document.getElementById('toggleEmpty').addEventListener('click', function(){
