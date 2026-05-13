@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Powered by Better Together Branding · Make Your Plan Real</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1F3A; --ink:#0E1116; --orange:#F26B1F; --cream:#FAF8F5;
+  --paper:#FFFFFF; --rule:#E5E0D6; --muted:#6E6E6E; --soft:#F4F1EA;
+  /* BTB accent — a slightly different warm tone to signal "different venture, same family" */
+  --btb-plum:#5B2A4B;
+  --btb-rose:#E8B4A9;
+  --btb-rose-soft:#F8E8E2;
+  --good:#1D8444;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:'Inter',-apple-system,sans-serif;line-height:1.55}
+h1,h2,h3,h4{font-family:'Fraunces',serif;letter-spacing:-0.015em;color:var(--navy);margin:0;font-weight:600}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);font-weight:700}
+.btb-eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--btb-plum);font-weight:700}
+
+a.btn{display:inline-block;background:var(--navy);color:#fff;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.02em;transition:background .15s}
+a.btn:hover{background:var(--orange)}
+a.btn.btb{background:var(--btb-plum)}
+a.btn.btb:hover{background:#7a3963}
+a.btn.ghost{background:transparent;color:var(--navy);border:1.5px solid var(--rule)}
+a.btn.ghost:hover{background:var(--soft)}
+
+.wrap{max-width:1080px;margin:0 auto;padding:48px 32px}
+
+/* Hero */
+.hero{padding:56px 0 36px;border-bottom:1px solid var(--rule)}
+.hero .branded-line{display:flex;align-items:center;gap:10px;margin-bottom:18px;font-size:12px;color:var(--muted)}
+.hero .branded-line .mr{font-family:'Fraunces',serif;font-weight:600;color:var(--orange)}
+.hero .branded-line .arrow{color:var(--muted)}
+.hero .branded-line .btb{font-family:'Fraunces',serif;font-weight:600;color:var(--btb-plum);font-style:italic}
+.hero h1{font-size:54px;line-height:1.04;letter-spacing:-0.025em;margin-bottom:18px;max-width:780px}
+.hero h1 em{font-family:'Fraunces',serif;font-style:italic;color:var(--orange);font-weight:500}
+.hero .sub{font-family:'Fraunces',serif;font-style:italic;font-size:21px;color:var(--navy);max-width:680px;line-height:1.5;margin:0 0 28px}
+.hero .summary-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:14px 0;margin-top:24px;max-width:720px}
+.hero .summary-strip .cell{padding:0 18px}
+.hero .summary-strip .cell + .cell{border-left:1px solid var(--rule)}
+.hero .summary-strip .l{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:4px}
+.hero .summary-strip .v{font-family:'Fraunces',serif;font-size:17px;color:var(--navy);font-weight:600;line-height:1.3}
+.hero .summary-strip .v.empty{color:var(--muted);font-style:italic;font-size:14px}
+
+/* The Hand-off block */
+.handoff{margin-top:48px;background:var(--btb-rose-soft);border-left:5px solid var(--btb-plum);padding:32px 36px;border-radius:0 8px 8px 0}
+.handoff h2{font-size:28px;line-height:1.15;margin-bottom:10px}
+.handoff h2 em{font-style:italic;color:var(--btb-plum)}
+.handoff p{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--ink);max-width:680px;margin:0;line-height:1.5}
+
+/* Brand preview — auto-generated from dossier */
+.preview-block{margin:60px 0;padding-bottom:48px;border-bottom:1px solid var(--rule)}
+.preview-block .head{margin-bottom:24px}
+.preview-block .head h2{font-size:34px;line-height:1.1;margin-bottom:6px}
+.preview-block .head p{font-family:'Fraunces',serif;font-style:italic;color:var(--muted);font-size:16px;margin:0;max-width:640px}
+.preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.preview-card{background:var(--paper);border:1px solid var(--rule);padding:24px 26px;border-radius:8px}
+.preview-card h3{font-size:16px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;color:var(--navy);font-family:'Inter',sans-serif;margin-bottom:14px}
+.preview-card .out{font-family:'Fraunces',serif;font-size:17px;color:var(--ink);line-height:1.55}
+.preview-card .out.empty{color:var(--muted);font-style:italic;font-size:15px}
+.preview-card .palette{display:flex;gap:8px;margin-top:10px}
+.preview-card .swatch{flex:1;height:64px;border-radius:6px;display:flex;align-items:flex-end;justify-content:flex-start;padding:8px;font-family:'Inter',sans-serif;font-size:10px;color:#fff;font-weight:600;letter-spacing:.04em}
+.preview-card .swatch.light{color:var(--ink)}
+.directions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
+.direction{padding:12px 14px;background:var(--soft);border-radius:6px;font-family:'Fraunces',serif;font-size:13px;color:var(--navy);line-height:1.4}
+.direction strong{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);margin-bottom:4px}
+
+.preview-note{margin-top:24px;padding:16px 20px;background:var(--paper);border:1px solid var(--rule);border-left:4px solid var(--orange);font-size:13px;color:var(--muted);font-family:'Fraunces',serif;font-style:italic;line-height:1.5}
+.preview-note strong{font-style:normal;color:var(--navy);font-family:'Inter',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+
+/* Tiers */
+.tiers-block{margin:60px 0}
+.tiers-block .head{text-align:center;margin-bottom:36px}
+.tiers-block .head .btb-eyebrow{display:block;margin-bottom:10px}
+.tiers-block .head h2{font-size:38px;line-height:1.1;margin-bottom:10px}
+.tiers-block .head p{font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--navy);max-width:640px;margin:0 auto;line-height:1.5}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.tier{background:var(--paper);border:1px solid var(--rule);padding:28px;border-radius:10px;display:flex;flex-direction:column;position:relative}
+.tier.featured{border-color:var(--btb-plum);border-width:2px;box-shadow:0 8px 32px rgba(91,42,75,0.12);transform:translateY(-6px)}
+.tier.featured::before{content:'MOST POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--btb-plum);color:#fff;padding:5px 14px;border-radius:4px;font-size:10px;letter-spacing:.18em;font-weight:700}
+.tier .price{font-family:'Fraunces',serif;font-size:32px;color:var(--navy);font-weight:600;margin-bottom:4px}
+.tier .price small{font-size:14px;color:var(--muted);font-weight:400}
+.tier .name{font-family:'Fraunces',serif;font-size:22px;color:var(--navy);font-weight:600;margin-bottom:10px}
+.tier .promise{font-family:'Fraunces',serif;font-style:italic;color:var(--muted);font-size:14px;line-height:1.45;margin-bottom:20px;min-height:48px}
+.tier ul{list-style:none;padding:0;margin:0 0 28px;font-size:13px;color:var(--ink)}
+.tier ul li{padding:8px 0;border-bottom:1px solid var(--rule);display:flex;gap:10px;line-height:1.45}
+.tier ul li:last-child{border-bottom:none}
+.tier ul li::before{content:'+';color:var(--btb-plum);font-weight:700;font-size:16px;line-height:1.2}
+.tier ul li strong{font-weight:600;color:var(--navy)}
+.tier .who{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:18px;padding:8px 0;border-top:1px solid var(--rule);text-align:center}
+.tier .cta-row{margin-top:auto}
+.tier .cta-row a{display:block;text-align:center}
+
+/* Funding decision */
+.funding-block{margin:60px 0;padding:44px;background:var(--navy);color:#fff;border-radius:14px}
+.funding-block h2{color:#fff;font-size:30px;line-height:1.15;margin-bottom:8px}
+.funding-block h2 em{font-style:italic;color:var(--btb-rose)}
+.funding-block .sub{font-family:'Fraunces',serif;font-style:italic;color:rgba(255,255,255,0.85);font-size:17px;margin:0 0 28px;max-width:640px;line-height:1.5}
+.funding-options{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.funding-card{background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.15);border-radius:10px;padding:24px 26px;cursor:pointer;transition:all .15s}
+.funding-card:hover{border-color:var(--btb-rose);background:rgba(232,180,169,0.1)}
+.funding-card.selected{border-color:var(--orange);background:rgba(242,107,31,0.1)}
+.funding-card h3{font-family:'Fraunces',serif;color:#fff;font-size:21px;margin-bottom:8px}
+.funding-card .desc{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:rgba(255,255,255,0.75);line-height:1.5;margin-bottom:14px}
+.funding-card .feature{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--btb-rose);font-weight:600}
+
+/* Confirm bar (sticky on selection) */
+.confirm-bar{position:sticky;bottom:0;background:var(--paper);border-top:2px solid var(--btb-plum);padding:18px 32px;display:none;align-items:center;justify-content:space-between;gap:18px;box-shadow:0 -4px 16px rgba(0,0,0,0.08);z-index:20}
+.confirm-bar.show{display:flex}
+.confirm-bar .summary{flex:1;font-size:14px;color:var(--navy)}
+.confirm-bar .summary strong{font-family:'Fraunces',serif;font-size:17px;color:var(--btb-plum)}
+.confirm-bar .actions{display:flex;gap:10px}
+
+/* Footer */
+.foot{margin-top:80px;padding:36px 0 40px;border-top:1px solid var(--rule);text-align:center;font-size:12px;color:var(--muted);font-family:'Fraunces',serif;font-style:italic}
+.foot strong{font-family:'Inter',sans-serif;font-style:normal;color:var(--navy);font-weight:600}
+
+@media (max-width:780px){
+  .wrap{padding:28px 20px}
+  .hero{padding:28px 0 22px}
+  .hero h1{font-size:34px}
+  .hero .sub{font-size:17px}
+  .hero .summary-strip{grid-template-columns:1fr;padding:0}
+  .hero .summary-strip .cell + .cell{border-left:none;border-top:1px solid var(--rule)}
+  .hero .summary-strip .cell{padding:12px 0}
+  .handoff{padding:22px}
+  .preview-grid{grid-template-columns:1fr}
+  .directions{grid-template-columns:1fr}
+  .tiers{grid-template-columns:1fr;gap:20px}
+  .tier.featured{transform:none}
+  .funding-block{padding:26px;border-radius:10px}
+  .funding-options{grid-template-columns:1fr}
+  .confirm-bar{flex-direction:column;align-items:stretch;padding:14px 20px}
+  .confirm-bar .actions{justify-content:stretch}
+  .confirm-bar .actions a{flex:1;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="branded-line">
+      <span class="mr">MBA Rock</span>
+      <span class="arrow">→</span>
+      <span class="btb">Better Together Branding</span>
+    </div>
+    <h1 id="heroTitle">You built the plan. Now <em>make it real.</em></h1>
+    <p class="sub" id="heroSub">You finished the Capstone. You have an investor-grade operating plan. The next 90 days decide whether the plan stays a document — or becomes a business.</p>
+
+    <div class="summary-strip">
+      <div class="cell"><div class="l">Business, in one sentence</div><div class="v" id="oneLiner">Not yet committed.</div></div>
+      <div class="cell"><div class="l">North-star metric</div><div class="v" id="northStar">Not yet committed.</div></div>
+      <div class="cell"><div class="l">Runway today</div><div class="v" id="runway">Not yet committed.</div></div>
+    </div>
+
+    <div class="handoff">
+      <h2>This is the handoff to <em>Better Together Branding</em>.</h2>
+      <p>Same family of operators. Different specialty. MBA Rock built the strategy — BTB ships the brand, the deck, and the investor introductions that turn a plan into capital.</p>
+    </div>
+  </section>
+
+  <!-- BRAND PREVIEW (auto-generated from dossier) -->
+  <section class="preview-block">
+    <div class="head">
+      <span class="btb-eyebrow">Auto-generated from your Capstone</span>
+      <h2>Your brand, pre-sketched.</h2>
+      <p>Drafted from your one-liner, customer JTBD, brand promise, and moat thesis. A starting point — not a finished identity.</p>
+    </div>
+
+    <div class="preview-grid">
+      <div class="preview-card">
+        <h3>Positioning Statement</h3>
+        <div class="out" id="posStatement">Not enough yet — fill §02 The Bet and §07 The Story in your dossier.</div>
+      </div>
+      <div class="preview-card">
+        <h3>Voice Direction</h3>
+        <div class="out" id="voiceDir">Not enough yet — fill the customer JTBD and brand promise.</div>
+      </div>
+      <div class="preview-card" style="grid-column:1/-1">
+        <h3>Three Visual Identity Directions</h3>
+        <div class="directions" id="visualDirs">
+          <div class="direction"><strong>Direction A</strong> Studio serif + restrained palette. Reads as "established and quietly expert."</div>
+          <div class="direction"><strong>Direction B</strong> Geometric sans + bold color. Reads as "modern and decisive."</div>
+          <div class="direction"><strong>Direction C</strong> Hybrid mark + serif wordmark. Reads as "category-creating."</div>
+        </div>
+      </div>
+      <div class="preview-card" style="grid-column:1/-1">
+        <h3>Suggested Palette</h3>
+        <div class="palette" id="palette">
+          <div class="swatch" style="background:#0B1F3A">PRIMARY</div>
+          <div class="swatch" style="background:#F26B1F">ACCENT</div>
+          <div class="swatch light" style="background:#FAF8F5">CANVAS</div>
+          <div class="swatch" style="background:#5B2A4B">DEPTH</div>
+          <div class="swatch" style="background:#1D8444">SIGNAL</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="preview-note">
+      <strong>Preview, not a final brand.</strong> A real Brand Sprint at BTB starts here, then layers in research, competitor scan, and three rounds of refinement. This sketch exists to make the conversation faster — not to replace it.
+    </div>
+  </section>
+
+  <!-- TIERS -->
+  <section class="tiers-block">
+    <div class="head">
+      <span class="btb-eyebrow">The next 90 days · Three paths</span>
+      <h2>Pick where you need help.</h2>
+      <p>Every package starts from your dossier — so we're not building from scratch. The strategy is locked. We design the rest.</p>
+    </div>
+
+    <div class="tiers">
+      <div class="tier" data-tier="dossier-pro">
+        <div class="price">$499<small> · one-time</small></div>
+        <div class="name">Dossier Pro</div>
+        <div class="promise">Your operator's plan upgraded with real research, custom infographics, and an optional logo mark.</div>
+        <ul>
+          <li><strong>Research injection</strong> — industry stats, comp benchmarks, market sizing pulled in to back your assumptions</li>
+          <li><strong>Custom infographics</strong> — your numbers visualized (unit economics, growth model, capital plan)</li>
+          <li><strong>Logo mark (optional)</strong> — one direction, two rounds</li>
+          <li><strong>Print-ready PDF</strong> — designed for board distribution</li>
+          <li><strong>7-day turnaround</strong></li>
+        </ul>
+        <div class="who">Best for self-funded operators</div>
+        <div class="cta-row"><a class="btn ghost btb-tier-select" data-tier="dossier-pro" href="#funding">Select Dossier Pro</a></div>
+      </div>
+
+      <div class="tier featured" data-tier="sprint-ready">
+        <div class="price">$1,499<small> · one-time</small></div>
+        <div class="name">Sprint-Ready Toolkit</div>
+        <div class="promise">Everything in Dossier Pro plus the artifacts you'll actually use to raise capital and ship.</div>
+        <ul>
+          <li><strong>Everything in Dossier Pro</strong></li>
+          <li><strong>10-slide pitch deck</strong> — designed from your §06 outline, branded</li>
+          <li><strong>Investor one-pager</strong> — the leave-behind that opens second meetings</li>
+          <li><strong>Financial model template</strong> — populated with your unit economics</li>
+          <li><strong>Data room cover & dividers</strong> — branded templates</li>
+          <li><strong>14-day turnaround</strong></li>
+        </ul>
+        <div class="who">Best for operators raising in next 90 days</div>
+        <div class="cta-row"><a class="btn btb btb-tier-select" data-tier="sprint-ready" href="#funding">Select Sprint-Ready</a></div>
+      </div>
+
+      <div class="tier" data-tier="full-brand">
+        <div class="price">$4,999<small>+</small></div>
+        <div class="name">Full Brand Build + Investor Match</div>
+        <div class="promise">Complete visual identity, branded everything — and BTB curates investor introductions matched to your stage and sector.</div>
+        <ul>
+          <li><strong>Everything in Sprint-Ready Toolkit</strong></li>
+          <li><strong>Full visual identity</strong> — logo system, color, type, voice, brand guidelines</li>
+          <li><strong>Branded templates</strong> — social, email, presentation, doc</li>
+          <li><strong>Investor matching</strong> — 5–10 introductions matched to your sector + stage</li>
+          <li><strong>90-day post-launch advisory</strong> — biweekly working sessions</li>
+          <li><strong>Success fee on funding closed</strong> — terms set in onboarding</li>
+        </ul>
+        <div class="who">Best for funded operators preparing for public launch</div>
+        <div class="cta-row"><a class="btn ghost btb-tier-select" data-tier="full-brand" href="#funding">Select Full Brand Build</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNDING DECISION -->
+  <section class="funding-block" id="funding">
+    <h2>One more question: <em>are you raising?</em></h2>
+    <p class="sub">This routes you to the right BTB team. If you're seeking capital, we'll connect you with investor-relations specialists. If you're self-funded, we keep it lean and shipping-focused.</p>
+
+    <div class="funding-options">
+      <div class="funding-card" data-funding="self-funded">
+        <h3>Self-funded — keep it lean</h3>
+        <div class="desc">You're bootstrapping or already capitalized. You don't need investor materials beyond what makes your business clearer to operate.</div>
+        <div class="feature">→ Ship-focused team, faster turnaround</div>
+      </div>
+      <div class="funding-card" data-funding="seeking-match">
+        <h3>Seeking funding — match me with investors</h3>
+        <div class="desc">You're raising or planning to. BTB's investor network spans pre-seed to Series B across operator-grade sectors. We curate introductions, not lists.</div>
+        <div class="feature">→ Investor-relations specialists + match service</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="foot">
+    <strong>Better Together Branding</strong> · A sister venture of MBA Rock<br/>
+    Strategy at MBA Rock. Execution at BTB. Same family of operators, same standard of work.
+  </div>
+</div>
+
+<!-- STICKY CONFIRM BAR -->
+<div class="confirm-bar" id="confirmBar">
+  <div class="summary" id="confirmSummary">Selected: <strong>—</strong></div>
+  <div class="actions">
+    <a class="btn ghost" href="#" id="confirmReset">Change selection</a>
+    <a class="btn btb" href="#" id="confirmGo" target="_blank" rel="noopener">Continue to BTB →</a>
+  </div>
+</div>
+
+<script>
+// ── Load context from dossier (Capstone localStorage) ──
+function memberId(){ return localStorage.getItem('mba-rock-member-id') || 'guest'; }
+function memberName(){ return localStorage.getItem('mba-rock-member-name') || null; }
+
+function loadCapstone(){
+  try {
+    const mid = memberId();
+    return JSON.parse(localStorage.getItem('mr-capstone:' + mid) || '{}');
+  } catch(e) { return {}; }
+}
+
+function val(state, secId, fieldId){
+  return state[secId] && state[secId][fieldId] != null ? String(state[secId][fieldId]).trim() : '';
+}
+
+function escapeHtml(s){
+  const d = document.createElement('div');
+  d.textContent = s == null ? '' : String(s);
+  return d.innerHTML;
+}
+
+// ── Render hero + summary ──
+function renderHero(state){
+  const name = memberName();
+  const oneLiner = val(state, 'bet', 'one_liner');
+  const northStar = val(state, 'dashboard', 'north_star');
+  const runway = val(state, 'numbers', 'runway_months');
+
+  if (name) {
+    document.getElementById('heroTitle').innerHTML = escapeHtml(name) + ', you built the plan. Now <em>make it real.</em>';
+  }
+
+  function fill(id, v){
+    const el = document.getElementById(id);
+    if (v) { el.textContent = v; el.classList.remove('empty'); }
+    else { el.textContent = 'Not yet committed.'; el.classList.add('empty'); }
+  }
+  fill('oneLiner', oneLiner);
+  fill('northStar', northStar);
+  fill('runway', runway);
+}
+
+// ── Auto-generate brand preview from dossier ──
+function buildPositioning(state){
+  const audience = val(state, 'engine', 'target_market') || val(state, 'story', 'early_persona');
+  const promise  = val(state, 'story', 'brand_promise');
+  const moat     = val(state, 'bet', 'moat_thesis');
+  const positioning = val(state, 'bet', 'positioning');
+
+  if (positioning) return positioning; // Use the operator's own positioning if written
+
+  // Generate from parts
+  const audienceShort = audience ? audience.split('.')[0].split(',')[0].trim() : null;
+  const promiseShort  = promise  ? promise.split('.')[0].trim() : null;
+  const moatShort     = moat     ? moat.split('.')[0].trim() : null;
+
+  if (audienceShort && promiseShort) {
+    return 'For ' + audienceShort + ', the brand that ' + promiseShort.toLowerCase() + (moatShort ? ' — earned through ' + moatShort.toLowerCase() + '.' : '.');
+  }
+  if (promiseShort) return 'The brand that ' + promiseShort.toLowerCase() + '.';
+  return null;
+}
+
+function buildVoice(state){
+  const jtbd = val(state, 'story', 'customer_jtbd');
+  const culture = val(state, 'team', 'culture_principles');
+  if (!jtbd && !culture) return null;
+  const lines = [];
+  if (jtbd) lines.push('Speaks to: ' + (jtbd.split('.')[0]).trim() + '.');
+  if (culture) {
+    const firstPrinciple = culture.split(/[.\n]/)[0].trim();
+    if (firstPrinciple.length > 8) lines.push('Sounds like: ' + firstPrinciple + '.');
+  }
+  lines.push('Avoids: jargon, hype, hedging.');
+  return lines.join(' ');
+}
+
+function suggestPalette(state){
+  // Heuristic: financial/B2B → navy primary; consumer/lifestyle → warm primary;
+  // health/wellness → green primary; creative/agency → plum primary.
+  const sector = (val(state, 'engine', 'target_market') + ' ' + val(state, 'bet', 'one_liner')).toLowerCase();
+  if (/health|wellness|patient|medical|care|therapy/.test(sector)) {
+    return [{c:'#1D5A4A',l:'PRIMARY'},{c:'#F26B1F',l:'ACCENT'},{c:'#FAF8F5',l:'CANVAS',light:true},{c:'#0B1F3A',l:'DEPTH'},{c:'#A88735',l:'SIGNAL'}];
+  }
+  if (/consumer|retail|food|beverage|lifestyle|fashion|home/.test(sector)) {
+    return [{c:'#8B1A1A',l:'PRIMARY'},{c:'#A88735',l:'ACCENT'},{c:'#FAF8F5',l:'CANVAS',light:true},{c:'#0B1F3A',l:'DEPTH'},{c:'#1D8444',l:'SIGNAL'}];
+  }
+  if (/agency|creative|studio|design|content/.test(sector)) {
+    return [{c:'#5B2A4B',l:'PRIMARY'},{c:'#F26B1F',l:'ACCENT'},{c:'#FAF8F5',l:'CANVAS',light:true},{c:'#0B1F3A',l:'DEPTH'},{c:'#A88735',l:'SIGNAL'}];
+  }
+  // Default: B2B / SaaS / financial / operator-grade
+  return [{c:'#0B1F3A',l:'PRIMARY'},{c:'#F26B1F',l:'ACCENT'},{c:'#FAF8F5',l:'CANVAS',light:true},{c:'#5B2A4B',l:'DEPTH'},{c:'#1D8444',l:'SIGNAL'}];
+}
+
+function renderBrandPreview(state){
+  const pos = buildPositioning(state);
+  if (pos) {
+    const el = document.getElementById('posStatement');
+    el.textContent = pos;
+    el.classList.remove('empty');
+  }
+  const voice = buildVoice(state);
+  if (voice) {
+    const el = document.getElementById('voiceDir');
+    el.textContent = voice;
+    el.classList.remove('empty');
+  }
+  // Palette
+  const pal = suggestPalette(state);
+  const paletteEl = document.getElementById('palette');
+  paletteEl.innerHTML = '';
+  pal.forEach(p => {
+    const sw = document.createElement('div');
+    sw.className = 'swatch' + (p.light ? ' light' : '');
+    sw.style.background = p.c;
+    sw.textContent = p.l;
+    paletteEl.appendChild(sw);
+  });
+}
+
+// ── Tier + funding selection state ──
+let selectedTier = null;
+let selectedFunding = null;
+
+const TIER_NAMES = {
+  'dossier-pro': 'Dossier Pro ($499)',
+  'sprint-ready': 'Sprint-Ready Toolkit ($1,499)',
+  'full-brand': 'Full Brand Build + Investor Match ($4,999+)'
+};
+
+function updateConfirmBar(){
+  const bar = document.getElementById('confirmBar');
+  const summary = document.getElementById('confirmSummary');
+  const goBtn = document.getElementById('confirmGo');
+  if (!selectedTier && !selectedFunding) {
+    bar.classList.remove('show');
+    return;
+  }
+  bar.classList.add('show');
+  const parts = [];
+  if (selectedTier) parts.push('<strong>' + TIER_NAMES[selectedTier] + '</strong>');
+  if (selectedFunding) parts.push('Path: ' + (selectedFunding === 'self-funded' ? 'self-funded' : 'seeking investor match'));
+  summary.innerHTML = 'Selected: ' + parts.join(' · ');
+
+  // Build BTB handoff URL with attribution + context
+  const state = loadCapstone();
+  const ctx = {
+    utm_source: 'mbarock',
+    utm_medium: 'dossier-handoff',
+    utm_campaign: 'capstone-grad',
+    tier: selectedTier || '',
+    path: selectedFunding || 'undecided',
+    ref: memberId(),
+    one_liner: val(state, 'bet', 'one_liner').slice(0, 280),
+    north_star: val(state, 'dashboard', 'north_star').slice(0, 140),
+    runway: val(state, 'numbers', 'runway_months').slice(0, 80)
+  };
+  const qs = Object.keys(ctx).filter(k => ctx[k]).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(ctx[k])).join('&');
+  goBtn.href = 'https://bettertogetherbranding.ai/?' + qs;
+}
+
+// ── Wire up ──
+function wireSelectors(){
+  document.querySelectorAll('.btb-tier-select').forEach(el => {
+    el.addEventListener('click', e => {
+      selectedTier = el.dataset.tier;
+      // Visual: mark featured?
+      document.querySelectorAll('.tier').forEach(t => t.style.outline = '');
+      const card = document.querySelector('.tier[data-tier="' + selectedTier + '"]');
+      if (card) card.style.outline = '3px solid var(--orange)';
+      updateConfirmBar();
+    });
+  });
+  document.querySelectorAll('.funding-card').forEach(el => {
+    el.addEventListener('click', e => {
+      selectedFunding = el.dataset.funding;
+      document.querySelectorAll('.funding-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      updateConfirmBar();
+    });
+  });
+  document.getElementById('confirmReset').addEventListener('click', e => {
+    e.preventDefault();
+    selectedTier = null;
+    selectedFunding = null;
+    document.querySelectorAll('.tier').forEach(t => t.style.outline = '');
+    document.querySelectorAll('.funding-card').forEach(c => c.classList.remove('selected'));
+    updateConfirmBar();
+  });
+}
+
+// ── Init ──
+const state = loadCapstone();
+renderHero(state);
+renderBrandPreview(state);
+wireSelectors();
+</script>
+</body>
+</html>
