@@ -275,13 +275,81 @@
         }
       ],
       "take_action": [
-        "Download 3 months of bank statements and map cash in vs. cash out",
-        "Calculate your monthly burn rate (total cash out \u2212 cash in)",
+        {
+          "step": "Download 3 months of bank statements and map cash in vs. cash out",
+          "capstone_field": "bet.cash_position",
+          "input_type": "long-text"
+        },
+        {
+          "step": "Calculate your monthly burn rate (total cash out \u2212 cash in)",
+          "capstone_field": "bet.monthly_burn",
+          "input_type": "short-text"
+        },
         "Identify your top 3 cash outflows and ask if each is necessary"
       ],
       "placeholder": false,
       "lyrics": "[Verse 1]\nYou can show me profit on a paper page\nBut the ink won't keep the lights on stage\nRevenue rolls in but it's locked up tight\nNeed that cash if you're gonna survive the night\n\n[Pre-Chorus]\nProfit don't pay the rent\nMargin can't make payroll\nYou can win the quarter\nAnd still lose the soul\n\n[Chorus]\nOxygen, oxygen \u2014 cash is oxygen\nEvery breath you take is operating cash flow\nHold it tight, watch it move\nEvery dollar in and out\nOxygen, oxygen \u2014 that's what business runs on\n\n[Verse 2]\nReceivables stretched ninety days long\nSuppliers wanna get paid in twenty \u2014 wrong\nWorking capital's a tightrope walk\nRun outta runway and you're done, no more talk\n\n[Bridge]\nThree months of statements on the table tonight\nCash in, cash out \u2014 read the label right\nBurn rate ticking loud, count it down\nStack the runway, stand your ground\n\n[Chorus]\nOxygen, oxygen \u2014 cash is oxygen\nEvery breath you take is operating cash flow\nHold it tight, watch it move\nEvery dollar in and out\nOxygen, oxygen \u2014 that's what business runs on\n\n[Outro]\nYou can be profitable and still go broke\nYou can be growing and still choke\nWatch the cash, watch the cash\nWatch the cash \u2014 that's the lesson",
-      "deep_dive": "A profitable company can run out of cash. A cash-rich company can be unprofitable. Both happen all the time, and most founders learn this the hard way.\n\n**Profit is an opinion. Cash is a fact.** Net income is what your accountant says happened after assumptions about depreciation, accruals, and revenue recognition. Cash is the money in the bank \u2014 and only the money in the bank.\n\nThe gap between them is **working capital**: money tied up in receivables, inventory, and prepaid expenses. When you grow, working capital usually grows faster than revenue, and that growth sucks cash out of the business even when the P&L looks great.\n\nThe formula that matters:\n\n$$\\text{Operating Cash Flow} = \\text{Net Income} + \\text{D\\&A} - \\Delta \\text{Working Capital}$$\n\nNet income tells you the business model works on paper. Operating cash flow tells you whether it can pay the bills next month.\n\nTwo rules that flow from this:\n\n- **Track cash weekly, not monthly.** The variance between a P&L month-end and a real bank balance can swallow a quarter.\n- **Negative working capital is a superpower.** When customers pay before you pay suppliers (SaaS prepayment, gym memberships, Amazon's float), growth FUNDS itself instead of starving it. Build for negative working capital wherever you can.\n\nYour runway \u2014 the literal number of months you have left if nothing changes \u2014 is the most important number on the dashboard:\n\n$$\\text{Runway (months)} = \\frac{\\text{Cash on Hand}}{\\text{Monthly Burn Rate}}$$\n\nKnowing this number every Friday changes how you spend on Monday."
+      "deep_dive": "A profitable company can run out of cash. A cash-rich company can be unprofitable. Both happen all the time, and most founders learn this the hard way.\n\n**Profit is an opinion. Cash is a fact.** Net income is what your accountant says happened after assumptions about depreciation, accruals, and revenue recognition. Cash is the money in the bank \u2014 and only the money in the bank.\n\nThe gap between them is **working capital**: money tied up in receivables, inventory, and prepaid expenses. When you grow, working capital usually grows faster than revenue, and that growth sucks cash out of the business even when the P&L looks great.\n\nThe formula that matters:\n\n$$\\text{Operating Cash Flow} = \\text{Net Income} + \\text{D\\&A} - \\Delta \\text{Working Capital}$$\n\nNet income tells you the business model works on paper. Operating cash flow tells you whether it can pay the bills next month.\n\nTwo rules that flow from this:\n\n- **Track cash weekly, not monthly.** The variance between a P&L month-end and a real bank balance can swallow a quarter.\n- **Negative working capital is a superpower.** When customers pay before you pay suppliers (SaaS prepayment, gym memberships, Amazon's float), growth FUNDS itself instead of starving it. Build for negative working capital wherever you can.\n\nYour runway \u2014 the literal number of months you have left if nothing changes \u2014 is the most important number on the dashboard:\n\n$$\\text{Runway (months)} = \\frac{\\text{Cash on Hand}}{\\text{Monthly Burn Rate}}$$\n\nKnowing this number every Friday changes how you spend on Monday.",
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "A company shows $2M in profit for the quarter but its bank balance dropped $400K. The most likely explanation?",
+            "options": [
+              "The accountant made an error",
+              "Revenue was recognized before customers paid \u2014 cash is parked in accounts receivable",
+              "The business is shrinking",
+              "Profit and cash are unrelated metrics"
+            ],
+            "correct": 1,
+            "explain": "Profit recognition (accrual basis) lags cash arrival. The gap is working capital \u2014 receivables, inventory, prepaid expenses. The bank balance is the truth in the moment; the P&L is the truth over time."
+          },
+          {
+            "q": "Operating Cash Flow is approximately equal to:",
+            "options": [
+              "Revenue minus all expenses",
+              "Net Income + D&A \u2212 change in Working Capital",
+              "Gross profit minus operating expenses",
+              "Cash from financing activities"
+            ],
+            "correct": 1,
+            "explain": "OCF = Net Income + non-cash charges (depreciation/amortization) \u2212 working capital absorption. It tells you whether the core business actually generates cash, separate from financing or investing activity."
+          },
+          {
+            "q": "A SaaS business has 30 days DSO, 0 days inventory, 45 days DPO. What does its cash conversion cycle look like?",
+            "options": [
+              "Positive 75 days \u2014 capital is tied up",
+              "Negative 15 days \u2014 customers fund the business",
+              "Zero \u2014 perfectly balanced",
+              "Cannot be calculated without revenue figures"
+            ],
+            "correct": 1,
+            "explain": "CCC = DSO + DIO \u2212 DPO = 30 + 0 \u2212 45 = \u221215 days. Negative means you collect from customers before you pay suppliers \u2014 growth funds itself instead of consuming cash. The SaaS magic."
+          },
+          {
+            "q": "Your company has $500K cash and a monthly net burn of $75K. What's your runway, and what zone are you in?",
+            "options": [
+              "~5 months \u2014 emergency mode",
+              "~6.7 months \u2014 focus mode, defer big bets",
+              "~12 months \u2014 healthy, full execution",
+              "~18 months \u2014 strategic optionality"
+            ],
+            "correct": 1,
+            "explain": "Runway = $500K / $75K = 6.7 months. Under 12 months is focus mode \u2014 execute what's working, defer experiments, watch costs weekly. Under 6 is emergency."
+          },
+          {
+            "q": "Which of the following is NOT a vanity metric that masks the cash truth?",
+            "options": [
+              "Total signups",
+              "Press mentions",
+              "Net Revenue Retention (NRR)",
+              "GMV (Gross Merchandise Value)"
+            ],
+            "correct": 2,
+            "explain": "NRR (net revenue retention) measures whether existing customers are growing their spend \u2014 net of churn and downgrades. It's one of the truest health metrics for recurring businesses. The other three move up while the business deteriorates."
+          }
+        ]
+      }
     },
     {
       "id": "M1L1.5",
