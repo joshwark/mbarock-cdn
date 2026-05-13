@@ -1,7 +1,9 @@
-// MBA Rock — Lesson Page Takeover v6.17 (2026-05-13)
-// v6.17: Mark Complete writes a synthetic "passed" attempt to Supabase user_quiz_attempts
-//        (attempt_n=99, source='manual'). Lets the Certificates Hub count lessons toward
-//        module-mark eligibility for lessons without a full quiz wired yet.
+// MBA Rock — Lesson Page Takeover v6.18 (2026-05-13)
+// v6.18: Mark Complete is local-only again. Cert eligibility now requires a real quiz pass
+//        on every lesson (quizzes are now wired on all 55 lessons). Mark Complete still
+//        updates the UI but does NOT count toward Module Mark eligibility.
+// v6.17: (REVERTED) Mark Complete wrote a synthetic "passed" attempt to Supabase. That
+//        let members bypass the comprehension check. Now closed.
 // v6.16: Flashcards link uses absolute CDN URL. Relative /flashcards/ resolved to
 //        mbarock.com which 404s (page lives on joshwark.github.io/mbarock-cdn).
 // v6.15: companion-materials Flashcards link now points at /flashcards/?mod={module_id}
@@ -896,27 +898,11 @@
       else localStorage.setItem('mr-lesson-complete:' + lesson.id, Date.now().toString());
     } catch (e) { console.warn('progress sync failed', e); }
 
-    // v6.17: write a synthetic "passed" attempt to Supabase user_quiz_attempts so the
-    // Certificates Hub can count this lesson toward module-mark eligibility — even when
-    // the lesson has no quiz wired yet. attempt_n=99 marks it as manual (vs. real quiz 1-N).
-    if (source === 'click') {
-      var mid = memberId();
-      if (mid && mid !== 'guest') {
-        try {
-          fetch(SUPABASE_URL + '/rest/v1/user_quiz_attempts', {
-            method: 'POST', headers: SB_HDR,
-            body: JSON.stringify([{
-              member_id: mid, lesson_id: lesson.id,
-              attempt_n: 99,
-              answers: { source: 'manual', via: 'mark-complete-button' },
-              score: 100,
-              passed: true,
-              attempted_at: new Date().toISOString()
-            }])
-          }).catch(function(e){ console.warn('[MarkComplete] Supabase write failed', e); });
-        } catch (e) { console.warn('[MarkComplete] save threw', e); }
-      }
-    }
+    // v6.18: Mark Complete no longer writes a synthetic "passed" attempt to Supabase.
+    // Cert eligibility now requires a real quiz pass on every lesson. Mark Complete
+    // remains as a local UI affordance (the chip + cert outro update) — it does NOT
+    // contribute to module-mark eligibility. To earn the M{N} Module Mark, members must
+    // pass the comprehension check on every M{N} lesson.
   }
 
   // Format raw lyrics text into HTML — preserve stanza breaks (blank lines), preserve [Hook]/[Verse] tags
