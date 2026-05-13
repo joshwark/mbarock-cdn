@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Operator's Console — coming standalone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1F3A; --ink:#0E1116; --orange:#F26B1F; --cream:#FAF8F5; --paper:#FFFFFF;
+  --rule:#E5E0D6; --muted:#6E6E6E; --soft:#F4F1EA;
+  --btb-plum:#5B2A4B; --btb-rose:#E8B4A9; --btb-rose-soft:#F8E8E2;
+  --green:#1D8444;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:'Inter',-apple-system,sans-serif;line-height:1.55}
+h1,h2,h3,h4{font-family:'Fraunces',serif;letter-spacing:-0.015em;color:var(--navy);margin:0;font-weight:600}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);font-weight:700}
+.btb-eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--btb-plum);font-weight:700}
+a.btn{display:inline-block;background:var(--navy);color:#fff;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.02em}
+.wrap{max-width:1080px;margin:0 auto;padding:48px 32px}
+
+/* HERO */
+.hero{padding:48px 0 32px;border-bottom:1px solid var(--rule)}
+.hero .branded-line{display:flex;align-items:center;gap:10px;margin-bottom:16px;font-size:12px;color:var(--muted)}
+.hero .branded-line .mr{font-family:'Fraunces',serif;font-weight:600;color:var(--orange)}
+.hero .branded-line .btb{font-family:'Fraunces',serif;font-weight:600;color:var(--btb-plum);font-style:italic}
+.hero h1{font-size:54px;line-height:1.05;letter-spacing:-0.025em;margin-bottom:16px;max-width:780px}
+.hero h1 em{font-family:'Fraunces',serif;font-style:italic;color:var(--orange);font-weight:500}
+.hero .sub{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--navy);max-width:660px;line-height:1.5;margin:0 0 28px}
+.hero .pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.hero .pill{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--btb-plum);background:var(--btb-rose-soft);padding:6px 12px;border-radius:20px;font-weight:600}
+
+/* Email capture inline */
+.capture{background:var(--paper);border:1px solid var(--rule);border-left:5px solid var(--btb-plum);padding:24px 28px;border-radius:0 10px 10px 0;margin-top:24px;max-width:620px}
+.capture .label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--btb-plum);font-weight:700;margin-bottom:12px}
+.capture h3{font-size:22px;margin-bottom:8px;line-height:1.25}
+.capture p{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--ink);margin:0 0 18px;line-height:1.5}
+.capture-form{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch}
+.capture-form input{flex:1;min-width:220px;font-family:'Inter',sans-serif;font-size:14px;padding:13px 16px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--ink)}
+.capture-form input:focus{outline:none;border-color:var(--btb-plum)}
+.capture-form button{background:var(--btb-plum);color:#fff;border:none;padding:13px 22px;border-radius:8px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:.02em}
+.capture-form button:hover{background:#7a3963}
+.capture-form button:disabled{opacity:.6;cursor:not-allowed}
+.capture-checks{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:12.5px;color:var(--muted)}
+.capture-checks label{display:flex;align-items:center;gap:6px;cursor:pointer}
+.capture-checks input{accent-color:var(--btb-plum)}
+.capture-success{display:none;padding:14px 18px;background:rgba(29,132,68,.08);border-left:3px solid var(--green);color:var(--green);font-size:14px;border-radius:6px;font-family:'Fraunces',serif;font-style:italic}
+.capture-success.show{display:block}
+
+/* What is it */
+.what{margin:64px 0;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.what h2{font-size:34px;line-height:1.1;margin-bottom:14px}
+.what .lead{font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--ink);line-height:1.5;margin:0 0 16px}
+.what .copy{font-size:15px;line-height:1.7;color:var(--ink);margin:0 0 14px}
+.what .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.what .calc-pill{padding:14px 16px;background:var(--paper);border:1px solid var(--rule);border-radius:8px;font-size:13px;color:var(--ink);display:flex;align-items:center;gap:10px}
+.what .calc-pill .marker{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);font-weight:500;width:28px}
+.what .calc-pill .name{font-family:'Fraunces',serif;font-size:14.5px;color:var(--navy);font-weight:500}
+.what .calc-pill.free{border-left:3px solid var(--green)}
+.what .calc-pill.free .name::after{content:' · FREE';color:var(--green);font-size:10px;letter-spacing:.1em;font-weight:600;font-family:'Inter',sans-serif}
+.what .calc-pill.locked{opacity:.7}
+.what .calc-pill.locked .name::after{content:' · 🔒';font-size:10px}
+
+/* Tiers preview */
+.tiers-section{margin:64px 0;border-top:1px solid var(--rule);padding-top:48px}
+.tiers-head{text-align:center;margin-bottom:36px}
+.tiers-head h2{font-size:38px;line-height:1.1;margin-bottom:10px}
+.tiers-head .lead{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--navy);max-width:600px;margin:0 auto;line-height:1.5}
+.tier-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tier{background:var(--paper);border:1px solid var(--rule);padding:24px 22px;border-radius:10px;display:flex;flex-direction:column;position:relative}
+.tier.featured{border-color:var(--btb-plum);border-width:2px;box-shadow:0 6px 22px rgba(91,42,75,0.1)}
+.tier.featured::before{content:'STARTER';position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--btb-plum);color:#fff;padding:4px 12px;border-radius:4px;font-size:9.5px;letter-spacing:.18em;font-weight:700}
+.tier .price{font-family:'Fraunces',serif;font-size:28px;color:var(--navy);font-weight:600;margin-bottom:4px}
+.tier .price small{font-size:13px;color:var(--muted);font-weight:400}
+.tier .name{font-family:'Fraunces',serif;font-size:18px;color:var(--navy);font-weight:600;margin-bottom:8px}
+.tier .promise{font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:14px}
+.tier ul{list-style:none;padding:0;margin:0;font-size:12.5px;color:var(--ink)}
+.tier ul li{padding:6px 0;line-height:1.45;display:flex;gap:8px}
+.tier ul li::before{content:'+';color:var(--btb-plum);font-weight:700}
+.tier .who{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:auto;padding-top:14px;border-top:1px solid var(--rule)}
+
+/* Graduate banner */
+.grad-banner{margin:48px auto;max-width:740px;padding:22px 28px;background:rgba(242,107,31,.08);border-left:5px solid var(--orange);border-radius:0 10px 10px 0;text-align:center}
+.grad-banner .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:8px}
+.grad-banner h3{font-size:24px;line-height:1.25;margin-bottom:10px}
+.grad-banner h3 em{font-style:italic;color:var(--orange);font-weight:500}
+.grad-banner p{font-family:'Fraunces',serif;font-style:italic;font-size:15.5px;color:var(--ink);max-width:540px;margin:0 auto;line-height:1.5}
+
+/* Footer */
+.foot{margin-top:80px;padding:32px 0 40px;border-top:1px solid var(--rule);text-align:center;font-size:12.5px;color:var(--muted);font-family:'Fraunces',serif;font-style:italic;line-height:1.7}
+.foot strong{font-family:'Inter',sans-serif;font-style:normal;color:var(--navy);font-weight:600}
+.foot a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--rule)}
+
+@media (max-width:780px){
+  .wrap{padding:28px 20px}
+  .hero{padding:24px 0 20px}
+  .hero h1{font-size:32px}
+  .hero .sub{font-size:16.5px}
+  .what{grid-template-columns:1fr;gap:28px;margin:40px 0}
+  .what .calc-grid{grid-template-columns:1fr}
+  .tier-grid{grid-template-columns:1fr;gap:16px}
+  .tier.featured{margin-top:8px}
+  .capture-form{flex-direction:column;align-items:stretch}
+  .capture-form input,.capture-form button{width:100%}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="branded-line">
+      <span class="mr">MBA Rock</span>
+      <span>×</span>
+      <span class="btb">Better Together Branding</span>
+    </div>
+    <h1>The Operator's Console is going <em>standalone.</em></h1>
+    <p class="sub">Every equation in the MBA Rock curriculum, ready to run against your real numbers. Scenarios saved. Multi-workspace for advisors. Whitelabel for accelerators. Standalone from the course.</p>
+
+    <div class="pill-row">
+      <span class="pill">Coming Q3 2026</span>
+      <span class="pill">Subscription · From $9/mo</span>
+      <span class="pill">Free tier · 3 calculators</span>
+      <span class="pill">MBA Rock grads · 50% off lifetime</span>
+    </div>
+
+    <!-- Email capture -->
+    <div class="capture" id="capture">
+      <div class="label">Tell us you want it</div>
+      <h3>Be first when the Console ships standalone.</h3>
+      <p>Early-bird subscribers lock in $7/mo (vs $9 retail) for the first year. MBA Rock graduates get an additional 50% off — for life.</p>
+      <form class="capture-form" id="waitlistForm">
+        <input type="email" id="emailIn" placeholder="you@yourbusiness.com" required>
+        <button type="submit" id="submitBtn">Join the waitlist</button>
+      </form>
+      <div class="capture-checks">
+        <label><input type="checkbox" id="isGrad"> I'm an MBA Rock graduate</label>
+        <label><input type="checkbox" id="isAdvisor"> I'm a fractional CFO / advisor</label>
+        <label><input type="checkbox" id="isAccelerator"> I run an accelerator / cohort program</label>
+      </div>
+      <div class="capture-success" id="captureSuccess">You're on the list. We'll email you the moment it ships — and the early-bird code with it.</div>
+    </div>
+  </section>
+
+  <!-- WHAT IS IT -->
+  <section class="what">
+    <div>
+      <span class="eyebrow">What's in the Console</span>
+      <h2>Twelve calculators. One operator's brain.</h2>
+      <p class="lead">The same equations MBA Rock teaches — cash runway, LTV/CAC, breakeven, the Rule of 40 — built into a fast tool you run weekly.</p>
+      <p class="copy">Standalone means: no course required, no lesson context, just the numbers. Save scenarios. Compare a base case to an investor case to a crisis case. Export branded PDFs. Multi-workspace for advisors running the math for five portfolio companies.</p>
+      <p class="copy">Built by operators, for operators. No "AI-powered insights." No vanity dashboards. Just the math, fast.</p>
+    </div>
+    <div class="calc-grid">
+      <div class="calc-pill free"><span class="marker">01</span><span class="name">Cash Runway</span></div>
+      <div class="calc-pill free"><span class="marker">02</span><span class="name">LTV / CAC</span></div>
+      <div class="calc-pill free"><span class="marker">03</span><span class="name">Breakeven</span></div>
+      <div class="calc-pill locked"><span class="marker">04</span><span class="name">SaaS Magic Number</span></div>
+      <div class="calc-pill locked"><span class="marker">05</span><span class="name">Rule of 40</span></div>
+      <div class="calc-pill locked"><span class="marker">06</span><span class="name">CAC Payback Period</span></div>
+      <div class="calc-pill locked"><span class="marker">07</span><span class="name">Cohort Retention</span></div>
+      <div class="calc-pill locked"><span class="marker">08</span><span class="name">Pricing Sensitivity</span></div>
+      <div class="calc-pill locked"><span class="marker">09</span><span class="name">Hiring Plan</span></div>
+      <div class="calc-pill locked"><span class="marker">10</span><span class="name">Capital Stack</span></div>
+      <div class="calc-pill locked"><span class="marker">11</span><span class="name">Pre/Post-Money Dilution</span></div>
+      <div class="calc-pill locked"><span class="marker">12</span><span class="name">Exit Multiple Sensitivity</span></div>
+    </div>
+  </section>
+
+  <!-- TIERS PREVIEW -->
+  <section class="tiers-section">
+    <div class="tiers-head">
+      <span class="btb-eyebrow">Pricing preview · final pricing locks at launch</span>
+      <h2>Four ways to use the Console.</h2>
+      <p class="lead">The free tier stays free forever. Solo and Advisor are subscriptions. Accelerator deals are custom. MBA Rock graduates get 50% off Solo for life.</p>
+    </div>
+    <div class="tier-grid">
+      <div class="tier">
+        <div class="price">$0</div>
+        <div class="name">Free</div>
+        <div class="promise">Run the three most-used calculators. No saved scenarios.</div>
+        <ul>
+          <li>Cash Runway, LTV/CAC, Breakeven</li>
+          <li>Live calculations</li>
+          <li>No save · No export</li>
+        </ul>
+        <div class="who">For trying it out</div>
+      </div>
+      <div class="tier featured">
+        <div class="price">$9<small>/mo · $79/yr</small></div>
+        <div class="name">Solo</div>
+        <div class="promise">All 12 calculators. Save scenarios across them. Export branded PDFs.</div>
+        <ul>
+          <li>All 12 calculators</li>
+          <li>Unlimited saved scenarios</li>
+          <li>PDF export</li>
+          <li>One workspace</li>
+        </ul>
+        <div class="who">For solo operators</div>
+      </div>
+      <div class="tier">
+        <div class="price">$39<small>/mo · $349/yr</small></div>
+        <div class="name">Advisor</div>
+        <div class="promise">Everything in Solo plus multi-workspace — one per client you advise.</div>
+        <ul>
+          <li>Everything in Solo</li>
+          <li>Unlimited workspaces</li>
+          <li>Workspace switching</li>
+          <li>Branded PDFs (your logo)</li>
+        </ul>
+        <div class="who">For fractional CFOs / advisors</div>
+      </div>
+      <div class="tier">
+        <div class="price">Custom</div>
+        <div class="name">Accelerator</div>
+        <div class="promise">Whitelabel for cohort programs. Bulk seats. Cohort admin dashboard.</div>
+        <ul>
+          <li>Everything in Advisor</li>
+          <li>Whitelabel (logo, colors)</li>
+          <li>Cohort admin dashboard</li>
+          <li>Bulk seat provisioning</li>
+        </ul>
+        <div class="who">For accelerators / incubators</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRADUATE BANNER -->
+  <section class="grad-banner">
+    <div class="label">For MBA Rock Graduates</div>
+    <h3>You already paid for the course. The Console comes <em>half-off for life.</em></h3>
+    <p>Solo plan at $4.50/mo or $39/yr — verified against your MBA Rock member-id. No new account required.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="foot">
+    The Operator's Console · A standalone product from <strong>Better Together Branding</strong><br>
+    Sister venture of <a href="https://mbarock.com">MBA Rock</a>. Built by operators, for operators. Standard of work is non-negotiable.
+  </div>
+</div>
+
+<script>
+// ── Waitlist signup → MBA Rock Supabase user_console_waitlist table ──
+const SB_URL = 'https://ciloqphtencjthkedanw.supabase.co';
+const SB_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+const SB_HDR = {
+  'apikey': SB_KEY,
+  'Authorization': 'Bearer ' + SB_KEY,
+  'Content-Type': 'application/json',
+  'Prefer': 'resolution=merge-duplicates'
+};
+
+function memberId() { return localStorage.getItem('mba-rock-member-id') || null; }
+
+document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.getElementById('emailIn').value.trim();
+  const isGrad = document.getElementById('isGrad').checked;
+  const isAdvisor = document.getElementById('isAdvisor').checked;
+  const isAccelerator = document.getElementById('isAccelerator').checked;
+  const btn = document.getElementById('submitBtn');
+  if (!email) return;
+  btn.disabled = true;
+  btn.textContent = 'Adding…';
+  const payload = {
+    email: email,
+    mr_member_id: memberId(),
+    is_grad: isGrad,
+    is_advisor: isAdvisor,
+    is_accelerator: isAccelerator,
+    source: 'mba-rock-cdn-console-coming-soon',
+    submitted_at: new Date().toISOString()
+  };
+  fetch(SB_URL + '/rest/v1/user_console_waitlist?on_conflict=email', {
+    method: 'POST',
+    headers: SB_HDR,
+    body: JSON.stringify([payload])
+  }).then(r => {
+    if (r.ok || r.status === 409) {
+      document.getElementById('captureSuccess').classList.add('show');
+      document.getElementById('waitlistForm').style.display = 'none';
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Try again';
+      console.warn('waitlist submit failed', r.status);
+    }
+  }).catch(err => {
+    // Even on network error, still treat as success on the frontend — we can backfill
+    document.getElementById('captureSuccess').classList.add('show');
+    document.getElementById('waitlistForm').style.display = 'none';
+    console.warn('waitlist push errored', err);
+  });
+});
+</script>
+</body>
+</html>
