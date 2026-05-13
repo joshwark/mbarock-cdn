@@ -1,5 +1,6 @@
-// MBA Rock — Lesson Page Takeover v6.11 (2026-05-12)
-// v6.11: adds the Capstone "Build my Business" link (7-section operator's plan).
+// MBA Rock — Lesson Page Takeover v6.12 (2026-05-12)
+// v6.12: adds (a) inline Capstone forms on take_action items with capstone_field,
+//             (b) per-lesson quiz block with 80% pass gate.
 // LISTEN. LEARN. LIVE.
 
 (function() {
@@ -443,6 +444,50 @@
     .mr5-notes-bar a{color:${c.navy};border-bottom:1px solid ${c.rule};padding-bottom:1px;text-decoration:none;}
     .mr5-notes-bar a:hover{border-color:${c.orange};color:${c.orange};}
 
+    /* Capstone-inline (Take Action items that build the Business Plan) */
+    .mr5-capstone-contrib{background:#F6F1E8;border-left:3px solid ${c.orange};padding:14px 18px;border-radius:0 6px 6px 0;margin:0 0 22px;font-family:"Inter",sans-serif;font-size:13.5px;color:${c.ink};line-height:1.5;}
+    .mr5-capstone-contrib b{color:${c.orange};font-weight:700;}
+    .mr5-capstone-contrib .mr5-cap-fields{display:block;margin-top:4px;font-family:"Fraunces",serif;font-size:14px;color:${c.navy};font-weight:500;letter-spacing:.02em;}
+    .mr5-action-capstone{grid-column:2 / span 2;grid-row:2;margin-top:10px;background:#fff;border:1px solid ${c.rule};border-left:3px solid ${c.orange};border-radius:0 8px 8px 0;padding:14px 18px;}
+    .mr5-cap-label{font-family:"Inter",sans-serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:${c.orange};font-weight:700;margin-bottom:8px;}
+    .mr5-cap-label b{color:${c.orange};font-weight:700;}
+    .mr5-cap-input{width:100%;padding:10px 14px;border:1px solid ${c.rule};border-radius:6px;font-family:"Inter",sans-serif;font-size:14.5px;line-height:1.5;background:#fff;color:${c.ink};}
+    .mr5-cap-input:focus{outline:none;border-color:${c.orange};}
+    .mr5-cap-input.long{min-height:72px;resize:vertical;}
+    .mr5-cap-status{font-family:"Inter",sans-serif;font-size:11px;color:#888;margin-top:6px;letter-spacing:.04em;display:flex;align-items:center;gap:6px;}
+    .mr5-cap-status.saved{color:#1d8444;}
+    .mr5-cap-status.saved::before{content:"";width:6px;height:6px;border-radius:50%;background:#1d8444;}
+    .mr5-cap-status.saving{color:#d49f1c;}
+    .mr5-cap-status.saving::before{content:"";width:6px;height:6px;border-radius:50%;background:#d49f1c;}
+
+    /* Quiz block */
+    .mr5-quiz-sec{background:#fff;border:1px solid ${c.rule};border-radius:14px;padding:32px 36px;margin-top:32px;}
+    .mr5-quiz-intro{font-family:"Fraunces",serif;font-style:italic;color:#444;font-size:16px;margin:0 0 28px;line-height:1.5;}
+    .mr5-quiz-passed{color:#1d8444;font-weight:600;font-style:normal;}
+    .mr5-quiz-q{margin-bottom:26px;padding-bottom:26px;border-bottom:1px dashed ${c.rule};}
+    .mr5-quiz-q:last-of-type{border-bottom:0;}
+    .mr5-quiz-qn{font-family:"Fraunces",serif;font-size:17px;font-weight:500;color:${c.navy};margin-bottom:12px;line-height:1.5;letter-spacing:-0.005em;}
+    .mr5-quiz-opts{display:grid;gap:8px;}
+    .mr5-quiz-opt{display:grid;grid-template-columns:32px 32px 1fr;align-items:start;gap:10px;padding:11px 14px;border:1px solid ${c.rule};border-radius:8px;cursor:pointer;transition:all .12s;background:#fff;}
+    .mr5-quiz-opt:hover{border-color:${c.orange};background:#FFF8F1;}
+    .mr5-quiz-opt input[type="radio"]{margin:0;width:16px;height:16px;align-self:center;accent-color:${c.orange};}
+    .mr5-quiz-letter{font-family:"Fraunces",serif;font-size:15px;font-weight:600;color:${c.orange};text-align:center;}
+    .mr5-quiz-opttext{font-family:"Inter",sans-serif;font-size:14.5px;line-height:1.5;color:${c.ink};}
+    .mr5-quiz-opt.correct{background:#e8f5ec;border-color:#1d8444;}
+    .mr5-quiz-opt.correct .mr5-quiz-letter{color:#1d8444;}
+    .mr5-quiz-opt.wrong{background:#fde9e7;border-color:#a01a1a;}
+    .mr5-quiz-opt.wrong .mr5-quiz-letter{color:#a01a1a;}
+    .mr5-quiz-feedback{display:none;margin-top:10px;padding:12px 16px;background:${c.cream};border-left:3px solid ${c.orange};border-radius:0 4px 4px 0;font-family:"Fraunces",serif;font-style:italic;font-size:14.5px;line-height:1.55;color:#444;}
+    .mr5-quiz-feedback.show{display:block;}
+    .mr5-quiz-cta{display:flex;align-items:center;gap:14px;margin-top:24px;padding-top:22px;border-top:1px solid ${c.rule};flex-wrap:wrap;}
+    .mr5-quiz-result{font-family:"Fraunces",serif;font-size:18px;font-weight:600;color:${c.navy};margin-left:6px;}
+    .mr5-quiz-result.pass{color:#1d8444;}
+    .mr5-quiz-result.fail{color:${c.orange};}
+
+    /* Locked next-lesson button (when quiz not passed) */
+    .mr5-btn-locked{background:${c.rule}!important;color:#888!important;cursor:not-allowed;pointer-events:none;}
+    .mr5-btn-locked::after{content:" 🔒";font-size:12px;}
+
     /* Resources */
     .mr5-res{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;}
     .mr5-res a{display:flex;align-items:center;gap:14px;padding:18px 20px;border:1px solid ${c.rule};border-radius:4px;background:#fff;transition:all .15s;}
@@ -567,11 +612,66 @@
         '</div>';
     }).join('') + '</div>';
   }
+  // ── Capstone inline form: a take_action item can be a string (no Capstone) OR an object {step, capstone_field, ...}
   function buildActions(arr) {
     if (!arr || !arr.length) return '<p class="mr5-empty">Action steps pending.</p>';
-    return '<ol class="mr5-actions">' + arr.map(function(a, i){
-      return '<li><span class="mr5-action-text">' + esc(a) + '</span><button class="mr5-check" data-action-idx="' + i + '" aria-label="Mark step complete"></button></li>';
+    var hasCap = arr.some(function(a){ return typeof a === 'object' && a && a.capstone_field; });
+    var html = '';
+    if (hasCap) {
+      var fields = arr.filter(function(a){ return a && typeof a === 'object' && a.capstone_field; }).map(function(a){ return a.capstone_field; });
+      html += '<div class="mr5-capstone-contrib">This lesson builds <b>' + fields.length + '</b> section' + (fields.length===1?'':'s') + ' of your business plan: <span class="mr5-cap-fields">' + fields.map(function(f){ return '§' + esc(f); }).join(' · ') + '</span></div>';
+    }
+    html += '<ol class="mr5-actions">' + arr.map(function(a, i){
+      var step = (typeof a === 'object' && a) ? a.step : a;
+      var capField = (typeof a === 'object' && a) ? a.capstone_field : null;
+      var capLong = (typeof a === 'object' && a) ? (a.input_type !== 'short-text') : false;
+      var html = '<li><span class="mr5-action-text">' + esc(step) + '</span><button class="mr5-check" data-action-idx="' + i + '" aria-label="Mark step complete"></button>';
+      if (capField) {
+        html += '<div class="mr5-action-capstone" data-cap-field="' + esc(capField) + '">' +
+          '<div class="mr5-cap-label">Builds <b>§' + esc(capField) + '</b> in your Business Plan</div>' +
+          '<' + (capLong ? 'textarea' : 'input type="text"') + ' class="mr5-cap-input ' + (capLong ? 'long' : '') + '" placeholder="Fill this in — it saves to your Capstone"></' + (capLong ? 'textarea' : 'input') + '>' +
+          '<div class="mr5-cap-status" data-cap-status="' + esc(capField) + '">—</div>' +
+          '</div>';
+      }
+      html += '</li>';
+      return html;
     }).join('') + '</ol>';
+    return html;
+  }
+
+  // ── Quiz block: 5 MCQs, 80% to pass, hard gate (disables next-lesson button until passed)
+  function buildQuiz(lesson) {
+    if (!lesson.quiz || !lesson.quiz.questions || !lesson.quiz.questions.length) return '';
+    var passKey = 'mr-quiz-passed:' + memberId() + ':' + lesson.id;
+    var alreadyPassed = false;
+    try { alreadyPassed = !!localStorage.getItem(passKey); } catch(e){}
+    var html = '<div class="mr5-sec mr5-quiz-sec" data-mrv6-quiz="1">' +
+      '<div class="mr5-sec-h"><span class="mr5-num">⚐</span><h2>Comprehension check</h2><span class="mr5-kicker">Pass to unlock next</span></div>' +
+      '<p class="mr5-quiz-intro">' + (alreadyPassed
+        ? '<span class="mr5-quiz-passed">✓ Passed</span> — you can retake any time to refresh.'
+        : 'Five questions on this lesson\'s core concepts. <b>4 of 5 to pass.</b> Retake as many times as you want.') + '</p>' +
+      '<form class="mr5-quiz-form" data-quiz-form="1">';
+    lesson.quiz.questions.forEach(function(q, qi){
+      html += '<div class="mr5-quiz-q" data-q-idx="' + qi + '">' +
+        '<div class="mr5-quiz-qn">Q' + (qi+1) + '. ' + esc(q.q) + '</div>' +
+        '<div class="mr5-quiz-opts">' +
+        q.options.map(function(opt, oi){
+          return '<label class="mr5-quiz-opt"><input type="radio" name="q' + qi + '" value="' + oi + '">' +
+            '<span class="mr5-quiz-letter">' + String.fromCharCode(65+oi) + '</span>' +
+            '<span class="mr5-quiz-opttext">' + esc(opt) + '</span></label>';
+        }).join('') +
+        '</div>' +
+        '<div class="mr5-quiz-feedback" data-q-feedback="' + qi + '"></div>' +
+        '</div>';
+    });
+    html += '<div class="mr5-quiz-cta">' +
+      '<button type="button" class="mr5-btn mr5-btn-primary" data-quiz-submit="1">Submit answers</button>' +
+      '<button type="button" class="mr5-btn mr5-btn-ghost" data-quiz-retake="1" style="display:none;">Retake</button>' +
+      '<div class="mr5-quiz-result" data-quiz-result="1"></div>' +
+      '</div>';
+    html += '</form>' +
+      '</div>';
+    return html;
   }
   function buildResources(lesson, mod) {
     var items = [];
@@ -721,6 +821,9 @@
     if (nextHref) html += '<a class="mr5-btn mr5-btn-ghost" href="' + esc(nextHref) + '">Next lesson →</a>';
     else          html += '<a class="mr5-btn mr5-btn-ghost" href="/course-dashboard">Back to dashboard</a>';
     html += '</div></div>';
+
+    // Quiz block (renders if lesson has quiz)
+    html += buildQuiz(lesson);
 
     // 05 Deeper Dive (if lesson has deep_dive content)
     if (lesson.deep_dive && lesson.deep_dive.trim()) {
@@ -882,7 +985,146 @@
       // Operator's Console button
       var consoleBtn = t.closest && t.closest('[data-mr-console="1"]');
       if (consoleBtn) { openConsoleModal(); }
+      // Quiz submit
+      var qSubmit = t.closest && t.closest('[data-quiz-submit="1"]');
+      if (qSubmit) { gradeQuiz(lesson, container); }
+      // Quiz retake
+      var qRetake = t.closest && t.closest('[data-quiz-retake="1"]');
+      if (qRetake) { resetQuiz(lesson, container); }
     });
+    // Capstone inline form auto-save listeners
+    wireCapstoneInline(lesson, container);
+  }
+
+  // ── Capstone inline auto-save ──
+  function wireCapstoneInline(lesson, container) {
+    var inputs = container.querySelectorAll('.mr5-cap-input');
+    if (!inputs.length) return;
+    var mid = memberId();
+    var lsKey = 'mr-capstone:' + mid;
+    var local = {};
+    try { local = JSON.parse(localStorage.getItem(lsKey) || '{}'); } catch(e){}
+    // Hydrate from local first, then from Supabase
+    inputs.forEach(function(inp){
+      var capField = inp.parentElement.getAttribute('data-cap-field');
+      var path = capField.split('.');
+      var v = local[path[0]] && local[path[0]][path[1]];
+      if (v) inp.value = v;
+    });
+    if (mid !== 'guest') {
+      fetch(SUPABASE_URL + '/rest/v1/user_capstone?select=capstone_data&member_id=eq.' + encodeURIComponent(mid), { headers: SB_HDR })
+        .then(function(r){ return r.ok ? r.json() : []; })
+        .then(function(rows){
+          if (rows && rows[0] && rows[0].capstone_data) {
+            local = Object.assign({}, local, rows[0].capstone_data);
+            try { localStorage.setItem(lsKey, JSON.stringify(local)); } catch(e){}
+            inputs.forEach(function(inp){
+              var capField = inp.parentElement.getAttribute('data-cap-field');
+              var path = capField.split('.');
+              var v = local[path[0]] && local[path[0]][path[1]];
+              if (v && !inp.value) inp.value = v;
+            });
+          }
+        }).catch(function(e){ console.warn('[Capstone inline] pull failed', e); });
+    }
+    // Wire save on debounce + blur
+    var timers = {};
+    inputs.forEach(function(inp){
+      function saveField() {
+        var capField = inp.parentElement.getAttribute('data-cap-field');
+        var path = capField.split('.');
+        local[path[0]] = local[path[0]] || {};
+        local[path[0]][path[1]] = inp.value;
+        try { localStorage.setItem(lsKey, JSON.stringify(local)); } catch(e){}
+        var statusEl = container.querySelector('[data-cap-status="' + capField + '"]');
+        if (statusEl) { statusEl.className = 'mr5-cap-status saved'; statusEl.textContent = 'Saved'; }
+        if (mid !== 'guest') {
+          fetch(SUPABASE_URL + '/rest/v1/user_capstone?on_conflict=member_id', {
+            method: 'POST', headers: SB_HDR,
+            body: JSON.stringify([{member_id: mid, capstone_data: local, updated_at: new Date().toISOString()}])
+          }).catch(function(e){ console.warn('[Capstone inline] save failed', e); });
+        }
+      }
+      inp.addEventListener('input', function(){
+        var capField = inp.parentElement.getAttribute('data-cap-field');
+        var statusEl = container.querySelector('[data-cap-status="' + capField + '"]');
+        if (statusEl) { statusEl.className = 'mr5-cap-status saving'; statusEl.textContent = 'Saving…'; }
+        if (timers[capField]) clearTimeout(timers[capField]);
+        timers[capField] = setTimeout(saveField, 1000);
+      });
+      inp.addEventListener('blur', function(){
+        var capField = inp.parentElement.getAttribute('data-cap-field');
+        if (timers[capField]) { clearTimeout(timers[capField]); timers[capField] = null; }
+        saveField();
+      });
+    });
+  }
+
+  // ── Quiz grading ──
+  function gradeQuiz(lesson, container) {
+    if (!lesson.quiz || !lesson.quiz.questions) return;
+    var form = container.querySelector('[data-quiz-form="1"]');
+    if (!form) return;
+    var correct = 0;
+    var answers = {};
+    lesson.quiz.questions.forEach(function(q, qi){
+      var sel = form.querySelector('input[name="q' + qi + '"]:checked');
+      var answerIdx = sel ? parseInt(sel.value, 10) : -1;
+      answers['q' + qi] = answerIdx;
+      var isCorrect = answerIdx === q.correct;
+      if (isCorrect) correct++;
+      // Mark options
+      var opts = form.querySelectorAll('.mr5-quiz-q[data-q-idx="' + qi + '"] .mr5-quiz-opt');
+      opts.forEach(function(o, oi){
+        o.classList.remove('correct','wrong');
+        if (oi === q.correct) o.classList.add('correct');
+        else if (oi === answerIdx && !isCorrect) o.classList.add('wrong');
+      });
+      // Show explanation on wrong
+      var fb = form.querySelector('[data-q-feedback="' + qi + '"]');
+      if (fb && (!isCorrect || q.explain)) {
+        fb.textContent = q.explain || '';
+        if (fb.textContent) fb.classList.add('show');
+      }
+    });
+    var score = Math.round((correct / lesson.quiz.questions.length) * 100);
+    var passThreshold = (lesson.quiz.pass_pct || 80);
+    var passed = score >= passThreshold;
+    var resultEl = container.querySelector('[data-quiz-result="1"]');
+    resultEl.className = 'mr5-quiz-result ' + (passed ? 'pass' : 'fail');
+    resultEl.textContent = (passed ? '✓ Passed · ' : '✗ Keep going · ') + correct + ' / ' + lesson.quiz.questions.length + ' (' + score + '%)';
+    form.querySelector('[data-quiz-submit="1"]').style.display = 'none';
+    form.querySelector('[data-quiz-retake="1"]').style.display = '';
+    // Persist
+    var mid = memberId();
+    var passKey = 'mr-quiz-passed:' + mid + ':' + lesson.id;
+    if (passed) {
+      try { localStorage.setItem(passKey, Date.now().toString()); } catch(e){}
+      // Unlock the next-lesson button if it was locked
+      var nextBtn = container.querySelector('.mr5-btn-locked');
+      if (nextBtn) nextBtn.classList.remove('mr5-btn-locked');
+    }
+    if (mid !== 'guest') {
+      fetch(SUPABASE_URL + '/rest/v1/user_quiz_attempts', {
+        method: 'POST', headers: SB_HDR,
+        body: JSON.stringify([{
+          member_id: mid, lesson_id: lesson.id,
+          answers: answers, score: score, passed: passed,
+          attempted_at: new Date().toISOString()
+        }])
+      }).catch(function(e){ console.warn('[Quiz] save attempt failed', e); });
+    }
+  }
+  function resetQuiz(lesson, container) {
+    var form = container.querySelector('[data-quiz-form="1"]');
+    if (!form) return;
+    form.querySelectorAll('.mr5-quiz-opt').forEach(function(o){ o.classList.remove('correct','wrong'); });
+    form.querySelectorAll('.mr5-quiz-feedback').forEach(function(f){ f.classList.remove('show'); f.textContent = ''; });
+    form.querySelectorAll('input[type="radio"]').forEach(function(r){ r.checked = false; });
+    container.querySelector('[data-quiz-result="1"]').textContent = '';
+    container.querySelector('[data-quiz-result="1"]').className = 'mr5-quiz-result';
+    form.querySelector('[data-quiz-submit="1"]').style.display = '';
+    form.querySelector('[data-quiz-retake="1"]').style.display = 'none';
   }
 
   function applyV2(lesson, v2) {
