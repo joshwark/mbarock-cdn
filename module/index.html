@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Module · MBA Rock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1F3A; --ink:#0E1116; --orange:#F26B1F; --orange-soft:#FBE2D0;
+  --cream:#FAF8F5; --paper:#FFFFFF; --rule:#E5E0D6; --muted:#8A8A8A;
+  --green:#1D8444;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:'Inter',-apple-system,sans-serif;line-height:1.55;}
+h1,h2,h3,h4{font-family:'Fraunces',serif;letter-spacing:-0.018em;color:var(--navy);margin:0;font-weight:600;}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent,var(--orange));font-weight:700;}
+a{color:inherit;}
+
+.app{max-width:1080px;margin:0 auto;padding:48px 28px 80px;}
+.crumb{font-size:11.5px;color:var(--muted);letter-spacing:.06em;margin-bottom:20px;}
+.crumb a{text-decoration:none;border-bottom:1px dotted var(--muted);}
+.crumb a:hover{color:var(--accent,var(--orange));border-color:var(--accent,var(--orange));}
+
+/* HERO — module-color accent strip on the left ribbon */
+.hero{
+  background:var(--paper);border:1px solid var(--rule);border-radius:18px;padding:44px 48px;margin-bottom:36px;
+  position:relative;overflow:hidden;box-shadow:0 12px 30px -18px rgba(11,31,58,0.18);
+}
+.hero::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--accent,var(--orange));}
+.hero .mod-num{font-family:'Fraunces',serif;font-size:96px;line-height:1;color:var(--accent,var(--orange));font-weight:600;letter-spacing:-0.06em;margin-bottom:8px;}
+.hero .eyebrow{margin-bottom:14px;}
+.hero h1{font-size:54px;line-height:1.04;letter-spacing:-0.028em;margin-bottom:14px;color:var(--navy);}
+.hero .promise{font-family:'Fraunces',serif;font-style:italic;font-size:22px;color:#3a3a3a;max-width:760px;line-height:1.45;margin:0 0 28px;}
+.hero .meta-strip{display:flex;flex-wrap:wrap;gap:36px;padding:18px 0 0;border-top:1px solid var(--rule);font-size:12.5px;color:#555;}
+.hero .meta-strip > div{display:flex;flex-direction:column;gap:3px;}
+.hero .meta-strip .l{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;}
+.hero .meta-strip .v{font-family:'Fraunces',serif;font-size:20px;color:var(--navy);font-weight:600;font-variant-numeric:tabular-nums;}
+.hero .cta-row{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;}
+.hero .cta-row a{
+  font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+  padding:14px 22px;border-radius:30px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .15s;
+}
+.hero .cta-row .btn-primary{background:var(--accent,var(--orange));color:#fff;}
+.hero .cta-row .btn-primary:hover{filter:brightness(1.1);}
+.hero .cta-row .btn-secondary{background:transparent;color:var(--navy);border:1px solid var(--rule);}
+.hero .cta-row .btn-secondary:hover{border-color:var(--accent,var(--orange));color:var(--accent,var(--orange));}
+
+/* LESSONS LIST */
+.section-h{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 18px;}
+.section-h h2{font-size:24px;color:var(--navy);font-weight:600;letter-spacing:-0.015em;}
+.section-h .count{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;}
+.lessons{display:flex;flex-direction:column;gap:8px;margin-bottom:48px;}
+.lesson{
+  background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:18px 22px;
+  display:grid;grid-template-columns:46px 1fr auto;gap:18px;align-items:center;
+  text-decoration:none;color:inherit;transition:transform .12s,border-color .12s;
+}
+.lesson:hover{transform:translateX(3px);border-color:var(--accent,var(--orange));}
+.lesson .n{font-family:'Fraunces',serif;font-size:26px;color:var(--accent,var(--orange));font-weight:600;line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;}
+.lesson .body .id{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:3px;}
+.lesson .body .title{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--navy);line-height:1.2;}
+.lesson .status{
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+  padding:5px 11px;border-radius:30px;
+}
+.lesson .status.passed{background:var(--green);color:#fff;}
+.lesson .status.locked{background:#f3f3f3;color:#999;}
+.lesson .status.open{background:var(--orange-soft);color:var(--orange);}
+
+/* WHAT YOU SHIP — Capstone section preview */
+.ship{
+  background:var(--accent-soft, var(--orange-soft));border-radius:14px;padding:28px 32px;margin-bottom:36px;
+  border-left:6px solid var(--accent,var(--orange));
+}
+.ship h3{font-size:22px;margin-bottom:8px;color:var(--navy);}
+.ship .ship-eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent,var(--orange));font-weight:700;margin-bottom:8px;}
+.ship .ship-summary{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:#444;line-height:1.5;margin:0 0 18px;}
+.ship .ship-cta{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--accent,var(--orange));}
+.ship .ship-cta:hover{filter:brightness(0.85);}
+
+/* RESOURCES */
+.res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:36px;}
+.res{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:18px 22px;text-decoration:none;color:inherit;}
+.res:hover{border-color:var(--accent,var(--orange));}
+.res .l{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:5px;}
+.res .v{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--navy);line-height:1.25;}
+.res .v small{display:block;font-size:12px;color:var(--muted);font-weight:400;font-family:'Inter',sans-serif;margin-top:4px;}
+
+/* NAVIGATION — prev / next module */
+.mod-nav{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.mod-nav a{
+  background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:20px 24px;text-decoration:none;color:inherit;
+  display:flex;flex-direction:column;gap:6px;transition:border-color .15s;
+}
+.mod-nav a:hover{border-color:var(--accent,var(--orange));}
+.mod-nav a.next{text-align:right;}
+.mod-nav .dir{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;}
+.mod-nav .lbl{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--navy);}
+
+.error-state{padding:48px;text-align:center;font-family:'Fraunces',serif;font-style:italic;color:#666;background:var(--paper);border:1px dashed var(--rule);border-radius:14px;}
+
+@media(max-width:680px){
+  .app{padding:28px 18px 60px;}
+  .hero{padding:28px 24px;}
+  .hero .mod-num{font-size:60px;}
+  .hero h1{font-size:34px;}
+  .hero .promise{font-size:17px;}
+  .hero .meta-strip{gap:18px;}
+  .lesson{grid-template-columns:36px 1fr;gap:14px;}
+  .lesson .status{grid-column:1/-1;width:fit-content;}
+  .mod-nav{grid-template-columns:1fr;}
+  .mod-nav a.next{text-align:left;}
+}
+</style>
+</head>
+<body>
+<main class="app" id="app">
+  <div id="content"></div>
+</main>
+
+<script>
+console.log('[Module Landing] v1 loaded');
+
+const SB_URL = 'https://ciloqphtencjthkedanw.supabase.co';
+const SB_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+const SB_HDR = {'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json'};
+function memberId(){ return localStorage.getItem('mba-rock-member-id') || 'guest'; }
+
+const LESSONS_JSON = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json';
+
+const MODULES = {
+  M1: {num:'01', title:'Finance Fundamentals',           accent:'#0B2545', soft:'#E6EAF1',
+       promise:"The economic reality of your business. Cash, runway, breakeven, unit economics — the numbers that make every other module's decisions possible.",
+       capstone:{key:'numbers', title:'The Numbers', summary:'The economic reality of your business. Cash, burn, runway, breakeven, unit economics. The numbers that make the bet possible.'}},
+  M2: {num:'02', title:'Strategy & Competitive Advantage', accent:'#1A3A6B', soft:'#E5EBF2',
+       promise:"Your strategic position. Five Forces, VRIO, ERRC, Blue Ocean — frameworks that tell you which moat you’re building and why competitors can’t copy it.",
+       capstone:{key:'bet', title:'The Bet', summary:'Your strategic position. Which moat you’re building and why competitors can’t copy it.'}},
+  M3: {num:'03', title:'People & Leadership',             accent:'#8B1A1A', soft:'#F4E4E4',
+       promise:"How you lead through the first 90 days and beyond. STARS, RAPID decisions, the hiring sequence, and the culture rules that scale.",
+       capstone:{key:'team', title:'The Team', summary:'Who you hire, when, and how you lead. The operating rhythm that scales.'}},
+  M4: {num:'04', title:'Unit Economics & Growth Metrics', accent:'#1A5C2A', soft:'#E2EEE5',
+       promise:"The growth model. CAC, LTV, payback, retention, cohorts. How a dollar in becomes more than a dollar out — repeatably.",
+       capstone:{key:'engine', title:'The Engine', summary:'The growth model. How a dollar in becomes more than a dollar out, repeatably.'}},
+  M5: {num:'05', title:'Operations & Technology',         accent:'#4A1A6B', soft:'#ECE3F2',
+       promise:"How the work actually gets done day-to-day. Process maps, automation priority lists, quality metrics, build vs. buy decisions.",
+       capstone:{key:'stack', title:'The Stack', summary:'How you actually run the company day to day. Workflows, tools, build vs buy.'}},
+  M6: {num:'06', title:'Growth & Capital',                accent:'#6B3A0B', soft:'#F1E8DE',
+       promise:"Funding what you've built. Growth engines, capital stack, raise vs. bootstrap, the 10-slide pitch, and the exit math.",
+       capstone:{key:'capital', title:'The Capital', summary:'How you fund growth. The pitch, the cap table, the exit story.'}},
+  M7: {num:'07', title:'Marketing & Brand',               accent:'#F26B1F', soft:'#FCE5D6',
+       promise:"Who you serve and how you reach them. JTBD, brand promise, the funnel that earns the next yes.",
+       capstone:{key:'story', title:'The Story', summary:'Who you serve and how you reach them. The brand promise and the funnel that makes it work.'}},
+  M8: {num:'08', title:'Operations & Execution',          accent:'#475569', soft:'#E6EAEE',
+       promise:"What gets standardized. SOPs, the Buffer Paradox, the rhythms and metrics that let the business run when you don't.",
+       capstone:{key:'playbook', title:'The Playbook', summary:'What gets standardized. The SOPs and rhythms that let the business run when you don’t.'}},
+  M9: {num:'09', title:'Analytics & Decision Making',     accent:'#3B4F8C', soft:'#E5E9F1',
+       promise:"How you see the business. North-Star metric, the weekly KPI dashboard, the decision triggers behind every number you watch.",
+       capstone:{key:'dashboard', title:'The Dashboard', summary:'How you see the business. The numbers you check every week and the decision triggers behind them.'}},
+  M10:{num:'10', title:'Innovation & Future',             accent:'#A88735', soft:'#F4ECDB',
+       promise:"Where the whole course lands. Strategic blueprint, OKRs, top risks, the 90-day plan you ship to your team on Monday.",
+       capstone:{key:'plan', title:'The Plan', summary:'The action layer. Where the whole course lands. Week 1, 90-day milestones, 12-month OKRs, top risks.'}},
+};
+const ORDER = ['M1','M2','M3','M4','M5','M6','M7','M8','M9','M10'];
+
+let state = { quizPasses:{}, hasCert:{}, lessonsByModule:{}, lessonsCatalog:[] };
+
+function esc(s){const d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;}
+
+async function loadLessons(){
+  try {
+    const r = await fetch(LESSONS_JSON);
+    const d = await r.json();
+    state.lessonsCatalog = d.lessons || [];
+    state.lessonsByModule = {};
+    state.lessonsCatalog.forEach(l => {
+      (state.lessonsByModule[l.module_id] = state.lessonsByModule[l.module_id] || []).push(l);
+    });
+    Object.values(state.lessonsByModule).forEach(arr => arr.sort((a,b)=>String(a.id).localeCompare(String(b.id),undefined,{numeric:true})));
+  } catch(e){ console.warn('lessons load', e); }
+}
+
+async function loadQuiz(){
+  const mid = memberId();
+  if (mid === 'guest') return;
+  try {
+    const r = await fetch(SB_URL+'/rest/v1/user_quiz_status?select=lesson_id,passed&member_id=eq.'+encodeURIComponent(mid), {headers:SB_HDR});
+    const rows = r.ok ? await r.json() : [];
+    state.quizPasses = {};
+    rows.forEach(row => { if (row.passed) state.quizPasses[row.lesson_id] = true; });
+  } catch(e){}
+}
+
+async function loadCerts(){
+  const mid = memberId();
+  if (mid === 'guest') return;
+  try {
+    const r = await fetch(SB_URL+'/rest/v1/user_certificates?select=module_id,cert_type&member_id=eq.'+encodeURIComponent(mid), {headers:SB_HDR});
+    const rows = r.ok ? await r.json() : [];
+    state.hasCert = {};
+    rows.forEach(row => { if (row.cert_type === 'module' && row.module_id) state.hasCert[row.module_id] = true; });
+  } catch(e){}
+}
+
+function lessonHref(l){
+  const slug = l.legacy_slug || l.slug_v2 || '';
+  return slug ? '/mba-rock/' + slug : '#';
+}
+
+function render(moduleId){
+  const m = MODULES[moduleId];
+  const root = document.getElementById('content');
+  if (!m){
+    root.innerHTML = '<div class="error-state">No module found for id <b>' + esc(moduleId) + '</b>. Try M1 through M10.</div>';
+    return;
+  }
+  document.title = `${m.num} ${m.title} · MBA Rock`;
+  document.getElementById('app').style.setProperty('--accent', m.accent);
+  document.getElementById('app').style.setProperty('--accent-soft', m.soft);
+
+  const lessons = state.lessonsByModule[moduleId] || [];
+  const passed = lessons.filter(l => state.quizPasses[l.id]).length;
+  const earned = !!state.hasCert[moduleId];
+
+  // Find prev/next module ids
+  const idx = ORDER.indexOf(moduleId);
+  const prev = idx > 0 ? ORDER[idx-1] : null;
+  const next = idx < ORDER.length-1 ? ORDER[idx+1] : null;
+  const firstLesson = lessons[0];
+  const firstHref = firstLesson ? lessonHref(firstLesson) : '#';
+
+  let html = '';
+  html += `<div class="crumb"><a href="/dashboard/">Dashboard</a> · <a href="/mba-rock">Course</a> · <span>${esc(m.title)}</span></div>`;
+
+  // HERO
+  html += '<div class="hero">';
+  html += `<div class="mod-num">${m.num}</div>`;
+  html += `<div class="eyebrow">${moduleId} · Module ${m.num} of 10</div>`;
+  html += `<h1>${esc(m.title)}</h1>`;
+  html += `<p class="promise">${esc(m.promise)}</p>`;
+  html += '<div class="meta-strip">';
+  html += `<div><span class="l">Lessons</span><span class="v">${lessons.length}</span></div>`;
+  html += `<div><span class="l">Passed</span><span class="v">${passed}<small style="font-size:13px;color:#999;">/${lessons.length}</small></span></div>`;
+  html += `<div><span class="l">Capstone section</span><span class="v" style="font-size:16px;">§ ${m.capstone.title}</span></div>`;
+  html += `<div><span class="l">Module mark</span><span class="v" style="font-size:14px;color:${earned?'var(--green)':'#999'};">${earned ? 'Earned ✓' : 'In progress'}</span></div>`;
+  html += '</div>';
+  html += '<div class="cta-row">';
+  html += `<a class="btn-primary" href="${firstHref}">${passed > 0 && passed < lessons.length ? 'Continue module' : 'Start module'} <span style="font-family:Fraunces,serif;font-size:18px;font-weight:600;">›</span></a>`;
+  html += `<a class="btn-secondary" href="/capstone/#${m.capstone.key}">Open §${m.capstone.title}</a>`;
+  if (earned) html += `<a class="btn-secondary" href="/certificates/">View your ${moduleId} Mark</a>`;
+  html += '</div>';
+  html += '</div>';
+
+  // LESSONS LIST
+  html += `<div class="section-h"><h2>Lessons</h2><span class="count">${lessons.length} in ${moduleId}</span></div>`;
+  html += '<div class="lessons">';
+  if (lessons.length === 0){
+    html += '<div class="error-state">No lessons indexed yet for this module.</div>';
+  } else {
+    lessons.forEach((l, i) => {
+      const isPassed = !!state.quizPasses[l.id];
+      const statusCls = isPassed ? 'passed' : (i === 0 || state.quizPasses[lessons[i-1]?.id] ? 'open' : 'locked');
+      const statusText = isPassed ? 'Passed' : (statusCls === 'open' ? 'Open' : 'Locked');
+      html += `<a class="lesson" href="${lessonHref(l)}">`;
+      html += `<span class="n">${String(i+1).padStart(2,'0')}</span>`;
+      html += `<div class="body"><div class="id">${esc(l.id)}</div><div class="title">${esc(l.title)}</div></div>`;
+      html += `<span class="status ${statusCls}">${statusText}</span>`;
+      html += '</a>';
+    });
+  }
+  html += '</div>';
+
+  // WHAT YOU SHIP
+  html += '<div class="ship">';
+  html += '<div class="ship-eyebrow">What you ship</div>';
+  html += `<h3>§ ${m.capstone.title}</h3>`;
+  html += `<p class="ship-summary">${esc(m.capstone.summary)}</p>`;
+  html += `<a class="ship-cta" href="/capstone/#${m.capstone.key}">Open this section in the Capstone ›</a>`;
+  html += '</div>';
+
+  // RESOURCES
+  const modCatalog = state.lessonsCatalog.length ? null : null;
+  html += '<div class="section-h"><h2>Module tools</h2></div>';
+  html += '<div class="res-grid">';
+  html += '<a class="res" href="/operators-console/"><span class="l">Calculators</span><span class="v">Operator\'s Console<small>Every formula in the module is wired into the Console.</small></span></a>';
+  html += '<a class="res" href="/capstone/"><span class="l">Plan builder</span><span class="v">Your Capstone<small>The 10-section operating system you assemble as you learn.</small></span></a>';
+  html += `<a class="res" href="/certificates/"><span class="l">Credential</span><span class="v">${moduleId} Module Mark<small>${earned ? 'Already earned. Add to LinkedIn anytime.' : 'Pass every lesson quiz to unlock.'}</small></span></a>`;
+  html += '</div>';
+
+  // PREV / NEXT
+  html += '<div class="mod-nav">';
+  if (prev) {
+    html += `<a class="prev" href="/module/?id=${prev}"><span class="dir">← Previous</span><span class="lbl">${prev} · ${esc(MODULES[prev].title)}</span></a>`;
+  } else {
+    html += '<a class="prev" href="/dashboard/"><span class="dir">← Back</span><span class="lbl">Course Dashboard</span></a>';
+  }
+  if (next) {
+    html += `<a class="next" href="/module/?id=${next}"><span class="dir">Next →</span><span class="lbl">${next} · ${esc(MODULES[next].title)}</span></a>`;
+  } else {
+    html += '<a class="next" href="/certificates/"><span class="dir">Wrap up →</span><span class="lbl">Operator\'s Certificate</span></a>';
+  }
+  html += '</div>';
+
+  root.innerHTML = html;
+}
+
+async function init(){
+  const params = new URLSearchParams(location.search);
+  const moduleId = (params.get('id') || 'M1').toUpperCase();
+  await Promise.all([loadLessons(), loadQuiz(), loadCerts()]);
+  render(moduleId);
+}
+
+init();
+</script>
+</body>
+</html>
