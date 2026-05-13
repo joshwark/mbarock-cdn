@@ -1,4 +1,6 @@
-// MBA Rock — Lesson Page Takeover v6.14 (2026-05-13)
+// MBA Rock — Lesson Page Takeover v6.15 (2026-05-13)
+// v6.15: companion-materials Flashcards link now points at /flashcards/?mod={module_id}
+//        (a real flashcard viewer), not the raw CSV. Same source data, useable experience.
 // v6.14: removed the lesson-complete animated logo video. It replayed on every page load
 //        of a previously-completed lesson because markComplete fires from localStorage.
 //        Static logo only on the cert outro.
@@ -685,7 +687,7 @@
     if (mod && mod.study_guide_url)      items.push({ icon:'☷', label:'Module study guide', sub:'Full module', url: mod.study_guide_url });
     if (mod && mod.infographic_url)      items.push({ icon:'◈', label:'Module infographic', sub:'Reference card', url: mod.infographic_url });
     if (mod && mod.presenter_deck_url)   items.push({ icon:'▤', label:'Presenter deck',  sub:'Slides', url: mod.presenter_deck_url });
-    if (mod && mod.flashcards_app_embed) items.push({ icon:'↻', label:'Flashcards',     sub:'Practice', url: mod.flashcards_app_embed });
+    if (mod && mod.flashcards_app_embed) items.push({ icon:'↻', label:'Flashcards',     sub:'Practice', url: '/flashcards/?mod=' + lesson.module_id });
     if (!items.length) return '';
     return '<div class="mr5-sec">' +
       '<div class="mr5-sec-h"><span class="mr5-num">⌗</span><h2>Companion materials</h2><span class="mr5-kicker">Resources</span></div>' +
