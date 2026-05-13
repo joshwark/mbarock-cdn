@@ -1,4 +1,7 @@
-// MBA Rock — Lesson Page Takeover v6.16 (2026-05-13)
+// MBA Rock — Lesson Page Takeover v6.17 (2026-05-13)
+// v6.17: Mark Complete writes a synthetic "passed" attempt to Supabase user_quiz_attempts
+//        (attempt_n=99, source='manual'). Lets the Certificates Hub count lessons toward
+//        module-mark eligibility for lessons without a full quiz wired yet.
 // v6.16: Flashcards link uses absolute CDN URL. Relative /flashcards/ resolved to
 //        mbarock.com which 404s (page lives on joshwark.github.io/mbarock-cdn).
 // v6.15: companion-materials Flashcards link now points at /flashcards/?mod={module_id}
@@ -874,7 +877,10 @@
     return html;
   }
 
-  function markComplete(lesson, container) {
+  function markComplete(lesson, container, source) {
+    // source: 'click' (user just clicked Mark Complete) vs. 'render' (re-render from localStorage on page load).
+    // Default to 'render' so legacy callers don't double-write to Supabase.
+    source = source || 'render';
     var btn = container.querySelector('[data-action="complete"]');
     var chip = document.querySelector('[data-chip="1"]');
     var cert = container.querySelector('[data-cert="1"]');
@@ -884,15 +890,33 @@
       cert.classList.add('done');
       cert.querySelector('[data-cert-title="1"]').textContent = 'Lesson complete. Onward.';
       cert.querySelector('[data-cert-body="1"]').textContent = 'Your progress is saved. Keep stacking the playbook — the next lesson is one click away.';
-
-      // v6.14 (2026-05-13): removed the animated logo video. It was distracting and replayed
-      // every time a previously-completed lesson page loaded (because markComplete fires from
-      // localStorage on every render). Static logo only.
     }
     try {
       if (window.MR_PROGRESS && typeof window.MR_PROGRESS.markComplete === 'function') window.MR_PROGRESS.markComplete(lesson.id);
       else localStorage.setItem('mr-lesson-complete:' + lesson.id, Date.now().toString());
     } catch (e) { console.warn('progress sync failed', e); }
+
+    // v6.17: write a synthetic "passed" attempt to Supabase user_quiz_attempts so the
+    // Certificates Hub can count this lesson toward module-mark eligibility — even when
+    // the lesson has no quiz wired yet. attempt_n=99 marks it as manual (vs. real quiz 1-N).
+    if (source === 'click') {
+      var mid = memberId();
+      if (mid && mid !== 'guest') {
+        try {
+          fetch(SUPABASE_URL + '/rest/v1/user_quiz_attempts', {
+            method: 'POST', headers: SB_HDR,
+            body: JSON.stringify([{
+              member_id: mid, lesson_id: lesson.id,
+              attempt_n: 99,
+              answers: { source: 'manual', via: 'mark-complete-button' },
+              score: 100,
+              passed: true,
+              attempted_at: new Date().toISOString()
+            }])
+          }).catch(function(e){ console.warn('[MarkComplete] Supabase write failed', e); });
+        } catch (e) { console.warn('[MarkComplete] save threw', e); }
+      }
+    }
   }
 
   // Format raw lyrics text into HTML — preserve stanza breaks (blank lines), preserve [Hook]/[Verse] tags
@@ -953,7 +977,7 @@
       var t = e.target;
       if (t.classList && t.classList.contains('mr5-check')) t.classList.toggle('done');
       if ((t.dataset && t.dataset.action === 'complete') || (t.closest && t.closest('[data-chip="1"]'))) {
-        markComplete(lesson, container);
+        markComplete(lesson, container, 'click');
       }
       // Lyrics disclosure
       var lyricsBtn = t.closest && t.closest('[data-lyrics-toggle="1"]');
@@ -1147,7 +1171,7 @@
     wireNotes(lesson, newSection);
 
     try {
-      if (localStorage.getItem('mr-lesson-complete:' + lesson.id)) markComplete(lesson, newSection);
+      if (localStorage.getItem('mr-lesson-complete:' + lesson.id)) markComplete(lesson, newSection, 'render');
     } catch (e) {}
 
     // Render LaTeX in the deeper-dive section (if present)
