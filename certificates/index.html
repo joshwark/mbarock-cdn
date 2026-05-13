@@ -118,7 +118,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;letter-spacing:-0.018em;color:var(--nav
     <div class="meta-strip">
       <div class="stat"><div class="l">Modules earned</div><div class="v"><span id="moduleCount">0</span><small>/10</small></div></div>
       <div class="stat"><div class="l">Lessons passed</div><div class="v"><span id="lessonCount">0</span><small>/55</small></div></div>
-      <div class="stat"><div class="l">Capstone fields</div><div class="v"><span id="capstoneCount">0</span><small>/49</small></div></div>
+      <div class="stat"><div class="l">Capstone fields</div><div class="v"><span id="capstoneCount">0</span><small>/52</small></div></div>
       <div class="stat"><div class="l">Operator's status</div><div class="v" id="opStatus" style="font-size:18px;">Not yet</div></div>
     </div>
   </div>
@@ -208,7 +208,8 @@ function capstoneFieldsFilled(){
   }
   return n;
 }
-const CAPSTONE_TOTAL_FIELDS = 49; // rough total across the 10 sections (sums match capstone.html)
+const CAPSTONE_TOTAL_FIELDS = 52; // canonical total — must match the sum of fields across SECTIONS in capstone.html
+                                  // current breakdown: numbers=7 bet=6 team=5 engine=6 stack=4 capital=5 story=5 playbook=4 dashboard=5 plan=5
 
 function isOperatorClaimable(){
   if (isOperatorEarned()) return false;
@@ -217,52 +218,32 @@ function isOperatorClaimable(){
   return allModulesEarned && capstoneFilled;
 }
 
-// ── Cert ID generator (client-side) ──
-function newCertId(prefix){
-  const yr = new Date().getFullYear();
-  const rnd = Array.from({length:6},()=>{const c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';return c[Math.floor(Math.random()*c.length)];}).join('');
-  return `MR-${prefix}-${yr}-${rnd}`;
-}
-
-// ── Issue a cert (write to Supabase) ──
+// ── Issue a cert (calls the issue-cert Edge Function — server-side verifies entitlement)
+//    The function checks quiz_passes / module-cert prerequisites before issuing, so
+//    a client can't mint a cert by calling the REST API directly with the anon key.
 async function claimCert(certType, moduleId){
   const mid = memberId();
   if (mid === 'guest'){
     alert('Sign in first — your progress and certs need a member account to save and verify.');
     return null;
   }
-  const certId = certType==='module' ? newCertId(moduleId.replace('M','M')) : newCertId('OPS');
-  let body;
-  if (certType==='module'){
-    const mod = MODULES.find(m => m.id===moduleId);
-    body = {
-      cert_id: certId, member_id: mid, cert_type:'module',
-      module_id: moduleId, module_title: mod.title,
-      module_label: `${mod.title} · Module ${parseInt(moduleId.slice(1))} of 10`,
-      member_name: memberName(),
-      summary: `Completed all lessons in ${mod.title} and passed every comprehension check.`,
-      lessons_count: state.totalLessons, modules_count: 10
-    };
-  } else {
-    body = {
-      cert_id: certId, member_id: mid, cert_type:'operator',
-      member_name: memberName(),
-      summary: "Awarded for demonstrated mastery of the full MBA Rock Operator's Program and a completed Capstone business plan.",
-      lessons_count: state.totalLessons, modules_count: 10
-    };
-  }
-  const r = await fetch(SB_URL + '/rest/v1/user_certificates', {
+  const body = { member_id: mid, member_name: memberName(), cert_type: certType };
+  if (certType === 'module') body.module_id = moduleId;
+  const r = await fetch(SB_URL + '/functions/v1/issue-cert', {
     method:'POST',
-    headers:{...SB_HDR, 'Prefer':'return=representation'},
-    body: JSON.stringify([body])
+    headers:{...SB_HDR},
+    body: JSON.stringify(body)
   });
-  if (!r.ok){
-    const t = await r.text();
-    console.warn('[Hub] cert issue failed:', r.status, t);
-    alert('Could not issue certificate (status ' + r.status + '). Try refreshing.');
+  let payload = {};
+  try { payload = await r.json(); } catch(e){}
+  if (!r.ok || !payload.ok){
+    console.warn('[Hub] cert issue blocked:', r.status, payload);
+    const reason = payload.reason || `Status ${r.status}`;
+    alert('Could not issue this certificate.\n\nReason: ' + reason);
     return null;
   }
-  return certId;
+  if (payload.already_earned) console.log('[Hub] cert already earned, returning existing ID');
+  return payload.cert_id;
 }
 
 // ── Render ──
