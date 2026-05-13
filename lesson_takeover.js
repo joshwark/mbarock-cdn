@@ -1,4 +1,6 @@
-// MBA Rock — Lesson Page Takeover v6.12 (2026-05-12)
+// MBA Rock — Lesson Page Takeover v6.13 (2026-05-12)
+// v6.13: module color spine — kicker + section numbers now read --mr5-accent (set per module).
+//        Pulls mod.color from lessons.v2.json (M1-M10 each have a canonical color).
 // v6.12: adds (a) inline Capstone forms on take_action items with capstone_field,
 //             (b) per-lesson quiz block with 80% pass gate.
 // LISTEN. LEARN. LIVE.
@@ -329,8 +331,8 @@
 
     /* Hero — generous top margin so it doesn't crash into Squarespace's site nav */
     .mr5-hero{margin:48px 0 44px;padding:0;}
-    .mr5-hero-kicker{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:${c.orange};margin:0 0 22px;}
-    .mr5-hero-kicker::before{content:"";width:36px;height:1.5px;background:${c.orange};}
+    .mr5-hero-kicker{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mr5-accent, ${c.orange});margin:0 0 22px;}
+    .mr5-hero-kicker::before{content:"";width:36px;height:1.5px;background:var(--mr5-accent, ${c.orange});}
     .mr5-hero h1{font-size:54px;line-height:1.05;margin:0 0 22px;color:${c.navy};font-weight:600;letter-spacing:-0.028em;}
     .mr5-hero-sub{font-family:"Fraunces",serif;font-size:21px;font-weight:400;line-height:1.45;color:#3a3a3a;max-width:780px;margin:0 0 30px;font-style:italic;letter-spacing:-0.005em;}
     .mr5-hero-meta{display:flex;gap:36px;flex-wrap:wrap;padding:18px 0;border-top:1px solid ${c.rule};border-bottom:1px solid ${c.rule};font-size:12px;color:#555;}
@@ -341,7 +343,7 @@
     /* Section: clean editorial blocks, no white cards */
     .mr5-sec{margin:0 0 60px;position:relative;}
     .mr5-sec-h{display:flex;align-items:baseline;gap:18px;margin:0 0 22px;padding:0 0 14px;border-bottom:1px solid ${c.rule};}
-    .mr5-sec-h .mr5-num{font-family:"Fraunces",serif;font-size:36px;color:${c.orange};font-weight:600;line-height:1;letter-spacing:-0.02em;}
+    .mr5-sec-h .mr5-num{font-family:"Fraunces",serif;font-size:36px;color:var(--mr5-accent, ${c.orange});font-weight:600;line-height:1;letter-spacing:-0.02em;}
     .mr5-sec-h h2{margin:0;font-size:28px;font-weight:600;letter-spacing:-0.02em;line-height:1.15;flex:1;}
     .mr5-sec-h .mr5-kicker{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#999;font-weight:600;}
 
@@ -749,7 +751,9 @@
     var n = 1;
     function num() { return String(n++).padStart(2, '0'); }
 
-    var html = '<div class="mr5">';
+    // v6.13 — Module color spine: every accent reads from --mr5-accent. Falls back to brand orange if module lacks color.
+    var modAccent = (mod && mod.color) || c.orange;
+    var html = '<div class="mr5" style="--mr5-accent:' + modAccent + ';">';
 
     // Crumb row removed in v6.2 — was colliding with Squarespace's own top nav.
     // The kicker below ("M1 · Finance Fundamentals") + the meta strip already convey module + position.
