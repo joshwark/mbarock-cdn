@@ -1,4 +1,7 @@
-// MBA Rock — Lesson Page Takeover v6.13 (2026-05-12)
+// MBA Rock — Lesson Page Takeover v6.14 (2026-05-13)
+// v6.14: removed the lesson-complete animated logo video. It replayed on every page load
+//        of a previously-completed lesson because markComplete fires from localStorage.
+//        Static logo only on the cert outro.
 // v6.13: module color spine — kicker + section numbers now read --mr5-accent (set per module).
 //        Pulls mod.color from lessons.v2.json (M1-M10 each have a canonical color).
 // v6.12: adds (a) inline Capstone forms on take_action items with capstone_field,
@@ -878,28 +881,9 @@
       cert.querySelector('[data-cert-title="1"]').textContent = 'Lesson complete. Onward.';
       cert.querySelector('[data-cert-body="1"]').textContent = 'Your progress is saved. Keep stacking the playbook — the next lesson is one click away.';
 
-      // v6.5: swap the static logo for the animated logo video — plays once on lesson completion.
-      var img = cert.querySelector('img');
-      if (img && !cert.querySelector('video[data-cert-video]')) {
-        var v = document.createElement('video');
-        v.setAttribute('data-cert-video', '1');
-        v.src = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/brand/mba-rock-logo-video.mp4';
-        v.poster = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/images/brand/mba-rock-logo-poster.jpg';
-        v.setAttribute('playsinline', '');
-        v.preload = 'auto';
-        v.style.cssText = 'width:280px;max-width:80%;height:auto;margin:0 auto 24px;display:block;border-radius:6px;';
-        // Try unmuted first (user gesture from button click should allow it)
-        v.muted = false;
-        img.replaceWith(v);
-        var playPromise = v.play();
-        if (playPromise && playPromise.catch) {
-          playPromise.catch(function() {
-            // Autoplay-with-audio blocked. Fall back to muted autoplay.
-            v.muted = true;
-            v.play().catch(function(){});
-          });
-        }
-      }
+      // v6.14 (2026-05-13): removed the animated logo video. It was distracting and replayed
+      // every time a previously-completed lesson page loaded (because markComplete fires from
+      // localStorage on every render). Static logo only.
     }
     try {
       if (window.MR_PROGRESS && typeof window.MR_PROGRESS.markComplete === 'function') window.MR_PROGRESS.markComplete(lesson.id);
