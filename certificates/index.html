@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your Certificates · MBA Rock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1F3A; --ink:#0E1116; --orange:#F26B1F; --orange-soft:#FBE2D0;
+  --cream:#FAF8F5; --paper:#FFFFFF; --rule:#E5E0D6; --muted:#8A8A8A;
+  --green:#1D8444; --gold:#A88735;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:'Inter',-apple-system,sans-serif;line-height:1.55;}
+h1,h2,h3,h4{font-family:'Fraunces',serif;letter-spacing:-0.018em;color:var(--navy);margin:0;font-weight:600;}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);font-weight:700;}
+
+.app{max-width:1080px;margin:0 auto;padding:48px 28px 80px;}
+.hero{padding:0 0 36px;border-bottom:1px solid var(--rule);margin-bottom:48px;}
+.hero .eyebrow{margin-bottom:14px;}
+.hero h1{font-size:52px;line-height:1.05;letter-spacing:-0.025em;margin-bottom:14px;}
+.hero p.sub{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:#444;max-width:760px;line-height:1.5;margin:0 0 24px;}
+.hero .meta-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:24px;}
+.hero .stat .l{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:4px;}
+.hero .stat .v{font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:var(--navy);font-variant-numeric:tabular-nums;letter-spacing:-0.015em;}
+.hero .stat .v small{font-size:14px;color:var(--muted);font-weight:400;}
+
+.section-h{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--navy);margin:0 0 8px;letter-spacing:-0.015em;}
+.section-sub{font-family:'Fraunces',serif;font-style:italic;color:#555;font-size:16px;margin:0 0 28px;line-height:1.5;}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-bottom:48px;}
+.cert-card{
+  background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:24px 24px 20px;
+  position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px;min-height:240px;
+}
+.cert-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent,var(--orange));}
+.cert-card .mod-num{
+  font-family:'Fraunces',serif;font-size:42px;line-height:1;color:var(--accent,var(--orange));font-weight:600;letter-spacing:-0.04em;
+}
+.cert-card .mod-title{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--navy);line-height:1.2;}
+.cert-card .mod-sub{font-size:12.5px;color:#666;line-height:1.45;flex:1;}
+.cert-card .status{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:10px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;
+  padding:5px 11px;border-radius:30px;width:fit-content;
+}
+.cert-card .status.locked{background:#f5f5f5;color:#999;}
+.cert-card .status.claimable{background:var(--accent,var(--orange));color:#fff;}
+.cert-card .status.earned{background:var(--green);color:#fff;}
+.cert-card .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;}
+.cert-card .actions a, .cert-card .actions button{
+  font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  padding:9px 14px;border-radius:30px;text-decoration:none;cursor:pointer;border:0;display:inline-flex;align-items:center;gap:6px;
+}
+.cert-card .actions .btn-primary{background:var(--navy);color:#fff;}
+.cert-card .actions .btn-primary:hover{background:var(--accent,var(--orange));}
+.cert-card .actions .btn-claim{background:var(--accent,var(--orange));color:#fff;}
+.cert-card .actions .btn-claim:hover{filter:brightness(1.1);}
+.cert-card .actions .btn-claim:disabled{background:#ccc;color:#888;cursor:not-allowed;}
+.cert-card .actions .btn-li{background:#0a66c2;color:#fff;}
+.cert-card .actions .btn-li:hover{background:#004182;}
+.cert-card .actions .btn-secondary{background:#fff;color:var(--ink);border:1px solid var(--rule);}
+.cert-card.locked{opacity:0.55;}
+.cert-card.locked::before{background:#ccc;}
+.cert-card.locked .mod-num{color:#ccc;}
+.cert-card .lessons-meta{font-size:11px;color:var(--muted);letter-spacing:.04em;}
+.cert-card .lessons-meta b{color:var(--ink);font-weight:600;}
+
+/* Operator's Cert callout */
+.op-card{
+  background:var(--navy);color:#fff;border-radius:14px;padding:36px 40px;margin-top:8px;position:relative;overflow:hidden;
+}
+.op-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,#0B2545 0%,#1A3A6B 11%,#8B1A1A 22%,#1A5C2A 33%,#4A1A6B 44%,#6B3A0B 55%,#F26B1F 66%,#475569 77%,#3B4F8C 88%,#A88735 100%);
+}
+.op-card .eyebrow{color:var(--gold);}
+.op-card h3{color:#fff;font-size:28px;margin:8px 0 14px;}
+.op-card p{font-family:'Fraunces',serif;font-style:italic;color:rgba(255,255,255,0.78);margin:0 0 22px;font-size:16px;line-height:1.5;max-width:720px;}
+.op-card .actions{display:flex;gap:10px;flex-wrap:wrap;}
+.op-card .actions a, .op-card .actions button{
+  font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+  padding:11px 20px;border-radius:30px;text-decoration:none;cursor:pointer;border:0;display:inline-flex;align-items:center;gap:7px;
+}
+.op-card .btn-claim{background:var(--gold);color:#fff;}
+.op-card .btn-claim:hover{background:#c4a04a;}
+.op-card .btn-claim:disabled{background:rgba(255,255,255,0.18);color:rgba(255,255,255,0.5);cursor:not-allowed;}
+.op-card .btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.3);}
+.op-card .btn-secondary:hover{border-color:var(--gold);}
+.op-card .btn-li{background:#0a66c2;color:#fff;}
+.op-card .progress-meta{display:flex;gap:32px;margin:18px 0 22px;flex-wrap:wrap;}
+.op-card .progress-meta .item{font-size:11px;}
+.op-card .progress-meta .l{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-weight:700;margin-bottom:4px;}
+.op-card .progress-meta .v{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:#fff;}
+
+.empty-state{
+  background:var(--paper);border:1px dashed var(--rule);border-radius:12px;padding:28px;text-align:center;color:#666;font-family:'Fraunces',serif;font-style:italic;
+}
+
+@media(max-width:680px){
+  .app{padding:28px 18px 60px;}
+  .hero h1{font-size:34px;}
+  .hero p.sub{font-size:17px;}
+  .op-card{padding:24px 22px;}
+  .grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<main class="app">
+  <div class="hero">
+    <div class="eyebrow">MBA Rock · Your Credentials</div>
+    <h1>Earn the credential. Wear it.</h1>
+    <p class="sub">Every module ships a real credential when you finish it. Pass the comprehension check on each lesson, complete the module's Take Action items, and the Module Mark is yours — verifiable, shareable, and one click into your LinkedIn profile. Earn all 10 plus the Capstone and the Operator's Certificate is yours.</p>
+    <div class="meta-strip">
+      <div class="stat"><div class="l">Modules earned</div><div class="v"><span id="moduleCount">0</span><small>/10</small></div></div>
+      <div class="stat"><div class="l">Lessons passed</div><div class="v"><span id="lessonCount">0</span><small>/55</small></div></div>
+      <div class="stat"><div class="l">Capstone fields</div><div class="v"><span id="capstoneCount">0</span><small>/49</small></div></div>
+      <div class="stat"><div class="l">Operator's status</div><div class="v" id="opStatus" style="font-size:18px;">Not yet</div></div>
+    </div>
+  </div>
+
+  <h2 class="section-h">Module Marks</h2>
+  <p class="section-sub">One per module — colored to its module. Show up in your LinkedIn Licenses & Certifications section the same way a degree or pro certification would.</p>
+  <div class="grid" id="moduleGrid"></div>
+
+  <h2 class="section-h">Operator's Certificate</h2>
+  <p class="section-sub">The capstone credential. Awarded when every module's Mark is earned and your Business Operating System is built.</p>
+  <div class="op-card">
+    <div class="eyebrow">MBA Rock Operator's Program</div>
+    <h3>Operator's Certificate</h3>
+    <p>Comprehensive proof that you've completed the program — 10 modules, 55 lessons, 50+ frameworks, every comprehension check passed, and a 10-section Business Operating System assembled as your capstone. Stack it on LinkedIn alongside your degree.</p>
+    <div class="progress-meta">
+      <div class="item"><div class="l">Modules</div><div class="v" id="opModules">0/10</div></div>
+      <div class="item"><div class="l">Lessons</div><div class="v" id="opLessons">0/55</div></div>
+      <div class="item"><div class="l">Capstone</div><div class="v" id="opCapstone">0%</div></div>
+    </div>
+    <div class="actions" id="opActions">
+      <button class="btn-claim" id="opClaimBtn" disabled>Earn the Operator's Cert</button>
+    </div>
+  </div>
+</main>
+
+<script>
+console.log('[Certificates Hub] v1 loaded');
+
+// ── Config ──
+const SB_URL = 'https://ciloqphtencjthkedanw.supabase.co';
+const SB_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+const SB_HDR = {'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json'};
+
+function memberId(){ return localStorage.getItem('mba-rock-member-id') || 'guest'; }
+function memberName(){
+  return localStorage.getItem('mba-rock-member-name') ||
+         localStorage.getItem('mba-rock-member-id') ||
+         'MBA Rock Member';
+}
+
+// ── Module catalog — colors mirror lessons.v2.json:modules[].color ──
+const MODULES = [
+  {id:'M1',  num:'01', title:'Finance Fundamentals',           accent:'#0B2545', sub:'Cash, runway, breakeven, unit economics.'},
+  {id:'M2',  num:'02', title:'Strategy & Competitive Advantage', accent:'#1A3A6B', sub:'Moats, Five Forces, ERRC, positioning.'},
+  {id:'M3',  num:'03', title:'People & Leadership',             accent:'#8B1A1A', sub:'90-day blueprint, hiring, RAPID, culture.'},
+  {id:'M4',  num:'04', title:'Unit Economics & Growth Metrics', accent:'#1A5C2A', sub:'CAC, LTV, retention, growth loops.'},
+  {id:'M5',  num:'05', title:'Operations & Technology',         accent:'#4A1A6B', sub:'Process maps, automation, build vs buy.'},
+  {id:'M6',  num:'06', title:'Growth & Capital',                accent:'#6B3A0B', sub:'Engines, capital stack, raises, exit math.'},
+  {id:'M7',  num:'07', title:'Marketing & Brand',               accent:'#F26B1F', sub:'JTBD, funnel design, brand promise.'},
+  {id:'M8',  num:'08', title:'Operations & Execution',          accent:'#475569', sub:'SOPs, rhythms, buffers, OpEx discipline.'},
+  {id:'M9',  num:'09', title:'Analytics & Decision Making',     accent:'#3B4F8C', sub:'North Star metric, KPI dashboard, triggers.'},
+  {id:'M10', num:'10', title:'Innovation & Future',             accent:'#A88735', sub:'Strategic blueprint, 90-day plan, OKRs.'},
+];
+
+// ── State (loaded from Supabase) ──
+let state = {
+  certs: [],            // user_certificates rows
+  quizPasses: {},       // {lessonId: true} from user_quiz_status view
+  capstone: {},         // capstone_data JSONB
+  lessonsByModule: {},  // {moduleId: [lessonIds]}
+  totalLessons: 55
+};
+
+// ── Lookup helpers ──
+function isModuleEarned(moduleId){ return state.certs.find(c => c.cert_type==='module' && c.module_id===moduleId && !c.revoked_at); }
+function isOperatorEarned(){      return state.certs.find(c => c.cert_type==='operator' && !c.revoked_at); }
+
+function moduleLessonsPassed(moduleId){
+  const lessons = state.lessonsByModule[moduleId] || [];
+  if (!lessons.length) return {passed:0, total:0};
+  const passed = lessons.filter(lid => state.quizPasses[lid]).length;
+  return {passed, total: lessons.length};
+}
+
+function isModuleClaimable(moduleId){
+  if (isModuleEarned(moduleId)) return false;
+  const {passed, total} = moduleLessonsPassed(moduleId);
+  return total > 0 && passed === total;
+}
+
+function capstoneFieldsFilled(){
+  let n = 0;
+  for (const sec of Object.values(state.capstone || {})){
+    for (const v of Object.values(sec || {})){
+      if (v && String(v).trim()) n++;
+    }
+  }
+  return n;
+}
+const CAPSTONE_TOTAL_FIELDS = 49; // rough total across the 10 sections (sums match capstone.html)
+
+function isOperatorClaimable(){
+  if (isOperatorEarned()) return false;
+  const allModulesEarned = MODULES.every(m => isModuleEarned(m.id));
+  const capstoneFilled = capstoneFieldsFilled() >= Math.floor(CAPSTONE_TOTAL_FIELDS * 0.6); // require 60%+
+  return allModulesEarned && capstoneFilled;
+}
+
+// ── Cert ID generator (client-side) ──
+function newCertId(prefix){
+  const yr = new Date().getFullYear();
+  const rnd = Array.from({length:6},()=>{const c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';return c[Math.floor(Math.random()*c.length)];}).join('');
+  return `MR-${prefix}-${yr}-${rnd}`;
+}
+
+// ── Issue a cert (write to Supabase) ──
+async function claimCert(certType, moduleId){
+  const mid = memberId();
+  if (mid === 'guest'){
+    alert('Sign in first — your progress and certs need a member account to save and verify.');
+    return null;
+  }
+  const certId = certType==='module' ? newCertId(moduleId.replace('M','M')) : newCertId('OPS');
+  let body;
+  if (certType==='module'){
+    const mod = MODULES.find(m => m.id===moduleId);
+    body = {
+      cert_id: certId, member_id: mid, cert_type:'module',
+      module_id: moduleId, module_title: mod.title,
+      module_label: `${mod.title} · Module ${parseInt(moduleId.slice(1))} of 10`,
+      member_name: memberName(),
+      summary: `Completed all lessons in ${mod.title} and passed every comprehension check.`,
+      lessons_count: state.totalLessons, modules_count: 10
+    };
+  } else {
+    body = {
+      cert_id: certId, member_id: mid, cert_type:'operator',
+      member_name: memberName(),
+      summary: "Awarded for demonstrated mastery of the full MBA Rock Operator's Program and a completed Capstone business plan.",
+      lessons_count: state.totalLessons, modules_count: 10
+    };
+  }
+  const r = await fetch(SB_URL + '/rest/v1/user_certificates', {
+    method:'POST',
+    headers:{...SB_HDR, 'Prefer':'return=representation'},
+    body: JSON.stringify([body])
+  });
+  if (!r.ok){
+    const t = await r.text();
+    console.warn('[Hub] cert issue failed:', r.status, t);
+    alert('Could not issue certificate (status ' + r.status + '). Try refreshing.');
+    return null;
+  }
+  return certId;
+}
+
+// ── Render ──
+function renderModules(){
+  const grid = document.getElementById('moduleGrid');
+  grid.innerHTML = '';
+  MODULES.forEach(m => {
+    const earnedCert = isModuleEarned(m.id);
+    const claimable = isModuleClaimable(m.id);
+    const {passed, total} = moduleLessonsPassed(m.id);
+    const card = document.createElement('div');
+    card.className = 'cert-card' + (earnedCert ? ' earned' : claimable ? '' : ' locked');
+    card.style.setProperty('--accent', m.accent);
+
+    let statusHtml = '';
+    if (earnedCert) statusHtml = '<span class="status earned">Earned</span>';
+    else if (claimable) statusHtml = '<span class="status claimable">Ready to claim</span>';
+    else statusHtml = '<span class="status locked">Locked</span>';
+
+    let actionsHtml = '';
+    if (earnedCert){
+      const verifyUrl = location.origin + '/verify/?id=' + encodeURIComponent(earnedCert.cert_id);
+      const liUrl = liUrlFor(earnedCert);
+      actionsHtml = `
+        <a class="btn-primary" href="/certificate/?id=${encodeURIComponent(earnedCert.cert_id)}">View</a>
+        <a class="btn-li" href="${liUrl}" target="_blank" rel="noopener">+ LinkedIn</a>
+      `;
+    } else if (claimable){
+      actionsHtml = `<button class="btn-claim" data-claim="${m.id}">Claim ${m.id} Mark</button>`;
+    } else {
+      actionsHtml = `<span class="lessons-meta"><b>${passed}</b>/${total} lessons passed</span>`;
+    }
+
+    card.innerHTML = `
+      <div class="mod-num">${m.num}</div>
+      <div>
+        <div class="mod-title">${m.title}</div>
+        <div class="mod-sub">${m.sub}</div>
+      </div>
+      ${statusHtml}
+      <div class="actions">${actionsHtml}</div>
+    `;
+    grid.appendChild(card);
+  });
+
+  // Wire claim buttons
+  grid.querySelectorAll('[data-claim]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      btn.disabled = true;
+      btn.textContent = 'Issuing…';
+      const certId = await claimCert('module', btn.dataset.claim);
+      if (certId){
+        // re-pull state, re-render
+        await loadCerts();
+        render();
+      } else {
+        btn.disabled = false;
+        btn.textContent = `Claim ${btn.dataset.claim} Mark`;
+      }
+    });
+  });
+}
+
+function liUrlFor(cert){
+  const verifyUrl = location.origin + '/verify/?id=' + encodeURIComponent(cert.cert_id);
+  const d = new Date(cert.issued_at);
+  const certName = cert.cert_type==='operator'
+    ? "MBA Rock Operator's Certificate"
+    : (cert.module_title ? `MBA Rock — ${cert.module_title}` : 'MBA Rock Module Mark');
+  return 'https://www.linkedin.com/profile/add' +
+    '?startTask=CERTIFICATION_NAME' +
+    '&name=' + encodeURIComponent(certName) +
+    '&organizationName=' + encodeURIComponent('MBA Rock') +
+    '&issueYear=' + d.getFullYear() +
+    '&issueMonth=' + (d.getMonth()+1) +
+    '&certUrl=' + encodeURIComponent(verifyUrl) +
+    '&certId=' + encodeURIComponent(cert.cert_id);
+}
+
+function renderOperator(){
+  const earned = isOperatorEarned();
+  const claimable = isOperatorClaimable();
+  const earnedModCount = MODULES.filter(m => isModuleEarned(m.id)).length;
+  const lessonsDone = Object.values(state.quizPasses).filter(Boolean).length;
+  const capstonePct = Math.round(capstoneFieldsFilled()/CAPSTONE_TOTAL_FIELDS*100);
+
+  document.getElementById('opModules').textContent = `${earnedModCount}/10`;
+  document.getElementById('opLessons').textContent = `${lessonsDone}/${state.totalLessons}`;
+  document.getElementById('opCapstone').textContent = `${capstonePct}%`;
+  document.getElementById('opStatus').textContent = earned ? 'Earned ✓' : (claimable ? 'Ready' : 'In progress');
+
+  const actions = document.getElementById('opActions');
+  if (earned){
+    const liUrl = liUrlFor(earned);
+    actions.innerHTML = `
+      <a class="btn-secondary" href="/certificate/?id=${encodeURIComponent(earned.cert_id)}">View certificate</a>
+      <a class="btn-li" href="${liUrl}" target="_blank" rel="noopener">+ Add to LinkedIn</a>
+      <a class="btn-secondary" href="/verify/?id=${encodeURIComponent(earned.cert_id)}" target="_blank" rel="noopener">Public verify URL</a>
+    `;
+  } else {
+    actions.innerHTML = `<button class="btn-claim" id="opClaimBtn"${claimable ? '' : ' disabled'}>${claimable ? "Earn the Operator's Cert" : 'Complete all 10 modules + 60% of Capstone'}</button>`;
+    document.getElementById('opClaimBtn').addEventListener('click', async (e) => {
+      e.target.disabled = true; e.target.textContent = 'Issuing…';
+      const certId = await claimCert('operator', null);
+      if (certId){ await loadCerts(); render(); }
+      else { e.target.disabled = false; e.target.textContent = "Earn the Operator's Cert"; }
+    });
+  }
+}
+
+function renderStats(){
+  document.getElementById('moduleCount').textContent = MODULES.filter(m => isModuleEarned(m.id)).length;
+  document.getElementById('lessonCount').textContent = Object.values(state.quizPasses).filter(Boolean).length;
+  document.getElementById('capstoneCount').textContent = capstoneFieldsFilled();
+}
+
+function render(){
+  renderStats();
+  renderModules();
+  renderOperator();
+}
+
+// ── Data loading ──
+async function loadCerts(){
+  const mid = memberId();
+  if (mid === 'guest'){ state.certs = []; return; }
+  try {
+    const r = await fetch(SB_URL + '/rest/v1/user_certificates?select=*&member_id=eq.' + encodeURIComponent(mid), {headers: SB_HDR});
+    state.certs = r.ok ? await r.json() : [];
+  } catch(e){ console.warn('[Hub] certs pull failed', e); state.certs = []; }
+}
+
+async function loadQuizStatus(){
+  const mid = memberId();
+  if (mid === 'guest'){ state.quizPasses = {}; return; }
+  try {
+    const r = await fetch(SB_URL + '/rest/v1/user_quiz_status?select=lesson_id,passed&member_id=eq.' + encodeURIComponent(mid), {headers: SB_HDR});
+    const rows = r.ok ? await r.json() : [];
+    state.quizPasses = {};
+    rows.forEach(row => { state.quizPasses[row.lesson_id] = !!row.passed; });
+  } catch(e){ console.warn('[Hub] quiz status pull failed', e); state.quizPasses = {}; }
+}
+
+async function loadCapstone(){
+  const mid = memberId();
+  // localStorage first (guest fallback)
+  try { state.capstone = JSON.parse(localStorage.getItem('mr-capstone:' + mid) || '{}'); } catch(e){ state.capstone = {}; }
+  if (mid === 'guest') return;
+  try {
+    const r = await fetch(SB_URL + '/rest/v1/user_capstone?select=capstone_data&member_id=eq.' + encodeURIComponent(mid), {headers: SB_HDR});
+    const rows = r.ok ? await r.json() : [];
+    if (rows[0] && rows[0].capstone_data) state.capstone = rows[0].capstone_data;
+  } catch(e){ console.warn('[Hub] capstone pull failed', e); }
+}
+
+async function loadLessonIndex(){
+  // Pull lessons.v2.json to know which lesson_ids belong to which module.
+  try {
+    const r = await fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json');
+    const j = await r.json();
+    state.totalLessons = j.lessons.length;
+    state.lessonsByModule = {};
+    j.lessons.forEach(l => {
+      if (!state.lessonsByModule[l.module_id]) state.lessonsByModule[l.module_id] = [];
+      state.lessonsByModule[l.module_id].push(l.id);
+    });
+  } catch(e){ console.warn('[Hub] lessons index pull failed', e); }
+}
+
+async function init(){
+  await Promise.all([loadLessonIndex(), loadCerts(), loadQuizStatus(), loadCapstone()]);
+  render();
+}
+
+init();
+</script>
+</body>
+</html>
