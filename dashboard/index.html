@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your Dashboard · MBA Rock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1F3A; --ink:#0E1116; --orange:#F26B1F; --orange-soft:#FBE2D0;
+  --cream:#FAF8F5; --paper:#FFFFFF; --rule:#E5E0D6; --muted:#8A8A8A;
+  --green:#1D8444; --gold:#A88735;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:'Inter',-apple-system,sans-serif;line-height:1.55;}
+h1,h2,h3,h4{font-family:'Fraunces',serif;letter-spacing:-0.018em;color:var(--navy);margin:0;font-weight:600;}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);font-weight:700;}
+a{color:inherit;}
+
+.app{max-width:1180px;margin:0 auto;padding:48px 28px 80px;}
+
+/* ── Hero / continue strip ── */
+.hero-bar{
+  background:var(--paper);border:1px solid var(--rule);border-radius:18px;padding:28px 32px;
+  display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;margin-bottom:36px;
+  box-shadow:0 12px 30px -18px rgba(11,31,58,0.18);
+}
+.hero-bar .ring{position:relative;width:108px;height:108px;flex-shrink:0;}
+.hero-bar .ring svg{transform:rotate(-90deg);}
+.hero-bar .ring .pct{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:'Fraunces',serif;color:var(--navy);
+}
+.hero-bar .ring .pct .num{font-size:30px;font-weight:600;line-height:1;letter-spacing:-0.025em;font-variant-numeric:tabular-nums;}
+.hero-bar .ring .pct .lbl{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-top:4px;}
+.hero-bar .copy .greeting{font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.04em;margin-bottom:4px;}
+.hero-bar .copy h1{font-size:30px;letter-spacing:-0.02em;line-height:1.1;margin-bottom:6px;}
+.hero-bar .copy .sub{font-family:'Fraunces',serif;font-style:italic;color:#555;font-size:16px;line-height:1.45;}
+.hero-bar .cta{
+  background:var(--navy);color:#fff;text-decoration:none;padding:16px 24px;border-radius:30px;
+  font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+  display:inline-flex;align-items:center;gap:10px;white-space:nowrap;transition:background .15s;
+}
+.hero-bar .cta:hover{background:var(--orange);}
+.hero-bar .cta .icon{font-family:'Fraunces',serif;font-size:18px;font-weight:600;}
+.hero-bar .cta-disabled{background:#ccc;color:#fff;pointer-events:none;}
+
+/* ── 10-segment spine showing module progress ── */
+.spine-row{display:flex;gap:12px;margin-bottom:36px;align-items:center;}
+.spine-row .label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;flex-shrink:0;}
+.spine{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;flex:1;}
+.spine .seg{height:10px;border-radius:3px;background:var(--rule);position:relative;cursor:help;}
+.spine .seg.partial{background:var(--seg-color);opacity:.45;}
+.spine .seg.complete{background:var(--seg-color);opacity:1;}
+.spine .seg::after{
+  content:attr(data-tip);position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
+  background:var(--navy);color:#fff;padding:5px 10px;border-radius:6px;font-size:11px;font-family:'Inter',sans-serif;
+  font-weight:500;letter-spacing:.02em;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;z-index:5;
+}
+.spine .seg:hover::after{opacity:1;}
+
+/* ── 4-quadrant summary row (cards) ── */
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:48px;}
+.sum-card{
+  background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:22px 24px;
+  display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s;
+}
+.sum-card:hover{transform:translateY(-2px);border-color:var(--navy);}
+.sum-card .l{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;}
+.sum-card .v{font-family:'Fraunces',serif;font-size:32px;font-weight:600;color:var(--navy);letter-spacing:-0.02em;line-height:1;font-variant-numeric:tabular-nums;}
+.sum-card .v small{font-size:14px;color:var(--muted);font-weight:400;letter-spacing:0;}
+.sum-card .meta{font-size:12.5px;color:#666;font-family:'Fraunces',serif;font-style:italic;}
+.sum-card .arrow{font-size:14px;color:var(--orange);font-weight:600;letter-spacing:.04em;margin-top:auto;display:inline-flex;align-items:center;gap:6px;}
+
+/* ── Module grid ── */
+.section-h{font-family:'Fraunces',serif;font-size:24px;color:var(--navy);font-weight:600;margin:0 0 6px;letter-spacing:-0.015em;}
+.section-sub{font-family:'Fraunces',serif;font-style:italic;color:#555;font-size:15px;margin:0 0 22px;}
+.mod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:48px;}
+.mod-card{
+  background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:22px 22px 20px;
+  position:relative;overflow:hidden;text-decoration:none;color:inherit;
+  display:flex;flex-direction:column;gap:10px;transition:transform .15s,border-color .15s,box-shadow .15s;
+}
+.mod-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent);}
+.mod-card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 18px 36px -22px rgba(11,31,58,0.28);}
+.mod-card .mod-num{font-family:'Fraunces',serif;font-size:34px;line-height:1;color:var(--accent);font-weight:600;letter-spacing:-0.04em;}
+.mod-card .mod-id{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;}
+.mod-card .mod-title{font-family:'Fraunces',serif;font-size:18px;line-height:1.2;color:var(--navy);font-weight:600;}
+.mod-card .mod-sub{font-size:12.5px;color:#666;line-height:1.45;font-family:'Fraunces',serif;font-style:italic;}
+.mod-card .mod-progress-row{display:flex;justify-content:space-between;align-items:baseline;margin-top:6px;font-size:11.5px;color:var(--muted);font-weight:600;letter-spacing:.04em;}
+.mod-card .mod-progress-row b{color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;}
+.mod-card .progress-bar{height:5px;background:var(--rule);border-radius:3px;overflow:hidden;}
+.mod-card .progress-bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .4s;}
+.mod-card .cert-flag{
+  position:absolute;top:18px;right:18px;
+  font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+  padding:4px 10px;border-radius:30px;background:var(--green);color:#fff;
+}
+
+/* ── Quick links footer ── */
+.qlinks{background:var(--navy);color:#fff;border-radius:14px;padding:28px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;}
+.qlinks a{
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:18px 20px;
+  text-decoration:none;color:#fff;transition:all .15s;display:flex;flex-direction:column;gap:4px;
+}
+.qlinks a:hover{background:rgba(242,107,31,0.18);border-color:var(--orange);}
+.qlinks a .l{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);font-weight:700;}
+.qlinks a .v{font-family:'Fraunces',serif;font-size:18px;font-weight:600;}
+.qlinks a .s{font-size:12px;color:rgba(255,255,255,0.7);}
+
+@media(max-width:680px){
+  .app{padding:28px 18px 60px;}
+  .hero-bar{grid-template-columns:auto 1fr;gap:18px;padding:20px;}
+  .hero-bar .cta{grid-column:1/-1;width:100%;justify-content:center;}
+  .hero-bar .copy h1{font-size:22px;}
+  .spine-row{flex-direction:column;align-items:flex-start;gap:8px;}
+  .spine{width:100%;}
+  .qlinks{padding:22px;}
+}
+</style>
+</head>
+<body>
+<main class="app">
+
+  <div class="hero-bar">
+    <div class="ring">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="44" fill="none" stroke="#E5E0D6" stroke-width="8"/>
+        <circle id="ringFill" cx="50" cy="50" r="44" fill="none" stroke="#F26B1F" stroke-width="8" stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="276.46"/>
+      </svg>
+      <div class="pct"><div class="num" id="overallPct">0%</div><div class="lbl">Course</div></div>
+    </div>
+    <div class="copy">
+      <div class="greeting" id="greeting">Welcome to MBA Rock</div>
+      <h1 id="heroH1">Pick up where you left off.</h1>
+      <p class="sub" id="heroSub">Every lesson moves your Capstone one section closer to a real, fundable business.</p>
+    </div>
+    <a href="#" class="cta" id="continueCta">Continue lesson <span class="icon">›</span></a>
+  </div>
+
+  <div class="spine-row">
+    <div class="label">10-module spine</div>
+    <div class="spine" id="spine"></div>
+  </div>
+
+  <div class="summary">
+    <a class="sum-card" href="/certificates/">
+      <div class="l">Module marks</div>
+      <div class="v"><span id="modCount">0</span><small>/10</small></div>
+      <div class="meta" id="modMeta">Earn one for each module completed.</div>
+      <div class="arrow">View certificates ›</div>
+    </a>
+    <a class="sum-card" href="/capstone/">
+      <div class="l">Capstone fields</div>
+      <div class="v"><span id="capCount">0</span><small>/52</small></div>
+      <div class="meta" id="capMeta">Your business operating system, one field at a time.</div>
+      <div class="arrow">Open Capstone ›</div>
+    </a>
+    <a class="sum-card" href="#" id="lessonsCard">
+      <div class="l">Lessons passed</div>
+      <div class="v"><span id="lessonCount">0</span><small>/55</small></div>
+      <div class="meta" id="lessonMeta">Every quiz passed unlocks the next.</div>
+      <div class="arrow">Resume course ›</div>
+    </a>
+    <a class="sum-card" href="/operators-console/">
+      <div class="l">Operator's Console</div>
+      <div class="v" style="font-size:22px;">18 calculators</div>
+      <div class="meta">Run every formula in the course.</div>
+      <div class="arrow">Open Console ›</div>
+    </a>
+  </div>
+
+  <h2 class="section-h">Your 10 modules</h2>
+  <p class="section-sub">Click any module to open its landing page or jump to the next unfinished lesson.</p>
+  <div class="mod-grid" id="modGrid"></div>
+
+  <div class="qlinks">
+    <a href="/capstone/"><span class="l">Build my plan</span><span class="v">Capstone</span><span class="s">10 sections, 1:1 with modules</span></a>
+    <a href="/operators-console/"><span class="l">Run the math</span><span class="v">Console</span><span class="s">18 calculators, save scenarios</span></a>
+    <a href="/certificates/"><span class="l">Show the work</span><span class="v">Certificates</span><span class="s">10 module marks + Operator's cert</span></a>
+    <a href="/arcade/"><span class="l">Take a break</span><span class="v">Arcade</span><span class="s">Whack-a-Vanity-Metric</span></a>
+  </div>
+
+</main>
+
+<script>
+console.log('[Dashboard] v1 loaded');
+
+// ── Config ──
+const SB_URL = 'https://ciloqphtencjthkedanw.supabase.co';
+const SB_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+const SB_HDR = {'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json'};
+function memberId(){ return localStorage.getItem('mba-rock-member-id') || 'guest'; }
+function memberName(){ return localStorage.getItem('mba-rock-member-name') || ''; }
+
+const LESSONS_JSON = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json';
+
+// ── Module catalog with brand colors + tagline ──
+const MODULES = [
+  {id:'M1', num:'01', title:'Finance Fundamentals',           accent:'#0B2545', tag:'Cash, runway, breakeven, unit economics.'},
+  {id:'M2', num:'02', title:'Strategy & Competitive Advantage', accent:'#1A3A6B', tag:'Moats, Five Forces, ERRC, positioning.'},
+  {id:'M3', num:'03', title:'People & Leadership',             accent:'#8B1A1A', tag:'90-day blueprint, hiring, RAPID, culture.'},
+  {id:'M4', num:'04', title:'Unit Economics & Growth Metrics', accent:'#1A5C2A', tag:'CAC, LTV, retention, growth loops.'},
+  {id:'M5', num:'05', title:'Operations & Technology',         accent:'#4A1A6B', tag:'Process maps, automation, build vs buy.'},
+  {id:'M6', num:'06', title:'Growth & Capital',                accent:'#6B3A0B', tag:'Engines, capital stack, raises, exit math.'},
+  {id:'M7', num:'07', title:'Marketing & Brand',               accent:'#F26B1F', tag:'JTBD, funnel design, brand promise.'},
+  {id:'M8', num:'08', title:'Operations & Execution',          accent:'#475569', tag:'SOPs, rhythms, buffers, OpEx discipline.'},
+  {id:'M9', num:'09', title:'Analytics & Decision Making',     accent:'#3B4F8C', tag:'North Star metric, KPI dashboard, triggers.'},
+  {id:'M10',num:'10', title:'Innovation & Future',             accent:'#A88735', tag:'Strategic blueprint, 90-day plan, OKRs.'},
+];
+
+const RING_CIRCUMFERENCE = 276.46;
+const CAPSTONE_TOTAL = 52;
+const TOTAL_LESSONS = 55;
+
+let state = {
+  certs:[],              // user_certificates rows
+  quizPasses:{},         // {lesson_id: true}
+  capstone:{},           // capstone_data JSONB
+  lessonsByModule:{},    // {moduleId: [lessonIds]}
+  lessonOrder:[],        // all lesson ids in sort order
+  lessonsCatalog:[],     // full lessons array from lessons.v2.json
+  lastSlug:''            // localStorage 'mr-last-lesson-slug'
+};
+
+function lessonsInModule(moduleId){ return state.lessonsByModule[moduleId] || []; }
+function modulePassedCount(moduleId){
+  return lessonsInModule(moduleId).filter(id => state.quizPasses[id]).length;
+}
+function moduleHasCert(moduleId){
+  return !!state.certs.find(c => c.cert_type==='module' && c.module_id===moduleId && !c.revoked_at);
+}
+function capstoneFilled(){
+  let n=0;
+  for (const sec of Object.values(state.capstone || {})){
+    for (const v of Object.values(sec || {})) if (v && String(v).trim()) n++;
+  }
+  return n;
+}
+function lessonsPassedTotal(){ return Object.values(state.quizPasses).filter(Boolean).length; }
+
+function nextUnfinishedLesson(){
+  for (const lid of state.lessonOrder){
+    if (!state.quizPasses[lid]) {
+      return state.lessonsCatalog.find(l => l.id === lid) || null;
+    }
+  }
+  return null;
+}
+function lessonHref(lesson){
+  if (!lesson) return '#';
+  const slug = lesson.legacy_slug || lesson.slug_v2 || '';
+  return slug ? '/mba-rock/' + slug : '#';
+}
+
+function setRing(pct){
+  const dash = RING_CIRCUMFERENCE * (1 - Math.min(1, Math.max(0, pct/100)));
+  document.getElementById('ringFill').setAttribute('stroke-dashoffset', dash);
+  document.getElementById('overallPct').textContent = Math.round(pct) + '%';
+}
+
+function renderHero(){
+  const passes = lessonsPassedTotal();
+  const overall = Math.round((passes/TOTAL_LESSONS)*100);
+  setRing(overall);
+  const name = memberName();
+  document.getElementById('greeting').textContent = name ? `Welcome back, ${name.split(' ')[0]}` : 'Welcome to MBA Rock';
+  const next = nextUnfinishedLesson();
+  if (next){
+    document.getElementById('heroH1').textContent = 'Pick up where you left off.';
+    document.getElementById('heroSub').textContent = `Next: ${next.id} ${next.title}`;
+    const cta = document.getElementById('continueCta');
+    cta.href = lessonHref(next);
+    cta.firstChild.textContent = 'Continue ' + next.id + ' ';
+  } else if (passes === TOTAL_LESSONS) {
+    document.getElementById('heroH1').textContent = "You've finished the course.";
+    document.getElementById('heroSub').textContent = 'Time to claim the Operator’s Certificate and ship your Capstone.';
+    document.getElementById('continueCta').href = '/certificates/';
+    document.getElementById('continueCta').firstChild.textContent = 'Claim certs ';
+  }
+}
+
+function renderSpine(){
+  const spine = document.getElementById('spine');
+  spine.innerHTML = '';
+  MODULES.forEach(m => {
+    const total = lessonsInModule(m.id).length;
+    const passed = modulePassedCount(m.id);
+    const seg = document.createElement('div');
+    seg.className = 'seg' + (total>0 && passed===total ? ' complete' : passed>0 ? ' partial' : '');
+    seg.style.setProperty('--seg-color', m.accent);
+    seg.setAttribute('data-tip', `${m.id} ${m.title} — ${passed}/${total}`);
+    spine.appendChild(seg);
+  });
+}
+
+function renderSummary(){
+  document.getElementById('modCount').textContent = state.certs.filter(c => c.cert_type==='module' && !c.revoked_at).length;
+  document.getElementById('capCount').textContent = capstoneFilled();
+  document.getElementById('lessonCount').textContent = lessonsPassedTotal();
+}
+
+function renderModules(){
+  const grid = document.getElementById('modGrid');
+  grid.innerHTML = '';
+  MODULES.forEach(m => {
+    const total = lessonsInModule(m.id).length;
+    const passed = modulePassedCount(m.id);
+    const pct = total ? Math.round((passed/total)*100) : 0;
+    const earned = moduleHasCert(m.id);
+    const card = document.createElement('a');
+    card.className = 'mod-card';
+    card.href = '/module/?id=' + m.id;
+    card.style.setProperty('--accent', m.accent);
+    card.innerHTML =
+      (earned ? '<span class="cert-flag">Earned ✓</span>' : '') +
+      `<div class="mod-num">${m.num}</div>` +
+      `<div class="mod-id">${m.id}</div>` +
+      `<div class="mod-title">${m.title}</div>` +
+      `<div class="mod-sub">${m.tag}</div>` +
+      `<div class="mod-progress-row"><span>Progress</span><b>${passed}/${total||0}</b></div>` +
+      `<div class="progress-bar"><i style="width:${pct}%"></i></div>`;
+    grid.appendChild(card);
+  });
+}
+
+function render(){
+  renderHero();
+  renderSpine();
+  renderSummary();
+  renderModules();
+}
+
+// ── Data loaders ──
+async function loadLessons(){
+  try {
+    const r = await fetch(LESSONS_JSON);
+    const d = await r.json();
+    state.lessonsCatalog = d.lessons || [];
+    state.lessonsByModule = {};
+    state.lessonOrder = [];
+    // Order lessons by (module-number, id natural sort)
+    const sorted = [...state.lessonsCatalog].sort((a,b)=>{
+      const mA = parseInt(String(a.module_id).slice(1));
+      const mB = parseInt(String(b.module_id).slice(1));
+      if (mA !== mB) return mA - mB;
+      return String(a.id).localeCompare(String(b.id), undefined, {numeric:true});
+    });
+    sorted.forEach(l => {
+      if (!state.lessonsByModule[l.module_id]) state.lessonsByModule[l.module_id] = [];
+      state.lessonsByModule[l.module_id].push(l.id);
+      state.lessonOrder.push(l.id);
+    });
+  } catch(e){ console.warn('[Dashboard] lessons load failed', e); }
+}
+
+async function loadCerts(){
+  const mid = memberId();
+  if (mid === 'guest'){ state.certs = []; return; }
+  try {
+    const r = await fetch(SB_URL+'/rest/v1/user_certificates?select=*&member_id=eq.'+encodeURIComponent(mid), {headers:SB_HDR});
+    state.certs = r.ok ? await r.json() : [];
+  } catch(e){ state.certs = []; }
+}
+
+async function loadQuiz(){
+  const mid = memberId();
+  if (mid === 'guest'){ state.quizPasses = {}; return; }
+  try {
+    const r = await fetch(SB_URL+'/rest/v1/user_quiz_status?select=lesson_id,passed&member_id=eq.'+encodeURIComponent(mid), {headers:SB_HDR});
+    const rows = r.ok ? await r.json() : [];
+    state.quizPasses = {};
+    rows.forEach(row => { if (row.passed) state.quizPasses[row.lesson_id] = true; });
+  } catch(e){ state.quizPasses = {}; }
+}
+
+async function loadCapstone(){
+  const mid = memberId();
+  try { state.capstone = JSON.parse(localStorage.getItem('mr-capstone:'+mid) || '{}'); } catch(e){}
+  if (mid === 'guest') return;
+  try {
+    const r = await fetch(SB_URL+'/rest/v1/user_capstone?select=capstone_data&member_id=eq.'+encodeURIComponent(mid), {headers:SB_HDR});
+    const rows = r.ok ? await r.json() : [];
+    if (rows[0] && rows[0].capstone_data) state.capstone = rows[0].capstone_data;
+  } catch(e){}
+}
+
+async function init(){
+  await Promise.all([loadLessons(), loadCerts(), loadQuiz(), loadCapstone()]);
+  render();
+}
+
+init();
+</script>
+</body>
+</html>
