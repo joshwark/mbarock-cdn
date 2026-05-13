@@ -56,15 +56,21 @@ html,body{margin:0;padding:0;background:#E5E0D6;color:var(--ink);font-family:'In
   position:relative;
 }
 .cert-doc.module::before{
-  content:"";position:absolute;top:0;left:0;right:0;height:6px;background:var(--orange);
+  content:"";position:absolute;top:0;left:0;right:0;height:6px;background:var(--module-accent, var(--orange));
 }
 .cert-doc.module .corner-mark{
   position:absolute;top:32px;right:40px;width:48px;height:48px;
   display:flex;align-items:center;justify-content:center;
 }
-.cert-doc.module .corner-mark svg{width:42px;height:42px;}
+.cert-doc.module .corner-mark svg{width:42px;height:42px;stroke:var(--module-accent, var(--orange));}
 .cert-doc.module .eyebrow{
-  font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--orange);font-weight:700;
+  font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--module-accent, var(--orange));font-weight:700;
+}
+.cert-doc.module .module-pill{
+  display:inline-block;padding:4px 12px;border-radius:30px;
+  font-size:9.5px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;
+  background:var(--module-accent, var(--orange));color:#fff;
+  margin-top:18px;
 }
 .cert-doc.module .module-label{
   font-family:'Fraunces',serif;font-size:14px;color:rgba(255,255,255,0.55);letter-spacing:.04em;margin-top:14px;font-weight:500;
@@ -233,15 +239,23 @@ function qrPlaceholder(){
     }).join('')).join('') + '</svg>';
 }
 
+// Module color palette — 1:1 with the 10 modules. Keep in sync with lessons.v2.json:modules[].color.
+const MODULE_COLORS = {
+  M1:  '#0B2545', M2:  '#1A3A6B', M3:  '#8B1A1A', M4:  '#1A5C2A', M5:  '#4A1A6B',
+  M6:  '#6B3A0B', M7:  '#F26B1F', M8:  '#475569', M9:  '#3B4F8C', M10: '#A88735'
+};
+
 function renderModuleMark(cert){
-  return `<article class="cert-doc module">
+  const accent = MODULE_COLORS[cert.module_id] || '#F26B1F';
+  return `<article class="cert-doc module" style="--module-accent:${accent};">
     <div class="corner-mark">
-      <svg viewBox="0 0 24 24" stroke="#F26B1F" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13c0-4.5 3.5-8 8-8s8 3.5 8 8"/><rect x="3" y="13" width="4" height="6" rx="1.2"/><rect x="17" y="13" width="4" height="6" rx="1.2"/></svg>
+      <svg viewBox="0 0 24 24" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13c0-4.5 3.5-8 8-8s8 3.5 8 8"/><rect x="3" y="13" width="4" height="6" rx="1.2"/><rect x="17" y="13" width="4" height="6" rx="1.2"/></svg>
     </div>
     <div>
       <div class="eyebrow">MBA Rock · Module Completion Mark</div>
       <div class="module-label">${esc(cert.module_label || cert.module_id || '')}</div>
       <h1 class="title">${esc(cert.module_title || 'Module Mark')}</h1>
+      <span class="module-pill">${esc(cert.module_id || '')}</span>
     </div>
     <div>
       <div class="awarded-to">Awarded to</div>
@@ -330,23 +344,27 @@ async function loadAndRender(){
     html += cert.cert_type === 'operator' ? renderOperator(cert) : renderModuleMark(cert);
     target.innerHTML = html;
 
-    // Wire LinkedIn "Add to Profile" — only for the operator's cert
-    const verifyUrl = location.origin + location.pathname + '?verify=1&id=' + encodeURIComponent(cert.cert_id);
+    // Wire "Verify" — points at /verify/?id=… on the public domain
+    const verifyUrl = location.origin + '/verify/?id=' + encodeURIComponent(cert.cert_id);
     document.getElementById('verifyBtn').href = verifyUrl;
-    if (cert.cert_type === 'operator'){
-      const d = new Date(cert.issued_at);
-      const linkedinUrl = 'https://www.linkedin.com/profile/add' +
-        '?startTask=CERTIFICATION_NAME' +
-        '&name=' + encodeURIComponent('MBA Rock Operator\'s Certificate') +
-        '&organizationName=' + encodeURIComponent('MBA Rock') +
-        '&issueYear=' + d.getFullYear() +
-        '&issueMonth=' + (d.getMonth()+1) +
-        '&certUrl=' + encodeURIComponent(verifyUrl) +
-        '&certId=' + encodeURIComponent(cert.cert_id);
-      const linkedinBtn = document.getElementById('linkedinBtn');
-      linkedinBtn.href = linkedinUrl;
-      linkedinBtn.style.display = '';
-    }
+
+    // Wire "Add to LinkedIn" — fires for BOTH module marks and the Operator's cert.
+    // LinkedIn deeplink format: https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&...
+    const d = new Date(cert.issued_at);
+    const certName = cert.cert_type === 'operator'
+      ? "MBA Rock Operator's Certificate"
+      : (cert.module_title ? `MBA Rock — ${cert.module_title}` : 'MBA Rock Module Mark');
+    const linkedinUrl = 'https://www.linkedin.com/profile/add' +
+      '?startTask=CERTIFICATION_NAME' +
+      '&name=' + encodeURIComponent(certName) +
+      '&organizationName=' + encodeURIComponent('MBA Rock') +
+      '&issueYear=' + d.getFullYear() +
+      '&issueMonth=' + (d.getMonth()+1) +
+      '&certUrl=' + encodeURIComponent(verifyUrl) +
+      '&certId=' + encodeURIComponent(cert.cert_id);
+    const linkedinBtn = document.getElementById('linkedinBtn');
+    linkedinBtn.href = linkedinUrl;
+    linkedinBtn.style.display = '';
     document.title = (cert.cert_type === 'operator' ? "Operator's Certificate" : 'Module Mark') + ' · ' + cert.member_name + ' · MBA Rock';
   } catch (e){
     console.error(e);
