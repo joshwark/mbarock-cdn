@@ -360,10 +360,13 @@ function renderSections() {
       const fEl = document.createElement('div');
       fEl.className = 'field';
       const isLong = f.input === 'text-long';
+      // FIX: build short-input vs long-textarea HTML cleanly. Old template closed the <input> tag prematurely and leaked `" value="..."` as text.
+      var inputHtml = isLong
+        ? '<textarea class="field-input long" data-section="' + s.id + '" data-field="' + f.id + '" placeholder="Write here…">' + escapeHtml(value) + '</textarea>'
+        : '<input class="field-input" data-section="' + s.id + '" data-field="' + f.id + '" placeholder="Write here…" value="' + escapeHtml(value) + '">';
       fEl.innerHTML = '<div class="field-head"><div class="field-title">' + escapeHtml(f.title) + '</div><div class="field-ref">' + escapeHtml(f.ref) + '</div></div>' +
         '<p class="field-hint">' + escapeHtml(f.hint) + '</p>' +
-        '<' + (isLong ? 'textarea' : 'input') + ' class="field-input ' + (isLong ? 'long' : '') + '" data-section="' + s.id + '" data-field="' + f.id + '" placeholder="Write here…">' +
-        (isLong ? escapeHtml(value) : '') + (isLong ? '</textarea>' : '" value="' + escapeHtml(value) + '">') +
+        inputHtml +
         '<div class="field-status"><span data-status="' + s.id + ':' + f.id + '">' + (value ? '<span class="saved">Saved</span>' : '') + '</span><span>' + (value ? value.length + ' chars' : '') + '</span></div>';
       fieldsContainer.appendChild(fEl);
     });
