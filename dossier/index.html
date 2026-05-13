@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Operator's Dossier · MBA Rock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1F3A; --ink:#0E1116; --orange:#F26B1F; --cream:#FAF8F5;
+  --paper:#FFFFFF; --rule:#E5E0D6; --muted:#6E6E6E; --soft:#F4F1EA;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:'Inter',-apple-system,sans-serif;line-height:1.55}
+h1,h2,h3,h4{font-family:'Fraunces',serif;letter-spacing:-0.015em;color:var(--navy);margin:0;font-weight:600}
+em.serif,.serif-it{font-family:'Fraunces',serif;font-style:italic;color:var(--navy)}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);font-weight:700}
+
+/* Controls strip — hidden in print */
+.controls{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--rule);padding:14px 24px;display:flex;gap:12px;align-items:center;justify-content:space-between}
+.controls .left{display:flex;gap:14px;align-items:center}
+.controls .left h2{font-size:18px}
+.controls .right{display:flex;gap:10px;align-items:center}
+.btn{background:var(--navy);color:#fff;border:none;padding:9px 16px;border-radius:8px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em}
+.btn:hover{background:var(--orange)}
+.btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--rule)}
+.btn.ghost:hover{background:var(--soft);color:var(--navy)}
+.member-pill{font-size:12px;color:var(--muted);padding:6px 10px;background:var(--soft);border-radius:6px}
+
+/* Document container — sized like 8.5x11 for clean PDF */
+.doc{max-width:820px;margin:32px auto;background:var(--paper);box-shadow:0 4px 24px rgba(0,0,0,0.06);padding:64px 72px;min-height:1000px}
+
+/* Cover */
+.cover{text-align:center;padding:64px 0 80px;border-bottom:3px solid var(--navy);margin-bottom:48px;position:relative}
+.cover .eyebrow{margin-bottom:14px;display:block}
+.cover h1{font-size:48px;line-height:1.05;margin-bottom:18px;letter-spacing:-0.025em}
+.cover h1 em{font-family:'Fraunces',serif;font-style:italic;color:var(--orange);font-weight:500}
+.cover .subline{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:var(--navy);max-width:520px;margin:0 auto;line-height:1.45}
+.cover-meta{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:18px 0}
+.cover-meta .cell{text-align:center;padding:0 8px}
+.cover-meta .cell + .cell{border-left:1px solid var(--rule)}
+.cover-meta .label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px}
+.cover-meta .val{font-family:'Fraunces',serif;font-size:18px;color:var(--navy);font-weight:600}
+
+/* Executive Summary */
+.exec{margin:40px 0 56px;padding:36px 32px;background:var(--soft);border-left:5px solid var(--orange);position:relative}
+.exec .eyebrow{margin-bottom:10px;display:block}
+.exec h2{font-size:26px;margin-bottom:18px}
+.exec .summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px}
+.exec .summary-item{padding:14px 0;border-top:1px solid var(--rule)}
+.exec .summary-item .k{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:6px}
+.exec .summary-item .v{font-family:'Fraunces',serif;font-size:15px;color:var(--ink);line-height:1.5}
+.exec .summary-item .empty{color:var(--muted);font-style:italic}
+
+/* Table of Contents */
+.toc{margin:40px 0 56px;padding:28px 32px;border:1px solid var(--rule)}
+.toc h3{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);margin-bottom:18px;font-family:'Inter',sans-serif}
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:tocsec}
+.toc li{counter-increment:tocsec;padding:8px 0;border-bottom:1px dotted var(--rule);display:flex;justify-content:space-between;align-items:baseline;font-size:14px}
+.toc li::before{content:counter(tocsec,decimal-leading-zero);font-family:'Fraunces',serif;color:var(--orange);font-weight:600;font-size:13px;margin-right:14px;min-width:32px}
+.toc .toc-title{flex:1;color:var(--navy)}
+.toc .toc-title em{font-style:italic;color:var(--muted);font-size:13px;margin-left:8px}
+.toc .toc-count{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+
+/* Section */
+.section{margin:56px 0;page-break-inside:avoid}
+.section:not(:last-child){padding-bottom:48px;border-bottom:1px solid var(--rule)}
+.section-head{margin-bottom:28px}
+.section-num{display:inline-block;font-family:'Fraunces',serif;font-size:13px;font-weight:600;color:var(--orange);letter-spacing:.18em}
+.section-head h2{font-size:34px;line-height:1.1;margin:6px 0 4px;letter-spacing:-0.02em}
+.section-head .module-ref{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--muted);margin-bottom:14px}
+.section-head .summary{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--navy);line-height:1.5;max-width:640px;border-left:3px solid var(--accent,#0B1F3A);padding-left:16px;margin-top:8px}
+
+/* Fields */
+.field{margin:22px 0;padding:18px 0;border-top:1px solid var(--rule)}
+.field:first-of-type{border-top:none}
+.field .ftitle{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--navy);margin-bottom:10px;display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.field .fref{font-family:'Inter',sans-serif;font-size:10px;color:var(--muted);letter-spacing:.12em;font-weight:600;text-transform:uppercase;white-space:nowrap}
+.field .fval{font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);line-height:1.6;white-space:pre-wrap;word-wrap:break-word}
+.field .fval.empty{font-family:'Fraunces',serif;font-style:italic;color:#999;font-size:13px}
+.field.short .fval{font-family:'Fraunces',serif;font-size:18px;color:var(--navy);font-weight:500}
+
+/* Section divider with module accent */
+.acc-bar{height:5px;background:var(--accent);margin-bottom:24px;border-radius:2px}
+
+/* Footer of every section */
+.section-footer{margin-top:22px;padding-top:14px;border-top:1px solid var(--rule);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;letter-spacing:.06em}
+
+/* Empty-state CTA when guest */
+.guest-banner{margin:24px auto;max-width:820px;padding:18px 24px;background:#FFF5E8;border:1px solid #F2D9B5;border-radius:8px;color:var(--navy);font-size:14px;line-height:1.55}
+.guest-banner strong{color:var(--orange)}
+
+/* Sign-off / closing */
+.signoff{margin-top:60px;padding-top:32px;border-top:3px double var(--navy);text-align:center}
+.signoff .eyebrow{display:block;margin-bottom:14px}
+.signoff h3{font-size:22px;line-height:1.25;margin-bottom:14px}
+.signoff .verified{font-family:'Fraunces',serif;font-style:italic;color:var(--muted);font-size:13px;margin-top:18px}
+.signoff .seal{display:inline-block;margin:24px 0;padding:14px 28px;border:2px solid var(--navy);border-radius:50px;font-family:'Fraunces',serif;font-size:12px;color:var(--navy);font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+
+/* Print rules — turn the page into a real PDF document */
+@media print{
+  @page{size:Letter;margin:0.75in 0.7in 0.85in 0.7in}
+  body{background:#fff !important}
+  .controls{display:none !important}
+  .doc{box-shadow:none;margin:0;padding:0;max-width:none}
+  .guest-banner{display:none}
+  .section{page-break-inside:auto;break-inside:auto;border-bottom:none;margin:32px 0;padding-bottom:0}
+  .section-head{page-break-after:avoid;break-after:avoid}
+  .cover{page-break-after:always;break-after:page}
+  .toc,.exec{page-break-after:always;break-after:page}
+  .field{page-break-inside:avoid;break-inside:avoid}
+}
+
+@media (max-width:680px){
+  .doc{padding:36px 22px;margin:14px auto}
+  .cover h1{font-size:34px}
+  .cover-meta{grid-template-columns:1fr;gap:12px}
+  .cover-meta .cell + .cell{border-left:none;border-top:1px solid var(--rule);padding-top:12px}
+  .exec .summary-grid{grid-template-columns:1fr}
+  .section-head h2{font-size:26px}
+  .field .ftitle{flex-direction:column;gap:4px}
+}
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <div class="left">
+    <h2 style="font-family:'Fraunces',serif">Operator's Dossier</h2>
+    <span class="member-pill" id="memberPill">Loading…</span>
+  </div>
+  <div class="right">
+    <button class="btn ghost" id="toggleEmpty">Hide empty fields</button>
+    <button class="btn" id="downloadPdf">Download PDF</button>
+  </div>
+</div>
+
+<div id="guestBanner" class="guest-banner" style="display:none">
+  <strong>You're viewing as guest.</strong> Sign in to mbarock.com to pull your saved Capstone inputs into this dossier.
+</div>
+
+<div class="doc" id="doc">
+
+  <!-- COVER -->
+  <section class="cover">
+    <span class="eyebrow">The Operator's Dossier</span>
+    <h1>The <em>Operating Plan</em> of <span id="coverName">An MBA Rock Operator</span></h1>
+    <p class="subline">A complete record of strategic decisions, financial assumptions, and execution commitments — across the ten domains of running a business.</p>
+    <div class="cover-meta">
+      <div class="cell"><div class="label">Compiled</div><div class="val" id="coverDate">—</div></div>
+      <div class="cell"><div class="label">Completeness</div><div class="val" id="coverPct">—</div></div>
+      <div class="cell"><div class="label">Issuing Institution</div><div class="val" style="font-size:14px;letter-spacing:.04em">MBA Rock</div></div>
+    </div>
+  </section>
+
+  <!-- EXEC SUMMARY -->
+  <section class="exec">
+    <span class="eyebrow">Executive Summary</span>
+    <h2>The bet, in one page</h2>
+    <p style="font-family:'Fraunces',serif;font-style:italic;color:var(--navy);font-size:16px;margin-top:0">An at-a-glance read of the operator's core thesis — the one-liner, the customer, the moat, the north star, the year-2 success picture.</p>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="k">Business, in one sentence</div><div class="v" id="ex-oneliner"></div></div>
+      <div class="summary-item"><div class="k">Target customer</div><div class="v" id="ex-target"></div></div>
+      <div class="summary-item"><div class="k">Moat thesis</div><div class="v" id="ex-moat"></div></div>
+      <div class="summary-item"><div class="k">North-Star metric</div><div class="v" id="ex-northstar"></div></div>
+      <div class="summary-item"><div class="k">Runway today</div><div class="v" id="ex-runway"></div></div>
+      <div class="summary-item"><div class="k">Year-2 success</div><div class="v" id="ex-success"></div></div>
+    </div>
+  </section>
+
+  <!-- TOC -->
+  <section class="toc">
+    <h3>Contents</h3>
+    <ol id="tocList"></ol>
+  </section>
+
+  <!-- SECTIONS -->
+  <div id="sectionsRoot"></div>
+
+  <!-- SIGN-OFF -->
+  <section class="signoff">
+    <span class="eyebrow">Compiled and Certified by MBA Rock</span>
+    <h3 id="signoffH3">This dossier represents the operator's own work across ten domains.</h3>
+    <p style="font-family:'Fraunces',serif;font-style:italic;color:var(--muted);font-size:14px;max-width:520px;margin:0 auto 14px">Every entry was authored, reviewed, and committed by the operator using the MBA Rock Business Builder Capstone framework.</p>
+    <div class="seal">MBA Rock · Operator's Capstone</div>
+    <p class="verified">Compiled <span id="signoffDate">—</span> · Member <span id="signoffMember">—</span></p>
+  </section>
+
+</div>
+
+<script>
+// ── Supabase ──
+const SB_URL = 'https://ciloqphtencjthkedanw.supabase.co';
+const SB_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+const SB_HDR = { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY };
+function memberId(){ return localStorage.getItem('mba-rock-member-id') || 'guest'; }
+function memberName(){
+  // Try a few stored keys; fall back to a polished default.
+  return localStorage.getItem('mba-rock-member-name')
+      || localStorage.getItem('squarespace-member-name')
+      || null;
+}
+
+// ── 10-section / 52-field schema (mirrors capstone) ──
+const SECTIONS = [
+  { id:'numbers', num:'01', module:'M1', moduleTitle:'Finance Fundamentals', title:'The Numbers',
+    accent:'#0B2545',
+    summary:'The economic reality of the business. Cash, burn, runway, breakeven, unit economics — the numbers that make the bet possible.',
+    fields:[
+      {id:'cash_position', title:'Cash position (today)', ref:'M1L1', input:'short'},
+      {id:'monthly_burn', title:'Monthly net burn', ref:'M1L1', input:'short'},
+      {id:'runway_months', title:'Runway in months', ref:'M1L1', input:'short'},
+      {id:'gross_margin', title:'Gross margin', ref:'M1L3', input:'short'},
+      {id:'breakeven', title:'Breakeven point', ref:'M1L5', input:'long'},
+      {id:'unit_economics', title:'Unit economics summary', ref:'M1L4', input:'long'},
+      {id:'forecast_12mo', title:'12-month revenue forecast', ref:'M1L2', input:'long'},
+    ]},
+  { id:'bet', num:'02', module:'M2', moduleTitle:'Strategy & Competitive Advantage', title:'The Bet',
+    accent:'#1A3A6B',
+    summary:'The strategic position. Which moat is being built and why competitors cannot copy it.',
+    fields:[
+      {id:'one_liner', title:'Business in one sentence', ref:'M2L1', input:'long'},
+      {id:'moat_type', title:'Moat type', ref:'M2L2', input:'short'},
+      {id:'moat_thesis', title:'Moat thesis', ref:'M2L2', input:'long'},
+      {id:'five_forces', title:'Five Forces analysis', ref:'M2L3', input:'long'},
+      {id:'positioning', title:'Positioning one-liner', ref:'M2L5', input:'short'},
+      {id:'errc_grid', title:'ERRC Grid (Eliminate · Reduce · Raise · Create)', ref:'M2L5', input:'long'},
+    ]},
+  { id:'team', num:'03', module:'M3', moduleTitle:'People & Leadership', title:'The Team',
+    accent:'#8B1A1A',
+    summary:'Who gets hired, when, and how the operator leads. The operating rhythm that scales.',
+    fields:[
+      {id:'90_day_blueprint', title:'90-day leadership blueprint', ref:'M3L1', input:'long'},
+      {id:'next_3_hires', title:'Next 3 hires', ref:'M3L3', input:'long'},
+      {id:'org_chart_12mo', title:'12-month org structure', ref:'M3L3', input:'long'},
+      {id:'operating_rhythm', title:'Leadership operating rhythm', ref:'M3L4', input:'long'},
+      {id:'culture_principles', title:'Culture principles', ref:'M3L5', input:'long'},
+    ]},
+  { id:'engine', num:'04', module:'M4', moduleTitle:'Unit Economics & Growth Metrics', title:'The Engine',
+    accent:'#1A5C2A',
+    summary:'The growth model. How a dollar in becomes more than a dollar out — repeatably.',
+    fields:[
+      {id:'target_market', title:'Target market & size', ref:'M4L1', input:'long'},
+      {id:'cac', title:'CAC — Customer Acquisition Cost', ref:'M4L2', input:'short'},
+      {id:'ltv', title:'LTV — Lifetime Value', ref:'M4L2', input:'short'},
+      {id:'ltv_cac_ratio', title:'LTV ÷ CAC ratio', ref:'M4L2', input:'short'},
+      {id:'payback_period', title:'Payback period (months)', ref:'M4L2', input:'short'},
+      {id:'growth_loop', title:'Dominant growth loop', ref:'M4L3', input:'long'},
+    ]},
+  { id:'stack', num:'05', module:'M5', moduleTitle:'Operations & Technology', title:'The Stack',
+    accent:'#4A1A6B',
+    summary:'How the company runs day-to-day. Workflows, tools, build vs. buy decisions.',
+    fields:[
+      {id:'core_process', title:'Core process — mapped end-to-end', ref:'M5L2', input:'long'},
+      {id:'automation_priority', title:'Automation priority list', ref:'M5L3', input:'long'},
+      {id:'tech_stack_decisions', title:'Build / buy / partner decisions', ref:'M5L5', input:'long'},
+      {id:'daily_tools', title:'Daily operating tools', ref:'M5L6', input:'long'},
+    ]},
+  { id:'capital', num:'06', module:'M6', moduleTitle:'Growth & Capital', title:'The Capital',
+    accent:'#6B3A0B',
+    summary:'How growth is funded. The pitch, the cap table, the exit story.',
+    fields:[
+      {id:'capital_stack', title:'Capital stack plan', ref:'M6L2', input:'long'},
+      {id:'next_raise', title:'Next raise: size & terms', ref:'M6L3', input:'long'},
+      {id:'pitch_summary', title:'10-slide pitch outline', ref:'M6L4', input:'long'},
+      {id:'exit_thesis', title:'Exit thesis', ref:'M6L7', input:'long'},
+      {id:'investor_targets', title:'Top 10 investor targets', ref:'M6L8', input:'long'},
+    ]},
+  { id:'story', num:'07', module:'M7', moduleTitle:'Marketing & Brand', title:'The Story',
+    accent:'#F26B1F',
+    summary:'Who the operator serves and how they reach them. Brand promise plus the funnel that earns it.',
+    fields:[
+      {id:'customer_jtbd', title:"Customer's job to be done", ref:'M7L1', input:'long'},
+      {id:'brand_promise', title:'Brand promise (one sentence)', ref:'M7L1', input:'short'},
+      {id:'funnel_design', title:'Funnel design', ref:'M7L1', input:'long'},
+      {id:'pricing_strategy', title:'Pricing strategy', ref:'M7L1', input:'long'},
+      {id:'early_persona', title:'Early adopter persona', ref:'M7L1', input:'long'},
+    ]},
+  { id:'playbook', num:'08', module:'M8', moduleTitle:'Operations & Execution', title:'The Playbook',
+    accent:'#475569',
+    summary:'What gets standardized. The SOPs and rhythms that let the business run when the operator does not.',
+    fields:[
+      {id:'top_sops', title:'Top 5 SOPs to template first', ref:'M8L1', input:'long'},
+      {id:'weekly_cadence', title:'Weekly operating cadence', ref:'M8L1', input:'long'},
+      {id:'quality_metrics', title:'Quality metrics', ref:'M8L1', input:'long'},
+      {id:'exception_handling', title:'Exception handling', ref:'M8L1', input:'long'},
+    ]},
+  { id:'dashboard', num:'09', module:'M9', moduleTitle:'Analytics & Decision Making', title:'The Dashboard',
+    accent:'#3B4F8C',
+    summary:'How the business is seen. The numbers checked each week and the decision triggers behind them.',
+    fields:[
+      {id:'north_star', title:'North-Star metric', ref:'M9L1', input:'short'},
+      {id:'weekly_kpis', title:'Weekly KPI dashboard', ref:'M9L1', input:'long'},
+      {id:'monthly_review', title:'Monthly review structure', ref:'M9L1', input:'long'},
+      {id:'decision_triggers', title:'Decision triggers', ref:'M9L1', input:'long'},
+      {id:'experiment_backlog', title:'Experiment backlog (next 5)', ref:'M9L1', input:'long'},
+    ]},
+  { id:'plan', num:'10', module:'M10', moduleTitle:'Innovation & Future', title:'The Plan',
+    accent:'#A88735',
+    summary:'The action layer. Where the entire course lands — week 1, 90-day milestones, 12-month OKRs, top risks.',
+    fields:[
+      {id:'week_1_actions', title:'Week 1: first 5 specific actions', ref:'M10L1', input:'long'},
+      {id:'90_day_milestones', title:'90-day milestones', ref:'M10L1', input:'long'},
+      {id:'12_month_okrs', title:'12-month OKRs', ref:'M10L1', input:'long'},
+      {id:'top_risks', title:'Top 5 risks (probability × impact)', ref:'M10L1', input:'long'},
+      {id:'success_definition', title:'Year-2 success definition', ref:'M10L1', input:'long'},
+    ]},
+];
+
+let state = {};
+let hideEmpty = true;
+
+// ── Utilities ──
+function escapeHtml(s){
+  const d = document.createElement('div');
+  d.textContent = (s == null ? '' : String(s));
+  return d.innerHTML;
+}
+function val(secId, fieldId){
+  return state[secId] && state[secId][fieldId] != null ? String(state[secId][fieldId]).trim() : '';
+}
+function setText(id, text){ const el = document.getElementById(id); if (el) el.textContent = text; }
+function setHtml(id, html){ const el = document.getElementById(id); if (el) el.innerHTML = html; }
+
+// ── Render ──
+function render(){
+  const mid = memberId();
+  const name = memberName();
+  document.getElementById('memberPill').textContent = (mid === 'guest' ? 'Guest mode' : ('Member: ' + (name || mid.slice(0,8) + '…')));
+  document.getElementById('guestBanner').style.display = (mid === 'guest' ? 'block' : 'none');
+
+  // Cover
+  setText('coverName', name || 'An MBA Rock Operator');
+  setText('coverDate', new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' }));
+
+  // Counts
+  let total = 0, filled = 0;
+  SECTIONS.forEach(s => { total += s.fields.length; s.fields.forEach(f => { if (val(s.id, f.id)) filled++; }); });
+  setText('coverPct', filled + ' of ' + total + ' fields · ' + Math.round(filled/total*100) + '%');
+
+  // Exec summary fields
+  function fillExec(id, secId, fieldId){
+    const v = val(secId, fieldId);
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (v) { el.textContent = v; el.classList.remove('empty'); }
+    else { el.textContent = 'Not yet committed.'; el.classList.add('empty'); }
+  }
+  fillExec('ex-oneliner', 'bet', 'one_liner');
+  fillExec('ex-target', 'engine', 'target_market');
+  fillExec('ex-moat', 'bet', 'moat_thesis');
+  fillExec('ex-northstar', 'dashboard', 'north_star');
+  fillExec('ex-runway', 'numbers', 'runway_months');
+  fillExec('ex-success', 'plan', 'success_definition');
+
+  // TOC
+  const toc = document.getElementById('tocList');
+  toc.innerHTML = '';
+  SECTIONS.forEach(s => {
+    const n = s.fields.filter(f => val(s.id, f.id)).length;
+    const li = document.createElement('li');
+    li.innerHTML = '<span class="toc-title">' + escapeHtml(s.title) + ' <em>· ' + escapeHtml(s.moduleTitle) + '</em></span>' +
+                   '<span class="toc-count">' + n + ' / ' + s.fields.length + '</span>';
+    toc.appendChild(li);
+  });
+
+  // Sections
+  const root = document.getElementById('sectionsRoot');
+  root.innerHTML = '';
+  SECTIONS.forEach(s => {
+    const filledFields = s.fields.filter(f => val(s.id, f.id));
+    const visibleFields = hideEmpty ? filledFields : s.fields;
+    if (hideEmpty && filledFields.length === 0) return; // skip empty sections entirely in clean mode
+
+    const sec = document.createElement('section');
+    sec.className = 'section';
+    sec.style.setProperty('--accent', s.accent);
+    let html = '<div class="acc-bar" style="background:' + s.accent + '"></div>' +
+               '<div class="section-head">' +
+                 '<span class="section-num">§ ' + s.num + '</span>' +
+                 '<h2>' + escapeHtml(s.title) + '</h2>' +
+                 '<div class="module-ref">Anchored in ' + s.module + ' — ' + escapeHtml(s.moduleTitle) + '</div>' +
+                 '<p class="summary">' + escapeHtml(s.summary) + '</p>' +
+               '</div>';
+    visibleFields.forEach(f => {
+      const v = val(s.id, f.id);
+      const cls = 'field' + (f.input === 'short' ? ' short' : '');
+      html += '<div class="' + cls + '">' +
+                '<div class="ftitle"><span>' + escapeHtml(f.title) + '</span><span class="fref">' + escapeHtml(f.ref) + '</span></div>' +
+                '<div class="fval' + (v ? '' : ' empty') + '">' + (v ? escapeHtml(v) : 'Not yet committed.') + '</div>' +
+              '</div>';
+    });
+    html += '<div class="section-footer"><span>' + s.module + ' · ' + escapeHtml(s.moduleTitle) + '</span><span>' + filledFields.length + ' of ' + s.fields.length + ' committed</span></div>';
+    sec.innerHTML = html;
+    root.appendChild(sec);
+  });
+
+  // Sign-off
+  setText('signoffDate', new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' }));
+  setText('signoffMember', name || (mid === 'guest' ? 'guest' : mid.slice(0,8)));
+}
+
+// ── Data load ──
+function loadFromCache(){
+  const mid = memberId();
+  try {
+    state = JSON.parse(localStorage.getItem('mr-capstone:' + mid) || '{}');
+  } catch(e) { state = {}; }
+}
+
+function loadFromSupabase(){
+  const mid = memberId();
+  if (mid === 'guest') return Promise.resolve();
+  return fetch(SB_URL + '/rest/v1/user_capstone?select=capstone_data,updated_at&member_id=eq.' + encodeURIComponent(mid), { headers: SB_HDR })
+    .then(r => r.ok ? r.json() : [])
+    .then(rows => {
+      if (rows && rows[0] && rows[0].capstone_data) {
+        Object.keys(rows[0].capstone_data).forEach(sid => {
+          state[sid] = Object.assign({}, state[sid] || {}, rows[0].capstone_data[sid]);
+        });
+        try { localStorage.setItem('mr-capstone:' + mid, JSON.stringify(state)); } catch(e){}
+      }
+    }).catch(e => console.warn('[Dossier] pull failed', e));
+}
+
+// ── Init ──
+loadFromCache();
+render();
+loadFromSupabase().then(render);
+
+// ── Controls ──
+document.getElementById('toggleEmpty').addEventListener('click', function(){
+  hideEmpty = !hideEmpty;
+  this.textContent = hideEmpty ? 'Hide empty fields' : 'Show empty fields';
+  render();
+});
+document.getElementById('downloadPdf').addEventListener('click', function(){
+  window.print();
+});
+</script>
+</body>
+</html>
