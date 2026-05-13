@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Certificate · MBA Rock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@72,400..700,30..100,0..1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1F3A;
+  --ink:#0E1116;
+  --orange:#F26B1F;
+  --orange-soft:#FBE2D0;
+  --cream:#FAF8F5;
+  --paper:#FFFFFF;
+  --rule:#E5E0D6;
+  --gold:#A88735;
+  --green:#1D8444;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#E5E0D6;color:var(--ink);font-family:'Inter',-apple-system,sans-serif;line-height:1.55;min-height:100vh;}
+
+/* Page wrapper (visible chrome) */
+.page{max-width:1080px;margin:0 auto;padding:36px 20px 60px;}
+.chrome{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;}
+.chrome .back{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:1px solid var(--rule);padding:10px 18px;border-radius:30px;font-weight:700;background:#fff;}
+.chrome .back:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
+.chrome .actions{display:flex;gap:10px;flex-wrap:wrap;}
+.chrome .actions button, .chrome .actions a{
+  font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+  padding:10px 18px;border-radius:30px;border:0;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px;
+}
+.chrome .actions .btn-primary{background:var(--navy);color:#fff;}
+.chrome .actions .btn-primary:hover{background:var(--orange);}
+.chrome .actions .btn-secondary{background:#fff;color:var(--ink);border:1px solid var(--rule);}
+.chrome .actions .btn-secondary:hover{border-color:var(--navy);}
+.chrome .actions .btn-linkedin{background:#0a66c2;color:#fff;}
+.chrome .actions .btn-linkedin:hover{background:#004182;}
+
+/* ───────── CERTIFICATE BASE ───────── */
+.cert-doc{
+  background:#fff;border-radius:0;
+  box-shadow:0 24px 60px -20px rgba(11,31,58,0.25);
+  position:relative;overflow:hidden;
+  font-family:'Inter',sans-serif;
+}
+
+/* ── MODULE MARK (4×6 horizontal — 600×400 at 100dpi) ── */
+.cert-doc.module{
+  width:100%;max-width:720px;aspect-ratio:6/4;margin:0 auto;
+  background:linear-gradient(135deg,#0E1116 0%,#1a2438 100%);color:#fff;
+  padding:48px 56px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;
+}
+.cert-doc.module::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:6px;background:var(--orange);
+}
+.cert-doc.module .corner-mark{
+  position:absolute;top:32px;right:40px;width:48px;height:48px;
+  display:flex;align-items:center;justify-content:center;
+}
+.cert-doc.module .corner-mark svg{width:42px;height:42px;}
+.cert-doc.module .eyebrow{
+  font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--orange);font-weight:700;
+}
+.cert-doc.module .module-label{
+  font-family:'Fraunces',serif;font-size:14px;color:rgba(255,255,255,0.55);letter-spacing:.04em;margin-top:14px;font-weight:500;
+}
+.cert-doc.module .title{
+  font-family:'Fraunces',serif;font-size:34px;line-height:1.05;font-weight:600;letter-spacing:-0.02em;color:#fff;margin:6px 0 22px;
+}
+.cert-doc.module .awarded-to{
+  font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:700;margin-bottom:8px;
+}
+.cert-doc.module .recipient{
+  font-family:'Fraunces',serif;font-size:38px;line-height:1.1;font-weight:600;color:#fff;letter-spacing:-0.015em;margin-bottom:6px;
+}
+.cert-doc.module .summary{
+  font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:rgba(255,255,255,0.7);line-height:1.45;max-width:60%;
+}
+.cert-doc.module .footer{
+  display:flex;justify-content:space-between;align-items:flex-end;margin-top:auto;
+}
+.cert-doc.module .footer .left .l{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:700;margin-bottom:4px;}
+.cert-doc.module .footer .left .v{font-family:'Fraunces',serif;font-size:14px;color:#fff;font-weight:500;}
+.cert-doc.module .footer .right{text-align:right;}
+.cert-doc.module .footer .right .id{
+  font-family:ui-monospace,SF Mono,Menlo,monospace;font-size:10px;color:rgba(255,255,255,0.5);
+  background:rgba(255,255,255,0.06);padding:6px 12px;border-radius:30px;letter-spacing:.06em;
+}
+.cert-doc.module .qr{position:absolute;bottom:40px;left:40px;width:48px;height:48px;background:#fff;border-radius:6px;padding:4px;}
+.cert-doc.module .qr svg{width:100%;height:100%;}
+
+/* ── OPERATOR'S CERTIFICATE (landscape 8.5×11 → 1100×850 at 100dpi) ── */
+.cert-doc.operator{
+  width:100%;max-width:1100px;aspect-ratio:11/8.5;margin:0 auto;
+  background:var(--cream);color:var(--ink);
+  padding:60px 80px;position:relative;
+  display:flex;flex-direction:column;
+}
+.cert-doc.operator::before, .cert-doc.operator::after{
+  content:"";position:absolute;left:32px;right:32px;height:2px;background:var(--orange);
+}
+.cert-doc.operator::before{top:32px;}
+.cert-doc.operator::after{bottom:32px;}
+.cert-doc.operator .frame{
+  position:absolute;inset:48px;border:1px solid var(--rule);pointer-events:none;
+}
+.cert-doc.operator .frame::before, .cert-doc.operator .frame::after,
+.cert-doc.operator .frame-corner{position:absolute;width:24px;height:24px;border:2px solid var(--orange);}
+.cert-doc.operator .frame::before{top:-2px;left:-2px;border-right:0;border-bottom:0;}
+.cert-doc.operator .frame::after{top:-2px;right:-2px;border-left:0;border-bottom:0;}
+.cert-doc.operator .frame-corner.bl{bottom:-2px;left:-2px;border-right:0;border-top:0;}
+.cert-doc.operator .frame-corner.br{bottom:-2px;right:-2px;border-left:0;border-top:0;}
+
+.cert-doc.operator .inner{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;text-align:center;}
+
+.cert-doc.operator .top-mark{display:flex;justify-content:center;margin-bottom:22px;margin-top:8px;}
+.cert-doc.operator .top-mark svg{width:64px;height:64px;color:var(--navy);}
+.cert-doc.operator .brand{font-family:'Fraunces',serif;font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:4px;}
+.cert-doc.operator .tagline{font-size:9.5px;letter-spacing:.4em;text-transform:uppercase;color:#888;font-weight:600;margin-bottom:32px;}
+
+.cert-doc.operator .eyebrow{font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:8px;}
+.cert-doc.operator .preface{font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:#444;margin-bottom:14px;}
+.cert-doc.operator .recipient{
+  font-family:'Fraunces',serif;font-size:54px;line-height:1.05;font-weight:600;color:var(--navy);
+  letter-spacing:-0.025em;margin:14px 0 8px;
+}
+.cert-doc.operator .rule{width:80px;height:2px;background:var(--orange);margin:18px auto;}
+
+.cert-doc.operator .body-text{
+  font-family:'Fraunces',serif;font-size:17px;color:var(--ink);line-height:1.55;max-width:680px;margin:0 auto;font-weight:400;
+}
+.cert-doc.operator .body-text b{font-weight:600;color:var(--navy);}
+.cert-doc.operator .completion-summary{
+  font-family:'Fraunces',serif;font-style:italic;font-size:14.5px;color:#666;margin-top:18px;line-height:1.5;
+}
+
+.cert-doc.operator .footer{
+  margin-top:auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:30px;
+}
+.cert-doc.operator .sig-block{text-align:left;}
+.cert-doc.operator .sig-block .sig{font-family:'Caveat','Fraunces',cursive;font-size:32px;color:var(--ink);line-height:1;font-style:italic;font-weight:500;}
+.cert-doc.operator .sig-block .line{height:1px;background:var(--ink);margin:6px 0 8px;width:200px;}
+.cert-doc.operator .sig-block .sig-l{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#666;font-weight:600;}
+.cert-doc.operator .sig-block .sig-name{font-family:'Fraunces',serif;font-size:13px;color:var(--navy);font-weight:600;margin-top:2px;}
+
+.cert-doc.operator .meta-center{text-align:center;}
+.cert-doc.operator .meta-center .id{font-family:ui-monospace,SF Mono,Menlo,monospace;font-size:11px;color:#666;background:#fff;border:1px solid var(--rule);padding:8px 14px;border-radius:30px;letter-spacing:.06em;margin-bottom:8px;}
+.cert-doc.operator .meta-center .verify{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#888;font-weight:600;}
+
+.cert-doc.operator .right-block{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+.cert-doc.operator .right-block .date-l{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#666;font-weight:600;}
+.cert-doc.operator .right-block .date-v{font-family:'Fraunces',serif;font-size:18px;color:var(--navy);font-weight:600;}
+.cert-doc.operator .right-block .qr{width:56px;height:56px;background:#fff;border:1px solid var(--rule);border-radius:4px;padding:3px;}
+.cert-doc.operator .right-block .qr svg{width:100%;height:100%;}
+
+/* ───────── VERIFICATION BADGE (when ?verify=1) ───────── */
+.verify-banner{
+  background:var(--green);color:#fff;padding:14px 22px;border-radius:14px;margin-bottom:22px;
+  display:flex;align-items:center;gap:14px;
+}
+.verify-banner b{font-family:'Fraunces',serif;font-size:18px;font-weight:600;}
+.verify-banner .check{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;font-size:18px;}
+
+.error-state{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:48px;text-align:center;color:#666;font-family:'Fraunces',serif;font-style:italic;font-size:17px;}
+
+/* ───────── PRINT MODE ───────── */
+@media print{
+  body{background:#fff;}
+  .chrome{display:none;}
+  .page{padding:0;max-width:none;}
+  .verify-banner{display:none;}
+  .cert-doc{box-shadow:none;page-break-inside:avoid;}
+  .cert-doc.operator{max-width:none;width:11in;height:8.5in;aspect-ratio:auto;}
+  .cert-doc.module{max-width:none;width:6in;height:4in;aspect-ratio:auto;}
+  @page{margin:0;size:auto;}
+}
+
+@media(max-width:680px){
+  .page{padding:18px 12px 36px;}
+  .chrome{flex-direction:column;align-items:flex-start;gap:12px;}
+  .cert-doc.module{padding:30px 24px;}
+  .cert-doc.module .recipient{font-size:24px;}
+  .cert-doc.module .title{font-size:22px;}
+  .cert-doc.operator{padding:32px 24px;}
+  .cert-doc.operator .recipient{font-size:34px;}
+  .cert-doc.operator .body-text{font-size:14.5px;}
+  .cert-doc.operator .footer{grid-template-columns:1fr;gap:18px;text-align:left;}
+  .cert-doc.operator .right-block{align-items:flex-start;text-align:left;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="chrome">
+    <a class="back" href="/course-dashboard">← Back to MBA Rock</a>
+    <div class="actions">
+      <button class="btn-secondary" id="printBtn">Print / Save PDF</button>
+      <a class="btn-linkedin" id="linkedinBtn" target="_blank" rel="noopener" style="display:none">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.49 2.49 0 1 1-4.96.04 2.48 2.48 0 0 1 4.96-.04zM.04 8.04h4.92V24H.04V8.04zM7.97 8.04h4.72v2.18h.07c.66-1.24 2.27-2.55 4.67-2.55 4.99 0 5.91 3.28 5.91 7.55V24h-4.92v-7.78c0-1.86-.04-4.24-2.59-4.24-2.59 0-2.98 2.02-2.98 4.11V24H7.97V8.04z"/></svg>
+        Add to LinkedIn
+      </a>
+      <a class="btn-primary" id="verifyBtn" target="_blank" rel="noopener">Verify this certificate</a>
+    </div>
+  </div>
+
+  <div id="cert-target"></div>
+</div>
+
+<script>
+const SB_URL = 'https://ciloqphtencjthkedanw.supabase.co';
+const SB_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+const SB_HDR = {'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json'};
+
+const params = new URLSearchParams(location.search);
+const certId = params.get('id');
+const isVerifyMode = params.has('verify') || location.pathname.indexOf('/verify') === 0;
+
+function esc(s){const d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;}
+function fmtDate(s){if(!s)return '';const d=new Date(s);return d.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});}
+
+// Simple QR placeholder (a dotted grid). For production, swap with a real QR library or pre-rendered SVG.
+function qrPlaceholder(){
+  return '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#fff"/>' +
+    Array.from({length:11},(_,r)=>Array.from({length:11},(_,c)=>{
+      const corner = (r<3&&c<3) || (r<3&&c>7) || (r>7&&c<3);
+      const fill = corner || (Math.abs(r-c)===3) || (r+c)%4===0 || (r===5&&c%2);
+      return fill ? `<rect x="${c*9}" y="${r*9}" width="8" height="8" fill="#0B1F3A"/>` : '';
+    }).join('')).join('') + '</svg>';
+}
+
+function renderModuleMark(cert){
+  return `<article class="cert-doc module">
+    <div class="corner-mark">
+      <svg viewBox="0 0 24 24" stroke="#F26B1F" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13c0-4.5 3.5-8 8-8s8 3.5 8 8"/><rect x="3" y="13" width="4" height="6" rx="1.2"/><rect x="17" y="13" width="4" height="6" rx="1.2"/></svg>
+    </div>
+    <div>
+      <div class="eyebrow">MBA Rock · Module Completion Mark</div>
+      <div class="module-label">${esc(cert.module_label || cert.module_id || '')}</div>
+      <h1 class="title">${esc(cert.module_title || 'Module Mark')}</h1>
+    </div>
+    <div>
+      <div class="awarded-to">Awarded to</div>
+      <div class="recipient">${esc(cert.member_name)}</div>
+      <div class="summary">${esc(cert.summary || 'Completed all lessons in this module and passed every comprehension check.')}</div>
+    </div>
+    <div class="footer">
+      <div class="left">
+        <div class="l">Earned</div>
+        <div class="v">${esc(fmtDate(cert.issued_at))}</div>
+      </div>
+      <div class="right">
+        <span class="id">${esc(cert.cert_id)}</span>
+      </div>
+    </div>
+    <div class="qr">${qrPlaceholder()}</div>
+  </article>`;
+}
+
+function renderOperator(cert){
+  const lessons = cert.lessons_count || 52;
+  const modules = cert.modules_count || 10;
+  return `<article class="cert-doc operator">
+    <div class="frame"></div><div class="frame-corner bl"></div><div class="frame-corner br"></div>
+    <div class="inner">
+      <div class="top-mark">
+        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13c0-4.5 3.5-8 8-8s8 3.5 8 8"/><rect x="3" y="13" width="4" height="6" rx="1.2"/><rect x="17" y="13" width="4" height="6" rx="1.2"/></svg>
+      </div>
+      <div class="brand">MBA Rock</div>
+      <div class="tagline">Listen · Learn · Live</div>
+      <div class="eyebrow">Operator's Certificate</div>
+      <div class="preface">This is to certify that</div>
+      <div class="recipient">${esc(cert.member_name)}</div>
+      <div class="rule"></div>
+      <p class="body-text">
+        has completed the <b>MBA Rock Operator's Program</b>, comprising
+        <b>${esc(lessons)}</b> lessons across <b>${esc(modules)}</b> modules,
+        passing every comprehension check and assembling a complete Business Operating System as the program's capstone work.
+      </p>
+      <p class="completion-summary">
+        ${esc(cert.summary || 'Awarded for demonstrated mastery of the frameworks, formulas, and operating disciplines that build a fundable business.')}
+      </p>
+      <div class="footer">
+        <div class="sig-block">
+          <div class="sig">Josh Wark</div>
+          <div class="line"></div>
+          <div class="sig-l">Founder</div>
+          <div class="sig-name">MBA Rock</div>
+        </div>
+        <div class="meta-center">
+          <div class="id">${esc(cert.cert_id)}</div>
+          <div class="verify">Verifiable at mbarock.com/verify</div>
+        </div>
+        <div class="right-block">
+          <div>
+            <div class="date-l">Issued</div>
+            <div class="date-v">${esc(fmtDate(cert.issued_at))}</div>
+          </div>
+          <div class="qr">${qrPlaceholder()}</div>
+        </div>
+      </div>
+    </div>
+  </article>`;
+}
+
+async function loadAndRender(){
+  const target = document.getElementById('cert-target');
+  if (!certId){
+    target.innerHTML = '<div class="error-state">No certificate ID provided.<br><br>This page requires a valid cert ID in the URL (?id=MR-OPS-2026-XXXX).</div>';
+    return;
+  }
+  try {
+    const r = await fetch(SB_URL + '/rest/v1/user_certificates?select=*&cert_id=eq.' + encodeURIComponent(certId), {headers: SB_HDR});
+    if (!r.ok) throw new Error('Lookup failed: ' + r.status);
+    const rows = await r.json();
+    if (!rows.length){
+      target.innerHTML = '<div class="error-state">No certificate found with ID <b>' + esc(certId) + '</b>. It may have been revoked or never issued.</div>';
+      return;
+    }
+    const cert = rows[0];
+
+    let html = '';
+    if (isVerifyMode){
+      html += '<div class="verify-banner"><div class="check">✓</div><div><b>This certificate is verified.</b><br><span style="font-size:13px;opacity:0.85;">Issued to ' + esc(cert.member_name) + ' on ' + fmtDate(cert.issued_at) + ' by MBA Rock.</span></div></div>';
+    }
+    html += cert.cert_type === 'operator' ? renderOperator(cert) : renderModuleMark(cert);
+    target.innerHTML = html;
+
+    // Wire LinkedIn "Add to Profile" — only for the operator's cert
+    const verifyUrl = location.origin + location.pathname + '?verify=1&id=' + encodeURIComponent(cert.cert_id);
+    document.getElementById('verifyBtn').href = verifyUrl;
+    if (cert.cert_type === 'operator'){
+      const d = new Date(cert.issued_at);
+      const linkedinUrl = 'https://www.linkedin.com/profile/add' +
+        '?startTask=CERTIFICATION_NAME' +
+        '&name=' + encodeURIComponent('MBA Rock Operator\'s Certificate') +
+        '&organizationName=' + encodeURIComponent('MBA Rock') +
+        '&issueYear=' + d.getFullYear() +
+        '&issueMonth=' + (d.getMonth()+1) +
+        '&certUrl=' + encodeURIComponent(verifyUrl) +
+        '&certId=' + encodeURIComponent(cert.cert_id);
+      const linkedinBtn = document.getElementById('linkedinBtn');
+      linkedinBtn.href = linkedinUrl;
+      linkedinBtn.style.display = '';
+    }
+    document.title = (cert.cert_type === 'operator' ? "Operator's Certificate" : 'Module Mark') + ' · ' + cert.member_name + ' · MBA Rock';
+  } catch (e){
+    console.error(e);
+    target.innerHTML = '<div class="error-state">Couldn\'t load the certificate. Please try again or contact support.</div>';
+  }
+}
+
+document.getElementById('printBtn').addEventListener('click', ()=>window.print());
+
+loadAndRender();
+</script>
+</body>
+</html>
