@@ -1,4 +1,8 @@
-// MBA Rock — Lesson Page Takeover v7.2 (2026-05-13)
+// MBA Rock — Lesson Page Takeover v7.3.1 (2026-05-13)
+// v7.3.1: Tasks promoted to top-level tab (Lesson · Tasks · Quiz · Notes · Materials).
+//         CRITICAL FIX over v7.3: capstone-input parent div carries data-cap-field, matching
+//         wireCapstoneInline's expectation (inp.parentElement.getAttribute). Without this,
+//         the parent lookup returned null and .split() crashed every lesson page.
 // v7.2: Curriculum expand 55→76 lessons. SQ_MODULE_SIZE refreshed across all 10 modules (M7-M10 now correct).
 //       Pending-content lessons render a 'Coming soon' card instead of empty sections.
 // v7.1: Materials sub-tabs (Resources / Tools / Companion) + floating Notes drawer (any tab → Notes).
@@ -613,6 +617,21 @@
       .mr5-stickybar .mr5-stickybar-actions .mr5-btn{flex:1;text-align:center;}
     }
 
+    /* ── v7.3.1 Tasks tab visuals ── */
+    .mr5-tasks-pitch{margin:0 0 18px;padding:14px 18px;background:rgba(242,107,31,0.08);border-radius:8px;font-size:13.5px;line-height:1.55;color:#0e1116;}
+    .mr5-tasks-pitch b{color:#a04a13;}
+    .mr5-tasks-pitch a{color:#a04a13;border-bottom:1px solid currentColor;text-decoration:none;}
+
+    /* Lesson tab — Take Action preview (no inputs) */
+    .mr5-lesson-action-summary{margin:0 0 14px;padding:10px 14px;background:#f4f1ea;border-radius:6px;font-size:13px;color:#0e1116;}
+    .mr5-lesson-action-summary a{color:#0B1F3A;font-weight:600;border-bottom:1px solid #0B1F3A;text-decoration:none;}
+    .mr5-lesson-action-preview{list-style:none;padding:0;margin:0;counter-reset:lap;}
+    .mr5-lesson-action-preview li{counter-increment:lap;padding:10px 0;border-bottom:1px solid #ebe6da;font-family:Fraunces,serif;font-size:14.5px;line-height:1.45;color:#0e1116;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;}
+    .mr5-lesson-action-preview li::before{content:counter(lap,decimal-leading-zero);font-family:Inter,sans-serif;font-size:11px;color:#F26B1F;font-weight:700;letter-spacing:.06em;flex:0 0 auto;}
+    .mr5-lesson-action-preview li:last-child{border-bottom:none;}
+    .mr5-lesson-action-preview .mr5-cap-badge{font-family:Inter,sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#a04a13;background:rgba(242,107,31,0.12);padding:3px 8px;border-radius:4px;}
+
+
     /* ── v7.1 Sub-tabs (inside Materials) ── */
     .mr5-subtabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 18px;padding:6px;background:#f4f1ea;border-radius:10px;}
     .mr5-subtab{flex:0 0 auto;padding:8px 16px;font-family:inherit;font-size:12.5px;font-weight:500;color:#6e6e6e;background:transparent;border:none;border-radius:7px;cursor:pointer;letter-spacing:.04em;transition:background .12s,color .12s;display:inline-flex;align-items:center;gap:6px;}
@@ -872,10 +891,13 @@
   // ── Tab strip — module-color underline on active tab ──
   function renderTabStrip(lesson) {
     var quizCount = lesson.quiz && lesson.quiz.questions ? lesson.quiz.questions.length : 0;
+    var taskCount = (lesson.take_action || []).length;
+    var capTaskCount = (lesson.take_action || []).filter(function(a){ return a && typeof a === 'object' && a.capstone_field; }).length;
     var tabs = [
       { id:'lesson',    label:'Lesson',    icon:'▶', count:'' },
-      { id:'notes',     label:'Notes',     icon:'✎', count:'' },
+      { id:'tasks',     label:'Tasks',     icon:'⚐', count: capTaskCount ? (capTaskCount + ' builds plan') : (taskCount ? (taskCount + ' steps') : '') },
       { id:'quiz',      label:'Quiz',      icon:'✓', count: quizCount ? (quizCount + ' Qs') : '' },
+      { id:'notes',     label:'Notes',     icon:'✎', count:'' },
       { id:'materials', label:'Materials', icon:'⊞', count:'' }
     ];
     var html = '<div class="mr5-tabs" role="tablist">';
@@ -937,8 +959,20 @@
     // 03 Core concepts
     html += '<div class="mr5-sec">' + sectionHead(num(), 'Core concepts', 'What to remember') + buildConcepts(lesson.core_concepts) + '</div>';
 
-    // 04 Take action (no inline Mark Complete CTA — that lives in the sticky bar now)
-    html += '<div class="mr5-sec">' + sectionHead(num(), 'Take action', 'This week’s playbook') + buildActions(lesson.take_action) + '</div>';
+    // 04 Take Action — preview only (no inputs). Real inputs live in the Tasks tab so wireCapstoneInline binds them once, in one place.
+    if ((lesson.take_action || []).length) {
+      html += '<div class="mr5-sec">' + sectionHead(num(), 'Take action', 'Open the Tasks tab to fill these in');
+      var actions = lesson.take_action || [];
+      var capCount = actions.filter(function(a){ return a && typeof a === 'object' && a.capstone_field; }).length;
+      html += '<p class="mr5-lesson-action-summary"><a href="#" data-mr-jump-tab="tasks">Go to Tasks tab →</a>' + (capCount ? ' · ' + capCount + ' field' + (capCount===1?'':'s') + ' will save to your Business Plan' : '') + '</p>';
+      html += '<ol class="mr5-lesson-action-preview">';
+      actions.forEach(function(a) {
+        var step = (a && typeof a === 'object') ? a.step : a;
+        var cap = (a && typeof a === 'object') ? a.capstone_field : null;
+        html += '<li><span>' + esc(step) + '</span>' + (cap ? ' <span class="mr5-cap-badge">§' + esc(cap) + '</span>' : '') + '</li>';
+      });
+      html += '</ol></div>';
+    }
 
     // 05 Deeper dive (optional)
     if (lesson.deep_dive && lesson.deep_dive.trim()) {
@@ -992,6 +1026,30 @@
               '<p style="color:#6e6e6e;font-style:italic;">A comprehension check for this lesson is being prepared. For now, complete the Take Action items and continue.</p></div>';
     }
     html += '</div>';
+    return html;
+  }
+
+
+  // ── Panel — Tasks (v7.3.1): primary Capstone-builder surface ──
+  // Uses buildActions() verbatim so the wireCapstoneInline contract is preserved:
+  // inputs live inside a parent .mr5-action-capstone div carrying data-cap-field.
+  function renderTasksPanel(lesson) {
+    var html = '<div class="mr5-tabpanel" id="mr5-panel-tasks" role="tabpanel" data-mr-panel="tasks">';
+    var actions = lesson.take_action || [];
+    if (!actions.length) {
+      html += '<div class="mr5-sec"><div class="mr5-sec-h"><span class="mr5-num">⚐</span><h2>No tasks for this lesson</h2></div>';
+      html += '<p style="color:#6e6e6e;font-style:italic;">This lesson is reading + reflection. Continue when ready.</p></div></div>';
+      return html;
+    }
+    var capCount = actions.filter(function(a){ return a && typeof a === 'object' && a.capstone_field; }).length;
+    html += '<div class="mr5-sec">';
+    html += '<div class="mr5-sec-h"><span class="mr5-num">⚐</span><h2>This week\'s tasks</h2><span class="mr5-kicker">' + (capCount ? 'Build your Business Plan' : 'Steps to do this week') + '</span></div>';
+    if (capCount) {
+      html += '<div class="mr5-tasks-pitch"><b>' + capCount + '</b> task' + (capCount===1?'':'s') + ' on this lesson save into your <a href="https://joshwark.github.io/mbarock-cdn/capstone/" target="_blank" rel="noopener">Capstone</a>. Fill them once — the dossier updates itself.</div>';
+    }
+    // Reuse buildActions verbatim — preserves the .mr5-action-capstone parent + data-cap-field contract
+    html += buildActions(actions);
+    html += '</div></div>';
     return html;
   }
 
@@ -1085,10 +1143,12 @@
     // Tab strip
     html += renderTabStrip(lesson);
 
-    // Tab panels — all four rendered into the DOM, only the active one shown
+    // Tab panels — all five rendered into the DOM, only the active one shown.
+    // Order matches the visual tab order: Lesson · Tasks · Quiz · Notes · Materials.
     html += renderLessonPanel(lesson, v2, prog, mod, logoUrl);
-    html += renderNotesPanel(lesson);
+    html += renderTasksPanel(lesson);
     html += renderQuizPanel(lesson);
+    html += renderNotesPanel(lesson);
     html += renderMaterialsPanel(lesson, mod);
 
     // Sticky bottom CTA
@@ -1163,7 +1223,7 @@
     try {
       var p = new URLSearchParams(window.location.search);
       var t = p.get('tab');
-      if (t && ['lesson','notes','quiz','materials'].indexOf(t) !== -1) return t;
+      if (t && ['lesson','tasks','quiz','notes','materials'].indexOf(t) !== -1) return t;
     } catch (e) {}
     return null;
   }
@@ -1371,6 +1431,16 @@
       // Quiz retake
       var qRetake = t.closest && t.closest('[data-quiz-retake="1"]');
       if (qRetake) { resetQuiz(lesson, container); }
+      // v7.3.1 — Jump from Lesson tab preview to Tasks tab
+      var jumpBtn = t.closest && t.closest('[data-mr-jump-tab]');
+      if (jumpBtn) {
+        e.preventDefault();
+        var tabId = jumpBtn.getAttribute('data-mr-jump-tab');
+        if (typeof switchTab === 'function') {
+          switchTab(container, tabId);
+          try { localStorage.setItem('mr-tab:' + lesson.id, tabId); } catch (er) {}
+        }
+      }
     });
     // Capstone inline form auto-save listeners
     wireCapstoneInline(lesson, container);
@@ -1552,7 +1622,7 @@
     if (deepEl) renderMath(deepEl);
 
     document.body && document.body.setAttribute('data-mr-v5-applied', '1');
-    console.log('[MBA v7.2] hid', bodySections.length, 'old sections; rendered tabbed layout for', lesson.id);
+    console.log('[MBA v7.3.1] hid', bodySections.length, 'old sections; rendered tabbed layout for', lesson.id);
     return true;
   }
 
