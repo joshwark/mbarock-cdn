@@ -797,7 +797,7 @@
   }
   // Squarespace module totals (the lesson counts you see in the sidebar)
   // v7.2 — module sizes synced to 76-lesson canon (74 brief + 2 grandfathered deep-dives in M2/M8)
-  var SQ_MODULE_SIZE = { M1:9, M2:10, M3:8, M4:8, M5:6, M6:14, M7:5, M8:6, M9:5, M10:5 };  // 10 modules, 76 total (74 brief + 2 grandfathered)  // synced to live Squarespace 2026-05-14
+  var SQ_MODULE_SIZE = { M1:10, M2:10, M3:8, M4:8, M5:6, M6:14, M7:5, M8:6, M9:5, M10:5 };  // 10 modules, 77 total (74 brief + 3 grandfathered)  // 10 modules, 76 total (74 brief + 2 grandfathered)  // synced to live Squarespace 2026-05-14
 
   // Derive Squarespace position from the URL slug.
   //   "m1l3-gross-margin-groove"     → 3
