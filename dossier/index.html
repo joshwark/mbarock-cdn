@@ -132,6 +132,13 @@ em.serif,.serif-it{font-family:'Fraunces',serif;font-style:italic;color:var(--na
 </style>
 </head>
 <body>
+<div id="dossierCompletenessBanner" style="display:none;max-width:980px;margin:20px auto;padding:14px 18px;background:#FEF3C7;border-left:4px solid #F59E0B;border-radius:8px;font-family:Inter,system-ui;font-size:14px;color:#92400E;">
+  <strong>Your Dossier is <span id="dossierCompletePct">0</span>% complete.</strong> 
+  We recommend filling at least 80% of your Capstone fields before sharing this with investors or partners. 
+  <span id="dossierFieldsRemaining"></span>
+  <a href="/capstone/" style="color:#92400E;font-weight:600;text-decoration:underline;margin-left:6px;">→ Open your Capstone</a>
+</div>
+
 
 <div class="controls">
   <div class="left">
@@ -479,5 +486,43 @@ document.getElementById('downloadPdf').addEventListener('click', function(){
   window.print();
 });
 </script>
-</body>
+<script id="dossier-completeness">
+(function(){
+  // Hook into existing dossier render. Re-check every 2s after load since data fetch is async.
+  function check() {
+    try {
+      var filled = 0, total = 50;
+      // Try to detect filled field count via existing render targets
+      var cells = document.querySelectorAll('[data-cap-field][data-filled="true"], [data-cap-value]');
+      if (cells.length > 0) {
+        cells.forEach(function(c){
+          var v = c.getAttribute('data-cap-value') || c.textContent.trim();
+          if (v && v !== '—' && v !== '') filled++;
+        });
+      } else {
+        // Fallback: read window.__capstone state if exposed
+        if (window.__capstoneFieldsTotal) total = window.__capstoneFieldsTotal;
+        if (window.__capstoneFieldsFilled) filled = window.__capstoneFieldsFilled;
+      }
+      var pct = total > 0 ? Math.round((filled/total) * 100) : 0;
+      var banner = document.getElementById('dossierCompletenessBanner');
+      var pctEl = document.getElementById('dossierCompletePct');
+      var remEl = document.getElementById('dossierFieldsRemaining');
+      if (banner && pctEl && pct < 80) {
+        pctEl.textContent = pct;
+        var rem = Math.max(0, Math.ceil(total * 0.8) - filled);
+        if (remEl) remEl.textContent = rem > 0 ? '(' + rem + ' more field' + (rem>1?'s':'') + ' to hit the recommended threshold.)' : '';
+        banner.style.display = 'block';
+      } else if (banner) {
+        banner.style.display = 'none';
+      }
+    } catch(e) { /* silent */ }
+  }
+  // Run after DOM ready and again 2s later (async data may populate)
+  if (document.readyState !== 'loading') check(); 
+  else document.addEventListener('DOMContentLoaded', check);
+  setTimeout(check, 2000);
+  setTimeout(check, 5000);
+})();
+</script></body>
 </html>
