@@ -122,6 +122,10 @@ a{color:inherit;}
 </style>
 </head>
 <body>
+<div id="streakPill" style="display:none;position:fixed;top:18px;right:24px;background:#FFF7E6;color:#92400E;border:1px solid #F59E0B33;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;font-family:Inter,system-ui;z-index:50;">🔥 <span id="streakDays">0</span>-day streak</div>
+  <div class="orient" style="max-width:980px;margin:8px auto 24px;padding:0 24px;font-size:13px;color:#475569;font-style:italic;line-height:1.6;">
+    <strong style="color:#0B1F3A;">How this works:</strong> Pass each lesson's quiz → earn 10 Module Marks. Fill your Capstone fields as you go → unlock the <strong style="color:#F26B1F;">Operator's Cert</strong> + your shareable <strong style="color:#F26B1F;">Dossier</strong>.
+  </div>
 <main class="app">
 
   <div class="hero-bar">
@@ -411,6 +415,36 @@ init();
     }).catch(function(){});
 })();
 
+</script>
+
+<script id="streak-tracker">
+// MBA Rock streak tracker — local-only (compatible with offline)
+(function(){
+  try {
+    var KEY = 'mr-streak-v1';
+    var todayISO = new Date().toISOString().slice(0,10);
+    var state = JSON.parse(localStorage.getItem(KEY) || '{}');
+    var last = state.lastActiveDate;
+    var streak = state.streak || 0;
+    if (!last) {
+      streak = 1;
+    } else if (last === todayISO) {
+      // same day — keep streak
+    } else {
+      // compute diff in days
+      var diff = Math.round((Date.parse(todayISO) - Date.parse(last)) / 86400000);
+      if (diff === 1) streak += 1;
+      else if (diff > 1) streak = 1; // reset
+    }
+    localStorage.setItem(KEY, JSON.stringify({lastActiveDate: todayISO, streak: streak}));
+    var el = document.getElementById('streakDays');
+    var pill = document.getElementById('streakPill');
+    if (el && pill && streak >= 1) {
+      el.textContent = streak;
+      pill.style.display = 'block';
+    }
+  } catch(e) { /* localStorage unavailable — silent */ }
+})();
 </script>
 </body>
 </html>
