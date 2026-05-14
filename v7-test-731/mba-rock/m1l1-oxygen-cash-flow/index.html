@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>v7.3.1 Test Harness — M1L1</title>
+<style>
+body{margin:0;font-family:system-ui,sans-serif;background:#FAF8F5;}
+.test-banner{position:fixed;top:0;left:0;right:0;background:#0B1F3A;color:#fff;padding:6px 14px;font-size:11px;letter-spacing:.06em;z-index:1000;font-family:monospace;}
+article{margin-top:30px;}
+section[data-section-id]{padding:40px 24px;border-bottom:1px solid #eee;max-width:980px;margin:0 auto;}
+section h1{margin:0;font-size:32px;}
+section h2{margin:0;font-size:22px;}
+section p{margin:8px 0;color:#444;}
+</style>
+</head>
+<body>
+<div class="test-banner">QA HARNESS — v7.3.1 staged file · slug forced to m1l1-oxygen-cash-flow · cb buster active</div>
+<article>
+  <section data-section-id="stub-hero"><h1>Oxygen: Cash Flow Management</h1><p>Stub hero.</p></section>
+  <section data-section-id="stub-watch"><h2>Watch this lesson</h2><p>Stub video section.</p></section>
+  <section data-section-id="stub-listen"><h2>Listen</h2><p>Stub.</p></section>
+  <section data-section-id="stub-core"><h2>Core concepts</h2><p>Stub.</p></section>
+  <section data-section-id="stub-action"><h2>Take action</h2><p>Stub.</p></section>
+</article>
+<script>
+if (!localStorage.getItem('mba-rock-member-id')) {
+  localStorage.setItem('mba-rock-member-id', 'qa-v731-' + Date.now());
+}
+// Dynamically load v7.3.1 with cache-bust
+(function(){
+  var s = document.createElement('script');
+  s.src = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lesson_takeover_v731.js?cb=' + Date.now();
+  document.body.appendChild(s);
+})();
+</script>
+</body>
+</html>
