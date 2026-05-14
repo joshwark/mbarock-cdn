@@ -118,7 +118,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;letter-spacing:-0.018em;color:var(--nav
     <div class="meta-strip">
       <div class="stat"><div class="l">Modules earned</div><div class="v"><span id="moduleCount">0</span><small>/10</small></div></div>
       <div class="stat"><div class="l">Lessons passed</div><div class="v"><span id="lessonCount">0</span><small id="lessonTotal">/74</small></div></div>
-      <div class="stat"><div class="l">Capstone fields</div><div class="v"><span id="capstoneCount">0</span><small>/52</small></div></div>
+      <div class="stat"><div class="l">Capstone fields</div><div class="v"><span id="capstoneCount">0</span><small id="capstoneTotal">/50</small></div></div>
       <div class="stat"><div class="l">Operator's status</div><div class="v" id="opStatus" style="font-size:18px;">Not yet</div></div>
     </div>
   </div>
@@ -132,7 +132,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;letter-spacing:-0.018em;color:var(--nav
   <div class="op-card">
     <div class="eyebrow">MBA Rock Operator's Program</div>
     <h3>Operator's Certificate</h3>
-    <p>Comprehensive proof that you've completed the program — 10 modules, 76 lessons, 50+ frameworks, every comprehension check passed, and a 10-section Business Operating System assembled as your capstone. Stack it on LinkedIn alongside your degree.</p>
+    <p>Comprehensive proof that you've completed the program — 10 modules, 74 lessons, 50+ frameworks, every comprehension check passed, and a 10-section Business Operating System assembled as your capstone. Stack it on LinkedIn alongside your degree.</p>
     <div class="progress-meta">
       <div class="item"><div class="l">Modules</div><div class="v" id="opModules">0/10</div></div>
       <div class="item"><div class="l">Lessons</div><div class="v" id="opLessons">0/74</div></div>
@@ -431,7 +431,7 @@ async function init(){
 
 init();
 
-(function(){fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json?cb='+Date.now()).then(r=>r.json()).then(j=>{var t=(j.lessons||[]).length;var e=document.getElementById('lessonTotal');if(e)e.textContent='/'+t;var op=document.getElementById('opLessons');if(op){var cur=parseInt((op.textContent||'').split('/')[0])||0;op.textContent=cur+'/'+t;}}).catch(function(){});})();
+(function(){fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json?cb='+Date.now()).then(r=>r.json()).then(j=>{var t=(j.lessons||[]).length;var e=document.getElementById('lessonTotal');if(e)e.textContent='/'+t;var op=document.getElementById('opLessons');if(op){var cur=parseInt((op.textContent||'').split('/')[0])||0;op.textContent=cur+'/'+t;}}).catch(function(){});fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/capstone.json?cb='+Date.now()).then(function(r){return r.json()}).then(function(j){var t=0;(j.sections||[]).forEach(function(s){t+=(s.fields||[]).length});var el=document.getElementById('capstoneTotal');if(el&&t)el.textContent='/'+t;}).catch(function(){});})();
 
 </script>
 </body>
