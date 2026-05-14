@@ -434,5 +434,45 @@ init();
 (function(){fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json?cb='+Date.now()).then(r=>r.json()).then(j=>{var t=(j.lessons||[]).length;var e=document.getElementById('lessonTotal');if(e)e.textContent='/'+t;var op=document.getElementById('opLessons');if(op){var cur=parseInt((op.textContent||'').split('/')[0])||0;op.textContent=cur+'/'+t;}}).catch(function(){});fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/capstone.json?cb='+Date.now()).then(function(r){return r.json()}).then(function(j){var t=0;(j.sections||[]).forEach(function(s){t+=(s.fields||[]).length});var el=document.getElementById('capstoneTotal');if(el&&t)el.textContent='/'+t;}).catch(function(){});})();
 
 </script>
+<section id="certPreviewCard" style="display:none;max-width:780px;margin:30px auto;padding:24px;border:2px solid #0B1F3A;border-radius:12px;background:#fff;font-family:Inter,system-ui;">
+  <div style="font-size:11px;color:#94A3B8;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;">LinkedIn Profile Preview</div>
+  <div style="display:flex;gap:16px;align-items:flex-start;">
+    <div style="width:64px;height:64px;background:linear-gradient(135deg,#0B1F3A,#F26B1F);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:24px;font-family:Fraunces,serif;">M</div>
+    <div style="flex:1;">
+      <div id="certPreviewTitle" style="font-size:17px;font-weight:600;color:#0B1F3A;">MBA Rock — Operator's Certificate</div>
+      <div style="font-size:13px;color:#475569;margin-top:2px;">MBA Rock · The Musical Business Album</div>
+      <div style="font-size:12px;color:#94A3B8;margin-top:4px;">Issued <span id="certPreviewDate"></span> · Credential ID <span id="certPreviewId"></span></div>
+      <div style="font-size:12px;color:#475569;margin-top:8px;line-height:1.5;">Skills: Cash Flow Management · Unit Economics · Strategic Diagnostics · Operating Excellence · Capital Strategy · +5 more</div>
+    </div>
+  </div>
+  <div style="margin-top:14px;font-size:11px;color:#94A3B8;font-style:italic;">↑ This is approximately how your cert will appear when added to LinkedIn.</div>
+</section>
+
+<script id="cert-preview-bind">
+(function(){
+  // When a cert detail view loads, populate preview
+  function bind() {
+    var url = new URL(window.location.href);
+    var certType = url.searchParams.get('type');
+    var certId = url.searchParams.get('id') || '—';
+    var titleEl = document.getElementById('certPreviewTitle');
+    var dateEl = document.getElementById('certPreviewDate');
+    var idEl = document.getElementById('certPreviewId');
+    var card = document.getElementById('certPreviewCard');
+    if (!card) return;
+    if (certType || certId !== '—') {
+      // Cert detail context — show preview
+      if (titleEl) titleEl.textContent = certType === 'operator' 
+        ? "MBA Rock — Operator's Certificate" 
+        : "MBA Rock — " + (certType || 'Module') + " Mark";
+      if (idEl) idEl.textContent = certId;
+      if (dateEl) dateEl.textContent = new Date().toLocaleDateString('en-US', {year:'numeric',month:'short'});
+      card.style.display = 'block';
+    }
+  }
+  if (document.readyState !== 'loading') bind();
+  else document.addEventListener('DOMContentLoaded', bind);
+})();
+</script>
 </body>
 </html>
