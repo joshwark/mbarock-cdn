@@ -1,4 +1,5 @@
-// MBA Rock — Lesson Page Takeover v7.0 (2026-05-13)
+// MBA Rock — Lesson Page Takeover v7.1 (2026-05-13)
+// v7.1: Materials sub-tabs (Resources / Tools / Companion) + floating Notes drawer (any tab → Notes).
 // v7.0: Tabbed lesson container — Lesson / Notes / Quiz / Materials. Persistent header + footer.
 //       Hero stays above tabs. Mark Complete + Next lesson stay in a sticky bottom bar.
 //       Tab state persists in localStorage (mr-tab:{lesson_id}). ?tab=X URL param wins.
@@ -609,6 +610,50 @@
       .mr5-stickybar .mr5-stickybar-actions{order:1;justify-content:stretch;}
       .mr5-stickybar .mr5-stickybar-actions .mr5-btn{flex:1;text-align:center;}
     }
+
+    /* ── v7.1 Sub-tabs (inside Materials) ── */
+    .mr5-subtabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 18px;padding:6px;background:#f4f1ea;border-radius:10px;}
+    .mr5-subtab{flex:0 0 auto;padding:8px 16px;font-family:inherit;font-size:12.5px;font-weight:500;color:#6e6e6e;background:transparent;border:none;border-radius:7px;cursor:pointer;letter-spacing:.04em;transition:background .12s,color .12s;display:inline-flex;align-items:center;gap:6px;}
+    .mr5-subtab:hover{color:#0e1116;}
+    .mr5-subtab.active{background:#fff;color:#0e1116;box-shadow:0 1px 2px rgba(0,0,0,.06);}
+    .mr5-subtab .mr5-subtab-count{font-size:10px;color:#aaa;font-weight:400;}
+    .mr5-subpanel{display:none;}
+    .mr5-subpanel.active{display:block;animation:mr5fadein .18s ease;}
+
+    /* ── v7.1 Floating Notes drawer ── */
+    .mr5-notes-fab{position:fixed;bottom:18px;left:18px;z-index:99;background:var(--mr5-accent);color:#fff;border:none;border-radius:50%;width:52px;height:52px;font-size:20px;cursor:pointer;box-shadow:0 4px 16px rgba(11,31,58,.25);transition:transform .15s,box-shadow .15s;display:flex;align-items:center;justify-content:center;font-weight:600;}
+    .mr5-notes-fab:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(11,31,58,.32);}
+    .mr5-notes-fab.has-content::after{content:'';position:absolute;top:8px;right:8px;width:8px;height:8px;background:#F26B1F;border-radius:50%;border:2px solid #fff;}
+
+    .mr5-notes-drawer{position:fixed;top:0;right:0;bottom:0;width:380px;max-width:90vw;background:#fff;border-left:1px solid #ebe6da;box-shadow:-8px 0 28px rgba(11,31,58,.12);transform:translateX(100%);transition:transform .25s ease;z-index:100;display:flex;flex-direction:column;}
+    .mr5-notes-drawer.open{transform:translateX(0);}
+    .mr5-notes-drawer-head{padding:18px 22px;border-bottom:1px solid #ebe6da;display:flex;align-items:center;justify-content:space-between;}
+    .mr5-notes-drawer-head h3{margin:0;font-family:'Fraunces',serif;font-size:18px;color:#0B1F3A;font-weight:600;}
+    .mr5-notes-drawer-head .lesson-id{font-size:11px;color:#6e6e6e;letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-top:2px;}
+    .mr5-notes-drawer-close{background:none;border:none;font-size:22px;cursor:pointer;color:#6e6e6e;padding:4px 10px;border-radius:6px;line-height:1;}
+    .mr5-notes-drawer-close:hover{background:#f4f1ea;color:#0e1116;}
+    .mr5-notes-drawer-body{flex:1;display:flex;flex-direction:column;padding:18px 22px;overflow:hidden;}
+    .mr5-notes-drawer-body textarea{flex:1;font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;padding:12px;border:1px solid #ebe6da;border-radius:8px;background:#faf8f5;color:#0e1116;resize:none;min-height:200px;}
+    .mr5-notes-drawer-body textarea:focus{outline:none;border-color:var(--mr5-accent);background:#fff;}
+    .mr5-notes-drawer-foot{padding:12px 22px;border-top:1px solid #ebe6da;display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#6e6e6e;}
+    .mr5-notes-drawer-foot .status.saved{color:#1d8444;}
+    .mr5-notes-drawer-foot .status.saving{color:#a04a13;}
+    .mr5-notes-drawer-foot .status.error{color:#a01a1a;}
+    .mr5-notes-drawer-foot a{color:#0B1F3A;text-decoration:none;border-bottom:1px solid #ebe6da;}
+
+    /* Overlay backdrop on mobile */
+    .mr5-notes-backdrop{position:fixed;inset:0;background:rgba(11,31,58,.4);z-index:99;opacity:0;pointer-events:none;transition:opacity .2s;}
+    .mr5-notes-backdrop.open{opacity:1;pointer-events:auto;}
+
+    /* Adjust positions on mobile: drawer becomes a bottom sheet, FAB above sticky bar */
+    @media (max-width:680px){
+      .mr5-notes-fab{bottom:auto;top:auto;width:46px;height:46px;font-size:18px;left:14px;bottom:80px;}
+      .mr5-notes-drawer{top:auto;right:0;bottom:0;left:0;width:100%;max-width:100%;height:75vh;border-left:none;border-top:1px solid #ebe6da;border-radius:14px 14px 0 0;transform:translateY(100%);box-shadow:0 -8px 28px rgba(11,31,58,.18);}
+      .mr5-notes-drawer.open{transform:translateY(0);}
+      .mr5-subtabs{padding:4px;gap:4px;}
+      .mr5-subtab{padding:7px 12px;font-size:12px;}
+    }
+
 `;
     var s = document.createElement('style');
     s.id = 'mr-v5-styles';
@@ -932,18 +977,58 @@
     return html;
   }
 
-  // ── Panel 4 — Materials (Resources + Capstone + Console + Arcade) ──
+  // ── Panel 4 — Materials (with sub-tabs: Resources / Tools / Companion) ──
   function renderMaterialsPanel(lesson, mod) {
     var html = '<div class="mr5-tabpanel" id="mr5-panel-materials" role="tabpanel" data-mr-panel="materials">';
-    // Resources block (existing builder produces a full section)
+
+    // Sub-tab strip
+    html += '<div class="mr5-subtabs" role="tablist">';
+    html += '<button class="mr5-subtab" role="tab" data-mr-subtab="resources">Resources</button>';
+    html += '<button class="mr5-subtab" role="tab" data-mr-subtab="tools">Tools <span class="mr5-subtab-count">3</span></button>';
+    html += '<button class="mr5-subtab" role="tab" data-mr-subtab="companion">Companion</button>';
+    html += '</div>';
+
+    // Resources sub-panel — reading list
+    html += '<div class="mr5-subpanel" data-mr-subpanel="resources">';
     html += buildResources(lesson, mod);
-    // Tool buttons
+    html += '</div>';
+
+    // Tools sub-panel — Capstone + Console + Flashcards
+    html += '<div class="mr5-subpanel" data-mr-subpanel="tools">';
     html += '<div class="mr5-arcade-row"><a class="mr5-arcade-btn mr5-capstone-btn" href="https://joshwark.github.io/mbarock-cdn/capstone/" target="_blank" rel="noopener"><span class="mr5-arcade-icon">⚐</span><span><span class="mr5-arcade-l">Build my Business</span><span class="mr5-arcade-s">Every Take Action becomes a section of <b>your</b> operating system. Finish the course and you have a launchable business — not just notes.</span></span><span class="mr5-arcade-chev">→</span></a></div>';
     html += '<div class="mr5-arcade-row"><button type="button" class="mr5-arcade-btn mr5-console-btn" data-mr-console="1"><span class="mr5-arcade-icon">⚙</span><span><span class="mr5-arcade-l">The Operator’s Console</span><span class="mr5-arcade-s">Every equation in the course, ready to run against <b>your</b> numbers. Save scenarios. Revisit weekly.</span></span><span class="mr5-arcade-chev">→</span></button></div>';
+    var modId = lesson.module_id || 'M1';
+    html += '<div class="mr5-arcade-row"><a class="mr5-arcade-btn" href="https://joshwark.github.io/mbarock-cdn/flashcards/?mod=' + esc(modId) + '" target="_blank" rel="noopener"><span class="mr5-arcade-icon">⊞</span><span><span class="mr5-arcade-l">Flashcards · ' + esc(modId) + '</span><span class="mr5-arcade-s">The vocabulary, definitions, and equations from this module — drilled. Click-to-flip, keyboard-friendly.</span></span><span class="mr5-arcade-chev">→</span></a></div>';
+    html += '</div>';
+
+    // Companion sub-panel — Arcade + future companion items
+    html += '<div class="mr5-subpanel" data-mr-subpanel="companion">';
     html += '<div class="mr5-arcade-row"><button type="button" class="mr5-arcade-btn" data-mr-arcade="1"><span class="mr5-arcade-icon">🕹</span><span><span class="mr5-arcade-l">Need a break?</span><span class="mr5-arcade-s">Step into <b>The Arcade</b> — Whack-a-Vanity-Metric, 30 seconds, no business cards required.</span></span><span class="mr5-arcade-chev">→</span></button></div>';
+    html += '<div style="padding:14px 16px;border:1px dashed #ebe6da;border-radius:8px;font-family:Fraunces,serif;font-style:italic;color:#888;font-size:13px;margin-top:8px;">More companion content coming — quick-draw rapid quizzes, peer discussion threads, weekly office hours archive.</div>';
+    html += '</div>';
+
     html += '</div>';
     return html;
   }
+
+  // ── v7.1 Floating Notes drawer markup (rendered at body level) ──
+  function renderNotesDrawer(lesson) {
+    var noteHint = 'Your notes for ' + esc(lesson.id) + ' — what clicked, what didn’t, what to revisit. Saved to your account.';
+    var html = '<button class="mr5-notes-fab" data-mr-notes-toggle="1" aria-label="Open notes for this lesson" title="Notes">✎</button>';
+    html += '<div class="mr5-notes-backdrop" data-mr-notes-backdrop="1"></div>';
+    html += '<aside class="mr5-notes-drawer" data-mr-notes-drawer="1" aria-hidden="true">';
+    html += '<div class="mr5-notes-drawer-head"><div><h3>Your notes</h3><div class="lesson-id">' + esc(lesson.id) + '</div></div>';
+    html += '<button class="mr5-notes-drawer-close" data-mr-notes-close="1" aria-label="Close notes">×</button></div>';
+    html += '<div class="mr5-notes-drawer-body">';
+    html += '<textarea data-mr-notes-input="1" placeholder="' + noteHint + '" spellcheck="true"></textarea>';
+    html += '</div>';
+    html += '<div class="mr5-notes-drawer-foot">';
+    html += '<span class="status" data-mr-notes-status="1">Loading…</span>';
+    html += '<span>Member: <a href="/course-dashboard">' + esc(memberId()) + '</a></span>';
+    html += '</div></aside>';
+    return html;
+  }
+
 
   // ── Sticky bottom CTA bar — visible regardless of which tab is open ──
   function renderStickyBar(lesson, v2) {
@@ -997,7 +1082,61 @@
     html += '<button class="mr5-chip" data-chip="1">';
     if (logoUrl) html += '<img src="' + esc(logoUrl) + '" alt="">';
     html += '<span>Mark ' + esc(lesson.id) + ' complete</span></button>';
+
+    // v7.1 — Floating Notes drawer (lives at body level, hovers above any tab)
+    html += renderNotesDrawer(lesson);
+
     return html;
+  }
+
+
+  // ── v7.1 Materials sub-tabs ──
+  function wireSubTabs(container) {
+    var subtabs = container.querySelectorAll('[data-mr-subtab]');
+    var subpanels = container.querySelectorAll('[data-mr-subpanel]');
+    if (!subtabs.length) return;
+    function switchSub(id) {
+      subtabs.forEach(function(b) { b.classList.toggle('active', b.dataset.mrSubtab === id); });
+      subpanels.forEach(function(p) { p.classList.toggle('active', p.dataset.mrSubpanel === id); });
+    }
+    subtabs.forEach(function(b) {
+      b.addEventListener('click', function() { switchSub(b.dataset.mrSubtab); });
+    });
+    // Default to first sub-tab (Resources)
+    switchSub('resources');
+  }
+
+  // ── v7.1 Floating Notes drawer ──
+  function wireNotesDrawer(lesson) {
+    var fab = document.querySelector('[data-mr-notes-toggle="1"]');
+    var drawer = document.querySelector('[data-mr-notes-drawer="1"]');
+    var backdrop = document.querySelector('[data-mr-notes-backdrop="1"]');
+    var closeBtn = document.querySelector('[data-mr-notes-close="1"]');
+    if (!fab || !drawer || !backdrop) return;
+    function open() {
+      drawer.classList.add('open'); backdrop.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      // Focus the textarea
+      var ta = drawer.querySelector('[data-mr-notes-input="1"]');
+      if (ta) setTimeout(function() { ta.focus(); }, 200);
+    }
+    function close() {
+      drawer.classList.remove('open'); backdrop.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+    fab.addEventListener('click', open);
+    closeBtn.addEventListener('click', close);
+    backdrop.addEventListener('click', close);
+    // Esc to close
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) close();
+    });
+    // Reflect "has content" on the FAB indicator
+    try {
+      var notesKey = 'mr-notes:' + memberId() + ':' + lesson.id;
+      var cached = localStorage.getItem(notesKey) || '';
+      if (cached.trim()) fab.classList.add('has-content');
+    } catch (e) {}
   }
 
   // ── v7 Tab management ──
@@ -1374,10 +1513,17 @@
     // Move the floating chip out to body level
     var chip = newSection.querySelector('[data-chip="1"]');
     if (chip) document.body.appendChild(chip);
+    // v7.1 — Move the floating notes FAB + drawer + backdrop to body level too
+    ['[data-mr-notes-toggle="1"]', '[data-mr-notes-backdrop="1"]', '[data-mr-notes-drawer="1"]'].forEach(function(sel) {
+      var el = newSection.querySelector(sel);
+      if (el) document.body.appendChild(el);
+    });
 
     wireInteractions(lesson, newSection);
     wireNotes(lesson, newSection);
     wireTabs(lesson, newSection);
+    wireSubTabs(newSection);
+    wireNotesDrawer(lesson);
 
     try {
       if (localStorage.getItem('mr-lesson-complete:' + lesson.id)) markComplete(lesson, newSection, 'render');
@@ -1388,22 +1534,29 @@
     if (deepEl) renderMath(deepEl);
 
     document.body && document.body.setAttribute('data-mr-v5-applied', '1');
-    console.log('[MBA v7] hid', bodySections.length, 'old sections; rendered tabbed layout for', lesson.id);
+    console.log('[MBA v7.1] hid', bodySections.length, 'old sections; rendered tabbed layout for', lesson.id);
     return true;
   }
 
   // ── Notes — perpetual per-account journal via Supabase upsert ──
   function wireNotes(lesson, container) {
-    var input = container.querySelector('[data-mr-notes-input="1"]');
-    var statusEl = container.querySelector('[data-mr-notes-status="1"]');
-    if (!input || !statusEl) return;
+    // v7.1: there may be MULTIPLE notes inputs on the page (Notes tab + floating drawer).
+    // We gather all of them and keep them in sync.
+    var inputs = Array.prototype.slice.call(document.querySelectorAll('[data-mr-notes-input="1"]'));
+    var statusEls = Array.prototype.slice.call(document.querySelectorAll('[data-mr-notes-status="1"]'));
+    if (!inputs.length || !statusEls.length) return;
+    var input = inputs[0]; // primary (Notes tab textarea) — drives state
     var mid = memberId();
     var saveTimer = null;
     var lastSaved = '';
 
     function setStatus(state, text) {
-      statusEl.className = 'mr5-notes-status ' + (state || '');
-      statusEl.textContent = text;
+      statusEls.forEach(function(el) {
+        // Notes-tab status uses class 'mr5-notes-status', drawer uses class 'status'
+        if (el.classList.contains('mr5-notes-status')) el.className = 'mr5-notes-status ' + (state || '');
+        else el.className = 'status ' + (state || '');
+        el.textContent = text;
+      });
     }
 
     // 1. Hydrate — pull notes from Supabase if signed in, else local cache
@@ -1413,10 +1566,10 @@
 
     if (mid === 'guest') {
       setStatus('guest', 'Sign in to sync notes (local only)');
-      input.value = localCache;
+      inputs.forEach(function(i) { i.value = localCache; });
       lastSaved = localCache;
     } else {
-      input.value = localCache; // optimistic from local
+      inputs.forEach(function(i) { i.value = localCache; }); // optimistic from local
       lastSaved = localCache;
       setStatus('saving', 'Loading…');
       var url = SUPABASE_URL + '/rest/v1/user_notes?select=notes,updated_at&member_id=eq.' + encodeURIComponent(mid) + '&lesson_id=eq.' + encodeURIComponent(lesson.id);
@@ -1424,7 +1577,7 @@
         .then(function(r) { return r.ok ? r.json() : []; })
         .then(function(rows) {
           if (rows && rows.length && rows[0].notes != null) {
-            input.value = rows[0].notes;
+            inputs.forEach(function(i) { i.value = rows[0].notes; });
             lastSaved = rows[0].notes;
             try { localStorage.setItem(localKey, rows[0].notes); } catch (e) {}
           }
@@ -1436,8 +1589,22 @@
         });
     }
 
-    // 2. Auto-save on input — debounced 1.2s
-    input.addEventListener('input', function() {
+    // 2. Cross-input mirror — when one input changes, sync the others
+    inputs.forEach(function(thisInput) {
+      thisInput.addEventListener('input', function() {
+        inputs.forEach(function(other) {
+          if (other !== thisInput && other.value !== thisInput.value) other.value = thisInput.value;
+        });
+        // Update FAB content indicator
+        var fab = document.querySelector('[data-mr-notes-toggle="1"]');
+        if (fab) {
+          if (thisInput.value.trim()) fab.classList.add('has-content');
+          else fab.classList.remove('has-content');
+        }
+      });
+    });
+
+    function triggerSave() {
       if (saveTimer) clearTimeout(saveTimer);
       setStatus('saving', 'Saving…');
       try { localStorage.setItem(localKey, input.value); } catch (e) {}
@@ -1466,10 +1633,12 @@
           setStatus('error', 'Offline — local only');
         });
       }, 1200);
-    });
+    }
 
-    // 3. Save on blur (immediate, no debounce)
-    input.addEventListener('blur', function() {
+    inputs.forEach(function(i) { i.addEventListener('input', triggerSave); });
+
+    // 4. Save on blur (immediate, no debounce)
+    function blurSave() {
       if (input.value === lastSaved) return;
       if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; }
       try { localStorage.setItem(localKey, input.value); } catch (e) {}
@@ -1481,7 +1650,8 @@
         if (r.ok) { lastSaved = input.value; setStatus('saved', 'Saved'); }
         else { setStatus('error', 'Save failed'); }
       }).catch(function() { setStatus('error', 'Offline'); });
-    });
+    }
+    inputs.forEach(function(i) { i.addEventListener('blur', blurSave); });
   }
 
   function tokenize(s) {
