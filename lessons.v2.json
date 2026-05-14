@@ -1,5 +1,5 @@
 {
-  "schema_version": "v2.10sections.55lessons.quizzes.polished",
+  "schema_version": "v2.10sections.74lessons.quizzes.polished",
   "generated_from": "Josh's 2026-05-11 LMS Deployment Guide",
   "global": {
     "textbook": {
@@ -1818,6 +1818,25 @@
       }
     },
     {
+      "id": "M2L2.5.5",
+      "module_id": "M2",
+      "title": "Portfolio Strategy",
+      "slug_v2": "m2l2.5.5",
+      "legacy_slug": "m2l2.5.5",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "This lesson is in production. Video drops with the next batch; lesson body to follow.",
+      "is_fractional": true,
+      "newly_added": "2026-05-13"
+    },
+    {
       "id": "M2L3",
       "module_id": "M2",
       "lesson_number": "M2L3",
@@ -2634,6 +2653,25 @@
       }
     },
     {
+      "id": "M3L3.3.3",
+      "module_id": "M3",
+      "title": "Positioning & Focus",
+      "slug_v2": "m3l3.3.3",
+      "legacy_slug": "m3l3.3.3",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "This lesson is in production. Video drops with the next batch; lesson body to follow.",
+      "is_fractional": true,
+      "newly_added": "2026-05-13"
+    },
+    {
       "id": "M3L4",
       "module_id": "M3",
       "lesson_number": "M3L4",
@@ -3042,6 +3080,25 @@
       }
     },
     {
+      "id": "M4L2.5",
+      "module_id": "M4",
+      "title": "Channel Strategy",
+      "slug_v2": "m4l2.5",
+      "legacy_slug": "m4l2.5",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": true,
+      "newly_added": "2026-05-13"
+    },
+    {
       "id": "M4L3",
       "module_id": "M4",
       "lesson_number": "M4L3",
@@ -3248,6 +3305,44 @@
           }
         ]
       }
+    },
+    {
+      "id": "M4L4.2.5",
+      "module_id": "M4",
+      "title": "Product-Market Fit",
+      "slug_v2": "m4l4.2.5",
+      "legacy_slug": "m4l4.2.5",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "This lesson is in production. Video drops with the next batch; lesson body to follow.",
+      "is_fractional": true,
+      "newly_added": "2026-05-13"
+    },
+    {
+      "id": "M4L4.5",
+      "module_id": "M4",
+      "title": "Loyalty Loops (Growth Evolution)",
+      "slug_v2": "m4l4.5",
+      "legacy_slug": "m4l4.5",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": true,
+      "newly_added": "2026-05-13"
     },
     {
       "id": "M4L5",
@@ -4078,406 +4173,6 @@
       }
     },
     {
-      "id": "M6L10",
-      "module_id": "M6",
-      "lesson_number": "M6L10",
-      "title": "Exit Strategy (Exit Story)",
-      "slug_v2": "m6l10-exit-strategy-exit-story",
-      "legacy_slug": "exit",
-      "audio_url": null,
-      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/exit-strategy.mp4",
-      "video_id": null,
-      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Exit_Strategy.mp4",
-      "worksheet_url": null,
-      "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "Build a Saleable Asset",
-          "body": "Many great-operating businesses are unsellable. Owner-dependent, no transferable systems, no clean financials.\n\nThe goal of exit-readiness isn't to sell — it's to *be able* to sell. Optionality. The business is more valuable when it doesn't depend on you."
-        },
-        {
-          "title": "The Exit Narrative",
-          "body": "Buyers buy a story, not just a balance sheet. The story includes why this business now, why it's worth a premium, what the buyer can do with it.\n\nThe story takes 12-24 months to build deliberately. The mistake is starting it 3 months before the process opens."
-        },
-        {
-          "title": "Strategic vs Financial Exit",
-          "body": "Strategic buyer: another operating company. Pays for synergies. Higher multiples. Slower process.\n\nFinancial buyer (PE): cares about returns. Pays for stand-alone economics. Faster process; lower price."
-        },
-        {
-          "title": "The Process Premium",
-          "body": "A well-run process with 4-6 bidders typically clears 30-50% higher than a one-on-one negotiation.\n\nProcess premium comes from competition. Hire a banker who runs structured processes for businesses your size. Their fee (1-3%) usually returns 10-30x in higher clearing price."
-        },
-        {
-          "title": "Post-Exit Reality",
-          "body": "Most founders are unprepared for life after exit. Identity tied to the business, sudden liquidity, freedom that feels like vertigo.\n\nPlan the next chapter before you close. The founders who do well post-exit have something they're moving toward, not away from."
-        }
-      ],
-      "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**Most founders think about exit too late and too narrowly.** They think about it 3 months before they want to sell, and they think of it as a single transaction. The founders who maximize outcomes — and who don't regret what comes after — think about exit-readiness from year 3, treat it as a multi-year construction project, and plan their post-exit life with the same discipline they brought to building the business.\n\n**Exit-readiness ≠ exiting.** The same disciplines that make a business saleable also make it well-run:\n\n- Clean financials (audited statements, predictable accruals, no surprises)\n- Transferable systems (process documentation, not founder-in-everyone's-head)\n- Bench strength (next layer of leadership can run the business)\n- Customer concentration manageable (<25% from any one customer)\n- Contracts solid (no auto-renewal traps, key supplier terms documented)\n\nIf you build for sellability, you build for resilience. Even if you never sell.\n\n**The exit story** is the deliberate construction of narrative:\n\n- **Why this business**: what's the structural advantage? Why can't this be replicated?\n- **Why now**: market timing, growth trajectory, technology shift, regulatory tailwind\n- **What the buyer gets**: defensible market position, profitable growth, talent\n- **What the buyer can do with it**: synergies, expansion, geographic scaling\n\nBuyers pay for the story. They commission the diligence to confirm the numbers, but they're sold on the story first. Build it deliberately into board materials, customer references, analyst briefings over 18-24 months before a process opens.\n\n**The process premium** is real and measurable. A structured process with 4-6 invited bidders, run by a competent banker, clears 30-50% higher than a one-on-one with a single buyer who approached you first. The banker fee (1-3% of transaction value) returns 10-30x by creating competitive tension. The founders who run a single-buyer process \"to save the fee\" routinely leave 7-figures on the table.\n\n**Post-exit reality** is the unsung consideration. The exit closes. The wire hits. The freedom that felt like the goal turns out to feel like vertigo. Founders without a Plan B drift for 6-18 months in identity crisis. The ones who do well post-exit:\n\n- Have a personal mission that's bigger than the company\n- Took some time before the exit to map their next decade\n- Maintained relationships outside the company that survive its sale\n- Have hobbies, intellectual interests, or family commitments to anchor identity\n\nThe practical move 12 months before exit: schedule recurring conversations with founders who exited 2-5 years ago. What did they wish they'd known? What did they do well in the year after? The patterns repeat. Learn before you live them.",
-      "quiz": {
-        "pass_pct": 80,
-        "polished_v2": true,
-        "questions": [
-          {
-            "q": "What does \"Build a Saleable Asset\" mean in MBA Rock?",
-            "options": [
-              "Many great-operating businesses are unsellable.",
-              "Most founders are unprepared for life after exit.",
-              "Strategic acquirers always pay more than financial acquirers.",
-              "Strategic buyer: another operating company."
-            ],
-            "correct": 0,
-            "explain": "\"Build a Saleable Asset\" — the correct framing is: Many great-operating businesses are unsellable."
-          },
-          {
-            "q": "\"The Exit Narrative\" — which of these is correct?",
-            "options": [
-              "Buyers buy a story, not just a balance sheet.",
-              "Strategic buyer: another operating company.",
-              "Exit timing is most strongly influenced by the founder's age, not market conditions.",
-              "Most founders are unprepared for life after exit."
-            ],
-            "correct": 0,
-            "explain": "\"The Exit Narrative\" — the correct framing is: Buyers buy a story, not just a balance sheet."
-          },
-          {
-            "q": "What does \"Strategic vs Financial Exit\" mean in MBA Rock?",
-            "options": [
-              "Most founders are unprepared for life after exit.",
-              "Exit multiples are determined primarily by revenue, not growth.",
-              "Many great-operating businesses are unsellable.",
-              "Strategic buyer: another operating company."
-            ],
-            "correct": 3,
-            "explain": "\"Strategic vs Financial Exit\" — the correct framing is: Strategic buyer: another operating company."
-          },
-          {
-            "q": "\"The Process Premium\" — which of these is correct?",
-            "options": [
-              "Buyers buy a story, not just a balance sheet.",
-              "A well-run process with 4-6 bidders typically clears 30-50% higher than a one-on-one negotiation.",
-              "Strategic buyer: another operating company.",
-              "An IPO is the most desirable exit for most venture-backed companies."
-            ],
-            "correct": 1,
-            "explain": "\"The Process Premium\" — the correct framing is: A well-run process with 4-6 bidders typically clears 30-50% higher than a one-on-one negotiation."
-          },
-          {
-            "q": "\"Post-Exit Reality\" — which of these is correct?",
-            "options": [
-              "Exit multiples are determined primarily by revenue, not growth.",
-              "Buyers buy a story, not just a balance sheet.",
-              "A well-run process with 4-6 bidders typically clears 30-50% higher than a one-on-one negotiation.",
-              "Most founders are unprepared for life after exit."
-            ],
-            "correct": 3,
-            "explain": "\"Post-Exit Reality\" — the correct framing is: Most founders are unprepared for life after exit."
-          }
-        ]
-      }
-    },
-    {
-      "id": "M6L11",
-      "module_id": "M6",
-      "lesson_number": "M6L11",
-      "title": "Complex Human Systems (Ethics Compass)",
-      "slug_v2": "m6l11-complex-human-systems-ethics-compass",
-      "legacy_slug": null,
-      "audio_url": null,
-      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/complex-human-systems.mp4",
-      "video_id": null,
-      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Complex_Human_Systems.mp4",
-      "worksheet_url": null,
-      "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "The Ethical Override",
-          "body": "Some decisions are not optimization problems. They're constraints. Don't lie to customers. Don't shortcut safety. Don't exploit information asymmetry.\n\nThe ethical override sits above strategy. Violating it for short-term gain destroys long-term value, every time."
-        },
-        {
-          "title": "Stakeholder Map",
-          "body": "Every business decision affects multiple stakeholders: customers, employees, investors, suppliers, community.\n\nDecisions optimized for one stakeholder often impose costs on others. Sustainable businesses balance the map; extractive businesses don't."
-        },
-        {
-          "title": "The Newspaper Test",
-          "body": "Before any consequential decision, ask: how would I feel if this decision was the front-page story in the local paper tomorrow?\n\nIf the answer is 'embarrassed,' you have your answer. The exercise surfaces the rationalizations you've been making."
-        },
-        {
-          "title": "Short-term vs Long-term Trade-offs",
-          "body": "Most ethical breakdowns trade short-term gains for long-term costs. Lying to a customer wins this deal; loses the next 10 referrals.\n\nDiscount long-term costs less than short-term gains. The math almost always favors the ethical path."
-        },
-        {
-          "title": "Building Ethical Infrastructure",
-          "body": "Individual willpower fails. Build systems that make the ethical choice the default — clear policies, independent audits, accessible whistleblower channels, leadership that visibly punishes violations.\n\nCulture eats individual ethics for breakfast, in both directions."
-        }
-      ],
-      "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**Ethics in business isn't a separate domain from operations — it's an operating decision with longer payback periods.** The companies that compound over decades — Costco, Patagonia, Stripe, Visa — share a discipline around the few decisions that look optionally ethical and turn out to be foundational.\n\nThe most useful ethics frame for operators is **the long-term cost vs short-term gain trade-off**. Most ethical breakdowns aren't theatrical — they're small choices that look efficient in the moment and corrosive over years:\n\n- Lying (or shading) in customer pitch → wins the deal, costs the referral and the renewal\n- Cutting corners on safety → saves a week of build, costs years of trust if it surfaces\n- Pushing through a decision the team objects to → wins this fight, loses moral authority for the next\n- Treating a vendor unfairly → saves margin once, kills the supplier relationship\n\nIn each case, the short-term math looks fine; the long-term math is catastrophic. The discipline is **discounting the long-term cost at a low enough rate that it dominates the short-term gain**. Many founders implicitly discount future costs at 50-100% — which means anything more than 12 months out doesn't factor. That's how short-term thinking masquerades as rational decision-making.\n\n**The newspaper test** is one of the cleanest filters available: would I be embarrassed if this decision were front-page tomorrow? The test surfaces the rationalizations we've been making. The decisions that fail it almost always fail other tests too — they just fail the newspaper test first and loudest.\n\n**Stakeholder mapping** keeps the analysis honest. Every decision affects:\n\n- *Customers*: experience, trust, value delivered\n- *Employees*: workload, autonomy, dignity, growth\n- *Investors*: returns, risk, transparency\n- *Suppliers*: terms, predictability, fairness\n- *Community*: externalities, contributions, footprint\n\nDecisions that optimize for one stakeholder at the expense of others may look efficient quarter-to-quarter but accumulate technical debt across the relationships. The sustainable model balances the map. The extractive model concentrates value to one party until the relationship breaks.\n\n**The infrastructure level** matters because individual willpower is unreliable under pressure. The companies that maintain ethics in tough quarters have built systems:\n\n- Clear written policies on the high-risk decisions (customer claims, hiring, contract terms)\n- Independent audit functions or external advisors\n- Accessible whistleblower channels with credible follow-through\n- Public leadership response to violations — visible enough to deter\n\nWithout the infrastructure, ethics depends on the next leader. With it, ethics depends on the institution.\n\nThe practical move: write down the three decisions in the last quarter that you're least comfortable with. Run each through the newspaper test and the long-term cost lens. If any fail, you have a system problem, not a willpower problem. Fix the system.",
-      "quiz": {
-        "pass_pct": 80,
-        "polished_v2": true,
-        "questions": [
-          {
-            "q": "\"The Ethical Override\" — which of these is correct?",
-            "options": [
-              "Some decisions are not optimization problems.",
-              "Most strategic decisions are best made in committee for diversity of input.",
-              "Every business decision affects multiple stakeholders: customers, employees, investors, suppliers, community.",
-              "Before any consequential decision, ask: how would I feel if this decision was the front-page story in the local paper tomorrow?"
-            ],
-            "correct": 0,
-            "explain": "\"The Ethical Override\" — the correct framing is: Some decisions are not optimization problems."
-          },
-          {
-            "q": "What does \"Stakeholder Map\" mean in MBA Rock?",
-            "options": [
-              "Some decisions are not optimization problems.",
-              "Every business decision affects multiple stakeholders: customers, employees, investors, suppliers, community.",
-              "Individual willpower fails.",
-              "Most strategic decisions are best made in committee for diversity of input."
-            ],
-            "correct": 1,
-            "explain": "\"Stakeholder Map\" — the correct framing is: Every business decision affects multiple stakeholders: customers, employees, investors, suppliers, community."
-          },
-          {
-            "q": "What does \"The Newspaper Test\" mean in MBA Rock?",
-            "options": [
-              "Individual willpower fails.",
-              "Before any consequential decision, ask: how would I feel if this decision was the front-page story in the local paper tomorrow?",
-              "Most strategic decisions are best made in committee for diversity of input.",
-              "Most ethical breakdowns trade short-term gains for long-term costs."
-            ],
-            "correct": 1,
-            "explain": "\"The Newspaper Test\" — the correct framing is: Before any consequential decision, ask: how would I feel if this decision was the front-page story in the local paper tomorrow?"
-          },
-          {
-            "q": "How does this lesson define \"Short-term vs Long-term Trade-offs\"?",
-            "options": [
-              "Individual willpower fails.",
-              "Most ethical breakdowns trade short-term gains for long-term costs.",
-              "Faster decisions are better decisions in nearly all contexts.",
-              "Every business decision affects multiple stakeholders: customers, employees, investors, suppliers, community."
-            ],
-            "correct": 1,
-            "explain": "\"Short-term vs Long-term Trade-offs\" — the correct framing is: Most ethical breakdowns trade short-term gains for long-term costs."
-          },
-          {
-            "q": "\"Building Ethical Infrastructure\" — which of these is correct?",
-            "options": [
-              "Some decisions are not optimization problems.",
-              "Individual willpower fails.",
-              "Most strategic decisions are best made in committee for diversity of input.",
-              "Most ethical breakdowns trade short-term gains for long-term costs."
-            ],
-            "correct": 1,
-            "explain": "\"Building Ethical Infrastructure\" — the correct framing is: Individual willpower fails."
-          }
-        ]
-      }
-    },
-    {
-      "id": "M6L12",
-      "module_id": "M6",
-      "lesson_number": "M6L12",
-      "title": "Business Anatomy Masterclass (Personal OS)",
-      "slug_v2": "m6l12-business-anatomy-masterclass-personal-os",
-      "legacy_slug": null,
-      "audio_url": null,
-      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/business-anatomy-masterclass.mp4",
-      "video_id": null,
-      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Business_Anatomy_Masterclass.mp4",
-      "worksheet_url": null,
-      "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "The CEO's Three Jobs",
-          "body": "Patrick Collison's framing. The CEO has three irreducible jobs:\n\n1. Set the strategy\n2. Build the team\n3. Don't run out of money\n\nEverything else can be delegated. These three cannot. The CEO who delegates these has stopped being CEO."
-        },
-        {
-          "title": "Calendar as Strategy",
-          "body": "Where you put your time is your real strategy, regardless of what your strategy doc says. Audit your last 4 weeks of calendar.\n\nIf the audit doesn't match your stated priorities, the calendar is the truth. Restructure or rewrite the strategy to match."
-        },
-        {
-          "title": "Energy Management Over Time Management",
-          "body": "Time is a constraint; energy is the variable. A high-energy 4 hours beats a low-energy 10 hours.\n\nProtect the energy peaks. Schedule deep work for the hours when you're sharpest. Schedule meetings for the rest."
-        },
-        {
-          "title": "The Two-Question Filter",
-          "body": "For every commitment: (1) am I the only person who can do this? (2) is this the highest-leverage use of my time right now?\n\nIf the answer to either is no, delegate or decline. Most CEOs say yes to too much because saying no feels rude. Saying yes to the wrong things is worse."
-        },
-        {
-          "title": "Personal Operating System",
-          "body": "The set of rituals, defaults, and decisions you don't have to remake each day. Sleep, exercise, reading, deep work, family time.\n\nThe more decisions you automate at the personal level, the more attention you have for the high-stakes ones."
-        }
-      ],
-      "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**The CEO's operating system is the meta-operating system of the business.** A poorly-run CEO operating system produces a poorly-run company, regardless of how good the strategy or team is. The opposite is also true: a deliberate CEO OS leverages mediocre conditions into great outcomes.\n\nThe **three irreducible jobs** (Patrick Collison):\n\n1. **Set the strategy** — where are we going, what are we doing, what are we not doing? Can be informed by the team but ultimately the CEO's call.\n2. **Build the team** — who runs each function, how they work together, who's missing, who needs to go. The most consequential decisions a CEO makes.\n3. **Don't run out of money** — cash management, capital allocation, runway awareness. Financial fragility ends companies.\n\nEverything else — operations, sales, product, customer success — can be delegated to functional leaders. The CEO who's in the weeds on those has stopped doing CEO work.\n\n**Calendar audit** is the most useful diagnostic. Take your last 4 weeks of calendar. Categorize every block:\n\n- Strategy (where are we going)\n- Team (who works here, how they're doing)\n- Capital (runway, fundraising, investor relations)\n- Customer (talking to customers, understanding the market)\n- Operations (what should be delegated)\n- Reactive (firefighting, responses, meetings I shouldn't be in)\n\nThe split reveals the truth. If 60% is operations and reactive, you're a senior operator, not a CEO. Rebalance.\n\n**Energy management** is the under-discussed companion to time management. Time is finite (24 hours, 7 days). Energy is variable (4 great hours can produce more than 10 mediocre ones). The disciplines:\n\n- Sleep ≥ 7 hours. Non-negotiable. The cost of less sleep is invisible but real.\n- Schedule deep work for energy peaks (usually mornings for most people).\n- Schedule low-energy work (admin, status meetings, light reading) for energy troughs.\n- Build recovery rituals — exercise, walks, breaks between intense calls.\n\nThe CEOs who burn out tend to be the ones who treated energy as a constant. The ones who compound over decades treat it as the variable to protect.\n\n**The two-question filter** for every commitment request:\n\n- *Am I the only one who can do this?* Most things, no.\n- *Is this the highest-leverage use of my time right now?* Most things, no.\n\nDelegate or decline. The hard part is the social cost of declining — but the cost of saying yes to the wrong thing is higher and silent.\n\nThe practical move: design your week as a default schedule. Mondays = strategy + reading. Tuesdays = team. Wednesdays = customer. Thursdays = operations review (delegated, you mostly listen). Fridays = personal admin + retro. The default schedule means most weeks don't need designing — exceptions are conscious choices, not drift.",
-      "quiz": {
-        "pass_pct": 80,
-        "polished_v2": true,
-        "questions": [
-          {
-            "q": "What does \"The CEO's Three Jobs\" mean in MBA Rock?",
-            "options": [
-              "Strategy is mainly about market sizing and competitor benchmarking.",
-              "Where you put your time is your real strategy, regardless of what your strategy doc says.",
-              "Patrick Collison's framing.",
-              "Time is a constraint; energy is the variable."
-            ],
-            "correct": 2,
-            "explain": "\"The CEO's Three Jobs\" — the correct framing is: Patrick Collison's framing."
-          },
-          {
-            "q": "How does this lesson define \"Calendar as Strategy\"?",
-            "options": [
-              "For every commitment: (1) am I the only person who can do this? (2) is this the highest-leverage use of my time right now?",
-              "Strategy is mainly about market sizing and competitor benchmarking.",
-              "Patrick Collison's framing.",
-              "Where you put your time is your real strategy, regardless of what your strategy doc says."
-            ],
-            "correct": 3,
-            "explain": "\"Calendar as Strategy\" — the correct framing is: Where you put your time is your real strategy, regardless of what your strategy doc says."
-          },
-          {
-            "q": "\"Energy Management Over Time Management\" — which of these is correct?",
-            "options": [
-              "Time is a constraint; energy is the variable.",
-              "Patrick Collison's framing.",
-              "The set of rituals, defaults, and decisions you don't have to remake each day.",
-              "A good strategy enumerates as many options as possible to maximize flexibility."
-            ],
-            "correct": 0,
-            "explain": "\"Energy Management Over Time Management\" — the correct framing is: Time is a constraint; energy is the variable."
-          },
-          {
-            "q": "Which statement best captures the principle of \"The Two-Question Filter\"?",
-            "options": [
-              "The set of rituals, defaults, and decisions you don't have to remake each day.",
-              "Strategy is mainly about market sizing and competitor benchmarking.",
-              "Time is a constraint; energy is the variable.",
-              "For every commitment: (1) am I the only person who can do this? (2) is this the highest-leverage use of my time right now?"
-            ],
-            "correct": 3,
-            "explain": "\"The Two-Question Filter\" — the correct framing is: For every commitment: (1) am I the only person who can do this? (2) is this the highest-leverage use of my time right now?"
-          },
-          {
-            "q": "Which statement best captures the principle of \"Personal Operating System\"?",
-            "options": [
-              "Patrick Collison's framing.",
-              "For every commitment: (1) am I the only person who can do this? (2) is this the highest-leverage use of my time right now?",
-              "Strategy is mainly about market sizing and competitor benchmarking.",
-              "The set of rituals, defaults, and decisions you don't have to remake each day."
-            ],
-            "correct": 3,
-            "explain": "\"Personal Operating System\" — the correct framing is: The set of rituals, defaults, and decisions you don't have to remake each day."
-          }
-        ]
-      }
-    },
-    {
-      "id": "M6L13",
-      "module_id": "M6",
-      "lesson_number": "M6L13",
-      "title": "Capstone Encore: 90-Day Plan",
-      "slug_v2": "m6l13-video-pending-generation",
-      "legacy_slug": "m4-capstone",
-      "audio_url": null,
-      "audio_overview_url": null,
-      "video_id": null,
-      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Capstone_Encore__90-Day_Plan.mp4",
-      "worksheet_url": null,
-      "lyrics_url": null,
-      "core_concepts": [
-        {
-          "title": "The 90-Day Forcing Function",
-          "body": "Set 90-day plans, not annual ones. The cycle is short enough to be concrete, long enough to do real work.\n\nAt the end of every 90 days: audit, adjust, set the next 90. Compound over years."
-        },
-        {
-          "title": "Three Bets Per Quarter",
-          "body": "Each 90-day cycle has three big bets. Not 12. Not 5. Three.\n\nThe three are aligned with the year's strategy. They have measurable outcomes. They're owned by named people. Focus is what makes quarterly planning work."
-        },
-        {
-          "title": "Weekly Cadence",
-          "body": "The 90-day plan executes through weekly rhythms. Monday: set the week's priorities. Friday: review what shipped, what slipped, why.\n\nThe weekly cadence is the connective tissue. Plans without rhythm produce slogans without execution."
-        },
-        {
-          "title": "The Retrospective Discipline",
-          "body": "Every 90-day cycle ends with an honest retrospective. What worked, what didn't, what we'd do differently.\n\nMost retros are theater. Make this one substantive — name specific decisions, specific people, specific lessons. Pattern recognition compounds."
-        },
-        {
-          "title": "The Long Game",
-          "body": "Career-changing companies are built by people who execute 40+ consecutive 90-day cycles with discipline. Most flame out after 5-10.\n\nThe difference isn't intensity. It's sustainable rhythm. The marathon, not the sprint."
-        }
-      ],
-      "take_action": [],
-      "placeholder": false,
-      "deep_dive": "**The 90-day plan is the most useful forcing function in modern operating practice.** Annual plans are too long — by month 6, the situation has changed and the plan is obsolete. Weekly plans are too short — you can't accomplish anything strategic in 5 days. The 90-day cycle is the sweet spot: long enough to do meaningful work, short enough to stay current with reality.\n\n**The three-bet structure** is the discipline that makes 90-day plans work:\n\n- Three big bets, not five, not ten.\n- Each bet has a named owner.\n- Each bet has a measurable outcome.\n- Each bet aligns with the year's strategy.\n\nThe constraint to three forces prioritization. Most organizations try to do everything and accomplish nothing. The teams that say \"these three matter; nothing else gets attention this quarter\" ship more than the teams trying to advance on 12 fronts.\n\n**The weekly cadence** is the connective tissue between the quarterly plan and daily work:\n\n- **Monday**: 30-minute leadership review. What's the week's focus? What's at risk?\n- **Wednesday**: midweek check-in. What's changed? Any blockers needing escalation?\n- **Friday**: review. What shipped? What slipped? Why?\n\nThe rhythm is non-negotiable. Plans without rhythm are slogans. Rhythm without plans is busy-ness. The two together produce execution.\n\n**The retrospective discipline** is what separates compounders from drifters. At the end of every 90-day cycle, take 90 minutes for a serious retro:\n\n- What did we set out to do? (Refer to the plan, no rewriting history.)\n- What did we actually accomplish?\n- What worked well? What patterns are we seeing?\n- What didn't work? What do we keep doing wrong?\n- What changes are we making in the next 90?\n\nMost retros are theater because they're framed as \"any feedback?\" and produce nothing concrete. Make this one specific: name decisions, name people, name lessons. The pattern recognition compounds across quarters. Year 3 of this discipline produces qualitatively better decisions than year 1.\n\n**The long-game framing** is the closing principle. Companies that change industries — Stripe, Airbnb, Amazon, Patagonia — were built by founders who executed 40+ consecutive 90-day cycles. They didn't make better individual bets than competitors. They made comparable bets, sustained the discipline of planning-executing-retroing, and the compounding did the work.\n\nThe practical move: this Sunday, write your next 90-day plan. Three bets. Named owners. Measurable outcomes. Schedule the weekly cadence. Schedule the closing retro on the calendar 90 days out. Do this 40 times. Then look at what you've built.",
-      "quiz": {
-        "pass_pct": 80,
-        "polished_v2": true,
-        "questions": [
-          {
-            "q": "\"The 90-Day Forcing Function\" — which of these is correct?",
-            "options": [
-              "Set 90-day plans, not annual ones.",
-              "Every 90-day cycle ends with an honest retrospective.",
-              "The 90-day plan executes through weekly rhythms.",
-              "Strong leaders should make most decisions personally to maintain quality."
-            ],
-            "correct": 0,
-            "explain": "\"The 90-Day Forcing Function\" — the correct framing is: Set 90-day plans, not annual ones."
-          },
-          {
-            "q": "\"Three Bets Per Quarter\" — which of these is correct?",
-            "options": [
-              "Cultural fit is more important than skill for early team hires.",
-              "Each 90-day cycle has three big bets.",
-              "Every 90-day cycle ends with an honest retrospective.",
-              "Career-changing companies are built by people who execute 40+ consecutive 90-day cycles with discipline."
-            ],
-            "correct": 1,
-            "explain": "\"Three Bets Per Quarter\" — the correct framing is: Each 90-day cycle has three big bets."
-          },
-          {
-            "q": "How does this lesson define \"Weekly Cadence\"?",
-            "options": [
-              "Each 90-day cycle has three big bets.",
-              "The 90-day plan executes through weekly rhythms.",
-              "Set 90-day plans, not annual ones.",
-              "Strong leaders should make most decisions personally to maintain quality."
-            ],
-            "correct": 1,
-            "explain": "\"Weekly Cadence\" — the correct framing is: The 90-day plan executes through weekly rhythms."
-          },
-          {
-            "q": "Which statement best captures the principle of \"The Retrospective Discipline\"?",
-            "options": [
-              "Every 90-day cycle ends with an honest retrospective.",
-              "Cultural fit is more important than skill for early team hires.",
-              "Set 90-day plans, not annual ones.",
-              "Career-changing companies are built by people who execute 40+ consecutive 90-day cycles with discipline."
-            ],
-            "correct": 0,
-            "explain": "\"The Retrospective Discipline\" — the correct framing is: Every 90-day cycle ends with an honest retrospective."
-          },
-          {
-            "q": "\"The Long Game\" — which of these is correct?",
-            "options": [
-              "Set 90-day plans, not annual ones.",
-              "Career-changing companies are built by people who execute 40+ consecutive 90-day cycles with discipline.",
-              "Leadership style should be consistent across all five STARS situations.",
-              "Each 90-day cycle has three big bets."
-            ],
-            "correct": 1,
-            "explain": "\"The Long Game\" — the correct framing is: Career-changing companies are built by people who execute 40+ consecutive 90-day cycles with discipline."
-          }
-        ]
-      }
-    },
-    {
       "id": "M6L2",
       "module_id": "M6",
       "lesson_number": "M6L2",
@@ -4990,6 +4685,25 @@
       }
     },
     {
+      "id": "M6L6.3.5",
+      "module_id": "M6",
+      "title": "Dashboards (Deep-Dive)",
+      "slug_v2": "m6l6.3.5",
+      "legacy_slug": "m6l6.3.5",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "This lesson is in production. Video drops with the next batch; lesson body to follow.",
+      "is_fractional": true,
+      "newly_added": "2026-05-13"
+    },
+    {
       "id": "M6L7",
       "module_id": "M6",
       "lesson_number": "M6L7",
@@ -5290,6 +5004,406 @@
       }
     },
     {
+      "id": "M6L10",
+      "module_id": "M6",
+      "lesson_number": "M6L10",
+      "title": "Exit Strategy (Exit Story)",
+      "slug_v2": "m6l10-exit-strategy-exit-story",
+      "legacy_slug": "exit",
+      "audio_url": null,
+      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/exit-strategy.mp4",
+      "video_id": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Exit_Strategy.mp4",
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        {
+          "title": "Build a Saleable Asset",
+          "body": "Many great-operating businesses are unsellable. Owner-dependent, no transferable systems, no clean financials.\n\nThe goal of exit-readiness isn't to sell — it's to *be able* to sell. Optionality. The business is more valuable when it doesn't depend on you."
+        },
+        {
+          "title": "The Exit Narrative",
+          "body": "Buyers buy a story, not just a balance sheet. The story includes why this business now, why it's worth a premium, what the buyer can do with it.\n\nThe story takes 12-24 months to build deliberately. The mistake is starting it 3 months before the process opens."
+        },
+        {
+          "title": "Strategic vs Financial Exit",
+          "body": "Strategic buyer: another operating company. Pays for synergies. Higher multiples. Slower process.\n\nFinancial buyer (PE): cares about returns. Pays for stand-alone economics. Faster process; lower price."
+        },
+        {
+          "title": "The Process Premium",
+          "body": "A well-run process with 4-6 bidders typically clears 30-50% higher than a one-on-one negotiation.\n\nProcess premium comes from competition. Hire a banker who runs structured processes for businesses your size. Their fee (1-3%) usually returns 10-30x in higher clearing price."
+        },
+        {
+          "title": "Post-Exit Reality",
+          "body": "Most founders are unprepared for life after exit. Identity tied to the business, sudden liquidity, freedom that feels like vertigo.\n\nPlan the next chapter before you close. The founders who do well post-exit have something they're moving toward, not away from."
+        }
+      ],
+      "take_action": [],
+      "placeholder": false,
+      "deep_dive": "**Most founders think about exit too late and too narrowly.** They think about it 3 months before they want to sell, and they think of it as a single transaction. The founders who maximize outcomes — and who don't regret what comes after — think about exit-readiness from year 3, treat it as a multi-year construction project, and plan their post-exit life with the same discipline they brought to building the business.\n\n**Exit-readiness ≠ exiting.** The same disciplines that make a business saleable also make it well-run:\n\n- Clean financials (audited statements, predictable accruals, no surprises)\n- Transferable systems (process documentation, not founder-in-everyone's-head)\n- Bench strength (next layer of leadership can run the business)\n- Customer concentration manageable (<25% from any one customer)\n- Contracts solid (no auto-renewal traps, key supplier terms documented)\n\nIf you build for sellability, you build for resilience. Even if you never sell.\n\n**The exit story** is the deliberate construction of narrative:\n\n- **Why this business**: what's the structural advantage? Why can't this be replicated?\n- **Why now**: market timing, growth trajectory, technology shift, regulatory tailwind\n- **What the buyer gets**: defensible market position, profitable growth, talent\n- **What the buyer can do with it**: synergies, expansion, geographic scaling\n\nBuyers pay for the story. They commission the diligence to confirm the numbers, but they're sold on the story first. Build it deliberately into board materials, customer references, analyst briefings over 18-24 months before a process opens.\n\n**The process premium** is real and measurable. A structured process with 4-6 invited bidders, run by a competent banker, clears 30-50% higher than a one-on-one with a single buyer who approached you first. The banker fee (1-3% of transaction value) returns 10-30x by creating competitive tension. The founders who run a single-buyer process \"to save the fee\" routinely leave 7-figures on the table.\n\n**Post-exit reality** is the unsung consideration. The exit closes. The wire hits. The freedom that felt like the goal turns out to feel like vertigo. Founders without a Plan B drift for 6-18 months in identity crisis. The ones who do well post-exit:\n\n- Have a personal mission that's bigger than the company\n- Took some time before the exit to map their next decade\n- Maintained relationships outside the company that survive its sale\n- Have hobbies, intellectual interests, or family commitments to anchor identity\n\nThe practical move 12 months before exit: schedule recurring conversations with founders who exited 2-5 years ago. What did they wish they'd known? What did they do well in the year after? The patterns repeat. Learn before you live them.",
+      "quiz": {
+        "pass_pct": 80,
+        "polished_v2": true,
+        "questions": [
+          {
+            "q": "What does \"Build a Saleable Asset\" mean in MBA Rock?",
+            "options": [
+              "Many great-operating businesses are unsellable.",
+              "Most founders are unprepared for life after exit.",
+              "Strategic acquirers always pay more than financial acquirers.",
+              "Strategic buyer: another operating company."
+            ],
+            "correct": 0,
+            "explain": "\"Build a Saleable Asset\" — the correct framing is: Many great-operating businesses are unsellable."
+          },
+          {
+            "q": "\"The Exit Narrative\" — which of these is correct?",
+            "options": [
+              "Buyers buy a story, not just a balance sheet.",
+              "Strategic buyer: another operating company.",
+              "Exit timing is most strongly influenced by the founder's age, not market conditions.",
+              "Most founders are unprepared for life after exit."
+            ],
+            "correct": 0,
+            "explain": "\"The Exit Narrative\" — the correct framing is: Buyers buy a story, not just a balance sheet."
+          },
+          {
+            "q": "What does \"Strategic vs Financial Exit\" mean in MBA Rock?",
+            "options": [
+              "Most founders are unprepared for life after exit.",
+              "Exit multiples are determined primarily by revenue, not growth.",
+              "Many great-operating businesses are unsellable.",
+              "Strategic buyer: another operating company."
+            ],
+            "correct": 3,
+            "explain": "\"Strategic vs Financial Exit\" — the correct framing is: Strategic buyer: another operating company."
+          },
+          {
+            "q": "\"The Process Premium\" — which of these is correct?",
+            "options": [
+              "Buyers buy a story, not just a balance sheet.",
+              "A well-run process with 4-6 bidders typically clears 30-50% higher than a one-on-one negotiation.",
+              "Strategic buyer: another operating company.",
+              "An IPO is the most desirable exit for most venture-backed companies."
+            ],
+            "correct": 1,
+            "explain": "\"The Process Premium\" — the correct framing is: A well-run process with 4-6 bidders typically clears 30-50% higher than a one-on-one negotiation."
+          },
+          {
+            "q": "\"Post-Exit Reality\" — which of these is correct?",
+            "options": [
+              "Exit multiples are determined primarily by revenue, not growth.",
+              "Buyers buy a story, not just a balance sheet.",
+              "A well-run process with 4-6 bidders typically clears 30-50% higher than a one-on-one negotiation.",
+              "Most founders are unprepared for life after exit."
+            ],
+            "correct": 3,
+            "explain": "\"Post-Exit Reality\" — the correct framing is: Most founders are unprepared for life after exit."
+          }
+        ]
+      }
+    },
+    {
+      "id": "M6L11",
+      "module_id": "M6",
+      "lesson_number": "M6L11",
+      "title": "Complex Human Systems (Ethics Compass)",
+      "slug_v2": "m6l11-complex-human-systems-ethics-compass",
+      "legacy_slug": null,
+      "audio_url": null,
+      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/complex-human-systems.mp4",
+      "video_id": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Complex_Human_Systems.mp4",
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        {
+          "title": "The Ethical Override",
+          "body": "Some decisions are not optimization problems. They're constraints. Don't lie to customers. Don't shortcut safety. Don't exploit information asymmetry.\n\nThe ethical override sits above strategy. Violating it for short-term gain destroys long-term value, every time."
+        },
+        {
+          "title": "Stakeholder Map",
+          "body": "Every business decision affects multiple stakeholders: customers, employees, investors, suppliers, community.\n\nDecisions optimized for one stakeholder often impose costs on others. Sustainable businesses balance the map; extractive businesses don't."
+        },
+        {
+          "title": "The Newspaper Test",
+          "body": "Before any consequential decision, ask: how would I feel if this decision was the front-page story in the local paper tomorrow?\n\nIf the answer is 'embarrassed,' you have your answer. The exercise surfaces the rationalizations you've been making."
+        },
+        {
+          "title": "Short-term vs Long-term Trade-offs",
+          "body": "Most ethical breakdowns trade short-term gains for long-term costs. Lying to a customer wins this deal; loses the next 10 referrals.\n\nDiscount long-term costs less than short-term gains. The math almost always favors the ethical path."
+        },
+        {
+          "title": "Building Ethical Infrastructure",
+          "body": "Individual willpower fails. Build systems that make the ethical choice the default — clear policies, independent audits, accessible whistleblower channels, leadership that visibly punishes violations.\n\nCulture eats individual ethics for breakfast, in both directions."
+        }
+      ],
+      "take_action": [],
+      "placeholder": false,
+      "deep_dive": "**Ethics in business isn't a separate domain from operations — it's an operating decision with longer payback periods.** The companies that compound over decades — Costco, Patagonia, Stripe, Visa — share a discipline around the few decisions that look optionally ethical and turn out to be foundational.\n\nThe most useful ethics frame for operators is **the long-term cost vs short-term gain trade-off**. Most ethical breakdowns aren't theatrical — they're small choices that look efficient in the moment and corrosive over years:\n\n- Lying (or shading) in customer pitch → wins the deal, costs the referral and the renewal\n- Cutting corners on safety → saves a week of build, costs years of trust if it surfaces\n- Pushing through a decision the team objects to → wins this fight, loses moral authority for the next\n- Treating a vendor unfairly → saves margin once, kills the supplier relationship\n\nIn each case, the short-term math looks fine; the long-term math is catastrophic. The discipline is **discounting the long-term cost at a low enough rate that it dominates the short-term gain**. Many founders implicitly discount future costs at 50-100% — which means anything more than 12 months out doesn't factor. That's how short-term thinking masquerades as rational decision-making.\n\n**The newspaper test** is one of the cleanest filters available: would I be embarrassed if this decision were front-page tomorrow? The test surfaces the rationalizations we've been making. The decisions that fail it almost always fail other tests too — they just fail the newspaper test first and loudest.\n\n**Stakeholder mapping** keeps the analysis honest. Every decision affects:\n\n- *Customers*: experience, trust, value delivered\n- *Employees*: workload, autonomy, dignity, growth\n- *Investors*: returns, risk, transparency\n- *Suppliers*: terms, predictability, fairness\n- *Community*: externalities, contributions, footprint\n\nDecisions that optimize for one stakeholder at the expense of others may look efficient quarter-to-quarter but accumulate technical debt across the relationships. The sustainable model balances the map. The extractive model concentrates value to one party until the relationship breaks.\n\n**The infrastructure level** matters because individual willpower is unreliable under pressure. The companies that maintain ethics in tough quarters have built systems:\n\n- Clear written policies on the high-risk decisions (customer claims, hiring, contract terms)\n- Independent audit functions or external advisors\n- Accessible whistleblower channels with credible follow-through\n- Public leadership response to violations — visible enough to deter\n\nWithout the infrastructure, ethics depends on the next leader. With it, ethics depends on the institution.\n\nThe practical move: write down the three decisions in the last quarter that you're least comfortable with. Run each through the newspaper test and the long-term cost lens. If any fail, you have a system problem, not a willpower problem. Fix the system.",
+      "quiz": {
+        "pass_pct": 80,
+        "polished_v2": true,
+        "questions": [
+          {
+            "q": "\"The Ethical Override\" — which of these is correct?",
+            "options": [
+              "Some decisions are not optimization problems.",
+              "Most strategic decisions are best made in committee for diversity of input.",
+              "Every business decision affects multiple stakeholders: customers, employees, investors, suppliers, community.",
+              "Before any consequential decision, ask: how would I feel if this decision was the front-page story in the local paper tomorrow?"
+            ],
+            "correct": 0,
+            "explain": "\"The Ethical Override\" — the correct framing is: Some decisions are not optimization problems."
+          },
+          {
+            "q": "What does \"Stakeholder Map\" mean in MBA Rock?",
+            "options": [
+              "Some decisions are not optimization problems.",
+              "Every business decision affects multiple stakeholders: customers, employees, investors, suppliers, community.",
+              "Individual willpower fails.",
+              "Most strategic decisions are best made in committee for diversity of input."
+            ],
+            "correct": 1,
+            "explain": "\"Stakeholder Map\" — the correct framing is: Every business decision affects multiple stakeholders: customers, employees, investors, suppliers, community."
+          },
+          {
+            "q": "What does \"The Newspaper Test\" mean in MBA Rock?",
+            "options": [
+              "Individual willpower fails.",
+              "Before any consequential decision, ask: how would I feel if this decision was the front-page story in the local paper tomorrow?",
+              "Most strategic decisions are best made in committee for diversity of input.",
+              "Most ethical breakdowns trade short-term gains for long-term costs."
+            ],
+            "correct": 1,
+            "explain": "\"The Newspaper Test\" — the correct framing is: Before any consequential decision, ask: how would I feel if this decision was the front-page story in the local paper tomorrow?"
+          },
+          {
+            "q": "How does this lesson define \"Short-term vs Long-term Trade-offs\"?",
+            "options": [
+              "Individual willpower fails.",
+              "Most ethical breakdowns trade short-term gains for long-term costs.",
+              "Faster decisions are better decisions in nearly all contexts.",
+              "Every business decision affects multiple stakeholders: customers, employees, investors, suppliers, community."
+            ],
+            "correct": 1,
+            "explain": "\"Short-term vs Long-term Trade-offs\" — the correct framing is: Most ethical breakdowns trade short-term gains for long-term costs."
+          },
+          {
+            "q": "\"Building Ethical Infrastructure\" — which of these is correct?",
+            "options": [
+              "Some decisions are not optimization problems.",
+              "Individual willpower fails.",
+              "Most strategic decisions are best made in committee for diversity of input.",
+              "Most ethical breakdowns trade short-term gains for long-term costs."
+            ],
+            "correct": 1,
+            "explain": "\"Building Ethical Infrastructure\" — the correct framing is: Individual willpower fails."
+          }
+        ]
+      }
+    },
+    {
+      "id": "M6L12",
+      "module_id": "M6",
+      "lesson_number": "M6L12",
+      "title": "Business Anatomy Masterclass (Personal OS)",
+      "slug_v2": "m6l12-business-anatomy-masterclass-personal-os",
+      "legacy_slug": null,
+      "audio_url": null,
+      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/business-anatomy-masterclass.mp4",
+      "video_id": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Business_Anatomy_Masterclass.mp4",
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        {
+          "title": "The CEO's Three Jobs",
+          "body": "Patrick Collison's framing. The CEO has three irreducible jobs:\n\n1. Set the strategy\n2. Build the team\n3. Don't run out of money\n\nEverything else can be delegated. These three cannot. The CEO who delegates these has stopped being CEO."
+        },
+        {
+          "title": "Calendar as Strategy",
+          "body": "Where you put your time is your real strategy, regardless of what your strategy doc says. Audit your last 4 weeks of calendar.\n\nIf the audit doesn't match your stated priorities, the calendar is the truth. Restructure or rewrite the strategy to match."
+        },
+        {
+          "title": "Energy Management Over Time Management",
+          "body": "Time is a constraint; energy is the variable. A high-energy 4 hours beats a low-energy 10 hours.\n\nProtect the energy peaks. Schedule deep work for the hours when you're sharpest. Schedule meetings for the rest."
+        },
+        {
+          "title": "The Two-Question Filter",
+          "body": "For every commitment: (1) am I the only person who can do this? (2) is this the highest-leverage use of my time right now?\n\nIf the answer to either is no, delegate or decline. Most CEOs say yes to too much because saying no feels rude. Saying yes to the wrong things is worse."
+        },
+        {
+          "title": "Personal Operating System",
+          "body": "The set of rituals, defaults, and decisions you don't have to remake each day. Sleep, exercise, reading, deep work, family time.\n\nThe more decisions you automate at the personal level, the more attention you have for the high-stakes ones."
+        }
+      ],
+      "take_action": [],
+      "placeholder": false,
+      "deep_dive": "**The CEO's operating system is the meta-operating system of the business.** A poorly-run CEO operating system produces a poorly-run company, regardless of how good the strategy or team is. The opposite is also true: a deliberate CEO OS leverages mediocre conditions into great outcomes.\n\nThe **three irreducible jobs** (Patrick Collison):\n\n1. **Set the strategy** — where are we going, what are we doing, what are we not doing? Can be informed by the team but ultimately the CEO's call.\n2. **Build the team** — who runs each function, how they work together, who's missing, who needs to go. The most consequential decisions a CEO makes.\n3. **Don't run out of money** — cash management, capital allocation, runway awareness. Financial fragility ends companies.\n\nEverything else — operations, sales, product, customer success — can be delegated to functional leaders. The CEO who's in the weeds on those has stopped doing CEO work.\n\n**Calendar audit** is the most useful diagnostic. Take your last 4 weeks of calendar. Categorize every block:\n\n- Strategy (where are we going)\n- Team (who works here, how they're doing)\n- Capital (runway, fundraising, investor relations)\n- Customer (talking to customers, understanding the market)\n- Operations (what should be delegated)\n- Reactive (firefighting, responses, meetings I shouldn't be in)\n\nThe split reveals the truth. If 60% is operations and reactive, you're a senior operator, not a CEO. Rebalance.\n\n**Energy management** is the under-discussed companion to time management. Time is finite (24 hours, 7 days). Energy is variable (4 great hours can produce more than 10 mediocre ones). The disciplines:\n\n- Sleep ≥ 7 hours. Non-negotiable. The cost of less sleep is invisible but real.\n- Schedule deep work for energy peaks (usually mornings for most people).\n- Schedule low-energy work (admin, status meetings, light reading) for energy troughs.\n- Build recovery rituals — exercise, walks, breaks between intense calls.\n\nThe CEOs who burn out tend to be the ones who treated energy as a constant. The ones who compound over decades treat it as the variable to protect.\n\n**The two-question filter** for every commitment request:\n\n- *Am I the only one who can do this?* Most things, no.\n- *Is this the highest-leverage use of my time right now?* Most things, no.\n\nDelegate or decline. The hard part is the social cost of declining — but the cost of saying yes to the wrong thing is higher and silent.\n\nThe practical move: design your week as a default schedule. Mondays = strategy + reading. Tuesdays = team. Wednesdays = customer. Thursdays = operations review (delegated, you mostly listen). Fridays = personal admin + retro. The default schedule means most weeks don't need designing — exceptions are conscious choices, not drift.",
+      "quiz": {
+        "pass_pct": 80,
+        "polished_v2": true,
+        "questions": [
+          {
+            "q": "What does \"The CEO's Three Jobs\" mean in MBA Rock?",
+            "options": [
+              "Strategy is mainly about market sizing and competitor benchmarking.",
+              "Where you put your time is your real strategy, regardless of what your strategy doc says.",
+              "Patrick Collison's framing.",
+              "Time is a constraint; energy is the variable."
+            ],
+            "correct": 2,
+            "explain": "\"The CEO's Three Jobs\" — the correct framing is: Patrick Collison's framing."
+          },
+          {
+            "q": "How does this lesson define \"Calendar as Strategy\"?",
+            "options": [
+              "For every commitment: (1) am I the only person who can do this? (2) is this the highest-leverage use of my time right now?",
+              "Strategy is mainly about market sizing and competitor benchmarking.",
+              "Patrick Collison's framing.",
+              "Where you put your time is your real strategy, regardless of what your strategy doc says."
+            ],
+            "correct": 3,
+            "explain": "\"Calendar as Strategy\" — the correct framing is: Where you put your time is your real strategy, regardless of what your strategy doc says."
+          },
+          {
+            "q": "\"Energy Management Over Time Management\" — which of these is correct?",
+            "options": [
+              "Time is a constraint; energy is the variable.",
+              "Patrick Collison's framing.",
+              "The set of rituals, defaults, and decisions you don't have to remake each day.",
+              "A good strategy enumerates as many options as possible to maximize flexibility."
+            ],
+            "correct": 0,
+            "explain": "\"Energy Management Over Time Management\" — the correct framing is: Time is a constraint; energy is the variable."
+          },
+          {
+            "q": "Which statement best captures the principle of \"The Two-Question Filter\"?",
+            "options": [
+              "The set of rituals, defaults, and decisions you don't have to remake each day.",
+              "Strategy is mainly about market sizing and competitor benchmarking.",
+              "Time is a constraint; energy is the variable.",
+              "For every commitment: (1) am I the only person who can do this? (2) is this the highest-leverage use of my time right now?"
+            ],
+            "correct": 3,
+            "explain": "\"The Two-Question Filter\" — the correct framing is: For every commitment: (1) am I the only person who can do this? (2) is this the highest-leverage use of my time right now?"
+          },
+          {
+            "q": "Which statement best captures the principle of \"Personal Operating System\"?",
+            "options": [
+              "Patrick Collison's framing.",
+              "For every commitment: (1) am I the only person who can do this? (2) is this the highest-leverage use of my time right now?",
+              "Strategy is mainly about market sizing and competitor benchmarking.",
+              "The set of rituals, defaults, and decisions you don't have to remake each day."
+            ],
+            "correct": 3,
+            "explain": "\"Personal Operating System\" — the correct framing is: The set of rituals, defaults, and decisions you don't have to remake each day."
+          }
+        ]
+      }
+    },
+    {
+      "id": "M6L13",
+      "module_id": "M6",
+      "lesson_number": "M6L13",
+      "title": "Capstone Encore: 90-Day Plan",
+      "slug_v2": "m6l13-video-pending-generation",
+      "legacy_slug": "m4-capstone",
+      "audio_url": null,
+      "audio_overview_url": null,
+      "video_id": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Capstone_Encore__90-Day_Plan.mp4",
+      "worksheet_url": null,
+      "lyrics_url": null,
+      "core_concepts": [
+        {
+          "title": "The 90-Day Forcing Function",
+          "body": "Set 90-day plans, not annual ones. The cycle is short enough to be concrete, long enough to do real work.\n\nAt the end of every 90 days: audit, adjust, set the next 90. Compound over years."
+        },
+        {
+          "title": "Three Bets Per Quarter",
+          "body": "Each 90-day cycle has three big bets. Not 12. Not 5. Three.\n\nThe three are aligned with the year's strategy. They have measurable outcomes. They're owned by named people. Focus is what makes quarterly planning work."
+        },
+        {
+          "title": "Weekly Cadence",
+          "body": "The 90-day plan executes through weekly rhythms. Monday: set the week's priorities. Friday: review what shipped, what slipped, why.\n\nThe weekly cadence is the connective tissue. Plans without rhythm produce slogans without execution."
+        },
+        {
+          "title": "The Retrospective Discipline",
+          "body": "Every 90-day cycle ends with an honest retrospective. What worked, what didn't, what we'd do differently.\n\nMost retros are theater. Make this one substantive — name specific decisions, specific people, specific lessons. Pattern recognition compounds."
+        },
+        {
+          "title": "The Long Game",
+          "body": "Career-changing companies are built by people who execute 40+ consecutive 90-day cycles with discipline. Most flame out after 5-10.\n\nThe difference isn't intensity. It's sustainable rhythm. The marathon, not the sprint."
+        }
+      ],
+      "take_action": [],
+      "placeholder": false,
+      "deep_dive": "**The 90-day plan is the most useful forcing function in modern operating practice.** Annual plans are too long — by month 6, the situation has changed and the plan is obsolete. Weekly plans are too short — you can't accomplish anything strategic in 5 days. The 90-day cycle is the sweet spot: long enough to do meaningful work, short enough to stay current with reality.\n\n**The three-bet structure** is the discipline that makes 90-day plans work:\n\n- Three big bets, not five, not ten.\n- Each bet has a named owner.\n- Each bet has a measurable outcome.\n- Each bet aligns with the year's strategy.\n\nThe constraint to three forces prioritization. Most organizations try to do everything and accomplish nothing. The teams that say \"these three matter; nothing else gets attention this quarter\" ship more than the teams trying to advance on 12 fronts.\n\n**The weekly cadence** is the connective tissue between the quarterly plan and daily work:\n\n- **Monday**: 30-minute leadership review. What's the week's focus? What's at risk?\n- **Wednesday**: midweek check-in. What's changed? Any blockers needing escalation?\n- **Friday**: review. What shipped? What slipped? Why?\n\nThe rhythm is non-negotiable. Plans without rhythm are slogans. Rhythm without plans is busy-ness. The two together produce execution.\n\n**The retrospective discipline** is what separates compounders from drifters. At the end of every 90-day cycle, take 90 minutes for a serious retro:\n\n- What did we set out to do? (Refer to the plan, no rewriting history.)\n- What did we actually accomplish?\n- What worked well? What patterns are we seeing?\n- What didn't work? What do we keep doing wrong?\n- What changes are we making in the next 90?\n\nMost retros are theater because they're framed as \"any feedback?\" and produce nothing concrete. Make this one specific: name decisions, name people, name lessons. The pattern recognition compounds across quarters. Year 3 of this discipline produces qualitatively better decisions than year 1.\n\n**The long-game framing** is the closing principle. Companies that change industries — Stripe, Airbnb, Amazon, Patagonia — were built by founders who executed 40+ consecutive 90-day cycles. They didn't make better individual bets than competitors. They made comparable bets, sustained the discipline of planning-executing-retroing, and the compounding did the work.\n\nThe practical move: this Sunday, write your next 90-day plan. Three bets. Named owners. Measurable outcomes. Schedule the weekly cadence. Schedule the closing retro on the calendar 90 days out. Do this 40 times. Then look at what you've built.",
+      "quiz": {
+        "pass_pct": 80,
+        "polished_v2": true,
+        "questions": [
+          {
+            "q": "\"The 90-Day Forcing Function\" — which of these is correct?",
+            "options": [
+              "Set 90-day plans, not annual ones.",
+              "Every 90-day cycle ends with an honest retrospective.",
+              "The 90-day plan executes through weekly rhythms.",
+              "Strong leaders should make most decisions personally to maintain quality."
+            ],
+            "correct": 0,
+            "explain": "\"The 90-Day Forcing Function\" — the correct framing is: Set 90-day plans, not annual ones."
+          },
+          {
+            "q": "\"Three Bets Per Quarter\" — which of these is correct?",
+            "options": [
+              "Cultural fit is more important than skill for early team hires.",
+              "Each 90-day cycle has three big bets.",
+              "Every 90-day cycle ends with an honest retrospective.",
+              "Career-changing companies are built by people who execute 40+ consecutive 90-day cycles with discipline."
+            ],
+            "correct": 1,
+            "explain": "\"Three Bets Per Quarter\" — the correct framing is: Each 90-day cycle has three big bets."
+          },
+          {
+            "q": "How does this lesson define \"Weekly Cadence\"?",
+            "options": [
+              "Each 90-day cycle has three big bets.",
+              "The 90-day plan executes through weekly rhythms.",
+              "Set 90-day plans, not annual ones.",
+              "Strong leaders should make most decisions personally to maintain quality."
+            ],
+            "correct": 1,
+            "explain": "\"Weekly Cadence\" — the correct framing is: The 90-day plan executes through weekly rhythms."
+          },
+          {
+            "q": "Which statement best captures the principle of \"The Retrospective Discipline\"?",
+            "options": [
+              "Every 90-day cycle ends with an honest retrospective.",
+              "Cultural fit is more important than skill for early team hires.",
+              "Set 90-day plans, not annual ones.",
+              "Career-changing companies are built by people who execute 40+ consecutive 90-day cycles with discipline."
+            ],
+            "correct": 0,
+            "explain": "\"The Retrospective Discipline\" — the correct framing is: Every 90-day cycle ends with an honest retrospective."
+          },
+          {
+            "q": "\"The Long Game\" — which of these is correct?",
+            "options": [
+              "Set 90-day plans, not annual ones.",
+              "Career-changing companies are built by people who execute 40+ consecutive 90-day cycles with discipline.",
+              "Leadership style should be consistent across all five STARS situations.",
+              "Each 90-day cycle has three big bets."
+            ],
+            "correct": 1,
+            "explain": "\"The Long Game\" — the correct framing is: Career-changing companies are built by people who execute 40+ consecutive 90-day cycles with discipline."
+          }
+        ]
+      }
+    },
+    {
       "id": "M7L1",
       "module_id": "M7",
       "lesson_number": "M7L1",
@@ -5388,6 +5502,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "M7L2",
+      "module_id": "M7",
+      "title": "Brand Positioning & Messaging",
+      "slug_v2": "m7l2",
+      "legacy_slug": "m7l2",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": false,
+      "newly_added": "2026-05-13"
+    },
+    {
+      "id": "M7L3",
+      "module_id": "M7",
+      "title": "Pricing Strategy",
+      "slug_v2": "m7l3",
+      "legacy_slug": "m7l3",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": false,
+      "newly_added": "2026-05-13"
+    },
+    {
+      "id": "M7L4",
+      "module_id": "M7",
+      "title": "Content & Demand Generation",
+      "slug_v2": "m7l4",
+      "legacy_slug": "m7l4",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": false,
+      "newly_added": "2026-05-13"
+    },
+    {
+      "id": "M7L5",
+      "module_id": "M7",
+      "title": "Customer Retention & Loyalty",
+      "slug_v2": "m7l5",
+      "legacy_slug": "m7l5",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": false,
+      "newly_added": "2026-05-13"
     },
     {
       "id": "M8L1",
@@ -5605,6 +5795,25 @@
       }
     },
     {
+      "id": "M8L2.5",
+      "module_id": "M8",
+      "title": "Supply Chain & Inventory Management",
+      "slug_v2": "m8l2.5",
+      "legacy_slug": "m8l2.5",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": true,
+      "newly_added": "2026-05-13"
+    },
+    {
       "id": "M8L3",
       "module_id": "M8",
       "lesson_number": "M8L3",
@@ -5720,6 +5929,44 @@
       }
     },
     {
+      "id": "M8L4",
+      "module_id": "M8",
+      "title": "Project & Program Management",
+      "slug_v2": "m8l4",
+      "legacy_slug": "m8l4",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": false,
+      "newly_added": "2026-05-13"
+    },
+    {
+      "id": "M8L5",
+      "module_id": "M8",
+      "title": "Vendor & Partnership Management",
+      "slug_v2": "m8l5",
+      "legacy_slug": "m8l5",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": false,
+      "newly_added": "2026-05-13"
+    },
+    {
       "id": "M9L1",
       "module_id": "M9",
       "lesson_number": "M9L1",
@@ -5820,6 +6067,82 @@
       }
     },
     {
+      "id": "M9L2",
+      "module_id": "M9",
+      "title": "KPIs & Performance Dashboards",
+      "slug_v2": "m9l2",
+      "legacy_slug": "m9l2",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": false,
+      "newly_added": "2026-05-13"
+    },
+    {
+      "id": "M9L3",
+      "module_id": "M9",
+      "title": "A/B Testing & Experimentation",
+      "slug_v2": "m9l3",
+      "legacy_slug": "m9l3",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": false,
+      "newly_added": "2026-05-13"
+    },
+    {
+      "id": "M9L4",
+      "module_id": "M9",
+      "title": "Forecasting & Scenario Planning",
+      "slug_v2": "m9l4",
+      "legacy_slug": "m9l4",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": false,
+      "newly_added": "2026-05-13"
+    },
+    {
+      "id": "M9L5",
+      "module_id": "M9",
+      "title": "Risk Management & Mitigation",
+      "slug_v2": "m9l5",
+      "legacy_slug": "m9l5",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": false,
+      "newly_added": "2026-05-13"
+    },
+    {
       "id": "M10L1",
       "module_id": "M10",
       "lesson_number": "M10L1",
@@ -5918,6 +6241,82 @@
           }
         ]
       }
+    },
+    {
+      "id": "M10L2",
+      "module_id": "M10",
+      "title": "Disruption & The Innovator's Dilemma",
+      "slug_v2": "m10l2",
+      "legacy_slug": "m10l2",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": false,
+      "newly_added": "2026-05-13"
+    },
+    {
+      "id": "M10L3",
+      "module_id": "M10",
+      "title": "AI & Emerging Technology Strategy",
+      "slug_v2": "m10l3",
+      "legacy_slug": "m10l3",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": false,
+      "newly_added": "2026-05-13"
+    },
+    {
+      "id": "M10L4",
+      "module_id": "M10",
+      "title": "Sustainability & ESG Strategy",
+      "slug_v2": "m10l4",
+      "legacy_slug": "m10l4",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": false,
+      "newly_added": "2026-05-13"
+    },
+    {
+      "id": "M10L5",
+      "module_id": "M10",
+      "title": "The Future-Ready Leader (Capstone)",
+      "slug_v2": "m10l5",
+      "legacy_slug": "m10l5",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "Content for this lesson is being produced. Check back soon for the full lesson page, video, and quiz.",
+      "is_fractional": false,
+      "newly_added": "2026-05-13"
     }
   ],
   "capstone_sections": [
@@ -5992,5 +6391,5 @@
       "what_you_ship": "1-page plan + 90-day execution roadmap"
     }
   ],
-  "last_migration": "2026-05-13: polish pass — distractors now real-but-wrong concepts + misconceptions, no fluff"
+  "last_migration": "2026-05-13: expand canon 55→74 lessons. Added fractional deep-dives + completes M7-M10. New lessons have pending_content:true until bodies are authored."
 }
