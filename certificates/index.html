@@ -117,7 +117,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;letter-spacing:-0.018em;color:var(--nav
     <p class="sub">Every module ships a real credential when you finish it. Pass the comprehension check on each lesson, complete the module's Take Action items, and the Module Mark is yours — verifiable, shareable, and one click into your LinkedIn profile. Earn all 10 plus the Capstone and the Operator's Certificate is yours.</p>
     <div class="meta-strip">
       <div class="stat"><div class="l">Modules earned</div><div class="v"><span id="moduleCount">0</span><small>/10</small></div></div>
-      <div class="stat"><div class="l">Lessons passed</div><div class="v"><span id="lessonCount">0</span><small>/55</small></div></div>
+      <div class="stat"><div class="l">Lessons passed</div><div class="v"><span id="lessonCount">0</span><small id="lessonTotal">/74</small></div></div>
       <div class="stat"><div class="l">Capstone fields</div><div class="v"><span id="capstoneCount">0</span><small>/52</small></div></div>
       <div class="stat"><div class="l">Operator's status</div><div class="v" id="opStatus" style="font-size:18px;">Not yet</div></div>
     </div>
@@ -135,7 +135,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;letter-spacing:-0.018em;color:var(--nav
     <p>Comprehensive proof that you've completed the program — 10 modules, 76 lessons, 50+ frameworks, every comprehension check passed, and a 10-section Business Operating System assembled as your capstone. Stack it on LinkedIn alongside your degree.</p>
     <div class="progress-meta">
       <div class="item"><div class="l">Modules</div><div class="v" id="opModules">0/10</div></div>
-      <div class="item"><div class="l">Lessons</div><div class="v" id="opLessons">0/55</div></div>
+      <div class="item"><div class="l">Lessons</div><div class="v" id="opLessons">0/74</div></div>
       <div class="item"><div class="l">Capstone</div><div class="v" id="opCapstone">0%</div></div>
     </div>
     <div class="actions" id="opActions">
@@ -430,6 +430,9 @@ async function init(){
 }
 
 init();
+
+(function(){fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json?cb='+Date.now()).then(r=>r.json()).then(j=>{var t=(j.lessons||[]).length;var e=document.getElementById('lessonTotal');if(e)e.textContent='/'+t;var op=document.getElementById('opLessons');if(op){var cur=parseInt((op.textContent||'').split('/')[0])||0;op.textContent=cur+'/'+t;}}).catch(function(){});})();
+
 </script>
 </body>
 </html>
