@@ -1,5 +1,5 @@
 {
-  "schema_version": "v2.10sections.74lessons.quizzes.polished",
+  "schema_version": "v2.10sections.74lessons.quizzes.polished.synced",
   "generated_from": "Josh's 2026-05-11 LMS Deployment Guide",
   "global": {
     "textbook": {
@@ -672,6 +672,24 @@
           }
         ]
       }
+    },
+    {
+      "id": "M1L2.5",
+      "module_id": "M1",
+      "title": "April Cash Timing (Deep-Dive)",
+      "slug_v2": "m1l2.5",
+      "legacy_slug": "april-cash-timing",
+      "song_title": null,
+      "video_url": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "pending_content": true,
+      "pending_video": true,
+      "content_note": "This deep-dive on April-style cash timing is in production.",
+      "newly_added": "2026-05-14"
     },
     {
       "id": "M1L3",
@@ -6391,5 +6409,5 @@
       "what_you_ship": "1-page plan + 90-day execution roadmap"
     }
   ],
-  "last_migration": "2026-05-13: expand canon 55→74 lessons. Added fractional deep-dives + completes M7-M10. New lessons have pending_content:true until bodies are authored."
+  "last_migration": "2026-05-14: Verified 10-module / 74-lesson NotebookLM brief alignment. Added M1L2.5 (April Cash Timing). Kept 2 grandfathered deep-dives. 76 total lessons in file (74 brief + 2 grandfathered)."
 }
