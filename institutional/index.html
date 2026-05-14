@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MBA Rock for Teams — Institutional & Corporate Partners</title>
+<meta name="description" content="Train your team like a startup, without the startup costs. MBA Rock for 20+ seats — annual licenses starting at $349/seat. Real business plans, real certificates, real outcomes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A;
+    --navy-2:#152D52;
+    --orange:#F26B1F;
+    --orange-soft:#FCE5D4;
+    --ink:#1A1208;
+    --ink-2:#3D3025;
+    --paper:#FDFAF1;
+    --cream:#F8F1E1;
+    --cream-2:#F3EAD2;
+    --line:#E8DFC8;
+    --gold:#C99A3B;
+    --green:#2E7D5A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6}
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.015em;color:var(--ink);font-weight:700;line-height:1.1}
+  h1{font-size:clamp(40px,6vw,76px);font-weight:800;letter-spacing:-0.025em}
+  h2{font-size:clamp(28px,4vw,48px);font-weight:700}
+  h3{font-size:clamp(20px,2.4vw,28px);font-weight:600}
+  p{font-size:17px;line-height:1.65;color:var(--ink-2)}
+  .lead{font-size:20px;line-height:1.55;color:var(--ink-2);max-width:680px}
+  .inner{max-width:1140px;margin:0 auto;padding:0 28px}
+  .section{padding:96px 0;border-bottom:1px solid var(--line)}
+  .section.tight{padding:64px 0}
+  .section.alt{background:var(--cream)}
+  .section.dark{background:var(--navy);color:var(--cream)}
+  .section.dark h1,.section.dark h2,.section.dark h3{color:var(--cream)}
+  .section.dark p{color:rgba(248,241,225,0.86)}
+  .eyebrow{display:inline-block;font-family:'Inter';font-size:12px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:var(--orange);margin-bottom:16px}
+  .section.dark .eyebrow{color:var(--orange)}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;background:var(--orange-soft);color:#8A3D0E;border-radius:999px;font-size:12.5px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase}
+  .cta{display:inline-block;padding:18px 44px;background:var(--orange);color:#fff;font-family:'Inter';font-weight:700;letter-spacing:0.04em;font-size:16px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:transform .12s ease,box-shadow .15s ease;min-height:48px;min-width:140px;line-height:1.2}
+  .cta:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(242,107,31,0.32)}
+  .cta.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+  .cta.lg{padding:22px 56px;font-size:17px}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+
+  /* TOP NAV */
+  .topnav{background:var(--navy);color:var(--cream);padding:18px 0;font-size:13px;letter-spacing:0.04em}
+  .topnav .inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .topnav .brand{font-family:'Fraunces';font-size:22px;font-weight:700;color:var(--cream);letter-spacing:-0.01em;text-decoration:none}
+  .topnav nav{display:flex;gap:24px;flex-wrap:wrap}
+  .topnav nav a{color:rgba(248,241,225,0.78);text-decoration:none;font-weight:500}
+  .topnav nav a:hover{color:var(--cream)}
+  .topnav .cta-mini{display:inline-block;padding:9px 18px;background:var(--orange);color:#fff;border-radius:999px;font-weight:700;font-size:13px;letter-spacing:0.04em;text-decoration:none}
+
+  /* HERO */
+  .hero{background:linear-gradient(180deg,#0B1F3A 0%,#152D52 100%);color:var(--cream);padding:80px 0 96px;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 60% at 80% 0%,rgba(242,107,31,0.18) 0%,transparent 60%),radial-gradient(50% 50% at 0% 100%,rgba(201,154,59,0.12) 0%,transparent 60%);pointer-events:none}
+  .hero .inner{position:relative}
+  .hero h1{color:var(--cream);font-size:clamp(40px,6vw,76px);max-width:920px}
+  .hero h1 .underline{position:relative;color:var(--cream)}
+  .hero h1 .underline::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:6px;background:var(--orange);border-radius:3px}
+  .hero p.lead{color:rgba(248,241,225,0.86);margin-top:28px;font-size:21px;max-width:680px}
+  .hero-cta-row{display:flex;gap:14px;margin-top:40px;flex-wrap:wrap;align-items:center}
+  .hero-cta-row .cta.ghost{color:var(--cream);border-color:rgba(248,241,225,0.4)}
+  .hero-cta-row .cta.ghost:hover{background:rgba(248,241,225,0.08);border-color:var(--cream)}
+  .hero-cta-row .micro{color:rgba(248,241,225,0.65);font-size:13px}
+  .hero-stats{display:flex;gap:48px;margin-top:64px;padding-top:32px;border-top:1px solid rgba(248,241,225,0.14);flex-wrap:wrap}
+  .hero-stats .stat .num{font-family:'Fraunces';font-size:36px;font-weight:700;color:var(--cream);letter-spacing:-0.02em;line-height:1}
+  .hero-stats .stat .lbl{font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(248,241,225,0.62);margin-top:8px;font-weight:600}
+
+  /* TIERS */
+  .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  @media(max-width:880px){.tier-grid{grid-template-columns:1fr}}
+  .tier{background:#fff;border:1px solid var(--line);border-radius:20px;padding:36px 32px;display:flex;flex-direction:column;position:relative}
+  .tier.featured{border:2px solid var(--orange);box-shadow:0 16px 50px rgba(242,107,31,0.16)}
+  .tier .ribbon{position:absolute;top:-13px;right:24px;background:var(--orange);color:#fff;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;padding:6px 14px;border-radius:999px}
+  .tier h3{color:var(--navy);font-family:'Fraunces';font-size:28px}
+  .tier .seats{font-size:13.5px;letter-spacing:0.06em;color:var(--ink-2);text-transform:uppercase;font-weight:600;margin-top:6px}
+  .tier .price{margin-top:24px;display:flex;align-items:baseline;gap:8px}
+  .tier .price .num{font-family:'Fraunces';font-size:44px;font-weight:800;color:var(--navy);letter-spacing:-0.02em;line-height:1}
+  .tier .price .per{font-size:13.5px;color:var(--ink-2);font-weight:500}
+  .tier .price.custom .num{font-size:32px}
+  .tier ul{list-style:none;margin-top:28px;flex:1}
+  .tier ul li{padding:10px 0 10px 28px;position:relative;font-size:15px;color:var(--ink-2);line-height:1.5}
+  .tier ul li::before{content:'✓';position:absolute;left:0;color:var(--orange);font-weight:700;font-size:16px}
+  .tier .cta{margin-top:28px;text-align:center;width:100%}
+  .tier-foot{margin-top:36px;font-size:14px;color:var(--ink-2);text-align:center}
+
+  /* GENERIC */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  @media(max-width:880px){.grid-2{grid-template-columns:1fr;gap:40px}}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  @media(max-width:880px){.grid-3{grid-template-columns:1fr}}
+  .grid-2-5{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+  @media(max-width:880px){.grid-2-5{grid-template-columns:repeat(2,1fr)}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px;box-shadow:0 4px 18px rgba(60,40,15,0.04)}
+  .card.solid{background:var(--cream-2)}
+  .card h3{color:var(--navy);font-family:'Fraunces';font-size:22px;margin-bottom:14px}
+  .card p{font-size:15.5px}
+
+  /* USE CASES */
+  .usecase{padding:28px 24px;background:#fff;border:1px solid var(--line);border-radius:16px;text-align:center;transition:transform .15s ease,box-shadow .15s ease}
+  .usecase:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(60,40,15,0.08)}
+  .usecase .icon{font-size:34px;margin-bottom:14px;display:block;line-height:1}
+  .usecase h4{font-family:'Fraunces';color:var(--navy);font-size:18px;font-weight:700;margin-bottom:10px;line-height:1.2}
+  .usecase p{font-size:14.5px;color:var(--ink-2)}
+
+  /* ROI BLOCK */
+  .roi-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:48px}
+  @media(max-width:880px){.roi-grid{grid-template-columns:1fr}}
+  .roi-table{background:#fff;border-radius:18px;border:1px solid var(--line);overflow:hidden}
+  .roi-row{display:grid;grid-template-columns:2fr 1fr 1fr;padding:18px 24px;border-bottom:1px solid var(--line);font-size:14.5px;align-items:center;gap:12px}
+  .roi-row:last-child{border-bottom:0;background:var(--orange-soft);font-weight:700}
+  .roi-row.head{background:var(--cream);font-weight:700;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink)}
+  .roi-row .label{color:var(--ink-2)}
+  .roi-row .val{text-align:right;font-family:'Fraunces';color:var(--navy);font-weight:700}
+  .roi-row .savings{text-align:right;color:var(--green);font-weight:700}
+
+  /* FAQ */
+  .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:12px;transition:box-shadow .15s ease}
+  .faq details[open]{box-shadow:0 4px 14px rgba(60,40,15,0.05)}
+  .faq summary{cursor:pointer;font-family:'Fraunces';font-weight:600;font-size:18px;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:18px;line-height:1.3}
+  .faq summary::after{content:'+';font-size:24px;color:var(--orange);font-weight:300;line-height:1;transition:transform .15s ease}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq details p{margin-top:14px;font-size:15.5px}
+
+  /* FINAL CTA */
+  .final-cta{background:var(--navy);color:var(--cream);text-align:center;padding:96px 0;position:relative;overflow:hidden}
+  .final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(50% 60% at 50% 0%,rgba(242,107,31,0.16) 0%,transparent 70%);pointer-events:none}
+  .final-cta h2{color:var(--cream);max-width:780px;margin:0 auto 20px}
+  .final-cta p{color:rgba(248,241,225,0.86);max-width:600px;margin:0 auto 36px;font-size:18px}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:rgba(248,241,225,0.72);padding:48px 0;font-size:14px;text-align:center}
+  footer a{color:var(--orange);text-decoration:none;font-weight:600}
+  footer a:hover{text-decoration:underline}
+
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<header class="topnav">
+  <div class="inner">
+    <a href="https://www.mbarock.com" class="brand">MBA Rock</a>
+    <nav>
+      <a href="https://www.mbarock.com">Individual</a>
+      <a href="#tiers">Pricing</a>
+      <a href="#use-cases">Who it's for</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#book-call" class="cta-mini">Book a 20-min walk-through</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="inner">
+    <span class="chip" style="background:rgba(242,107,31,0.18);color:#FCE5D4;border:1px solid rgba(242,107,31,0.35)">For organizations · 20+ seats</span>
+    <h1 style="margin-top:24px">Train your team like a <span class="underline">startup</span>. Without the startup costs.</h1>
+    <p class="lead">MBA Rock for Teams gives your people the operator's playbook — 10 modules, 74 lessons, 49 original songs, the Operator's Console, and a real business plan each learner finishes with. Annual seat licenses, admin dashboard, certificate verification. Built for accelerators, university programs, music labels, and corporate L&amp;D.</p>
+    <div class="hero-cta-row">
+      <a href="#book-call" class="cta lg">Book a 20-min walk-through</a>
+      <a href="#tiers" class="cta lg ghost">See pricing</a>
+      <span class="micro">No deck required. Just bring a use case.</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">$349</div><div class="lbl">Per seat · annual · starting at</div></div>
+      <div class="stat"><div class="num">74</div><div class="lbl">Lessons across 10 modules</div></div>
+      <div class="stat"><div class="num">11</div><div class="lbl">Certificates per learner</div></div>
+      <div class="stat"><div class="num">$200K+</div><div class="lbl">Trad. MBA — per seat</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY MBA ROCK FOR TEAMS -->
+<section class="section">
+  <div class="inner">
+    <span class="eyebrow">Why MBA Rock for teams</span>
+    <h2 style="max-width:820px">An MBA delivered as an album — and the artifact your team walks away with isn't a transcript. It's a business plan.</h2>
+    <div class="grid-3" style="margin-top:56px">
+      <div class="card">
+        <h3>Cohort-paced, self-driven</h3>
+        <p>Each learner moves at their own tempo. Tracks completion, quiz scores, and Capstone progress so cohort leads see where to step in.</p>
+      </div>
+      <div class="card">
+        <h3>Built around an artifact</h3>
+        <p>Each learner finishes with a 10-section Operator's Business Plan and an investor-grade Dossier — not a transcript. Real output your team can ship.</p>
+      </div>
+      <div class="card">
+        <h3>Real certificates, real verification</h3>
+        <p>10 Module Marks + an Operator's Certificate per learner. LinkedIn-ready. Verifiable via cert ID. Auditable for accelerator or program completion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section class="section alt" id="tiers">
+  <div class="inner">
+    <span class="eyebrow">Pricing</span>
+    <h2>Three tiers. All annual licenses. All updates included.</h2>
+    <p class="lead" style="margin-top:16px">Annual seat licenses renew once a year. Roster changes are free (within seat count). Every future lesson, calculator, and feature we ship is included.</p>
+
+    <div class="tier-grid">
+      <!-- TEAM -->
+      <div class="tier">
+        <h3>Team</h3>
+        <div class="seats">20–49 seats</div>
+        <div class="price">
+          <div class="num">$349</div>
+          <div class="per">/ seat / year</div>
+        </div>
+        <ul>
+          <li>Full MBA Rock curriculum per seat (74 lessons, 10 modules, 49 songs)</li>
+          <li>Capstone business plan builder for every learner</li>
+          <li>Operator's Console (18 calculators) per seat</li>
+          <li>All 11 certificates issued per learner</li>
+          <li>Admin dashboard — cohort progress, completion exports</li>
+          <li>Email support + quarterly cohort review call</li>
+        </ul>
+        <a href="#book-call" class="cta">Book a walk-through</a>
+      </div>
+
+      <!-- COHORT (FEATURED) -->
+      <div class="tier featured">
+        <div class="ribbon">Most chosen</div>
+        <h3>Cohort</h3>
+        <div class="seats">50–199 seats</div>
+        <div class="price">
+          <div class="num">$249</div>
+          <div class="per">/ seat / year</div>
+        </div>
+        <ul>
+          <li>Everything in Team</li>
+          <li>Co-branded learner experience (your logo + program name)</li>
+          <li>Custom cohort segmentation (run multiple cohorts simultaneously)</li>
+          <li>Dedicated Slack channel with the MBA Rock team</li>
+          <li>Quarterly Capstone-review session for your top performers</li>
+          <li>SSO support (Google Workspace, Okta on request)</li>
+        </ul>
+        <a href="#book-call" class="cta">Book a walk-through</a>
+      </div>
+
+      <!-- ENTERPRISE -->
+      <div class="tier">
+        <h3>Enterprise</h3>
+        <div class="seats">200+ seats</div>
+        <div class="price custom">
+          <div class="num">Custom</div>
+        </div>
+        <ul>
+          <li>Everything in Cohort</li>
+          <li>Volume pricing — typically under $150/seat at scale</li>
+          <li>White-label option (your domain, your branding)</li>
+          <li>Custom module commissioning (we build to your sector)</li>
+          <li>Dedicated customer success manager</li>
+          <li>API access for LMS integration (SCORM/xAPI on request)</li>
+          <li>Annual on-site or virtual keynote with Josh</li>
+        </ul>
+        <a href="#book-call" class="cta">Talk to us</a>
+      </div>
+    </div>
+
+    <div class="tier-foot">
+      All licenses are annual and renew automatically unless cancelled. Pricing is per active seat; rosters can be edited monthly. <strong>Pilot programs available</strong> — we'll run a 10-seat, 30-day pilot at the Team rate for qualified organizations.
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="section" id="use-cases">
+  <div class="inner">
+    <span class="eyebrow">Who this is for</span>
+    <h2>Five kinds of organizations use MBA Rock for teams.</h2>
+    <div class="grid-2-5" style="margin-top:48px">
+      <div class="usecase">
+        <span class="icon">🚀</span>
+        <h4>Startup accelerators</h4>
+        <p>Drop MBA Rock into your cohort. Free up the curriculum hours. Use the Capstone as their demo-day plan.</p>
+      </div>
+      <div class="usecase">
+        <span class="icon">🎓</span>
+        <h4>University entrepreneurship programs</h4>
+        <p>Replace the textbook. Augment the lecture. Give students an artifact they can show to investors.</p>
+      </div>
+      <div class="usecase">
+        <span class="icon">🎵</span>
+        <h4>Music labels &amp; artist development</h4>
+        <p>Operator literacy for artists who run their own micro-businesses. Built by a label founder for label rosters.</p>
+      </div>
+      <div class="usecase">
+        <span class="icon">🏢</span>
+        <h4>Corporate L&amp;D</h4>
+        <p>Intrapreneurship training. PM and operator development. Build founder-mindset talent inside larger orgs.</p>
+      </div>
+      <div class="usecase">
+        <span class="icon">⚖️</span>
+        <h4>Professional services</h4>
+        <p>Law firms, accounting, consulting — give associates the founder-side fluency they don't get in school.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI -->
+<section class="section alt">
+  <div class="inner">
+    <span class="eyebrow">The math</span>
+    <h2>One traditional MBA seat. Or 570 MBA Rock seats. Per year.</h2>
+    <p class="lead" style="margin-top:16px">The traditional MBA built the case for itself when it was the only way in. It isn't. Here's how the numbers land at the Cohort tier.</p>
+
+    <div class="roi-grid">
+      <div class="roi-table">
+        <div class="roi-row head"><div>Option</div><div class="val">Cost / seat</div><div class="savings">Time</div></div>
+        <div class="roi-row"><div class="label">Top-25 full-time MBA (US)</div><div class="val">$200,000+</div><div class="savings">2 years</div></div>
+        <div class="roi-row"><div class="label">Executive education (top program)</div><div class="val">$45,000</div><div class="savings">2–6 weeks</div></div>
+        <div class="roi-row"><div class="label">Online MBA (top-30)</div><div class="val">$60,000+</div><div class="savings">2 years</div></div>
+        <div class="roi-row"><div class="label">Standard L&amp;D content library</div><div class="val">$500–$2,000</div><div class="savings">Self-paced</div></div>
+        <div class="roi-row"><div class="label"><strong>MBA Rock · Cohort tier</strong></div><div class="val">$249</div><div class="savings">Self-paced</div></div>
+      </div>
+      <div>
+        <h3 style="font-family:'Fraunces';font-size:28px;color:var(--navy);margin-bottom:18px">What you get at every tier</h3>
+        <p>The same complete curriculum — 10 modules from Markets to Money, Operations to Growth. The Operator's Console with 18 calculators (unit economics, runway, hiring cost, valuation, more). The Capstone business plan builder. The Dossier. Every learner finishes with a 10-section plan investors can read in 20 minutes.</p>
+        <p style="margin-top:20px">No degree. No accreditation theater. Just the operator's playbook, taught the way people actually retain it — short audio overviews, calculators that do the math, templates that fill in as the lessons land.</p>
+        <a href="#book-call" class="cta" style="margin-top:28px">See it for yourself</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="inner" style="max-width:820px">
+    <span class="eyebrow">FAQ</span>
+    <h2>What teams ask us first.</h2>
+
+    <div class="faq" style="margin-top:40px">
+      <details>
+        <summary>How does the admin dashboard work?</summary>
+        <p>Each organization gets a private admin view showing every seat-holder, their lesson completion, quiz pass rate, Capstone section completion, and certificate count. Export CSV anytime. Filter by cohort, department, or custom segment. Available at all tiers.</p>
+      </details>
+      <details>
+        <summary>Can we run a pilot before committing to a full cohort?</summary>
+        <p>Yes. We'll set up a 10-seat, 30-day pilot at the Team rate ($349/seat) so you can see retention, completion, and feedback from your own people before signing for a year. Pilot fees apply to your annual contract if you proceed.</p>
+      </details>
+      <details>
+        <summary>What does "annual license" mean exactly?</summary>
+        <p>Each seat is licensed for 12 months from activation. You can swap a learner out (e.g. someone leaves) anytime — the seat carries on to whoever you reassign it to. Renewals are auto-priced at the same per-seat rate unless your seat count crosses into a new tier.</p>
+      </details>
+      <details>
+        <summary>Do learners keep access if our contract ends?</summary>
+        <p>Seat access ends with the contract. Learners keep their Capstone plan (downloadable PDF), their Dossier (downloadable PDF), and their certificate records (verifiable forever via the cert ID). They can convert to an individual MBA Rock lifetime license at a 30% loyalty rate.</p>
+      </details>
+      <details>
+        <summary>Can we co-brand the experience?</summary>
+        <p>Yes, at the Cohort and Enterprise tiers. We add your logo, your program name, and optionally your color accent to the learner-facing surfaces. White-label (your domain, your full brand) is Enterprise-only.</p>
+      </details>
+      <details>
+        <summary>What about LMS integration?</summary>
+        <p>At Enterprise, we support SCORM and xAPI export so your existing LMS (Cornerstone, Workday Learning, Docebo, Canvas, Moodle, etc.) can ingest progress and completion events. SSO is available at Cohort and above (Google Workspace native; Okta and Azure AD via setup).</p>
+      </details>
+      <details>
+        <summary>Is the curriculum customizable?</summary>
+        <p>The core 10 modules are the core 10 modules — they're built around the universal operator playbook. At Enterprise, we'll commission a custom module for your sector (e.g., a Music Label Operations module, a Restaurant Group P&amp;L module, a Pharma Commercial Ops module) at fixed-fee development cost. Custom modules typically ship in 6–8 weeks.</p>
+      </details>
+      <details>
+        <summary>How do certificates work for organizations?</summary>
+        <p>Each learner earns up to 11 certificates (10 Module Marks + 1 Operator's Certificate). Each carries a verification URL (e.g. mbarock.com/verify/CERT-ID) and a LinkedIn "Add to Profile" deep link. Your admin can export a roster of who's earned what at any point.</p>
+      </details>
+      <details>
+        <summary>How fast can we get started?</summary>
+        <p>From "yes" to "first learner logged in" is typically 5–7 business days for Team and Cohort tiers, longer for Enterprise (SSO setup, white-label provisioning, custom modules). Book the walk-through — we can scope the timeline in one call.</p>
+      </details>
+      <details>
+        <summary>Who do I talk to?</summary>
+        <p>Josh, the founder. For now this is a founder-led conversation — once you book the walk-through, you talk directly to the person who built the product. Email <a href="mailto:CEO@trufflebearoil.com" style="color:var(--orange);font-weight:600">CEO@trufflebearoil.com</a> for anything urgent.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="book-call">
+  <div class="inner">
+    <span class="chip" style="background:rgba(242,107,31,0.2);color:#FCE5D4;border:1px solid rgba(242,107,31,0.4)">Talk to the founder</span>
+    <h2 style="margin-top:20px">Bring a use case. We'll bring the math.</h2>
+    <p>Book a 20-minute walk-through. We'll show you the admin dashboard, run a pilot scope, and answer the questions you couldn't find above.</p>
+    <a href="mailto:CEO@trufflebearoil.com?subject=MBA%20Rock%20for%20Teams%20%E2%80%94%20walk-through%20request&amp;body=Hi%20Josh%2C%0A%0AOrg%3A%20%0AContact%20name%3A%20%0ATeam%20size%3A%20%0AUse%20case%3A%20%0ATimeline%3A%20%0A%0AThanks%2C" class="cta lg">Email Josh to book →</a>
+    <p style="margin-top:32px;font-size:13.5px;color:rgba(248,241,225,0.55)">Or write directly: <a href="mailto:CEO@trufflebearoil.com" style="color:var(--orange)">CEO@trufflebearoil.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <p>MBA Rock · An album-paced operator playbook.</p>
+    <p style="margin-top:8px">Already a learner? <a href="https://www.mbarock.com">Sign in</a> · Individual licenses at <a href="https://www.mbarock.com">mbarock.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
