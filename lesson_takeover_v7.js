@@ -1,4 +1,5 @@
 // MBA Rock — Lesson Page Takeover v7.5 (2026-05-14)
+// v7.7: UX additions — first-quiz forgiveness, retake nudge, auto-next CTA, deep-dive reframe, capstone progress hint, mobile CSS (2026-05-13)
 // v7.6: Canon74 align — SQ_MODULE_SIZE M1:9/M2:9/M8:5; lessons.v2.json 74 canonical (2026-05-13)
 // v7.5: Restored 10-module SQ_MODULE_SIZE matching NotebookLM 74-lesson brief.
 // v7.4: Sync to Squarespace live curriculum (6 modules, 50 lessons). SQ_MODULE_SIZE updated. SLUG_TO_V2 cleared (clean slugs route via legacy_slug).
@@ -1788,3 +1789,193 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
   else run();
 })();
+
+
+// ============ v7.7 UX ADDONS (2026-05-13 overnight) ============
+// Items #2, #4, #6, #8, #10 from UX recommendations report
+
+(function MR_v77(){
+  if (window.__MR_V77_LOADED) return;
+  window.__MR_V77_LOADED = true;
+  
+  // Helper: detect current lesson_id from page context
+  function getCurrentLessonId() {
+    var titleEl = document.querySelector('.lesson-header .mr-lesson-id, [data-lesson-id]');
+    if (titleEl) {
+      var lid = titleEl.getAttribute('data-lesson-id') || titleEl.textContent.trim().split(/\s/)[0];
+      if (/^M\d+L[\d.]+$/.test(lid)) return lid;
+    }
+    var pageTitle = document.title || '';
+    var m = pageTitle.match(/(M\d+L[\d.]+)/);
+    return m ? m[1] : null;
+  }
+  
+  function isDeepDive(lid) {
+    if (!lid) return false;
+    // Deep-dive pattern: lesson_id has a fractional part beyond .5 (like M1L2.5, M2L2.5.5)
+    return /\.\d+\.?\d*/.test(lid.replace(/^M\d+L/, ''));
+  }
+  
+  // ITEM #8: Reframe deep-dive lessons
+  function applyDeepDiveReframe() {
+    var lid = getCurrentLessonId();
+    if (!isDeepDive(lid)) return;
+    
+    // Hide "Lesson video coming soon" copy + the empty video container
+    document.querySelectorAll('.lesson-tab, .mr-tab-content').forEach(function(el){
+      var t = el.textContent || '';
+      if (t.indexOf('Lesson video coming soon') >= 0 || t.indexOf('coming soon') >= 0) {
+        // Replace with deep-dive read intro
+        var deepDiveIntro = document.createElement('div');
+        deepDiveIntro.className = 'mr-deep-dive-intro';
+        deepDiveIntro.style.cssText = 'padding:14px 18px;background:#FEF3C7;border-left:4px solid #F59E0B;border-radius:8px;margin:12px 0;font-size:14px;color:#92400E;line-height:1.5;';
+        deepDiveIntro.innerHTML = '<strong>📖 Deep-Dive Read</strong> — this lesson is text-first by design. The audio overview below covers the full framework. Pair it with the concepts and take-action steps for the complete walkthrough.';
+        el.insertBefore(deepDiveIntro, el.firstChild);
+      }
+    });
+    
+    // Update eyebrow if present
+    var eyebrow = document.querySelector('.lesson-eyebrow, .mr-eyebrow');
+    if (eyebrow && !eyebrow.textContent.includes('DEEP-DIVE')) {
+      var existing = eyebrow.textContent || '';
+      eyebrow.innerHTML = existing.replace(/(MODULE \d+|M\d+)/i, '$1 · DEEP-DIVE READ');
+    }
+  }
+  
+  // ITEM #2: First-attempt forgiveness on M1L1
+  function applyFirstQuizForgiveness() {
+    var lid = getCurrentLessonId();
+    if (lid !== 'M1L1') return;
+    var firstAttemptKey = 'mr-quiz-attempt-' + lid;
+    var attemptCount = parseInt(localStorage.getItem(firstAttemptKey) || '0');
+    
+    // Show warm-up framing banner
+    if (attemptCount === 0) {
+      var quizTab = document.querySelector('[data-tab="quiz"], .mr-tab-quiz');
+      var quizPanel = document.querySelector('.mr-quiz-panel, [data-panel="quiz"]');
+      if (quizPanel && !quizPanel.querySelector('.mr-warmup-banner')) {
+        var banner = document.createElement('div');
+        banner.className = 'mr-warmup-banner';
+        banner.style.cssText = 'padding:14px 18px;background:#DBEAFE;border-left:4px solid #2563EB;border-radius:8px;margin:0 0 16px;font-size:14px;color:#1E40AF;line-height:1.5;';
+        banner.innerHTML = '<strong>👋 Warm-up quiz</strong> — your first quiz uses a friendlier 60% pass bar. The concepts in M1L1 compound across every module, so re-read the Core Concepts if anything feels foggy. <em>You will not be graded on speed.</em>';
+        quizPanel.insertBefore(banner, quizPanel.firstChild);
+      }
+    }
+    
+    // Override pass threshold for M1L1 first attempt
+    window.__MR_PASS_OVERRIDE = window.__MR_PASS_OVERRIDE || {};
+    if (attemptCount === 0) window.__MR_PASS_OVERRIDE[lid] = 0.60;
+  }
+  
+  // ITEM #10: Quiz retake nudge on fail
+  function applyRetakeNudge() {
+    // Watch for quiz failure UI appearing
+    var observer = new MutationObserver(function(){
+      document.querySelectorAll('.mr-quiz-result, [data-quiz-result], .quiz-result').forEach(function(el){
+        if (el.querySelector('.mr-retake-nudge')) return;
+        var text = (el.textContent || '').toLowerCase();
+        var isFail = text.includes('try again') || text.includes('not quite') || text.includes('failed') || text.includes('below threshold');
+        if (!isFail) return;
+        var nudge = document.createElement('div');
+        nudge.className = 'mr-retake-nudge';
+        nudge.style.cssText = 'margin-top:14px;padding:12px 16px;background:#F0FDF4;border-left:4px solid #10B981;border-radius:8px;font-size:14px;color:#065F46;';
+        nudge.innerHTML = '💪 <strong>Most members pass on attempt 2</strong> after re-reading the Core Concepts. The concepts above explain each answer — review them, then retake.';
+        el.appendChild(nudge);
+      });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+  
+  // ITEM #6: Auto-next CTA after quiz pass
+  function applyAutoNextCTA() {
+    var observer = new MutationObserver(function(){
+      document.querySelectorAll('.mr-quiz-passed, [data-quiz-state="passed"]').forEach(function(el){
+        if (el.querySelector('.mr-next-cta')) return;
+        var lid = getCurrentLessonId();
+        if (!lid) return;
+        
+        // Find next lesson via lessons.v2.json (use cached version if available)
+        var lessons = window.__MR_LESSONS_DATA;
+        if (!lessons) return;
+        var idx = lessons.findIndex(function(l){ return l.id === lid; });
+        if (idx < 0 || idx >= lessons.length - 1) return;
+        var nextL = lessons[idx + 1];
+        var nextSlug = nextL.slug_v2 || nextL.legacy_slug || nextL.id.toLowerCase();
+        var nextUrl = '/mba-rock/' + nextSlug;
+        
+        var cta = document.createElement('a');
+        cta.className = 'mr-next-cta';
+        cta.href = nextUrl;
+        cta.style.cssText = 'display:inline-block;margin-top:16px;padding:14px 22px;background:#0B1F3A;color:#FAF8F5;border-radius:10px;text-decoration:none;font-family:Inter,sans-serif;font-weight:600;font-size:15px;';
+        cta.innerHTML = 'Next: ' + (nextL.title || nextL.id) + ' →';
+        el.appendChild(cta);
+      });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+  
+  // ITEM #4: Capstone progress hint in lesson header
+  function applyCapstoneProgressHint() {
+    function inject() {
+      var header = document.querySelector('.lesson-meta, .mr-lesson-stats, [data-lesson-stats]');
+      if (!header || header.querySelector('.mr-capstone-pill')) return;
+      
+      var memberId = localStorage.getItem('mba-rock-member-id');
+      if (!memberId) return;
+      
+      // Fetch capstone progress from Supabase via existing client if available
+      // Lightweight: estimate from localStorage cache
+      var capProgress = localStorage.getItem('mr-cap-progress');
+      var filled = capProgress ? parseInt(JSON.parse(capProgress).filled || 0) : 0;
+      var total = 50;
+      var remaining = Math.max(0, Math.ceil(total * 0.8) - filled);
+      
+      var pill = document.createElement('div');
+      pill.className = 'mr-capstone-pill';
+      pill.style.cssText = 'display:inline-block;margin-left:14px;padding:6px 12px;background:#FEF3C7;color:#92400E;border-radius:999px;font-size:12px;font-weight:600;font-family:Inter,sans-serif;';
+      if (remaining === 0) {
+        pill.innerHTML = '✅ Capstone ' + filled + '/' + total + ' — cert eligible';
+      } else {
+        pill.innerHTML = '📋 Capstone ' + filled + '/' + total + ' · ' + remaining + ' more for cert';
+      }
+      header.appendChild(pill);
+    }
+    if (document.readyState !== 'loading') inject();
+    else document.addEventListener('DOMContentLoaded', inject);
+    setTimeout(inject, 2500);
+  }
+  
+  // Run all addons
+  function init(){
+    try { applyDeepDiveReframe(); } catch(e){ console.warn('[MR v7.7 deep-dive]', e); }
+    try { applyFirstQuizForgiveness(); } catch(e){ console.warn('[MR v7.7 forgive]', e); }
+    try { applyRetakeNudge(); } catch(e){ console.warn('[MR v7.7 retake]', e); }
+    try { applyAutoNextCTA(); } catch(e){ console.warn('[MR v7.7 next]', e); }
+    try { applyCapstoneProgressHint(); } catch(e){ console.warn('[MR v7.7 cap]', e); }
+    
+    // ITEM #3 mobile: Add a stylesheet for ≤480px improvements
+    var style = document.createElement('style');
+    style.id = 'mr-v77-mobile';
+    style.textContent = [
+      '@media (max-width:480px) {',
+      '  .mr-tabs, .lesson-tabs { overflow-x:auto; -webkit-overflow-scrolling:touch; white-space:nowrap; }',
+      '  .mr-tabs::-webkit-scrollbar { display:none; }',
+      '  .mr-tab, .lesson-tab-btn { padding:12px 16px !important; font-size:13px !important; min-height:44px; }',
+      '  .katex-display { overflow-x:auto !important; overflow-y:hidden !important; max-width:100%; }',
+      '  .katex-display > .katex { white-space:nowrap; }',
+      '  .mr-quiz-option label, .quiz-choice { min-height:44px; padding:12px 14px !important; display:flex; align-items:center; }',
+      '  .mr-quiz-option input[type=radio] { width:20px; height:20px; }',
+      '  input[data-cap-field], textarea[data-cap-field] { font-size:16px !important; /* prevent iOS zoom */ }',
+      '  .lesson-meta, .mr-lesson-stats { flex-wrap:wrap; gap:8px; }',
+      '  .mr-next-cta { display:block !important; width:100%; text-align:center; }',
+      '  .mr-warmup-banner, .mr-deep-dive-intro, .mr-retake-nudge { padding:12px 14px !important; font-size:13px !important; }',
+      '}'
+    ].join('\n');
+    document.head.appendChild(style);
+  }
+  
+  if (document.readyState !== 'loading') init();
+  else document.addEventListener('DOMContentLoaded', init);
+})();
+// ============ /v7.7 UX ADDONS ============
+
