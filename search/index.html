@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Search · MBA Rock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:Inter,system-ui;background:#FAF8F5;color:#0B1F3A;padding:0;}
+  .wrap{max-width:980px;margin:0 auto;padding:48px 24px;}
+  h1{font-family:Fraunces,serif;font-size:42px;font-weight:600;margin-bottom:8px;}
+  .sub{color:#475569;font-size:15px;margin-bottom:32px;}
+  .search-box{position:relative;margin-bottom:24px;}
+  .search-input{width:100%;padding:18px 22px 18px 56px;font-size:17px;font-family:Inter,sans-serif;border:2px solid #E5E0D6;border-radius:12px;background:#fff;outline:none;color:#0B1F3A;}
+  .search-input:focus{border-color:#F26B1F;}
+  .search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:20px;color:#94A3B8;}
+  .meta{font-size:13px;color:#94A3B8;margin-bottom:20px;}
+  .results{display:flex;flex-direction:column;gap:14px;}
+  .result{padding:18px 22px;background:#fff;border:1px solid #E5E0D6;border-radius:12px;text-decoration:none;color:inherit;display:block;transition:border-color .15s;}
+  .result:hover{border-color:#F26B1F;}
+  .result-eyebrow{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#94A3B8;font-weight:600;margin-bottom:4px;}
+  .result-title{font-family:Fraunces,serif;font-size:21px;font-weight:600;margin-bottom:6px;}
+  .result-snip{font-size:14px;color:#475569;line-height:1.5;}
+  .result-snip mark{background:#FEF3C7;padding:1px 3px;border-radius:3px;}
+  .empty{padding:40px;text-align:center;color:#94A3B8;font-style:italic;}
+  .back{display:inline-block;color:#F26B1F;text-decoration:none;font-size:14px;margin-bottom:24px;}
+  .back:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a href="/dashboard/" class="back">← Back to dashboard</a>
+  <h1>Search the curriculum</h1>
+  <p class="sub">Find any concept, framework, formula, or lesson across all 74 lessons.</p>
+  <div class="search-box">
+    <span class="search-icon">⌕</span>
+    <input type="text" class="search-input" id="searchInput" placeholder="Try: 'CAC', 'cash conversion', 'pricing strategy'..." autofocus>
+  </div>
+  <div class="meta" id="resultMeta">Loading lessons…</div>
+  <div class="results" id="results"></div>
+</div>
+<script>
+(function(){
+  var lessons = [];
+  var modName = {M1:"Finance Fundamentals",M2:"Strategy & Competitive Advantage",M3:"People & Leadership",M4:"Unit Economics & Growth Metrics",M5:"Operations & Technology",M6:"Growth & Capital",M7:"Marketing & Brand",M8:"Operations & Execution",M9:"Analytics & Decision Making",M10:"Innovation & Future (Capstone)"};
+  
+  fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json?cb=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      lessons = d.lessons || [];
+      document.getElementById('resultMeta').textContent = 'Loaded ' + lessons.length + ' lessons. Type to search.';
+      render('');
+    })
+    .catch(function(e){
+      document.getElementById('resultMeta').textContent = 'Failed to load lessons. Refresh to retry.';
+    });
+  
+  function highlight(text, q) {
+    if (!q || !text) return (text||'').slice(0,200);
+    var re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi');
+    return text.replace(re, '<mark>$1</mark>').slice(0,300);
+  }
+  
+  function getSearchText(l) {
+    var concepts = (l.core_concepts || []).map(function(c){ 
+      return (c.title || '') + ' ' + (c.body || ''); 
+    }).join(' ');
+    var ta = (l.take_action || []).join(' ');
+    return [l.id, l.title, l.intro, concepts, ta, l.deep_dive].filter(Boolean).join(' ');
+  }
+  
+  function render(q) {
+    var resultsEl = document.getElementById('results');
+    var metaEl = document.getElementById('resultMeta');
+    if (!q) {
+      // Show all lessons grouped (just titles)
+      resultsEl.innerHTML = lessons.map(function(l){
+        return '<a class="result" href="https://panda-reindeer-4akp.squarespace.com/mba-rock/' 
+          + (l.slug_v2 || l.legacy_slug || l.id.toLowerCase()) + '">'
+          + '<div class="result-eyebrow">' + (modName[l.module_id] || l.module_id) + ' · ' + l.id + '</div>'
+          + '<div class="result-title">' + l.title + '</div>'
+          + '<div class="result-snip">' + (l.intro || '').slice(0,180) + '</div>'
+          + '</a>';
+      }).join('');
+      metaEl.textContent = 'All 74 lessons (type to filter).';
+      return;
+    }
+    
+    var qLower = q.toLowerCase();
+    var matched = lessons.map(function(l){
+      var hay = getSearchText(l).toLowerCase();
+      var idx = hay.indexOf(qLower);
+      if (idx < 0) return null;
+      // Score: title match > intro match > body match
+      var score = 0;
+      if ((l.title || '').toLowerCase().includes(qLower)) score += 100;
+      if ((l.intro || '').toLowerCase().includes(qLower)) score += 50;
+      score += Math.max(0, 30 - idx/100);
+      return { lesson: l, score: score, matchIdx: idx };
+    }).filter(Boolean).sort(function(a,b){ return b.score - a.score; });
+    
+    metaEl.textContent = matched.length + ' result' + (matched.length === 1 ? '' : 's') + ' for "' + q + '"';
+    
+    if (!matched.length) {
+      resultsEl.innerHTML = '<div class="empty">No lessons match "' + q + '" — try a different phrase.</div>';
+      return;
+    }
+    
+    resultsEl.innerHTML = matched.slice(0,30).map(function(m){
+      var l = m.lesson;
+      var snip = getSearchText(l);
+      var start = Math.max(0, snip.toLowerCase().indexOf(qLower) - 60);
+      var excerpt = (start > 0 ? '… ' : '') + snip.slice(start, start + 240);
+      return '<a class="result" href="https://panda-reindeer-4akp.squarespace.com/mba-rock/' 
+        + (l.slug_v2 || l.legacy_slug || l.id.toLowerCase()) + '">'
+        + '<div class="result-eyebrow">' + (modName[l.module_id] || l.module_id) + ' · ' + l.id + '</div>'
+        + '<div class="result-title">' + highlight(l.title, q) + '</div>'
+        + '<div class="result-snip">' + highlight(excerpt, q) + '</div>'
+        + '</a>';
+    }).join('');
+  }
+  
+  var input = document.getElementById('searchInput');
+  var debounce;
+  input.addEventListener('input', function(e){
+    clearTimeout(debounce);
+    debounce = setTimeout(function(){ render(e.target.value.trim()); }, 120);
+  });
+})();
+</script>
+</body>
+</html>
