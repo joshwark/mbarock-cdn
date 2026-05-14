@@ -1,4 +1,5 @@
-// MBA Rock — Lesson Page Takeover v7.4 (2026-05-14)
+// MBA Rock — Lesson Page Takeover v7.5 (2026-05-14)
+// v7.5: Restored 10-module SQ_MODULE_SIZE matching NotebookLM 74-lesson brief.
 // v7.4: Sync to Squarespace live curriculum (6 modules, 50 lessons). SQ_MODULE_SIZE updated. SLUG_TO_V2 cleared (clean slugs route via legacy_slug).
 // v7.3.1: Tasks promoted to top-level tab (Lesson · Tasks · Quiz · Notes · Materials).
 //         CRITICAL FIX over v7.3: capstone-input parent div carries data-cap-field, matching
@@ -796,7 +797,7 @@
   }
   // Squarespace module totals (the lesson counts you see in the sidebar)
   // v7.2 — module sizes synced to 76-lesson canon (74 brief + 2 grandfathered deep-dives in M2/M8)
-  var SQ_MODULE_SIZE = { M1:9, M2:8, M3:13, M4:7, M5:7, M6:6 };  // synced to live Squarespace 2026-05-14
+  var SQ_MODULE_SIZE = { M1:9, M2:10, M3:8, M4:8, M5:6, M6:14, M7:5, M8:6, M9:5, M10:5 };  // 10 modules, 76 total (74 brief + 2 grandfathered)  // synced to live Squarespace 2026-05-14
 
   // Derive Squarespace position from the URL slug.
   //   "m1l3-gross-margin-groove"     → 3
@@ -1595,7 +1596,7 @@
     if (deepEl) renderMath(deepEl);
 
     document.body && document.body.setAttribute('data-mr-v5-applied', '1');
-    console.log('[MBA v7.4] hid', bodySections.length, 'old sections; rendered tabbed layout for', lesson.id);
+    console.log('[MBA v7.5] hid', bodySections.length, 'old sections; rendered tabbed layout for', lesson.id);
     return true;
   }
 
