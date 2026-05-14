@@ -1,5 +1,5 @@
 {
-  "schema_version": "v2.10sections.74lessons.fully-quizzed.2026-05-13",
+  "schema_version": "v2.10sections.74lessons.audio-wired.2026-05-14",
   "generated_from": "Josh's 2026-05-11 LMS Deployment Guide",
   "global": {
     "textbook": {
@@ -581,7 +581,7 @@
       "song_title": null,
       "video_url": null,
       "audio_url": null,
-      "audio_overview_url": null,
+      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/cash-runway-timing.mp4",
       "core_concepts": [
         {
           "title": "Why April hurts",
@@ -1316,7 +1316,7 @@
       "title": "The Strategic Playbook / PESTEL Scan (Deep-Dive)",
       "slug_v2": "m2l1-5-the-strategic-playbook-pestel-scan",
       "legacy_slug": "what-is-strategy",
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/market-size-mountain.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_Strategic_Playbook.mp4",
@@ -1422,7 +1422,7 @@
       "slug_v2": "m2l2-porter-s-five-forces",
       "legacy_slug": "porters-five-forces",
       "audio_url": null,
-      "audio_overview_url": null,
+      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/porters-five-forces.mp4",
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Porter_s_Five_Forces.mp4",
       "worksheet_url": null,
@@ -1844,7 +1844,7 @@
       "title": "Competitive Moats & VRIO",
       "slug_v2": "m2l3-competitive-moats-vrio",
       "legacy_slug": "competitive-advantage-vrio",
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/moat-around-my-castle.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Competitive_Moats_%26_VRIO.mp4",
@@ -2264,7 +2264,7 @@
       "title": "Worth Aligned (Deep-Dive)",
       "slug_v2": "m3l1-5-worth-aligned",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/worth-align.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Worth_Aligned.mp4",
@@ -2792,7 +2792,7 @@
       "title": "Velocity of Decision / Decide and Commit",
       "slug_v2": "m3l4-velocity-of-decision-rapid-framework",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/two-way-door.mp3",
       "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/velocity-of-decision.mp4",
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Velocity_of_Decision.mp4",
@@ -3213,7 +3213,7 @@
       "legacy_slug": "m4l2.5",
       "song_title": null,
       "video_url": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/distribution-rivers.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -3321,7 +3321,7 @@
       "slug_v2": "m4l3-funnel-math-conversion",
       "legacy_slug": "funnel-optimization",
       "audio_url": null,
-      "audio_overview_url": null,
+      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/funnel-math-conversion.mp4",
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Funnel_Math_%26_Conversion.mp4",
       "worksheet_url": null,
@@ -3531,7 +3531,7 @@
       "legacy_slug": "m4l4.2.5",
       "song_title": null,
       "video_url": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/fit-productmarket-fit-remastered.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -3639,7 +3639,7 @@
       "legacy_slug": "m4l4.5",
       "song_title": null,
       "video_url": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/let-the-rivers-run.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -3862,7 +3862,7 @@
       "title": "Flow Not Force",
       "slug_v2": "m5l1-flow-not-force",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/lewin-way.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Flow_Not_Force.mp4",
@@ -4493,7 +4493,7 @@
       "title": "Growth Engines",
       "slug_v2": "m6l1-growth-engines",
       "legacy_slug": "scale",
-      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/six-sigma-ledge.mp3",
+      "audio_url": null,
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_Evolution_of_Growth.mp4",
@@ -5019,7 +5019,7 @@
       "slug_v2": "m6l6-startup-operating-system-scaling-pains",
       "legacy_slug": null,
       "audio_url": null,
-      "audio_overview_url": null,
+      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/startup-operating-system.mp4",
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Startup_Operating_System.mp4",
       "worksheet_url": null,
@@ -5441,7 +5441,7 @@
       "title": "Intelligent Risk Selection / Risk Map",
       "slug_v2": "m6l9-intelligent-risk-selection-risk-map",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/risk-and-reward.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Intelligent_Risk_Selection.mp4",
@@ -6072,7 +6072,7 @@
       "legacy_slug": "m7l2",
       "song_title": null,
       "video_url": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/brand-promise.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -6718,7 +6718,7 @@
       "title": "Quality Management & Six Sigma",
       "slug_v2": "operations-excellence",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/six-sigma-ledge.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Operations_Excellence.mp4",
@@ -7150,7 +7150,7 @@
       "legacy_slug": "m9l2",
       "song_title": null,
       "video_url": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/spreadsheet-north-star.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -7987,7 +7987,7 @@
       "legacy_slug": "m10l5",
       "song_title": null,
       "video_url": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/promised-land.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
