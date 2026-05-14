@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+/* MBA Rock - Member gate v1 2026-05-14 */
+(function(){
+  try {
+    var hasAuth = localStorage.getItem('mr-member-id') || localStorage.getItem('mr_member_id') || localStorage.getItem('memberId') || new URLSearchParams(location.search).get('m') || (document.referrer && /mbarock\.com|panda-reindeer/i.test(document.referrer));
+    if (hasAuth) return;
+    var css = '.mr-gate{position:fixed;inset:0;z-index:2147483647;background:linear-gradient(180deg,#0B1F3A 0%,#152D52 100%);color:#FDFAF1;display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;padding:40px;text-align:center}.mr-gate-inner{max-width:580px}.mr-gate .pill{display:inline-block;background:rgba(242,107,31,.18);color:#F26B1F;padding:8px 16px;border-radius:999px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:24px;border:1px solid rgba(242,107,31,.35)}.mr-gate h1{font-family:Fraunces,Georgia,serif;font-size:clamp(32px,5vw,52px);color:#FDFAF1;margin:0 0 20px;line-height:1.12;font-weight:800;letter-spacing:-.02em}.mr-gate p{font-size:18px;line-height:1.6;color:rgba(253,250,241,.86);margin:0 0 32px}.mr-gate .price-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px;flex-wrap:wrap}.mr-gate .price-row .anchor{font-family:Fraunces;color:rgba(253,250,241,.5);text-decoration:line-through;font-size:18px;font-style:italic}.mr-gate .price-row .now{font-family:Fraunces;font-size:42px;font-weight:800;color:#FDFAF1;line-height:1;letter-spacing:-.02em}.mr-gate .price-row .code{font-family:Inter;font-size:12px;font-weight:700;letter-spacing:.16em;color:#F26B1F;text-transform:uppercase}.mr-gate .cta{display:inline-block;padding:18px 44px;background:#F26B1F;color:#fff;border-radius:999px;font-weight:700;font-size:16px;letter-spacing:.04em;text-decoration:none;min-height:48px;line-height:1.2;box-shadow:0 12px 28px rgba(242,107,31,.32)}.mr-gate .ghost{display:inline-block;padding:16px 32px;color:#FDFAF1;border:2px solid rgba(253,250,241,.4);border-radius:999px;font-weight:600;font-size:14px;text-decoration:none;margin-top:12px;margin-left:8px}';
+    var s = document.createElement('style'); s.textContent = css; document.head.appendChild(s);
+    function build(){
+      var g = document.createElement('div');
+      g.className = 'mr-gate';
+      g.setAttribute('role','dialog');
+      g.setAttribute('aria-modal','true');
+      var html = '';
+      html += '<div class="mr-gate-inner">';
+      html += '<span class="pill">Members only - MBA Rock</span>';
+      html += '<h1>Your Certificates are part of MBA Rock.</h1>';
+      html += '<p>11 verifiable, LinkedIn-ready credentials — 10 Module Marks + 1 Operator’s Certificate. Earned by passing quizzes + completing each module’s Take Action. Join MBA Rock to start earning yours.</p>';
+      html += '<div class="price-row"><span class="anchor">$999.99</span><span class="now">$499</span><span class="code">with code FOUNDERS</span></div>';
+      html += '<a href="https://www.mbarock.com/mba-rock" class="cta">Unlock MBA Rock \u2192</a>';
+      html += '<a href="https://www.mbarock.com" class="ghost">See what\u2019s inside</a>';
+      html += '</div>';
+      g.innerHTML = html;
+      document.body.appendChild(g);
+      document.body.style.overflow = 'hidden';
+    }
+    if (document.body) build(); else document.addEventListener('DOMContentLoaded', build);
+  } catch(e) { console.error('[MR gate] error', e); }
+})();
+</script>
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Your Certificates · MBA Rock</title>
