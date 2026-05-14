@@ -154,13 +154,13 @@ a{color:inherit;}
     </a>
     <a class="sum-card" href="/capstone/">
       <div class="l">Capstone fields</div>
-      <div class="v"><span id="capCount">0</span><small>/52</small></div>
+      <div class="v"><span id="capCount">0</span><small id="capTotal">/50</small></div>
       <div class="meta" id="capMeta">Your business operating system, one field at a time.</div>
       <div class="arrow">Open Capstone ›</div>
     </a>
     <a class="sum-card" href="#" id="lessonsCard">
       <div class="l">Lessons passed</div>
-      <div class="v"><span id="lessonCount">0</span><small>/55</small></div>
+      <div class="v"><span id="lessonCount">0</span><small id="lessonTotal">/74</small></div>
       <div class="meta" id="lessonMeta">Every quiz passed unlocks the next.</div>
       <div class="arrow">Resume course ›</div>
     </a>
@@ -393,6 +393,24 @@ async function init(){
 }
 
 init();
+
+// CANON sync — pull live denominators from lessons.v2.json
+(function(){
+  fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json?cb=' + Date.now())
+    .then(r=>r.json()).then(j=>{
+      var total = (j.lessons||[]).length;
+      var el = document.getElementById('lessonTotal');
+      if (el) el.textContent = '/' + total;
+    }).catch(function(){});
+  fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/capstone.json?cb=' + Date.now())
+    .then(r=>r.json()).then(j=>{
+      var t = 0;
+      (j.sections||[]).forEach(function(s){ t += (s.fields||[]).length; });
+      var el = document.getElementById('capTotal');
+      if (el && t) el.textContent = '/' + t;
+    }).catch(function(){});
+})();
+
 </script>
 </body>
 </html>
