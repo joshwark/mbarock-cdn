@@ -1,0 +1,1745 @@
+{
+  "schema_version": "v3.6modules.50lessons.synced-from-squarespace",
+  "last_migration": "2026-05-14: Rebuilt lessons.v2.json from Squarespace live curriculum (6 modules, 50 lessons). Lesson IDs M1L1..M6L6 match Squarespace positions. Conservative match preserved content only when titles strictly aligned.",
+  "modules": [
+    {
+      "id": "M1",
+      "title": "Module 1 — Finance and Accounting",
+      "short_title": "Finance and Accounting",
+      "color": "#0B2545",
+      "color_soft": "#E6EAF1"
+    },
+    {
+      "id": "M2",
+      "title": "Module 2 — Strategy",
+      "short_title": "Strategy",
+      "color": "#1A3A6B",
+      "color_soft": "#E5EBF2"
+    },
+    {
+      "id": "M3",
+      "title": "Module 3 — Marketing",
+      "short_title": "Marketing",
+      "color": "#8B1A1A",
+      "color_soft": "#F4E4E4"
+    },
+    {
+      "id": "M4",
+      "title": "Module 4 — Entrepreneurship",
+      "short_title": "Entrepreneurship",
+      "color": "#1A5C2A",
+      "color_soft": "#E2EEE5"
+    },
+    {
+      "id": "M5",
+      "title": "Module 5 — Leadership",
+      "short_title": "Leadership",
+      "color": "#4A1A6B",
+      "color_soft": "#ECE3F2"
+    },
+    {
+      "id": "M6",
+      "title": "Module 6 — Operations / Capstone",
+      "short_title": "Operations / Capstone",
+      "color": "#6B3A0B",
+      "color_soft": "#F1E8DE"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "M1L1",
+      "module_id": "M1",
+      "sq_position": "1.1",
+      "title": "Oxygen",
+      "slug_v2": "oxygen",
+      "legacy_slug": "oxygen",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M1L2",
+      "module_id": "M1",
+      "sq_position": "1.2",
+      "title": "Top Line Lie",
+      "slug_v2": "top-line-lie",
+      "legacy_slug": "top-line-lie",
+      "song_title": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_Top_Line_Lie.mp4",
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [
+        {
+          "title": "Revenue Recognition vs. Cash Receipt",
+          "body": "Accountants record revenue when it's *earned* — when goods ship or services deliver — not when cash arrives. So your P&L can show $10M revenue while your bank shows $3M deposits.\n\nThe gap is sitting in accounts receivable. Some of it never collects. Some collects slow. None of it pays salaries."
+        },
+        {
+          "title": "Revenue Quality",
+          "body": "Not all revenue is equal. Recurring revenue from happy paying customers is gold. One-time revenue from a desperate quarter-end discount is wood.\n\nMetrics that reveal quality: net revenue retention, gross margin per customer, paid customer churn, customer concentration (% of revenue from top 5). A growing top line with falling quality is a slow-motion fire."
+        },
+        {
+          "title": "Vanity Metrics",
+          "body": "Metrics that go up and to the right while telling you nothing useful. Total users (without engagement). Total pageviews (without conversion). GMV (without take rate). \"Bookings\" (without delivered services).\n\nVanity metrics are pitch-deck props. They are not operating signals."
+        },
+        {
+          "title": "Channel Quality",
+          "body": "Where revenue comes from matters as much as how much. A customer acquired through paid ads at a 12-month payback period is structurally weaker than the same customer from organic referral.\n\nSegment revenue by channel + cohort. Manage to the mix, not the total."
+        },
+        {
+          "title": "The Top Line Trap",
+          "body": "When founders optimize the top line at the expense of every other metric — taking unprofitable deals, lowering pricing to win logos, recognizing revenue aggressively — they end up with a vanity P&L and a balance sheet that won't fund growth.\n\nGrow revenue, but grow durable revenue."
+        }
+      ],
+      "take_action": [
+        "Calculate your gross margin % for last month",
+        "List every cost between your revenue line and gross profit",
+        "Ask: what would happen if you doubled revenue at the same margin?"
+      ],
+      "deep_dive": "**Revenue is the most lied-about number in business.** Not always maliciously — sometimes through self-deception. \"We're a $5M ARR company\" is a statement that conceals: which 5M? Recurring? Annual run-rate of one good quarter? Bookings yet to be delivered? Total contract value of multi-year deals?\n\nThe healthiest founders treat their own revenue with suspicion. They ask:\n\n- **How much of this revenue will be here next year if nothing changes?** That's *recurring* revenue. Everything else is one-time and shouldn't be confused with annuity value.\n- **What percentage came from the top 5 customers?** Customer concentration above 30% means the business doesn't have a market — it has a relationship.\n- **What did it cost to win this revenue?** Revenue at a CAC payback over 24 months can be worth less than zero in cash terms.\n- **What's the gross margin?** $1M in revenue at 10% gross margin is $100K of fuel to run the company. $1M at 80% is $800K. Don't compare the top lines as if they were equal.\n\nThe move:\n\n- Use **net revenue retention (NRR)** as your truth metric. It captures expansion, churn, and downgrade in one number. NRR > 100% means existing customers are growing their spend; new logos are pure upside. NRR < 90% means you have a leaky bucket; new logos are replacing old ones, not adding.\n- Pair revenue with **gross profit dollars** in every dashboard. The dollar that pays salaries is the gross profit dollar, not the revenue dollar.\n\n$$\\text{NRR} = \\frac{\\text{Starting ARR} + \\text{Expansion} - \\text{Churn} - \\text{Downgrade}}{\\text{Starting ARR}}$$\n\nKnow your NRR. Know your gross profit. Stop celebrating revenue alone — it's the most flattering and most misleading number you own.",
+      "quiz": {
+        "pass_pct": 80,
+        "polished_v2": true,
+        "questions": [
+          {
+            "q": "\"Revenue Recognition vs. Cash Receipt\" — which of these is correct?",
+            "options": [
+              "Accountants record revenue when it's *earned* — when goods ship or services deliver — not when cash arrives.",
+              "Metrics that go up and to the right while telling you nothing useful.",
+              "Profitability and cash flow are essentially the same thing at scale.",
+              "Not all revenue is equal."
+            ],
+            "correct": 0,
+            "explain": "\"Revenue Recognition vs. Cash Receipt\" — the correct framing is: Accountants record revenue when it's *earned* — when goods ship or services deliver — not when cash arrives."
+          },
+          {
+            "q": "How does this lesson define \"Revenue Quality\"?",
+            "options": [
+              "Variable costs are the primary lever for improving long-term margins.",
+              "Metrics that go up and to the right while telling you nothing useful.",
+              "Not all revenue is equal.",
+              "Accountants record revenue when it's *earned* — when goods ship or services deliver — not when cash arrives."
+            ],
+            "correct": 2,
+            "explain": "\"Revenue Quality\" — the correct framing is: Not all revenue is equal."
+          },
+          {
+            "q": "\"Vanity Metrics\" — which of these is correct?",
+            "options": [
+              "Profitability and cash flow are essentially the same thing at scale.",
+              "Not all revenue is equal.",
+              "Metrics that go up and to the right while telling you nothing useful.",
+              "Accountants record revenue when it's *earned* — when goods ship or services deliver — not when cash arrives."
+            ],
+            "correct": 2,
+            "explain": "\"Vanity Metrics\" — the correct framing is: Metrics that go up and to the right while telling you nothing useful."
+          },
+          {
+            "q": "Which statement best captures the principle of \"Channel Quality\"?",
+            "options": [
+              "Negative working capital is a warning sign that the business is in distress.",
+              "Metrics that go up and to the right while telling you nothing useful.",
+              "When founders optimize the top line at the expense of every other metric — taking unprofitable deals, lowering pricing to win logos, recognizing revenue aggressively — they end up with a vanity P&L and a balance sheet t…",
+              "Where revenue comes from matters as much as how much."
+            ],
+            "correct": 3,
+            "explain": "\"Channel Quality\" — the correct framing is: Where revenue comes from matters as much as how much."
+          },
+          {
+            "q": "What does \"The Top Line Trap\" mean in MBA Rock?",
+            "options": [
+              "Not all revenue is equal.",
+              "When founders optimize the top line at the expense of every other metric — taking unprofitable deals, lowering pricing to win logos, recognizing revenue aggressively — they end up with a vanity P&L and a balance sheet t…",
+              "Revenue growth is the single best leading indicator of business health.",
+              "Accountants record revenue when it's *earned* — when goods ship or services deliver — not when cash arrives."
+            ],
+            "correct": 1,
+            "explain": "\"The Top Line Trap\" — the correct framing is: When founders optimize the top line at the expense of every other metric — taking unprofitable deals, lowering pricing to win logos, recognizing revenue aggressively — they end up with a vanity P&L and a balance sheet t…"
+          }
+        ]
+      },
+      "lyrics": null,
+      "lyrics_url": null
+    },
+    {
+      "id": "M1L3",
+      "module_id": "M1",
+      "sq_position": "1.3",
+      "title": "The Discount Rate",
+      "slug_v2": "the-discount-rate",
+      "legacy_slug": "the-discount-rate",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M1L4",
+      "module_id": "M1",
+      "sq_position": "1.4",
+      "title": "Unit Economics",
+      "slug_v2": "unit-economics",
+      "legacy_slug": "unit-economics",
+      "song_title": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Unit_Economics__CAC_%26_LTV.mp4",
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [
+        {
+          "title": "Customer Acquisition Cost (CAC)",
+          "body": "Total sales and marketing spend divided by new customers acquired in that period.\n\n$$\\text{CAC} = \\frac{\\text{Total S\\&M Spend}}{\\text{New Customers Acquired}}$$\n\nInclude all channels, all salaries, all ad spend, all content. CAC is the *blended* number. Segment by channel and cohort for operational decisions."
+        },
+        {
+          "title": "Lifetime Value (LTV)",
+          "body": "The total gross profit a customer generates over their full lifetime with you.\n\n$$\\text{LTV} = \\text{ARPU} \\times \\text{Gross Margin} \\times \\text{Lifetime}$$\n\nWhere lifetime is typically estimated as $1 / \\text{churn rate}$. A 5% monthly churn means a 20-month average lifetime. ARPU × GM × 20 = LTV."
+        },
+        {
+          "title": "LTV:CAC Ratio",
+          "body": "The single most-used unit economics metric. How many dollars of lifetime gross profit you generate per dollar spent acquiring the customer.\n\n- LTV:CAC < 1: you lose money on every customer\n- 1–3: tight, fragile\n- 3–5: healthy\n- 5+: under-investing in growth (CAC could go higher and still pencil)\n\n3x is the conventional minimum for venture-backable SaaS."
+        },
+        {
+          "title": "CAC Payback Period",
+          "body": "Months until a customer's contribution margin equals their acquisition cost.\n\n$$\\text{CAC Payback} = \\frac{\\text{CAC}}{\\text{ARPU} \\times \\text{Gross Margin}}$$\n\nSub-12 months: capital-efficient growth. 12–24 months: investible with patient capital. 24+ months: brutal — every customer is a cash loss for two years before pencilling."
+        },
+        {
+          "title": "Channel Unit Economics",
+          "body": "Blended CAC hides the truth. Paid Google might be 18-month payback; organic might be 3-month; partner-driven might be 6.\n\nManage channel mix to the unit economics. Pour fuel on what pencils. Cut the ones that don't, regardless of volume. Volume from a bad channel is just borrowed time."
+        }
+      ],
+      "take_action": [
+        "Calculate your CAC from last month’s marketing spend",
+        "Estimate LTV: avg purchase value × frequency × avg customer lifespan",
+        "Target a LTV:CAC ratio of 3:1 or higher as your baseline"
+      ],
+      "deep_dive": "**Unit economics are the OS of every growth business.** They answer: when I spend $1 to acquire a customer, how much do I get back, and how soon? Everything else — fundraising, hiring, scaling — flows from that answer.\n\nThe trap most operators fall into: looking at LTV:CAC as a single number. The number works at *cohort* level — customers acquired in the same period through the same channel. Blended LTV:CAC is a starting point, not an answer.\n\nThe sharp questions:\n\n- **Which cohort?** Cohorts from 2023 may have different retention than cohorts from 2026. Always compare same-vintage. A worsening retention curve hidden by new-cohort growth is how good companies die slowly.\n- **Which channel?** Organic referrals don't have a CAC at all (or it's tiny). Paid ads have a defined CAC. Sales-led has a high CAC. Each channel has its own LTV:CAC profile.\n- **Which segment?** Enterprise customers have higher LTV and higher CAC. SMB customers have lower both. The ratio can be similar; the cash dynamics radically different.\n\nThe LTV formula expanded, for SaaS:\n\n$$\\text{LTV} = \\frac{\\text{ARPU} \\times \\text{Gross Margin}}{\\text{Monthly Churn}}$$\n\nA $100/month customer at 80% gross margin and 3% monthly churn has $80 × 33 = $2,640 LTV. If CAC is $500, ratio is 5.3 — strong. Payback is $500 / ($100 × 0.8) = 6.25 months. Healthy.\n\nThe practical move:\n\n- **Compute LTV:CAC by channel every month.** Cut the ones below 3:1. Fund the ones above 5:1.\n- **Watch payback period more than LTV:CAC.** LTV is a forecast; payback is observable. A 9-month payback that you can verify with bank deposits is more useful than a 4x LTV:CAC that depends on a 40-month retention assumption.\n- **Don't optimize LTV via price hikes alone.** Higher price often comes with higher churn. The two move together more than founders expect.",
+      "quiz": {
+        "pass_pct": 80,
+        "polished_v2": true,
+        "questions": [
+          {
+            "q": "Which statement best captures the principle of \"Customer Acquisition Cost (CAC)\"?",
+            "options": [
+              "Blended CAC hides the truth.",
+              "A high gross margin always means a structurally healthy business.",
+              "Total sales and marketing spend divided by new customers acquired in that period.",
+              "The total gross profit a customer generates over their full lifetime with you."
+            ],
+            "correct": 2,
+            "explain": "\"Customer Acquisition Cost (CAC)\" — the correct framing is: Total sales and marketing spend divided by new customers acquired in that period."
+          },
+          {
+            "q": "Which statement best captures the principle of \"Lifetime Value (LTV)\"?",
+            "options": [
+              "Negative working capital is a warning sign that the business is in distress.",
+              "Total sales and marketing spend divided by new customers acquired in that period.",
+              "Months until a customer's contribution margin equals their acquisition cost.",
+              "The total gross profit a customer generates over their full lifetime with you."
+            ],
+            "correct": 3,
+            "explain": "\"Lifetime Value (LTV)\" — the correct framing is: The total gross profit a customer generates over their full lifetime with you."
+          },
+          {
+            "q": "What does \"LTV:CAC Ratio\" mean in MBA Rock?",
+            "options": [
+              "Blended CAC hides the truth.",
+              "Months until a customer's contribution margin equals their acquisition cost.",
+              "Profitability and cash flow are essentially the same thing at scale.",
+              "The single most-used unit economics metric."
+            ],
+            "correct": 3,
+            "explain": "\"LTV:CAC Ratio\" — the correct framing is: The single most-used unit economics metric."
+          },
+          {
+            "q": "What does \"CAC Payback Period\" mean in MBA Rock?",
+            "options": [
+              "Months until a customer's contribution margin equals their acquisition cost.",
+              "Total sales and marketing spend divided by new customers acquired in that period.",
+              "Revenue growth is the single best leading indicator of business health.",
+              "Blended CAC hides the truth."
+            ],
+            "correct": 0,
+            "explain": "\"CAC Payback Period\" — the correct framing is: Months until a customer's contribution margin equals their acquisition cost."
+          },
+          {
+            "q": "How does this lesson define \"Channel Unit Economics\"?",
+            "options": [
+              "The total gross profit a customer generates over their full lifetime with you.",
+              "Blended CAC hides the truth.",
+              "Total sales and marketing spend divided by new customers acquired in that period.",
+              "Negative working capital is a warning sign that the business is in distress."
+            ],
+            "correct": 1,
+            "explain": "\"Channel Unit Economics\" — the correct framing is: Blended CAC hides the truth."
+          }
+        ]
+      },
+      "lyrics": null,
+      "lyrics_url": null
+    },
+    {
+      "id": "M1L5",
+      "module_id": "M1",
+      "sq_position": "1.5",
+      "title": "Balance Sheet Bones",
+      "slug_v2": "balance-sheet-bones",
+      "legacy_slug": "balance-sheet-bones",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M1L6",
+      "module_id": "M1",
+      "sq_position": "1.6",
+      "title": "Breakeven Analysis",
+      "slug_v2": "breakeven-analysis",
+      "legacy_slug": "breakeven-analysis",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M1L7",
+      "module_id": "M1",
+      "sq_position": "1.7",
+      "title": "Cash Timing",
+      "slug_v2": "cash-timing",
+      "legacy_slug": "cash-timing",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M1L8",
+      "module_id": "M1",
+      "sq_position": "1.8",
+      "title": "Receivables",
+      "slug_v2": "receivables",
+      "legacy_slug": "receivables",
+      "song_title": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Receivables_In.mp4",
+      "video_id": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/receivables-in.mp3",
+      "audio_overview_url": null,
+      "core_concepts": [
+        {
+          "title": "Accounts Receivable (AR)",
+          "body": "Money owed to you by customers who've been invoiced but haven't paid yet. Shows on the balance sheet as a current asset, but it's not the same as cash — receivables are a *claim* on future cash, dependent on customers actually paying.\n\nThe larger AR grows relative to revenue, the more cash is tied up waiting."
+        },
+        {
+          "title": "Days Sales Outstanding (DSO)",
+          "body": "Average number of days between invoicing a customer and getting paid.\n\n$$\\text{DSO} = \\frac{\\text{Accounts Receivable}}{\\text{Daily Revenue}}$$\n\nLow DSO (under 30 days) = healthy collections. High DSO (over 60–90 days) = customers floating you, or collections process broken. Track it monthly; trend matters more than absolute level."
+        },
+        {
+          "title": "Aging Analysis",
+          "body": "Receivables grouped by how overdue they are: current, 1-30 days late, 31-60, 61-90, 90+. The shape of the aging tells you the health of the book.\n\nA healthy AR is concentrated in current and 1-30. Anything in 90+ should trigger collections action — it's already partially bad debt."
+        },
+        {
+          "title": "The Collections Discipline",
+          "body": "Receivables don't collect themselves. The systems that work: invoice the day work delivers (don't batch monthly), automated reminders at 7/14/28 days, personal phone call at 45 days, formal demand at 60.\n\nNothing fancy. But the founders who do this have working capital. The founders who don't, don't."
+        },
+        {
+          "title": "Payment Terms as Strategy",
+          "body": "Shorter terms accelerate cash. Longer terms can be a sales lever for big deals. Discounts for early payment (2% net 10) move cash forward at known cost.\n\nThe optimum is contextual. Default to shorter unless a strategic reason exists for longer. Never give long terms because nobody pushed back on Net 60 in the first conversation."
+        }
+      ],
+      "take_action": [
+        "Audit all outstanding invoices — flag anything 30+ days overdue",
+        "Calculate DSO: (Accounts Receivable ÷ Annual Revenue) × 365",
+        "Implement or enforce a net-15 or net-30 payment policy"
+      ],
+      "deep_dive": "**Sales are a thesis. Collections are a fact.** A signed contract is not money. A delivered service is not money. An invoice is not money. The wire hitting the bank is money. Everything else is a story.\n\nReceivables management is the unglamorous, decisive practice of converting the story to the fact. Most early-stage operators systematically underestimate how much cash is parked in receivables once revenue passes about $1M:\n\n- $1M ARR at 90 days DSO = $250K parked in AR. That's a quarter of your annual revenue not earning anything.\n- The same business at 30 days DSO = $83K parked. The $167K difference can fund a hire, a marketing push, a runway extension.\n\nReceivables aren't a finance back-office problem. They're a working capital weapon. The companies that compound — bootstrapped or VC-backed — get good at this fast.\n\nThree moves that change the picture:\n\n- **Invoice instantly.** The clock starts when the invoice goes out. Every day you batch is a day you've donated.\n- **Automate the reminder cadence.** A scheduled email at day 7, 14, 28, and a personal touch at day 45. Use a billing tool; don't hand-roll it.\n- **Make late-payment friction high.** A small late fee in the contract, predictably enforced, changes customer behavior more than threats.\n\nThe formula to track:\n\n$$\\text{Cash Conversion Cycle} = \\text{DSO} + \\text{DIO} - \\text{DPO}$$\n\nThe target is shorter, ideally negative. A negative CCC means your customers are funding your operations. SaaS, marketplaces, and subscription businesses can engineer this. Traditional B2B services rarely can — they just have to manage the cycle aggressively.",
+      "quiz": {
+        "pass_pct": 80,
+        "polished_v2": true,
+        "questions": [
+          {
+            "q": "Which statement best captures the principle of \"Accounts Receivable (AR)\"?",
+            "options": [
+              "Shorter terms accelerate cash.",
+              "Average number of days between invoicing a customer and getting paid.",
+              "Revenue growth is the single best leading indicator of business health.",
+              "Money owed to you by customers who've been invoiced but haven't paid yet."
+            ],
+            "correct": 3,
+            "explain": "\"Accounts Receivable (AR)\" — the correct framing is: Money owed to you by customers who've been invoiced but haven't paid yet."
+          },
+          {
+            "q": "How does this lesson define \"Days Sales Outstanding (DSO)\"?",
+            "options": [
+              "Variable costs are the primary lever for improving long-term margins.",
+              "Money owed to you by customers who've been invoiced but haven't paid yet.",
+              "Average number of days between invoicing a customer and getting paid.",
+              "Shorter terms accelerate cash."
+            ],
+            "correct": 2,
+            "explain": "\"Days Sales Outstanding (DSO)\" — the correct framing is: Average number of days between invoicing a customer and getting paid."
+          },
+          {
+            "q": "How does this lesson define \"Aging Analysis\"?",
+            "options": [
+              "Profitability and cash flow are essentially the same thing at scale.",
+              "Receivables don't collect themselves.",
+              "Shorter terms accelerate cash.",
+              "Receivables grouped by how overdue they are: current, 1-30 days late, 31-60, 61-90, 90+."
+            ],
+            "correct": 3,
+            "explain": "\"Aging Analysis\" — the correct framing is: Receivables grouped by how overdue they are: current, 1-30 days late, 31-60, 61-90, 90+."
+          },
+          {
+            "q": "Which statement best captures the principle of \"The Collections Discipline\"?",
+            "options": [
+              "Negative working capital is a warning sign that the business is in distress.",
+              "Shorter terms accelerate cash.",
+              "Receivables don't collect themselves.",
+              "Money owed to you by customers who've been invoiced but haven't paid yet."
+            ],
+            "correct": 2,
+            "explain": "\"The Collections Discipline\" — the correct framing is: Receivables don't collect themselves."
+          },
+          {
+            "q": "\"Payment Terms as Strategy\" — which of these is correct?",
+            "options": [
+              "Average number of days between invoicing a customer and getting paid.",
+              "Shorter terms accelerate cash.",
+              "Receivables don't collect themselves.",
+              "Profitability and cash flow are essentially the same thing at scale."
+            ],
+            "correct": 1,
+            "explain": "\"Payment Terms as Strategy\" — the correct framing is: Shorter terms accelerate cash."
+          }
+        ]
+      },
+      "lyrics": null,
+      "lyrics_url": null
+    },
+    {
+      "id": "M1L9",
+      "module_id": "M1",
+      "sq_position": "1.9",
+      "title": "Operating Leverage",
+      "slug_v2": "operating-leverage",
+      "legacy_slug": "operating-leverage",
+      "song_title": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Operating_Leverage.mp4",
+      "video_id": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/operating-leverage.mp3",
+      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/operating-leverage.mp4",
+      "core_concepts": [
+        {
+          "title": "What Operating Leverage Is",
+          "body": "The degree to which fixed costs amplify the profit impact of revenue changes. High operating leverage = small revenue changes produce big profit swings (in either direction).\n\nSoftware businesses have high operating leverage. Job-shop services have low. Restaurants are somewhere in between — depends on rent vs. food cost mix."
+        },
+        {
+          "title": "Degree of Operating Leverage (DOL)",
+          "body": "The mathematical measure of how sensitive EBIT (operating profit) is to a change in sales.\n\n$$\\text{DOL} = \\frac{\\text{Contribution Margin}}{\\text{EBIT}}$$\n\nA DOL of 3 means a 10% revenue increase yields a 30% EBIT increase. Same 10% revenue *decline* yields 30% EBIT decline. Cuts both ways."
+        },
+        {
+          "title": "The Fixed-Cost Bet",
+          "body": "Building fixed-cost infrastructure (factories, software, salaried teams) is a bet that future volume will be high enough to spread that cost thin. If volume materializes, profit explodes. If it doesn't, fixed costs crush margins.\n\nThis is why software valuations are so volatile to revenue growth surprises — a small revenue beat at high operating leverage is a disproportionate profit beat."
+        },
+        {
+          "title": "Operating Leverage as Strategy",
+          "body": "Choosing your operating leverage profile is a strategic choice. Build a high-leverage business (software, IP) when you're confident in scale and want explosive upside. Build a low-leverage business (services, contracted labor) when you want resilience and predictability."
+        },
+        {
+          "title": "The Downside",
+          "body": "High operating leverage in a downturn is brutal. Costs you can't cut continue to drain cash while revenue evaporates. The bigger the fixed-cost base, the longer it takes to right-size.\n\nWhich is why operating leverage should be earned with proof, not assumed in the projection."
+        }
+      ],
+      "take_action": [
+        "Identify the ratio of fixed to variable costs in your business",
+        "Calculate DOL: Contribution Margin ÷ Operating Income",
+        "Model the impact of a 20% revenue increase on your operating income"
+      ],
+      "deep_dive": "**Operating leverage is the secret amplifier of every business model.** Two companies can have the same revenue and the same gross margin, but if one has $5M in fixed costs and the other has $500K, their profit profiles look nothing alike — and their fragility profiles look nothing alike either.\n\nThe math is unforgiving in both directions:\n\n$$\\text{\\% Change in EBIT} = \\text{DOL} \\times \\text{\\% Change in Revenue}$$\n\nWith DOL = 4 and revenue up 10%, EBIT is up 40%. With the same DOL and revenue down 10%, EBIT is down 40%. The leverage doesn't care about direction.\n\nWhy this shapes strategy:\n\n- **In growth mode, high operating leverage is fuel.** Every incremental dollar of revenue drops disproportionately to the bottom line. This is the SaaS magic — once you've built the platform, the 10,001st customer costs you almost nothing to serve.\n- **In contraction, high operating leverage is poison.** Fixed costs become anchors. Reducing them takes time (lease termination, layoffs, contract negotiation) while revenue can disappear in a quarter.\n\nThe operator's playbook:\n\n- **Earn fixed-cost commitments.** Don't commit to a 10-person team before the revenue is in place to service it. Don't sign a 5-year lease before product-market fit is proven. Use contractors and short leases until contribution margin and volume are real.\n- **Match operating leverage to confidence.** High confidence in scale → bias toward fixed costs (you'll be glad you did). Uncertain demand → bias toward variable costs (you can right-size quickly).\n- **Measure your DOL.** It's a strategic tell. A founder who can't quote their DOL doesn't know how exposed their P&L is to a revenue surprise.\n\nThe simple version of the question every time you commit to a fixed cost: *what's the volume I need to justify this, and how confident am I that I'll hit it on time?* If you can't answer cleanly, you're guessing — and operating leverage doesn't forgive guesses.",
+      "quiz": {
+        "pass_pct": 80,
+        "polished_v2": true,
+        "questions": [
+          {
+            "q": "Which statement best captures the principle of \"What Operating Leverage Is\"?",
+            "options": [
+              "The degree to which fixed costs amplify the profit impact of revenue changes.",
+              "High operating leverage in a downturn is brutal.",
+              "Building fixed-cost infrastructure (factories, software, salaried teams) is a bet that future volume will be high enough to spread that cost thin.",
+              "Once a company is past breakeven, fixed costs no longer matter."
+            ],
+            "correct": 0,
+            "explain": "\"What Operating Leverage Is\" — the correct framing is: The degree to which fixed costs amplify the profit impact of revenue changes."
+          },
+          {
+            "q": "\"Degree of Operating Leverage (DOL)\" — which of these is correct?",
+            "options": [
+              "Breakeven analysis is most useful for mature companies, not startups.",
+              "Building fixed-cost infrastructure (factories, software, salaried teams) is a bet that future volume will be high enough to spread that cost thin.",
+              "The mathematical measure of how sensitive EBIT (operating profit) is to a change in sales.",
+              "Choosing your operating leverage profile is a strategic choice."
+            ],
+            "correct": 2,
+            "explain": "\"Degree of Operating Leverage (DOL)\" — the correct framing is: The mathematical measure of how sensitive EBIT (operating profit) is to a change in sales."
+          },
+          {
+            "q": "How does this lesson define \"The Fixed-Cost Bet\"?",
+            "options": [
+              "Building fixed-cost infrastructure (factories, software, salaried teams) is a bet that future volume will be high enough to spread that cost thin.",
+              "High operating leverage in a downturn is brutal.",
+              "Once a company is past breakeven, fixed costs no longer matter.",
+              "The degree to which fixed costs amplify the profit impact of revenue changes."
+            ],
+            "correct": 0,
+            "explain": "\"The Fixed-Cost Bet\" — the correct framing is: Building fixed-cost infrastructure (factories, software, salaried teams) is a bet that future volume will be high enough to spread that cost thin."
+          },
+          {
+            "q": "Which statement best captures the principle of \"Operating Leverage as Strategy\"?",
+            "options": [
+              "Choosing your operating leverage profile is a strategic choice.",
+              "High operating leverage in a downturn is brutal.",
+              "The breakeven point falls as fixed costs rise.",
+              "Building fixed-cost infrastructure (factories, software, salaried teams) is a bet that future volume will be high enough to spread that cost thin."
+            ],
+            "correct": 0,
+            "explain": "\"Operating Leverage as Strategy\" — the correct framing is: Choosing your operating leverage profile is a strategic choice."
+          },
+          {
+            "q": "What does \"The Downside\" mean in MBA Rock?",
+            "options": [
+              "High operating leverage in a downturn is brutal.",
+              "Choosing your operating leverage profile is a strategic choice.",
+              "The mathematical measure of how sensitive EBIT (operating profit) is to a change in sales.",
+              "The breakeven point falls as fixed costs rise."
+            ],
+            "correct": 0,
+            "explain": "\"The Downside\" — the correct framing is: High operating leverage in a downturn is brutal."
+          }
+        ]
+      },
+      "lyrics": null,
+      "lyrics_url": null
+    },
+    {
+      "id": "M2L1",
+      "module_id": "M2",
+      "sq_position": "2.1",
+      "title": "What is Strategy",
+      "slug_v2": "what-is-strategy",
+      "legacy_slug": "what-is-strategy",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M2L2",
+      "module_id": "M2",
+      "sq_position": "2.2",
+      "title": "Economic Moats",
+      "slug_v2": "economic-moats",
+      "legacy_slug": "economic-moats",
+      "song_title": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Economic_Moats.mp4",
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [
+        {
+          "title": "What a Moat Actually Is",
+          "body": "A structural advantage that lets a company earn returns above its cost of capital for years, not months. Not a product feature. Not a marketing campaign. A reason the business stays profitable even when competitors copy what's visible.\n\nIf you can describe your moat in a slogan, it's not a moat."
+        },
+        {
+          "title": "ROIC > WACC, Sustained",
+          "body": "The financial signature of a moat. Return on invested capital persistently exceeds the weighted average cost of capital.\n\n$$\\text{Moat exists if } \\text{ROIC} > \\text{WACC} \\text{ for } 10+ \\text{ years}$$\n\nIn competitive markets, ROIC mean-reverts to WACC. When it doesn't, something is structurally preventing competition from eroding profit. Find that something. That's your moat."
+        },
+        {
+          "title": "Moat vs Lead",
+          "body": "A lead is being further along. A moat is a barrier competitors can't cross at all. Most \"competitive advantages\" are actually leads — first-mover, more features, better team. Leads close.\n\nMoats — network effects, switching costs, regulatory, scale economies — don't close just because someone shows up with capital and intent."
+        },
+        {
+          "title": "The Four Moat Origins",
+          "body": "Moats come from four structural sources: intangible assets (brand, patents, regulatory), switching costs (the customer would have to break things to leave), network effects (each new user makes the product more valuable), and cost advantages (scale, process, location).\n\nKnow which of the four your business has — or could engineer."
+        },
+        {
+          "title": "Earned, Not Claimed",
+          "body": "Moats are diagnosed, not declared. You see them in customer behavior over time — retention curves, pricing power, market share stability. They show up in the financials before they show up in the deck.\n\nIf you have to convince yourself you have one, you probably don't yet."
+        }
+      ],
+      "take_action": [
+        "Identify your single most defensible moat",
+        "Score each moat type 1–5 for your business",
+        "Plan one investment in the highest-leverage moat"
+      ],
+      "deep_dive": "**The single highest-leverage strategic question for any business: do you have a moat, and what kind?** Everything else — pricing, hiring, capital allocation — flows from the answer.\n\nWarren Buffett popularized the term, but the concept is older. Economists call it \"abnormal returns persistence.\" In competitive markets, profitable businesses attract competitors who drive profit toward the cost of capital. A moat is whatever prevents that natural decay.\n\n**The financial test** is unforgiving: ROIC above WACC, sustained for a decade. Most businesses fail this test. The ones that pass — Coca-Cola, Microsoft, Visa, Costco — share a common pattern: some structural feature that competitors can see clearly and still cannot replicate.\n\n**The strategic question for operators**: of the four moat sources (intangible assets, switching costs, network effects, cost advantages), which one is achievable in your business given current resources? Some are unbuildable in any reasonable timeframe (regulatory monopolies). Some are buildable but only with time and discipline (brand). Some can be engineered into the product itself (switching costs through data and integrations).\n\nThe practical move: pick the one that's both achievable and defensible, and direct every product and operating decision to widen it. A business with no moat in pursuit can still build one through deliberate compounding. A business with a moat and no plan to widen it will lose it.",
+      "quiz": {
+        "pass_pct": 80,
+        "polished_v2": true,
+        "questions": [
+          {
+            "q": "How does this lesson define \"What a Moat Actually Is\"?",
+            "options": [
+              "Moats come from four structural sources: intangible assets (brand, patents, regulatory), switching costs (the customer would have to break things to leave), network effects (each new user makes the product more valuable…",
+              "A structural advantage that lets a company earn returns above its cost of capital for years, not months.",
+              "The financial signature of a moat.",
+              "Patents are the most reliable form of long-term competitive advantage."
+            ],
+            "correct": 1,
+            "explain": "\"What a Moat Actually Is\" — the correct framing is: A structural advantage that lets a company earn returns above its cost of capital for years, not months."
+          },
+          {
+            "q": "What does \"ROIC > WACC, Sustained\" mean in MBA Rock?",
+            "options": [
+              "The financial signature of a moat.",
+              "Strong moats are built almost entirely through marketing and branding.",
+              "A lead is being further along.",
+              "A structural advantage that lets a company earn returns above its cost of capital for years, not months."
+            ],
+            "correct": 0,
+            "explain": "\"ROIC > WACC, Sustained\" — the correct framing is: The financial signature of a moat."
+          },
+          {
+            "q": "Which statement best captures the principle of \"Moat vs Lead\"?",
+            "options": [
+              "Moats are diagnosed, not declared.",
+              "Moats are most relevant in physical-goods businesses, not in software.",
+              "A structural advantage that lets a company earn returns above its cost of capital for years, not months.",
+              "A lead is being further along."
+            ],
+            "correct": 3,
+            "explain": "\"Moat vs Lead\" — the correct framing is: A lead is being further along."
+          },
+          {
+            "q": "\"The Four Moat Origins\" — which of these is correct?",
+            "options": [
+              "A lead is being further along.",
+              "The financial signature of a moat.",
+              "Moats come from four structural sources: intangible assets (brand, patents, regulatory), switching costs (the customer would have to break things to leave), network effects (each new user makes the product more valuable…",
+              "Moats are most relevant in physical-goods businesses, not in software."
+            ],
+            "correct": 2,
+            "explain": "\"The Four Moat Origins\" — the correct framing is: Moats come from four structural sources: intangible assets (brand, patents, regulatory), switching costs (the customer would have to break things to leave), network effects (each new user makes the product more valuable…"
+          },
+          {
+            "q": "How does this lesson define \"Earned, Not Claimed\"?",
+            "options": [
+              "Moats come from four structural sources: intangible assets (brand, patents, regulatory), switching costs (the customer would have to break things to leave), network effects (each new user makes the product more valuable…",
+              "Moats are diagnosed, not declared.",
+              "Patents are the most reliable form of long-term competitive advantage.",
+              "The financial signature of a moat."
+            ],
+            "correct": 1,
+            "explain": "\"Earned, Not Claimed\" — the correct framing is: Moats are diagnosed, not declared."
+          }
+        ]
+      },
+      "lyrics": null,
+      "lyrics_url": null
+    },
+    {
+      "id": "M2L3",
+      "module_id": "M2",
+      "sq_position": "2.3",
+      "title": "Porter's Five Forces",
+      "slug_v2": "porters-five-forces",
+      "legacy_slug": "porters-five-forces",
+      "song_title": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Porter_s_Five_Forces.mp4",
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [
+        {
+          "title": "Threat of New Entrants",
+          "body": "How easily new competitors can enter the market. Low barriers (online courses, e-commerce) = high threat. High barriers (regulated industries, capital-intensive infrastructure) = low threat.\n\nNew entrants compete profit away. Industries with low entry barriers tend to have lower long-term margins."
+        },
+        {
+          "title": "Bargaining Power of Suppliers",
+          "body": "How much leverage your inputs have over you. One supplier of a critical component, no alternatives, switching cost high = the supplier captures your margin.\n\nDual-source critical inputs. Vertically integrate where supplier power is structural. Or pick a category where supplier power is naturally low."
+        },
+        {
+          "title": "Bargaining Power of Buyers",
+          "body": "How much leverage customers have. Concentrated buyers (a few big customers) extract terms. Fragmented buyers (millions of consumers) take what's offered.\n\nCustomer concentration above 30% means the customer has more power than you. The relationship is closer to vendor than partner."
+        },
+        {
+          "title": "Threat of Substitutes",
+          "body": "Different products that solve the same customer job. Netflix vs cable. Email vs postal mail. Plant-based meat vs beef.\n\nSubstitutes cap your pricing power. The customer's question is not \"which provider?\" but \"do I even need this category?\""
+        },
+        {
+          "title": "Competitive Rivalry",
+          "body": "The intensity of competition among existing players. Fragmented industries with similar players and slow growth = brutal rivalry, price wars, low margins.\n\nThe most attractive markets are concentrated, growing, and differentiated. The least attractive are fragmented, mature, and commoditized."
+        }
+      ],
+      "take_action": [
+        "Rate each of Porter’s 5 forces in your industry (High/Medium/Low)",
+        "Identify the most dangerous force threatening your business today",
+        "Choose one force to actively mitigate this quarter"
+      ],
+      "deep_dive": "**Porter's Five Forces is not a checklist. It's a lens for understanding why some industries make money and others don't.** The pharmaceutical industry has high margins because all five forces are favorable: entry is hard (patents, regulation), suppliers are weak, buyers are fragmented, substitutes are limited, rivalry is muted by patent protection. Airlines have terrible margins because all five forces are unfavorable: low entry barriers, powerful suppliers (Boeing, Airbus), concentrated buyers (corporate travel), substitutes (video calls), and brutal rivalry.\n\nThe insight that changes how you operate: **industry structure determines profitability more than execution.** A mediocre operator in a great industry will out-earn a brilliant operator in a terrible industry. This is why category selection matters before founder talent, before product, before market timing.\n\n**The practical move** for an existing business: do a five-forces assessment honestly. For each force, mark it as favorable, neutral, or unfavorable. Count the favorables. If three or more are unfavorable, your problem is structural — execution alone won't fix it. The strategic options become: change the structure (vertical integration, regulatory protection, network effects to lock in customers), or change the game you're playing (move to an adjacent market with better structure).\n\nThe second-order insight: every strategic move is an attempt to change one of the five forces in your favor. Brand-building reduces buyer power. Patent filing reduces entrant threat. Acquisition reduces rivalry. Every play in strategy is a Porter play.",
+      "quiz": {
+        "pass_pct": 80,
+        "polished_v2": true,
+        "questions": [
+          {
+            "q": "Which statement best captures the principle of \"Threat of New Entrants\"?",
+            "options": [
+              "Porter's Five Forces is primarily a tool for evaluating individual competitors.",
+              "How much leverage customers have.",
+              "The intensity of competition among existing players.",
+              "How easily new competitors can enter the market."
+            ],
+            "correct": 3,
+            "explain": "\"Threat of New Entrants\" — the correct framing is: How easily new competitors can enter the market."
+          },
+          {
+            "q": "\"Bargaining Power of Suppliers\" — which of these is correct?",
+            "options": [
+              "High industry rivalry is generally a sign of a healthy, growing market.",
+              "How much leverage your inputs have over you.",
+              "Different products that solve the same customer job.",
+              "How much leverage customers have."
+            ],
+            "correct": 1,
+            "explain": "\"Bargaining Power of Suppliers\" — the correct framing is: How much leverage your inputs have over you."
+          },
+          {
+            "q": "Which statement best captures the principle of \"Bargaining Power of Buyers\"?",
+            "options": [
+              "Different products that solve the same customer job.",
+              "Porter's Five Forces is primarily a tool for evaluating individual competitors.",
+              "How much leverage customers have.",
+              "How easily new competitors can enter the market."
+            ],
+            "correct": 2,
+            "explain": "\"Bargaining Power of Buyers\" — the correct framing is: How much leverage customers have."
+          },
+          {
+            "q": "What does \"Threat of Substitutes\" mean in MBA Rock?",
+            "options": [
+              "Different products that solve the same customer job.",
+              "The intensity of competition among existing players.",
+              "Five Forces analysis is most useful for early-stage product decisions.",
+              "How much leverage your inputs have over you."
+            ],
+            "correct": 0,
+            "explain": "\"Threat of Substitutes\" — the correct framing is: Different products that solve the same customer job."
+          },
+          {
+            "q": "What does \"Competitive Rivalry\" mean in MBA Rock?",
+            "options": [
+              "How much leverage your inputs have over you.",
+              "Porter's Five Forces is primarily a tool for evaluating individual competitors.",
+              "The intensity of competition among existing players.",
+              "How easily new competitors can enter the market."
+            ],
+            "correct": 2,
+            "explain": "\"Competitive Rivalry\" — the correct framing is: The intensity of competition among existing players."
+          }
+        ]
+      },
+      "lyrics": null,
+      "lyrics_url": null
+    },
+    {
+      "id": "M2L4",
+      "module_id": "M2",
+      "sq_position": "2.4",
+      "title": "Competitive Advantage & VRIO",
+      "slug_v2": "competitive-advantage-vrio",
+      "legacy_slug": "competitive-advantage-vrio",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M2L5",
+      "module_id": "M2",
+      "sq_position": "2.5",
+      "title": "Blue Ocean Strategy",
+      "slug_v2": "blue-ocean-strategy",
+      "legacy_slug": "blue-ocean-strategy",
+      "song_title": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Blue_Ocean_Strategy_%26_ERRC.mp4",
+      "video_id": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/blue-ocean-creating-new-markets.mp3",
+      "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/blue-ocean-strategy-errc.mp4",
+      "core_concepts": [
+        {
+          "title": "Red Oceans vs Blue Oceans",
+          "body": "Red oceans = existing market spaces where boundaries are defined and competition is fierce. Players fight for shrinking pools of demand. Margins compress.\n\nBlue oceans = uncontested market space where competition is irrelevant. Demand is created, not fought over. Value innovation makes the rules."
+        },
+        {
+          "title": "Value Innovation",
+          "body": "The simultaneous pursuit of differentiation AND low cost. Conventional wisdom says you choose one. Blue Ocean says creating a new market means breaking that trade-off — offering buyers something dramatically different AND cheaper.\n\nNetflix did this to Blockbuster. Cirque du Soleil did this to traditional circus."
+        },
+        {
+          "title": "The ERRC Grid",
+          "body": "Four actions that create a blue ocean:\n\n- **Eliminate**: which factors taken for granted should be eliminated?\n- **Reduce**: which factors should be reduced well below industry standard?\n- **Raise**: which factors should be raised well above standard?\n- **Create**: which factors should be created that the industry has never offered?"
+        },
+        {
+          "title": "Strategy Canvas",
+          "body": "A visual that plots competing industries against the factors they compete on. Reveals the convergence — where everyone competes on the same things — and the opportunity to break away.\n\nIf your strategy canvas overlays your competitors' nearly identically, you're in a red ocean."
+        },
+        {
+          "title": "Sequence of Strategic Moves",
+          "body": "Buyer utility → price → cost → adoption. Test each step in sequence.\n\nIf buyer utility is exceptional, set a strategic price that captures the mass market, then engineer the cost structure to hit that price profitably, then anticipate adoption hurdles. Reversing the sequence (starting from cost) yields incremental products, not blue oceans."
+        }
+      ],
+      "take_action": [
+        "Map your current competitive factors on a strategy canvas",
+        "Apply the ERRC grid (Eliminate, Reduce, Raise, Create) to your offering",
+        "Identify one segment of non-customers you could realistically attract"
+      ],
+      "deep_dive": "**Blue Ocean Strategy is about making competition irrelevant, not winning it.** W. Chan Kim and Renée Mauborgne studied how some companies create new markets while others compete in existing ones — and consistently found that value creation comes from breaking industry trade-offs, not optimizing within them.\n\nThe foundational move is the **ERRC grid**: a structured exercise to redesign an industry's value curve. Take a sheet of paper. List the factors your industry competes on. Then for each factor ask:\n\n- **Eliminate**: what does this industry assume is necessary that the customer doesn't actually want?\n- **Reduce**: what's been over-delivered (more features, more service, more channels) beyond what creates value?\n- **Raise**: what's been under-delivered, where lifting the bar would create disproportionate value?\n- **Create**: what does no one in this industry offer that customers would value?\n\n[example] Cirque du Soleil eliminated star performers, animals, multiple show arenas. Reduced fun and humor, danger. Raised unique venue, theme. Created refined environment, multiple productions, artistic music and dance. The result wasn't a better circus — it was a new category, with premium pricing and no direct competitor.\n\n**The hard truth**: most companies can't execute Blue Ocean because their organization is optimized for the red ocean they're in. The cost structure, the sales channels, the talent — all calibrated for the existing game. Breaking out requires accepting that the old playbook becomes the wrong playbook. That's an organizational change, not a strategy memo.\n\nThe practical filter: if your ERRC grid yields incremental changes (\"reduce price by 10%, raise service by 15%\"), you're still in the red ocean. Blue ocean changes are large and asymmetric — eliminate something the industry assumes is essential, create something the industry has never offered.",
+      "quiz": {
+        "pass_pct": 80,
+        "polished_v2": true,
+        "questions": [
+          {
+            "q": "Which statement best captures the principle of \"Red Oceans vs Blue Oceans\"?",
+            "options": [
+              "Strategic clarity comes from listing all the things the company will do.",
+              "Four actions that create a blue ocean: - **Eliminate**: which factors taken for granted should be eliminated? - **Reduce**: which factors should be reduced well below industry standard? - **Raise**: which factors should…",
+              "Buyer utility → price → cost → adoption.",
+              "Red oceans = existing market spaces where boundaries are defined and competition is fierce."
+            ],
+            "correct": 3,
+            "explain": "\"Red Oceans vs Blue Oceans\" — the correct framing is: Red oceans = existing market spaces where boundaries are defined and competition is fierce."
+          },
+          {
+            "q": "\"Value Innovation\" — which of these is correct?",
+            "options": [
+              "The simultaneous pursuit of differentiation AND low cost.",
+              "Red oceans = existing market spaces where boundaries are defined and competition is fierce.",
+              "A good strategy enumerates as many options as possible to maximize flexibility.",
+              "Four actions that create a blue ocean: - **Eliminate**: which factors taken for granted should be eliminated? - **Reduce**: which factors should be reduced well below industry standard? - **Raise**: which factors should…"
+            ],
+            "correct": 0,
+            "explain": "\"Value Innovation\" — the correct framing is: The simultaneous pursuit of differentiation AND low cost."
+          },
+          {
+            "q": "Which statement best captures the principle of \"The ERRC Grid\"?",
+            "options": [
+              "Red oceans = existing market spaces where boundaries are defined and competition is fierce.",
+              "Four actions that create a blue ocean: - **Eliminate**: which factors taken for granted should be eliminated? - **Reduce**: which factors should be reduced well below industry standard? - **Raise**: which factors should…",
+              "Strategic clarity comes from listing all the things the company will do.",
+              "Buyer utility → price → cost → adoption."
+            ],
+            "correct": 1,
+            "explain": "\"The ERRC Grid\" — the correct framing is: Four actions that create a blue ocean: - **Eliminate**: which factors taken for granted should be eliminated? - **Reduce**: which factors should be reduced well below industry standard? - **Raise**: which factors should…"
+          },
+          {
+            "q": "Which statement best captures the principle of \"Strategy Canvas\"?",
+            "options": [
+              "Strategy is mainly about market sizing and competitor benchmarking.",
+              "A visual that plots competing industries against the factors they compete on.",
+              "Buyer utility → price → cost → adoption.",
+              "The simultaneous pursuit of differentiation AND low cost."
+            ],
+            "correct": 1,
+            "explain": "\"Strategy Canvas\" — the correct framing is: A visual that plots competing industries against the factors they compete on."
+          },
+          {
+            "q": "\"Sequence of Strategic Moves\" — which of these is correct?",
+            "options": [
+              "Buyer utility → price → cost → adoption.",
+              "Red oceans = existing market spaces where boundaries are defined and competition is fierce.",
+              "Strategy is the long-term version of operational planning.",
+              "A visual that plots competing industries against the factors they compete on."
+            ],
+            "correct": 0,
+            "explain": "\"Sequence of Strategic Moves\" — the correct framing is: Buyer utility → price → cost → adoption."
+          }
+        ]
+      },
+      "lyrics": null,
+      "lyrics_url": null
+    },
+    {
+      "id": "M2L6",
+      "module_id": "M2",
+      "sq_position": "2.6",
+      "title": "Strategic Diagnostics",
+      "slug_v2": "strategic-diagnostics",
+      "legacy_slug": "strategic-diagnostics",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M2L7",
+      "module_id": "M2",
+      "sq_position": "2.7",
+      "title": "Business Model Canvas",
+      "slug_v2": "business-model-canvas",
+      "legacy_slug": "business-model-canvas",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [
+        {
+          "title": "Customer Segments",
+          "body": "Who you serve. The people or organizations you create value for. Mass market, niche, segmented, diversified, multi-sided platforms.\n\nThe sharpest segmentations are around shared *jobs to be done*, not demographics. \"Founders with 6-figure revenue running operations alone\" is sharper than \"small business owners.\""
+        },
+        {
+          "title": "Value Proposition",
+          "body": "The bundle of products and services that creates value for a specific customer segment. What pains you relieve, what gains you enable.\n\nIf customers can't articulate your value proposition in their own words, it's not landing. You're describing what you do — they need to describe what they get."
+        },
+        {
+          "title": "Channels & Customer Relationships",
+          "body": "How you reach customers and what relationship you build with them. Self-service vs personal assistance vs automated services. Communities, co-creation, dedicated personal assistance.\n\nThe channel and relationship choices shape unit economics more than founders usually realize."
+        },
+        {
+          "title": "Revenue Streams & Cost Structure",
+          "body": "How you make money and what it costs to deliver. Asset sales, subscriptions, licensing, brokerage fees. Fixed vs variable, economies of scale vs scope.\n\nThe revenue stream determines the predictability of cash. The cost structure determines the leverage of growth."
+        },
+        {
+          "title": "Key Resources, Activities, & Partnerships",
+          "body": "What you must own, do, and partner around. Intellectual property, key personnel, manufacturing relationships, distribution networks.\n\nThe assets and activities that are critical to your value proposition — and the partners who provide what you don't own."
+        }
+      ],
+      "take_action": [
+        "Fill out the full Business Model Canvas for your business",
+        "Identify your most fragile or at-risk block",
+        "Redesign one block to improve overall business model strength"
+      ],
+      "deep_dive": "**The Business Model Canvas is one frame on a sheet of paper that captures more strategic clarity than most 40-page business plans.** Alexander Osterwalder's nine boxes force you to articulate every essential dimension of a business — and crucially, to see whether they fit together.\n\nThe boxes:\n\n- **Right side (value creation)**: Customer Segments, Value Proposition, Channels, Customer Relationships, Revenue Streams\n- **Left side (cost & operations)**: Key Activities, Key Resources, Key Partners, Cost Structure\n\nThe insight is that the boxes must be *coherent*. A high-touch enterprise sales model (high customer relationship cost) requires a high-priced subscription or annual contract (sufficient revenue per customer to support it). A self-service freemium model requires viral or content-driven channels (low CAC) and a value proposition strong enough to convert free to paid. Mismatched boxes — premium pricing with self-service delivery, or enterprise sales with low ACVs — break the model.\n\n**The practical exercise**: fill in all nine boxes for your business. Then walk around the canvas asking \"does this fit with that?\" The misalignments are your strategic problems. Often the fix isn't all nine — it's one or two boxes that need to change to make the others work.\n\nThe canvas is also a powerful diagnostic for competitors and acquisition targets. Mapping a competitor's canvas reveals exactly where their model is weak — and where yours can attack.",
+      "quiz": {
+        "pass_pct": 80,
+        "polished_v2": true,
+        "questions": [
+          {
+            "q": "What does \"Customer Segments\" mean in MBA Rock?",
+            "options": [
+              "How you reach customers and what relationship you build with them.",
+              "Negative working capital is a warning sign that the business is in distress.",
+              "How you make money and what it costs to deliver.",
+              "This is the principle behind \"Customer Segments\" as taught in this lesson."
+            ],
+            "correct": 3,
+            "explain": "\"Customer Segments\" — the correct framing is: This is the principle behind \"Customer Segments\" as taught in this lesson."
+          },
+          {
+            "q": "Which statement best captures the principle of \"Value Proposition\"?",
+            "options": [
+              "How you reach customers and what relationship you build with them.",
+              "Profitability and cash flow are essentially the same thing at scale.",
+              "The bundle of products and services that creates value for a specific customer segment.",
+              "What you must own, do, and partner around."
+            ],
+            "correct": 2,
+            "explain": "\"Value Proposition\" — the correct framing is: The bundle of products and services that creates value for a specific customer segment."
+          },
+          {
+            "q": "\"Channels & Customer Relationships\" — which of these is correct?",
+            "options": [
+              "What you must own, do, and partner around.",
+              "How you make money and what it costs to deliver.",
+              "How you reach customers and what relationship you build with them.",
+              "A high gross margin always means a structurally healthy business."
+            ],
+            "correct": 2,
+            "explain": "\"Channels & Customer Relationships\" — the correct framing is: How you reach customers and what relationship you build with them."
+          },
+          {
+            "q": "Which statement best captures the principle of \"Revenue Streams & Cost Structure\"?",
+            "options": [
+              "What you must own, do, and partner around.",
+              "How you reach customers and what relationship you build with them.",
+              "Revenue growth is the single best leading indicator of business health.",
+              "How you make money and what it costs to deliver."
+            ],
+            "correct": 3,
+            "explain": "\"Revenue Streams & Cost Structure\" — the correct framing is: How you make money and what it costs to deliver."
+          },
+          {
+            "q": "Which statement best captures the principle of \"Key Resources, Activities, & Partnerships\"?",
+            "options": [
+              "Variable costs are the primary lever for improving long-term margins.",
+              "What you must own, do, and partner around.",
+              "The bundle of products and services that creates value for a specific customer segment.",
+              "How you reach customers and what relationship you build with them."
+            ],
+            "correct": 1,
+            "explain": "\"Key Resources, Activities, & Partnerships\" — the correct framing is: What you must own, do, and partner around."
+          }
+        ]
+      },
+      "lyrics": null,
+      "lyrics_url": null
+    },
+    {
+      "id": "M2L8",
+      "module_id": "M2",
+      "sq_position": "2.8",
+      "title": "Portfolio Strategy",
+      "slug_v2": "portfolio-strategy",
+      "legacy_slug": "portfolio-strategy",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "lyrics": null,
+      "lyrics_url": null
+    },
+    {
+      "id": "M3L1",
+      "module_id": "M3",
+      "sq_position": "3.1",
+      "title": "Marketing Mix",
+      "slug_v2": "marketing-mix",
+      "legacy_slug": "marketing-mix",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M3L2",
+      "module_id": "M3",
+      "sq_position": "3.2",
+      "title": "Consumer Behavior",
+      "slug_v2": "consumer-behavior",
+      "legacy_slug": "consumer-behavior",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M3L3",
+      "module_id": "M3",
+      "sq_position": "3.3",
+      "title": "Brand Strategy",
+      "slug_v2": "brand-strategy",
+      "legacy_slug": "brand-strategy",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M3L4",
+      "module_id": "M3",
+      "sq_position": "3.4",
+      "title": "Digital Marketing",
+      "slug_v2": "digital-marketing",
+      "legacy_slug": "digital-marketing",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M3L5",
+      "module_id": "M3",
+      "sq_position": "3.5",
+      "title": "Pricing Strategy",
+      "slug_v2": "pricing-strategy",
+      "legacy_slug": "pricing-strategy",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "lyrics": null,
+      "lyrics_url": null
+    },
+    {
+      "id": "M3L6",
+      "module_id": "M3",
+      "sq_position": "3.6",
+      "title": "Market Sizing TAM/SAM/SOM",
+      "slug_v2": "market-sizing-tam-sam-som",
+      "legacy_slug": "market-sizing-tam-sam-som",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M3L7",
+      "module_id": "M3",
+      "sq_position": "3.7",
+      "title": "Segmentation",
+      "slug_v2": "segmentation",
+      "legacy_slug": "segmentation",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M3L8",
+      "module_id": "M3",
+      "sq_position": "3.8",
+      "title": "Positioning & Focus",
+      "slug_v2": "positioning-focus",
+      "legacy_slug": "positioning-focus",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "lyrics": null,
+      "lyrics_url": null
+    },
+    {
+      "id": "M3L9",
+      "module_id": "M3",
+      "sq_position": "3.9",
+      "title": "Brand Promise",
+      "slug_v2": "brand-promise",
+      "legacy_slug": "brand-promise",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M3L10",
+      "module_id": "M3",
+      "sq_position": "3.10",
+      "title": "Value Proposition",
+      "slug_v2": "value-proposition",
+      "legacy_slug": "value-proposition",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M3L11",
+      "module_id": "M3",
+      "sq_position": "3.11",
+      "title": "Distribution",
+      "slug_v2": "distribution",
+      "legacy_slug": "distribution",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M3L12",
+      "module_id": "M3",
+      "sq_position": "3.12",
+      "title": "Funnel Optimization",
+      "slug_v2": "funnel-optimization",
+      "legacy_slug": "funnel-optimization",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M3L13",
+      "module_id": "M3",
+      "sq_position": "3.13",
+      "title": "Unit Economics (Reggae Alt)",
+      "slug_v2": "unit-economics-reggae-alt",
+      "legacy_slug": "unit-economics-reggae-alt",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M4L1",
+      "module_id": "M4",
+      "sq_position": "4.1",
+      "title": "The Leap",
+      "slug_v2": "the-leap",
+      "legacy_slug": "the-leap",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M4L2",
+      "module_id": "M4",
+      "sq_position": "4.2",
+      "title": "The MVP",
+      "slug_v2": "the-mvp",
+      "legacy_slug": "the-mvp",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M4L3",
+      "module_id": "M4",
+      "sq_position": "4.3",
+      "title": "The Pitch",
+      "slug_v2": "the-pitch",
+      "legacy_slug": "the-pitch",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M4L4",
+      "module_id": "M4",
+      "sq_position": "4.4",
+      "title": "The Pivot",
+      "slug_v2": "the-pivot",
+      "legacy_slug": "the-pivot",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M4L5",
+      "module_id": "M4",
+      "sq_position": "4.5",
+      "title": "Capstone",
+      "slug_v2": "capstone",
+      "legacy_slug": "capstone",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M4L6",
+      "module_id": "M4",
+      "sq_position": "4.6",
+      "title": "Negotiation",
+      "slug_v2": "negotiation",
+      "legacy_slug": "negotiation",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M4L7",
+      "module_id": "M4",
+      "sq_position": "4.7",
+      "title": "Product-Market Fit",
+      "slug_v2": "product-market-fit",
+      "legacy_slug": "product-market-fit",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "lyrics": null,
+      "lyrics_url": null
+    },
+    {
+      "id": "M5L1",
+      "module_id": "M5",
+      "sq_position": "5.1",
+      "title": "Leadership Styles",
+      "slug_v2": "leadership-styles",
+      "legacy_slug": "leadership-styles",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M5L2",
+      "module_id": "M5",
+      "sq_position": "5.2",
+      "title": "Team Dynamics",
+      "slug_v2": "team-dynamics",
+      "legacy_slug": "team-dynamics",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M5L3",
+      "module_id": "M5",
+      "sq_position": "5.3",
+      "title": "Feedback & Coaching",
+      "slug_v2": "feedback-coaching",
+      "legacy_slug": "feedback-coaching",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M5L4",
+      "module_id": "M5",
+      "sq_position": "5.4",
+      "title": "Culture",
+      "slug_v2": "culture",
+      "legacy_slug": "culture",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M5L5",
+      "module_id": "M5",
+      "sq_position": "5.5",
+      "title": "Capstone",
+      "slug_v2": "capstone",
+      "legacy_slug": "capstone",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M5L6",
+      "module_id": "M5",
+      "sq_position": "5.6",
+      "title": "Creative Leadership",
+      "slug_v2": "creative-leadership",
+      "legacy_slug": "creative-leadership",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M5L7",
+      "module_id": "M5",
+      "sq_position": "5.7",
+      "title": "Career Design",
+      "slug_v2": "career-design",
+      "legacy_slug": "career-design",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M6L1",
+      "module_id": "M6",
+      "sq_position": "6.1",
+      "title": "Delegation",
+      "slug_v2": "delegation",
+      "legacy_slug": "delegation",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M6L2",
+      "module_id": "M6",
+      "sq_position": "6.2",
+      "title": "Scale",
+      "slug_v2": "scale",
+      "legacy_slug": "scale",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M6L3",
+      "module_id": "M6",
+      "sq_position": "6.3",
+      "title": "Metrics",
+      "slug_v2": "metrics",
+      "legacy_slug": "metrics",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M6L4",
+      "module_id": "M6",
+      "sq_position": "6.4",
+      "title": "Cap Table",
+      "slug_v2": "cap-table",
+      "legacy_slug": "cap-table",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M6L5",
+      "module_id": "M6",
+      "sq_position": "6.5",
+      "title": "Exit",
+      "slug_v2": "exit",
+      "legacy_slug": "exit",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "pending_content": true,
+      "content_note": "Content is being aligned to the live curriculum. Check back soon."
+    },
+    {
+      "id": "M6L6",
+      "module_id": "M6",
+      "sq_position": "6.6",
+      "title": "Dashboards",
+      "slug_v2": "dashboards",
+      "legacy_slug": "dashboards",
+      "song_title": null,
+      "video_url": null,
+      "video_id": null,
+      "audio_url": null,
+      "audio_overview_url": null,
+      "core_concepts": [],
+      "take_action": [],
+      "deep_dive": "",
+      "quiz": null,
+      "lyrics": null,
+      "lyrics_url": null
+    }
+  ],
+  "global": {
+    "textbook": {
+      "title": "THE MBA ROCK: A Multi-Disciplinary Masterclass for Future Leaders",
+      "type": "document"
+    },
+    "workbook": {
+      "title": "MBA Rock: Business Application Action Workbook",
+      "type": "document",
+      "url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/docs/global/workbook.docx"
+    },
+    "cheat_sheet": {
+      "title": "MBA Operating System Reference Card",
+      "type": "infographic",
+      "url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/docs/global/cheat_sheet.png"
+    },
+    "calc_toolkit": {
+      "title": "MBA Rock Calculator & Worksheet Toolkit",
+      "type": "document"
+    },
+    "master_deck": {
+      "title": "EXECUTIVE OPERATING SYSTEM",
+      "type": "presentation",
+      "url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/docs/global/master_deck.pdf"
+    },
+    "song_library": {
+      "title": "MBA Rock: The Complete Song Prompt & Lyrics Library",
+      "type": "document"
+    },
+    "course_audio": {
+      "title": "The complete business operating system (1:40 course audio overview)",
+      "type": "audio",
+      "url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/modules/COURSE.m4a"
+    },
+    "mind_map_app": {
+      "title": "Business Toolkit (Interactive Mind Map)",
+      "type": "app"
+    },
+    "brand": {
+      "name": "MBA Rock",
+      "long_name": "Musical Business Album Rock",
+      "tagline": "Listen. Learn. Live.",
+      "logo_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/images/brand/mba-rock-logo.png",
+      "logo_vol1_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/images/brand/mba-rock-logo-vol1.png",
+      "colors": {
+        "navy": "#0B1F3A",
+        "ink": "#0E1116",
+        "orange": "#F26B1F",
+        "orange_soft": "#FBE2D0",
+        "cream": "#FAF8F5",
+        "paper": "#FFFFFF",
+        "rule": "#E5E0D6"
+      },
+      "type": {
+        "serif": "\"Tiempos Headline\", \"Georgia\", \"Times New Roman\", serif",
+        "sans": "-apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Inter\", sans-serif",
+        "mono": "ui-monospace, \"SF Mono\", Menlo, monospace"
+      },
+      "voice": [
+        "Confident, plainspoken, never preachy.",
+        "Hooks come from music. Concepts come from business.",
+        "Short sentences over long ones. Verbs over adjectives.",
+        "Refer to the course as 'MBA Rock' — never 'the program' or 'the platform'."
+      ]
+    }
+  }
+}
