@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Member Resources Hub · MBA Rock</title>
+<meta name="description" content="Your operator toolkit — the Capstone, the Console, Certificates, the Dossier, and every tool MBA Rock ships. One page to find everything.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A;
+    --orange:#F26B1F;
+    --orange-soft:#FCE5D4;
+    --ink:#1A1208;
+    --ink-2:#3D3025;
+    --paper:#FDFAF1;
+    --cream:#F8F1E1;
+    --line:#E8DFC8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6}
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.015em;color:var(--ink);font-weight:700;line-height:1.1}
+  h1{font-size:clamp(40px,6vw,68px);font-weight:800;letter-spacing:-0.025em;color:var(--paper)}
+  h2{font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--navy)}
+  h3{font-size:20px;font-weight:600}
+  p{font-size:16px;line-height:1.6;color:var(--ink-2)}
+  .inner{max-width:1140px;margin:0 auto;padding:0 28px}
+  .eyebrow{display:inline-block;font-family:'Inter';font-size:12px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:var(--orange);margin-bottom:16px}
+  .cta{display:inline-block;padding:14px 32px;background:var(--orange);color:#fff;font-weight:700;letter-spacing:0.04em;font-size:15px;border-radius:999px;text-decoration:none;min-height:48px;line-height:1.4;transition:transform .12s ease}
+  .cta:hover{transform:translateY(-1px)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+
+  /* TOP NAV */
+  .topnav{background:var(--navy);color:var(--paper);padding:18px 0;font-size:13px;letter-spacing:0.04em}
+  .topnav .inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .topnav .brand{font-family:'Fraunces';font-size:22px;font-weight:700;color:var(--paper);text-decoration:none}
+  .topnav nav{display:flex;gap:24px;flex-wrap:wrap}
+  .topnav nav a{color:rgba(253,250,241,0.78);text-decoration:none;font-weight:500}
+  .topnav nav a:hover{color:var(--paper)}
+
+  /* HERO */
+  .hero{background:linear-gradient(180deg,#0B1F3A 0%,#152D52 100%);color:var(--paper);padding:80px 0;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 60% at 80% 0%,rgba(242,107,31,0.18) 0%,transparent 60%);pointer-events:none}
+  .hero .inner{position:relative}
+  .hero p.lead{color:rgba(253,250,241,0.85);margin-top:18px;font-size:19px;max-width:680px}
+
+  /* SECTIONS */
+  .section{padding:72px 0;border-bottom:1px solid var(--line)}
+  .section.alt{background:var(--cream)}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+  @media(max-width:880px){.grid-3{grid-template-columns:1fr}}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:32px}
+  @media(max-width:880px){.grid-2{grid-template-columns:1fr}}
+
+  /* TOOL CARD */
+  .tool{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+  .tool:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(60,40,15,0.08);border-color:var(--orange)}
+  .tool .icon{font-size:36px;margin-bottom:14px;line-height:1}
+  .tool .eyebrow-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--orange)}
+  .tool h3{color:var(--navy);font-family:'Fraunces';font-size:22px;font-weight:700;margin-bottom:10px;line-height:1.2}
+  .tool p{font-size:14.5px;color:var(--ink-2);margin-bottom:16px;flex:1}
+  .tool .open{font-weight:600;color:var(--orange);font-size:13.5px;letter-spacing:0.02em}
+  .tool.soon{opacity:0.7;cursor:default;pointer-events:none}
+  .tool.soon .open{color:var(--ink-2)}
+  .tool.soon .eyebrow-row{color:var(--ink-2)}
+
+  /* FINAL CTA */
+  .final-cta{background:var(--navy);color:var(--paper);text-align:center;padding:80px 0;position:relative;overflow:hidden}
+  .final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(50% 60% at 50% 0%,rgba(242,107,31,0.16) 0%,transparent 70%);pointer-events:none}
+  .final-cta h2{color:var(--paper);max-width:680px;margin:0 auto 16px}
+  .final-cta p{color:rgba(253,250,241,0.85);max-width:540px;margin:0 auto 28px;font-size:17px}
+
+  footer{background:var(--ink);color:rgba(253,250,241,0.7);padding:36px 0;font-size:14px;text-align:center}
+  footer a{color:var(--orange);text-decoration:none;font-weight:600}
+
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<header class="topnav">
+  <div class="inner">
+    <a href="https://www.mbarock.com" class="brand">MBA Rock</a>
+    <nav>
+      <a href="https://www.mbarock.com">Home</a>
+      <a href="https://www.mbarock.com/capstone">Capstone</a>
+      <a href="https://www.mbarock.com/certificates">Certificates</a>
+      <a href="https://www.mbarock.com/institutional">For Teams</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="inner">
+    <span class="eyebrow" style="color:var(--orange)">Member Resources</span>
+    <h1>Your operator toolkit. One page.</h1>
+    <p class="lead">Every tool, calculator, certificate, and artifact MBA Rock ships — in one place. Bookmark this. Come back when you need the runway math, the Capstone builder, or the Dossier.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="inner">
+    <span class="eyebrow">Core tools</span>
+    <h2>The four things every MBA Rock learner uses.</h2>
+    <div class="grid-2">
+      <a class="tool" href="https://www.mbarock.com/capstone">
+        <span class="icon">📋</span>
+        <div class="eyebrow-row">Build · 10 sections</div>
+        <h3>The Capstone</h3>
+        <p>Your 10-section operator's business plan. Fills in as you complete each module's Take Action. Finish the course and you walk away with a real, investor-ready plan — not a transcript.</p>
+        <span class="open">Open Capstone →</span>
+      </a>
+      <a class="tool" href="https://joshwark.github.io/mbarock-cdn/operators-console/">
+        <span class="icon">⚙️</span>
+        <div class="eyebrow-row">Run · 24 calculators</div>
+        <h3>The Operator's Console</h3>
+        <p>Every equation from the course, ready to run against your real numbers. Runway, unit economics, breakeven, valuation, WACC, NPV. Members-only.</p>
+        <span class="open">Open Console →</span>
+      </a>
+      <a class="tool" href="https://www.mbarock.com/certificates">
+        <span class="icon">🎓</span>
+        <div class="eyebrow-row">Earn · 11 credentials</div>
+        <h3>Your Certificates</h3>
+        <p>10 Module Marks + 1 Operator's Certificate. LinkedIn-ready. Verifiable via cert ID. Pass each module's quiz and complete its Take Action to earn yours.</p>
+        <span class="open">View Certificates →</span>
+      </a>
+      <a class="tool" href="https://joshwark.github.io/mbarock-cdn/dossier/">
+        <span class="icon">📊</span>
+        <div class="eyebrow-row">Share · Investor-grade</div>
+        <h3>The Operator's Dossier</h3>
+        <p>A polished, shareable PDF rendering of your Capstone — formatted to read like a real investor brief. Generate it once your plan is mostly filled in.</p>
+        <span class="open">Open Dossier →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="inner">
+    <span class="eyebrow">Bonus tools</span>
+    <h2>Extras built alongside the course.</h2>
+    <div class="grid-3">
+      <a class="tool" href="https://joshwark.github.io/mbarock-cdn/dashboard/">
+        <span class="icon">📈</span>
+        <div class="eyebrow-row">Track</div>
+        <h3>Course Dashboard</h3>
+        <p>Your streak, your next lesson, your module progress, your Capstone fields filled. Your home base.</p>
+        <span class="open">Open Dashboard →</span>
+      </a>
+      <a class="tool" href="https://joshwark.github.io/mbarock-cdn/flashcards/">
+        <span class="icon">🃏</span>
+        <div class="eyebrow-row">Review</div>
+        <h3>Flashcards</h3>
+        <p>Every key concept from the course, in flashcard form. Spaced-repetition friendly.</p>
+        <span class="open">Open Flashcards →</span>
+      </a>
+      <a class="tool" href="https://joshwark.github.io/mbarock-cdn/arcade/whack-a-vanity-metric.html">
+        <span class="icon">🕹️</span>
+        <div class="eyebrow-row">Play</div>
+        <h3>The Arcade</h3>
+        <p>Whack-a-Vanity-Metric. A 60-second game that drills the difference between vanity and outcome metrics.</p>
+        <span class="open">Play →</span>
+      </a>
+      <a class="tool" href="https://joshwark.github.io/mbarock-cdn/btb-handoff/">
+        <span class="icon">🎨</span>
+        <div class="eyebrow-row">Handoff</div>
+        <h3>Better Together Branding</h3>
+        <p>When your plan is ready, hand off to BTB for brand, story, and launch support. Capstone → real-world execution.</p>
+        <span class="open">Open Handoff →</span>
+      </a>
+      <a class="tool" href="https://www.mbarock.com/institutional">
+        <span class="icon">🏢</span>
+        <div class="eyebrow-row">For teams</div>
+        <h3>Institutional &amp; Corporate Partners</h3>
+        <p>MBA Rock for 20+ seats — annual licenses, admin dashboard, co-branded experience. Built for accelerators, universities, labels, and corporate L&amp;D.</p>
+        <span class="open">See team pricing →</span>
+      </a>
+      <a class="tool" href="https://joshwark.github.io/mbarock-cdn/console-standalone/">
+        <span class="icon">🔧</span>
+        <div class="eyebrow-row">Coming</div>
+        <h3>Console — Standalone</h3>
+        <p>The Operator's Console as a standalone product for non-MBA-Rock buyers. Sold through Better Together Branding.</p>
+        <span class="open">See Standalone →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="inner">
+    <span class="eyebrow">In the works</span>
+    <h2>Sub-resources we're building next.</h2>
+    <p style="max-width:680px;margin-top:8px">These are scoped and partially drafted. Members will get them as they ship — your lifetime access covers every future addition.</p>
+    <div class="grid-3">
+      <div class="tool soon">
+        <span class="icon">📚</span>
+        <div class="eyebrow-row">Coming soon</div>
+        <h3>Case Library</h3>
+        <p>15+ HBS-style cases tied to specific modules. Work them solo, in groups, or use them for cohort discussion.</p>
+        <span class="open">In progress</span>
+      </div>
+      <div class="tool soon">
+        <span class="icon">🧮</span>
+        <div class="eyebrow-row">Coming soon</div>
+        <h3>Problem Sets</h3>
+        <p>Quant problems for each module. Drill the math until the formulas are second nature.</p>
+        <span class="open">In progress</span>
+      </div>
+      <div class="tool soon">
+        <span class="icon">📖</span>
+        <div class="eyebrow-row">Coming soon</div>
+        <h3>Reading Library</h3>
+        <p>Curated bibliography per module — the books, papers, and essays Josh actually reaches for.</p>
+        <span class="open">In progress</span>
+      </div>
+      <div class="tool soon">
+        <span class="icon">🧭</span>
+        <div class="eyebrow-row">Coming soon</div>
+        <h3>Founder Diagnostic</h3>
+        <p>5-minute assessment that tells you which modules to prioritize given your business stage.</p>
+        <span class="open">In progress</span>
+      </div>
+      <div class="tool soon">
+        <span class="icon">📕</span>
+        <div class="eyebrow-row">Coming soon</div>
+        <h3>Glossary</h3>
+        <p>Searchable index of every term, formula, and acronym in the MBA Rock vocabulary.</p>
+        <span class="open">In progress</span>
+      </div>
+      <div class="tool soon">
+        <span class="icon">📝</span>
+        <div class="eyebrow-row">Coming soon</div>
+        <h3>Decision Journal</h3>
+        <p>Weekly reflection that compounds. Track decisions, reasoning, and outcomes over time to build operator judgment.</p>
+        <span class="open">In progress</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="inner">
+    <h2>Not a member yet?</h2>
+    <p>The Resources Hub is open — but Capstone, Console, and Certificates need a paid account. Founders' rate is still live: $499 with code FOUNDERS through June 30, locked in for life.</p>
+    <a href="https://www.mbarock.com/mba-rock" class="cta">Join MBA Rock →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <p>MBA Rock · An album-paced operator playbook.</p>
+    <p style="margin-top:6px"><a href="https://www.mbarock.com">mbarock.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
