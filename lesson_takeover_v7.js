@@ -1,11 +1,13 @@
-// MBA Rock — Lesson Page Takeover v7.1 (2026-05-13)
+// MBA Rock — Lesson Page Takeover v7.2 (2026-05-13)
+// v7.2: Curriculum expand 55→76 lessons. SQ_MODULE_SIZE refreshed across all 10 modules (M7-M10 now correct).
+//       Pending-content lessons render a 'Coming soon' card instead of empty sections.
 // v7.1: Materials sub-tabs (Resources / Tools / Companion) + floating Notes drawer (any tab → Notes).
 // v7.0: Tabbed lesson container — Lesson / Notes / Quiz / Materials. Persistent header + footer.
 //       Hero stays above tabs. Mark Complete + Next lesson stay in a sticky bottom bar.
 //       Tab state persists in localStorage (mr-tab:{lesson_id}). ?tab=X URL param wins.
 //       Completion-state indicator per tab: untouched / in-progress / complete.
 // v6.18: Mark Complete is local-only again. Cert eligibility now requires a real quiz pass
-//        on every lesson (quizzes are now wired on all 55 lessons). Mark Complete still
+//        on every lesson (quizzes wired on the 55 lessons with bodies; new lessons get quizzes as content lands). Mark Complete still
 //        updates the UI but does NOT count toward Module Mark eligibility.
 // v6.17: (REVERTED) Mark Complete wrote a synthetic "passed" attempt to Supabase. That
 //        let members bypass the comprehension check. Now closed.
@@ -801,7 +803,8 @@
     return slug ? '/mba-rock/' + slug : null;
   }
   // Squarespace module totals (the lesson counts you see in the sidebar)
-  var SQ_MODULE_SIZE = { M1:9, M2:8, M3:13, M4:7, M5:7, M6:6, M7:0, M8:0, M9:0, M10:0 };
+  // v7.2 — module sizes synced to 76-lesson canon (74 brief + 2 grandfathered deep-dives in M2/M8)
+  var SQ_MODULE_SIZE = { M1:9, M2:10, M3:8, M4:8, M5:6, M6:14, M7:5, M8:6, M9:5, M10:5 };
 
   // Derive Squarespace position from the URL slug.
   //   "m1l3-gross-margin-groove"     → 3
@@ -893,6 +896,21 @@
     var n = 1;
     function num() { return String(n++).padStart(2, '0'); }
     var html = '<div class="mr5-tabpanel" id="mr5-panel-lesson" role="tabpanel" data-mr-panel="lesson">';
+
+    // v7.2 — Pending content branch (new lessons added before content production)
+    if (lesson.pending_content) {
+      var note = lesson.content_note || 'Content for this lesson is being produced. Check back soon.';
+      html += '<div class="mr5-sec"><div class="mr5-sec-h"><span class="mr5-num">01</span><h2>Coming soon</h2><span class="mr5-kicker">In production</span></div>';
+      html += '<div style="padding:36px 28px;background:#FAF8F5;border:1px dashed #E5E0D6;border-radius:10px;text-align:center;">';
+      html += '<div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#F26B1F;font-weight:700;margin-bottom:12px;">' + esc(lesson.id) + ' · ' + esc(lesson.module_id) + '</div>';
+      html += '<h3 style="font-family:Fraunces,serif;font-size:24px;color:#0B1F3A;margin:0 0 14px;line-height:1.25;">' + esc(lesson.title) + '</h3>';
+      html += '<p style="font-family:Fraunces,serif;font-style:italic;color:#0B1F3A;font-size:16px;max-width:520px;margin:0 auto 20px;line-height:1.5;">' + esc(note) + '</p>';
+      html += '<a href="/course-dashboard" style="display:inline-block;background:#0B1F3A;color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;font-family:Inter,sans-serif;font-weight:600;font-size:13px;letter-spacing:.02em;">Back to dashboard</a>';
+      html += '</div></div>';
+      html += '</div>';
+      return html;
+    }
+
 
     // 01 Watch
     html += '<div class="mr5-sec">' + sectionHead(num(), 'Watch the lesson', 'Video') + videoEmbed(lesson.video_url, lesson.video_id) + '</div>';
@@ -1534,7 +1552,7 @@
     if (deepEl) renderMath(deepEl);
 
     document.body && document.body.setAttribute('data-mr-v5-applied', '1');
-    console.log('[MBA v7.1] hid', bodySections.length, 'old sections; rendered tabbed layout for', lesson.id);
+    console.log('[MBA v7.2] hid', bodySections.length, 'old sections; rendered tabbed layout for', lesson.id);
     return true;
   }
 
