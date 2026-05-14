@@ -1,5 +1,5 @@
 {
-  "schema_version": "v2.10sections.74lessons.fully-authored.2026-05-13",
+  "schema_version": "v2.10sections.74lessons.fully-quizzed.2026-05-13",
   "generated_from": "Josh's 2026-05-11 LMS Deployment Guide",
   "global": {
     "textbook": {
@@ -617,7 +617,67 @@
           "latex": "\\text{Gap}_t = \\text{AR}_{t-45} - \\text{AP}_t - \\text{OpEx}_t",
           "note": "Negative gap weeks = your runway risk weeks."
         }
-      ]
+      ],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "April shows $400k of April-billed revenue but the bank only collected $50k by April 30. The cash gap is mainly caused by:",
+            "options": [
+              "Sales team underperformance",
+              "Net-45 payment terms \u2014 AR arrives in late May",
+              "Excess inventory holding",
+              "Higher payroll than expected"
+            ],
+            "correct": 1,
+            "explain": "AR collection lags revenue recognition by 30-60 days. Cash arrives weeks after the sale closes."
+          },
+          {
+            "q": "Which lever pulls AR forward the fastest?",
+            "options": [
+              "Switching to monthly invoicing",
+              "Offering a 2% early-pay discount on Net-10",
+              "Hiring more sales reps",
+              "Doubling marketing spend"
+            ],
+            "correct": 1,
+            "explain": "A small discount tied to faster payment converts AR aging from 45 days to 10. Working-capital math compounds."
+          },
+          {
+            "q": "A 13-week rolling forecast is more useful than a quarterly model because:",
+            "options": [
+              "Quarterly aggregates hide month-three cash cliffs",
+              "It uses fewer line items",
+              "Quarterly is harder to update",
+              "Boards prefer 13-week reports"
+            ],
+            "correct": 0,
+            "explain": "Quarterly averaging smooths over weeks where cash goes negative. Weekly modeling exposes the actual risk weeks."
+          },
+          {
+            "q": "What is the cash gap formula?",
+            "options": [
+              "Revenue \u2212 Expenses",
+              "AR collected_(t\u221245) \u2212 AP paid_t \u2212 OpEx_t",
+              "Profit + Depreciation",
+              "COGS / Average inventory"
+            ],
+            "correct": 1,
+            "explain": "The gap formula nets timing-shifted AR against current-period obligations. Negative weeks = runway risk."
+          },
+          {
+            "q": "The right buffer for the worst red week in a 12-month forecast is:",
+            "options": [
+              "No buffer \u2014 adjust spending",
+              "A working-capital line \u22481.5\u00d7 the worst week",
+              "Cut salaries 25%",
+              "Sell more to anyone willing to pay"
+            ],
+            "correct": 1,
+            "explain": "A pre-arranged line lets you smooth specific red weeks without operating disruption. Open it before you need it."
+          }
+        ]
+      }
     },
     {
       "id": "M1L3",
@@ -1715,7 +1775,67 @@
           "latex": "w_i = \\frac{\\text{Growth}_i \\times \\text{Share}_i}{\\sum_j (\\text{Growth}_j \\times \\text{Share}_j)}",
           "note": "Allocate next-period capital proportional to w_i."
         }
-      ]
+      ],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "In BCG terms, a 'Star' is best described as:",
+            "options": [
+              "Low growth, low share",
+              "Low growth, high share",
+              "High growth, high share",
+              "High growth, low share"
+            ],
+            "correct": 2,
+            "explain": "Stars need investment to defend their lead during high market growth."
+          },
+          {
+            "q": "Cash Cows should primarily be used to:",
+            "options": [
+              "Reinvest in their own market",
+              "Fund stars and question marks",
+              "Be sold immediately",
+              "Be ignored"
+            ],
+            "correct": 1,
+            "explain": "Cash Cows generate excess cash relative to their growth needs \u2014 that surplus funds the next portfolio bet."
+          },
+          {
+            "q": "The 'portfolio rule of three' implies:",
+            "options": [
+              "Three of every category",
+              "One cash cow funds one star + one question mark",
+              "Three CEOs per company",
+              "Three years per cycle"
+            ],
+            "correct": 1,
+            "explain": "Discipline is allocating finite capital \u2014 one of each major role keeps focus and prevents over-extension."
+          },
+          {
+            "q": "Compared to BCG, the GE-McKinsey matrix uses:",
+            "options": [
+              "Same axes, different labels",
+              "Growth \u00d7 Profit",
+              "Market attractiveness \u00d7 Business strength on 3\u00d73",
+              "Revenue \u00d7 Headcount"
+            ],
+            "correct": 2,
+            "explain": "GE-McKinsey adds nuance for markets where growth alone is misleading (regulated, mature industries)."
+          },
+          {
+            "q": "The portfolio review cadence should be:",
+            "options": [
+              "Annually only",
+              "Never \u2014 let it run",
+              "Quarterly re-ranking + annual capital reallocation",
+              "Daily"
+            ],
+            "correct": 2,
+            "explain": "Quarterly cadence catches shifts; annual cadence forces capital reallocation. Without rhythm, portfolios decay."
+          }
+        ]
+      }
     },
     {
       "id": "M2L3",
@@ -2587,7 +2707,67 @@
           "latex": "\\text{Focus} = \\frac{\\text{Effort on Top 3}}{\\text{Total Effort}}",
           "note": "Healthy teams operate above 70%."
         }
-      ]
+      ],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "A real position requires:",
+            "options": [
+              "Broad appeal to everyone",
+              "Explicit non-customers, non-features, non-markets",
+              "Maximum feature count",
+              "Lowest price point"
+            ],
+            "correct": 1,
+            "explain": "Positioning is choice \u2014 if you have no non-customers, you have no edge."
+          },
+          {
+            "q": "Which is the strongest 'Three-Lens test' for a new initiative?",
+            "options": [
+              "Does it generate revenue?",
+              "Does it advance the one thing we want to be known for?",
+              "Does it look good in press?",
+              "Is leadership excited?"
+            ],
+            "correct": 1,
+            "explain": "Strategic alignment is the load-bearing filter. Revenue alone tempts drift."
+          },
+          {
+            "q": "Healthy 'Focus index' for a high-performing team is:",
+            "options": [
+              "Above 70% effort on top 3",
+              "Even split across 10+ initiatives",
+              "Whatever HR says",
+              "Below 20%"
+            ],
+            "correct": 0,
+            "explain": "Top teams concentrate 70%+ of effort on the priority three. Below that, you're drifting."
+          },
+          {
+            "q": "Why does focus most often fail?",
+            "options": [
+              "Lack of meetings",
+              "Revenue from non-core customers tempts drift",
+              "Bad project management software",
+              "Too many engineers"
+            ],
+            "correct": 1,
+            "explain": "Money from off-mission customers feels like wins but pulls teams off the strategy."
+          },
+          {
+            "q": "The discipline of saying no requires:",
+            "options": [
+              "Avoiding all difficult conversations",
+              "Public commitment to a kill list each quarter",
+              "Asking for permission",
+              "Hoping projects die naturally"
+            ],
+            "correct": 1,
+            "explain": "Public commitment to what's killed locks in the focus. Quiet de-prioritization keeps zombie work alive."
+          }
+        ]
+      }
     },
     {
       "id": "M3L4",
@@ -3047,7 +3227,67 @@
           "latex": "\\text{Ratio}_c = \\frac{\\text{LTV}_c}{\\text{CAC}_c}",
           "note": "Below 3:1 = unhealthy channel. Above 6:1 = under-invested."
         }
-      ]
+      ],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "Channel-product fit means:",
+            "options": [
+              "Use every channel",
+              "Match customer information-seeking behavior to channel",
+              "Pick the cheapest channel",
+              "Avoid paid media"
+            ],
+            "correct": 1,
+            "explain": "High-consideration products belong in deep-engagement channels; low-consideration in high-frequency channels."
+          },
+          {
+            "q": "An LTV:CAC ratio of 6:1 likely means:",
+            "options": [
+              "The channel is failing",
+              "The channel is healthy but probably under-invested",
+              "The channel is overspending",
+              "Customers hate you"
+            ],
+            "correct": 1,
+            "explain": "6:1 is excellent and usually signals you should spend more on that channel to capture share."
+          },
+          {
+            "q": "'Owned' channels (email, app, retail) vs. 'rented' (Google, Meta):",
+            "options": [
+              "Are interchangeable",
+              "Owned compounds; rented decays",
+              "Rented is better",
+              "Owned is obsolete"
+            ],
+            "correct": 1,
+            "explain": "Owned audiences are durable assets. Rented audiences cost more each year. Build owned."
+          },
+          {
+            "q": "Rising CAC at constant LTV in a channel signals:",
+            "options": [
+              "Healthy growth",
+              "Channel saturation \u2014 diversify",
+              "Underspending \u2014 pour more in",
+              "Time to celebrate"
+            ],
+            "correct": 1,
+            "explain": "Saturation slope is the early warning. Move some spend to a fresh channel before the ratio breaks."
+          },
+          {
+            "q": "For attribution across 3+ channels, use:",
+            "options": [
+              "First-touch only",
+              "Last-touch only",
+              "Multi-touch model (linear or time-decay)",
+              "Random assignment"
+            ],
+            "correct": 2,
+            "explain": "First-touch under-credits content; last-touch over-credits paid. Multi-touch is closer to truth."
+          }
+        ]
+      }
     },
     {
       "id": "M4L3",
@@ -3305,7 +3545,67 @@
           "latex": "\\text{PMF}_s = \\frac{\\text{Very disappointed}}{\\text{Total survey}}",
           "note": "40%+ = fit; 25-40% = warm; <25% = not yet."
         }
-      ]
+      ],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "The Sean Ellis PMF score is computed from:",
+            "options": [
+              "Number of signups",
+              "% of users who would be 'very disappointed' if the product disappeared",
+              "Net Promoter Score",
+              "Revenue growth"
+            ],
+            "correct": 1,
+            "explain": "40%+ 'very disappointed' is the threshold for fit; below 25% means not yet."
+          },
+          {
+            "q": "A flat cohort retention curve above 0% indicates:",
+            "options": [
+              "Bad cohort",
+              "Real product value",
+              "Need to acquire more users",
+              "Pricing issue"
+            ],
+            "correct": 1,
+            "explain": "A flat-above-zero curve means a stable share of users find ongoing value \u2014 the signature of fit."
+          },
+          {
+            "q": "Pre-fit operating mode looks like:",
+            "options": [
+              "Scale the funnel aggressively",
+              "Hire growth and ops",
+              "Small team, weekly customer interviews, product iteration",
+              "Run brand campaigns"
+            ],
+            "correct": 2,
+            "explain": "Pre-fit you're searching, not scaling. Big teams pre-fit usually scale a broken product."
+          },
+          {
+            "q": "'Zoom-in' fit means:",
+            "options": [
+              "Look at all customers equally",
+              "Find the segment with highest retention/NPS and build outward",
+              "Reduce the user base",
+              "Charge more"
+            ],
+            "correct": 1,
+            "explain": "Fit is rarely uniform. The segment that loves you most is your real fit. Build from there."
+          },
+          {
+            "q": "A common counterfeit-fit signal is:",
+            "options": [
+              "High cohort retention",
+              "Friend-funded usage or paid-acquisition spikes",
+              "Organic referral above 25%",
+              "Customers calling unprompted"
+            ],
+            "correct": 1,
+            "explain": "Founders mistake friends, paid spikes, and PR for fit. Real fit shows in retention curves, not single-event spikes."
+          }
+        ]
+      }
     },
     {
       "id": "M4L4.5",
@@ -3353,7 +3653,67 @@
           "latex": "k = i \\times c",
           "note": "i = invites per user; c = conversion of invites. k > 1 = compounding."
         }
-      ]
+      ],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "A funnel and a loop differ in that:",
+            "options": [
+              "A funnel is older",
+              "A loop ends with a referral/content/proof event that restarts acquisition",
+              "A loop is harder",
+              "A funnel has more stages"
+            ],
+            "correct": 1,
+            "explain": "Funnels add linearly. Loops multiply \u2014 each customer produces more customers."
+          },
+          {
+            "q": "For a viral loop to compound, the viral coefficient k must:",
+            "options": [
+              "Be exactly 1",
+              "Exceed 1",
+              "Be below 0.5",
+              "Be measured monthly"
+            ],
+            "correct": 1,
+            "explain": "k = invites per user \u00d7 invite conversion. k > 1 means organic growth compounds without paid acquisition."
+          },
+          {
+            "q": "The four loop types are:",
+            "options": [
+              "Content, viral, paid, sales",
+              "Email, social, search, partner",
+              "Free, paid, organic, viral",
+              "Top, middle, bottom, exit"
+            ],
+            "correct": 0,
+            "explain": "Each loop type pulls new users via a different mechanism but shares the compounding structure."
+          },
+          {
+            "q": "Loops lose efficiency over time because:",
+            "options": [
+              "Customers age",
+              "The network saturates \u2014 refresh trigger every 12-18 months",
+              "Engineering breaks",
+              "Servers slow"
+            ],
+            "correct": 1,
+            "explain": "Saturation is the death of any single loop. Refresh the trigger periodically (new format, incentive, social proof)."
+          },
+          {
+            "q": "To convert a funnel into a loop, ask at each stage:",
+            "options": [
+              "Can we charge more?",
+              "What event here can produce a referral, content, or case study?",
+              "How fast can we close?",
+              "Who do we promote?"
+            ],
+            "correct": 1,
+            "explain": "Loop triggers are product features, not campaigns. Embed them in the natural flow of the funnel."
+          }
+        ]
+      }
     },
     {
       "id": "M4L5",
@@ -4754,7 +5114,67 @@
           "latex": "S = \\frac{\\text{Metrics that triggered action}}{\\text{Total metrics}}",
           "note": "Healthy dashboards: S > 0.5."
         }
-      ]
+      ],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "The dashboard hierarchy has three levels:",
+            "options": [
+              "Daily, weekly, monthly",
+              "Board (monthly), Exec (weekly), Operational (daily)",
+              "Pretty, ugly, broken",
+              "Public, private, secret"
+            ],
+            "correct": 1,
+            "explain": "Each level summarizes the level below. Confusion happens when boards drown in operational metrics."
+          },
+          {
+            "q": "Lead indicators vs. lag indicators \u2014 boards primarily need:",
+            "options": [
+              "Leads only",
+              "Lags (revenue, churn)",
+              "Both equally",
+              "Neither"
+            ],
+            "correct": 1,
+            "explain": "Boards govern outcomes. Lead indicators (NPS, pipeline) belong at operator levels."
+          },
+          {
+            "q": "The 'dashboard test' for keeping a metric:",
+            "options": [
+              "Is it pretty?",
+              "Does it drive a decision with a threshold?",
+              "Did finance ask for it?",
+              "Is it new?"
+            ],
+            "correct": 1,
+            "explain": "If a metric doesn't trigger an action when out of range, it's decoration not signal."
+          },
+          {
+            "q": "Healthy signal density (S) for a dashboard:",
+            "options": [
+              "Above 0.5",
+              "Below 0.1",
+              "Doesn't matter",
+              "Exactly 1.0"
+            ],
+            "correct": 0,
+            "explain": "S = metrics that triggered action / total metrics. Above 0.5 means most metrics earn their place."
+          },
+          {
+            "q": "Most dashboards fail by:",
+            "options": [
+              "Crashing",
+              "Accretion \u2014 adding without removing",
+              "Wrong colors",
+              "Server load"
+            ],
+            "correct": 1,
+            "explain": "Every quarter someone adds a metric, nobody removes one. Cap and audit quarterly."
+          }
+        ]
+      }
     },
     {
       "id": "M6L7",
@@ -5604,7 +6024,67 @@
       "newly_added": "2026-05-13",
       "order": 56,
       "intro": "Brand Positioning & Messaging is the discipline of choosing the one place in the customer's mind you intend to own. Positioning precedes copy; copy carries the position.",
-      "equations": []
+      "equations": [],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "The positioning template requires explicit:",
+            "options": [
+              "Pricing",
+              "Target, problem, category, unique benefit, alternative, proof",
+              "Mission and vision",
+              "Org chart"
+            ],
+            "correct": 1,
+            "explain": "Every slot is a choice. Vagueness in any slot collapses the position."
+          },
+          {
+            "q": "The 'one-word brand' strategy means:",
+            "options": [
+              "Use short ads",
+              "Own a single specific word in the category",
+              "Brevity in everything",
+              "Rename the company"
+            ],
+            "correct": 1,
+            "explain": "Volvo=safety, Apple=simple. Owning a word = owning the category in the mind."
+          },
+          {
+            "q": "Brand message hierarchy goes:",
+            "options": [
+              "Random",
+              "Position \u2192 pillars \u2192 proof points \u2192 channel adaptations",
+              "Ads \u2192 social \u2192 email",
+              "Strategy \u2192 execution"
+            ],
+            "correct": 1,
+            "explain": "Every content piece must trace back up to the position. Otherwise content fights the brand."
+          },
+          {
+            "q": "A position with no enemies has:",
+            "options": [
+              "Broad appeal",
+              "No real edge \u2014 too generic",
+              "High budget",
+              "Great copy"
+            ],
+            "correct": 1,
+            "explain": "Choosing what you reject is what gives the position teeth."
+          },
+          {
+            "q": "Drifting position quarter to quarter causes:",
+            "options": [
+              "Faster growth",
+              "Customer confusion and weak brand equity",
+              "Higher margins",
+              "Better hiring"
+            ],
+            "correct": 1,
+            "explain": "Brand equity compounds with consistency. Drift resets the meter every change."
+          }
+        ]
+      }
     },
     {
       "id": "M7L3",
@@ -5652,7 +6132,67 @@
           "latex": "E = \\frac{\\% \\Delta Q}{\\% \\Delta P}",
           "note": "|E| < 1 = inelastic, raise price. |E| > 1 = elastic, defend price."
         }
-      ]
+      ],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "A 1% pricing change typically affects operating profit by approximately:",
+            "options": [
+              "1%",
+              "0.1%",
+              "8-10%",
+              "50%"
+            ],
+            "correct": 2,
+            "explain": "Pricing is the highest-leverage lever in most businesses. Tiny price moves translate to disproportionate profit impact."
+          },
+          {
+            "q": "Cost-plus pricing is suboptimal because:",
+            "options": [
+              "It's hard to calculate",
+              "It ignores customer willingness-to-pay",
+              "It's old-fashioned",
+              "It's illegal"
+            ],
+            "correct": 1,
+            "explain": "Cost-plus anchors to your costs, not the customer's value perception. Value-based pricing captures more."
+          },
+          {
+            "q": "Price elasticity |E| > 1 means demand is:",
+            "options": [
+              "Inelastic \u2014 raise price",
+              "Elastic \u2014 be careful raising price",
+              "Constant",
+              "Imaginary"
+            ],
+            "correct": 1,
+            "explain": "Elastic categories are price-sensitive; small price increases cause large volume drops. Inelastic categories tolerate raises."
+          },
+          {
+            "q": "A three-tier pricing page typically optimizes for:",
+            "options": [
+              "Selling the cheapest",
+              "Selling the most expensive",
+              "Anchoring buyers to the middle tier",
+              "Confusion"
+            ],
+            "correct": 2,
+            "explain": "The high tier anchors; the middle tier becomes the rational default. This is intentional behavioral design."
+          },
+          {
+            "q": "The Van Westendorp method measures:",
+            "options": [
+              "Net Promoter Score",
+              "Willingness-to-pay range via 4 price questions",
+              "Customer churn",
+              "Brand recall"
+            ],
+            "correct": 1,
+            "explain": "It asks 4 questions about price perception (too cheap, cheap, expensive, too expensive) and finds the acceptable range."
+          }
+        ]
+      }
     },
     {
       "id": "M7L4",
@@ -5700,7 +6240,67 @@
           "latex": "\\text{ROI}_c = \\frac{\\text{Pipeline}_c - \\text{Cost}_c}{\\text{Cost}_c}",
           "note": "Track content-level pipeline contribution, not just impressions."
         }
-      ]
+      ],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "The 'demand pyramid' goes from awareness \u2192 educational \u2192 comparison/proof. Each channel should:",
+            "options": [
+              "Pick one layer",
+              "Produce all three layers",
+              "Skip the middle",
+              "Focus on bottom-of-funnel only"
+            ],
+            "correct": 1,
+            "explain": "Buyers move through stages. A channel that only serves one stage abandons buyers at the others."
+          },
+          {
+            "q": "Pillar + cluster content model uses:",
+            "options": [
+              "One long piece per topic",
+              "5-10 pillar topics, each with 10-20 supporting cluster pieces",
+              "Random topics",
+              "One piece per channel"
+            ],
+            "correct": 1,
+            "explain": "Search engines reward topical depth. Pillar-cluster creates that depth."
+          },
+          {
+            "q": "For each hour of content creation, recommended distribution time:",
+            "options": [
+              "10 minutes",
+              "Same \u2014 1 hour",
+              "3 hours",
+              "Skip distribution"
+            ],
+            "correct": 2,
+            "explain": "Most teams over-produce and under-distribute. Distribution is the multiplier on every piece."
+          },
+          {
+            "q": "Content that produces zero pipeline within 90 days should:",
+            "options": [
+              "Be promoted more",
+              "Be cut",
+              "Win an award",
+              "Be longer"
+            ],
+            "correct": 1,
+            "explain": "Hold content accountable to pipeline contribution. Cut what doesn't earn its keep."
+          },
+          {
+            "q": "The content-to-position link is:",
+            "options": [
+              "Optional",
+              "Mandatory \u2014 every piece traces to a pillar",
+              "Random",
+              "Determined by ad spend"
+            ],
+            "correct": 1,
+            "explain": "Content not aligned to positioning fights the brand. Every piece must trace upward."
+          }
+        ]
+      }
     },
     {
       "id": "M7L5",
@@ -5748,7 +6348,67 @@
           "latex": "\\text{NRR} = \\frac{\\text{Period revenue from existing cohort}}{\\text{Prior-period revenue from same cohort}}",
           "note": "NRR > 100% = expansion outpaces churn (best-in-class)."
         }
-      ]
+      ],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "Most subscription churn happens in:",
+            "options": [
+              "The first 30 days",
+              "Month 6-12",
+              "Year 2+",
+              "Never"
+            ],
+            "correct": 0,
+            "explain": "Activation failure dominates early churn. Engineering activation is the biggest retention lever."
+          },
+          {
+            "q": "Net Revenue Retention (NRR) above 100% means:",
+            "options": [
+              "Customers are leaving",
+              "Expansion exceeds churn \u2014 best-in-class",
+              "Pricing is wrong",
+              "Revenue is flat"
+            ],
+            "correct": 1,
+            "explain": "NRR above 100% means existing cohorts grow over time. The math compounds enormously."
+          },
+          {
+            "q": "A cohort retention curve with a flat tail above 0% means:",
+            "options": [
+              "Bad product",
+              "Real product-market fit",
+              "Pricing too high",
+              "Need more marketing"
+            ],
+            "correct": 1,
+            "explain": "Flat-above-zero is the signature of durable value. A curve that declines to 0% is a leak."
+          },
+          {
+            "q": "Loyalty programs are profitable only when:",
+            "options": [
+              "They have nice rewards",
+              "They increase purchase frequency/basket size by more than program cost",
+              "They have a mobile app",
+              "They have many tiers"
+            ],
+            "correct": 1,
+            "explain": "Many loyalty programs fail the math test. Measure incremental purchase behavior, not enrollment."
+          },
+          {
+            "q": "The five churn causes are: didn't activate, lost the need, switched to competitor, couldn't justify price,",
+            "options": [
+              "Bad support",
+              "Random",
+              "Holiday",
+              "Weather"
+            ],
+            "correct": 0,
+            "explain": "Each cause has a different fix. Classify churners before launching retention campaigns."
+          }
+        ]
+      }
     },
     {
       "id": "M8L1",
@@ -6129,7 +6789,67 @@
           "latex": "\\text{SV} = \\text{EV} - \\text{PV}",
           "note": "Earned vs. planned value. Negative = behind."
         }
-      ]
+      ],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "The triple constraint of projects is:",
+            "options": [
+              "People, money, time",
+              "Scope, time, cost",
+              "Quality, speed, price",
+              "Plan, execute, review"
+            ],
+            "correct": 1,
+            "explain": "Any two can be fixed; the third must flex. Pretending all three are fixed creates death-march projects."
+          },
+          {
+            "q": "RACI requires each row to have:",
+            "options": [
+              "Multiple A's",
+              "Exactly one A (Accountable)",
+              "No A",
+              "Only consulted"
+            ],
+            "correct": 1,
+            "explain": "Two A's = nobody is accountable. One neck per outcome."
+          },
+          {
+            "q": "Stage-gates are preferable to detailed Gantt charts because:",
+            "options": [
+              "Easier to draw",
+              "They allow continue/pivot/kill decisions at gates",
+              "Boards prefer them",
+              "They're newer"
+            ],
+            "correct": 1,
+            "explain": "In changing environments, gate-based reviews beat fixed-timeline plans."
+          },
+          {
+            "q": "Schedule variance (SV = EV \u2212 PV) negative means:",
+            "options": [
+              "Ahead of schedule",
+              "Behind schedule",
+              "On schedule",
+              "Cancelled"
+            ],
+            "correct": 1,
+            "explain": "Earned value < planned value = work behind plan. Investigate the cause."
+          },
+          {
+            "q": "Programs fail most often from:",
+            "options": [
+              "Bad engineers",
+              "No portfolio view, unresolved resource conflicts, late dependencies, hidden red flags",
+              "Wrong language",
+              "Slow servers"
+            ],
+            "correct": 1,
+            "explain": "Program-level failure modes are governance, not technical. Weekly cross-project review surfaces them."
+          }
+        ]
+      }
     },
     {
       "id": "M8L5",
@@ -6171,7 +6891,67 @@
       "newly_added": "2026-05-13",
       "order": 64,
       "intro": "Vendor & Partnership Management is leveraged operations. Your suppliers and partners are extensions of your team \u2014 managed deliberately, they multiply capability; managed reactively, they become risk.",
-      "equations": []
+      "equations": [],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "Vendor Tier 1 is best characterized by:",
+            "options": [
+              "Cheapest",
+              "Strategic, irreplaceable, deep relationship",
+              "Most reviews",
+              "Newest"
+            ],
+            "correct": 1,
+            "explain": "Tier 1 vendors get deep relationship management. Treat them like extensions of the team."
+          },
+          {
+            "q": "The four-question vendor scorecard covers:",
+            "options": [
+              "Price only",
+              "On-time delivery, quality, pricing, risk",
+              "Brand awareness",
+              "Years in business"
+            ],
+            "correct": 1,
+            "explain": "Quarterly scoring across 4 dimensions catches drift before it becomes crisis."
+          },
+          {
+            "q": "Partnership failure modes include misaligned incentives and:",
+            "options": [
+              "Too much funding",
+              "No executive sponsor, no mutual scorecard, channel conflict",
+              "Too many meetings",
+              "Wrong office location"
+            ],
+            "correct": 1,
+            "explain": "Pre-empt these four in the contract or expect the partnership to fail."
+          },
+          {
+            "q": "Choosing partnership structure (reseller vs. OEM vs. JV) depends on:",
+            "options": [
+              "Random",
+              "Customer overlap and depth of joint commitment",
+              "Geography",
+              "Industry tradition"
+            ],
+            "correct": 1,
+            "explain": "Match the structure to the actual commercial relationship intended."
+          },
+          {
+            "q": "Scalable companies typically operate as:",
+            "options": [
+              "Vertical monoliths",
+              "Orchestrators of vendor and partner networks",
+              "Solo operators",
+              "Government contractors"
+            ],
+            "correct": 1,
+            "explain": "Fast scale comes from leverage across networks, not building everything in-house."
+          }
+        ]
+      }
     },
     {
       "id": "M9L1",
@@ -6314,7 +7094,67 @@
       "newly_added": "2026-05-13",
       "order": 66,
       "intro": "KPIs & Performance Dashboards make the business observable. The discipline is choosing the right metrics, defining them sharply, and reviewing them on the right cadence.",
-      "equations": []
+      "equations": [],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "A real KPI must be (1) tied to strategy, (2) measurable with one definition, (3) reviewable on cadence, and:",
+            "options": [
+              "(4) actionable when out of range",
+              "(4) sound impressive",
+              "(4) easy",
+              "(4) cheap"
+            ],
+            "correct": 0,
+            "explain": "If you can't act on it, it's not a KPI. It's a metric."
+          },
+          {
+            "q": "A 'Tree of KPIs' should have:",
+            "options": [
+              "No structure",
+              "One North Star + supporting metrics that explain it",
+              "All KPIs equal",
+              "Random selection"
+            ],
+            "correct": 1,
+            "explain": "Without a North Star, KPI trees devolve into dashboards no one acts on."
+          },
+          {
+            "q": "Boards primarily need:",
+            "options": [
+              "Operational metrics",
+              "Lagging outcomes (revenue, churn)",
+              "Vanity metrics",
+              "Marketing data"
+            ],
+            "correct": 1,
+            "explain": "Lagging KPIs measure outcomes \u2014 what governance bodies oversee."
+          },
+          {
+            "q": "Dashboard governance means:",
+            "options": [
+              "Yearly cleanup",
+              "Quarterly review with retire-obsolete discipline",
+              "Never change anything",
+              "Auto-add new metrics"
+            ],
+            "correct": 1,
+            "explain": "Without governance dashboards accrete clutter. Quarterly hygiene keeps them sharp."
+          },
+          {
+            "q": "Operators primarily need:",
+            "options": [
+              "Lagging metrics",
+              "Leading metrics that predict outcomes",
+              "Same metrics as the board",
+              "No metrics"
+            ],
+            "correct": 1,
+            "explain": "Operators need leading indicators (pipeline, NPS, conversion rates) to influence outcomes before they happen."
+          }
+        ]
+      }
     },
     {
       "id": "M9L3",
@@ -6362,7 +7202,67 @@
           "latex": "n \\approx \\frac{16 \\sigma^2}{\\Delta^2}",
           "note": "Rough rule for two-arm equal-allocation test."
         }
-      ]
+      ],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "The experiment design checklist includes single hypothesis, pre-registered metric, power calculation, and:",
+            "options": [
+              "Random assignment + pre-specified stopping rules",
+              "Bigger sample",
+              "Marketing review",
+              "CEO sign-off"
+            ],
+            "correct": 0,
+            "explain": "Each element guards against a specific bias. Skipping any invalidates the test."
+          },
+          {
+            "q": "'Peeking' at a test mid-run and stopping early:",
+            "options": [
+              "Is fine",
+              "Inflates false-positive rates",
+              "Speeds learning",
+              "Saves money"
+            ],
+            "correct": 1,
+            "explain": "Multiple looks without correction drastically inflate the chance of false positives. Pre-specify stopping criteria."
+          },
+          {
+            "q": "Statistical significance without practical significance means:",
+            "options": [
+              "The result is real and useful",
+              "The lift might be real but too small to matter",
+              "The test failed",
+              "Methodology was wrong"
+            ],
+            "correct": 1,
+            "explain": "Set a minimum-detectable-effect threshold that matters to the business. Tiny lifts at p<0.05 may not warrant changes."
+          },
+          {
+            "q": "You should test:",
+            "options": [
+              "One-off strategic decisions",
+              "High-volume recurring decisions",
+              "CEO opinions",
+              "Random ideas"
+            ],
+            "correct": 1,
+            "explain": "Testing works for repeated decisions (landing pages, pricing pages, onboarding). For one-offs use judgment."
+          },
+          {
+            "q": "A useful sample-size heuristic is:",
+            "options": [
+              "100 per arm",
+              "n \u2248 16\u03c3\u00b2 / \u0394\u00b2",
+              "Whatever feels right",
+              "1 million"
+            ],
+            "correct": 1,
+            "explain": "This rule of thumb gives 80% power for detecting effect size \u0394 with variance \u03c3\u00b2."
+          }
+        ]
+      }
     },
     {
       "id": "M9L4",
@@ -6410,7 +7310,67 @@
           "latex": "\\text{Accuracy} = 1 - \\frac{|\\text{actual} - \\text{forecast}|}{\\text{actual}}",
           "note": "Track per forecast horizon."
         }
-      ]
+      ],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "Forecasting methods include top-down, bottom-up, time series, and:",
+            "options": [
+              "Driver-based",
+              "Random",
+              "Top-secret",
+              "Industry-tradition"
+            ],
+            "correct": 0,
+            "explain": "Driver-based (traffic \u00d7 conversion \u00d7 AOV) explains why the number is what it is."
+          },
+          {
+            "q": "Forecast quality is measured by calibration, resolution, and:",
+            "options": [
+              "Length",
+              "Bias \u2014 systematic over/under-shooting",
+              "Word count",
+              "Style"
+            ],
+            "correct": 1,
+            "explain": "Calibration (90% intervals contain truth 90% of the time), resolution (specificity), bias (no systematic drift). Track all three."
+          },
+          {
+            "q": "Scenario planning uses how many corners?",
+            "options": [
+              "Two",
+              "Three",
+              "Four (two critical uncertainties)",
+              "Ten"
+            ],
+            "correct": 2,
+            "explain": "The four-corner frame stress-tests strategy across two key uncertainties. Plan for each corner."
+          },
+          {
+            "q": "Black-swan events are best addressed by:",
+            "options": [
+              "Better forecasts",
+              "Scenarios that prepare for unforecastable outcomes",
+              "Ignoring them",
+              "Insurance only"
+            ],
+            "correct": 1,
+            "explain": "Forecasts narrow uncertainty; scenarios prepare for the tail you can't predict."
+          },
+          {
+            "q": "You should triangulate forecasts using:",
+            "options": [
+              "One method",
+              "At least two methods, then reconcile",
+              "All four always",
+              "Whatever's fastest"
+            ],
+            "correct": 1,
+            "explain": "Triangulation surfaces hidden assumptions. Two methods catching the same answer build confidence."
+          }
+        ]
+      }
     },
     {
       "id": "M9L5",
@@ -6458,7 +7418,67 @@
           "latex": "R = L \\times I",
           "note": "Likelihood \u00d7 Impact. Threshold for board-level review = top quartile."
         }
-      ]
+      ],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "A risk register scores each risk by:",
+            "options": [
+              "Cost only",
+              "Likelihood \u00d7 Impact",
+              "Number of people involved",
+              "Random"
+            ],
+            "correct": 1,
+            "explain": "Likelihood \u00d7 Impact prioritizes attention. Top quartile risks get board-level review."
+          },
+          {
+            "q": "The four mitigation strategies are:",
+            "options": [
+              "Avoid, transfer, mitigate, accept",
+              "Ignore, hope, pray, panic",
+              "Hire, fire, pivot, scale",
+              "Always avoid"
+            ],
+            "correct": 0,
+            "explain": "Every risk gets one of the four. Documenting which one and the rationale is the discipline."
+          },
+          {
+            "q": "Operational risks vs. tail risks differ in:",
+            "options": [
+              "Color",
+              "Frequency and severity \u2014 operational are frequent/small; tail are rare/catastrophic",
+              "Department ownership",
+              "Age"
+            ],
+            "correct": 1,
+            "explain": "Manage operational risks with process; manage tail risks with structural decisions (concentration, dependencies)."
+          },
+          {
+            "q": "The 'pre-mortem' ritual asks:",
+            "options": [
+              "What went right?",
+              "Imagine it's a year from now and this failed \u2014 why?",
+              "How much did it cost?",
+              "Who should we fire?"
+            ],
+            "correct": 1,
+            "explain": "Pre-mortems surface risks the optimistic team hasn't yet acknowledged."
+          },
+          {
+            "q": "Risk management is best understood as:",
+            "options": [
+              "Paranoia",
+              "Long-term thinking applied operationally",
+              "Compliance theater",
+              "Insurance shopping"
+            ],
+            "correct": 1,
+            "explain": "It's the operational expression of survival probability over time horizons longer than a quarter."
+          }
+        ]
+      }
     },
     {
       "id": "M10L1",
@@ -6601,7 +7621,67 @@
       "newly_added": "2026-05-13",
       "order": 71,
       "intro": "Disruption & The Innovator's Dilemma explains why successful companies often lose to inferior new entrants. The mechanism is rational decision-making at the incumbent that locks them out of the future market.",
-      "equations": []
+      "equations": [],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "Sustaining innovation differs from disruptive in that:",
+            "options": [
+              "It's slower",
+              "Sustaining serves existing customers better; disruptive starts inferior but accessible",
+              "It costs less",
+              "It's newer"
+            ],
+            "correct": 1,
+            "explain": "Incumbents excel at sustaining; they routinely lose at disruptive because they ignore the inferior new entrant."
+          },
+          {
+            "q": "Incumbents lose to disruptors because:",
+            "options": [
+              "They're stupid",
+              "They are rationally optimized for best customers, leaving the low-end exposed",
+              "They lack capital",
+              "They have no engineers"
+            ],
+            "correct": 1,
+            "explain": "The trap is rational \u2014 incumbents serve their best customers well; disruptors serve under-served customers and move up."
+          },
+          {
+            "q": "The three disruption patterns are low-end, new-market, and:",
+            "options": [
+              "Premium",
+              "Business-model",
+              "Geographic",
+              "Sustainable"
+            ],
+            "correct": 1,
+            "explain": "Business-model disruption uses different cost or revenue structure (e.g., SaaS vs. license, free vs. paid)."
+          },
+          {
+            "q": "The best incumbent defense against disruption is:",
+            "options": [
+              "Cut prices",
+              "Ignore the disruptor",
+              "Set up a separate business unit with own P&L, governance, culture",
+              "Sue the disruptor"
+            ],
+            "correct": 2,
+            "explain": "Let the new unit eat the parent business before someone else does. Internal cannibalization beats external disruption."
+          },
+          {
+            "q": "Disruption is fundamentally a:",
+            "options": [
+              "Technology problem",
+              "Business-model problem hidden inside a technology shift",
+              "Marketing problem",
+              "Pricing problem"
+            ],
+            "correct": 1,
+            "explain": "Technology is the trigger; the business model is what reshapes the industry."
+          }
+        ]
+      }
     },
     {
       "id": "M10L3",
@@ -6643,7 +7723,67 @@
       "newly_added": "2026-05-13",
       "order": 72,
       "intro": "AI & Emerging Technology Strategy is how you make explicit bets on technology shifts that may or may not reshape your industry. The wrong move is ignoring; the second-wrong move is over-investing too early.",
-      "equations": []
+      "equations": [],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "The AI use-case framework has three layers:",
+            "options": [
+              "Automate, augment, reinvent",
+              "Train, deploy, monitor",
+              "Cheap, fast, slow",
+              "Big, medium, small"
+            ],
+            "correct": 0,
+            "explain": "Most teams under-invest in 'reinvent' \u2014 building things that weren't possible before AI."
+          },
+          {
+            "q": "For your unique differentiator, you should:",
+            "options": [
+              "Always buy",
+              "Always partner",
+              "Build it \u2014 never buy your edge",
+              "Wait"
+            ],
+            "correct": 2,
+            "explain": "Don't outsource what makes you defensible. For commodity layers (LLMs, cloud) buy."
+          },
+          {
+            "q": "The 'AI-washing' failure mode means:",
+            "options": [
+              "Cleaning data",
+              "Branding existing features as AI without real value",
+              "Open-sourcing models",
+              "Hiring researchers"
+            ],
+            "correct": 1,
+            "explain": "AI-washing wastes credibility. Ship real AI value or wait until you have it."
+          },
+          {
+            "q": "AI quality depends most on:",
+            "options": [
+              "Model size",
+              "Data quality",
+              "Pricing",
+              "Marketing"
+            ],
+            "correct": 1,
+            "explain": "Models are commoditizing; data quality and proprietary signals are the durable moat."
+          },
+          {
+            "q": "Economic value from AI will most accrue to:",
+            "options": [
+              "Foundation model providers",
+              "Companies integrating AI into specific workflows",
+              "Hardware vendors only",
+              "Marketing agencies"
+            ],
+            "correct": 1,
+            "explain": "General-purpose tech rewards specific application. Vertical workflow integration captures most of the value."
+          }
+        ]
+      }
     },
     {
       "id": "M10L4",
@@ -6685,7 +7825,67 @@
       "newly_added": "2026-05-13",
       "order": 73,
       "intro": "Sustainability & ESG Strategy is no longer optional. Customers, investors, employees, and regulators all weight ESG in their decisions. The discipline is integrating it into operations without losing focus on the core business.",
-      "equations": []
+      "equations": [],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "ESG has three pillars:",
+            "options": [
+              "Effort, scale, growth",
+              "Environmental, social, governance",
+              "Engineering, sales, growth",
+              "Energy, security, governance"
+            ],
+            "correct": 1,
+            "explain": "Each pillar has measurable metrics. Don't conflate them."
+          },
+          {
+            "q": "The materiality matrix plots:",
+            "options": [
+              "Cost vs. revenue",
+              "Importance to stakeholders \u00d7 impact on business",
+              "Time vs. money",
+              "Random"
+            ],
+            "correct": 1,
+            "explain": "Focus on the upper-right quadrant. Don't try to lead on every ESG issue."
+          },
+          {
+            "q": "Most companies' largest emissions footprint is:",
+            "options": [
+              "Scope 1 (direct)",
+              "Scope 2 (purchased energy)",
+              "Scope 3 (supply chain + customer use)",
+              "Scope 4"
+            ],
+            "correct": 2,
+            "explain": "Scope 3 dominates for most businesses but is the hardest to measure. Start measurement now."
+          },
+          {
+            "q": "For consumer goods, ESG positioning often drives:",
+            "options": [
+              "Lower prices",
+              "Premium pricing and customer preference",
+              "Government grants only",
+              "Nothing"
+            ],
+            "correct": 1,
+            "explain": "In certain categories ESG is competitive advantage. In commodity B2B it's table stakes."
+          },
+          {
+            "q": "ESG is best treated as:",
+            "options": [
+              "Marketing",
+              "Operations",
+              "Press releases",
+              "Optional"
+            ],
+            "correct": 1,
+            "explain": "Companies that win on ESG do it through operational discipline. Marketing alone gets called out as greenwashing."
+          }
+        ]
+      }
     },
     {
       "id": "M10L5",
@@ -6727,7 +7927,67 @@
       "newly_added": "2026-05-13",
       "order": 74,
       "intro": "The Future-Ready Leader is the capstone synthesis: you have a financial OS, a strategy, a team, a growth engine, operations, capital, brand, execution discipline, decision frameworks, and a view of the future. Now lead.",
-      "equations": []
+      "equations": [],
+      "quiz": {
+        "pass_pct": 80,
+        "questions": [
+          {
+            "q": "The four founder modes are Builder, Operator, Strategist, and:",
+            "options": [
+              "Steward",
+              "Salesperson",
+              "Engineer",
+              "Investor"
+            ],
+            "correct": 0,
+            "explain": "Each mode matches a company stage. Knowing which mode the company needs from you NOW is the leadership skill."
+          },
+          {
+            "q": "A leader's calendar is:",
+            "options": [
+              "Optional",
+              "Their strategy",
+              "Owned by their EA",
+              "Irrelevant"
+            ],
+            "correct": 1,
+            "explain": "Time allocation is the truest signal of priorities. Audit yours monthly."
+          },
+          {
+            "q": "The personal operating system (sleep, exercise, deep work, recovery) is:",
+            "options": [
+              "Soft, unimportant",
+              "Core OPEX \u2014 inputs to every decision",
+              "Only for athletes",
+              "Outdated"
+            ],
+            "correct": 1,
+            "explain": "Performance compounds with these inputs. Treat them as load-bearing infrastructure."
+          },
+          {
+            "q": "A compounding career is built on:",
+            "options": [
+              "Lucky breaks",
+              "Reputation events that compound across ventures, relationships, and years",
+              "Connections alone",
+              "Title pursuit"
+            ],
+            "correct": 1,
+            "explain": "Every venture, every relationship is part of one long career arc. Optimize for the next decade, not the next quarter."
+          },
+          {
+            "q": "The capstone is properly understood as:",
+            "options": [
+              "The end of learning",
+              "The start of practiced execution",
+              "Graduation",
+              "Final exam"
+            ],
+            "correct": 1,
+            "explain": "You now have the frameworks. The next decade is using them in the field."
+          }
+        ]
+      }
     }
   ],
   "capstone_sections": [
