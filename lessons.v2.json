@@ -1,5 +1,5 @@
 {
-  "schema_version": "v2.10sections.74lessons.canon-aligned.2026-05-13",
+  "schema_version": "v2.10sections.74lessons.fully-authored.2026-05-13",
   "generated_from": "Josh's 2026-05-11 LMS Deployment Guide",
   "global": {
     "textbook": {
@@ -583,13 +583,42 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Build a 13-week rolling cash forecast in a spreadsheet. Color any week with negative ending cash red.",
+        "Identify your three largest April-style risk months from the next 12 weeks; list the AR you can pull forward and AP you can push back to flatten them.",
+        "Open a working-capital line of credit equal to 1.5x your worst red week before you need it."
+      ],
+      "deep_dive": "This is the deep-dive sister to M1L1 (Oxygen) and M1L2 (Top Line Lie). The most common founder failure is celebrating a profitable month while burning cash that month. Calendar timing is destiny in working-capital businesses.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "newly_added": "2026-05-14",
-      "order": 4
+      "order": 4,
+      "intro": "Profit and cash diverge most sharply at month boundaries. April Cash Timing is a worked deep-dive showing how a profitable April can still produce a negative cash month when receivables stretch and payables tighten on the same calendar week.",
+      "concepts": [
+        {
+          "title": "Why April hurts",
+          "body": "AR collection lags revenue recognition by 30-60 days. A company billing $400k in April with Net-45 terms sees zero of that cash until late May. If May payroll, rent, and AP land on April-26 through May-5, the gap is what kills founders."
+        },
+        {
+          "title": "The five-line April model",
+          "body": "Beginning cash + April AR collected (from Feb-Mar bookings) \u2212 April fixed costs \u2212 April variable costs \u2212 April AP paid = Ending cash. Run it 13 weeks forward and the painful weeks become obvious."
+        },
+        {
+          "title": "Three levers, ranked",
+          "body": "(1) Pull AR forward (early-pay discounts, ACH on signature). (2) Push AP back (negotiate Net-60, switch to monthly billing). (3) Buffer with a working-capital line you draw only in red weeks."
+        },
+        {
+          "title": "The trap of seasonal smoothing",
+          "body": "Quarterly averages hide month-three cliffs. Always model by week and by line item \u2014 not by aggregated period."
+        }
+      ],
+      "equations": [
+        {
+          "name": "Cash gap",
+          "latex": "\\text{Gap}_t = \\text{AR}_{t-45} - \\text{AP}_t - \\text{OpEx}_t",
+          "note": "Negative gap weeks = your runway risk weeks."
+        }
+      ]
     },
     {
       "id": "M1L3",
@@ -1652,14 +1681,43 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "List every product line. Plot each on a growth \u00d7 share grid. Be honest about share.",
+        "Pick one question mark to invest in this quarter and one to kill. Document the kill criteria.",
+        "Set a board-level reporting cadence to re-plot the portfolio every quarter."
+      ],
+      "deep_dive": "Most strategic missteps are not bad bets \u2014 they are too many bets. The Portfolio framework forces explicit prioritization across products. The discipline is killing what is not winning.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": true,
       "newly_added": "2026-05-13",
-      "order": 15
+      "order": 15,
+      "intro": "Portfolio Strategy is how a multi-product company decides where to invest, where to harvest, and where to divest. The BCG Matrix is the canonical frame; the operating logic is allocating finite capital to the highest-return option.",
+      "concepts": [
+        {
+          "title": "BCG four quadrants",
+          "body": "Stars (high growth, high share) need investment to defend. Cash Cows (low growth, high share) fund the rest. Question Marks (high growth, low share) need a build-or-kill decision. Dogs (low growth, low share) get harvested or divested."
+        },
+        {
+          "title": "The portfolio rule of three",
+          "body": "Most companies should have one cash cow funding one star and one question mark. Two stars is over-extended. Three question marks is undisciplined."
+        },
+        {
+          "title": "Capital allocation rhythm",
+          "body": "Quarterly: re-rank every business unit by growth-rate \u00d7 share-position. Annually: move at least 10% of capital from harvest categories into bets."
+        },
+        {
+          "title": "GE-McKinsey extension",
+          "body": "Where BCG uses growth \u00d7 share, GE-McKinsey uses market-attractiveness \u00d7 business-strength on a 3\u00d73 grid. Use it when growth alone is misleading (regulated markets, slow industries)."
+        }
+      ],
+      "equations": [
+        {
+          "name": "Capital weight",
+          "latex": "w_i = \\frac{\\text{Growth}_i \\times \\text{Share}_i}{\\sum_j (\\text{Growth}_j \\times \\text{Share}_j)}",
+          "note": "Allocate next-period capital proportional to w_i."
+        }
+      ]
     },
     {
       "id": "M2L3",
@@ -2496,14 +2554,43 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Write your one-sentence position. It must include who you serve and who you reject.",
+        "List your top 3 initiatives. Verify every team member knows them by heart.",
+        "Identify one current initiative to kill this week. Announce it Monday."
+      ],
+      "deep_dive": "Leadership is the art of saying no with precision. Strategy without sacrifice is wishful thinking \u2014 and the team feels the absence of priorities as drift.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": true,
       "newly_added": "2026-05-13",
-      "order": 24
+      "order": 24,
+      "intro": "Positioning & Focus is the leadership discipline of saying no to good opportunities so the team can win on the few that matter. Most teams fail not from lack of opportunity but from spreading thin.",
+      "concepts": [
+        {
+          "title": "Positioning = trade-off",
+          "body": "A real position requires explicit non-customers, non-features, and non-markets. If your positioning has no enemies, it has no edge."
+        },
+        {
+          "title": "The Three-Lens test",
+          "body": "Every initiative passes through three filters: (1) Does it advance the one thing we want to be known for? (2) Will killing it be felt? (3) Can the team execute it without dropping the core?"
+        },
+        {
+          "title": "The 'Top 3, Kill the Rest' ritual",
+          "body": "Quarterly: list every active initiative. Rank by strategic alignment \u00d7 momentum. Fund the top three at full intensity. Pause or kill the rest. Communicate the kill list publicly to lock in focus."
+        },
+        {
+          "title": "Why focus fails",
+          "body": "Three traps: (1) revenue from non-core customers tempts drift, (2) loud internal advocates protect zombie projects, (3) leaders confuse busy with productive. All three are solved by ruthless quarterly review."
+        }
+      ],
+      "equations": [
+        {
+          "name": "Focus index",
+          "latex": "\\text{Focus} = \\frac{\\text{Effort on Top 3}}{\\text{Total Effort}}",
+          "note": "Healthy teams operate above 70%."
+        }
+      ]
     },
     {
       "id": "M3L4",
@@ -2928,14 +3015,43 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Build a channel scorecard: CAC, LTV:CAC, payback period, saturation slope. One row per channel.",
+        "Cut the lowest-ratio channel by 50% this month. Reallocate the budget to your highest-ratio channel.",
+        "Launch one owned-channel experiment (email capture, app, community)."
+      ],
+      "deep_dive": "Most growth plateaus come from over-fitting to one channel. The discipline is portfolio thinking applied to acquisition.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": true,
       "newly_added": "2026-05-13",
-      "order": 29
+      "order": 29,
+      "intro": "Channel Strategy is how you choose where customers find, evaluate, and buy from you. The right channel matches your customer's natural information-seeking behavior \u2014 not your sales team's preference.",
+      "concepts": [
+        {
+          "title": "Channel-product fit",
+          "body": "Low-consideration products win in high-frequency channels (paid social, retail). High-consideration products win in deep-engagement channels (long-form content, partner referral, sales rep). Mismatch wastes 60% of marketing spend."
+        },
+        {
+          "title": "The CAC-to-channel matrix",
+          "body": "Map each channel by (1) CAC, (2) LTV-to-CAC ratio, (3) saturation slope. Channels with rising CAC at constant LTV are dying \u2014 diversify before they die."
+        },
+        {
+          "title": "Owned vs. rented",
+          "body": "Owned channels (email list, app, retail store) compound. Rented channels (Google, Meta, marketplace) decay. Allocate at least 30% of marketing spend to owned-channel growth annually."
+        },
+        {
+          "title": "Multi-channel attribution",
+          "body": "First-touch under-credits content; last-touch over-credits paid. Use a multi-touch model (linear, time-decay) for any channel mix above three sources."
+        }
+      ],
+      "equations": [
+        {
+          "name": "Channel LTV:CAC",
+          "latex": "\\text{Ratio}_c = \\frac{\\text{LTV}_c}{\\text{CAC}_c}",
+          "note": "Below 3:1 = unhealthy channel. Above 6:1 = under-invested."
+        }
+      ]
     },
     {
       "id": "M4L3",
@@ -3158,14 +3274,43 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Run the Sean Ellis PMF survey to your last 200 active users. Calculate the score.",
+        "Plot retention by customer segment. Identify your highest-retaining segment.",
+        "Stop all new feature work for two weeks. Talk to 25 customers in your top-retention segment."
+      ],
+      "deep_dive": "PMF is not a milestone you announce \u2014 it's a state you operate in. Get there before scaling.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": true,
       "newly_added": "2026-05-13",
-      "order": 32
+      "order": 32,
+      "intro": "Product-Market Fit is the moment customers pull the product from you faster than you can push it. Before fit, growth is friction. After fit, growth is leverage. Knowing exactly which side you are on is the founder's primary job.",
+      "concepts": [
+        {
+          "title": "Three signals of fit",
+          "body": "(1) Organic referral rate exceeds 25% of new customers. (2) The 'how disappointed if this disappeared' survey shows >40% 'very disappointed.' (3) You can stop marketing for a month and demand persists."
+        },
+        {
+          "title": "Pre-fit vs. post-fit operating mode",
+          "body": "Pre-fit: hold the team small, run weekly customer interviews, iterate the product. Post-fit: hire growth and ops, lock the product, scale the funnel."
+        },
+        {
+          "title": "The fit zoom-in",
+          "body": "Fit is rarely uniform. Find the customer segment where retention and NPS are highest \u2014 that's your real fit. Build outward from there."
+        },
+        {
+          "title": "Counterfeit fit",
+          "body": "Founders mistake friend-funded usage, paid-acquisition spikes, or one-time PR for fit. Real fit shows up in cohort retention curves that flatten above zero."
+        }
+      ],
+      "equations": [
+        {
+          "name": "PMF score",
+          "latex": "\\text{PMF}_s = \\frac{\\text{Very disappointed}}{\\text{Total survey}}",
+          "note": "40%+ = fit; 25-40% = warm; <25% = not yet."
+        }
+      ]
     },
     {
       "id": "M4L4.5",
@@ -3178,14 +3323,43 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Map your current funnel. At each stage, identify one loop opportunity.",
+        "Build one loop this quarter. Measure k weekly.",
+        "Sunset one paid-acquisition channel that doesn't feed back into a loop."
+      ],
+      "deep_dive": "Funnels add. Loops multiply. The companies that dominate categories are the ones that converted their funnels into loops early.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": true,
       "newly_added": "2026-05-13",
-      "order": 33
+      "order": 33,
+      "intro": "Loyalty Loops are how growth compounds. Where a funnel ends with the sale, a loop ends with a referral or retention event that becomes the start of the next acquisition. Loops are the difference between linear and exponential growth.",
+      "concepts": [
+        {
+          "title": "The four loop types",
+          "body": "(1) Content loop: users create content that pulls new users (Reddit, YouTube). (2) Viral loop: users invite users (Dropbox, Slack). (3) Paid loop: revenue funds more paid acquisition (e-commerce). (4) Sales loop: customers become case studies that close more sales (SaaS)."
+        },
+        {
+          "title": "Loop math",
+          "body": "Each user must produce more than one user back into the system for the loop to compound. The viral coefficient k must exceed 1 for organic growth."
+        },
+        {
+          "title": "Funnel \u2192 loop conversion",
+          "body": "At every funnel stage, ask: 'What event here can produce a referral, a piece of content, or a case study?' Add the loop trigger as a product feature, not a marketing campaign."
+        },
+        {
+          "title": "Why loops decay",
+          "body": "Loops lose efficiency as the network saturates. Refresh the trigger (new content format, new incentive, new social proof) every 12-18 months."
+        }
+      ],
+      "equations": [
+        {
+          "name": "Viral coefficient",
+          "latex": "k = i \\times c",
+          "note": "i = invites per user; c = conversion of invites. k > 1 = compounding."
+        }
+      ]
     },
     {
       "id": "M4L5",
@@ -4551,14 +4725,43 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Audit every dashboard. Score each metric: action-driving (1) or vanity (0).",
+        "Cut every vanity metric this week.",
+        "Add one lead indicator per team. Wire it to a weekly review."
+      ],
+      "deep_dive": "Dashboards exist to compress information so a leader can act. Anything else is decoration.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": true,
       "newly_added": "2026-05-13",
-      "order": 47
+      "order": 47,
+      "intro": "Dashboards are the operating system of the business. Done right, they replace meetings with shared real-time truth. Done wrong, they bury signal in noise.",
+      "concepts": [
+        {
+          "title": "The dashboard hierarchy",
+          "body": "Board (5-7 metrics, monthly). Executive (10-15 metrics, weekly). Operational (one team-specific dashboard, daily). Each level summarizes the level below."
+        },
+        {
+          "title": "Lead vs. lag indicators",
+          "body": "Lag = revenue, churn. Lead = pipeline coverage, NPS, time-to-first-value. Lead indicators belong on every dashboard; lag indicators belong on board dashboards."
+        },
+        {
+          "title": "The dashboard test",
+          "body": "For every metric, ask: (1) What decision does this drive? (2) What's the threshold that triggers action? If neither answer is sharp, kill the metric."
+        },
+        {
+          "title": "Why dashboards fail",
+          "body": "Most fail by accretion \u2014 every quarter someone adds a metric, none get removed. Set a hard cap (e.g., 15 metrics per dashboard) and audit quarterly."
+        }
+      ],
+      "equations": [
+        {
+          "name": "Signal density",
+          "latex": "S = \\frac{\\text{Metrics that triggered action}}{\\text{Total metrics}}",
+          "note": "Healthy dashboards: S > 0.5."
+        }
+      ]
     },
     {
       "id": "M6L7",
@@ -5379,14 +5582,37 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Fill in the positioning template. Test it with five customers \u2014 they should be able to recite the unique benefit.",
+        "Pick your one word. Audit your last 10 pieces of content for whether they reinforce it.",
+        "Build the message hierarchy doc. Brief every marketer."
+      ],
+      "deep_dive": "Positioning is the most-leveraged decision in marketing. Get it right and copy writes itself. Get it wrong and every campaign fights the brand.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": false,
       "newly_added": "2026-05-13",
-      "order": 56
+      "order": 56,
+      "intro": "Brand Positioning & Messaging is the discipline of choosing the one place in the customer's mind you intend to own. Positioning precedes copy; copy carries the position.",
+      "concepts": [
+        {
+          "title": "The positioning template",
+          "body": "'For [target] who [problem], we are [category] that [unique benefit], unlike [alternative], because [proof].' Every word is a choice with explicit non-customers."
+        },
+        {
+          "title": "The one-word brand",
+          "body": "Volvo = safety. Disney = magic. Apple = simple. Strong brands compress to one word. Your job is to choose the word, then defend it for a decade."
+        },
+        {
+          "title": "Message hierarchy",
+          "body": "Position (one sentence) \u2192 pillars (3-5) \u2192 proof points (3 per pillar) \u2192 channel adaptations (copy variants). Every piece of content traces upward to the position."
+        },
+        {
+          "title": "How positioning fails",
+          "body": "(1) Trying to be all things \u2014 diluted word. (2) Drifting position quarter to quarter. (3) Copying competitors' words instead of owning your own."
+        }
+      ],
+      "equations": []
     },
     {
       "id": "M7L3",
@@ -5399,14 +5625,43 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Survey 20 customers on willingness-to-pay using the Van Westendorp method.",
+        "Test a 10% price increase on new customers for 30 days. Measure win-rate.",
+        "Build a three-tier pricing page. The middle tier should be the target SKU."
+      ],
+      "deep_dive": "Pricing is rarely tested because raising prices feels risky. Yet the data consistently shows under-pricing is the more common error.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": false,
       "newly_added": "2026-05-13",
-      "order": 57
+      "order": 57,
+      "intro": "Pricing Strategy is the highest-leverage lever in the business. A 1% pricing change drops 8-10% to operating profit on average \u2014 more than any other operational change.",
+      "concepts": [
+        {
+          "title": "Value-based, not cost-plus",
+          "body": "Cost-plus pricing leaves money on the table. Value-based pricing anchors to the customer's willingness-to-pay, which is set by the alternative they would otherwise use."
+        },
+        {
+          "title": "Three pricing models",
+          "body": "(1) Penetration: price low to gain share. (2) Skim: price high to harvest early adopters, then lower. (3) Value-tier: multiple SKUs at multiple prices to capture different willingness-to-pay segments."
+        },
+        {
+          "title": "The price-volume curve",
+          "body": "Plot revenue against price across customer segments. The optimum is rarely at either extreme. Test at 3-5 price points."
+        },
+        {
+          "title": "Anchoring and decoy effects",
+          "body": "A high-priced option (anchor) makes the middle option look reasonable. A decoy option (asymmetrically dominated) pushes selection to the target SKU. Apply intentionally; both are well-studied behavioral effects."
+        }
+      ],
+      "equations": [
+        {
+          "name": "Price elasticity",
+          "latex": "E = \\frac{\\% \\Delta Q}{\\% \\Delta P}",
+          "note": "|E| < 1 = inelastic, raise price. |E| > 1 = elastic, defend price."
+        }
+      ]
     },
     {
       "id": "M7L4",
@@ -5419,14 +5674,43 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Define your 5-10 pillar topics. Map them to positioning pillars.",
+        "Build a distribution checklist: 5 channels per piece, minimum.",
+        "Audit last quarter's content. Cut anything that produced zero attributed pipeline."
+      ],
+      "deep_dive": "Demand generation is a compounding asset class. Treat each piece like a node in a growing network, not a one-time campaign.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": false,
       "newly_added": "2026-05-13",
-      "order": 58
+      "order": 58,
+      "intro": "Content & Demand Generation is how you create awareness and intent at scale. The discipline is matching content depth to buyer stage and channel native format.",
+      "concepts": [
+        {
+          "title": "The demand pyramid",
+          "body": "Top: awareness content (problem-aware audience). Middle: educational content (solution-aware audience). Bottom: comparison and proof content (product-aware audience). Every channel must produce all three."
+        },
+        {
+          "title": "Pillar + cluster model",
+          "body": "Pick 5-10 pillar topics aligned to positioning. Each pillar gets one 2,000-word piece + 10-20 cluster pieces that interlink. Search engines reward topical depth."
+        },
+        {
+          "title": "Distribution > production",
+          "body": "Most teams over-produce and under-distribute. For every hour of writing, spend three hours distributing across channels and formats."
+        },
+        {
+          "title": "The content-to-pipeline link",
+          "body": "Tag every content piece by funnel stage. Track which pieces drive captured leads, demos, and closed-won. Kill content that doesn't move pipeline within 90 days."
+        }
+      ],
+      "equations": [
+        {
+          "name": "Content ROI",
+          "latex": "\\text{ROI}_c = \\frac{\\text{Pipeline}_c - \\text{Cost}_c}{\\text{Cost}_c}",
+          "note": "Track content-level pipeline contribution, not just impressions."
+        }
+      ]
     },
     {
       "id": "M7L5",
@@ -5439,14 +5723,43 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Plot cohort retention for the last 6 months. Identify the largest drop point.",
+        "Define your activation event. Measure time-to-activation. Optimize it.",
+        "Interview 5 churned customers. Classify each to one of the five causes."
+      ],
+      "deep_dive": "Retention is the most-leveraged operational metric. Improving retention by 5% raises LTV by 25-95%.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": false,
       "newly_added": "2026-05-13",
-      "order": 59
+      "order": 59,
+      "intro": "Customer Retention & Loyalty is where the business model proves itself. Acquiring a customer is expensive; keeping one is profitable. Retention is the largest single driver of LTV and the compound interest of the business.",
+      "concepts": [
+        {
+          "title": "Cohort retention curves",
+          "body": "Plot retention by signup month. A flat curve above 0% = real value. A declining curve to 0% = leak. The shape diagnoses the problem before metrics do."
+        },
+        {
+          "title": "Activation = day-one retention",
+          "body": "Most churn happens in the first 7-30 days. Define your activation event (the moment a user gets value) and engineer the product to drive every new user to it within minutes."
+        },
+        {
+          "title": "Loyalty program economics",
+          "body": "A loyalty program is profitable only when (a) it increases purchase frequency or basket size, AND (b) the increase exceeds the program cost. Most loyalty programs fail (b)."
+        },
+        {
+          "title": "Churn-cause taxonomy",
+          "body": "Five churn causes: (1) didn't activate, (2) lost the need, (3) switched to competitor, (4) couldn't justify price, (5) bad support. Each has a different fix."
+        }
+      ],
+      "equations": [
+        {
+          "name": "NRR",
+          "latex": "\\text{NRR} = \\frac{\\text{Period revenue from existing cohort}}{\\text{Prior-period revenue from same cohort}}",
+          "note": "NRR > 100% = expansion outpaces churn (best-in-class)."
+        }
+      ]
     },
     {
       "id": "M8L1",
@@ -5585,22 +5898,12 @@
         }
       ],
       "take_action": [
-        "Walk one of your processes end-to-end. Identify the one resource that limits throughput. That\u2019s your constraint.",
-        "Look at your team\u2019s calendar utilization. Anyone at 95%+ booked is a fragile node \u2014 variability will collapse their throughput first.",
-        {
-          "text": "Decide where you\u2019ll add a buffer this month \u2014 schedule, inventory, or capacity. Name the size and why.",
-          "capstone_field": "playbook.buffer_strategy"
-        },
-        {
-          "text": "Pick one place to remove a buffer that isn\u2019t protecting the constraint \u2014 hidden waste. Ship the change.",
-          "capstone_field": "playbook.waste_removal"
-        }
+        "Classify every SKU into the four inventory types. Set distinct policies per type.",
+        "Compute inventory turns and days-of-inventory monthly. Plot the trend.",
+        "Identify your single biggest supply chain risk. Build one resilience lever this quarter."
       ],
       "placeholder": false,
-      "deep_dive": {
-        "intro": "Theory of Constraints meets daily operations. The Buffer Paradox: adding slack (time, inventory, capacity) makes a system more reliable and faster overall \u2014 not slower. Why high-utilization systems break, where to put buffers, how to size them.",
-        "sections": []
-      },
+      "deep_dive": "Inventory is buffered uncertainty. The cheaper your buffers can be, the more capital you free for growth.",
       "audio_overview_script": "Theory of Constraints meets daily operations. The Buffer Paradox: adding slack (time, inventory, capacity) makes a system more reliable and faster overall \u2014 not slower. Why high-utilization systems break, where to put buffers, how to size them.",
       "quiz": {
         "pass_pct": 80,
@@ -5664,8 +5967,38 @@
         ]
       },
       "order": 61,
-      "pending_content": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish."
+      "pending_content": false,
+      "intro": "Supply Chain & Inventory Management is the circulatory system of any physical business. The art is balancing resilience (inventory buffers) against the working capital cost of holding stock.",
+      "concepts": [
+        {
+          "title": "Four inventory types",
+          "body": "(1) Cycle stock: covers normal demand. (2) Safety stock: protects against variability. (3) In-transit: in motion through the chain. (4) Strategic: long-lead-time critical items. Manage each separately."
+        },
+        {
+          "title": "Key operational metrics",
+          "body": "Inventory turns (COGS / avg inventory): higher = better. Days of inventory (365 / turns): lower = better. Stockout rate, forecast accuracy (1 - |actual-forecast|/actual). Track weekly."
+        },
+        {
+          "title": "The Bullwhip Effect",
+          "body": "Small demand fluctuations at the consumer end amplify upstream. Cures: shared forecasts, smaller batches, faster cycle times, fewer tiers."
+        },
+        {
+          "title": "Resilience levers",
+          "body": "Multi-source (multiple vendors per critical input). Near-shore (move closer to demand). Buffer the bottleneck. Visibility two tiers up."
+        }
+      ],
+      "equations": [
+        {
+          "name": "Inventory turns",
+          "latex": "\\text{Turns} = \\frac{\\text{COGS}}{\\text{Average inventory}}",
+          "note": "Industry benchmark varies; track trend not absolute."
+        },
+        {
+          "name": "Days of inventory",
+          "latex": "\\text{DOI} = \\frac{365}{\\text{Turns}}",
+          "note": "Lower DOI = faster cash recovery."
+        }
+      ]
     },
     {
       "id": "M8L3",
@@ -5794,14 +6127,43 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Pick your most important project. Define the three constraints \u2014 which is flexing?",
+        "Build a RACI for every workstream. Verify each row has exactly one A.",
+        "Convert Gantt views to stage-gates with explicit exit criteria."
+      ],
+      "deep_dive": "Execution discipline is the multiplier on strategy. Most companies have decent strategies and poor execution governance.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": false,
       "newly_added": "2026-05-13",
-      "order": 63
+      "order": 63,
+      "intro": "Project & Program Management turns strategy into shipped outcomes. A project is one finite output; a program is a portfolio of projects driving a strategic theme. Both fail for the same reasons: unclear scope, weak ownership, no governance.",
+      "concepts": [
+        {
+          "title": "The triple constraint",
+          "body": "Scope, time, cost. Any two can be fixed; the third must flex. Pretending all three are fixed produces death-march projects."
+        },
+        {
+          "title": "RACI per workstream",
+          "body": "Responsible (does the work), Accountable (one neck \u2014 owns the outcome), Consulted (provides input), Informed (kept in the loop). Two A's = nobody is accountable."
+        },
+        {
+          "title": "Stage-gates over Gantt charts",
+          "body": "Define 3-5 stage-gates with clear exit criteria. At each gate, decide: continue, pivot, or kill. Stage-gates beat detailed Gantt charts in changing environments."
+        },
+        {
+          "title": "Why programs fail",
+          "body": "(1) No portfolio view across projects. (2) Resource conflicts unresolved. (3) Dependencies discovered late. (4) Status reporting hides red flags. Solve with weekly cross-project review."
+        }
+      ],
+      "equations": [
+        {
+          "name": "Schedule variance",
+          "latex": "\\text{SV} = \\text{EV} - \\text{PV}",
+          "note": "Earned vs. planned value. Negative = behind."
+        }
+      ]
     },
     {
       "id": "M8L5",
@@ -5814,14 +6176,37 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Tier your top 20 vendors. For each Tier 1, name the strategic risk.",
+        "Build the four-question scorecard. Send to all Tier 1/2 vendors quarterly.",
+        "Pick one partnership opportunity. Draft a mutual scorecard before signing."
+      ],
+      "deep_dive": "Companies that scale fast operate as orchestrators of vendor and partner networks, not vertical monoliths.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": false,
       "newly_added": "2026-05-13",
-      "order": 64
+      "order": 64,
+      "intro": "Vendor & Partnership Management is leveraged operations. Your suppliers and partners are extensions of your team \u2014 managed deliberately, they multiply capability; managed reactively, they become risk.",
+      "concepts": [
+        {
+          "title": "Vendor tiering",
+          "body": "Tier 1: strategic (irreplaceable, deep relationship). Tier 2: preferred (multi-sourced, contracts in place). Tier 3: transactional (commodity, low switching cost). Manage each tier differently."
+        },
+        {
+          "title": "The four-question vendor scorecard",
+          "body": "(1) Delivers on time? (2) Quality meets spec? (3) Pricing competitive vs. market? (4) Risk profile acceptable (financial, geographic, regulatory)? Score quarterly."
+        },
+        {
+          "title": "Partnership structures",
+          "body": "Reseller, integration partner, co-marketing, JV, OEM. Pick the structure that matches the customer overlap and the depth of joint commitment."
+        },
+        {
+          "title": "Partnership failure modes",
+          "body": "(1) Misaligned incentives. (2) No executive sponsor on either side. (3) No mutual scorecard. (4) Channel conflict with existing customers. Pre-empt all four in the contract."
+        }
+      ],
+      "equations": []
     },
     {
       "id": "M9L1",
@@ -5935,14 +6320,37 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Identify your North Star metric. Verify every executive can recite it.",
+        "Map 5-10 supporting KPIs that explain the North Star.",
+        "Set a quarterly KPI governance review. Add it to the operating calendar."
+      ],
+      "deep_dive": "What gets measured gets managed. What gets defined gets measured. Definitions are infrastructure.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": false,
       "newly_added": "2026-05-13",
-      "order": 66
+      "order": 66,
+      "intro": "KPIs & Performance Dashboards make the business observable. The discipline is choosing the right metrics, defining them sharply, and reviewing them on the right cadence.",
+      "concepts": [
+        {
+          "title": "KPI selection criteria",
+          "body": "A real KPI is (1) tied to a strategic objective, (2) measurable with one definition, (3) reviewable on a defined cadence, (4) actionable when out of range. Anything failing one criterion is not a KPI."
+        },
+        {
+          "title": "North Star + supporting",
+          "body": "One North Star metric (e.g., weekly active customers). 5-10 supporting metrics that explain the North Star. Don't have a Tree of KPIs without a clear North Star."
+        },
+        {
+          "title": "Leading vs. lagging",
+          "body": "Lagging KPIs report outcomes (revenue). Leading KPIs predict them (pipeline, NPS). Boards need lagging; operators need leading."
+        },
+        {
+          "title": "Dashboard governance",
+          "body": "Quarterly: review the KPI list. Add new strategic priorities, retire obsolete ones. Without governance dashboards accrete clutter."
+        }
+      ],
+      "equations": []
     },
     {
       "id": "M9L3",
@@ -5955,14 +6363,43 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Pick your three most-trafficked decision points (signup, pricing, checkout). Build an experiment backlog.",
+        "Adopt the design checklist as a requirement before any test goes live.",
+        "Set up an experiment scorecard tracking velocity, win rate, and impact."
+      ],
+      "deep_dive": "Experimentation is a culture, not a tool. Companies that win at it run hundreds of tests a year and treat each one as a small, scoped, falsifiable claim.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": false,
       "newly_added": "2026-05-13",
-      "order": 67
+      "order": 67,
+      "intro": "A/B Testing & Experimentation replaces opinions with evidence. Done right, it compounds learning. Done wrong, it confuses noise for signal and burns trust in data.",
+      "concepts": [
+        {
+          "title": "The experiment design checklist",
+          "body": "(1) Single hypothesis. (2) Pre-registered metric. (3) Power calculation determining sample size. (4) Random assignment. (5) Pre-specified stopping criteria. Skip any step = invalid test."
+        },
+        {
+          "title": "Statistical significance vs. practical significance",
+          "body": "A 0.5% lift at p<0.05 may be statistically significant but practically irrelevant. Set a minimum detectable effect that matters to the business."
+        },
+        {
+          "title": "The peeking trap",
+          "body": "Looking at results mid-test and stopping when you see significance inflates false-positive rates dramatically. Use sequential testing if you must peek."
+        },
+        {
+          "title": "What to test, what not to test",
+          "body": "Test high-volume, recurring decisions (landing pages, pricing pages, onboarding flows). Don't test one-off strategic choices \u2014 use judgment."
+        }
+      ],
+      "equations": [
+        {
+          "name": "Sample size",
+          "latex": "n \\approx \\frac{16 \\sigma^2}{\\Delta^2}",
+          "note": "Rough rule for two-arm equal-allocation test."
+        }
+      ]
     },
     {
       "id": "M9L4",
@@ -5975,14 +6412,43 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Build your next-quarter forecast using two methods. Compare and reconcile.",
+        "Identify your two largest uncertainties. Sketch the four-corner scenario.",
+        "Set up a monthly forecast retrospective: actual vs. forecast, what we learned."
+      ],
+      "deep_dive": "The best forecasters are calibrated, not precise. Knowing what you don't know is more valuable than a confident point estimate.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": false,
       "newly_added": "2026-05-13",
-      "order": 68
+      "order": 68,
+      "intro": "Forecasting & Scenario Planning are how leaders make decisions under uncertainty. Forecasts narrow uncertainty; scenarios prepare you for the uncertainty that remains.",
+      "concepts": [
+        {
+          "title": "Four forecasting methods",
+          "body": "(1) Top-down: market size \u00d7 share. (2) Bottom-up: rep \u00d7 quota or customer \u00d7 ARPU. (3) Time series: extrapolate history. (4) Driver-based: traffic \u00d7 conversion \u00d7 AOV. Triangulate at least two."
+        },
+        {
+          "title": "Forecast quality dimensions",
+          "body": "Calibration (90% intervals contain truth 90% of the time). Resolution (specific, not vague). Bias (systematic over/under-shooting). Track all three over time."
+        },
+        {
+          "title": "Four-corner scenario frame",
+          "body": "Identify two critical uncertainties (e.g., regulation \u00d7 demand). Build four scenarios at the corners. Plan for each. Re-evaluate when reality moves toward a corner."
+        },
+        {
+          "title": "When forecasts mislead",
+          "body": "Forecasts overweight recent history. Black-swan events are by definition unforecastable. Use scenarios for the tail."
+        }
+      ],
+      "equations": [
+        {
+          "name": "Forecast accuracy",
+          "latex": "\\text{Accuracy} = 1 - \\frac{|\\text{actual} - \\text{forecast}|}{\\text{actual}}",
+          "note": "Track per forecast horizon."
+        }
+      ]
     },
     {
       "id": "M9L5",
@@ -5995,14 +6461,43 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Build a risk register with at least 10 entries. Score every entry.",
+        "Pick your top three risks. Document the mitigation and the owner.",
+        "Run a pre-mortem before the next major launch or commitment."
+      ],
+      "deep_dive": "Risk management is not paranoia. It's the operational expression of long-term thinking.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": false,
       "newly_added": "2026-05-13",
-      "order": 69
+      "order": 69,
+      "intro": "Risk Management & Mitigation is the discipline of seeing what could go wrong before it does. Done well, it is the founder's most underrated leverage point.",
+      "concepts": [
+        {
+          "title": "The risk register",
+          "body": "List every material risk. Score each by likelihood \u00d7 impact. Document the mitigation strategy and the owner. Review quarterly."
+        },
+        {
+          "title": "Four mitigation strategies",
+          "body": "(1) Avoid (don't take the risk). (2) Transfer (insurance, contract). (3) Mitigate (reduce likelihood or impact). (4) Accept (small enough to absorb). Every risk gets one of the four."
+        },
+        {
+          "title": "Tail risk vs. operational risk",
+          "body": "Operational risks are frequent and small (system outage). Tail risks are rare and catastrophic (key customer concentration, regulatory shutdown). Manage each differently."
+        },
+        {
+          "title": "Pre-mortem ritual",
+          "body": "Before any major commitment, ask the team: 'Imagine it's a year from now and this failed. Why did it fail?' Surfaces hidden risks before they materialize."
+        }
+      ],
+      "equations": [
+        {
+          "name": "Risk score",
+          "latex": "R = L \\times I",
+          "note": "Likelihood \u00d7 Impact. Threshold for board-level review = top quartile."
+        }
+      ]
     },
     {
       "id": "M10L1",
@@ -6116,14 +6611,37 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Map your industry's adjacent low-end and non-consumption segments. Who serves them today?",
+        "Identify one disruptive threat to your business. Is there a sustaining-only response, or do you need a separate unit?",
+        "Read 'The Innovator's Dilemma' (Christensen). It pays for itself in one strategic decision."
+      ],
+      "deep_dive": "Disruption is rarely a technology problem. It's a business-model problem hiding inside a technology shift.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": false,
       "newly_added": "2026-05-13",
-      "order": 71
+      "order": 71,
+      "intro": "Disruption & The Innovator's Dilemma explains why successful companies often lose to inferior new entrants. The mechanism is rational decision-making at the incumbent that locks them out of the future market.",
+      "concepts": [
+        {
+          "title": "Sustaining vs. disruptive innovation",
+          "body": "Sustaining innovation makes existing products better for existing customers (incumbents win). Disruptive innovation starts inferior but accessible (incumbents ignore until too late)."
+        },
+        {
+          "title": "The incumbent trap",
+          "body": "Incumbents are rationally optimized for their best customers. The disruptor starts with under-served or non-consumers. By the time the disruptor moves upmarket, the incumbent's cost structure can't compete."
+        },
+        {
+          "title": "Three disruption patterns",
+          "body": "(1) Low-end disruption (cheaper, simpler). (2) New-market disruption (serves non-consumers). (3) Business-model disruption (different cost or revenue structure)."
+        },
+        {
+          "title": "Incumbent defense",
+          "body": "Set up a separate business unit with its own P&L, governance, and culture. Let it eat the parent business before someone else does."
+        }
+      ],
+      "equations": []
     },
     {
       "id": "M10L3",
@@ -6136,14 +6654,37 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "List your top 10 workflows. Tag each as automate / augment / reinvent candidate.",
+        "Pick one workflow to ship an AI feature on in 30 days. Measure adoption and impact.",
+        "Build a data-quality scorecard. AI is only as good as the data it learns from."
+      ],
+      "deep_dive": "AI is general-purpose technology. The economic value will accrue to the companies that integrate it into specific workflows \u2014 not the ones that build the foundation models.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": false,
       "newly_added": "2026-05-13",
-      "order": 72
+      "order": 72,
+      "intro": "AI & Emerging Technology Strategy is how you make explicit bets on technology shifts that may or may not reshape your industry. The wrong move is ignoring; the second-wrong move is over-investing too early.",
+      "concepts": [
+        {
+          "title": "The S-curve and the chasm",
+          "body": "Every technology follows an S-curve: slow start, rapid adoption, saturation. The strategic question is where on the curve your industry sits and what the chasm to mainstream adoption looks like."
+        },
+        {
+          "title": "AI use-case framework",
+          "body": "Three layers: (1) Automate (replace repetitive work). (2) Augment (make experts faster). (3) Reinvent (build products that weren't possible before). Most teams under-invest in layer 3."
+        },
+        {
+          "title": "Build vs. buy vs. partner",
+          "body": "For infrastructure (LLMs, cloud): buy. For workflow tools: buy or partner. For your unique differentiator: build. Don't build commodity; don't buy your edge."
+        },
+        {
+          "title": "Failure modes",
+          "body": "(1) AI-washing existing features. (2) Building before measuring user need. (3) Ignoring data quality. (4) No human-in-the-loop for high-stakes decisions. Each has a known fix."
+        }
+      ],
+      "equations": []
     },
     {
       "id": "M10L4",
@@ -6156,14 +6697,37 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Build your materiality matrix. Pick the top 3 ESG priorities.",
+        "Measure Scope 1 and 2 emissions baseline. Plan for Scope 3.",
+        "Tie one ESG goal to an executive's annual review."
+      ],
+      "deep_dive": "ESG is operations, not marketing. The companies that win on ESG do it through operational discipline, not press releases.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": false,
       "newly_added": "2026-05-13",
-      "order": 73
+      "order": 73,
+      "intro": "Sustainability & ESG Strategy is no longer optional. Customers, investors, employees, and regulators all weight ESG in their decisions. The discipline is integrating it into operations without losing focus on the core business.",
+      "concepts": [
+        {
+          "title": "The three pillars",
+          "body": "Environmental (carbon, waste, water). Social (labor, community, diversity). Governance (board structure, ethics, transparency). Each has measurable metrics."
+        },
+        {
+          "title": "Materiality matrix",
+          "body": "Plot every ESG issue by (1) importance to stakeholders, (2) impact on business. Focus on the upper-right quadrant. Don't try to lead on everything."
+        },
+        {
+          "title": "Scope 1/2/3 emissions",
+          "body": "Scope 1: direct (company vehicles, factories). Scope 2: purchased energy. Scope 3: supply chain, customer use, end-of-life. Most companies' largest footprint is Scope 3 \u2014 measure it."
+        },
+        {
+          "title": "ESG as competitive advantage",
+          "body": "For some categories (consumer goods, infrastructure), ESG positioning drives premium pricing and customer preference. For others (commodity B2B), it's table stakes. Know which you are."
+        }
+      ],
+      "equations": []
     },
     {
       "id": "M10L5",
@@ -6176,14 +6740,37 @@
       "audio_url": null,
       "audio_overview_url": null,
       "core_concepts": [],
-      "take_action": [],
-      "deep_dive": "",
-      "pending_content": true,
+      "take_action": [
+        "Audit your last four weeks of calendar. Categorize every hour. Do the percentages match your strategy?",
+        "Pick one personal OS habit to install this month (sleep, exercise, deep work, weekly review).",
+        "Write your 5-year reputation goal. What do you want to be known for? Reverse-engineer the work."
+      ],
+      "deep_dive": "You finished the program. The frameworks are now your tools. The capstone is not graduation \u2014 it is the start of the next decade of practiced execution.",
+      "pending_content": false,
       "pending_video": true,
-      "content_note": "Video + full content coming soon. Quiz unlocks on publish.",
       "is_fractional": false,
       "newly_added": "2026-05-13",
-      "order": 74
+      "order": 74,
+      "intro": "The Future-Ready Leader is the capstone synthesis: you have a financial OS, a strategy, a team, a growth engine, operations, capital, brand, execution discipline, decision frameworks, and a view of the future. Now lead.",
+      "concepts": [
+        {
+          "title": "The four founder modes",
+          "body": "(1) Builder (early \u2014 product and customer obsessed). (2) Operator (scale \u2014 process and team obsessed). (3) Strategist (mature \u2014 capital and category obsessed). (4) Steward (legacy \u2014 culture and continuity obsessed). Know which mode the company needs from you now."
+        },
+        {
+          "title": "Leadership as time allocation",
+          "body": "Your calendar is your strategy. If your time is in operations meetings, you are operating. If it is with customers and capital, you are leading. Audit your calendar monthly."
+        },
+        {
+          "title": "The personal operating system",
+          "body": "Sleep, exercise, deep work, recovery \u2014 these are not soft. They are the inputs to every decision you make. Treat them as core OPEX."
+        },
+        {
+          "title": "The compounding career",
+          "body": "Every venture, every relationship, every reputation event compounds. Be the kind of leader whose name in five years opens doors. The discipline today is the doors tomorrow."
+        }
+      ],
+      "equations": []
     }
   ],
   "capstone_sections": [
