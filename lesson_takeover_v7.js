@@ -1,4 +1,5 @@
-// MBA Rock — Lesson Page Takeover v7.3.1 (2026-05-13)
+// MBA Rock — Lesson Page Takeover v7.4 (2026-05-14)
+// v7.4: Sync to Squarespace live curriculum (6 modules, 50 lessons). SQ_MODULE_SIZE updated. SLUG_TO_V2 cleared (clean slugs route via legacy_slug).
 // v7.3.1: Tasks promoted to top-level tab (Lesson · Tasks · Quiz · Notes · Materials).
 //         CRITICAL FIX over v7.3: capstone-input parent div carries data-cap-field, matching
 //         wireCapstoneInline's expectation (inp.parentElement.getAttribute). Without this,
@@ -62,35 +63,7 @@
   // VERIFIED slug→lesson mappings. The first 25 are confirmed by walking Squarespace admin.
   // The rest are best-guess overrides based on slug semantics; flag any that show wrong content
   // and we'll lock the mapping. For anything not in this map, fuzzy token-matching kicks in.
-  var SLUG_TO_V2 = {
-    // Module 1 — Finance
-    'm1l1-oxygen-cash-flow':'M1L1','m1l2-three-sheets':'M1L2','m1l3-gross-margin-groove':'M1L3',
-    'm1l4-burn-rate-blues':'M1L4','m1l5-bottom-line':'M1L5','16-cash-runway':'M1L1.5',
-    '17-april-cash-timing':'M1L1.7','18-receivables-in':'M1L3.5','19-operating-leverage':'M1L4.5',
-    '313-unit-economics-reggae':'M1L4',
-    // Module 2 — Strategy
-    'm2l1-strategy-strut':'M2L5','m2l2-moat':'M2L0.5','m2l3-five-forces':'M2L2',
-    'm2l4-swot-vrio':'M2L3','m2l5-differentiate-or-die':'M2L4',
-    '26-beneath-the-hood':'M5L4','27-business-model-canvas':'M2L2.3.5','28-dollar-soldier':'M2L1',
-    // Module 3 — People & Leadership (mixed: some "m3" slugs are actually Module 4 marketing)
-    'm3l1-4-ps':'M7L1','m3l2-stp':'M4L1','m3l3-brand-new':'M4L2','m3l4-persona':'M4L1',
-    'm3l5-stake-your-claim':'M4L4','36-market-size-mountain':'M4L4','39-brand-promise':'M4L2',
-    '310-worth-align':'M3L1.5',
-    // Random-hash Squarespace slugs (auto-generated)
-    'jl2e2jg4mb73rzl98gfjnsr3khh7jb':'M4L1','pdmtcm5jmwfbb57knnkttmj4jd9dec':'M4L2',
-    'cx6bkyjrl8t58xte5dcxcfw257mlfa':'M4L3','7wmna3a2b9lgrwlm7zlzzf626kdz2t':'M4L3',
-    // Module 4 — Marketing / Founder
-    'm4l1-idea-to-mvp':'M6L1','m4l2-product-market-fit':'M6L6','m4l3-bootstrap-or-burn':'M5L5',
-    'm4l4-the-pitch':'M6L3','m4l5-founder-survival':'M6L13',
-    '46-coming-soon':'M6L13','47-negotiation':'M6L4','47-productmarket-fit':'M6L6',
-    // Module 5 — Leadership / Ops
-    'm5l1-narrative-weight':'M3L2.5','m5l2-innovation-portfolio':'M5L1',
-    'm5l3-conflict-cost-estimator':'M3L2.5','m5l4-eq-360-tracker':'M3L5',
-    'm5l5-leadership-capstone':'M3L2','56-blank-page-grace':'M3L4','57-resume-clues':'M3L3',
-    // Module 6 — Capital / Scaling
-    'm6l1-hire-slow-fire-fast':'M3L3','m6l2-org-chart':'M5L3','m6l3-lead-from-the-front':'M3L1',
-    'm6l4-cap-table':'M6L2','m6l5-exit-song':'M6L10','66-spreadsheet-north-star':'M9L1'
-  };
+  var SLUG_TO_V2 = {};  // emptied 2026-05-14 — clean Squarespace slugs now match via legacy_slug field
 
   // Token stopwords stripped during fuzzy match
   var STOP = {'the':1,'a':1,'an':1,'and':1,'or':1,'to':1,'of':1,'for':1,'in':1,'on':1,'by':1,'is':1,'it':1,'be':1,'as':1,'mba':1,'rock':1,'lesson':1,'l':1,'m':1};
@@ -823,7 +796,7 @@
   }
   // Squarespace module totals (the lesson counts you see in the sidebar)
   // v7.2 — module sizes synced to 76-lesson canon (74 brief + 2 grandfathered deep-dives in M2/M8)
-  var SQ_MODULE_SIZE = { M1:9, M2:10, M3:8, M4:8, M5:6, M6:14, M7:5, M8:6, M9:5, M10:5 };
+  var SQ_MODULE_SIZE = { M1:9, M2:8, M3:13, M4:7, M5:7, M6:6 };  // synced to live Squarespace 2026-05-14
 
   // Derive Squarespace position from the URL slug.
   //   "m1l3-gross-margin-groove"     → 3
@@ -1622,7 +1595,7 @@
     if (deepEl) renderMath(deepEl);
 
     document.body && document.body.setAttribute('data-mr-v5-applied', '1');
-    console.log('[MBA v7.3.1] hid', bodySections.length, 'old sections; rendered tabbed layout for', lesson.id);
+    console.log('[MBA v7.4] hid', bodySections.length, 'old sections; rendered tabbed layout for', lesson.id);
     return true;
   }
 
