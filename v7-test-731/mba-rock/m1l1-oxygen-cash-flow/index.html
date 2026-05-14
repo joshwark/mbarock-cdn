@@ -13,9 +13,12 @@ section h1{margin:0;font-size:32px;}
 section h2{margin:0;font-size:22px;}
 section p{margin:8px 0;color:#444;}
 </style>
+<script>
+if (!localStorage.getItem('mba-rock-member-id')) localStorage.setItem('mba-rock-member-id', 'qa-v731-' + Date.now());
+</script>
 </head>
 <body>
-<div class="test-banner">QA HARNESS — v7.3.1 staged file · slug forced to m1l1-oxygen-cash-flow · cb buster active</div>
+<div class="test-banner">QA HARNESS — v7.3.1 staged file · m1l1-oxygen-cash-flow</div>
 <article>
   <section data-section-id="stub-hero"><h1>Oxygen: Cash Flow Management</h1><p>Stub hero.</p></section>
   <section data-section-id="stub-watch"><h2>Watch this lesson</h2><p>Stub video section.</p></section>
@@ -24,15 +27,11 @@ section p{margin:8px 0;color:#444;}
   <section data-section-id="stub-action"><h2>Take action</h2><p>Stub.</p></section>
 </article>
 <script>
-if (!localStorage.getItem('mba-rock-member-id')) {
-  localStorage.setItem('mba-rock-member-id', 'qa-v731-' + Date.now());
-}
-// Dynamically load v7.3.1 with cache-bust
-(function(){
-  var s = document.createElement('script');
-  s.src = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lesson_takeover_v731.js?cb=' + Date.now();
-  document.body.appendChild(s);
-})();
+// Force-fetch v7.3.1 with Date.now() cb buster + eval (same pattern Squarespace site header uses)
+fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lesson_takeover_v731.js?cb=' + Date.now())
+  .then(function(r){ return r.text(); })
+  .then(function(s){ try { new Function(s)(); } catch(e){ console.error('[harness] eval failed', e); } })
+  .catch(function(e){ console.error('[harness] fetch failed', e); });
 </script>
 </body>
 </html>
