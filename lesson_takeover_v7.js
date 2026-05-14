@@ -1,7 +1,4 @@
-// MBA Rock — Lesson Page Takeover v7.3 (2026-05-13)
-// v7.3: Tasks promoted to a top-level tab (Lesson · Tasks · Quiz · Notes · Materials).
-//       Tasks tab is the Capstone-builder surface: each take_action with a capstone_field renders as a focused
-//       row showing the destination Capstone section, with the input that drives user_capstone.
+// MBA Rock — Lesson Page Takeover v7.2 (2026-05-13)
 // v7.2: Curriculum expand 55→76 lessons. SQ_MODULE_SIZE refreshed across all 10 modules (M7-M10 now correct).
 //       Pending-content lessons render a 'Coming soon' card instead of empty sections.
 // v7.1: Materials sub-tabs (Resources / Tools / Companion) + floating Notes drawer (any tab → Notes).
@@ -616,50 +613,6 @@
       .mr5-stickybar .mr5-stickybar-actions .mr5-btn{flex:1;text-align:center;}
     }
 
-    /* ── v7.3 Tasks tab — the Capstone-builder surface ── */
-    .mr5-tasks-context{margin:0 0 20px;padding:0;background:transparent;}
-    .mr5-tasks-build-msg, .mr5-tasks-do-msg{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:8px;font-size:13.5px;line-height:1.5;margin-bottom:8px;}
-    .mr5-tasks-build-msg{background:rgba(242,107,31,0.08);color:#0e1116;}
-    .mr5-tasks-do-msg{background:#f4f1ea;color:#0e1116;}
-    .mr5-tasks-build-msg a{color:#a04a13;border-bottom:1px solid currentColor;text-decoration:none;}
-    .mr5-tasks-pill{flex:0 0 auto;font-family:Inter,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:4px;background:#F26B1F;color:#fff;white-space:nowrap;}
-    .mr5-tasks-pill.ghost{background:#0B1F3A;color:#fff;}
-
-    .mr5-tasks-list{list-style:none;padding:0;margin:0;counter-reset:none;}
-    .mr5-task-row{border-bottom:1px solid #ebe6da;padding:18px 0;margin:0;}
-    .mr5-task-row:last-child{border-bottom:none;}
-    .mr5-task-row.has-capstone{background:linear-gradient(to right, rgba(242,107,31,0.025), transparent 80%);padding-left:14px;padding-right:14px;border-radius:8px;margin-bottom:8px;border-bottom:none;}
-    .mr5-task-head{display:flex;align-items:flex-start;gap:14px;}
-    .mr5-task-idx{font-family:Fraunces,serif;font-size:14px;font-weight:600;color:#F26B1F;flex:0 0 auto;line-height:1.5;letter-spacing:.06em;min-width:24px;}
-    .mr5-task-step{flex:1;font-family:Fraunces,serif;font-size:15.5px;line-height:1.5;color:#0e1116;font-weight:500;}
-    .mr5-task-check{flex:0 0 auto;width:28px;height:28px;border-radius:50%;border:1.5px solid #d1cdc1;background:#fff;color:transparent;font-size:14px;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;}
-    .mr5-task-check:hover{border-color:#F26B1F;}
-    .mr5-task-check.done{background:#1d8444;border-color:#1d8444;color:#fff;}
-
-    .mr5-task-capstone{margin-top:14px;padding-left:38px;}
-    .mr5-task-capstone-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:8px;}
-    .mr5-task-cap-dest{font-family:Inter,sans-serif;font-size:11.5px;color:#6e6e6e;font-weight:500;letter-spacing:.02em;}
-    .mr5-task-cap-dest b{color:#0B1F3A;font-weight:700;}
-    .mr5-task-cap-status{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#999;font-weight:600;font-family:Inter,sans-serif;}
-    .mr5-task-cap-status.saved{color:#1d8444;}
-    .mr5-task-cap-status.saving{color:#a04a13;}
-    .mr5-task-cap-status.error{color:#a01a1a;}
-    .mr5-task-cap-hint{font-family:Fraunces,serif;font-style:italic;font-size:13px;color:#6e6e6e;margin:0 0 10px;line-height:1.5;}
-    .mr5-cap-input{width:100%;font-family:Inter,sans-serif;font-size:14.5px;padding:11px 14px;border:1px solid #ebe6da;border-radius:7px;background:#fafaf8;color:#0e1116;line-height:1.5;}
-    .mr5-cap-input:focus{outline:none;border-color:var(--mr5-accent);background:#fff;}
-    .mr5-cap-input.long{min-height:88px;resize:vertical;font-family:Inter,sans-serif;line-height:1.55;}
-
-    .mr5-tasks-foot{margin-top:24px;padding-top:18px;border-top:1px solid #ebe6da;font-family:Fraunces,serif;color:#6e6e6e;text-align:center;}
-
-    @media (max-width:680px){
-      .mr5-task-row{padding:14px 0;}
-      .mr5-task-row.has-capstone{padding:14px 10px;}
-      .mr5-task-step{font-size:14.5px;}
-      .mr5-task-capstone{padding-left:0;margin-top:10px;}
-      .mr5-tasks-build-msg, .mr5-tasks-do-msg{flex-direction:column;align-items:flex-start;gap:6px;}
-    }
-
-
     /* ── v7.1 Sub-tabs (inside Materials) ── */
     .mr5-subtabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 18px;padding:6px;background:#f4f1ea;border-radius:10px;}
     .mr5-subtab{flex:0 0 auto;padding:8px 16px;font-family:inherit;font-size:12.5px;font-weight:500;color:#6e6e6e;background:transparent;border:none;border-radius:7px;cursor:pointer;letter-spacing:.04em;transition:background .12s,color .12s;display:inline-flex;align-items:center;gap:6px;}
@@ -919,13 +872,10 @@
   // ── Tab strip — module-color underline on active tab ──
   function renderTabStrip(lesson) {
     var quizCount = lesson.quiz && lesson.quiz.questions ? lesson.quiz.questions.length : 0;
-    var taskCount = (lesson.take_action || []).length;
-    var capTaskCount = (lesson.take_action || []).filter(function(a){ return a && typeof a === 'object' && a.capstone_field; }).length;
     var tabs = [
       { id:'lesson',    label:'Lesson',    icon:'▶', count:'' },
-      { id:'tasks',     label:'Tasks',     icon:'⚐', count: taskCount ? (capTaskCount + '/' + taskCount + ' builds plan') : '' },
-      { id:'quiz',      label:'Quiz',      icon:'✓', count: quizCount ? (quizCount + ' Qs') : '' },
       { id:'notes',     label:'Notes',     icon:'✎', count:'' },
+      { id:'quiz',      label:'Quiz',      icon:'✓', count: quizCount ? (quizCount + ' Qs') : '' },
       { id:'materials', label:'Materials', icon:'⊞', count:'' }
     ];
     var html = '<div class="mr5-tabs" role="tablist">';
@@ -987,8 +937,8 @@
     // 03 Core concepts
     html += '<div class="mr5-sec">' + sectionHead(num(), 'Core concepts', 'What to remember') + buildConcepts(lesson.core_concepts) + '</div>';
 
-    // 04 Take action moved to its own first-class Tab in v7.3
-    // (rendered by renderTasksPanel — keeps the Lesson tab focused on watch + concepts + deep-dive)
+    // 04 Take action (no inline Mark Complete CTA — that lives in the sticky bar now)
+    html += '<div class="mr5-sec">' + sectionHead(num(), 'Take action', 'This week’s playbook') + buildActions(lesson.take_action) + '</div>';
 
     // 05 Deeper dive (optional)
     if (lesson.deep_dive && lesson.deep_dive.trim()) {
@@ -1042,89 +992,6 @@
               '<p style="color:#6e6e6e;font-style:italic;">A comprehension check for this lesson is being prepared. For now, complete the Take Action items and continue.</p></div>';
     }
     html += '</div>';
-    return html;
-  }
-
-
-  // ── Panel — Tasks (v7.3): the Capstone-builder surface ──
-  // Each take_action with a capstone_field becomes a focused row that drives user_capstone.
-  // Tasks without a capstone_field are simple do-step rows with a check-off control.
-  function renderTasksPanel(lesson) {
-    var actions = lesson.take_action || [];
-    var html = '<div class="mr5-tabpanel" id="mr5-panel-tasks" role="tabpanel" data-mr-panel="tasks">';
-
-    if (!actions.length) {
-      html += '<div class="mr5-sec"><div class="mr5-sec-h"><span class="mr5-num">⚐</span><h2>No tasks for this lesson</h2><span class="mr5-kicker">—</span></div>';
-      html += '<p style="color:#6e6e6e;font-style:italic;">This lesson is reading + reflection. Continue when ready.</p>';
-      html += '</div></div>';
-      return html;
-    }
-
-    var capCount = actions.filter(function(a){ return a && typeof a === 'object' && a.capstone_field; }).length;
-    var doCount = actions.length - capCount;
-
-    html += '<div class="mr5-sec">';
-    html += '<div class="mr5-sec-h"><span class="mr5-num">⚐</span><h2>This week\'s tasks</h2><span class="mr5-kicker">Build your operating plan</span></div>';
-
-    // Intro / context strip
-    html += '<div class="mr5-tasks-context">';
-    if (capCount > 0) {
-      html += '<div class="mr5-tasks-build-msg">';
-      html += '<span class="mr5-tasks-pill">' + capCount + ' Capstone field' + (capCount===1?'':'s') + '</span>';
-      html += '<span>Filling these saves to <a href="https://joshwark.github.io/mbarock-cdn/capstone/" target="_blank" rel="noopener">your Business Plan</a> automatically. No copying, no syncing — the dossier updates itself.</span>';
-      html += '</div>';
-    }
-    if (doCount > 0) {
-      html += '<div class="mr5-tasks-do-msg">';
-      html += '<span class="mr5-tasks-pill ghost">' + doCount + ' action' + (doCount===1?'':'s') + '</span>';
-      html += '<span>Step' + (doCount===1?'':'s') + ' to do this week. Mark complete as you go.</span>';
-      html += '</div>';
-    }
-    html += '</div>';
-
-    // Each task row
-    html += '<ol class="mr5-tasks-list">';
-    actions.forEach(function(a, i) {
-      var isObj = a && typeof a === 'object';
-      var step = isObj ? a.step : a;
-      var capField = isObj ? a.capstone_field : null;
-      var capLong = isObj && a.input_type !== 'short-text';
-      var hint = isObj ? (a.hint || '') : '';
-
-      html += '<li class="mr5-task-row' + (capField ? ' has-capstone' : '') + '">';
-      html += '<div class="mr5-task-head">';
-      html += '<span class="mr5-task-idx">' + String(i+1).padStart(2,'0') + '</span>';
-      html += '<div class="mr5-task-step">' + esc(step) + '</div>';
-      if (!capField) {
-        html += '<button class="mr5-task-check mr5-check" data-action-idx="' + i + '" aria-label="Mark task complete">✓</button>';
-      }
-      html += '</div>';
-
-      if (capField) {
-        html += '<div class="mr5-task-capstone">';
-        html += '<div class="mr5-task-capstone-head">';
-        html += '<span class="mr5-task-cap-dest">→ Builds <b>§' + esc(capField) + '</b> in your Business Plan</span>';
-        html += '<span class="mr5-task-cap-status" data-cap-status="' + esc(capField) + '">—</span>';
-        html += '</div>';
-        if (hint) html += '<p class="mr5-task-cap-hint">' + esc(hint) + '</p>';
-        if (capLong) {
-          html += '<textarea class="mr5-cap-input long" data-cap-field="' + esc(capField) + '" placeholder="Write your commitment here — saves to the dossier" rows="4"></textarea>';
-        } else {
-          html += '<input type="text" class="mr5-cap-input" data-cap-field="' + esc(capField) + '" placeholder="Short answer — saves to the dossier">';
-        }
-        html += '</div>';
-      }
-
-      html += '</li>';
-    });
-    html += '</ol>';
-
-    html += '<div class="mr5-tasks-foot">';
-    html += '<small><em>The Tasks tab is the heart of MBA Rock\'s Capstone build: complete the course, complete the plan.</em></small>';
-    html += '</div>';
-
-    html += '</div>'; // /sec
-    html += '</div>'; // /tabpanel
     return html;
   }
 
@@ -1218,11 +1085,10 @@
     // Tab strip
     html += renderTabStrip(lesson);
 
-    // Tab panels — all five rendered into the DOM, only the active one shown
+    // Tab panels — all four rendered into the DOM, only the active one shown
     html += renderLessonPanel(lesson, v2, prog, mod, logoUrl);
-    html += renderTasksPanel(lesson);
-    html += renderQuizPanel(lesson);
     html += renderNotesPanel(lesson);
+    html += renderQuizPanel(lesson);
     html += renderMaterialsPanel(lesson, mod);
 
     // Sticky bottom CTA
@@ -1297,7 +1163,7 @@
     try {
       var p = new URLSearchParams(window.location.search);
       var t = p.get('tab');
-      if (t && ['lesson','tasks','quiz','notes','materials'].indexOf(t) !== -1) return t;
+      if (t && ['lesson','notes','quiz','materials'].indexOf(t) !== -1) return t;
     } catch (e) {}
     return null;
   }
@@ -1333,23 +1199,6 @@
     // Lesson tab — complete iff Mark Complete was clicked
     try {
       if (localStorage.getItem('mr-lesson-complete:' + lesson.id)) setTabState(container, 'lesson', 'complete');
-    } catch (e) {}
-    // Tasks tab — complete iff every capstone-field task has a saved value
-    try {
-      var capFields = (lesson.take_action || []).filter(function(a){ return a && typeof a === 'object' && a.capstone_field; }).map(function(a){ return a.capstone_field; });
-      if (capFields.length) {
-        var capData = JSON.parse(localStorage.getItem('mr-capstone:' + mid) || '{}');
-        var done = 0;
-        capFields.forEach(function(cf){
-          // capstone field is dot-separated: section.field
-          var parts = cf.split('.');
-          var section = parts[0], field = parts.slice(1).join('.') || parts[0];
-          var v = capData[section] && capData[section][field];
-          if (v && String(v).trim()) done++;
-        });
-        if (done === capFields.length) setTabState(container, 'tasks', 'complete');
-        else if (done > 0) setTabState(container, 'tasks', 'in-progress');
-      }
     } catch (e) {}
     // Notes tab — in-progress iff any note exists for this lesson
     try {
