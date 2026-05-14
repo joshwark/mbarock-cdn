@@ -498,5 +498,64 @@ function escapeHtml(s) {
 // ── Init ──
 loadState();
 </script>
+<script id="progressive-capstone">
+(function(){
+  function collapseAllExceptCurrent() {
+    try {
+      // Find section containers
+      var sections = document.querySelectorAll('[data-cap-section], section.cap-section, .capstone-section');
+      if (!sections.length) return;
+      
+      // Determine "current" module from progress (most recent lesson worked on)
+      var memberId = localStorage.getItem('mba-rock-member-id') || '';
+      var currentSectionKey = localStorage.getItem('mr-active-cap-section') || 'numbers';
+      
+      sections.forEach(function(sec){
+        var key = sec.getAttribute('data-cap-section') || sec.getAttribute('data-section') || sec.id || '';
+        var isActive = key.toLowerCase().includes(currentSectionKey.toLowerCase()) 
+                       || (currentSectionKey === 'numbers' && key.toLowerCase().includes('numbers'));
+        
+        // Add toggle button if not present
+        if (!sec.querySelector('.cap-toggle-btn')) {
+          var header = sec.querySelector('h2, h3, .section-title, [class*="title"]');
+          if (header) {
+            var btn = document.createElement('button');
+            btn.className = 'cap-toggle-btn';
+            btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+            btn.innerHTML = isActive ? '▼' : '▶';
+            btn.style.cssText = 'background:none;border:none;cursor:pointer;font-size:14px;color:#475569;margin-right:8px;padding:4px;';
+            btn.addEventListener('click', function(e){
+              e.preventDefault();
+              var expanded = btn.getAttribute('aria-expanded') === 'true';
+              btn.setAttribute('aria-expanded', !expanded);
+              btn.innerHTML = !expanded ? '▼' : '▶';
+              var body = sec.querySelector('.cap-section-body, .section-body') 
+                || Array.from(sec.children).filter(function(c){return c !== header && !c.classList.contains('cap-toggle-btn');});
+              if (Array.isArray(body)) {
+                body.forEach(function(c){ c.style.display = !expanded ? '' : 'none'; });
+              } else if (body) {
+                body.style.display = !expanded ? '' : 'none';
+              }
+            });
+            header.insertBefore(btn, header.firstChild);
+          }
+        }
+        
+        // Initial collapsed state for non-active sections
+        if (!isActive) {
+          var children = Array.from(sec.children).filter(function(c){
+            return !c.matches('h2, h3, .section-title, [class*="title"]') && !c.classList.contains('cap-toggle-btn');
+          });
+          children.forEach(function(c){ c.style.display = 'none'; });
+        }
+      });
+    } catch(e) { console.warn('[capstone progressive]', e); }
+  }
+  
+  if (document.readyState !== 'loading') collapseAllExceptCurrent();
+  else document.addEventListener('DOMContentLoaded', collapseAllExceptCurrent);
+  setTimeout(collapseAllExceptCurrent, 2000);
+})();
+</script>
 </body>
 </html>
