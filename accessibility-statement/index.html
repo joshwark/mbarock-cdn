@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Accessibility Statement · MBA Rock</title>
+<meta name="description" content="MBA Rock is committed to digital accessibility. WCAG 2.1 AA conformance, our accessibility widget, and how to report issues.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A;--orange:#F26B1F;--orange-soft:#FCE5D4;--ink:#1A1208;--ink-2:#3D3025;
+    --paper:#FDFAF1;--cream:#F8F1E1;--line:#E8DFC8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);font-weight:700;line-height:1.15;letter-spacing:-0.015em}
+  h1{font-size:clamp(36px,5vw,52px);font-weight:800;letter-spacing:-0.025em}
+  h2{font-size:clamp(24px,3vw,32px);margin-top:48px;margin-bottom:14px}
+  h3{font-size:20px;margin-top:24px;margin-bottom:8px;color:var(--ink)}
+  p{font-size:17px;color:var(--ink-2);margin-bottom:14px}
+  ul,ol{margin:0 0 18px 24px;color:var(--ink-2)}
+  li{margin-bottom:8px;font-size:16px;line-height:1.6}
+  .inner{max-width:780px;margin:0 auto;padding:0 28px}
+  a{color:var(--orange);text-decoration:underline;font-weight:600;text-underline-offset:3px}
+  a:hover{text-decoration:none}
+  a:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+
+  .topnav{background:var(--navy);color:var(--paper);padding:16px 0;font-size:13px}
+  .topnav .inner{display:flex;align-items:center;justify-content:space-between;max-width:1080px}
+  .topnav .brand{font-family:'Fraunces';font-size:22px;font-weight:700;color:var(--paper);text-decoration:none}
+  .topnav nav a{color:rgba(253,250,241,0.78);text-decoration:none;font-weight:500;margin-left:22px}
+  .topnav nav a:hover{color:var(--paper)}
+
+  .hero{background:linear-gradient(180deg,#0B1F3A 0%,#152D52 100%);color:var(--paper);padding:60px 0 80px;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 60% at 80% 0%,rgba(242,107,31,0.18) 0%,transparent 60%);pointer-events:none}
+  .hero .inner{position:relative}
+  .hero h1{color:var(--paper);max-width:680px}
+  .hero p{color:rgba(253,250,241,0.86);font-size:20px;margin-top:18px;max-width:640px}
+  .badges{margin-top:32px;display:flex;gap:10px;flex-wrap:wrap}
+  .badge{display:inline-block;padding:6px 14px;background:rgba(242,107,31,0.16);color:var(--orange);border:1px solid rgba(242,107,31,0.35);border-radius:999px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700}
+  .badge.green{background:rgba(46,125,90,0.16);color:#7AC09A;border-color:rgba(46,125,90,0.35)}
+
+  .section{padding:48px 0;border-bottom:1px solid var(--line)}
+  .meta{background:var(--cream);border-radius:12px;padding:24px 28px;margin:24px 0;font-size:15px}
+  .meta strong{color:var(--navy)}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14.5px}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:var(--cream);font-weight:700;font-family:'Fraunces';color:var(--navy)}
+  .ok{color:#2E7D5A;font-weight:700}
+  .partial{color:#C49A1C;font-weight:700}
+
+  footer{background:var(--ink);color:rgba(253,250,241,0.7);padding:32px 0;font-size:14px;text-align:center;margin-top:48px}
+  footer a{color:var(--orange)}
+
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<a href="#main" class="ada-skip" style="position:absolute;top:-100px;left:8px;z-index:99;background:#0B1F3A;color:#FDFAF1;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:700">Skip to main content</a>
+
+<header class="topnav">
+  <div class="inner">
+    <a href="https://www.mbarock.com" class="brand">MBA Rock</a>
+    <nav><a href="https://www.mbarock.com">Home</a><a href="mailto:help@bettertogetherbranding.ai">Contact</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="inner">
+    <h1>Accessibility Statement</h1>
+    <p>MBA Rock is committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone and apply the relevant accessibility standards.</p>
+    <div class="badges">
+      <span class="badge">WCAG 2.1 Level AA — Target</span>
+      <span class="badge green">Accessibility widget active</span>
+    </div>
+  </div>
+</section>
+
+<main id="main">
+<div class="inner">
+
+<section class="section">
+<h2>Conformance status</h2>
+<p>The <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines (WCAG)</a> define requirements for designers and developers to improve accessibility for people with disabilities. They define three levels of conformance: Level A, Level AA, and Level AAA.</p>
+<p><strong>MBA Rock targets WCAG 2.1 Level AA conformance.</strong> This statement describes how MBA Rock conforms, identifies any non-conformant areas, and explains how to report issues.</p>
+
+<div class="meta">
+  <p style="margin-bottom:0"><strong>Last reviewed:</strong> 2026-05-15<br>
+  <strong>Statement prepared by:</strong> MBA Rock with the assistance of the Better Together Branding accessibility team.<br>
+  <strong>Statement version:</strong> v1.0</p>
+</div>
+</section>
+
+<section class="section">
+<h2>Measures taken to support accessibility</h2>
+<p>MBA Rock takes the following measures to ensure accessibility:</p>
+<ul>
+  <li>Includes accessibility as part of our mission statement and core values.</li>
+  <li>Includes accessibility throughout our internal policies.</li>
+  <li>Designs with accessibility as a first-class requirement, not a post-hoc adjustment.</li>
+  <li>Provides an on-site accessibility widget that lets users adjust the experience to their needs (text size, font, contrast, cursor size, animation, reading aids).</li>
+  <li>Tests against WCAG 2.1 Level AA criteria on every public page release.</li>
+  <li>Welcomes user feedback and responds within five business days.</li>
+</ul>
+</section>
+
+<section class="section">
+<h2>What our accessibility widget does</h2>
+<p>Look for the floating accessibility button (the ♿ icon in the corner of every page). It opens a panel where you can adjust:</p>
+<table>
+  <tr><th>Feature</th><th>Options</th></tr>
+  <tr><td>Text size</td><td>100% · 125% · 150% · 200%</td></tr>
+  <tr><td>Font</td><td>Default · Dyslexia-friendly (OpenDyslexic) · Readable serif</td></tr>
+  <tr><td>Contrast</td><td>Default · High contrast · Dark · Monochrome</td></tr>
+  <tr><td>Cursor</td><td>Normal · Large · Extra-large</td></tr>
+  <tr><td>Animations</td><td>Pause all animations and transitions</td></tr>
+  <tr><td>Links</td><td>Underline every link for clarity</td></tr>
+  <tr><td>Headings</td><td>Highlight every heading for easier navigation</td></tr>
+  <tr><td>Images</td><td>Display image alt text inline</td></tr>
+  <tr><td>Reading mask</td><td>Spotlight that follows your cursor to reduce visual noise</td></tr>
+  <tr><td>Keyboard navigation</td><td>Enhanced focus indicators (4px outline)</td></tr>
+  <tr><td>Read aloud</td><td>Click any paragraph to have it read by the browser's text-to-speech</td></tr>
+</table>
+<p>Your preferences are saved in your browser and persist across visits. You can reset everything to default at any time from the widget panel.</p>
+</section>
+
+<section class="section">
+<h2>WCAG 2.1 AA conformance — self-audit</h2>
+<p>This self-audit reflects our internal review as of the date above. Items marked Partial indicate areas where we have a remediation plan in progress.</p>
+<table>
+  <tr><th>Principle</th><th>Coverage</th><th>Notes</th></tr>
+  <tr><td>1. Perceivable</td><td class="ok">Full</td><td>Text alternatives, captions, contrast ratios audited.</td></tr>
+  <tr><td>2. Operable</td><td class="ok">Full</td><td>Keyboard accessible, no seizure triggers, navigable structure.</td></tr>
+  <tr><td>3. Understandable</td><td class="ok">Full</td><td>Readable language declared, consistent navigation, error identification.</td></tr>
+  <tr><td>4. Robust</td><td class="ok">Full</td><td>Valid HTML, ARIA where appropriate, compatibility tested against current and prior browser versions.</td></tr>
+  <tr><td>Touch target size (2.5.5)</td><td class="ok">Full</td><td>Minimum 44×44 px on all interactive elements.</td></tr>
+  <tr><td>Reduced motion (2.3.3)</td><td class="ok">Full</td><td>`prefers-reduced-motion` honored site-wide.</td></tr>
+  <tr><td>Focus visible (2.4.7)</td><td class="ok">Full</td><td>3 px orange outline on every focusable element.</td></tr>
+  <tr><td>Audio descriptions for video</td><td class="partial">Partial</td><td>Lesson videos include transcripts; full audio description tracks are in progress.</td></tr>
+</table>
+</section>
+
+<section class="section">
+<h2>Compatibility with browsers and assistive technology</h2>
+<p>MBA Rock is designed to be compatible with the following:</p>
+<ul>
+  <li>Latest two versions of Chrome, Firefox, Safari, and Edge.</li>
+  <li>VoiceOver (macOS, iOS).</li>
+  <li>NVDA and JAWS (Windows).</li>
+  <li>TalkBack (Android).</li>
+  <li>iOS and Android system-level accessibility settings (Dynamic Type, Smart Invert, Display Zoom).</li>
+</ul>
+<p>If you use a different browser or assistive technology and encounter an issue, please let us know — we'd like to support you.</p>
+</section>
+
+<section class="section">
+<h2>Known limitations</h2>
+<p>Despite our best efforts, the following limitations may exist:</p>
+<ul>
+  <li><strong>Embedded third-party content:</strong> Some embedded video players (where used) may not be fully keyboard accessible. We are working with vendors to address this.</li>
+  <li><strong>Member-generated content:</strong> Notes and Capstone responses that members create are not subject to our accessibility review.</li>
+  <li><strong>Audio descriptions:</strong> Currently in progress. Full transcripts are available for all video content.</li>
+</ul>
+</section>
+
+<section class="section">
+<h2>How to report accessibility issues</h2>
+<p>We welcome your feedback on the accessibility of MBA Rock. If you encounter accessibility barriers, please contact us:</p>
+<ul>
+  <li><strong>Email:</strong> <a href="mailto:help@bettertogetherbranding.ai">help@bettertogetherbranding.ai</a></li>
+  <li><strong>Response time:</strong> We try to respond within five business days.</li>
+</ul>
+<p>When reporting an issue, please include:</p>
+<ol>
+  <li>The URL of the page where the issue occurred.</li>
+  <li>A description of what happened and what you expected.</li>
+  <li>Your browser, operating system, and assistive technology (if any).</li>
+</ol>
+</section>
+
+<section class="section">
+<h2>Formal complaints</h2>
+<p>If you are not satisfied with our response, you have the right to file a formal complaint with the appropriate enforcement body. For US residents, the <a href="https://www.ada.gov">ADA.gov website</a> offers guidance on enforcement and complaint procedures.</p>
+</section>
+
+<section class="section">
+<h2>Date of statement</h2>
+<p>This statement was created on <strong>2026-05-15</strong> using the BTB Accessibility Statement Generator (v1.0).</p>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="inner">
+    <p>MBA Rock · An album-paced operator playbook.</p>
+    <p style="margin-top:6px"><a href="mailto:help@bettertogetherbranding.ai">help@bettertogetherbranding.ai</a> · <a href="https://www.mbarock.com">mbarock.com</a></p>
+  </div>
+</footer>
+
+<!-- Load the accessibility widget on this page too -->
+<script>window.__ADA_CONFIG = { brand:'mba-rock', showBadge:false, statementUrl:'/accessibility-statement' };</script>
+<script src="https://joshwark.github.io/mbarock-cdn/accessibility/widget.js" defer></script>
+
+</body>
+</html>
