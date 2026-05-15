@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Brand is a Promise Â· MBA Rock â Free Sample Lesson</title>
+<title>Brand is a Promise · MBA Rock — Free Sample Lesson</title>
 <meta name="description" content="A real, complete lesson from MBA Rock. Audio, song, framework, Take Action. The kind of lesson you'll get 74 more of when you join.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
     --cream:#F8F1E1;
     --cream-2:#F3EAD2;
     --line:#E8DFC8;
-    --m9:#9C3CB8;
+    --m9:#9C3CB8; /* M9 brand purple */
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -35,18 +35,23 @@
   .eyebrow{display:inline-block;font-family:'Inter';font-size:12px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:var(--orange);margin-bottom:14px}
   .cta{display:inline-block;padding:16px 36px;background:var(--orange);color:#fff;font-weight:700;font-size:16px;letter-spacing:0.04em;border-radius:999px;text-decoration:none;min-height:48px;line-height:1.4;transition:transform .12s ease;box-shadow:0 4px 16px rgba(242,107,31,0.22)}
   .cta:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(242,107,31,0.32)}
+  .cta.ghost{background:transparent;color:var(--paper);border:2px solid rgba(253,250,241,0.45);box-shadow:none}
+  .cta.ghost:hover{background:rgba(253,250,241,0.08)}
   a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 
+  /* Free-sample banner */
   .sample-bar{background:var(--orange);color:#fff;text-align:center;padding:12px 16px;font-size:13.5px;font-weight:600;letter-spacing:0.02em}
   .sample-bar b{font-weight:800}
   .sample-bar a{color:#fff;text-decoration:underline;font-weight:700;margin-left:6px}
 
+  /* Top nav */
   .topnav{background:var(--navy);color:var(--paper);padding:14px 0;font-size:13px;letter-spacing:0.04em}
   .topnav .inner{max-width:1080px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .topnav .brand{font-family:'Fraunces';font-size:22px;font-weight:700;color:var(--paper);text-decoration:none}
   .topnav nav a{color:rgba(253,250,241,0.78);text-decoration:none;font-weight:500;margin-left:22px}
   .topnav nav a:hover{color:var(--paper)}
 
+  /* Hero */
   .hero{background:linear-gradient(180deg,#0B1F3A 0%,#152D52 100%);color:var(--paper);padding:60px 0 76px;position:relative;overflow:hidden}
   .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 60% at 80% 0%,rgba(156,60,184,0.20) 0%,transparent 60%),radial-gradient(50% 50% at 0% 100%,rgba(242,107,31,0.12) 0%,transparent 60%);pointer-events:none}
   .hero .inner{position:relative}
@@ -55,6 +60,7 @@
   .lesson-meta{margin-top:24px;display:flex;gap:22px;font-size:13.5px;color:rgba(253,250,241,0.7);flex-wrap:wrap}
   .lesson-meta b{color:var(--paper);font-weight:600}
 
+  /* Media slots (audio overview + song) */
   .media{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px;display:flex;align-items:center;gap:18px}
   .media-icon{width:52px;height:52px;border-radius:14px;background:var(--orange-soft);color:#8A3D0E;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
   .media-icon.song{background:rgba(156,60,184,0.14);color:var(--m9)}
@@ -65,17 +71,21 @@
   .media-text .sub{font-size:13px;color:var(--ink-2)}
   .media audio{width:100%;margin-top:8px;height:36px}
 
+  /* Section base */
   .section{padding:56px 0;border-bottom:1px solid var(--line)}
   .section.alt{background:var(--cream)}
 
+  /* Framework card */
   .framework{background:#fff;border:1px solid var(--line);border-radius:18px;padding:36px;margin-top:28px;box-shadow:0 4px 18px rgba(60,40,15,0.04)}
   .framework .formula{background:var(--cream-2);border:1px solid var(--line);border-radius:12px;padding:24px;text-align:center;margin:20px 0;font-family:'Fraunces';font-weight:700;color:var(--navy);font-size:clamp(20px,2.8vw,28px);line-height:1.4}
   .framework .formula em{color:var(--orange);font-style:normal}
   .framework .formula .mult{color:var(--ink-2);margin:0 14px;font-weight:400}
 
+  /* Pull quote */
   .pq{font-family:'Fraunces';font-size:clamp(22px,3vw,30px);font-weight:600;color:var(--navy);line-height:1.3;padding:24px 28px;border-left:4px solid var(--orange);background:var(--cream);margin:32px 0;border-radius:0 12px 12px 0}
   .pq small{display:block;font-family:'Inter';font-size:13px;color:var(--ink-2);letter-spacing:0.06em;margin-top:8px;font-weight:600;text-transform:uppercase}
 
+  /* Examples */
   .examples{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
   @media(max-width:880px){.examples{grid-template-columns:1fr}}
   .ex{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px}
@@ -84,6 +94,7 @@
   .ex p{font-size:14.5px;color:var(--ink-2);margin:0}
   .ex.bad .who{color:#a01a1a}
 
+  /* Take Action */
   .action{background:linear-gradient(135deg,#FFFAF2 0%,var(--cream) 100%);border:2px solid var(--orange);border-radius:18px;padding:32px;margin-top:28px;position:relative;box-shadow:0 8px 28px rgba(242,107,31,0.10)}
   .action .badge{display:inline-block;background:var(--orange);color:#fff;padding:5px 12px;border-radius:999px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800;margin-bottom:14px}
   .action h3{margin-bottom:10px;font-size:24px}
@@ -93,9 +104,11 @@
   .action .note{margin-top:12px;font-size:13px;color:var(--ink-2)}
   .action .note b{color:var(--orange)}
 
+  /* Concept body */
   .body p+p{margin-top:18px}
   .body strong{color:var(--ink);font-weight:700}
 
+  /* Final CTA */
   .final-cta{background:var(--navy);color:var(--paper);text-align:center;padding:80px 0;position:relative;overflow:hidden}
   .final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(50% 60% at 50% 0%,rgba(242,107,31,0.18) 0%,transparent 70%);pointer-events:none}
   .final-cta .inner{position:relative}
@@ -116,7 +129,7 @@
 <body>
 
 <div class="sample-bar">
-  ð <b>Free sample lesson</b> â this is the full thing. 74 more like it when you join MBA Rock. <a href="https://www.mbarock.com/mba-rock">Get the rest â</a>
+  🎁 <b>Free sample lesson</b> — this is the full thing. 74 more like it when you join MBA Rock. <a href="https://www.mbarock.com/mba-rock">Get the rest →</a>
 </div>
 
 <header class="topnav">
@@ -133,14 +146,14 @@
 
 <section class="hero">
   <div class="inner">
-    <span class="module-chip"><span class="dot"></span> Module 7 · Marketing & Brand · Lesson 2 — Brand Positioning & Messaging</span>
+    <span class="module-chip"><span class="dot"></span> Module 7 · Marketing &amp; Brand · Lesson 2 — Brand Positioning &amp; Messaging</span>
     <h1>Brand is a Promise.</h1>
-    <p class="lead">Every brand is a one-sentence promise â said or unsaid. The job isn't to invent the promise. The job is to find the one you can keep, and then keep it. Loudly. Forever.</p>
+    <p class="lead">Every brand is a one-sentence promise — said or unsaid. The job isn't to invent the promise. The job is to find the one you can keep, and then keep it. Loudly. Forever.</p>
     <div class="lesson-meta">
-      <div>â± <b>8 min lesson</b></div>
-      <div>ð§ Audio + song</div>
-      <div>â 1 Take Action</div>
-      <div>ð Maps to Capstone Â§ 7</div>
+      <div>⏱ <b>8 min lesson</b></div>
+      <div>🎧 Audio + song (3:42)</div>
+      <div>✍ 1 Take Action</div>
+      <div>📋 Maps to Capstone § 7 · Brand &amp; Voice</div>
     </div>
   </div>
 </section>
@@ -148,22 +161,26 @@
 <section class="section">
   <div class="inner">
 
+    <!-- AUDIO OVERVIEW -->
     <div class="media">
-      <div class="media-icon">ð§</div>
+      <div class="media-icon">🎧</div>
       <div class="media-text">
-        <div class="label">Audio overview Â· 3 min</div>
-        <div class="title">"Brand is a Promise" â the framework, explained</div>
+        <div class="label">Audio overview · 3 min</div>
+        <div class="title">"Brand is a Promise" — the framework, explained</div>
         <div class="sub">Listen while you read, or play it on your morning walk.</div>
+        <!-- TODO Josh: drop MP3 at /sample/audio/brand-is-a-promise-overview.mp3 -->
         <audio controls preload="none" src="audio/brand-is-a-promise-overview.mp3">Your browser doesn't support audio playback.</audio>
       </div>
     </div>
 
+    <!-- THE SONG -->
     <div class="media">
-      <div class="media-icon song">ðµ</div>
+      <div class="media-icon song">🎵</div>
       <div class="media-text">
-        <div class="label song">The song Â· 3:42</div>
-        <div class="title">"Promise" â by MBA Rock</div>
+        <div class="label song">The song · 3:42</div>
+        <div class="title">"Promise" — by MBA Rock</div>
         <div class="sub">Every lesson ships with an original song. They're how the ideas stick.</div>
+        <!-- TODO Josh: drop MP3 at /sample/audio/promise.mp3 -->
         <audio controls preload="none" src="audio/promise.mp3">Your browser doesn't support audio playback.</audio>
       </div>
     </div>
@@ -174,11 +191,11 @@
     <div class="body" style="margin-top:18px">
       <p>Most founders think brand is a logo. Or a tagline. Or a color palette. None of those are the brand. They're <strong>signals of</strong> the brand. The brand itself is something simpler and harder:</p>
 
-      <div class="pq">"Brand is the promise customers expect you to keep â built up from every interaction they've had with you, before they've even met you."<small>â Operator's Field Guide, MBA Rock</small></div>
+      <div class="pq">"Brand is the promise customers expect you to keep — built up from every interaction they've had with you, before they've even met you."<small>— Operator's Field Guide, MBA Rock</small></div>
 
-      <p>If you sell coffee, your brand is a promise about what every cup will taste like â and what the room will feel like while they drink it. If you sell software, your brand is a promise about how the product behaves when something goes wrong at 11pm. If you sell consulting, your brand is a promise about who picks up the phone, and how soon.</p>
+      <p>If you sell coffee, your brand is a promise about what every cup will taste like — and what the room will feel like while they drink it. If you sell software, your brand is a promise about how the product behaves when something goes wrong at 11pm. If you sell consulting, your brand is a promise about who picks up the phone, and how soon.</p>
 
-      <p>The logo, the colors, the website, the launch announcement â those are signals that <em>encode</em> the promise. They can be beautiful and still be wrong. They can be ugly and still be right. <strong>What makes them right is whether they correctly signal the promise you can actually keep.</strong></p>
+      <p>The logo, the colors, the website, the launch announcement — those are signals that <em>encode</em> the promise. They can be beautiful and still be wrong. They can be ugly and still be right. <strong>What makes them right is whether they correctly signal the promise you can actually keep.</strong></p>
 
       <p>That's the asymmetry that kills most early brands: they pick a promise their operating reality cannot deliver on. The marketing was honest. The product was honest. They just didn't line up.</p>
     </div>
@@ -191,10 +208,10 @@
     <h2>The two-part equation.</h2>
 
     <div class="framework">
-      <p style="font-size:16px;line-height:1.65;color:var(--ink-2)">A brand isn't a single act. It's the multiplication of two things â a thing you say and a thing you do, compounded over time:</p>
+      <p style="font-size:16px;line-height:1.65;color:var(--ink-2)">A brand isn't a single act. It's the multiplication of two things — a thing you say and a thing you do, compounded over time:</p>
 
       <div class="formula">
-        Brand = <em>(Promise made)</em><span class="mult">Ã</span><em>(Promise kept consistently)</em>
+        Brand = <em>(Promise made)</em><span class="mult">×</span><em>(Promise kept consistently)</em>
       </div>
 
       <p style="font-size:16px;line-height:1.65;color:var(--ink-2)"><strong>If either side is zero, the brand is zero.</strong></p>
@@ -206,24 +223,24 @@
     <h3 style="margin-top:40px">Real-world examples</h3>
     <div class="examples">
       <div class="ex">
-        <div class="who">â Promise made + kept</div>
+        <div class="who">✓ Promise made + kept</div>
         <h4>In-N-Out Burger</h4>
-        <p>Promise: "Fresh, simple, fast, never frozen." Kept since 1948. The whole brand â building, menu, uniforms, ingredients â encodes the same promise. Every part you can verify confirms what they said.</p>
+        <p>Promise: "Fresh, simple, fast, never frozen." Kept since 1948. The whole brand — building, menu, uniforms, ingredients — encodes the same promise. Every part you can verify confirms what they said.</p>
       </div>
       <div class="ex">
-        <div class="who">â Promise made + kept</div>
+        <div class="who">✓ Promise made + kept</div>
         <h4>Patagonia</h4>
         <p>Promise: "We'll make gear that lasts, and we'll back it up." Kept through 50 years of repair guarantees, take-back programs, and the famous "Don't buy this jacket" ad. Customers pay 2x for the same down because the promise is credible.</p>
       </div>
       <div class="ex bad">
-        <div class="who">â Promise made + broken</div>
+        <div class="who">✗ Promise made + broken</div>
         <h4>The "Eco-friendly" Fashion Brand</h4>
         <p>Promise: "Sustainable, ethical, low-impact." Reality: same factories, same fabrics, just better photography. Customer trust collapses the moment one report surfaces. Years of marketing spend evaporate in a week.</p>
       </div>
       <div class="ex bad">
-        <div class="who">â Promise made + ambiguous</div>
+        <div class="who">✗ Promise made + ambiguous</div>
         <h4>The "Innovative" Startup</h4>
-        <p>"Innovative" is not a promise â it's a vibe. Customers can't tell what you'll deliver, can't tell when you've delivered it, can't tell when you've broken it. You spend marketing dollars without compounding brand equity.</p>
+        <p>"Innovative" is not a promise — it's a vibe. Customers can't tell what you'll deliver, can't tell when you've delivered it, can't tell when you've broken it. You spend marketing dollars without compounding brand equity.</p>
       </div>
     </div>
   </div>
@@ -233,11 +250,11 @@
   <div class="inner">
     <span class="eyebrow">Take Action</span>
     <div class="action">
-      <span class="badge">Your turn Â· 5 min</span>
+      <span class="badge">Your turn · 5 min</span>
       <h3>Write your one-line promise.</h3>
-      <p class="prompt">In one sentence, what's the promise your customer should expect you to keep â every time, no matter what? It should be specific enough that you could fail it (vague promises can't be broken, and therefore can't be trusted).</p>
+      <p class="prompt">In one sentence, what's the promise your customer should expect you to keep — every time, no matter what? It should be specific enough that you could fail it (vague promises can't be broken, and therefore can't be trusted).</p>
       <textarea placeholder="My promise to customers is..."></textarea>
-      <div class="note"><b>Note:</b> in the full course, this answer auto-saves and lands in your Capstone, Section 7 (Brand &amp; Voice). Here, it's just for you â copy it before you leave the page.</div>
+      <div class="note"><b>Note:</b> in the full course, this answer auto-saves and lands in your Capstone, Section 7 (Brand &amp; Voice). Here, it's just for you — copy it before you leave the page.</div>
     </div>
 
     <h3 style="margin-top:48px">If you want a sharper answer, try the three tests</h3>
@@ -253,20 +270,20 @@
   <div class="inner">
     <span class="eyebrow" style="color:var(--orange)">This is 1 of 74 lessons</span>
     <h2>The other 73 are waiting.</h2>
-    <p>Cash, markets, operations, growth, capital, brand, story, distribution â 10 modules, 49 original songs, 18 calculators, and a Capstone business plan you finish with. Built album-paced. Yours for life.</p>
+    <p>Cash, markets, operations, growth, capital, brand, story, distribution — 10 modules, 49 original songs, 18 calculators, and a Capstone business plan you finish with. Built album-paced. Yours for life.</p>
     <div class="price-row">
       <span class="anchor">$999.99</span>
       <span class="now">$499</span>
-      <span class="code">with code FOUNDERS Â· through June 30</span>
+      <span class="code">with code FOUNDERS · through June 30</span>
     </div>
-    <a href="https://www.mbarock.com/mba-rock" class="cta">Get the rest of MBA Rock â</a>
-    <p class="micro">Founders' rate locked in for life Â· no recurring fees Â· 11 verifiable certificates</p>
+    <a href="https://www.mbarock.com/mba-rock" class="cta">Get the rest of MBA Rock →</a>
+    <p class="micro">Founders' rate locked in for life · no recurring fees · 11 verifiable certificates</p>
   </div>
 </section>
 
 <footer>
   <div class="inner">
-    <p>MBA Rock Â· Sample lesson â "Brand is a Promise" (Module 7: Marketing & Brand, Lesson 2)</p>
+    <p>MBA Rock · Sample lesson — "Brand is a Promise" (Module 7: Marketing &amp; Brand, Lesson 2)</p>
     <p style="margin-top:6px">Questions: <a href="mailto:help@bettertogetherbranding.ai">help@bettertogetherbranding.ai</a></p>
   </div>
 </footer>
