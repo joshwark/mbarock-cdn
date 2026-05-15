@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brand is a Promise · MBA Rock — Free Sample Lesson</title>
+<meta name="description" content="A real, complete lesson from MBA Rock. Audio, song, framework, Take Action. The kind of lesson you'll get 74 more of when you join.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A;
+    --navy-2:#152D52;
+    --orange:#F26B1F;
+    --orange-soft:#FCE5D4;
+    --ink:#1A1208;
+    --ink-2:#3D3025;
+    --paper:#FDFAF1;
+    --cream:#F8F1E1;
+    --cream-2:#F3EAD2;
+    --line:#E8DFC8;
+    --m9:#9C3CB8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.65}
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.015em;color:var(--ink);font-weight:700;line-height:1.12}
+  h1{font-size:clamp(36px,5.5vw,60px);font-weight:800;letter-spacing:-0.025em;color:var(--paper)}
+  h2{font-size:clamp(26px,3vw,36px);font-weight:700;color:var(--navy)}
+  h3{font-size:22px;font-weight:600;color:var(--navy)}
+  p{font-size:17px;line-height:1.7;color:var(--ink-2)}
+  .lead{font-size:19px;line-height:1.55;max-width:680px}
+  .inner{max-width:920px;margin:0 auto;padding:0 28px}
+  .eyebrow{display:inline-block;font-family:'Inter';font-size:12px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:var(--orange);margin-bottom:14px}
+  .cta{display:inline-block;padding:16px 36px;background:var(--orange);color:#fff;font-weight:700;font-size:16px;letter-spacing:0.04em;border-radius:999px;text-decoration:none;min-height:48px;line-height:1.4;transition:transform .12s ease;box-shadow:0 4px 16px rgba(242,107,31,0.22)}
+  .cta:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(242,107,31,0.32)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+
+  .sample-bar{background:var(--orange);color:#fff;text-align:center;padding:12px 16px;font-size:13.5px;font-weight:600;letter-spacing:0.02em}
+  .sample-bar b{font-weight:800}
+  .sample-bar a{color:#fff;text-decoration:underline;font-weight:700;margin-left:6px}
+
+  .topnav{background:var(--navy);color:var(--paper);padding:14px 0;font-size:13px;letter-spacing:0.04em}
+  .topnav .inner{max-width:1080px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .topnav .brand{font-family:'Fraunces';font-size:22px;font-weight:700;color:var(--paper);text-decoration:none}
+  .topnav nav a{color:rgba(253,250,241,0.78);text-decoration:none;font-weight:500;margin-left:22px}
+  .topnav nav a:hover{color:var(--paper)}
+
+  .hero{background:linear-gradient(180deg,#0B1F3A 0%,#152D52 100%);color:var(--paper);padding:60px 0 76px;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 60% at 80% 0%,rgba(156,60,184,0.20) 0%,transparent 60%),radial-gradient(50% 50% at 0% 100%,rgba(242,107,31,0.12) 0%,transparent 60%);pointer-events:none}
+  .hero .inner{position:relative}
+  .module-chip{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;background:rgba(156,60,184,0.18);color:#E0B8EB;border-radius:999px;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;border:1px solid rgba(156,60,184,0.35);margin-bottom:18px}
+  .module-chip .dot{width:8px;height:8px;border-radius:50%;background:var(--m9)}
+  .lesson-meta{margin-top:24px;display:flex;gap:22px;font-size:13.5px;color:rgba(253,250,241,0.7);flex-wrap:wrap}
+  .lesson-meta b{color:var(--paper);font-weight:600}
+
+  .media{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px;display:flex;align-items:center;gap:18px}
+  .media-icon{width:52px;height:52px;border-radius:14px;background:var(--orange-soft);color:#8A3D0E;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+  .media-icon.song{background:rgba(156,60,184,0.14);color:var(--m9)}
+  .media-text{flex:1;min-width:0}
+  .media-text .label{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:4px}
+  .media-text .label.song{color:var(--m9)}
+  .media-text .title{font-family:'Fraunces';font-size:18px;font-weight:700;color:var(--navy);margin-bottom:2px}
+  .media-text .sub{font-size:13px;color:var(--ink-2)}
+  .media audio{width:100%;margin-top:8px;height:36px}
+
+  .section{padding:56px 0;border-bottom:1px solid var(--line)}
+  .section.alt{background:var(--cream)}
+
+  .framework{background:#fff;border:1px solid var(--line);border-radius:18px;padding:36px;margin-top:28px;box-shadow:0 4px 18px rgba(60,40,15,0.04)}
+  .framework .formula{background:var(--cream-2);border:1px solid var(--line);border-radius:12px;padding:24px;text-align:center;margin:20px 0;font-family:'Fraunces';font-weight:700;color:var(--navy);font-size:clamp(20px,2.8vw,28px);line-height:1.4}
+  .framework .formula em{color:var(--orange);font-style:normal}
+  .framework .formula .mult{color:var(--ink-2);margin:0 14px;font-weight:400}
+
+  .pq{font-family:'Fraunces';font-size:clamp(22px,3vw,30px);font-weight:600;color:var(--navy);line-height:1.3;padding:24px 28px;border-left:4px solid var(--orange);background:var(--cream);margin:32px 0;border-radius:0 12px 12px 0}
+  .pq small{display:block;font-family:'Inter';font-size:13px;color:var(--ink-2);letter-spacing:0.06em;margin-top:8px;font-weight:600;text-transform:uppercase}
+
+  .examples{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+  @media(max-width:880px){.examples{grid-template-columns:1fr}}
+  .ex{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+  .ex h4{font-family:'Fraunces';font-size:17px;color:var(--navy);margin-bottom:8px}
+  .ex .who{font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:6px}
+  .ex p{font-size:14.5px;color:var(--ink-2);margin:0}
+  .ex.bad .who{color:#a01a1a}
+
+  .action{background:linear-gradient(135deg,#FFFAF2 0%,var(--cream) 100%);border:2px solid var(--orange);border-radius:18px;padding:32px;margin-top:28px;position:relative;box-shadow:0 8px 28px rgba(242,107,31,0.10)}
+  .action .badge{display:inline-block;background:var(--orange);color:#fff;padding:5px 12px;border-radius:999px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800;margin-bottom:14px}
+  .action h3{margin-bottom:10px;font-size:24px}
+  .action .prompt{font-size:16px;color:var(--ink-2);margin-bottom:18px}
+  .action textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:10px;padding:14px;font-family:'Inter';font-size:15.5px;color:var(--ink);line-height:1.5;background:#fff;resize:vertical}
+  .action textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(242,107,31,0.15)}
+  .action .note{margin-top:12px;font-size:13px;color:var(--ink-2)}
+  .action .note b{color:var(--orange)}
+
+  .body p+p{margin-top:18px}
+  .body strong{color:var(--ink);font-weight:700}
+
+  .final-cta{background:var(--navy);color:var(--paper);text-align:center;padding:80px 0;position:relative;overflow:hidden}
+  .final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(50% 60% at 50% 0%,rgba(242,107,31,0.18) 0%,transparent 70%);pointer-events:none}
+  .final-cta .inner{position:relative}
+  .final-cta h2{color:var(--paper);max-width:680px;margin:0 auto 14px}
+  .final-cta p{color:rgba(253,250,241,0.86);max-width:560px;margin:0 auto 28px;font-size:17px}
+  .final-cta .price-row{display:flex;align-items:center;justify-content:center;gap:14px;margin:20px 0 28px;flex-wrap:wrap}
+  .final-cta .anchor{font-family:'Fraunces';color:rgba(253,250,241,0.5);text-decoration:line-through;font-size:18px;font-style:italic}
+  .final-cta .now{font-family:'Fraunces';font-size:42px;font-weight:800;color:var(--paper);line-height:1;letter-spacing:-0.02em}
+  .final-cta .code{font-family:'Inter';font-size:12px;font-weight:700;letter-spacing:0.16em;color:var(--orange);text-transform:uppercase}
+  .final-cta .micro{margin-top:14px;font-size:13px;color:rgba(253,250,241,0.55)}
+
+  footer{background:var(--ink);color:rgba(253,250,241,0.7);padding:32px 0;font-size:14px;text-align:center}
+  footer a{color:var(--orange);text-decoration:none;font-weight:600}
+
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<div class="sample-bar">
+  🎁 <b>Free sample lesson</b> — this is the full thing. 74 more like it when you join MBA Rock. <a href="https://www.mbarock.com/mba-rock">Get the rest →</a>
+</div>
+
+<header class="topnav">
+  <div class="inner">
+    <a href="https://www.mbarock.com" class="brand">MBA Rock</a>
+    <nav>
+      <a href="https://www.mbarock.com">Home</a>
+      <a href="https://www.mbarock.com/resources">Resources</a>
+      <a href="https://www.mbarock.com/institutional">For Teams</a>
+      <a href="https://www.mbarock.com/mba-rock">Join</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="inner">
+    <span class="module-chip"><span class="dot"></span> Module 9 · Brand, Voice &amp; Story · Lesson 1</span>
+    <h1>Brand is a Promise.</h1>
+    <p class="lead">Every brand is a one-sentence promise — said or unsaid. The job isn't to invent the promise. The job is to find the one you can keep, and then keep it. Loudly. Forever.</p>
+    <div class="lesson-meta">
+      <div>⏱ <b>8 min lesson</b></div>
+      <div>🎧 Audio + song</div>
+      <div>✍ 1 Take Action</div>
+      <div>📋 Maps to Capstone § 7</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="inner">
+
+    <div class="media">
+      <div class="media-icon">🎧</div>
+      <div class="media-text">
+        <div class="label">Audio overview · 3 min</div>
+        <div class="title">"Brand is a Promise" — the framework, explained</div>
+        <div class="sub">Listen while you read, or play it on your morning walk.</div>
+        <audio controls preload="none" src="audio/brand-is-a-promise-overview.mp3">Your browser doesn't support audio playback.</audio>
+      </div>
+    </div>
+
+    <div class="media">
+      <div class="media-icon song">🎵</div>
+      <div class="media-text">
+        <div class="label song">The song · 2:54</div>
+        <div class="title">"Promise" — by MBA Rock</div>
+        <div class="sub">Every lesson ships with an original song. They're how the ideas stick.</div>
+        <audio controls preload="none" src="audio/promise.mp3">Your browser doesn't support audio playback.</audio>
+      </div>
+    </div>
+
+    <span class="eyebrow" style="margin-top:24px">Concept</span>
+    <h2>What "brand is a promise" actually means.</h2>
+
+    <div class="body" style="margin-top:18px">
+      <p>Most founders think brand is a logo. Or a tagline. Or a color palette. None of those are the brand. They're <strong>signals of</strong> the brand. The brand itself is something simpler and harder:</p>
+
+      <div class="pq">"Brand is the promise customers expect you to keep — built up from every interaction they've had with you, before they've even met you."<small>— Operator's Field Guide, MBA Rock</small></div>
+
+      <p>If you sell coffee, your brand is a promise about what every cup will taste like — and what the room will feel like while they drink it. If you sell software, your brand is a promise about how the product behaves when something goes wrong at 11pm. If you sell consulting, your brand is a promise about who picks up the phone, and how soon.</p>
+
+      <p>The logo, the colors, the website, the launch announcement — those are signals that <em>encode</em> the promise. They can be beautiful and still be wrong. They can be ugly and still be right. <strong>What makes them right is whether they correctly signal the promise you can actually keep.</strong></p>
+
+      <p>That's the asymmetry that kills most early brands: they pick a promise their operating reality cannot deliver on. The marketing was honest. The product was honest. They just didn't line up.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="inner">
+    <span class="eyebrow">Framework</span>
+    <h2>The two-part equation.</h2>
+
+    <div class="framework">
+      <p style="font-size:16px;line-height:1.65;color:var(--ink-2)">A brand isn't a single act. It's the multiplication of two things — a thing you say and a thing you do, compounded over time:</p>
+
+      <div class="formula">
+        Brand = <em>(Promise made)</em><span class="mult">×</span><em>(Promise kept consistently)</em>
+      </div>
+
+      <p style="font-size:16px;line-height:1.65;color:var(--ink-2)"><strong>If either side is zero, the brand is zero.</strong></p>
+      <p style="font-size:16px;line-height:1.65;color:var(--ink-2);margin-top:14px">A great promise no one trusts is worth nothing. A reliable delivery on no specific promise is worth nothing. The brand only exists when both sides are alive.</p>
+
+      <p style="font-size:16px;line-height:1.65;color:var(--ink-2);margin-top:14px">The multiplier matters too. <strong>Consistency over time is the multiplier.</strong> Keeping the promise 95 times in a row and breaking it on the 96th is more damaging than never having made the promise at all. Customers price-in promises after about 3 successful keeps. They write them off after 1 visible break.</p>
+    </div>
+
+    <h3 style="margin-top:40px">Real-world examples</h3>
+    <div class="examples">
+      <div class="ex">
+        <div class="who">✓ Promise made + kept</div>
+        <h4>In-N-Out Burger</h4>
+        <p>Promise: "Fresh, simple, fast, never frozen." Kept since 1948. The whole brand — building, menu, uniforms, ingredients — encodes the same promise. Every part you can verify confirms what they said.</p>
+      </div>
+      <div class="ex">
+        <div class="who">✓ Promise made + kept</div>
+        <h4>Patagonia</h4>
+        <p>Promise: "We'll make gear that lasts, and we'll back it up." Kept through 50 years of repair guarantees, take-back programs, and the famous "Don't buy this jacket" ad. Customers pay 2x for the same down because the promise is credible.</p>
+      </div>
+      <div class="ex bad">
+        <div class="who">✗ Promise made + broken</div>
+        <h4>The "Eco-friendly" Fashion Brand</h4>
+        <p>Promise: "Sustainable, ethical, low-impact." Reality: same factories, same fabrics, just better photography. Customer trust collapses the moment one report surfaces. Years of marketing spend evaporate in a week.</p>
+      </div>
+      <div class="ex bad">
+        <div class="who">✗ Promise made + ambiguous</div>
+        <h4>The "Innovative" Startup</h4>
+        <p>"Innovative" is not a promise — it's a vibe. Customers can't tell what you'll deliver, can't tell when you've delivered it, can't tell when you've broken it. You spend marketing dollars without compounding brand equity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="inner">
+    <span class="eyebrow">Take Action</span>
+    <div class="action">
+      <span class="badge">Your turn · 5 min</span>
+      <h3>Write your one-line promise.</h3>
+      <p class="prompt">In one sentence, what's the promise your customer should expect you to keep — every time, no matter what? It should be specific enough that you could fail it (vague promises can't be broken, and therefore can't be trusted).</p>
+      <textarea placeholder="My promise to customers is..."></textarea>
+      <div class="note"><b>Note:</b> in the full course, this answer auto-saves and lands in your Capstone, Section 7 (Brand &amp; Voice). Here, it's just for you — copy it before you leave the page.</div>
+    </div>
+
+    <h3 style="margin-top:48px">If you want a sharper answer, try the three tests</h3>
+    <ol style="margin-top:14px;padding-left:24px;color:var(--ink-2);font-size:16px;line-height:1.8">
+      <li><strong>Specific test:</strong> could a customer tell when you've kept it vs. broken it? "Great service" fails. "We answer every email within 4 business hours" passes.</li>
+      <li><strong>Costly test:</strong> would keeping it cost you something? If it's free, it's not a real promise. If it costs you time, money, or scope, it's signaling something.</li>
+      <li><strong>Repeatable test:</strong> can you keep it 1000 times in a row without exception? Brands die at the exception, not the rule.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="inner">
+    <span class="eyebrow" style="color:var(--orange)">This is 1 of 74 lessons</span>
+    <h2>The other 73 are waiting.</h2>
+    <p>Cash, markets, operations, growth, capital, brand, story, distribution — 10 modules, 49 original songs, 18 calculators, and a Capstone business plan you finish with. Built album-paced. Yours for life.</p>
+    <div class="price-row">
+      <span class="anchor">$999.99</span>
+      <span class="now">$499</span>
+      <span class="code">with code FOUNDERS · through June 30</span>
+    </div>
+    <a href="https://www.mbarock.com/mba-rock" class="cta">Get the rest of MBA Rock →</a>
+    <p class="micro">Founders' rate locked in for life · no recurring fees · 11 verifiable certificates</p>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <p>MBA Rock · Sample lesson — "Brand is a Promise" (Module 9, Lesson 1)</p>
+    <p style="margin-top:6px">Questions: <a href="mailto:help@bettertogetherbranding.ai">help@bettertogetherbranding.ai</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
