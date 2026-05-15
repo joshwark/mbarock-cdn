@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>User Guide · MBA Rock</title>
+<meta name="description" content="How to use MBA Rock — the dashboard, the Capstone, the Console, certificates, the Dossier. Start here. 10-minute orientation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A;
+    --navy-2:#152D52;
+    --orange:#F26B1F;
+    --orange-soft:#FCE5D4;
+    --ink:#1A1208;
+    --ink-2:#3D3025;
+    --paper:#FDFAF1;
+    --cream:#F8F1E1;
+    --cream-2:#F3EAD2;
+    --line:#E8DFC8;
+    --hi:#FFF7E5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6}
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.015em;color:var(--ink);font-weight:700;line-height:1.1}
+  h1{font-size:clamp(40px,6vw,68px);font-weight:800;letter-spacing:-0.025em;color:var(--paper)}
+  h2{font-size:clamp(28px,3.5vw,40px);font-weight:700;color:var(--navy)}
+  h3{font-size:22px;font-weight:600;color:var(--navy)}
+  h4{font-size:17px;font-weight:600;color:var(--navy);font-family:'Inter'}
+  p{font-size:17px;line-height:1.65;color:var(--ink-2)}
+  .inner{max-width:1080px;margin:0 auto;padding:0 28px}
+  .eyebrow{display:inline-block;font-family:'Inter';font-size:12px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:var(--orange);margin-bottom:14px}
+  .cta{display:inline-block;padding:14px 28px;background:var(--orange);color:#fff;font-weight:700;font-size:15px;letter-spacing:0.04em;border-radius:999px;text-decoration:none;min-height:48px;line-height:1.4;transition:transform .12s ease}
+  .cta:hover{transform:translateY(-1px)}
+  .cta.ghost{background:transparent;color:var(--paper);border:2px solid rgba(253,250,241,0.4)}
+  .cta.ghost:hover{background:rgba(253,250,241,0.08)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+
+  .topnav{background:var(--navy);color:var(--paper);padding:16px 0;font-size:13px;letter-spacing:0.04em}
+  .topnav .inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .topnav .brand{font-family:'Fraunces';font-size:22px;font-weight:700;color:var(--paper);text-decoration:none}
+  .topnav nav{display:flex;gap:24px;flex-wrap:wrap}
+  .topnav nav a{color:rgba(253,250,241,0.78);text-decoration:none;font-weight:500}
+  .topnav nav a:hover{color:var(--paper)}
+
+  .hero{background:linear-gradient(180deg,#0B1F3A 0%,#152D52 100%);color:var(--paper);padding:72px 0 88px;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 60% at 80% 0%,rgba(242,107,31,0.18) 0%,transparent 60%);pointer-events:none}
+  .hero .inner{position:relative}
+  .hero p.lead{color:rgba(253,250,241,0.86);margin-top:18px;font-size:20px;max-width:680px}
+  .hero-cta-row{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+  .hero-meta{margin-top:48px;display:flex;gap:32px;font-size:13.5px;color:rgba(253,250,241,0.65);flex-wrap:wrap}
+  .hero-meta b{color:var(--paper);font-weight:600}
+
+  .toc{position:sticky;top:24px;background:var(--cream-2);border-radius:14px;padding:20px;font-size:14px;line-height:1.7}
+  .toc h4{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:10px;font-family:'Inter'}
+  .toc a{display:block;color:var(--ink-2);text-decoration:none;padding:4px 0;border-left:3px solid transparent;padding-left:10px;margin-left:-10px}
+  .toc a:hover{color:var(--navy);border-left-color:var(--orange)}
+
+  .section{padding:72px 0;border-bottom:1px solid var(--line)}
+  .section.alt{background:var(--cream)}
+  .grid{display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:start}
+  @media(max-width:880px){.grid{grid-template-columns:1fr}}
+
+  .steps{display:grid;grid-template-columns:1fr;gap:18px;margin-top:32px}
+  .step{display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+  .step .num{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:var(--orange);color:#fff;font-family:'Fraunces';font-weight:800;font-size:20px;border-radius:50%}
+  .step h3{margin:0 0 4px}
+  .step p{margin:0;font-size:15.5px}
+  .step .meta{font-size:12.5px;color:var(--orange);letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-top:6px}
+  .step a.link{color:var(--orange);font-weight:600;text-decoration:none}
+  .step a.link:hover{text-decoration:underline}
+
+  .surface{margin-top:48px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 4px 18px rgba(60,40,15,0.04)}
+  .surface-head{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+  .surface-head .badge{display:inline-block;background:var(--orange-soft);color:#8A3D0E;padding:6px 14px;border-radius:999px;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700}
+  .surface h3{flex:1;margin:0;font-size:24px}
+  .surface-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;margin-top:20px}
+  @media(max-width:880px){.surface-grid{grid-template-columns:1fr}}
+
+  .shot{position:relative;background:var(--cream);border:2px dashed var(--line);border-radius:10px;overflow:hidden;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;color:var(--ink-2);font-size:13.5px;text-align:center;padding:24px}
+  .shot.has-img{padding:0;background:#000;border-style:solid}
+  .shot img{width:100%;height:100%;object-fit:cover;display:block}
+  .shot .ph{max-width:80%}
+  .shot .ph .label{font-family:'Fraunces';font-size:18px;font-weight:700;color:var(--navy);margin-bottom:6px;display:block}
+  .shot .ph .hint{font-size:12.5px;color:var(--ink-2)}
+  .shot .ph code{background:#fff;padding:2px 6px;border-radius:4px;font-size:11.5px;border:1px solid var(--line)}
+  .shot .hot{position:absolute;width:30px;height:30px;background:var(--orange);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces';font-weight:800;font-size:14px;box-shadow:0 0 0 4px rgba(242,107,31,0.25),0 2px 6px rgba(0,0,0,0.15)}
+
+  .callouts{padding:0;list-style:none}
+  .callouts li{display:grid;grid-template-columns:30px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);align-items:start}
+  .callouts li:last-child{border-bottom:0}
+  .callouts li .n{width:28px;height:28px;background:var(--orange);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces';font-weight:800;font-size:13px;flex-shrink:0}
+  .callouts li b{display:block;font-family:'Inter';font-weight:700;color:var(--navy);font-size:14.5px;margin-bottom:2px}
+  .callouts li p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.45}
+
+  .checklist{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;margin-top:24px}
+  .checklist h4{font-size:15px;letter-spacing:0.04em;margin-bottom:14px;color:var(--ink)}
+  .checklist label{display:flex;align-items:flex-start;gap:10px;padding:8px 0;font-size:14.5px;color:var(--ink-2);cursor:pointer;line-height:1.5}
+  .checklist input[type=checkbox]{margin-top:4px;accent-color:var(--orange);width:16px;height:16px;flex-shrink:0}
+
+  .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:10px}
+  .faq summary{cursor:pointer;font-family:'Fraunces';font-weight:600;font-size:17px;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:18px}
+  .faq summary::after{content:'+';font-size:22px;color:var(--orange);font-weight:300;line-height:1;transition:transform .15s ease}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq details p{margin-top:12px;font-size:15px}
+  .faq details a{color:var(--orange);font-weight:600;text-decoration:none}
+  .faq details a:hover{text-decoration:underline}
+
+  .final{background:var(--navy);color:var(--paper);text-align:center;padding:72px 0}
+  .final h2{color:var(--paper);max-width:680px;margin:0 auto 14px}
+  .final p{color:rgba(253,250,241,0.86);max-width:600px;margin:0 auto 28px;font-size:17px}
+
+  footer{background:var(--ink);color:rgba(253,250,241,0.7);padding:32px 0;font-size:14px;text-align:center}
+  footer a{color:var(--orange);text-decoration:none;font-weight:600}
+
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<header class="topnav">
+  <div class="inner">
+    <a href="https://www.mbarock.com" class="brand">MBA Rock</a>
+    <nav>
+      <a href="https://www.mbarock.com">Home</a>
+      <a href="https://www.mbarock.com/dashboard">Dashboard</a>
+      <a href="https://www.mbarock.com/capstone">Capstone</a>
+      <a href="https://www.mbarock.com/resources">Resources</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="inner">
+    <span class="eyebrow" style="color:var(--orange)">User Guide · v1</span>
+    <h1>How to use MBA Rock.</h1>
+    <p class="lead">10-minute orientation. Read it once, refer back any time. Designed for new members on day one — also helpful if you're on the fence and want to see how the whole system fits together.</p>
+    <div class="hero-cta-row">
+      <a href="#quickstart" class="cta">Jump to Quick Start</a>
+      <a href="#tour" class="cta ghost">Take the screenshot tour</a>
+    </div>
+    <div class="hero-meta">
+      <div>📚 <b>10 modules</b> · 74 lessons</div>
+      <div>🎵 <b>49 original songs</b></div>
+      <div>⚙ <b>18 calculators</b> + <b>10-section Capstone</b></div>
+      <div>🎓 <b>11 certificates</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="inner">
+    <div class="grid">
+      <aside class="toc">
+        <h4>On this page</h4>
+        <a href="#quickstart">Quick Start (5 steps)</a>
+        <a href="#tour">Screenshot tour</a>
+        <a href="#dashboard">› Dashboard</a>
+        <a href="#capstone">› Capstone</a>
+        <a href="#console">› Operator's Console</a>
+        <a href="#certificates">› Certificates</a>
+        <a href="#dossier">› Dossier</a>
+        <a href="#week-one">Your first week</a>
+        <a href="#faq">FAQ</a>
+      </aside>
+
+      <div>
+        <span class="eyebrow" id="quickstart">Quick Start</span>
+        <h2>Five steps. About 15 minutes.</h2>
+        <p style="margin-top:14px;max-width:640px">If you do nothing else today, do these five things in order. Everything else builds from here.</p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <h3>Open your Dashboard</h3>
+              <p>It's your home base. Shows your current streak, the next lesson to play, your Capstone progress, and a link to every other tool.</p>
+              <div class="meta">→ <a class="link" href="https://www.mbarock.com/dashboard">www.mbarock.com/dashboard</a></div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <h3>Play Lesson 1 of Module 1</h3>
+              <p>"Oxygen: Cash Flow Management." Hit the audio overview button, follow along with the lesson page, then play the song. Total time: 8 minutes.</p>
+              <div class="meta">The lessons are <em>album-paced</em> — short enough to do during your morning coffee.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <h3>Take the comprehension quiz</h3>
+              <p>5 questions at the end of each lesson. Pass it (60%+) to mark the lesson complete and unlock the next one. You can retake immediately if you miss.</p>
+              <div class="meta">Quizzes are how you earn the 10 Module Marks + Operator's Certificate.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <div>
+              <h3>Do the "Take Action"</h3>
+              <p>Every lesson ships with one practical action — usually a small calculation or a paragraph to draft about your own business. Type your answer into the lesson's Take Action box. It saves automatically and fills the matching Capstone section.</p>
+              <div class="meta">This is how the Capstone "builds itself" as you go.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">5</div>
+            <div>
+              <h3>Open the Capstone tab to watch it fill in</h3>
+              <p>By the end of the course, this 10-section document is your operating business plan — investor-grade. Each lesson's Take Action lands in the matching section automatically.</p>
+              <div class="meta">→ <a class="link" href="https://www.mbarock.com/capstone">www.mbarock.com/capstone</a></div>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top:24px;font-size:15px;color:var(--ink-2)"><em>That's it. Repeat for the next lesson tomorrow. You'll finish in about 90 days at one lesson/day, faster if you binge a module on the weekend.</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="tour">
+  <div class="inner">
+    <span class="eyebrow">Screenshot tour</span>
+    <h2>The five surfaces, one at a time.</h2>
+    <p style="margin-top:14px;max-width:680px">Each surface below has a screenshot with numbered callouts. The numbers point at the parts you'll actually touch.</p>
+
+    <div class="surface" id="dashboard">
+      <div class="surface-head">
+        <span class="badge">Surface 1</span>
+        <h3>Dashboard</h3>
+      </div>
+      <p style="font-size:15.5px;margin-bottom:18px">Your home base. Open it every time you sit down with MBA Rock.</p>
+      <div class="surface-grid">
+        <div class="shot" data-shot="dashboard">
+          <div class="ph">
+            <span class="label">Screenshot slot</span>
+            <span class="hint">Drop annotated PNG at <code>guide/img/dashboard.png</code> with 5 callout markers positioned at the spots numbered →</span>
+          </div>
+          <span class="hot" style="top:12%;left:20%">1</span>
+          <span class="hot" style="top:24%;left:55%">2</span>
+          <span class="hot" style="top:46%;left:30%">3</span>
+          <span class="hot" style="top:46%;left:70%">4</span>
+          <span class="hot" style="top:72%;left:50%">5</span>
+        </div>
+        <ol class="callouts">
+          <li><span class="n">1</span><div><b>Streak counter</b><p>How many days in a row you've completed a lesson. Built to make the habit visible. Don't worry if you break it — the work persists.</p></div></li>
+          <li><span class="n">2</span><div><b>Continue button</b><p>One click. Jumps you straight to the next unfinished lesson. Usually the fastest way back in.</p></div></li>
+          <li><span class="n">3</span><div><b>Progress tiles</b><p>Module Marks, Capstone fields filled, lessons passed. Live counts. Click any tile to jump to the related surface.</p></div></li>
+          <li><span class="n">4</span><div><b>Operator's Console card</b><p>Quick link to the 18 calculators. Use these whenever you need to run a real number against your business.</p></div></li>
+          <li><span class="n">5</span><div><b>10-module spine</b><p>Click any module to open its landing page. Shows you everything inside — lessons, songs, equations, Take Actions.</p></div></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="surface" id="capstone">
+      <div class="surface-head">
+        <span class="badge">Surface 2</span>
+        <h3>The Capstone</h3>
+      </div>
+      <p style="font-size:15.5px;margin-bottom:18px">Your 10-section operator's business plan. Fills in as you complete each module's Take Action.</p>
+      <div class="surface-grid">
+        <div class="shot" data-shot="capstone">
+          <div class="ph">
+            <span class="label">Screenshot slot</span>
+            <span class="hint">Drop annotated PNG at <code>guide/img/capstone.png</code></span>
+          </div>
+          <span class="hot" style="top:14%;left:25%">1</span>
+          <span class="hot" style="top:38%;left:50%">2</span>
+          <span class="hot" style="top:58%;left:75%">3</span>
+          <span class="hot" style="top:80%;left:25%">4</span>
+        </div>
+        <ol class="callouts">
+          <li><span class="n">1</span><div><b>Progress bar</b><p>Shows what fraction of the 10 sections are filled. Each section maps to one module.</p></div></li>
+          <li><span class="n">2</span><div><b>Section card</b><p>Tap to expand. Each Take Action you completed in a lesson lands here as a field. Edit freely — your answers save automatically.</p></div></li>
+          <li><span class="n">3</span><div><b>Auto-save indicator</b><p>"Saved" shows briefly after each change. No "Save" button — there's nothing to forget.</p></div></li>
+          <li><span class="n">4</span><div><b>Generate Dossier</b><p>When you're 60%+ done, you can render your Capstone as a polished investor-grade PDF. (See Surface 5.)</p></div></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="surface" id="console">
+      <div class="surface-head">
+        <span class="badge">Surface 3</span>
+        <h3>The Operator's Console</h3>
+      </div>
+      <p style="font-size:15.5px;margin-bottom:18px">Every equation from the course, ready to run against your real numbers. 18 calculators (more added regularly).</p>
+      <div class="surface-grid">
+        <div class="shot" data-shot="console">
+          <div class="ph">
+            <span class="label">Screenshot slot</span>
+            <span class="hint">Drop annotated PNG at <code>guide/img/console.png</code></span>
+          </div>
+          <span class="hot" style="top:18%;left:12%">1</span>
+          <span class="hot" style="top:18%;left:50%">2</span>
+          <span class="hot" style="top:60%;left:55%">3</span>
+          <span class="hot" style="top:82%;left:18%">4</span>
+        </div>
+        <ol class="callouts">
+          <li><span class="n">1</span><div><b>Calculator sidebar</b><p>Grouped by domain (Finance, Capital &amp; Scaling, Growth, etc.). Click any name to open it.</p></div></li>
+          <li><span class="n">2</span><div><b>Welcome card</b><p>If you don't know where to start, the "essentials" grid surfaces the most-used calculators first.</p></div></li>
+          <li><span class="n">3</span><div><b>Inputs / outputs</b><p>Type your numbers. Results update live. Save the scenario to revisit later (members get unlimited saved scenarios).</p></div></li>
+          <li><span class="n">4</span><div><b>Manage calculators</b><p>Pin your favorites to the top, hide the ones you don't use. Personalized layout.</p></div></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="surface" id="certificates">
+      <div class="surface-head">
+        <span class="badge">Surface 4</span>
+        <h3>Certificates</h3>
+      </div>
+      <p style="font-size:15.5px;margin-bottom:18px">11 verifiable credentials. 10 Module Marks (one per module) + 1 Operator's Certificate when you finish them all.</p>
+      <div class="surface-grid">
+        <div class="shot" data-shot="certificates">
+          <div class="ph">
+            <span class="label">Screenshot slot</span>
+            <span class="hint">Drop annotated PNG at <code>guide/img/certificates.png</code></span>
+          </div>
+          <span class="hot" style="top:18%;left:20%">1</span>
+          <span class="hot" style="top:40%;left:60%">2</span>
+          <span class="hot" style="top:70%;left:30%">3</span>
+        </div>
+        <ol class="callouts">
+          <li><span class="n">1</span><div><b>Earned vs. locked</b><p>Each module shows its Mark as locked, in-progress, or earned. Earned Marks have a verifiable ID + LinkedIn "Add to Profile" link.</p></div></li>
+          <li><span class="n">2</span><div><b>How to earn</b><p>Pass every quiz in the module (60%+) AND complete the module's Take Action. The Mark issues automatically.</p></div></li>
+          <li><span class="n">3</span><div><b>Operator's Cert</b><p>The capstone credential. Issued when all 10 Module Marks are earned. Includes your finished business plan as proof of work.</p></div></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="surface" id="dossier">
+      <div class="surface-head">
+        <span class="badge">Surface 5</span>
+        <h3>The Operator's Dossier</h3>
+      </div>
+      <p style="font-size:15.5px;margin-bottom:18px">Your Capstone, rendered as an investor-grade PDF. Share with mentors, investors, partners, or hiring managers.</p>
+      <div class="surface-grid">
+        <div class="shot" data-shot="dossier">
+          <div class="ph">
+            <span class="label">Screenshot slot</span>
+            <span class="hint">Drop annotated PNG at <code>guide/img/dossier.png</code></span>
+          </div>
+          <span class="hot" style="top:14%;left:50%">1</span>
+          <span class="hot" style="top:48%;left:25%">2</span>
+          <span class="hot" style="top:72%;left:70%">3</span>
+        </div>
+        <ol class="callouts">
+          <li><span class="n">1</span><div><b>Generate / Refresh</b><p>One click to render the latest version of your Capstone as a PDF. Re-run anytime your plan changes.</p></div></li>
+          <li><span class="n">2</span><div><b>Section navigation</b><p>Jump to any section. Same 10 sections as your Capstone, formatted to read like a real investor brief.</p></div></li>
+          <li><span class="n">3</span><div><b>Share / Download</b><p>Download as PDF, get a shareable link, or push directly to Better Together Branding for brand + launch help.</p></div></li>
+        </ol>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="week-one">
+  <div class="inner">
+    <div class="grid">
+      <aside class="toc">
+        <h4>This page</h4>
+        <a href="#quickstart">Quick Start</a>
+        <a href="#tour">Screenshot tour</a>
+        <a href="#week-one">Your first week ←</a>
+        <a href="#faq">FAQ</a>
+      </aside>
+      <div>
+        <span class="eyebrow">Your first week</span>
+        <h2>Print this. Tape it to your monitor.</h2>
+        <div class="checklist">
+          <h4>WEEK 1 — getting traction</h4>
+          <label><input type="checkbox"> Day 1: complete the Quick Start above (15 min)</label>
+          <label><input type="checkbox"> Day 2: finish Module 1 (M1L1–M1L9) — Oxygen, Cash Conversion, Runway, AR/AP, Working Capital</label>
+          <label><input type="checkbox"> Day 3: run YOUR business's runway number in the Console (Console → Cash Runway)</label>
+          <label><input type="checkbox"> Day 4: open the Capstone, read Section 1 (Cash &amp; Capital), confirm your Take Actions landed there</label>
+          <label><input type="checkbox"> Day 5: start Module 2 (M2L1) — Markets &amp; Customers</label>
+          <label><input type="checkbox"> Day 6: claim your first Module Mark — pass M1's quiz set + finish M1's Take Action</label>
+          <label><input type="checkbox"> Day 7: review the week. What did you learn that you'd actually change in your business this week?</label>
+        </div>
+
+        <div class="checklist">
+          <h4>MONTH 1 — building the rhythm</h4>
+          <label><input type="checkbox"> Finish Modules 1–3 (Cash, Markets, Operations)</label>
+          <label><input type="checkbox"> Earn 3 Module Marks</label>
+          <label><input type="checkbox"> Have at least 5 Capstone sections partially filled</label>
+          <label><input type="checkbox"> Save 3 working scenarios in the Console (runway, unit economics, breakeven)</label>
+          <label><input type="checkbox"> If something feels stuck: <a href="mailto:help@bettertogetherbranding.ai" style="color:var(--orange);font-weight:600">help@bettertogetherbranding.ai</a></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="faq">
+  <div class="inner">
+    <span class="eyebrow">FAQ</span>
+    <h2>Things people ask in the first 48 hours.</h2>
+    <div class="faq" style="margin-top:32px">
+      <details>
+        <summary>How long does the whole course take?</summary>
+        <p>About 90 days at one lesson per day. Some lessons are 5 minutes, some are 20. Most members finish a module in a week. If you binge on the weekend, you can compress the whole thing into 6 weeks. Lifetime access — no rush.</p>
+      </details>
+      <details>
+        <summary>Do I have to do the modules in order?</summary>
+        <p>You can jump around. The 10-module spine is designed in order (Cash → Markets → Operations → Growth, etc.) and earlier modules unlock concepts that later modules build on — but if you have a specific business need today, jump to it. Use the Founder Diagnostic (coming soon) to see which modules to prioritize given your stage.</p>
+      </details>
+      <details>
+        <summary>What if I don't pass a quiz?</summary>
+        <p>Retake it. No limit, no penalty. Quizzes are checkpoints, not gates. You can also revisit the lesson and audio at any time.</p>
+      </details>
+      <details>
+        <summary>Do my Capstone notes save automatically?</summary>
+        <p>Yes — every keystroke. There's no Save button. If you ever see the "Saved ✓" indicator flicker, that's the auto-save firing. Your work persists across devices when you're signed in.</p>
+      </details>
+      <details>
+        <summary>Can I share my Capstone / Dossier with a non-member?</summary>
+        <p>Yes. The Dossier export is a portable PDF — share anywhere. The Capstone has a "share link" feature in the works (Q3 2026); for now, export to PDF and send.</p>
+      </details>
+      <details>
+        <summary>Can I add my Module Marks to LinkedIn?</summary>
+        <p>Yes. Each Mark has a "Add to LinkedIn" deeplink that pre-fills LinkedIn's "Add a license or certification" form. One click, done. The Operator's Certificate works the same way.</p>
+      </details>
+      <details>
+        <summary>I bought MBA Rock — where does my $499 go?</summary>
+        <p>Curriculum building (audio production, the 49 songs, lesson writing, the Operator's Console, the Capstone builder), hosting, customer support, and continuous improvement. You pay once. You keep lifetime access. Every future lesson, calculator, or feature is included.</p>
+      </details>
+      <details>
+        <summary>Something's broken / not loading.</summary>
+        <p>Sorry. Two things to try first: (1) hard-refresh the page (Cmd+Shift+R on Mac, Ctrl+Shift+R on Windows), (2) check that you're signed in to your MBA Rock account. If it's still broken, email <a href="mailto:help@bettertogetherbranding.ai">help@bettertogetherbranding.ai</a> with the URL and a screenshot — we'll fix it fast.</p>
+      </details>
+      <details>
+        <summary>Can my team use my login?</summary>
+        <p>Your account is for you. For team access (20+ seats) we have <a href="https://www.mbarock.com/institutional">institutional pricing</a> starting at $349/seat/year. Email <a href="mailto:help@bettertogetherbranding.ai">help@bettertogetherbranding.ai</a> for a walk-through.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="inner">
+    <h2>That's the whole system.</h2>
+    <p>10 modules. 74 lessons. 18 calculators. 11 certificates. One business plan you build as you go. Designed to be done in 90 days — yours for life.</p>
+    <a href="https://www.mbarock.com/dashboard" class="cta">Open the Dashboard →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <p>MBA Rock User Guide · v1 · 2026-05-15</p>
+    <p style="margin-top:6px">Support: <a href="mailto:help@bettertogetherbranding.ai">help@bettertogetherbranding.ai</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
