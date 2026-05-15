@@ -115,15 +115,16 @@
     .ada-skip:focus{top:8px;outline:3px solid var(--ada-accent);outline-offset:2px}
 
     /* Feature application styles */
-    /* Text-size: scale body AND override any element with explicit px font-size.
-       Reaches p/li/span/td/a/label/input/textarea/button so pages using px-set sizes still scale. */
+    /* Text-size: scale the ROOT font-size (rem unit) AND the body (em unit).
+       Rem-based pages scale via root; em/inherit-based pages scale via body. Px-set text
+       does not auto-scale (a page-CSS limitation), but root+body together cover most modern layouts. */
+    html.ada-text-125{font-size:20px !important}
+    html.ada-text-150{font-size:24px !important}
+    html.ada-text-200{font-size:32px !important}
     html.ada-text-125 body{font-size:1.25em !important}
     html.ada-text-150 body{font-size:1.5em !important}
     html.ada-text-200 body{font-size:2em !important}
-    html.ada-text-125 body :where(p,li,span,td,th,a,label,input,textarea,button,blockquote,figcaption,small,div){font-size:1.25em !important}
-    html.ada-text-150 body :where(p,li,span,td,th,a,label,input,textarea,button,blockquote,figcaption,small,div){font-size:1.5em !important}
-    html.ada-text-200 body :where(p,li,span,td,th,a,label,input,textarea,button,blockquote,figcaption,small,div){font-size:2em !important}
-    /* Don't double-scale inside ADA panel itself */
+    /* Don't scale inside the ADA panel itself */
     html[class*="ada-text"] .ada-panel,html[class*="ada-text"] .ada-panel *,html[class*="ada-text"] .ada-btn,html[class*="ada-text"] .ada-btn *{font-size:revert !important}
     html.ada-font-dyslexic body,html.ada-font-dyslexic body *{font-family:'OpenDyslexic','Comic Sans MS','Arial',sans-serif !important;letter-spacing:.05em !important;word-spacing:.1em !important}
     html.ada-font-readable body,html.ada-font-readable body *{font-family:Georgia,'Times New Roman',serif !important;line-height:1.7 !important}
