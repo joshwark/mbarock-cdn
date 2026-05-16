@@ -221,6 +221,30 @@ a{color:inherit;}
 </main>
 
 <script>
+/* Dashboard auth-render v2 — must run before main JS */
+(function(){
+  try {
+    var hasAuth = !!(
+      localStorage.getItem('mba-rock-member-id') ||
+      localStorage.getItem('mr-member-id') ||
+      localStorage.getItem('mr_member_id') ||
+      localStorage.getItem('memberId') ||
+      new URLSearchParams(location.search).get('m') ||
+      (document.referrer && /mbarock\.com|panda-reindeer/i.test(document.referrer))
+    );
+    var m = document.getElementById('dash-main');
+    if (hasAuth) {
+      if (m) m.hidden = false;
+    } else {
+      // Remove member content from DOM entirely so unauth users can't even inspect-source it.
+      if (m && m.parentNode) m.parentNode.removeChild(m);
+    }
+  } catch (e) { console.error('[Dash auth-render]', e); }
+})();
+</script>
+
+
+<script>
 // auth-render runs in inline script in head; this block kept for legacy compatibility
 console.log('[Dashboard] v1 loaded');
 
