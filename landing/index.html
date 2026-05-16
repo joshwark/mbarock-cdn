@@ -673,5 +673,10 @@
   <a href="mailto:help@bettertogetherbranding.ai" style="color:#666;text-decoration:none;border-bottom:1px solid #E5E0D6">help@bettertogetherbranding.ai</a>
 </footer>
 
+
+<!-- Sentry error logging — set DSN via window.MR_SENTRY_DSN to activate. Empty = no-op. -->
+<script>window.MR_SENTRY_DSN = window.MR_SENTRY_DSN || "";</script>
+<script>(function(){var dsn=window.MR_SENTRY_DSN;if(!dsn||!/^https:\/\/[a-f0-9]+@/.test(dsn))return;var s=document.createElement("script");s.src="https://browser.sentry-cdn.com/7.119.2/bundle.min.js";s.crossOrigin="anonymous";s.onload=function(){if(window.Sentry){Sentry.init({dsn:dsn,tracesSampleRate:0.0,replaysSessionSampleRate:0.0,replaysOnErrorSampleRate:0.1,environment:"production",beforeSend:function(event){if(!event.request)return event;return event;}});}};document.head.appendChild(s);})();</script>
+
 </body>
 </html>
