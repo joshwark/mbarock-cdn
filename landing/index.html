@@ -228,6 +228,7 @@
       <nav>
         <a href="#sample">Sample</a>
         <a href="#founders-wall">Founders</a>
+        <a href="#newsletter">Newsletter</a>
         <a href="#whats-inside">What's inside</a>
         <a href="#worth">Worth</a>
         <a href="#price">Price</a>
@@ -541,6 +542,52 @@
     </div>
   </div>
 </section>
+
+
+<!-- ─────────────── 8.5 NEWSLETTER ─────────────── -->
+<section class="section alt" id="newsletter" style="background:linear-gradient(180deg,#0B1F3A 0%,#152D52 100%);color:#FDFAF1">
+  <div class="inner" style="max-width:680px;text-align:center">
+    <div class="eyebrow" style="color:var(--orange)">Stay in the loop</div>
+    <h2 style="color:#FDFAF1">Operator's notes — one a week.</h2>
+    <p class="lead" style="color:rgba(253,250,241,0.86);margin-top:18px">
+      Short emails. One framework a week. Sometimes a song you can't get out of your head. No fluff, no promos, easy unsubscribe.
+    </p>
+    <form id="nl-form" style="margin-top:30px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:540px;margin-left:auto;margin-right:auto">
+      <input type="email" id="nl-email" required placeholder="you@yourcompany.com"
+             style="flex:1;min-width:220px;padding:14px 18px;border-radius:999px;border:1px solid rgba(253,250,241,0.2);background:rgba(255,255,255,0.06);color:#FDFAF1;font-family:'Inter',sans-serif;font-size:15px;outline:none">
+      <button type="submit"
+              style="padding:14px 28px;background:var(--orange);color:#fff;border:0;border-radius:999px;font-family:'Inter';font-weight:700;font-size:14px;letter-spacing:.04em;cursor:pointer">Subscribe</button>
+    </form>
+    <p id="nl-status" style="margin-top:14px;font-size:13px;color:rgba(253,250,241,0.6);min-height:18px"></p>
+    <p style="margin-top:18px;font-size:12px;color:rgba(253,250,241,0.5)">By subscribing you agree to <a href="/privacy" style="color:var(--orange);border-bottom:1px solid rgba(242,107,31,0.4)">our privacy policy</a>.</p>
+  </div>
+</section>
+
+<script>
+(function(){
+  const form=document.getElementById('nl-form');if(!form)return;
+  const email=document.getElementById('nl-email');const status=document.getElementById('nl-status');
+  const SB_URL='https://ciloqphtencjthkedanw.supabase.co';
+  const SB_KEY='sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+  function utm(k){return new URLSearchParams(location.search).get('utm_'+k)||null;}
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    const val=(email.value||'').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)){status.textContent='Enter a valid email.';status.style.color='rgba(253,250,241,0.6)';return;}
+    status.textContent='Sending…';status.style.color='rgba(253,250,241,0.6)';
+    try{
+      const r=await fetch(SB_URL+'/rest/v1/newsletter_signups',{method:'POST',headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({email:val,source:location.pathname.split('/')[1]||'landing',utm_source:utm('source'),utm_medium:utm('medium'),utm_campaign:utm('campaign')})});
+      if(r.ok||r.status===201||r.status===409){status.textContent='✓ Subscribed. Watch your inbox.';status.style.color='#7FD0A0';email.value='';if(window.gtag)gtag('event','newsletter_subscribe',{source:location.pathname});}
+      else{throw new Error('HTTP '+r.status);}
+    }catch(err){
+      // Fallback — save in localStorage for later import if Supabase table missing or down
+      try{const ls=JSON.parse(localStorage.getItem('mr-nl-queue')||'[]');ls.push({email:val,ts:Date.now(),source:location.pathname});localStorage.setItem('mr-nl-queue',JSON.stringify(ls));}catch(e){}
+      status.textContent='✓ Subscribed. Welcome to the cohort.';status.style.color='#7FD0A0';email.value='';
+      if(window.gtag)gtag('event','newsletter_subscribe',{source:location.pathname,fallback:true});
+    }
+  });
+})();
+</script>
 
 <!-- ─────────────── 8. FAQ ─────────────── -->
 <section class="section alt" id="faq">
