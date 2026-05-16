@@ -163,6 +163,8 @@ em.serif,.serif-it{font-family:'Fraunces',serif;font-style:italic;color:var(--na
 </style>
 </head>
 <body>
+<div hidden id="mr-protected">
+
 <div id="dossierCompletenessBanner" style="display:none;max-width:980px;margin:20px auto;padding:14px 18px;background:#FEF3C7;border-left:4px solid #F59E0B;border-radius:8px;font-family:Inter,system-ui;font-size:14px;color:#92400E;">
   <strong>Your Dossier is <span id="dossierCompletePct">0</span>% complete.</strong> 
   We recommend filling at least 80% of your Capstone fields before sharing this with investors or partners. 
@@ -558,5 +560,29 @@ document.getElementById('downloadPdf').addEventListener('click', function(){
 </script>    <!-- ADA Accessibility Widget v1.0 -->
     <script>window.__ADA_CONFIG = window.__ADA_CONFIG || { brand: 'mba-rock' };</script>
     <script src="https://joshwark.github.io/mbarock-cdn/accessibility/widget.js" defer></script>
+
+</div>
+
+<script>
+/* MR auth-gated render v2 — strips member content from DOM for unauth visitors */
+(function(){
+  try {
+    var hasAuth = !!(
+      localStorage.getItem('mba-rock-member-id') ||
+      localStorage.getItem('mr-member-id') ||
+      localStorage.getItem('mr_member_id') ||
+      localStorage.getItem('memberId') ||
+      new URLSearchParams(location.search).get('m') ||
+      (document.referrer && /mbarock\.com|panda-reindeer/i.test(document.referrer))
+    );
+    var m = document.getElementById('mr-protected');
+    if (hasAuth) {
+      if (m) m.hidden = false;
+    } else {
+      if (m && m.parentNode) m.parentNode.removeChild(m);
+    }
+  } catch (e) { console.error('[MR auth-render]', e); }
+})();
+</script>
 </body>
 </html>
