@@ -781,6 +781,75 @@ html,body{margin:0;padding:0;background:#FAF8F5;color:#0E1116;font-family:'Inter
     </div>
   </div>
 
+  
+<!-- v7.5 Lesson feedback widget (added 2026-05-15) -->
+<style>
+.mr-fb{margin:48px 0 0;padding:28px 30px;background:#fff;border:1px solid #ebe6da;border-left:4px solid var(--mr5-accent,#F26B1F);border-radius:0 10px 10px 0;font-family:'Inter',sans-serif;}
+.mr-fb h3{font-family:'Fraunces',serif;font-size:20px;color:#0B1F3A;margin:0 0 6px;letter-spacing:-0.01em;font-weight:600;}
+.mr-fb .mr-fb-sub{color:#666;font-size:13.5px;margin:0 0 18px;font-family:'Fraunces',serif;font-style:italic;}
+.mr-fb-stars{display:flex;gap:8px;align-items:center;margin:0 0 14px;}
+.mr-fb-star{font-size:26px;line-height:1;color:#ddd;background:none;border:none;padding:4px 2px;cursor:pointer;transition:transform .12s,color .12s;}
+.mr-fb-star:hover{transform:scale(1.15);}
+.mr-fb-star.lit,.mr-fb-star.hover{color:#F26B1F;}
+.mr-fb textarea{width:100%;min-height:80px;padding:12px 14px;border:1px solid #ebe6da;border-radius:6px;font-family:inherit;font-size:14px;line-height:1.55;resize:vertical;background:#FAF8F5;color:#0E1116;display:none;}
+.mr-fb.has-rating textarea{display:block;}
+.mr-fb-row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:10px;flex-wrap:wrap;}
+.mr-fb-status{font-size:11.5px;color:#888;letter-spacing:.08em;text-transform:uppercase;font-weight:600;}
+.mr-fb-status.saved{color:#1d8444;}
+.mr-fb-submit{padding:10px 18px;background:#0B1F3A;color:#fff;border:0;border-radius:6px;font-family:'Inter';font-size:13px;font-weight:600;letter-spacing:.04em;cursor:pointer;display:none;}
+.mr-fb.has-rating .mr-fb-submit{display:inline-block;}
+.mr-fb-submit:hover{background:#F26B1F;}
+.mr-fb.submitted .mr-fb-stars,.mr-fb.submitted textarea,.mr-fb.submitted .mr-fb-submit{display:none;}
+.mr-fb-thanks{display:none;font-family:'Fraunces',serif;font-size:15px;color:#1d8444;font-style:italic;}
+.mr-fb.submitted .mr-fb-thanks{display:block;}
+</style>
+<div class="mr-fb" id="mr-fb" data-lesson="m7l2-sample">
+  <h3>Was this lesson useful?</h3>
+  <p class="mr-fb-sub">Tap a star to rate. In the full program, your rating compounds into how lessons get prioritized + improved.</p>
+  <div class="mr-fb-stars" role="radiogroup" aria-label="Rate this lesson">
+    <button class="mr-fb-star" data-r="1" aria-label="1 star">★</button>
+    <button class="mr-fb-star" data-r="2" aria-label="2 stars">★</button>
+    <button class="mr-fb-star" data-r="3" aria-label="3 stars">★</button>
+    <button class="mr-fb-star" data-r="4" aria-label="4 stars">★</button>
+    <button class="mr-fb-star" data-r="5" aria-label="5 stars">★</button>
+  </div>
+  <textarea placeholder="Optional: what worked, what didn't, what you'd add — 1–2 sentences."></textarea>
+  <div class="mr-fb-row">
+    <span class="mr-fb-status" id="mr-fb-status">Sample mode — saves to your browser</span>
+    <button class="mr-fb-submit" id="mr-fb-submit">Submit feedback</button>
+  </div>
+  <div class="mr-fb-thanks">Thanks — feedback noted. <a href="https://www.mbarock.com/mba-rock" style="color:#0B1F3A;border-bottom:1px solid #ebe6da;text-decoration:none">Join the cohort to make your votes count →</a></div>
+</div>
+<script>
+(function(){
+  const fb=document.getElementById('mr-fb');if(!fb)return;
+  const stars=fb.querySelectorAll('.mr-fb-star');const ta=fb.querySelector('textarea');
+  const status=document.getElementById('mr-fb-status');const submit=document.getElementById('mr-fb-submit');
+  const KEY='mr-fb-'+fb.dataset.lesson;
+  let rating=0;
+  const saved=localStorage.getItem(KEY);
+  if(saved){try{const d=JSON.parse(saved);if(d.submitted){fb.classList.add('submitted');return;}rating=d.rating||0;ta.value=d.comment||'';if(rating){fb.classList.add('has-rating');paint(rating);}}catch(e){}}
+  function paint(n){stars.forEach((s,i)=>s.classList.toggle('lit',i<n));}
+  function hoverPaint(n){stars.forEach((s,i)=>s.classList.toggle('hover',i<n));}
+  stars.forEach((s,i)=>{
+    s.addEventListener('mouseenter',()=>hoverPaint(i+1));
+    s.addEventListener('mouseleave',()=>{stars.forEach(x=>x.classList.remove('hover'));});
+    s.addEventListener('click',()=>{rating=i+1;fb.classList.add('has-rating');paint(rating);save();});
+  });
+  ta.addEventListener('input',save);
+  function save(){
+    localStorage.setItem(KEY,JSON.stringify({rating,comment:ta.value,submitted:false}));
+    status.textContent='Saved to your browser';status.classList.add('saved');
+  }
+  submit.addEventListener('click',()=>{
+    if(!rating)return;
+    localStorage.setItem(KEY,JSON.stringify({rating,comment:ta.value,submitted:true,ts:new Date().toISOString()}));
+    fb.classList.add('submitted');
+    if(window.gtag)gtag('event','lesson_feedback',{lesson_id:fb.dataset.lesson,rating,has_comment:!!ta.value});
+  });
+})();
+</script>
+
   <!-- Sample outro CTA -->
   <div class="sample-outro">
     <div style="font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#F26B1F;font-weight:700;margin-bottom:14px">The other 73 are waiting</div>
