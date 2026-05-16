@@ -170,7 +170,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;letter-spacing:-0.015em;color:var(--nav
 </style>
 </head>
 <body>
-<main class="app">
+<main class="app" hidden id="mr-protected">
   <aside class="sidebar">
     <div class="brand">
       <h1>The Operator's Console</h1>
@@ -192,6 +192,30 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;letter-spacing:-0.015em;color:var(--nav
     </div>
   </section>
 </main>
+
+
+<script>
+/* MR auth-gated render v2 — strips member content from DOM for unauth visitors */
+(function(){
+  try {
+    var hasAuth = !!(
+      localStorage.getItem('mba-rock-member-id') ||
+      localStorage.getItem('mr-member-id') ||
+      localStorage.getItem('mr_member_id') ||
+      localStorage.getItem('memberId') ||
+      new URLSearchParams(location.search).get('m') ||
+      (document.referrer && /mbarock\.com|panda-reindeer/i.test(document.referrer))
+    );
+    var m = document.getElementById('mr-protected');
+    if (hasAuth) {
+      if (m) m.hidden = false;
+    } else {
+      if (m && m.parentNode) m.parentNode.removeChild(m);
+    }
+  } catch (e) { console.error('[MR auth-render]', e); }
+})();
+</script>
+
 
 <div class="manage-modal" id="manageModal">
   <div class="manage-card">
