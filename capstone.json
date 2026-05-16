@@ -1,0 +1,161 @@
+{
+  "schema_version": "v1.0.2026-05-15",
+  "generated_from": "capstone/index.html SECTIONS array",
+  "sections": [
+    {
+      "num": "01",
+      "id": "numbers",
+      "module": "M1",
+      "title": "The Numbers",
+      "fields_count": 8,
+      "fields": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "num": "02",
+      "id": "bet",
+      "module": "M2",
+      "title": "The Bet",
+      "fields_count": 7,
+      "fields": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "num": "03",
+      "id": "team",
+      "module": "M3",
+      "title": "The Team",
+      "fields_count": 6,
+      "fields": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "num": "04",
+      "id": "engine",
+      "module": "M4",
+      "title": "The Engine",
+      "fields_count": 7,
+      "fields": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "num": "05",
+      "id": "stack",
+      "module": "M5",
+      "title": "The Stack",
+      "fields_count": 5,
+      "fields": [
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "num": "06",
+      "id": "capital",
+      "module": "M6",
+      "title": "The Capital",
+      "fields_count": 6,
+      "fields": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "num": "07",
+      "id": "story",
+      "module": "M7",
+      "title": "The Story",
+      "fields_count": 6,
+      "fields": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "num": "08",
+      "id": "playbook",
+      "module": "M8",
+      "title": "The Playbook",
+      "fields_count": 5,
+      "fields": [
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "num": "09",
+      "id": "dashboard",
+      "module": "M9",
+      "title": "The Dashboard",
+      "fields_count": 6,
+      "fields": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "num": "10",
+      "id": "plan",
+      "module": "M10",
+      "title": "The Plan",
+      "fields_count": 6,
+      "fields": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    }
+  ],
+  "total_sections": 10,
+  "total_fields": 62,
+  "last_sync": "2026-05-15"
+}
