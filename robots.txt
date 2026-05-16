@@ -1,0 +1,14 @@
+# joshwark.github.io/mbarock-cdn/ — serves the production CDN assets behind
+# mbarock.com. The canonical URLs all point to www.mbarock.com.
+# Discourage search engines from indexing the CDN domain directly to avoid
+# duplicate-content with www.mbarock.com (the real public site).
+
+User-agent: *
+Disallow: /
+
+# Allow common asset crawls so social previews still work
+Allow: /accessibility/
+Allow: /audio/
+Allow: /video/
+Allow: /images/
+Allow: /homepage/
