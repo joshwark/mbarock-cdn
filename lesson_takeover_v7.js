@@ -560,17 +560,20 @@
     }
 
     /* ── v7 Tab shell ── */
-    .mr5-tabs{position:sticky;top:0;z-index:9;background:#fff;border-bottom:1px solid #ebe6da;display:flex;gap:0;padding:0 8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+    /* v7.4 Tab strip — banner + larger labels for stronger discoverability */
+    .mr5-tabs{position:sticky;top:0;z-index:9;background:linear-gradient(180deg,#FAF8F5 0%,#F2EDE0 100%);border-top:1px solid #E5DFCE;border-bottom:3px solid var(--mr5-accent);display:flex;gap:6px;padding:10px 12px 0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;box-shadow:0 4px 14px -8px rgba(11,31,58,.14);}
     .mr5-tabs::-webkit-scrollbar{display:none;}
-    .mr5-tab{flex:0 0 auto;padding:14px 18px;font-family:inherit;font-size:14px;font-weight:500;color:#6e6e6e;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;display:flex;align-items:center;gap:8px;white-space:nowrap;transition:color .15s,border-color .15s;letter-spacing:.01em;}
-    .mr5-tab:hover{color:#0e1116;}
-    .mr5-tab.active{color:#0e1116;border-bottom-color:var(--mr5-accent);}
-    .mr5-tab .mr5-tab-state{font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:2px 7px;border-radius:3px;background:#eee;color:#6e6e6e;}
-    .mr5-tab .mr5-tab-state.in-progress{background:rgba(242,107,31,.12);color:#a04a13;}
+    .mr5-tab{flex:0 0 auto;padding:14px 22px 13px;font-family:inherit;font-size:16px;font-weight:600;color:#4a4a4a;background:transparent;border:none;border-bottom:3px solid transparent;border-radius:8px 8px 0 0;cursor:pointer;display:flex;align-items:center;gap:9px;white-space:nowrap;transition:all .15s;letter-spacing:.005em;margin-bottom:-3px;}
+    .mr5-tab:hover{color:#0B1F3A;background:rgba(255,255,255,.55);}
+    .mr5-tab.active{color:#0B1F3A;background:#fff;border-bottom-color:var(--mr5-accent);box-shadow:0 -2px 10px -3px rgba(11,31,58,.08);}
+    .mr5-tab .mr5-tab-state{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:3px 8px;border-radius:4px;background:#e8e2d2;color:#5a5a5a;}
+    .mr5-tab .mr5-tab-state.in-progress{background:rgba(242,107,31,.16);color:#a04a13;}
     .mr5-tab .mr5-tab-state.complete{background:#1d8444;color:#fff;}
-    .mr5-tab .mr5-tab-icon{font-size:16px;line-height:1;display:inline-flex;}
-    .mr5-tab.active .mr5-tab-icon{color:var(--mr5-accent);}
-    .mr5-tab-count{font-size:10.5px;color:#999;font-weight:400;letter-spacing:.02em;}
+    .mr5-tab .mr5-tab-icon{font-size:18px;line-height:1;display:inline-flex;opacity:.7;}
+    .mr5-tab.active .mr5-tab-icon{color:var(--mr5-accent);opacity:1;}
+    .mr5-tab-count{font-size:11.5px;color:#888;font-weight:500;letter-spacing:.02em;margin-left:2px;}
+    .mr5-tab.active .mr5-tab-count{color:#a04a13;}
+    @media (max-width:680px){.mr5-tabs{padding:8px 10px 0;gap:4px;}.mr5-tab{padding:12px 16px 11px;font-size:14.5px;gap:7px;}.mr5-tab .mr5-tab-icon{font-size:16px;}}
 
     .mr5-tabpanel{display:none;animation:mr5fadein .25s ease;}
     .mr5-tabpanel.active{display:block;}
