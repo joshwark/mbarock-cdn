@@ -157,7 +157,7 @@ a{color:inherit;}
   <div class="orient" style="max-width:980px;margin:8px auto 24px;padding:0 24px;font-size:13px;color:#475569;font-style:italic;line-height:1.6;">
     <strong style="color:#0B1F3A;">How this works:</strong> Pass each lesson's quiz → earn 10 Module Marks. Fill your Capstone fields as you go → unlock the <strong style="color:#F26B1F;">Operator's Cert</strong> + your shareable <strong style="color:#F26B1F;">Dossier</strong>.
   </div>
-<main class="app">
+<main class="app" hidden id="dash-main">
 
   <div class="hero-bar">
     <div class="ring">
@@ -181,13 +181,13 @@ a{color:inherit;}
   </div>
 
   <div class="summary">
-    <a class="sum-card" href="/certificates/">
+    <a class="sum-card" href="https://www.mbarock.com/certificates">
       <div class="l">Module marks</div>
       <div class="v"><span id="modCount">0</span><small>/10</small></div>
       <div class="meta" id="modMeta">Earn one for each module completed.</div>
       <div class="arrow">View certificates ›</div>
     </a>
-    <a class="sum-card" href="/capstone/">
+    <a class="sum-card" href="https://www.mbarock.com/capstone">
       <div class="l">Capstone fields</div>
       <div class="v"><span id="capCount">0</span><small id="capTotal">/50</small></div>
       <div class="meta" id="capMeta">Your business operating system, one field at a time.</div>
@@ -199,7 +199,7 @@ a{color:inherit;}
       <div class="meta" id="lessonMeta">Every quiz passed unlocks the next.</div>
       <div class="arrow">Resume course ›</div>
     </a>
-    <a class="sum-card" href="/operators-console/">
+    <a class="sum-card" href="https://www.mbarock.com/operators-console">
       <div class="l">Operator's Console</div>
       <div class="v" style="font-size:22px;">18 calculators</div>
       <div class="meta">Run every formula in the course.</div>
@@ -212,15 +212,16 @@ a{color:inherit;}
   <div class="mod-grid" id="modGrid"></div>
 
   <div class="qlinks">
-    <a href="/capstone/"><span class="l">Build my plan</span><span class="v">Capstone</span><span class="s">10 sections, 1:1 with modules</span></a>
-    <a href="/operators-console/"><span class="l">Run the math</span><span class="v">Console</span><span class="s">18 calculators, save scenarios</span></a>
-    <a href="/certificates/"><span class="l">Show the work</span><span class="v">Certificates</span><span class="s">10 module marks + Operator's cert</span></a>
-    <a href="/arcade/"><span class="l">Take a break</span><span class="v">Arcade</span><span class="s">Whack-a-Vanity-Metric</span></a>
+    <a href="https://www.mbarock.com/capstone"><span class="l">Build my plan</span><span class="v">Capstone</span><span class="s">10 sections, 1:1 with modules</span></a>
+    <a href="https://www.mbarock.com/operators-console"><span class="l">Run the math</span><span class="v">Console</span><span class="s">18 calculators, save scenarios</span></a>
+    <a href="https://www.mbarock.com/certificates"><span class="l">Show the work</span><span class="v">Certificates</span><span class="s">10 module marks + Operator's cert</span></a>
+    <a href="https://www.mbarock.com/arcade"><span class="l">Take a break</span><span class="v">Arcade</span><span class="s">Whack-a-Vanity-Metric</span></a>
   </div>
 
 </main>
 
 <script>
+// auth-render runs in inline script in head; this block kept for legacy compatibility
 console.log('[Dashboard] v1 loaded');
 
 // ── Config ──
@@ -287,7 +288,7 @@ function nextUnfinishedLesson(){
 function lessonHref(lesson){
   if (!lesson) return '#';
   const slug = lesson.legacy_slug || lesson.slug_v2 || '';
-  return slug ? '/mba-rock/' + slug : '#';
+  return slug ? 'https://www.mbarock.com/mba-rock/' + slug : '#';
 }
 
 function setRing(pct){
