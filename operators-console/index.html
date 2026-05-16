@@ -789,7 +789,7 @@ function selectCalc(id) {
   document.getElementById('saveBtn').addEventListener('click', () => saveScenario(c));
   // Lesson link — point back to dashboard / lesson if available
   const link = document.getElementById('lessonLink');
-  link.href = '/course-dashboard'; // generic fallback; will be member's home for the course
+  link.href = '/dashboard/'; // generic fallback; will be member's home for the course
   // Load saved scenarios
   loadSavedScenarios(c);
   recompute(c);
@@ -1684,7 +1684,7 @@ function selectCalc(id) {
   document.getElementById('saveBtn').addEventListener('click', () => saveScenario(c));
   // Lesson link — point back to dashboard / lesson if available
   const link = document.getElementById('lessonLink');
-  link.href = '/course-dashboard'; // generic fallback; will be member's home for the course
+  link.href = '/dashboard/'; // generic fallback; will be member's home for the course
   // Load saved scenarios
   loadSavedScenarios(c);
   recompute(c);
