@@ -148,9 +148,33 @@ a{color:inherit;}
 </style>
 </head>
 <body>
-<main class="app" id="app">
+<main class="app" id="app" hidden id="mr-protected">
   <div id="content"></div>
 </main>
+
+
+<script>
+/* MR auth-gated render v2 — strips member content from DOM for unauth visitors */
+(function(){
+  try {
+    var hasAuth = !!(
+      localStorage.getItem('mba-rock-member-id') ||
+      localStorage.getItem('mr-member-id') ||
+      localStorage.getItem('mr_member_id') ||
+      localStorage.getItem('memberId') ||
+      new URLSearchParams(location.search).get('m') ||
+      (document.referrer && /mbarock\.com|panda-reindeer/i.test(document.referrer))
+    );
+    var m = document.getElementById('mr-protected');
+    if (hasAuth) {
+      if (m) m.hidden = false;
+    } else {
+      if (m && m.parentNode) m.parentNode.removeChild(m);
+    }
+  } catch (e) { console.error('[MR auth-render]', e); }
+})();
+</script>
+
 
 <script>
 console.log('[Flashcards] v1 loaded');
