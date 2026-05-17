@@ -1,5 +1,5 @@
 {
-  "schema_version": "v2.10sections.74lessons.audio-wired-v2.1.2026-05-15",
+  "schema_version": "v2.10sections.74lessons.audio-wired-v2.1.2026-05-15.supplementary",
   "generated_from": "Josh's 2026-05-11 LMS Deployment Guide",
   "global": {
     "textbook": {
@@ -2684,7 +2684,7 @@
       "slug_v2": "m3l3.3.3",
       "legacy_slug": "m3l3.3.3",
       "song_title": null,
-      "video_url": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Positioning_%26_Focus.mp4",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/dont-be-everything.mp3",
       "audio_overview_url": null,
       "core_concepts": [
@@ -3430,7 +3430,7 @@
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/price-signal.mp3",
       "audio_overview_url": null,
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Pricing_Power.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
@@ -8158,5 +8158,45 @@
   ],
   "last_migration": "2026-05-14: Verified 10-module / 74-lesson NotebookLM brief alignment. Added M1L2.5 (April Cash Timing). Kept 2 grandfathered deep-dives. 76 total lessons in file (74 brief + 2 grandfathered).",
   "lesson_canon_total": 74,
-  "last_canon_sync": "2026-05-17T15:35:40Z"
+  "last_canon_sync": "2026-05-17T16:38:42Z",
+  "supplementary_audio": [
+    {
+      "title": "Own one word in your category",
+      "description": "Brand positioning audio essay. Pairs with M7 Brand Positioning & Messaging.",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/own-one-word-in-your-category.m4a",
+      "added": "2026-05-17"
+    },
+    {
+      "title": "100-Second Songs for Corporate Upskilling",
+      "description": "Long-form audio piece on the music-anchored memory approach. Useful for institutional sales conversations.",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/100-second-songs-for-corporate-upskilling.mp4",
+      "added": "2026-05-17"
+    },
+    {
+      "title": "Mastering Business Strategy Through Rock Anthems",
+      "description": "Long-form audio essay on the album-as-curriculum methodology. Marketing + institutional pitch material.",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/mastering-business-strategy-through-rock-anthems.mp4",
+      "added": "2026-05-17"
+    },
+    {
+      "title": "MBA Rock \u2014 Curriculum Owner's Manual",
+      "description": "Audio onboarding piece. Pairs with /guide/ \u2014 could be embedded there as the audio version of the user guide.",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/mba-rock-curriculum-owners-manual.mp4",
+      "added": "2026-05-17"
+    }
+  ],
+  "additional_videos": [
+    {
+      "title": "Brand Architecture",
+      "description": "Supplementary brand-positioning video. Could pair with M7 Brand Positioning & Messaging or stand alone as a module supplement.",
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Brand_Architecture.mp4",
+      "added": "2026-05-17"
+    },
+    {
+      "title": "Visibility & Dashboards",
+      "description": "Supplementary dashboards video. Pairs with M9 KPIs & Performance Dashboards or Dashboards (Deep-Dive).",
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Visibility_%26_Dashboards.mp4",
+      "added": "2026-05-17"
+    }
+  ]
 }
