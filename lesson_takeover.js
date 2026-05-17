@@ -694,7 +694,7 @@
     if (mod && mod.study_guide_url)      items.push({ icon:'☷', label:'Module study guide', sub:'Full module', url: mod.study_guide_url });
     if (mod && mod.infographic_url)      items.push({ icon:'◈', label:'Module infographic', sub:'Reference card', url: mod.infographic_url });
     if (mod && mod.presenter_deck_url)   items.push({ icon:'▤', label:'Presenter deck',  sub:'Slides', url: mod.presenter_deck_url });
-    if (mod && mod.flashcards_app_embed) items.push({ icon:'↻', label:'Flashcards',     sub:'Practice', url: 'https://joshwark.github.io/mbarock-cdn/flashcards/?mod=' + lesson.module_id });
+    if (mod && mod.flashcards_app_embed) items.push({ icon:'↻', label:'Flashcards',     sub:'Practice', url: 'https://learn.mbarock.com/flashcards/?mod=' + lesson.module_id });
     if (!items.length) return '';
     return '<div class="mr5-sec">' +
       '<div class="mr5-sec-h"><span class="mr5-num">⌗</span><h2>Companion materials</h2><span class="mr5-kicker">Resources</span></div>' +
@@ -862,7 +862,7 @@
     html += '</div>';
 
     // The Capstone — your business, built across the course
-    html += '<div class="mr5-arcade-row"><a class="mr5-arcade-btn mr5-capstone-btn" href="https://joshwark.github.io/mbarock-cdn/capstone/" target="_blank" rel="noopener"><span class="mr5-arcade-icon">⚐</span><span><span class="mr5-arcade-l">Build my Business</span><span class="mr5-arcade-s">Every Take Action becomes a section of <b>your</b> operating system. Finish the course and you have a launchable business — not just notes.</span></span><span class="mr5-arcade-chev">→</span></a></div>';
+    html += '<div class="mr5-arcade-row"><a class="mr5-arcade-btn mr5-capstone-btn" href="https://learn.mbarock.com/capstone/" target="_blank" rel="noopener"><span class="mr5-arcade-icon">⚐</span><span><span class="mr5-arcade-l">Build my Business</span><span class="mr5-arcade-s">Every Take Action becomes a section of <b>your</b> operating system. Finish the course and you have a launchable business — not just notes.</span></span><span class="mr5-arcade-chev">→</span></a></div>';
 
     // The Operator's Console — calculator gallery
     html += '<div class="mr5-arcade-row"><button type="button" class="mr5-arcade-btn mr5-console-btn" data-mr-console="1"><span class="mr5-arcade-icon">⚙</span><span><span class="mr5-arcade-l">The Operator&rsquo;s Console</span><span class="mr5-arcade-s">Every equation in the course, ready to run against <b>your</b> numbers. Save scenarios. Revisit weekly.</span></span><span class="mr5-arcade-chev">→</span></button></div>';

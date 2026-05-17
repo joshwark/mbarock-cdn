@@ -3,7 +3,7 @@
  * Single-file ADA compliance widget. Deploy via one <script> tag.
  *
  * USAGE:
- *   <script src="https://joshwark.github.io/mbarock-cdn/accessibility/widget.js"
+ *   <script src="https://learn.mbarock.com/accessibility/widget.js"
  *     data-brand="mba-rock"></script>
  *
  * OR configure inline:

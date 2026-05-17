@@ -20,7 +20,7 @@
   // Only render on the funnel landing — adjust this check if Josh wants it elsewhere
   // Default: render everywhere it's loaded. Squarespace footer injection should be page-scoped.
 
-  var CDN = 'https://joshwark.github.io/mbarock-cdn/audio/homepage-samples';
+  var CDN = 'https://learn.mbarock.com/audio/homepage-samples';
 
   var TRACKS = [
     {
