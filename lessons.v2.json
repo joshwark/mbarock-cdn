@@ -1,5 +1,5 @@
 {
-  "schema_version": "v2.10sections.74lessons.audio-wired-v2.1.2026-05-15.supplementary",
+  "schema_version": "v2.10sections.74lessons.audio-wired-v2.1.2026-05-15.supplementary.batch7",
   "generated_from": "Josh's 2026-05-11 LMS Deployment Guide",
   "global": {
     "textbook": {
@@ -1737,7 +1737,7 @@
       "legacy_slug": "m2l2.5.5",
       "song_title": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Portfolio_Strategy.mp4",
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/pick-two.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -3748,7 +3748,7 @@
       "title": "Integrated Marketing Mix",
       "slug_v2": "customer-retention",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/adopt-the-loop.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Customer_Retention.mp4",
@@ -3969,7 +3969,7 @@
       "title": "Process Maps: Order from Chaos",
       "slug_v2": "m5l2-process-maps-order-from-chaos",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/process-over-outcome.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Process_Maps__Order_from_Chaos.mp4",
@@ -4074,7 +4074,7 @@
       "title": "Automation Stack / Micro to Macro Scale (Deep-Dive)",
       "slug_v2": "m5l2-5-automation-stack",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/heroes-dont-scale.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Micro_to_Macro_Scale.mp4",
@@ -5126,7 +5126,7 @@
       "legacy_slug": "m6l6.3.5",
       "song_title": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/KPIs_%26_Dashboards.mp4",
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/the-aha.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -5548,7 +5548,7 @@
       "title": "Exit Strategy / Exit Story",
       "slug_v2": "m6l10-exit-strategy-exit-story",
       "legacy_slug": "exit",
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/saleable.mp3",
       "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/exit-strategy.mp4",
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Exit_Strategy.mp4",
@@ -5653,7 +5653,7 @@
       "title": "Complex Human Systems / Ethics Compass",
       "slug_v2": "m6l11-complex-human-systems-ethics-compass",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/four-corners.mp3",
       "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/complex-human-systems.mp4",
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Complex_Human_Systems.mp4",
@@ -5863,7 +5863,7 @@
       "title": "Capstone Encore: 90-Day Plan",
       "slug_v2": "m6l13-video-pending-generation",
       "legacy_slug": "m4-capstone",
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/calendar-is-strategy.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Capstone_Encore__90-Day_Plan.mp4",
@@ -6604,7 +6604,7 @@
       "title": "Supply Chain & Inventory Management",
       "slug_v2": "the-buffer-paradox",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/bullwhip.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_Buffer_Paradox.mp4",
@@ -6945,7 +6945,7 @@
       "legacy_slug": "m8l5",
       "song_title": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Vendor_%26_Partner_Management.mp4",
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/tier-one.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -7362,7 +7362,7 @@
       "legacy_slug": "m9l4",
       "song_title": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Forecasting_%26_Scenarios.mp4",
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/pre-mortem.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -7470,7 +7470,7 @@
       "legacy_slug": "m9l5",
       "song_title": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Architecture_of_Risk.mp4",
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/risk-register.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -7683,7 +7683,7 @@
       "legacy_slug": "m10l2",
       "song_title": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Innovator_s_Dilemma.mp4",
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/s-curves.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -7785,7 +7785,7 @@
       "legacy_slug": "m10l3",
       "song_title": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/AI_%26_Emerging_Tech_Strategy.mp4",
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/forty-cycles.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -7887,7 +7887,7 @@
       "legacy_slug": "m10l4",
       "song_title": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/ESG__A_Lens_on_Value.mp4",
-      "audio_url": null,
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/stakeholder-compass.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -8158,7 +8158,7 @@
   ],
   "last_migration": "2026-05-14: Verified 10-module / 74-lesson NotebookLM brief alignment. Added M1L2.5 (April Cash Timing). Kept 2 grandfathered deep-dives. 76 total lessons in file (74 brief + 2 grandfathered).",
   "lesson_canon_total": 74,
-  "last_canon_sync": "2026-05-18T17:32:45Z",
+  "last_canon_sync": "2026-05-18T18:15:53Z",
   "supplementary_audio": [
     {
       "title": "Own one word in your category",
@@ -8183,6 +8183,12 @@
       "description": "Audio onboarding piece. Pairs with /guide/ \u2014 could be embedded there as the audio version of the user guide.",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/mba-rock-curriculum-owners-manual.mp4",
       "added": "2026-05-17"
+    },
+    {
+      "title": "Front Page",
+      "description": "PR/brand visibility/earned-media essay. Pairs with M4 Content & Demand Generation as supplementary.",
+      "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/front-page.mp3",
+      "added": "2026-05-18"
     }
   ],
   "additional_videos": [
