@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Adytum Operator Pipeline — MBA Rock</title>
+<meta name="description" content="Course-only access to Adytum's investment desk and Better Together Branding's brand-development studio. Available exclusively to MBA Rock members.">
+<meta property="og:title" content="The Adytum Operator Pipeline — MBA Rock">
+<meta property="og:description" content="Members-only access to Adytum investment + Better Together Branding brand development. Not sold separately.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.mbarock.com/adytum">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FDFAF1;--cream:#FAF8F5;--ink:#1A1208;--ink-2:#3C2D17;--muted:#7D6A4E;
+    --navy:#0B1F3A;--orange:#F26B1F;--orange-soft:#FBE6D6;--line:#E8DFC8;--gold:#C99A3B;--green:#1D8444
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--ink);font-weight:700;line-height:1.15;letter-spacing:-0.02em}
+  h1{font-size:clamp(40px,6vw,72px);font-weight:800;letter-spacing:-0.025em}
+  h2{font-size:clamp(26px,3.6vw,42px)}
+  h3{font-size:clamp(20px,2.2vw,26px)}
+  p{font-size:16.5px;line-height:1.65;color:var(--ink-2)}
+  .inner{max-width:980px;margin:0 auto;padding:0 28px}
+  .section{padding:84px 0;border-bottom:1px solid var(--line)}
+  .section.dark{background:linear-gradient(135deg,#0B1F3A 0%,#1D8444 100%);color:var(--cream);border-bottom:none}
+  .section.dark h1,.section.dark h2,.section.dark h3{color:var(--cream)}
+  .section.dark p{color:rgba(248,241,225,0.86)}
+  .eyebrow{display:inline-block;font-family:'Inter';font-size:12px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:var(--orange);margin-bottom:18px}
+  .lead{font-size:19px;line-height:1.55;max-width:680px;margin-top:18px}
+  .chip{display:inline-flex;gap:8px;padding:7px 14px;background:rgba(242,107,31,0.16);color:var(--orange);border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase}
+  .cta{display:inline-block;padding:16px 36px;background:var(--orange);color:#fff;font-family:'Inter';font-weight:700;font-size:15px;border-radius:999px;text-decoration:none;letter-spacing:0.04em;transition:transform .15s ease,box-shadow .15s ease}
+  .cta:hover{transform:translateY(-1px);box-shadow:0 12px 24px rgba(242,107,31,0.32)}
+  .cta.ghost{background:transparent;color:var(--cream);border:2px solid rgba(248,241,225,0.4)}
+  .cta.ghost:hover{background:rgba(248,241,225,0.08);border-color:var(--cream)}
+  .hero{background:linear-gradient(135deg,#0B1F3A 0%,#1D8444 100%);color:var(--cream);padding:90px 0 110px;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 60% at 80% 0%,rgba(242,107,31,0.20) 0%,transparent 60%);pointer-events:none}
+  .hero h1{color:var(--cream)}
+  .hero p.lead{color:rgba(248,241,225,0.88)}
+  .hero .row-cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  @media(max-width:780px){.twocol{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px;box-shadow:0 8px 22px -16px rgba(11,31,58,0.18)}
+  .card.dark{background:linear-gradient(135deg,#0B1F3A 0%,#152D52 100%);color:var(--cream);border:0}
+  .card.dark h3{color:var(--cream)}
+  .card.dark p{color:rgba(248,241,225,0.84)}
+  .step{display:grid;grid-template-columns:62px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .step:last-child{border-bottom:0}
+  .step .n{font-family:'Fraunces',serif;font-size:42px;font-weight:700;color:var(--orange);line-height:1}
+  .step h3{margin-bottom:6px}
+  ul{margin:8px 0 8px 22px}
+  li{margin-bottom:6px;color:var(--ink-2)}
+  details{margin:0;padding:18px 0;border-bottom:1px solid var(--line)}
+  details:last-child{border-bottom:0}
+  summary{cursor:pointer;font-family:'Fraunces';font-size:18px;font-weight:600;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:'+';font-size:24px;color:var(--orange);font-weight:600}
+  details[open] summary::after{content:'−'}
+  details p{padding-top:10px;color:var(--ink-2);font-size:15.5px}
+  .footer{padding:36px 0;font-size:13px;color:var(--muted);text-align:center}
+  .footer a{color:var(--navy);font-weight:600;text-decoration:none}
+</style>
+</head><body>
+
+<section class="hero">
+  <div class="inner">
+    <span class="chip">Members only · Not sold separately</span>
+    <h1 style="margin-top:18px">The Adytum<br>Operator Pipeline.</h1>
+    <p class="lead">Course-only access to Adytum's investment desk and Better Together Branding's brand-development studio. Complete the program. Submit your Dossier. If your plan and metrics clear our bar, you're a candidate for early-stage capital and brand build-out.</p>
+    <div class="row-cta">
+      <a class="cta" href="https://www.mbarock.com/mba-rock">Join MBA Rock to unlock →</a>
+      <a class="cta ghost" href="#how-it-works">How it works</a>
+    </div>
+    <p style="margin-top:38px;font-size:13px;color:rgba(248,241,225,0.66)">Not available anywhere else, at any price.</p>
+  </div>
+</section>
+
+<section class="section" id="how-it-works">
+  <div class="inner">
+    <span class="eyebrow">What it is</span>
+    <h2>Two doors, one entry.</h2>
+    <p class="lead">The Adytum Operator Pipeline is a private channel — outside the public application pool — between MBA Rock graduates and two of our investment + brand operations.</p>
+    <div class="twocol" style="margin-top:42px">
+      <div class="card">
+        <span class="chip" style="background:rgba(11,31,58,0.10);color:var(--navy)">Door 1</span>
+        <h3 style="margin-top:14px">Adytum Investment Desk</h3>
+        <p>Early-stage capital review. Submit your Capstone + Dossier; if your unit economics and execution thesis hold up, you're a candidate for a friends-and-family check or a structured pre-seed introduction.</p>
+      </div>
+      <div class="card">
+        <span class="chip" style="background:rgba(29,132,68,0.10);color:var(--green)">Door 2</span>
+        <h3 style="margin-top:14px">Better Together Branding Studio</h3>
+        <p>Brand strategy + identity + creative direction from the same team behind Truffle Bear, MBA Rock, and Better Together Branding's portfolio. Members get priority access and member-only rates on full brand build-outs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream)">
+  <div class="inner">
+    <span class="eyebrow">How it works</span>
+    <h2>The pipeline, end-to-end.</h2>
+    <p class="lead">Linear. Predictable. No fluff.</p>
+    <div style="margin-top:42px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px">
+      <div class="step"><div class="n">1</div><div><h3>Finish the course</h3><p>Complete at least the Operator's Capstone (10 sections) and earn the Operator's Certificate. We don't review submissions from incomplete members — the work is the qualification.</p></div></div>
+      <div class="step"><div class="n">2</div><div><h3>Export your Dossier</h3><p>One click in your dashboard. The Dossier is the investor-grade PDF the program is built around — your plan, metrics, and positioning compressed into one readable artifact.</p></div></div>
+      <div class="step"><div class="n">3</div><div><h3>Submit through your member account</h3><p>From your dashboard, hit "Submit to Adytum Pipeline." Choose: Investment Desk, Brand Studio, or both. Optional notes (15 lines max).</p></div></div>
+      <div class="step"><div class="n">4</div><div><h3>Initial review — 7 to 14 days</h3><p>We read every submission. You'll get one of three responses: <b>Pass</b> (with the reason), <b>Bring more</b> (with specific asks), or <b>Move forward</b> (scoping call scheduled).</p></div></div>
+      <div class="step"><div class="n">5</div><div><h3>Scoping conversation</h3><p>If you move forward: a structured 45-minute conversation. Investment Desk reviews terms and check size; Brand Studio reviews scope and member rate. No commitment yet — both sides decide after.</p></div></div>
+      <div class="step"><div class="n">6</div><div><h3>Engagement</h3><p>Investment: term sheet or formal pre-seed intro. Brand Studio: signed creative brief and a calendar. Both paths assume you remain the operator — we back you and amplify, we don't take over.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="inner">
+    <span class="eyebrow">What we look for</span>
+    <h2>What clears the bar.</h2>
+    <p class="lead">Plain English. No mystery. You can self-assess before submitting.</p>
+    <ul style="margin-top:28px;font-size:16.5px;line-height:1.8;list-style:none;padding:0">
+      <li>✓ &nbsp; <b>Clarity of plan</b> — your Capstone reads like an operator wrote it, not a consultant.</li>
+      <li>✓ &nbsp; <b>Unit economics that work</b> — CAC, LTV, payback period, margins; numbers, not metaphors.</li>
+      <li>✓ &nbsp; <b>Operator skin in the game</b> — even pre-launch is fine; what matters is your move history.</li>
+      <li>✓ &nbsp; <b>A real reason to back you</b> — for Investment, a path to capital efficiency; for Brand, a category you can own.</li>
+      <li>✓ &nbsp; <b>An honest narrative</b> — no inflation, no fairy-tale TAM. We'd rather you say what's hard than what's perfect.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream)">
+  <div class="inner">
+    <span class="eyebrow">FAQ</span>
+    <h2>The honest questions.</h2>
+    <div style="margin-top:34px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:6px 30px">
+      <details><summary>Is this guaranteed?</summary><p>No. The pipeline is a private channel, not a promise of capital or services. Most submissions don't move past the initial review — that's the point. Members of MBA Rock get access to the channel; everyone still earns the engagement.</p></details>
+      <details><summary>Why don't you offer this separately?</summary><p>Because the Capstone + Dossier are how we evaluate fit. The program produces the artifact we need to review you. Without that, our review process is the same un-scaleable one as everyone else's. The course replaces the first three meetings.</p></details>
+      <details><summary>How much capital are you writing?</summary><p>Adytum's friends-and-family checks have historically been $25k–$250k. Pre-seed introductions can be larger. The Adytum desk underwrites case-by-case; we don't publish a fund vintage.</p></details>
+      <details><summary>What does the Brand Studio actually do?</summary><p>The same brand stack we use on our own portfolio: positioning, identity, naming, voice, brand book, launch assets, web. Member rate is roughly half of our standard agency rate. Engagements typically run 6–10 weeks.</p></details>
+      <details><summary>Can I submit more than once?</summary><p>Yes — but wait 90 days between submissions and bring something materially new (new data, new traction, new positioning). Repeated submissions without change are auto-passed.</p></details>
+      <details><summary>What if I'm not a member yet?</summary><p>The pipeline opens the moment you complete the Operator's Certificate inside MBA Rock. <a href="https://www.mbarock.com/mba-rock" style="color:var(--orange);font-weight:700;text-decoration:underline">Join here</a> — Founders' rate is $499 through June 30, 2026.</p></details>
+      <details><summary>Is there a deadline to submit?</summary><p>No. The pipeline is always open to active members. We process submissions monthly.</p></details>
+      <details><summary>Who reviews the submissions?</summary><p>Joshua Wark (founder, MBA Rock + Adytum + Better Together Branding) does the first read. For Investment Desk submissions that move forward, our broader investment committee weighs in. For Brand Studio engagements, our creative director scopes the work.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="inner" style="text-align:center;max-width:760px">
+    <span class="eyebrow">The door</span>
+    <h2 style="margin-top:10px">Course unlocks pipeline. Pipeline rewards the work.</h2>
+    <p class="lead" style="margin:18px auto 28px">Join MBA Rock at the Founders' rate. Finish the program. Submit your Dossier. The rest is up to your work.</p>
+    <a class="cta" href="https://www.mbarock.com/mba-rock">Join MBA Rock — $499 →</a>
+    <p style="margin-top:18px;font-size:12.5px;color:rgba(248,241,225,0.6)">Founders' rate locked through June 30, 2026.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 MBA Rock · A Better Together Branding company · <a href="https://www.mbarock.com">mbarock.com</a> · <a href="https://www.mbarock.com/about-us">About</a> · <a href="https://www.mbarock.com/institutional">For institutions</a></p>
+</footer>
+
+</body></html>
