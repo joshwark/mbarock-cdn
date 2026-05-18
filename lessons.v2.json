@@ -1,5 +1,5 @@
 {
-  "schema_version": "v2.10sections.74lessons.audio-wired-v2.1.2026-05-15.supplementary.batch7",
+  "schema_version": "v2.10sections.74lessons.audio-wired-v2.1.2026-05-15.supplementary.batch7.vid20260518",
   "generated_from": "Josh's 2026-05-11 LMS Deployment Guide",
   "global": {
     "textbook": {
@@ -2582,7 +2582,7 @@
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/tuckman-storming.mp3",
       "audio_overview_url": null,
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Hire_Slow%2C_Fire_Fast.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
@@ -3214,7 +3214,7 @@
       "slug_v2": "m4l2.5",
       "legacy_slug": "m4l2.5",
       "song_title": null,
-      "video_url": null,
+      "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_Builder_s_Blueprint.mp4",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/distribution-rivers.mp3",
       "audio_overview_url": null,
       "core_concepts": [
@@ -8158,7 +8158,7 @@
   ],
   "last_migration": "2026-05-14: Verified 10-module / 74-lesson NotebookLM brief alignment. Added M1L2.5 (April Cash Timing). Kept 2 grandfathered deep-dives. 76 total lessons in file (74 brief + 2 grandfathered).",
   "lesson_canon_total": 74,
-  "last_canon_sync": "2026-05-18T18:15:53Z",
+  "last_canon_sync": "2026-05-18T18:24:55Z",
   "supplementary_audio": [
     {
       "title": "Own one word in your category",
