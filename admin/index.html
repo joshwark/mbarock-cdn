@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>MBA Rock — Admin Console</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A;--navy-2:#152D52;--orange:#F26B1F;--orange-soft:#FBE6D6;
+    --cream:#FAF8F5;--paper:#F4F1EA;--ink:#0E1116;--ink-2:#3C2D17;
+    --rule:#E5E0D6;--muted:#5A6470;--green:#1D8444;--green-soft:#D4F4DD;
+    --red:#B5482E;--red-soft:#FCE0CC;--gold:#C99A3B;--gold-soft:#FFF4D4;
+    --indigo:#3E4FA8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);font-weight:700;letter-spacing:-0.015em}
+  h1{font-size:28px;line-height:1.1}
+  h2{font-size:18px;line-height:1.2;margin-top:0;margin-bottom:8px}
+  h3{font-size:13px;color:var(--navy);text-transform:uppercase;letter-spacing:0.12em;font-weight:700;margin-bottom:8px;font-family:'Inter'}
+  a{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--navy)}
+  a:hover{color:var(--orange);border-bottom-color:var(--orange)}
+  .wrap{max-width:1400px;margin:0 auto;padding:14px 22px}
+  .topbar{background:#fff;border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:90;box-shadow:0 2px 8px -6px rgba(11,31,58,0.10)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 22px}
+  .brand{font-family:'Fraunces';font-size:20px;font-weight:700;color:var(--navy)}
+  .brand .pill{display:inline-block;font-family:'Inter';font-size:10px;letter-spacing:0.16em;background:var(--orange);color:#fff;padding:3px 9px;border-radius:999px;font-weight:700;margin-left:8px;vertical-align:middle;text-transform:uppercase}
+  .brand .env{display:inline-block;font-family:'Inter';font-size:10px;letter-spacing:0.16em;background:rgba(11,31,58,0.08);color:var(--muted);padding:3px 9px;border-radius:999px;font-weight:700;margin-left:6px;vertical-align:middle;text-transform:uppercase}
+  .topbar nav{display:flex;align-items:center;gap:14px;font-size:13px}
+  .topbar nav .who{color:var(--navy);font-weight:600}
+  .topbar nav .role{color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:0.08em}
+  .topbar button{background:transparent;border:1px solid var(--rule);padding:6px 12px;border-radius:6px;font-size:12px;color:var(--navy);cursor:pointer;font-weight:600}
+  .topbar button:hover{background:var(--cream)}
+  .live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:6px;animation:pulse 1.8s ease-in-out infinite;vertical-align:middle}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+
+  /* AUTH */
+  .auth{max-width:440px;margin:90px auto;background:#fff;border-radius:18px;padding:36px;box-shadow:0 16px 36px -20px rgba(11,31,58,0.2);border:1px solid var(--rule)}
+  .auth h1{margin-bottom:6px}
+  .auth p.sub{font-size:14px;color:var(--muted);margin-bottom:24px}
+  .auth label{display:block;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:6px}
+  .auth input{width:100%;padding:13px 14px;border-radius:8px;border:1px solid var(--rule);font-size:15px;font-family:'Inter'}
+  .auth input:focus{outline:none;border-color:var(--orange)}
+  .auth button.primary{margin-top:14px;width:100%;padding:13px;background:var(--orange);color:#fff;border:0;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;letter-spacing:0.04em}
+  .auth button.primary:hover{background:#D85A14}
+  .auth .msg{margin-top:12px;font-size:13px;line-height:1.5;min-height:18px}
+  .auth .msg.error{color:var(--red)}
+  .auth .msg.success{color:var(--green)}
+  .auth .micro{margin-top:16px;font-size:11.5px;color:var(--muted);line-height:1.55}
+
+  /* APP */
+  #app{display:none}
+  #app.signed-in{display:block}
+
+  /* ALERT BANNER */
+  .alert-banner{padding:12px 22px;font-size:13px;font-weight:600;display:none;border-bottom:1px solid transparent}
+  .alert-banner.show{display:block}
+  .alert-banner.warn{background:var(--gold-soft);color:#5b441a;border-bottom-color:#E8C97D}
+  .alert-banner.bad{background:var(--red-soft);color:#7a2f1b;border-bottom-color:#E89A75}
+  .alert-banner.good{background:var(--green-soft);color:#1a5a30;border-bottom-color:#7CCB95}
+
+  /* KPI cards */
+  .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:16px 0}
+  .kpi{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:18px 18px 14px;position:relative;transition:transform .15s ease,box-shadow .15s ease}
+  .kpi:hover{transform:translateY(-1px);box-shadow:0 8px 18px -10px rgba(11,31,58,0.18)}
+  .kpi .label{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:6px}
+  .kpi .val{font-family:'Fraunces';font-size:30px;font-weight:700;color:var(--navy);line-height:1;letter-spacing:-0.02em}
+  .kpi .val.good{color:var(--green)} .kpi .val.warn{color:var(--gold)} .kpi .val.bad{color:var(--red)}
+  .kpi .sub{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.4}
+  .kpi .bar{margin-top:8px;height:4px;background:var(--paper);border-radius:999px;overflow:hidden}
+  .kpi .bar i{display:block;height:100%;background:var(--green);transition:width .4s ease}
+
+  .row2{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-top:18px}
+  @media(max-width:1100px){.row2{grid-template-columns:1fr}}
+
+  .card{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:20px;margin-bottom:18px}
+  .card .card-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .card .card-h h2{margin:0}
+  .card .card-h .meta{font-size:11px;color:var(--muted)}
+
+  .btn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:8px 0}
+  .btn-action{padding:14px 16px;background:var(--cream);border:1px solid var(--rule);border-radius:10px;text-align:left;font-family:'Inter';font-size:13.5px;font-weight:600;color:var(--navy);cursor:pointer;transition:all .12s ease;line-height:1.45}
+  .btn-action:hover{background:#fff;border-color:var(--navy);transform:translateY(-1px);box-shadow:0 6px 14px -10px rgba(11,31,58,0.2)}
+  .btn-action .tag{display:block;font-size:10px;letter-spacing:0.10em;color:var(--orange);font-weight:700;text-transform:uppercase;margin-bottom:5px}
+  .btn-action .desc{display:block;font-size:11.5px;color:var(--muted);font-weight:400;margin-top:5px;line-height:1.45}
+
+  /* TASK LIST */
+  .filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;align-items:center}
+  .filter-bar .chip{padding:5px 12px;font-size:11.5px;font-weight:600;color:var(--navy);background:var(--cream);border:1px solid var(--rule);border-radius:999px;cursor:pointer;text-transform:uppercase;letter-spacing:0.04em}
+  .filter-bar .chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .filter-bar input{flex:1;min-width:200px;padding:8px 12px;border:1px solid var(--rule);border-radius:999px;font-size:13px;font-family:'Inter'}
+  .filter-bar input:focus{outline:none;border-color:var(--orange)}
+
+  table{width:100%;border-collapse:collapse;margin-top:4px;font-size:13px}
+  th{text-align:left;padding:9px 6px;background:var(--cream);font-weight:700;font-size:10.5px;text-transform:uppercase;letter-spacing:0.10em;color:var(--muted);border-bottom:1px solid var(--rule)}
+  td{padding:11px 6px;border-bottom:1px solid var(--rule);vertical-align:top}
+  tr.task-row{cursor:pointer;transition:background .12s ease}
+  tr.task-row:hover{background:var(--cream)}
+  .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap}
+  .pill.submitted{background:var(--gold-soft);color:#7a5f1f}
+  .pill.processing{background:rgba(62,79,168,0.15);color:var(--indigo)}
+  .pill.awaiting{background:var(--orange-soft);color:#8a3d0e}
+  .pill.in-progress{background:rgba(62,79,168,0.15);color:var(--indigo)}
+  .pill.resolved{background:var(--green-soft);color:#1a5a30}
+  .pill.declined{background:var(--red-soft);color:#7e2f1b}
+  .pill.urgent{background:var(--red);color:#fff}
+  .pill.high{background:var(--orange);color:#fff}
+  .pill.normal{background:rgba(11,31,58,0.10);color:var(--navy)}
+  .pill.low{background:rgba(11,31,58,0.05);color:var(--muted)}
+
+  /* MODAL */
+  .modal{display:none;position:fixed;inset:0;background:rgba(11,31,58,0.55);align-items:flex-start;justify-content:center;z-index:1000;padding:60px 20px 20px;overflow-y:auto}
+  .modal.open{display:flex}
+  .modal-card{background:#fff;border-radius:18px;padding:30px;max-width:640px;width:100%;box-shadow:0 30px 60px rgba(0,0,0,0.3);position:relative;margin-bottom:40px}
+  .modal-card h2{font-family:'Fraunces';font-size:22px;margin-bottom:6px}
+  .modal-card .modal-close{position:absolute;top:14px;right:18px;background:transparent;border:0;font-size:22px;cursor:pointer;color:var(--muted)}
+  .modal-card label{display:block;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-top:14px;margin-bottom:6px}
+  .modal-card input,.modal-card textarea,.modal-card select{width:100%;padding:11px 13px;border-radius:8px;border:1px solid var(--rule);font-size:14.5px;font-family:'Inter'}
+  .modal-card textarea{min-height:110px;resize:vertical;line-height:1.55}
+  .modal-card .row{display:flex;gap:10px;margin-top:18px;justify-content:flex-end;flex-wrap:wrap}
+  .modal-card button{padding:10px 18px;border-radius:8px;border:0;font-weight:700;font-size:13px;cursor:pointer;font-family:'Inter'}
+  .modal-card button.primary{background:var(--orange);color:#fff}
+  .modal-card button.primary:hover{background:#D85A14}
+  .modal-card button.cancel{background:transparent;border:1px solid var(--rule);color:var(--navy)}
+  .modal-card button.danger{background:var(--red);color:#fff}
+  .modal-card button.resolve{background:var(--green);color:#fff}
+  .modal-card .msg{margin-top:10px;font-size:12.5px;color:var(--green);min-height:16px}
+  .modal-card .msg.error{color:var(--red)}
+  .modal-card .timeline{margin-top:14px;padding:14px;background:var(--cream);border-radius:10px;font-size:12px;color:var(--ink);line-height:1.55}
+  .modal-card .timeline-item{padding:5px 0;border-bottom:1px dashed var(--rule)}
+  .modal-card .timeline-item:last-child{border-bottom:0}
+
+  /* sparkline */
+  .sparkline{margin-top:8px}
+
+  /* commit list */
+  .commit{padding:7px 0;border-bottom:1px solid var(--rule);font-size:12.5px;line-height:1.5}
+  .commit:last-child{border-bottom:0}
+  .commit .sha{font-family:'Courier',monospace;color:var(--orange);font-weight:700}
+  .commit .when{color:var(--muted);font-size:10.5px}
+
+  .help-panel{margin-top:24px;padding:18px 22px;background:linear-gradient(135deg,#0B1F3A 0%,#152D52 100%);color:var(--cream);border-radius:14px;font-size:13px;line-height:1.6}
+  .help-panel summary{cursor:pointer;font-family:'Fraunces';font-weight:700;font-size:16px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  .help-panel summary::after{content:'+';font-size:22px;color:var(--orange)}
+  .help-panel[open] summary::after{content:'−'}
+  .help-panel ul{margin:14px 0 4px 18px;color:rgba(248,241,225,0.86)}
+  .help-panel li{margin:5px 0}
+  .help-panel a{color:var(--orange);border-bottom-color:var(--orange)}
+
+  .footer-note{margin-top:32px;padding-top:18px;border-top:1px solid var(--rule);font-size:11px;color:var(--muted);text-align:center;line-height:1.7}
+  .footer-note code{font-family:'Courier',monospace;background:rgba(11,31,58,0.06);padding:1px 6px;border-radius:4px}
+  .empty{padding:20px;text-align:center;color:var(--muted);font-size:13px;font-style:italic}
+</style>
+</head><body>
+
+<!-- ───── AUTH SCREEN ───── -->
+<div id="auth" class="auth">
+  <h1>MBA Rock Admin</h1>
+  <p class="sub">Sign in with the email on file. We send a magic link — no password.</p>
+  <label for="emailInput">Email</label>
+  <input type="email" id="emailInput" autocomplete="email" placeholder="you@bettertogetherbranding.ai" required>
+  <button class="primary" onclick="sendMagicLink()">Send magic link</button>
+  <div id="authMsg" class="msg"></div>
+  <p class="micro">Only emails on the <code>admin_users</code> table can sign in. If you should have access and don't, ping Josh.</p>
+</div>
+
+<!-- ───── APP ───── -->
+<div id="app">
+
+  <div class="topbar">
+    <div class="wrap">
+      <div>
+        <span class="brand">MBA Rock <span class="pill">Admin</span> <span class="env">v1.1</span></span>
+      </div>
+      <nav>
+        <span><span class="live-dot"></span><span id="realtimeStatus" style="font-size:11.5px;color:var(--muted)">realtime: connecting…</span></span>
+        <span class="who" id="whoEmail"></span><span class="role" id="whoRole"></span>
+        <button onclick="refreshAll()">Refresh</button>
+        <button onclick="signOut()">Sign out</button>
+      </nav>
+    </div>
+  </div>
+
+  <div id="alertBanner" class="alert-banner"></div>
+
+  <div class="wrap">
+
+    <!-- KPIs -->
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:20px">
+      <h1 style="font-size:24px">Site health snapshot</h1>
+      <span id="kpiRefreshedAt" style="font-size:11px;color:var(--muted)">—</span>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="label">Course completion</div><div class="val" id="kpi-coverage">—</div><div class="sub" id="kpi-coverage-sub">checking…</div><div class="bar"><i id="kpi-coverage-bar" style="width:0%"></i></div></div>
+      <div class="kpi"><div class="label">Audio · 74 lessons</div><div class="val" id="kpi-audio">—</div><div class="sub" id="kpi-audio-sub">—</div></div>
+      <div class="kpi"><div class="label">Video · 74 lessons</div><div class="val" id="kpi-video">—</div><div class="sub" id="kpi-video-sub">—</div></div>
+      <div class="kpi"><div class="label">Songs total</div><div class="val" id="kpi-songs">—</div><div class="sub">on CDN</div></div>
+      <div class="kpi"><div class="label">Last deploy</div><div class="val" id="kpi-deploy" style="font-size:14px;line-height:1.3;letter-spacing:normal">—</div><div class="sub" id="kpi-deploy-sub"></div></div>
+      <div class="kpi"><div class="label">Open requests</div><div class="val" id="kpi-tasks">—</div><div class="sub" id="kpi-tasks-sub">awaiting action</div></div>
+      <div class="kpi"><div class="label">Sample-media live</div><div class="val" id="kpi-media">—</div><div class="sub" id="kpi-media-sub">10 random URLs</div></div>
+      <div class="kpi"><div class="label">Squarespace banner</div><div class="val" id="kpi-sq" style="font-size:14px;line-height:1.3;letter-spacing:normal">—</div><div class="sub" id="kpi-sq-sub">/mba-rock fact-scan</div></div>
+    </div>
+
+    <div class="row2">
+      <!-- LEFT: Actions + Queue -->
+      <div>
+        <div class="card">
+          <div class="card-h"><h2>Quick actions</h2><span class="meta">click → submit → emails Josh</span></div>
+          <div class="btn-grid">
+            <button class="btn-action" onclick="submitTask('fix-request','Site fix request','')">
+              <span class="tag">submit fix</span>Submit a fix request
+              <span class="desc">Describe what's broken; Claude reviews + Josh approves.</span>
+            </button>
+            <button class="btn-action" onclick="submitTask('content-update','Content update request','')">
+              <span class="tag">content</span>Request content update
+              <span class="desc">Replace copy, image, song, or video on a specific page.</span>
+            </button>
+            <button class="btn-action" onclick="submitTask('audit','Re-run commitment audit','Scan CDN for unauthorized commitments (founder personal time, cohort fictions, etc).')">
+              <span class="tag">audit</span>Run commitment audit
+              <span class="desc">Site-wide scan for unauthorized promises.</span>
+            </button>
+            <button class="btn-action" onclick="submitTask('qa-run','Re-run media QA sweep','Verify every audio + video URL returns HTTP 200.')">
+              <span class="tag">QA</span>Run media QA sweep
+              <span class="desc">Confirms all 155 media URLs are live.</span>
+            </button>
+            <button class="btn-action" onclick="submitTask('factual-sweep','Run factual sweep','Site-wide check that song count, lesson count, completion claims are all current.')">
+              <span class="tag">numbers</span>Run factual sweep
+              <span class="desc">Verifies song/lesson/video counts everywhere.</span>
+            </button>
+            <button class="btn-action" onclick="submitTask('escalate','Escalate to Josh','')">
+              <span class="tag">to josh</span>Send to Josh's review
+              <span class="desc">Question, decision, or anything you can't ship without him.</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TASK QUEUE -->
+        <div class="card">
+          <div class="card-h"><h2>Request queue</h2><span class="meta" id="queueMeta">last 60 days</span></div>
+          <div class="filter-bar">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="open">Open</button>
+            <button class="chip" data-filter="submitted">Submitted</button>
+            <button class="chip" data-filter="in-progress">In progress</button>
+            <button class="chip" data-filter="awaiting-josh">Awaiting Josh</button>
+            <button class="chip" data-filter="resolved">Resolved</button>
+            <input type="text" id="searchInput" placeholder="search title, description, submitter…">
+          </div>
+          <table>
+            <thead><tr><th style="width:80px">When</th><th>Title / context</th><th style="width:100px">Priority</th><th style="width:120px">From</th><th style="width:110px">Status</th></tr></thead>
+            <tbody id="taskBody"><tr><td colspan="5" class="empty">Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- RIGHT: Activity + Commits + Links -->
+      <div>
+        <div class="card">
+          <div class="card-h"><h2>Activity (7 days)</h2><span class="meta" id="activityCount">—</span></div>
+          <svg id="sparkline" class="sparkline" viewBox="0 0 280 60" preserveAspectRatio="none" style="width:100%;height:60px"></svg>
+          <div id="activityList" style="margin-top:10px;font-size:11.5px;color:var(--muted);line-height:1.5"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><h2>Recent deploys</h2><span class="meta" id="commitsMeta">—</span></div>
+          <div id="commitsList">Loading…</div>
+        </div>
+
+        <div class="card">
+          <h2>Quick links</h2>
+          <ul style="margin-left:18px;font-size:13px;line-height:1.85">
+            <li><a href="https://www.mbarock.com/" target="_blank">Live site (mbarock.com)</a></li>
+            <li><a href="https://www.mbarock.com/mba-rock" target="_blank">Squarespace product page</a></li>
+            <li><a href="https://www.mbarock.com/adytum" target="_blank">Adytum Pipeline page</a></li>
+            <li><a href="https://learn.mbarock.com/readiness.html" target="_blank">Course readiness</a></li>
+            <li><a href="https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json" target="_blank">Canon JSON</a></li>
+            <li><a href="https://github.com/joshwark/mbarock-cdn/commits/main" target="_blank">Commit history</a></li>
+            <li><a href="https://supabase.com/dashboard/project/ciloqphtencjthkedanw" target="_blank">Supabase project</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><h2>Audit log</h2><span class="meta">last 25 events</span></div>
+          <div id="auditList" style="font-size:11.5px;color:var(--muted);line-height:1.7">Loading…</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HELP -->
+    <details class="help-panel">
+      <summary>How to use this console</summary>
+      <ul>
+        <li><b>Site health</b> updates automatically every 60s. Green = good, gold = warning, red = action needed.</li>
+        <li><b>Quick actions</b> create a request row + email Josh. They aren't fixes themselves — they queue up the work.</li>
+        <li><b>Request queue</b> shows everything submitted. Click any row to see full context, add notes, or change status.</li>
+        <li><b>Realtime</b> means Supabase pushes changes live — when Josh updates a task, you see it without refresh.</li>
+        <li>Critical issues surface in the orange/red banner at the top.</li>
+        <li>If something is broken or confusing, use <b>"Send to Josh"</b> with a clear note — that's the safety net.</li>
+      </ul>
+      <p style="margin-top:14px;font-size:12px;color:rgba(248,241,225,0.65)">v1.1 — built 2026-05-18 by Claude (Anthropic chief of staff agent). Supabase project <code style="background:rgba(255,255,255,0.08)">ciloqphtencjthkedanw</code>.</p>
+    </details>
+
+    <div class="footer-note">
+      MBA Rock Admin Console · v1.1<br>
+      Tasks at <code>admin_tasks</code> · Audit at <code>admin_audit_log</code> · Roles at <code>admin_users</code>
+    </div>
+  </div>
+</div>
+
+<!-- ───── SUBMIT MODAL ───── -->
+<div id="modal" class="modal" role="dialog">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <h2 id="modalTitle">Submit task</h2>
+    <p style="font-size:13px;color:var(--muted);margin-top:6px" id="modalIntro"></p>
+    <label for="modalTaskTitle">Title</label>
+    <input type="text" id="modalTaskTitle" placeholder="One-line summary">
+    <label for="modalTaskDesc">Description / what's needed</label>
+    <textarea id="modalTaskDesc" placeholder="What's broken / what to change / context Josh + Claude need to act on this."></textarea>
+    <label for="modalTaskPriority">Priority</label>
+    <select id="modalTaskPriority">
+      <option value="normal" selected>Normal</option>
+      <option value="high">High</option>
+      <option value="urgent">Urgent</option>
+      <option value="low">Low</option>
+    </select>
+    <div class="msg" id="modalMsg"></div>
+    <div class="row">
+      <button class="cancel" onclick="closeModal()">Cancel</button>
+      <button class="primary" onclick="confirmTask()">Submit + notify Josh</button>
+    </div>
+  </div>
+</div>
+
+<!-- ───── TASK DETAIL MODAL ───── -->
+<div id="detailModal" class="modal" role="dialog">
+  <div class="modal-card" style="max-width:720px">
+    <button class="modal-close" onclick="closeDetail()">×</button>
+    <div id="detailContent"></div>
+  </div>
+</div>
+
+<!-- ───── Supabase + app logic ───── -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+const SB_URL = 'https://ciloqphtencjthkedanw.supabase.co';
+const SB_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+const sb = window.supabase.createClient(SB_URL, SB_KEY);
+
+let session = null, me = null, pendingTask = null, currentDetailId = null;
+let tasksCache = [], activeFilter = 'all', searchQuery = '';
+let realtimeChannel = null;
+
+// ── boot
+(async function init(){
+  const { data } = await sb.auth.getSession();
+  session = data.session;
+  if (session) await onSignedIn();
+  sb.auth.onAuthStateChange(async (_e, s) => {
+    session = s;
+    if (s) await onSignedIn(); else showAuth();
+  });
+})();
+
+function showAuth(){
+  document.getElementById('auth').style.display = 'block';
+  document.getElementById('app').classList.remove('signed-in');
+}
+
+async function onSignedIn(){
+  const email = session.user.email;
+  const { data: row, error } = await sb.from('admin_users').select('email,role,active').eq('email', email).maybeSingle();
+  if (error || !row || !row.active) {
+    setMsg('authMsg', `Sorry — ${email} isn't authorized. Ask Josh to add you to admin_users.`, 'error');
+    await sb.auth.signOut();
+    return;
+  }
+  me = { email: row.email, role: row.role };
+  document.getElementById('whoEmail').textContent = me.email;
+  document.getElementById('whoRole').textContent = ' · ' + me.role;
+  document.getElementById('auth').style.display = 'none';
+  document.getElementById('app').classList.add('signed-in');
+  setupRealtime();
+  setupFilters();
+  await refreshAll();
+  // Auto-refresh every 60s
+  setInterval(refreshAll, 60000);
+}
+
+async function sendMagicLink(){
+  const email = document.getElementById('emailInput').value.trim();
+  if (!email) return setMsg('authMsg', 'Enter your email.', 'error');
+  setMsg('authMsg', 'Sending…', '');
+  const { error } = await sb.auth.signInWithOtp({ email, options: { emailRedirectTo: window.location.href }});
+  if (error) setMsg('authMsg', error.message, 'error');
+  else setMsg('authMsg', `Check ${email} — magic link sent. Click it to sign in.`, 'success');
+}
+
+async function signOut(){
+  if (realtimeChannel) await sb.removeChannel(realtimeChannel);
+  await sb.auth.signOut();
+  me = null;
+  showAuth();
+}
+
+function setMsg(id, text, cls){
+  const el = document.getElementById(id);
+  el.textContent = text;
+  el.className = 'msg ' + (cls || '');
+}
+
+// ── realtime
+function setupRealtime(){
+  realtimeChannel = sb.channel('admin-realtime')
+    .on('postgres_changes', { event:'*', schema:'public', table:'admin_tasks' }, () => loadTasks())
+    .on('postgres_changes', { event:'*', schema:'public', table:'admin_audit_log' }, () => loadAudit())
+    .subscribe((status) => {
+      const lbl = document.getElementById('realtimeStatus');
+      if (status === 'SUBSCRIBED') lbl.textContent = 'realtime: live';
+      else if (status === 'CLOSED') lbl.textContent = 'realtime: offline';
+      else lbl.textContent = 'realtime: ' + status.toLowerCase();
+    });
+}
+
+// ── filters
+function setupFilters(){
+  document.querySelectorAll('.filter-bar .chip').forEach(c => {
+    c.addEventListener('click', () => {
+      document.querySelectorAll('.filter-bar .chip').forEach(x => x.classList.remove('active'));
+      c.classList.add('active');
+      activeFilter = c.dataset.filter;
+      renderTasks();
+    });
+  });
+  document.getElementById('searchInput').addEventListener('input', e => {
+    searchQuery = e.target.value.toLowerCase();
+    renderTasks();
+  });
+}
+
+// ── data loads
+async function refreshAll(){
+  await Promise.all([loadCanon(), loadCommits(), loadTasks(), loadAudit(), loadMediaSample(), loadSquarespaceCheck()]);
+  document.getElementById('kpiRefreshedAt').textContent = 'refreshed ' + new Date().toLocaleTimeString();
+  checkAlerts();
+}
+
+async function loadCanon(){
+  try {
+    const r = await fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json?t=' + Date.now());
+    const c = await r.json();
+    const total = c.lessons.length;
+    const audio = c.lessons.filter(L => L.audio_url).length;
+    const video = c.lessons.filter(L => L.video_url).length;
+    const cover = Math.round(100 * Math.min(audio, video) / total);
+    setKpi('kpi-coverage', cover + '%', cover === 100 ? 'good' : cover >= 95 ? 'warn' : 'bad');
+    document.getElementById('kpi-coverage-bar').style.width = cover + '%';
+    setKpi('kpi-audio', audio + '/' + total, audio === total ? 'good' : 'warn');
+    document.getElementById('kpi-audio-sub').textContent = audio === total ? '100% wired' : (total-audio) + ' missing';
+    setKpi('kpi-video', video + '/' + total, video === total ? 'good' : 'warn');
+    document.getElementById('kpi-video-sub').textContent = video === total ? '100% wired' : (total-video) + ' missing';
+    document.getElementById('kpi-coverage-sub').textContent = `${audio+video} of ${total*2} media slots filled`;
+    const songs = audio + (c.supplementary_audio||[]).length;
+    setKpi('kpi-songs', songs);
+    window._canon = c;
+  } catch(e){ setKpi('kpi-coverage','—','bad'); }
+}
+
+async function loadCommits(){
+  try {
+    const r = await fetch('https://api.github.com/repos/joshwark/mbarock-cdn/commits?per_page=5');
+    if (!r.ok) throw new Error(r.status);
+    const cs = await r.json();
+    const el = document.getElementById('commitsList');
+    el.innerHTML = cs.map(c => {
+      const when = new Date(c.commit.author.date);
+      const dt = formatRelTime(when);
+      const sha = c.sha.slice(0,7);
+      const msg = c.commit.message.split('\n')[0].slice(0,90);
+      return `<div class="commit"><span class="sha">${sha}</span> <span class="when">${dt}</span><br>${escapeHtml(msg)}</div>`;
+    }).join('');
+    if (cs[0]) {
+      const when = new Date(cs[0].commit.author.date);
+      document.getElementById('kpi-deploy').textContent = formatRelTime(when);
+      document.getElementById('kpi-deploy-sub').textContent = cs[0].sha.slice(0,7);
+      document.getElementById('commitsMeta').textContent = 'newest first';
+    }
+  } catch(e){
+    document.getElementById('commitsList').innerHTML = '<span class="empty">GitHub API rate-limited or unavailable.</span>';
+    document.getElementById('kpi-deploy').textContent = '—';
+  }
+}
+
+async function loadMediaSample(){
+  if (!window._canon) return;
+  const all = [];
+  for (const L of window._canon.lessons) {
+    if (L.audio_url) all.push({url: L.audio_url, kind:'audio', title: L.title});
+    if (L.video_url) all.push({url: L.video_url, kind:'video', title: L.title});
+  }
+  // shuffle + take 10
+  const sample = [...all].sort(() => Math.random() - 0.5).slice(0, 10);
+  let ok = 0;
+  await Promise.all(sample.map(async s => {
+    try {
+      const r = await fetch(s.url, { method:'HEAD' });
+      if (r.ok) ok++;
+    } catch(e){}
+  }));
+  setKpi('kpi-media', ok + '/' + sample.length, ok === sample.length ? 'good' : ok >= 8 ? 'warn' : 'bad');
+  document.getElementById('kpi-media-sub').textContent = ok === sample.length ? 'all good' : 'sweep recommended';
+}
+
+async function loadSquarespaceCheck(){
+  // Try to fetch the Squarespace product page. Browser CORS may block; treat that gracefully.
+  try {
+    const r = await fetch('https://www.mbarock.com/mba-rock', { mode:'no-cors' });
+    // no-cors mode means we can't read body — but at least the fetch didn't throw
+    setKpi('kpi-sq', 'reachable', 'good');
+    document.getElementById('kpi-sq-sub').textContent = 'manual scan recommended';
+  } catch(e){
+    setKpi('kpi-sq', '?', 'warn');
+    document.getElementById('kpi-sq-sub').textContent = 'CORS-blocked from browser';
+  }
+}
+
+async function loadTasks(){
+  const cutoff = new Date(Date.now() - 60*24*3600*1000).toISOString();
+  const { data, error } = await sb.from('admin_tasks').select('*').gte('created_at', cutoff).order('created_at',{ascending:false}).limit(200);
+  if (error){ document.getElementById('taskBody').innerHTML = `<tr><td colspan=5 class="empty">Error: ${error.message}</td></tr>`; return; }
+  tasksCache = data || [];
+  const open = tasksCache.filter(t => ['submitted','claude-processing','awaiting-josh','in-progress'].includes(t.status)).length;
+  setKpi('kpi-tasks', String(open), open === 0 ? 'good' : open < 5 ? 'warn' : 'bad');
+  document.getElementById('kpi-tasks-sub').textContent = open === 0 ? 'all clear' : 'awaiting action';
+  document.getElementById('queueMeta').textContent = `${tasksCache.length} total · ${open} open`;
+  renderTasks();
+  renderSparkline();
+}
+
+function renderTasks(){
+  const body = document.getElementById('taskBody');
+  let rows = tasksCache;
+  if (activeFilter !== 'all') {
+    if (activeFilter === 'open') rows = rows.filter(t => ['submitted','claude-processing','awaiting-josh','in-progress'].includes(t.status));
+    else rows = rows.filter(t => t.status === activeFilter);
+  }
+  if (searchQuery) {
+    rows = rows.filter(t =>
+      (t.title||'').toLowerCase().includes(searchQuery) ||
+      (t.description||'').toLowerCase().includes(searchQuery) ||
+      (t.submitted_by||'').toLowerCase().includes(searchQuery)
+    );
+  }
+  if (!rows.length){ body.innerHTML = `<tr><td colspan=5 class="empty">No requests match.</td></tr>`; return; }
+  body.innerHTML = rows.map(t => `
+    <tr class="task-row" onclick="openDetail('${t.id}')">
+      <td style="font-size:11px;color:var(--muted);white-space:nowrap">${formatRelTime(new Date(t.created_at))}</td>
+      <td><b>${escapeHtml(t.title)}</b>${t.description ? `<div style="color:var(--muted);font-size:11.5px;margin-top:2px;line-height:1.4">${escapeHtml(t.description.slice(0,140))}${t.description.length > 140 ? '…' : ''}</div>` : ''}</td>
+      <td><span class="pill ${t.priority||'normal'}">${escapeHtml(t.priority||'normal')}</span></td>
+      <td style="font-size:11.5px">${escapeHtml((t.submitted_by||'').replace('@bettertogetherbranding.ai','@btb'))}</td>
+      <td><span class="pill ${pillClass(t.status)}">${escapeHtml(t.status)}</span></td>
+    </tr>`).join('');
+}
+
+function renderSparkline(){
+  // tasks per day for last 7 days
+  const days = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date(Date.now() - i*24*3600*1000);
+    const key = d.toISOString().slice(0,10);
+    days.push({ key, count: 0, label: d.toLocaleDateString([],{weekday:'short'}) });
+  }
+  for (const t of tasksCache) {
+    const k = (t.created_at||'').slice(0,10);
+    const d = days.find(x => x.key === k);
+    if (d) d.count++;
+  }
+  const max = Math.max(1, ...days.map(d => d.count));
+  const W = 280, H = 60, pad = 6;
+  const pts = days.map((d, i) => {
+    const x = pad + (W - 2*pad) * (i / (days.length - 1));
+    const y = H - pad - (H - 2*pad) * (d.count / max);
+    return [x, y];
+  });
+  const path = pts.map((p,i) => (i===0?'M':'L') + p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
+  const area = path + ` L ${pts[pts.length-1][0].toFixed(1)},${H-pad} L ${pts[0][0].toFixed(1)},${H-pad} Z`;
+  const svg = document.getElementById('sparkline');
+  svg.innerHTML = `
+    <defs><linearGradient id="sparkfill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F26B1F" stop-opacity="0.5"/><stop offset="100%" stop-color="#F26B1F" stop-opacity="0"/></linearGradient></defs>
+    <path d="${area}" fill="url(#sparkfill)"/>
+    <path d="${path}" fill="none" stroke="#F26B1F" stroke-width="2"/>
+    ${pts.map((p, i) => `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="3" fill="#F26B1F"/>`).join('')}
+    ${days.map((d, i) => `<text x="${pts[i][0].toFixed(1)}" y="${H-1}" font-size="9" fill="#5A6470" text-anchor="middle" font-family="Inter">${d.label[0]}</text>`).join('')}
+  `;
+  const total = days.reduce((s,d)=>s+d.count,0);
+  document.getElementById('activityCount').textContent = `${total} task${total===1?'':'s'} this week`;
+  document.getElementById('activityList').innerHTML = days.map(d => `<span style="display:inline-block;margin-right:10px">${d.label}: <b style="color:var(--ink)">${d.count}</b></span>`).join('');
+}
+
+async function loadAudit(){
+  const { data, error } = await sb.from('admin_audit_log').select('*').order('created_at',{ascending:false}).limit(25);
+  const el = document.getElementById('auditList');
+  if (error){ el.textContent = error.message; return; }
+  if (!data || !data.length){ el.innerHTML = '<span class="empty">No audit events yet.</span>'; return; }
+  el.innerHTML = data.map(a => {
+    const dt = formatRelTime(new Date(a.created_at));
+    const actor = (a.actor||'').replace('@bettertogetherbranding.ai','@btb');
+    return `<div style="padding:4px 0"><b style="color:var(--navy)">${escapeHtml(a.action)}</b> · ${escapeHtml(actor)} <span style="font-size:10px">${dt}</span></div>`;
+  }).join('');
+}
+
+// ── alerts
+function checkAlerts(){
+  const banner = document.getElementById('alertBanner');
+  const alerts = [];
+  const cover = parseInt(document.getElementById('kpi-coverage').textContent);
+  if (cover && cover < 100) alerts.push({sev:'warn', msg:`Course completion at ${cover}% — some lessons missing media.`});
+  const open = parseInt(document.getElementById('kpi-tasks').textContent);
+  if (open >= 5) alerts.push({sev:'warn', msg:`${open} open requests in the queue.`});
+  const mediaTxt = document.getElementById('kpi-media').textContent;
+  if (mediaTxt.includes('/') && !mediaTxt.startsWith('10/')) alerts.push({sev:'bad', msg:'Sample media check: not all URLs returning 200.'});
+  if (alerts.length === 0){
+    banner.className = 'alert-banner';
+    banner.style.display = 'none';
+  } else {
+    const worst = alerts.some(a=>a.sev==='bad') ? 'bad' : 'warn';
+    banner.className = 'alert-banner show ' + worst;
+    banner.innerHTML = '⚠ &nbsp; ' + alerts.map(a => a.msg).join(' &nbsp;·&nbsp; ');
+    banner.style.display = 'block';
+  }
+}
+
+// ── task detail
+async function openDetail(id){
+  currentDetailId = id;
+  const t = tasksCache.find(x => x.id === id);
+  if (!t) return;
+  const { data: events } = await sb.from('admin_audit_log').select('*').eq('task_id', id).order('created_at',{ascending:true});
+
+  const isOwner = me.role === 'owner';
+  const html = `
+    <h2>${escapeHtml(t.title)}</h2>
+    <p style="font-size:12px;color:var(--muted);margin-top:2px">
+      <span class="pill ${pillClass(t.status)}">${escapeHtml(t.status)}</span> &nbsp;
+      <span class="pill ${t.priority||'normal'}">${escapeHtml(t.priority||'normal')}</span> &nbsp;
+      <span style="margin-left:6px">from <b>${escapeHtml(t.submitted_by)}</b> · ${new Date(t.created_at).toLocaleString()}</span>
+    </p>
+    <p style="margin-top:16px;font-size:13.5px;line-height:1.6;white-space:pre-wrap">${escapeHtml(t.description||'(no description)')}</p>
+
+    <label>Add a note</label>
+    <textarea id="detailNote" placeholder="e.g. 'pushed fix in commit abc123' or 'awaiting client approval'"></textarea>
+
+    <label>Change status</label>
+    <select id="detailStatus">
+      <option value="submitted">Submitted</option>
+      <option value="claude-processing">Claude processing</option>
+      <option value="awaiting-josh">Awaiting Josh</option>
+      <option value="in-progress">In progress</option>
+      <option value="resolved">Resolved</option>
+      <option value="declined">Declined</option>
+    </select>
+
+    <div class="msg" id="detailMsg"></div>
+    <div class="row">
+      <button class="cancel" onclick="closeDetail()">Close</button>
+      ${isOwner ? `<button class="resolve" onclick="updateDetail('resolved')">Mark Resolved</button>
+      <button class="danger" onclick="updateDetail('declined')">Decline</button>` : ''}
+      <button class="primary" onclick="updateDetail(null)">Save changes</button>
+    </div>
+
+    <div class="timeline">
+      <h3 style="margin-bottom:8px">Timeline</h3>
+      ${events && events.length ? events.map(e => `<div class="timeline-item"><b>${escapeHtml(e.action)}</b> · ${escapeHtml((e.actor||'').replace('@bettertogetherbranding.ai','@btb'))} · <span style="color:var(--muted)">${new Date(e.created_at).toLocaleString()}</span>${e.detail && e.detail.note ? `<div style="margin-top:3px;color:var(--muted)">"${escapeHtml(e.detail.note)}"</div>` : ''}</div>`).join('') : '<div class="empty">No events yet.</div>'}
+    </div>
+  `;
+  document.getElementById('detailContent').innerHTML = html;
+  document.getElementById('detailStatus').value = t.status;
+  document.getElementById('detailModal').classList.add('open');
+}
+
+function closeDetail(){
+  currentDetailId = null;
+  document.getElementById('detailModal').classList.remove('open');
+}
+
+async function updateDetail(forceStatus){
+  if (!currentDetailId) return;
+  const status = forceStatus || document.getElementById('detailStatus').value;
+  const note = document.getElementById('detailNote').value.trim();
+  const payload = { status, updated_at: new Date().toISOString() };
+  if (status === 'resolved' || status === 'declined') payload.resolved_at = new Date().toISOString();
+  const { error } = await sb.from('admin_tasks').update(payload).eq('id', currentDetailId);
+  if (error){ document.getElementById('detailMsg').textContent = error.message; document.getElementById('detailMsg').className='msg error'; return; }
+  const action = forceStatus === 'resolved' ? 'resolved' : forceStatus === 'declined' ? 'declined' : 'updated';
+  await sb.from('admin_audit_log').insert({ task_id: currentDetailId, action, actor: me.email, detail: { status, note: note || null } });
+  document.getElementById('detailMsg').textContent = '✓ Saved';
+  document.getElementById('detailMsg').className='msg';
+  setTimeout(() => closeDetail(), 600);
+}
+
+// ── new task modal
+function submitTask(type, defaultTitle, descHint){
+  if (type === 'qa-run' || type === 'audit' || type === 'factual-sweep') {
+    return createTask(type, defaultTitle, descHint || defaultTitle, 'normal');
+  }
+  pendingTask = { type };
+  document.getElementById('modalTitle').textContent = defaultTitle;
+  document.getElementById('modalIntro').textContent = descHint || 'Fill the form. Submitted requests go to Josh + Claude for action.';
+  document.getElementById('modalTaskTitle').value = defaultTitle || '';
+  document.getElementById('modalTaskDesc').value = descHint || '';
+  document.getElementById('modalTaskPriority').value = 'normal';
+  setMsg('modalMsg','','');
+  document.getElementById('modal').classList.add('open');
+}
+function closeModal(){ pendingTask = null; document.getElementById('modal').classList.remove('open'); }
+
+async function confirmTask(){
+  const title = document.getElementById('modalTaskTitle').value.trim();
+  const desc = document.getElementById('modalTaskDesc').value.trim();
+  const priority = document.getElementById('modalTaskPriority').value;
+  if (!title) return setMsg('modalMsg', 'Title required.', 'error');
+  const ok = await createTask(pendingTask.type, title, desc, priority);
+  if (ok) closeModal();
+}
+
+async function createTask(type, title, description, priority){
+  const payload = {
+    task_type: type, submitted_by: me.email,
+    title, description, priority,
+    status:'submitted', payload:{ submitted_role: me.role, source: 'admin-console-v1.1' },
+  };
+  const { data, error } = await sb.from('admin_tasks').insert(payload).select().maybeSingle();
+  if (error){ setMsg('modalMsg', error.message, 'error'); return false; }
+  await sb.from('admin_audit_log').insert({ task_id: data.id, action:'submitted', actor: me.email, detail: { task_type: type, title } });
+  setMsg('modalMsg', '✓ Submitted. Email opening to Josh…', '');
+  // open mailto with prefilled context
+  if (type !== 'audit' && type !== 'qa-run' && type !== 'factual-sweep') {
+    setTimeout(()=>{
+      const body = encodeURIComponent(
+        `From: ${me.email} (${me.role})\nTask ID: ${data.id}\nTitle: ${title}\nPriority: ${priority}\n\n` +
+        `${description}\n\n` +
+        `— sent from the MBA Rock Admin Console\nReview at: https://learn.mbarock.com/admin/`
+      );
+      window.open(`mailto:CEO@trufflebearoil.com?subject=${encodeURIComponent('[MBA Rock Admin · ' + priority.toUpperCase() + '] ' + title)}&body=${body}`, '_blank');
+    }, 400);
+  }
+  // Realtime will refresh the queue
+  return true;
+}
+
+// ── utils
+function pillClass(s){
+  if (s === 'resolved') return 'resolved';
+  if (s === 'declined') return 'declined';
+  if (s === 'claude-processing' || s === 'in-progress') return 'processing';
+  if (s === 'awaiting-josh') return 'awaiting';
+  return 'submitted';
+}
+function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function setKpi(id, val, cls){ const el = document.getElementById(id); el.textContent = val; if (cls!==undefined) el.className = 'val ' + (cls || ''); }
+function formatRelTime(d){
+  const diff = (Date.now() - d.getTime()) / 1000;
+  if (diff < 60) return 'just now';
+  if (diff < 3600) return Math.floor(diff/60) + 'm ago';
+  if (diff < 86400) return Math.floor(diff/3600) + 'h ago';
+  if (diff < 86400*7) return Math.floor(diff/86400) + 'd ago';
+  return d.toLocaleDateString();
+}
+</script>
+</body></html>
