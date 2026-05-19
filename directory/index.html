@@ -82,7 +82,8 @@ const SB_KEY='sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
 const sb = window.supabase.createClient(SB_URL, SB_KEY);
 
 let profiles=[], filter='all', query='';
-function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}
+function safeUrl(u){ try{ if(!u) return '#'; var s=String(u).trim(); if(/^javascript:/i.test(s)||/^data:/i.test(s)||/^vbscript:/i.test(s)) return '#'; if(/^[a-z]+:\/\//i.test(s)) return s; if(s.startsWith('mailto:')||s.startsWith('tel:')||s.startsWith('/')||s.startsWith('#')||s.startsWith('?')) return s; return 'https://'+s; }catch(e){return '#';} }[c])); }
 
 function render(){
   const q = query.toLowerCase();
@@ -99,9 +100,9 @@ function render(){
       <div class="name">${escapeHtml(p.display_name)}</div>
       <div class="role-row">${p.role ? `<b>${escapeHtml(p.role)}</b>` : ''}${p.role && p.industry ? ' · ' : ''}${p.industry ? escapeHtml(p.industry) : ''}${p.city ? ` · ${escapeHtml(p.city)}` : ''}</div>
       ${p.one_liner ? `<div class="one-liner">${escapeHtml(p.one_liner)}</div>` : ''}
-      ${p.business_name ? `<div class="biz">${p.business_url ? `<a href="${escapeHtml(p.business_url)}" target="_blank" rel="noopener">${escapeHtml(p.business_name)} ↗</a>` : escapeHtml(p.business_name)}</div>` : ''}
+      ${p.business_name ? `<div class="biz">${p.business_url ? `<a href="${escapeHtml(safeUrl(p.business_url))}" target="_blank" rel="noopener">${escapeHtml(p.business_name)} ↗</a>` : escapeHtml(p.business_name)}</div>` : ''}
       ${(p.open_to||[]).length ? `<div class="open-to">${p.open_to.map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>` : ''}
-      ${(p.linkedin_url||p.twitter_handle) ? `<div class="links">${p.linkedin_url ? `<a href="${escapeHtml(p.linkedin_url)}" target="_blank" rel="noopener">LinkedIn</a>` : ''}${p.twitter_handle ? `<a href="https://x.com/${escapeHtml(p.twitter_handle.replace(/^@/,''))}" target="_blank" rel="noopener">Twitter/X</a>` : ''}</div>` : ''}
+      ${(p.linkedin_url||p.twitter_handle) ? `<div class="links">${p.linkedin_url ? `<a href="${escapeHtml(safeUrl(p.linkedin_url))}" target="_blank" rel="noopener">LinkedIn</a>` : ''}${p.twitter_handle ? `<a href="https://x.com/${escapeHtml(p.twitter_handle.replace(/^@/,''))}" target="_blank" rel="noopener">Twitter/X</a>` : ''}</div>` : ''}
     </div>
   `).join('');
 }

@@ -76,11 +76,12 @@ const SB_URL='https://ciloqphtencjthkedanw.supabase.co';
 const SB_KEY='sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
 const sb = window.supabase.createClient(SB_URL, SB_KEY);
 
-function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}
+function safeUrl(u){ try{ if(!u) return '#'; var s=String(u).trim(); if(/^javascript:/i.test(s)||/^data:/i.test(s)||/^vbscript:/i.test(s)) return '#'; if(/^[a-z]+:\/\//i.test(s)) return s; if(s.startsWith('mailto:')||s.startsWith('tel:')||s.startsWith('/')||s.startsWith('#')||s.startsWith('?')) return s; return 'https://'+s; }catch(e){return '#';} }[c])); }
 function md(text){
   if (!text) return '';
   text = escapeHtml(text);
-  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function(_,t,u){ return '<a href="'+escapeHtml(safeUrl(u))+'" target="_blank" rel="noopener">'+t+'</a>'; });
   text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   text = text.replace(/^### (.+)$/gm, '<h3>$1</h3>');
   text = text.replace(/^## (.+)$/gm, '<h2>$1</h2>');
