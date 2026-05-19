@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://learn.mbarock.com https://www.mbarock.com; script-src 'self' 'unsafe-inline' https://learn.mbarock.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://learn.mbarock.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; media-src 'self' https://learn.mbarock.com; connect-src 'self' https://ciloqphtencjthkedanw.supabase.co wss://ciloqphtencjthkedanw.supabase.co https://learn.mbarock.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Member Tools — MBA Rock</title>
@@ -194,7 +197,7 @@
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" integrity="sha384-zfshMiFERdyezN/WZXzHe9g53pOZCrLPBj/qC0ohHnxQ20c3zXwFqbtRAwvZMacA" crossorigin="anonymous"></script>
 <script>
 const SB_URL = 'https://ciloqphtencjthkedanw.supabase.co';
 const SB_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';

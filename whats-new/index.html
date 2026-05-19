@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://learn.mbarock.com https://www.mbarock.com; script-src 'self' 'unsafe-inline' https://learn.mbarock.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://learn.mbarock.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; media-src 'self' https://learn.mbarock.com; connect-src 'self' https://ciloqphtencjthkedanw.supabase.co wss://ciloqphtencjthkedanw.supabase.co https://learn.mbarock.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>What's New — MBA Rock</title>
 <meta name="description" content="Latest updates to MBA Rock — new lessons, songs, tools, and partnerships.">
@@ -70,18 +73,17 @@
 
 <div class="footer"><p>MBA Rock · the operator's MBA, delivered as an album.<br><a href="https://www.mbarock.com/mba-rock" style="color:var(--orange)">Join MBA Rock — $499 →</a></p></div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" integrity="sha384-zfshMiFERdyezN/WZXzHe9g53pOZCrLPBj/qC0ohHnxQ20c3zXwFqbtRAwvZMacA" crossorigin="anonymous"></script>
 <script>
 const SB_URL='https://ciloqphtencjthkedanw.supabase.co';
 const SB_KEY='sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
 const sb = window.supabase.createClient(SB_URL, SB_KEY);
 
-function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}
-function safeUrl(u){ try{ if(!u) return '#'; var s=String(u).trim(); if(/^javascript:/i.test(s)||/^data:/i.test(s)||/^vbscript:/i.test(s)) return '#'; if(/^[a-z]+:\/\//i.test(s)) return s; if(s.startsWith('mailto:')||s.startsWith('tel:')||s.startsWith('/')||s.startsWith('#')||s.startsWith('?')) return s; return 'https://'+s; }catch(e){return '#';} }[c])); }
+function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function md(text){
   if (!text) return '';
   text = escapeHtml(text);
-  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function(_,t,u){ return '<a href="'+escapeHtml(safeUrl(u))+'" target="_blank" rel="noopener">'+t+'</a>'; });
+  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
   text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   text = text.replace(/^### (.+)$/gm, '<h3>$1</h3>');
   text = text.replace(/^## (.+)$/gm, '<h2>$1</h2>');

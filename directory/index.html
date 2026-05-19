@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://learn.mbarock.com https://www.mbarock.com; script-src 'self' 'unsafe-inline' https://learn.mbarock.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://learn.mbarock.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; media-src 'self' https://learn.mbarock.com; connect-src 'self' https://ciloqphtencjthkedanw.supabase.co wss://ciloqphtencjthkedanw.supabase.co https://learn.mbarock.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Member Directory — MBA Rock</title>
 <meta name="description" content="MBA Rock operator directory — find founders, operators, and brand-builders in our cohort.">
@@ -75,15 +78,14 @@
   <p>Want to list yourself? <a href="https://www.mbarock.com/member-tools">Open Member tools →</a> and opt in.</p>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" integrity="sha384-zfshMiFERdyezN/WZXzHe9g53pOZCrLPBj/qC0ohHnxQ20c3zXwFqbtRAwvZMacA" crossorigin="anonymous"></script>
 <script>
 const SB_URL='https://ciloqphtencjthkedanw.supabase.co';
 const SB_KEY='sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
 const sb = window.supabase.createClient(SB_URL, SB_KEY);
 
 let profiles=[], filter='all', query='';
-function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}
-function safeUrl(u){ try{ if(!u) return '#'; var s=String(u).trim(); if(/^javascript:/i.test(s)||/^data:/i.test(s)||/^vbscript:/i.test(s)) return '#'; if(/^[a-z]+:\/\//i.test(s)) return s; if(s.startsWith('mailto:')||s.startsWith('tel:')||s.startsWith('/')||s.startsWith('#')||s.startsWith('?')) return s; return 'https://'+s; }catch(e){return '#';} }[c])); }
+function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
 function render(){
   const q = query.toLowerCase();
@@ -100,9 +102,9 @@ function render(){
       <div class="name">${escapeHtml(p.display_name)}</div>
       <div class="role-row">${p.role ? `<b>${escapeHtml(p.role)}</b>` : ''}${p.role && p.industry ? ' · ' : ''}${p.industry ? escapeHtml(p.industry) : ''}${p.city ? ` · ${escapeHtml(p.city)}` : ''}</div>
       ${p.one_liner ? `<div class="one-liner">${escapeHtml(p.one_liner)}</div>` : ''}
-      ${p.business_name ? `<div class="biz">${p.business_url ? `<a href="${escapeHtml(safeUrl(p.business_url))}" target="_blank" rel="noopener">${escapeHtml(p.business_name)} ↗</a>` : escapeHtml(p.business_name)}</div>` : ''}
+      ${p.business_name ? `<div class="biz">${p.business_url ? `<a href="${escapeHtml(p.business_url)}" target="_blank" rel="noopener">${escapeHtml(p.business_name)} ↗</a>` : escapeHtml(p.business_name)}</div>` : ''}
       ${(p.open_to||[]).length ? `<div class="open-to">${p.open_to.map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>` : ''}
-      ${(p.linkedin_url||p.twitter_handle) ? `<div class="links">${p.linkedin_url ? `<a href="${escapeHtml(safeUrl(p.linkedin_url))}" target="_blank" rel="noopener">LinkedIn</a>` : ''}${p.twitter_handle ? `<a href="https://x.com/${escapeHtml(p.twitter_handle.replace(/^@/,''))}" target="_blank" rel="noopener">Twitter/X</a>` : ''}</div>` : ''}
+      ${(p.linkedin_url||p.twitter_handle) ? `<div class="links">${p.linkedin_url ? `<a href="${escapeHtml(p.linkedin_url)}" target="_blank" rel="noopener">LinkedIn</a>` : ''}${p.twitter_handle ? `<a href="https://x.com/${escapeHtml(p.twitter_handle.replace(/^@/,''))}" target="_blank" rel="noopener">Twitter/X</a>` : ''}</div>` : ''}
     </div>
   `).join('');
 }
