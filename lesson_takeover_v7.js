@@ -2,7 +2,7 @@
 // v7.7: UX additions — first-quiz forgiveness, retake nudge, auto-next CTA, deep-dive reframe, capstone progress hint, mobile CSS (2026-05-13)
 // v7.6: Canon74 align — SQ_MODULE_SIZE M1:9/M2:9/M8:5; lessons.v2.json 74 canonical (2026-05-13)
 // v7.5: Restored 10-module SQ_MODULE_SIZE matching NotebookLM 74-lesson brief.
-// v7.4: Sync to Squarespace live curriculum (6 modules, 50 lessons). SQ_MODULE_SIZE updated. SLUG_TO_V2 cleared (clean slugs route via legacy_slug).
+// v7.4: Sync to Squarespace live curriculum (10 modules, 74 lessons). SQ_MODULE_SIZE updated. SLUG_TO_V2 cleared (clean slugs route via legacy_slug).
 // v7.3.1: Tasks promoted to top-level tab (Lesson · Tasks · Quiz · Notes · Materials).
 //         CRITICAL FIX over v7.3: capstone-input parent div carries data-cap-field, matching
 //         wireCapstoneInline's expectation (inp.parentElement.getAttribute). Without this,
@@ -15,7 +15,7 @@
 //       Tab state persists in localStorage (mr-tab:{lesson_id}). ?tab=X URL param wins.
 //       Completion-state indicator per tab: untouched / in-progress / complete.
 // v6.18: Mark Complete is local-only again. Cert eligibility now requires a real quiz pass
-//        on every lesson (quizzes wired on the 55 lessons with bodies; new lessons get quizzes as content lands). Mark Complete still
+//        on every lesson (quizzes wired on the 74 lessons with bodies; new lessons get quizzes as content lands). Mark Complete still
 //        updates the UI but does NOT count toward Module Mark eligibility.
 // v6.17: (REVERTED) Mark Complete wrote a synthetic "passed" attempt to Supabase. That
 //        let members bypass the comprehension check. Now closed.

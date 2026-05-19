@@ -527,7 +527,7 @@
 /* ============================================================
  * MBA Rock Video Player - v2 (video only - audio by lessons.js v5)
  * Injects video element after Watch heading on lesson pages.
- * Updated 2026-05-09 - 25 lessons mapped
+ * Updated 2026-05-19 - 74 lessons mapped
  * ============================================================ */
 (function(){
 var CDN='https://cdn.jsdelivr.net/gh/joshwark/mbarock-cdn@main/';

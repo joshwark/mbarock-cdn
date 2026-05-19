@@ -1,6 +1,6 @@
 // MBA Rock — Lesson Page Takeover v6.18 (2026-05-13)
 // v6.18: Mark Complete is local-only again. Cert eligibility now requires a real quiz pass
-//        on every lesson (quizzes are now wired on all 55 lessons). Mark Complete still
+//        on every lesson (quizzes are now wired on all 74 lessons). Mark Complete still
 //        updates the UI but does NOT count toward Module Mark eligibility.
 // v6.17: (REVERTED) Mark Complete wrote a synthetic "passed" attempt to Supabase. That
 //        let members bypass the comprehension check. Now closed.
