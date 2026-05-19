@@ -759,5 +759,46 @@
 <script>window.MR_SENTRY_DSN = window.MR_SENTRY_DSN || "";</script>
 <script>(function(){var dsn=window.MR_SENTRY_DSN;if(!dsn||!/^https:\/\/[a-f0-9]+@/.test(dsn))return;var s=document.createElement("script");s.src="https://browser.sentry-cdn.com/7.119.2/bundle.min.js";s.crossOrigin="anonymous";s.onload=function(){if(window.Sentry){Sentry.init({dsn:dsn,tracesSampleRate:0.0,replaysSessionSampleRate:0.0,replaysOnErrorSampleRate:0.1,environment:"production",beforeSend:function(event){if(!event.request)return event;return event;}});}};document.head.appendChild(s);})();</script>
 
+
+<!-- ───── REF ATTRIBUTION (Tier-1 #4) ───── -->
+<script>
+(function(){
+  try {
+    var ref = new URLSearchParams(location.search).get('ref');
+    if (!ref) return;
+    // Persist for 30 days so attribution survives signup flow
+    document.cookie = 'mr_ref=' + encodeURIComponent(ref) + '; max-age=' + (30*24*3600) + '; path=/; SameSite=Lax';
+    // Log a visit event (best-effort, anon insert against referral_events allowed by RLS)
+    var sb = window.supabase && window.supabase.createClient('https://ciloqphtencjthkedanw.supabase.co', 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-');
+    if (sb) {
+      sb.from('referral_events').insert({
+        code: ref, event_type: 'visit',
+        user_agent: navigator.userAgent.slice(0,250),
+        referrer_url: (document.referrer||'').slice(0,500),
+        metadata: { path: location.pathname }
+      }).then(()=>{}, ()=>{});
+    } else {
+      // Supabase JS not loaded on landing — fetch from REST directly
+      fetch('https://ciloqphtencjthkedanw.supabase.co/rest/v1/referral_events', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-',
+          'Authorization': 'Bearer sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          code: ref,
+          event_type: 'visit',
+          user_agent: navigator.userAgent.slice(0,250),
+          referrer_url: (document.referrer||'').slice(0,500),
+          metadata: { path: location.pathname }
+        })
+      }).catch(function(){});
+    }
+  } catch(e){}
+})();
+</script>
+
 </body>
 </html>

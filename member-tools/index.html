@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Member Tools — MBA Rock</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0B1F3A;--navy-2:#152D52;--orange:#F26B1F;--orange-soft:#FBE6D6;--cream:#FAF8F5;--paper:#F4F1EA;--ink:#0E1116;--ink-2:#3C2D17;--rule:#E5E0D6;--muted:#5A6470;--green:#1D8444;--green-soft:#D4F4DD;--red:#B5482E;--gold:#C99A3B}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);font-weight:700;letter-spacing:-0.015em}
+  h1{font-size:30px;line-height:1.1}
+  h2{font-size:20px;line-height:1.2}
+  h3{font-size:12px;color:var(--orange);text-transform:uppercase;letter-spacing:0.14em;font-weight:700;font-family:'Inter'}
+  a{color:var(--navy);font-weight:600}
+  .wrap{max-width:1100px;margin:0 auto;padding:18px 22px}
+  .topbar{background:#fff;border-bottom:1px solid var(--rule)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 22px}
+  .brand{font-family:'Fraunces';font-size:20px;font-weight:700;color:var(--navy)}
+  .brand .tag{display:inline-block;font-size:10px;letter-spacing:0.16em;background:var(--navy);color:#fff;padding:3px 9px;border-radius:999px;font-weight:700;margin-left:8px;text-transform:uppercase}
+  .topbar nav{display:flex;gap:14px;align-items:center;font-size:13px}
+  .topbar nav a{color:var(--muted);text-decoration:none}
+  .topbar nav a:hover{color:var(--navy)}
+  .topbar nav .who{color:var(--navy);font-weight:600}
+  .topbar button{background:transparent;border:1px solid var(--rule);padding:6px 12px;border-radius:6px;font-size:12px;color:var(--navy);cursor:pointer}
+
+  .auth{max-width:440px;margin:80px auto;background:#fff;border-radius:18px;padding:36px;box-shadow:0 16px 36px -20px rgba(11,31,58,.2);border:1px solid var(--rule)}
+  .auth h1{margin-bottom:6px}
+  .auth p.sub{font-size:14px;color:var(--muted);margin-bottom:24px}
+  .auth label{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:6px}
+  .auth input{width:100%;padding:13px 14px;border-radius:8px;border:1px solid var(--rule);font-size:15px;font-family:'Inter'}
+  .auth input:focus{outline:none;border-color:var(--orange)}
+  .auth button.primary{margin-top:14px;width:100%;padding:13px;background:var(--orange);color:#fff;border:0;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer}
+  .auth .msg{margin-top:12px;font-size:13px;line-height:1.5;min-height:18px}
+  .auth .msg.error{color:var(--red)}.auth .msg.success{color:var(--green)}
+
+  #app{display:none}#app.show{display:block}
+
+  .hero{padding:36px 0 16px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-top:18px}
+  .card{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:24px;box-shadow:0 6px 16px -12px rgba(11,31,58,.15)}
+  .card h2{margin-top:8px;margin-bottom:8px}
+  .card p{font-size:14px;color:var(--ink-2);margin-bottom:14px;line-height:1.55}
+  .card .tag{display:inline-block;font-size:10.5px;letter-spacing:.1em;background:var(--orange-soft);color:#8A3D0E;padding:3px 9px;border-radius:999px;font-weight:700;text-transform:uppercase}
+
+  label.field{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-top:14px;margin-bottom:6px}
+  input,select,textarea{width:100%;padding:11px 13px;border-radius:8px;border:1px solid var(--rule);font-size:14.5px;font-family:'Inter';background:#fff}
+  textarea{min-height:88px;resize:vertical;line-height:1.55}
+  .btn{padding:11px 22px;background:var(--orange);color:#fff;border:0;border-radius:8px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:'Inter'}
+  .btn:hover{background:#D85A14}
+  .btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--rule)}
+  .btn.danger{background:var(--red)}
+  .btn.green{background:var(--green)}
+  .btn[disabled]{opacity:.5;cursor:not-allowed}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .check{display:inline-flex;align-items:center;gap:6px;cursor:pointer;padding:6px 12px;background:var(--cream);border:1px solid var(--rule);border-radius:999px;font-size:12.5px;font-weight:600}
+  .check input{width:auto;margin:0}
+  .pill{display:inline-block;padding:3px 9px;border-radius:999px;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+  .pill.green{background:var(--green-soft);color:#1a5a30}.pill.gold{background:rgba(201,154,59,.18);color:#7a5f1f}.pill.red{background:#FCE0CC;color:#7e2f1b}
+  .copy-link{display:flex;gap:8px;align-items:center;background:var(--cream);padding:8px 12px;border-radius:8px;font-family:Courier,monospace;font-size:13px;border:1px solid var(--rule)}
+  .copy-link span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .copy-link button{padding:5px 10px;font-size:11px;background:var(--navy);color:#fff;border:0;border-radius:5px;cursor:pointer;font-weight:600}
+  .msg{font-size:12.5px;margin-top:8px}
+  .msg.success{color:var(--green)}.msg.error{color:var(--red)}
+
+  .list-item{padding:10px 12px;border:1px solid var(--rule);border-radius:8px;margin-bottom:8px;background:var(--cream);display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px}
+  .empty{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0}
+  .stat{display:inline-block;background:var(--cream);padding:6px 12px;border-radius:8px;font-size:12px;color:var(--ink-2);margin-right:6px;margin-top:6px}
+  .stat b{font-family:'Fraunces';color:var(--navy);font-size:18px;font-weight:700;margin-right:4px}
+</style>
+</head><body>
+
+<div id="auth" class="auth">
+  <h1>Member Tools</h1>
+  <p class="sub">Sign in with your MBA Rock email. We send a magic link — no password.</p>
+  <label for="emailInput">Email</label>
+  <input type="email" id="emailInput" placeholder="you@yourdomain.com" required>
+  <button class="primary" onclick="sendMagicLink()">Send magic link</button>
+  <div id="authMsg" class="msg"></div>
+</div>
+
+<div id="app">
+  <div class="topbar"><div class="wrap">
+    <span class="brand">MBA Rock <span class="tag">Member Tools</span></span>
+    <nav>
+      <a href="https://www.mbarock.com/dashboard" target="_blank">Dashboard</a>
+      <a href="https://www.mbarock.com/adytum" target="_blank">Adytum Pipeline</a>
+      <a href="https://www.mbarock.com/whats-new" target="_blank">What's New</a>
+      <a href="https://www.mbarock.com/directory" target="_blank">Directory</a>
+      <span class="who" id="whoEmail"></span>
+      <button onclick="signOut()">Sign out</button>
+    </nav>
+  </div></div>
+
+  <div class="wrap">
+    <div class="hero">
+      <h1>Member tools</h1>
+      <p style="color:var(--muted);margin-top:6px;font-size:14.5px">Submit your work to the Adytum Pipeline, share your Dossier publicly, list yourself in the directory, and use your referral code.</p>
+    </div>
+
+    <div class="grid">
+      <!-- ───── Card 1: Adytum Pipeline ───── -->
+      <div class="card">
+        <span class="tag">Adytum Pipeline</span>
+        <h2>Submit your Dossier</h2>
+        <p>Course-only access to Adytum's investment desk and Better Together Branding's brand-development studio. We review within 7–14 days.</p>
+        <label class="field">Doors</label>
+        <div class="row">
+          <label class="check"><input type="checkbox" id="doorInvestment"> Investment Desk</label>
+          <label class="check"><input type="checkbox" id="doorBrand"> Brand Studio</label>
+        </div>
+        <label class="field">Public Dossier link (optional)</label>
+        <input type="url" id="pipelineCapLink" placeholder="https://www.mbarock.com/d/...">
+        <label class="field">Notes (15 lines max)</label>
+        <textarea id="pipelineNotes" placeholder="Anything you want us to see first — context, stage, traction, ask"></textarea>
+        <div class="row" style="margin-top:12px"><button class="btn" onclick="submitPipeline()">Submit to Pipeline</button></div>
+        <div id="pipelineMsg" class="msg"></div>
+        <div style="margin-top:18px">
+          <h3>Your submissions</h3>
+          <div id="pipelineList" style="margin-top:8px"></div>
+        </div>
+      </div>
+
+      <!-- ───── Card 2: Dossier shares ───── -->
+      <div class="card">
+        <span class="tag">Public Dossier link</span>
+        <h2>Share your Dossier</h2>
+        <p>Generate a public read-only URL of your Dossier. Share with advisors, co-founders, or investors. Revocable anytime.</p>
+        <label class="field">Display name on the public page</label>
+        <input type="text" id="shareDisplayName" placeholder="Your name or business name">
+        <label class="field">One-liner (shows at the top)</label>
+        <input type="text" id="shareOneLiner" placeholder="A 1-sentence description of your business">
+        <label class="field">Dossier body (markdown supported)</label>
+        <textarea id="shareBody" placeholder="Paste your Dossier contents here, or write a custom summary." style="min-height:140px"></textarea>
+        <div class="row" style="margin-top:12px"><button class="btn" onclick="createShare()">Generate share link</button></div>
+        <div id="shareMsg" class="msg"></div>
+        <div style="margin-top:18px">
+          <h3>Your share links</h3>
+          <div id="shareList" style="margin-top:8px"></div>
+        </div>
+      </div>
+
+      <!-- ───── Card 3: Directory profile ───── -->
+      <div class="card">
+        <span class="tag">Member directory</span>
+        <h2>Your directory profile</h2>
+        <p>Opt in to a searchable profile so other operators can find you by industry, role, or what you're open to.</p>
+        <label class="field">Display name</label>
+        <input type="text" id="dirName" placeholder="Your name">
+        <label class="field">Role / title</label>
+        <input type="text" id="dirRole" placeholder="Founder · Operator · CMO …">
+        <label class="field">Industry</label>
+        <input type="text" id="dirIndustry" placeholder="SaaS · DTC · Music · Restaurant …">
+        <label class="field">Business name + URL</label>
+        <div class="row" style="display:grid;grid-template-columns:1fr 1.4fr;gap:10px">
+          <input type="text" id="dirBusinessName" placeholder="Acme Co.">
+          <input type="url" id="dirBusinessUrl" placeholder="https://…">
+        </div>
+        <label class="field">One-liner</label>
+        <input type="text" id="dirOneLiner" placeholder="What you do in 1 sentence">
+        <label class="field">City</label>
+        <input type="text" id="dirCity" placeholder="Austin · NYC · LA …">
+        <label class="field">Open to</label>
+        <div class="row">
+          <label class="check"><input type="checkbox" class="dirOpenTo" value="collab"> Collaboration</label>
+          <label class="check"><input type="checkbox" class="dirOpenTo" value="hiring"> Hiring</label>
+          <label class="check"><input type="checkbox" class="dirOpenTo" value="advising"> Advising</label>
+          <label class="check"><input type="checkbox" class="dirOpenTo" value="investing"> Investing</label>
+        </div>
+        <label class="field">Links (optional)</label>
+        <div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <input type="url" id="dirLinkedin" placeholder="LinkedIn URL">
+          <input type="text" id="dirTwitter" placeholder="@twitter or handle">
+        </div>
+        <label class="field"><input type="checkbox" id="dirOptedIn" style="width:auto;margin-right:6px"> Yes, list me publicly at /directory</label>
+        <div class="row" style="margin-top:12px"><button class="btn" onclick="saveDirectory()">Save profile</button></div>
+        <div id="dirMsg" class="msg"></div>
+      </div>
+
+      <!-- ───── Card 4: Referral ───── -->
+      <div class="card">
+        <span class="tag">Referral</span>
+        <h2>Your referral code</h2>
+        <p>Refer a friend — they get $50 off MBA Rock, you get $100 credit toward Adytum services. We mint your code automatically on first visit.</p>
+        <label class="field">Your code</label>
+        <div id="refCodeBox" class="copy-link"><span id="refCode">…</span><button onclick="copyVal('refCode')">Copy</button></div>
+        <label class="field">Your share link</label>
+        <div id="refLinkBox" class="copy-link"><span id="refLink">…</span><button onclick="copyVal('refLink')">Copy</button></div>
+        <div style="margin-top:14px"><span class="stat"><b id="refVisits">0</b>visits</span><span class="stat"><b id="refSignups">0</b>signups</span><span class="stat"><b id="refPurchases">0</b>purchases</span></div>
+        <div id="refMsg" class="msg"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+const SB_URL = 'https://ciloqphtencjthkedanw.supabase.co';
+const SB_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+const sb = window.supabase.createClient(SB_URL, SB_KEY);
+let session = null, me = null, bootInitialized = false;
+
+(async function init(){
+  const { data } = await sb.auth.getSession();
+  session = data.session;
+  if (session) await onSignedIn();
+  sb.auth.onAuthStateChange(async (event, s) => {
+    if (event === 'SIGNED_OUT'){ session = null; me = null; bootInitialized = false; showAuth(); return; }
+    if (s){ session = s; await onSignedIn(); }
+  });
+})();
+function showAuth(){ document.getElementById('auth').style.display='block'; document.getElementById('app').classList.remove('show'); }
+async function onSignedIn(){
+  if (!session?.user?.email) return;
+  me = { email: session.user.email, id: session.user.id };
+  document.getElementById('whoEmail').textContent = me.email;
+  document.getElementById('auth').style.display='none';
+  document.getElementById('app').classList.add('show');
+  if (!bootInitialized){
+    bootInitialized = true;
+    await Promise.all([loadPipeline(), loadShares(), loadDirectory(), loadReferral()]);
+  }
+}
+async function sendMagicLink(){
+  const email = document.getElementById('emailInput').value.trim();
+  if (!email) return setMsg('authMsg','Enter your email.','error');
+  const { error } = await sb.auth.signInWithOtp({ email, options: { emailRedirectTo: window.location.href }});
+  if (error) setMsg('authMsg', error.message, 'error');
+  else setMsg('authMsg', `Magic link sent to ${email}. Check your inbox.`, 'success');
+}
+async function signOut(){ await sb.auth.signOut(); }
+function setMsg(id, text, cls){ const el=document.getElementById(id); el.textContent=text; el.className='msg '+(cls||''); }
+function copyVal(id){ const t=document.getElementById(id).textContent; navigator.clipboard.writeText(t); }
+function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+// ───── PIPELINE
+async function submitPipeline(){
+  const doors = [];
+  if (document.getElementById('doorInvestment').checked) doors.push('investment');
+  if (document.getElementById('doorBrand').checked) doors.push('brand');
+  if (!doors.length) return setMsg('pipelineMsg','Pick at least one door.','error');
+  const notes = document.getElementById('pipelineNotes').value.trim();
+  const capLink = document.getElementById('pipelineCapLink').value.trim() || null;
+  const { error } = await sb.from('pipeline_submissions').insert({
+    member_email: me.email, member_user_id: me.id,
+    doors, notes, capstone_link: capLink, status: 'submitted',
+  });
+  if (error) return setMsg('pipelineMsg', error.message, 'error');
+  setMsg('pipelineMsg','Submitted. Review takes 7–14 days. You will hear from Josh.','success');
+  document.getElementById('pipelineNotes').value=''; document.getElementById('doorInvestment').checked=false; document.getElementById('doorBrand').checked=false;
+  loadPipeline();
+}
+async function loadPipeline(){
+  const { data } = await sb.from('pipeline_submissions').select('*').eq('member_email', me.email).order('created_at',{ascending:false});
+  const list = document.getElementById('pipelineList');
+  if (!data || !data.length){ list.innerHTML = '<div class="empty">No submissions yet.</div>'; return; }
+  list.innerHTML = data.map(s => `<div class="list-item"><div><b>${s.doors.join(', ')}</b><div style="font-size:11px;color:var(--muted)">${new Date(s.created_at).toLocaleDateString()}</div></div><span class="pill ${statusPill(s.status)}">${s.status}</span></div>`).join('');
+}
+function statusPill(s){ if (s==='engaged'||s==='move-forward') return 'green'; if (s==='passed') return 'red'; return 'gold'; }
+
+// ───── SHARES
+async function createShare(){
+  const display = document.getElementById('shareDisplayName').value.trim();
+  const oneLiner = document.getElementById('shareOneLiner').value.trim();
+  const body = document.getElementById('shareBody').value.trim();
+  if (!display || !body) return setMsg('shareMsg','Display name and body required.','error');
+  const slug = (Math.random().toString(36).slice(2,6) + Math.random().toString(36).slice(2,6)).toLowerCase();
+  const dossier = { display_name: display, one_liner: oneLiner, body_md: body, owner_email: me.email };
+  const { error } = await sb.from('dossier_shares').insert({ slug, member_email: me.email, member_user_id: me.id, dossier_data: dossier });
+  if (error) return setMsg('shareMsg', error.message, 'error');
+  setMsg('shareMsg', `Created. Share URL: https://www.mbarock.com/d/?s=${slug}`, 'success');
+  document.getElementById('shareBody').value=''; document.getElementById('shareDisplayName').value=''; document.getElementById('shareOneLiner').value='';
+  loadShares();
+}
+async function loadShares(){
+  const { data } = await sb.from('dossier_shares').select('*').eq('member_email', me.email).order('created_at',{ascending:false});
+  const list = document.getElementById('shareList');
+  if (!data || !data.length){ list.innerHTML='<div class="empty">No share links yet.</div>'; return; }
+  list.innerHTML = data.map(s => {
+    const url = `https://www.mbarock.com/d/?s=${s.slug}`;
+    return `<div class="list-item"><div style="flex:1;min-width:0"><div style="font-weight:600">${escapeHtml(s.dossier_data?.display_name||s.slug)}</div><div style="font-size:11px;font-family:Courier,monospace;color:var(--muted);overflow:hidden;text-overflow:ellipsis">${url}</div><div style="font-size:11px;color:var(--muted)">${s.view_count||0} views · ${new Date(s.created_at).toLocaleDateString()}</div></div><div class="row" style="gap:6px"><button class="btn ghost" style="padding:5px 10px;font-size:11px" onclick="navigator.clipboard.writeText('${url}')">Copy</button>${s.revoked?'<span class="pill red">revoked</span>':`<button class="btn danger" style="padding:5px 10px;font-size:11px" onclick="revokeShare('${s.id}')">Revoke</button>`}</div></div>`;
+  }).join('');
+}
+async function revokeShare(id){
+  if (!confirm('Revoke this share link? Anyone with the URL will see a "revoked" message.')) return;
+  await sb.from('dossier_shares').update({ revoked: true }).eq('id', id);
+  loadShares();
+}
+
+// ───── DIRECTORY
+async function loadDirectory(){
+  const { data } = await sb.from('directory_profiles').select('*').eq('member_email', me.email).maybeSingle();
+  if (!data) return;
+  document.getElementById('dirName').value = data.display_name || '';
+  document.getElementById('dirRole').value = data.role || '';
+  document.getElementById('dirIndustry').value = data.industry || '';
+  document.getElementById('dirBusinessName').value = data.business_name || '';
+  document.getElementById('dirBusinessUrl').value = data.business_url || '';
+  document.getElementById('dirOneLiner').value = data.one_liner || '';
+  document.getElementById('dirCity').value = data.city || '';
+  document.getElementById('dirLinkedin').value = data.linkedin_url || '';
+  document.getElementById('dirTwitter').value = data.twitter_handle || '';
+  document.getElementById('dirOptedIn').checked = !!data.opted_in;
+  (data.open_to||[]).forEach(v => { const el = document.querySelector(`.dirOpenTo[value="${v}"]`); if (el) el.checked = true; });
+}
+async function saveDirectory(){
+  const name = document.getElementById('dirName').value.trim();
+  if (!name) return setMsg('dirMsg','Display name required.','error');
+  const payload = {
+    member_email: me.email, member_user_id: me.id, display_name: name,
+    role: document.getElementById('dirRole').value.trim() || null,
+    industry: document.getElementById('dirIndustry').value.trim() || null,
+    business_name: document.getElementById('dirBusinessName').value.trim() || null,
+    business_url: document.getElementById('dirBusinessUrl').value.trim() || null,
+    one_liner: document.getElementById('dirOneLiner').value.trim() || null,
+    city: document.getElementById('dirCity').value.trim() || null,
+    linkedin_url: document.getElementById('dirLinkedin').value.trim() || null,
+    twitter_handle: document.getElementById('dirTwitter').value.trim() || null,
+    open_to: Array.from(document.querySelectorAll('.dirOpenTo:checked')).map(e=>e.value),
+    opted_in: document.getElementById('dirOptedIn').checked,
+    updated_at: new Date().toISOString(),
+  };
+  const { error } = await sb.from('directory_profiles').upsert(payload, { onConflict: 'member_email' });
+  if (error) return setMsg('dirMsg', error.message, 'error');
+  setMsg('dirMsg','Saved.','success');
+}
+
+// ───── REFERRAL
+async function loadReferral(){
+  // Look up existing code or mint one
+  let { data: code } = await sb.from('referral_codes').select('*').eq('member_email', me.email).maybeSingle();
+  if (!code){
+    const prefix = me.email.split('@')[0].replace(/[^A-Z0-9]/gi,'').slice(0,6).toUpperCase() || 'OPER';
+    const suffix = Math.random().toString(36).slice(2,7).toUpperCase();
+    const newCode = `${prefix}-${suffix}`;
+    const { data: created, error } = await sb.from('referral_codes').insert({ code: newCode, member_email: me.email, member_user_id: me.id }).select().maybeSingle();
+    if (error){ setMsg('refMsg', error.message, 'error'); return; }
+    code = created;
+  }
+  document.getElementById('refCode').textContent = code.code;
+  document.getElementById('refLink').textContent = `https://www.mbarock.com/?ref=${code.code}`;
+  // Stats
+  const { data: events } = await sb.from('referral_events').select('event_type').eq('code', code.code);
+  if (events){
+    const counts = { visit:0, signup:0, purchase:0 };
+    events.forEach(e => counts[e.event_type] = (counts[e.event_type]||0) + 1);
+    document.getElementById('refVisits').textContent = counts.visit;
+    document.getElementById('refSignups').textContent = counts.signup;
+    document.getElementById('refPurchases').textContent = counts.purchase;
+  }
+}
+</script>
+</body></html>

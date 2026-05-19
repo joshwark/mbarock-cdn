@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Member Directory — MBA Rock</title>
+<meta name="description" content="MBA Rock operator directory — find founders, operators, and brand-builders in our cohort.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0B1F3A;--orange:#F26B1F;--cream:#FAF8F5;--paper:#F4F1EA;--ink:#0E1116;--ink-2:#3C2D17;--rule:#E5E0D6;--muted:#5A6470;--green:#1D8444}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);font-weight:700;letter-spacing:-0.015em}
+  h1{font-size:36px;line-height:1.1}h2{font-size:18px}
+  a{color:var(--orange);font-weight:600}
+  .wrap{max-width:1140px;margin:0 auto;padding:18px 22px}
+  .topbar{background:#fff;border-bottom:1px solid var(--rule)}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:12px 22px}
+  .brand{font-family:'Fraunces';font-size:20px;font-weight:700;color:var(--navy)}
+  .topbar nav a{color:var(--muted);text-decoration:none;font-size:13px;margin-left:14px}
+  .topbar nav a:hover{color:var(--navy)}
+  .hero{padding:38px 0 24px}
+  .hero h1{margin-bottom:10px}
+  .hero p.lead{color:var(--muted);font-size:16px;max-width:680px}
+  .filters{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .filters input,.filters select{padding:9px 12px;border:1px solid var(--rule);border-radius:8px;font-size:13.5px;font-family:'Inter';background:#fff}
+  .filters input{flex:1;min-width:220px}
+  .chip{padding:5px 11px;font-size:11.5px;font-weight:600;color:var(--navy);background:#fff;border:1px solid var(--rule);border-radius:999px;cursor:pointer;text-transform:uppercase;letter-spacing:.04em}
+  .chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px;margin:22px 0 40px}
+  .profile{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:8px;box-shadow:0 6px 16px -12px rgba(11,31,58,.15)}
+  .profile .name{font-family:'Fraunces';font-size:21px;font-weight:700;color:var(--navy);line-height:1.1}
+  .profile .role-row{font-size:12.5px;color:var(--muted)}
+  .profile .role-row b{color:var(--ink-2);font-weight:600}
+  .profile .one-liner{font-size:14.5px;color:var(--ink-2);line-height:1.5;margin-top:4px}
+  .profile .biz{font-size:13px;margin-top:6px}.profile .biz a{font-weight:600}
+  .profile .open-to{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .profile .tag{font-size:10.5px;background:rgba(242,107,31,.14);color:#8A3D0E;padding:3px 9px;border-radius:999px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+  .profile .links{display:flex;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid var(--rule)}
+  .profile .links a{font-size:12px;color:var(--navy);text-decoration:none;border-bottom:1px dotted}
+  .empty{padding:60px 0;text-align:center;color:var(--muted);font-style:italic}
+  .count{font-size:13px;color:var(--muted);margin:8px 0 0}
+  .footer{padding:28px 0;text-align:center;font-size:13px;color:var(--muted);border-top:1px solid var(--rule);background:#fff}
+</style>
+</head><body>
+
+<div class="topbar"><div class="wrap">
+  <a href="https://www.mbarock.com" style="text-decoration:none"><span class="brand">MBA Rock</span></a>
+  <nav>
+    <a href="https://www.mbarock.com/mba-rock">Join</a>
+    <a href="https://www.mbarock.com/dashboard">Dashboard</a>
+    <a href="https://www.mbarock.com/member-tools">Member tools</a>
+  </nav>
+</div></div>
+
+<div class="wrap">
+  <div class="hero">
+    <h1>Member directory</h1>
+    <p class="lead">Operators inside MBA Rock who've chosen to be findable. Reach out, collaborate, hire, advise, or invest. Each member set their own profile.</p>
+    <div class="filters">
+      <input id="searchInput" type="text" placeholder="Search by name, industry, business, city…">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="collab">Collab</button>
+      <button class="chip" data-filter="hiring">Hiring</button>
+      <button class="chip" data-filter="advising">Advising</button>
+      <button class="chip" data-filter="investing">Investing</button>
+    </div>
+    <p class="count" id="count">Loading…</p>
+  </div>
+
+  <div id="grid" class="grid"></div>
+  <div id="empty" class="empty" style="display:none">No members match. Try clearing filters.</div>
+</div>
+
+<div class="footer">
+  <p>Want to list yourself? <a href="https://www.mbarock.com/member-tools">Open Member tools →</a> and opt in.</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+const SB_URL='https://ciloqphtencjthkedanw.supabase.co';
+const SB_KEY='sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+const sb = window.supabase.createClient(SB_URL, SB_KEY);
+
+let profiles=[], filter='all', query='';
+function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function render(){
+  const q = query.toLowerCase();
+  let rows = profiles;
+  if (filter !== 'all') rows = rows.filter(p => (p.open_to||[]).includes(filter));
+  if (q) rows = rows.filter(p => (p.display_name+' '+(p.industry||'')+' '+(p.business_name||'')+' '+(p.city||'')+' '+(p.one_liner||'')+' '+(p.role||'')).toLowerCase().includes(q));
+  document.getElementById('count').textContent = rows.length + ' member' + (rows.length===1?'':'s');
+  const grid = document.getElementById('grid');
+  const empty = document.getElementById('empty');
+  if (!rows.length){ grid.innerHTML=''; empty.style.display='block'; return; }
+  empty.style.display='none';
+  grid.innerHTML = rows.map(p => `
+    <div class="profile">
+      <div class="name">${escapeHtml(p.display_name)}</div>
+      <div class="role-row">${p.role ? `<b>${escapeHtml(p.role)}</b>` : ''}${p.role && p.industry ? ' · ' : ''}${p.industry ? escapeHtml(p.industry) : ''}${p.city ? ` · ${escapeHtml(p.city)}` : ''}</div>
+      ${p.one_liner ? `<div class="one-liner">${escapeHtml(p.one_liner)}</div>` : ''}
+      ${p.business_name ? `<div class="biz">${p.business_url ? `<a href="${escapeHtml(p.business_url)}" target="_blank" rel="noopener">${escapeHtml(p.business_name)} ↗</a>` : escapeHtml(p.business_name)}</div>` : ''}
+      ${(p.open_to||[]).length ? `<div class="open-to">${p.open_to.map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>` : ''}
+      ${(p.linkedin_url||p.twitter_handle) ? `<div class="links">${p.linkedin_url ? `<a href="${escapeHtml(p.linkedin_url)}" target="_blank" rel="noopener">LinkedIn</a>` : ''}${p.twitter_handle ? `<a href="https://x.com/${escapeHtml(p.twitter_handle.replace(/^@/,''))}" target="_blank" rel="noopener">Twitter/X</a>` : ''}</div>` : ''}
+    </div>
+  `).join('');
+}
+
+(async () => {
+  const { data } = await sb.from('directory_profiles').select('*').eq('opted_in', true).order('created_at',{ascending:false});
+  profiles = data || [];
+  render();
+  document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
+    document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));
+    c.classList.add('active'); filter = c.dataset.filter; render();
+  }));
+  document.getElementById('searchInput').addEventListener('input', e => { query = e.target.value; render(); });
+})();
+</script>
+</body></html>
