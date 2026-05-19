@@ -3,7 +3,7 @@
    When video_id is null: rewrites jsDelivr MP4 src to GitHub raw (Chrome/Firefox fallback).
    To activate YouTube for a lesson: set "video_id": "YOUTUBE_ID" in lessons.json */
 (function() {
-  var LESSONS_JSON = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.json';
+  var LESSONS_JSON = 'https://learn.mbarock.com/lessons.json';
   var JSDELIVR_RE  = /cdn\.jsdelivr\.net\/gh\/joshwark\/mbarock-cdn@[^/]+\//;
   var GH_RAW_BASE  = 'raw.githubusercontent.com/joshwark/mbarock-cdn/main/';
 
@@ -134,7 +134,7 @@
       }
     }
     console.warn('[MBA Rock] BUNDLE_BASE fallback to jsDelivr ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ script tag not found');
-    return 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/';
+    return 'https://learn.mbarock.com/';
   }
 
   var BUNDLE_BASE = resolveBundleBase();
@@ -167,7 +167,7 @@
     var html = '';
 
     html += '<div class="mr-module-label" style="background:' + moduleObj.color + '">' + esc(moduleObj.title) + '</div>';
-    if(lesson.moduleId&&{'M1':1,'M2':1,'M3':1,'M4':1,'M5':1,'M6':1}[lesson.moduleId])html+='<div class="mr-module-img-wrap" style="width:100%;overflow:hidden;margin:0 0 2.5rem;border-radius:6px;"><img class="mr-module-img" style="width:100%;display:block;height:auto;" src="https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/images/module_'+lesson.moduleId.toLowerCase()+'.png" alt="'+esc(lesson.moduleId)+'" loading="lazy"></div>';
+    if(lesson.moduleId&&{'M1':1,'M2':1,'M3':1,'M4':1,'M5':1,'M6':1}[lesson.moduleId])html+='<div class="mr-module-img-wrap" style="width:100%;overflow:hidden;margin:0 0 2.5rem;border-radius:6px;"><img class="mr-module-img" style="width:100%;display:block;height:auto;" src="https://learn.mbarock.com/images/module_'+lesson.moduleId.toLowerCase()+'.png" alt="'+esc(lesson.moduleId)+'" loading="lazy"></div>';
 
     if (lesson.audio_url) {
       html += '<div class="mr-audio">';
@@ -496,7 +496,7 @@
     var slug = currentSlug();
     if (!slug) return;
 
-    var fetchUrl = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.json?v=' + Date.now();
+    var fetchUrl = 'https://learn.mbarock.com/lessons.json?v=' + Date.now();
     console.log('[MBA Rock] fetching lessons.json from:', fetchUrl);
 
     fetch(fetchUrl)
@@ -531,7 +531,7 @@
  * ============================================================ */
 (function(){
 var CDN='https://cdn.jsdelivr.net/gh/joshwark/mbarock-cdn@main/';
-var IMGCDN='https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/images/';
+var IMGCDN='https://learn.mbarock.com/images/';
 var V={
 'm1l1-oxygen-cash-flow':'video/Oxygen__Cash_Flow_Management.mp4',
 'm1l2-three-sheets':'video/The_Top_Line_Lie.mp4',
@@ -598,7 +598,7 @@ else{setTimeout(init,600);}
   function loadCalcScript(cb) {
     if (window.MBARockCalc) { cb(); return; }
     var s = document.createElement('script');
-    s.src = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/calculators.js';
+    s.src = 'https://learn.mbarock.com/calculators.js';
     s.onload = cb;
     s.onerror = function () { console.warn('MBARock: calculators.js failed to load'); };
     document.head.appendChild(s);
@@ -634,7 +634,7 @@ else{setTimeout(init,600);}
 
 // ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ MBA Rock SEO / Open Graph Meta Injection ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
 (function () {
-  var CDN = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/';
+  var CDN = 'https://learn.mbarock.com/';
   function getSlug() {
     return window.location.pathname.replace(/^\//, '').replace(/\/$/, '');
   }
@@ -753,7 +753,7 @@ else{setTimeout(init,600);}
 
   var slug = getSlug();
   if (!slug) return;
-  fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.json')
+  fetch('https://learn.mbarock.com/lessons.json')
     .then(function (r) { return r.json(); })
     .then(function (data) {
       var obj = data.lessons || {};
@@ -782,7 +782,7 @@ else{setTimeout(init,600);}
 
 // ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ MBA Rock Core Concepts + Take Action Renderer ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
 (function () {
-  var CDN = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/';
+  var CDN = 'https://learn.mbarock.com/';
   function getSlug() { var p = window.location.pathname.replace(/^\/|\/$/, '').split('/'); return p[p.length - 1]; }
 
   function injectStyle() {
@@ -939,7 +939,7 @@ else{setTimeout(init,600);}
     setTimeout(inject, 1500);
   }
 
-  fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.json')
+  fetch('https://learn.mbarock.com/lessons.json')
     .then(function(r) { return r.json(); })
     .then(run)
     .catch(function() {});
@@ -953,7 +953,7 @@ else{setTimeout(init,600);}
    Safe: no-op when audio_overview_url is null.
    ============================================================ */
 (function() {
-  var LESSONS_JSON_URL = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.json';
+  var LESSONS_JSON_URL = 'https://learn.mbarock.com/lessons.json';
 
   function getSlug() {
     var parts = window.location.pathname.split('/').filter(Boolean);
@@ -1066,7 +1066,7 @@ else{setTimeout(init,600);}
 (function() {
   if (!document.querySelector('[data-mr-dashboard="1"]')) return;
 
-  var V2_URL = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json';
+  var V2_URL = 'https://learn.mbarock.com/lessons.v2.json';
   var PROGRESS_KEY = 'mba-rock-progress-v2';
   var MEMBER_KEY   = 'mba-rock-member-id';
 
@@ -1502,7 +1502,7 @@ else{setTimeout(init,600);}
     '66-spreadsheet-north-star':'M9L1',
   };
 
-  var V2_URL = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json';
+  var V2_URL = 'https://learn.mbarock.com/lessons.v2.json';
 
   function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
 

@@ -71,7 +71,7 @@
   // Token stopwords stripped during fuzzy match
   var STOP = {'the':1,'a':1,'an':1,'and':1,'or':1,'to':1,'of':1,'for':1,'in':1,'on':1,'by':1,'is':1,'it':1,'be':1,'as':1,'mba':1,'rock':1,'lesson':1,'l':1,'m':1};
 
-  var V2_URL = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json';
+  var V2_URL = 'https://learn.mbarock.com/lessons.v2.json';
 
   // ── Supabase (for per-account notes — same project as progress sync) ──
   var SUPABASE_URL = 'https://ciloqphtencjthkedanw.supabase.co';

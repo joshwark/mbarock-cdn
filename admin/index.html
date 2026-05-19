@@ -274,7 +274,7 @@
             <li><a href="https://www.mbarock.com/mba-rock" target="_blank">Squarespace product page</a></li>
             <li><a href="https://www.mbarock.com/adytum" target="_blank">Adytum Pipeline page</a></li>
             <li><a href="https://learn.mbarock.com/readiness.html" target="_blank">Course readiness</a></li>
-            <li><a href="https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json" target="_blank">Canon JSON</a></li>
+            <li><a href="https://learn.mbarock.com/lessons.v2.json" target="_blank">Canon JSON</a></li>
             <li><a href="https://github.com/joshwark/mbarock-cdn/commits/main" target="_blank">Commit history</a></li>
             <li><a href="https://supabase.com/dashboard/project/ciloqphtencjthkedanw" target="_blank">Supabase project</a></li>
           </ul>
@@ -474,7 +474,7 @@ async function refreshAll(){
 
 async function loadCanon(){
   try {
-    const r = await fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json?t=' + Date.now());
+    const r = await fetch('https://learn.mbarock.com/lessons.v2.json?t=' + Date.now());
     const c = await r.json();
     const total = c.lessons.length;
     const audio = c.lessons.filter(L => L.audio_url).length;

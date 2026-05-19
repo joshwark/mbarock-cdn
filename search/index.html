@@ -79,7 +79,7 @@
   var lessons = [];
   var modName = {M1:"Finance Fundamentals",M2:"Strategy & Competitive Advantage",M3:"People & Leadership",M4:"Unit Economics & Growth Metrics",M5:"Operations & Technology",M6:"Growth & Capital",M7:"Marketing & Brand",M8:"Operations & Execution",M9:"Analytics & Decision Making",M10:"Innovation & Future (Capstone)"};
   
-  fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json?cb=' + Date.now())
+  fetch('https://learn.mbarock.com/lessons.v2.json?cb=' + Date.now())
     .then(function(r){ return r.json(); })
     .then(function(d){
       lessons = d.lessons || [];

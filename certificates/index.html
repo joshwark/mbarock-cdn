@@ -468,7 +468,7 @@ async function loadCapstone(){
 async function loadLessonIndex(){
   // Pull lessons.v2.json to know which lesson_ids belong to which module.
   try {
-    const r = await fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json');
+    const r = await fetch('https://learn.mbarock.com/lessons.v2.json');
     const j = await r.json();
     state.totalLessons = j.lessons.length;
     state.lessonsByModule = {};
@@ -486,7 +486,7 @@ async function init(){
 
 init();
 
-(function(){fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json?cb='+Date.now()).then(r=>r.json()).then(j=>{var t=(j.lessons||[]).length;var e=document.getElementById('lessonTotal');if(e)e.textContent='/'+t;var op=document.getElementById('opLessons');if(op){var cur=parseInt((op.textContent||'').split('/')[0])||0;op.textContent=cur+'/'+t;}}).catch(function(){});fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/capstone.json?cb='+Date.now()).then(function(r){return r.json()}).then(function(j){var t=0;(j.sections||[]).forEach(function(s){t+=(s.fields||[]).length});var el=document.getElementById('capstoneTotal');if(el&&t)el.textContent='/'+t;}).catch(function(){});})();
+(function(){fetch('https://learn.mbarock.com/lessons.v2.json?cb='+Date.now()).then(r=>r.json()).then(j=>{var t=(j.lessons||[]).length;var e=document.getElementById('lessonTotal');if(e)e.textContent='/'+t;var op=document.getElementById('opLessons');if(op){var cur=parseInt((op.textContent||'').split('/')[0])||0;op.textContent=cur+'/'+t;}}).catch(function(){});fetch('https://learn.mbarock.com/capstone.json?cb='+Date.now()).then(function(r){return r.json()}).then(function(j){var t=0;(j.sections||[]).forEach(function(s){t+=(s.fields||[]).length});var el=document.getElementById('capstoneTotal');if(el&&t)el.textContent='/'+t;}).catch(function(){});})();
 
 </script>
 <section id="certPreviewCard" style="display:none;max-width:780px;margin:30px auto;padding:24px;border:2px solid #0B1F3A;border-radius:12px;background:#fff;font-family:Inter,system-ui;">

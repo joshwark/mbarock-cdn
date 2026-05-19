@@ -298,7 +298,7 @@ const SB_HDR = {'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':
 function memberId(){ return localStorage.getItem('mba-rock-member-id') || 'guest'; }
 function memberName(){ return localStorage.getItem('mba-rock-member-name') || ''; }
 
-const LESSONS_JSON = 'https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json';
+const LESSONS_JSON = 'https://learn.mbarock.com/lessons.v2.json';
 
 // ── Module catalog with brand colors + tagline ──
 const MODULES = [
@@ -499,13 +499,13 @@ init();
 
 // CANON sync — pull live denominators from lessons.v2.json
 (function(){
-  fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lessons.v2.json?cb=' + Date.now())
+  fetch('https://learn.mbarock.com/lessons.v2.json?cb=' + Date.now())
     .then(r=>r.json()).then(j=>{
       var total = (j.lessons||[]).length;
       var el = document.getElementById('lessonTotal');
       if (el) el.textContent = '/' + total;
     }).catch(function(){});
-  fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/capstone.json?cb=' + Date.now())
+  fetch('https://learn.mbarock.com/capstone.json?cb=' + Date.now())
     .then(r=>r.json()).then(j=>{
       var t = 0;
       (j.sections||[]).forEach(function(s){ t += (s.fields||[]).length; });

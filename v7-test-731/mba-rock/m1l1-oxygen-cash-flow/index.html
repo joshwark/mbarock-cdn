@@ -28,7 +28,7 @@ if (!localStorage.getItem('mba-rock-member-id')) localStorage.setItem('mba-rock-
 </article>
 <script>
 // Force-fetch v7.3.1 with Date.now() cb buster + eval (same pattern Squarespace site header uses)
-fetch('https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/lesson_takeover_v731.js?cb=' + Date.now())
+fetch('https://learn.mbarock.com/lesson_takeover_v731.js?cb=' + Date.now())
   .then(function(r){ return r.text(); })
   .then(function(s){ try { new Function(s)(); } catch(e){ console.error('[harness] eval failed', e); } })
   .catch(function(e){ console.error('[harness] fetch failed', e); });
