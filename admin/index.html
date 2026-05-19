@@ -351,15 +351,30 @@ const sb = window.supabase.createClient(SB_URL, SB_KEY);
 let session = null, me = null, pendingTask = null, currentDetailId = null;
 let tasksCache = [], activeFilter = 'all', searchQuery = '';
 let realtimeChannel = null;
+let bootInitialized = false;   // guard: refreshAll/interval only once
+let realtimeReady = false;     // guard: setupRealtime only once
 
 // ── boot
 (async function init(){
   const { data } = await sb.auth.getSession();
   session = data.session;
   if (session) await onSignedIn();
-  sb.auth.onAuthStateChange(async (_e, s) => {
-    session = s;
-    if (s) await onSignedIn(); else showAuth();
+  sb.auth.onAuthStateChange(async (event, s) => {
+    if (event === 'SIGNED_OUT') {
+      session = null; me = null;
+      // also tear down state guards so next sign-in re-initializes cleanly
+      bootInitialized = false;
+      if (realtimeChannel) { try { await sb.removeChannel(realtimeChannel); } catch(e){} realtimeChannel = null; }
+      realtimeReady = false;
+      showAuth();
+      return;
+    }
+    // For SIGNED_IN / INITIAL_SESSION / TOKEN_REFRESHED / USER_UPDATED — only act if there's a session
+    if (s) {
+      session = s;
+      await onSignedIn();
+    }
+    // Do NOT call showAuth() for null-session non-SIGNED_OUT events — those are transient.
   });
 })();
 
@@ -369,23 +384,34 @@ function showAuth(){
 }
 
 async function onSignedIn(){
+  if (!session?.user?.email) return; // guard against transient null
   const email = session.user.email;
   const { data: row, error } = await sb.from('admin_users').select('email,role,active').eq('email', email).maybeSingle();
   if (error || !row || !row.active) {
-    setMsg('authMsg', `Sorry — ${email} isn't authorized. Ask Josh to add you to admin_users.`, 'error');
-    await sb.auth.signOut();
+    // Only blame the user if we haven't already initialized — avoids spurious sign-outs from broadcast events
+    if (!bootInitialized && !me) {
+      setMsg('authMsg', `Sorry — ${email} isn't authorized. Ask Josh to add you to admin_users.`, 'error');
+      await sb.auth.signOut();
+    }
     return;
   }
+  // Always update UI to signed-in state (idempotent)
   me = { email: row.email, role: row.role };
   document.getElementById('whoEmail').textContent = me.email;
   document.getElementById('whoRole').textContent = ' · ' + me.role;
   document.getElementById('auth').style.display = 'none';
   document.getElementById('app').classList.add('signed-in');
-  setupRealtime();
-  setupFilters();
-  await refreshAll();
-  // Auto-refresh every 60s
-  setInterval(refreshAll, 60000);
+  // One-time setup
+  if (!realtimeReady) {
+    try { setupRealtime(); } catch(e) { console.warn('setupRealtime:', e); }
+    setupFilters();
+    realtimeReady = true;
+  }
+  if (!bootInitialized) {
+    bootInitialized = true;
+    await refreshAll();
+    setInterval(refreshAll, 60000);
+  }
 }
 
 async function sendMagicLink(){
