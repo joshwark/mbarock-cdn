@@ -186,7 +186,7 @@ async function checkAuth() {
   const { data: adminRow, error } = await sb
     .from('admin_users').select('email').eq('email', session.user.email).maybeSingle();
   if (error || !adminRow) {
-    flash('gate-msg', 'error', 'Signed in, but not an admin. Contact CEO@trufflebearoil.com.', 0);
+    flash('gate-msg', 'error', 'Signed in, but not an admin. Contact better.together.branding@gmail.com.', 0);
     return;
   }
   $('gate').style.display = 'none';
