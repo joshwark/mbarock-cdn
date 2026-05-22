@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://learn.mbarock.com https://www.mbarock.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://ciloqphtencjthkedanw.supabase.co https://www.mbarock.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://ciloqphtencjthkedanw.supabase.co wss://ciloqphtencjthkedanw.supabase.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trial Seats — MBA Rock Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A; --orange:#F26B1F; --cream:#FDFAF1; --paper:#F4F1EA;
+    --ink:#0E1116; --muted:#5b6478; --rule:#E5E0D6; --green:#1D8444; --red:#c5364c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);font-weight:800;letter-spacing:-0.01em}
+  a{color:var(--orange);font-weight:600;text-decoration:none}
+  a:hover{text-decoration:underline}
+  .topbar{background:#fff;border-bottom:1px solid var(--rule)}
+  .topbar .wrap{max-width:1100px;margin:0 auto;padding:12px 22px;display:flex;justify-content:space-between;align-items:center}
+  .brand{font-family:'Fraunces';font-size:20px;font-weight:800;color:var(--navy)}
+  .brand .o{color:var(--orange)}
+  .topbar nav a{color:var(--muted);font-size:13px;margin-left:18px;font-weight:600}
+  .topbar nav a.active{color:var(--navy)}
+
+  main{max-width:1100px;margin:0 auto;padding:32px 22px 80px}
+  h1{font-size:32px;line-height:1.1;margin-bottom:6px}
+  h1::after{content:"";display:block;width:60px;height:4px;background:var(--orange);margin-top:12px;margin-bottom:14px}
+  .lead{color:var(--muted);font-size:15px;max-width:740px;margin-bottom:24px}
+  .lead b{color:var(--ink)}
+
+  .alert{padding:12px 16px;border-radius:8px;font-size:13px;margin:8px 0 14px;display:none}
+  .alert.error{background:#fff3f4;color:var(--red);border:1px solid #f1c0c5}
+  .alert.success{background:#eaf7ef;color:var(--green);border:1px solid #b7e3c7}
+
+  /* Auth gate */
+  #gate{padding:30px;background:#fff;border:1px solid var(--rule);border-radius:14px;max-width:480px;margin:80px auto}
+  #gate h2{font-size:24px;margin-bottom:8px}
+  #gate p{color:var(--muted);margin-bottom:18px;font-size:14px}
+  #gate input{width:100%;padding:12px 14px;border:1px solid var(--rule);border-radius:8px;font-size:14px;font-family:'Inter';margin-bottom:12px}
+  #gate button{width:100%;padding:13px;background:var(--orange);color:#fff;border:0;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;letter-spacing:.04em}
+
+  /* Issue form */
+  .issue-card{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:24px;margin-bottom:24px;box-shadow:0 6px 16px -12px rgba(11,31,58,.15)}
+  .issue-card h3{font-size:18px;margin-bottom:10px}
+  .issue-card .helper{color:var(--muted);font-size:13px;margin-bottom:14px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .field label{display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1px solid var(--rule);border-radius:8px;font-size:14px;font-family:'Inter';background:#fff}
+  .field textarea{min-height:60px;resize:vertical}
+  .issue-card button{margin-top:14px;padding:11px 22px;background:var(--orange);color:#fff;border:0;border-radius:999px;font-weight:700;font-size:13px;cursor:pointer;letter-spacing:.04em}
+  .issue-card button:disabled{opacity:.5;cursor:not-allowed}
+
+  /* Seat list */
+  .filters{display:flex;gap:8px;margin:10px 0 14px;flex-wrap:wrap}
+  .chip{padding:6px 12px;font-size:11.5px;font-weight:700;color:var(--navy);background:#fff;border:1px solid var(--rule);border-radius:999px;cursor:pointer;text-transform:uppercase;letter-spacing:.04em}
+  .chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+  .seat-list{display:flex;flex-direction:column;gap:10px}
+  .seat{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:16px 20px;box-shadow:0 4px 12px -10px rgba(11,31,58,.15)}
+  .seat .top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+  .seat .email{font-family:'Fraunces';font-size:18px;font-weight:700;color:var(--navy)}
+  .seat .partner{font-size:12px;color:var(--muted);margin-top:2px}
+  .seat .status{padding:4px 10px;border-radius:999px;font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+  .seat .status.active{background:#eaf7ef;color:var(--green)}
+  .seat .status.expired{background:#f4f1ea;color:var(--muted)}
+  .seat .status.revoked{background:#fff3f4;color:var(--red)}
+  .seat .meta-row{display:flex;gap:18px;font-size:12px;color:var(--muted);margin-top:8px;flex-wrap:wrap}
+  .seat .meta-row span b{color:var(--ink)}
+  .seat .actions{margin-top:10px;display:flex;gap:8px}
+  .btn{padding:7px 14px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;border:0;font-family:'Inter'}
+  .btn.revoke{background:#fff3f4;color:var(--red);border:1px solid #f1c0c5}
+  .btn.revoke:hover{background:var(--red);color:#fff;border-color:var(--red)}
+  .btn.copy{background:#fff;color:var(--navy);border:1px solid var(--rule)}
+  .empty{padding:32px;text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--rule);border-radius:12px;font-size:14px}
+
+  .policy{background:var(--navy);color:var(--cream);border-radius:10px;padding:16px 20px;margin-top:24px;font-size:13px;line-height:1.6}
+  .policy h4{color:var(--orange);font-family:'Inter';font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px}
+  .policy ul{padding-left:18px;margin-top:4px}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <div class="brand">MBA Rock<span class="o"> · Admin</span></div>
+  <nav>
+    <a href="/admin/">Console</a>
+    <a href="/admin/trial-seats/" class="active">Trial Seats</a>
+    <a href="/dashboard/">Dashboard</a>
+  </nav>
+</div></div>
+
+<div id="gate">
+  <h2>Admin sign-in required</h2>
+  <p>Enter your admin email — we'll send a magic link. Only emails in the <code>admin_users</code> table can access trial-seat management.</p>
+  <input id="gate-email" type="email" placeholder="your@email" autocomplete="email">
+  <button id="gate-btn">Send magic link</button>
+  <div id="gate-msg" class="alert"></div>
+</div>
+
+<main id="app" style="display:none">
+  <h1>Trial Seats</h1>
+  <p class="lead">B2B 7-day evaluation seats. <b>The only trial MBA Rock offers.</b> Issue one named decision-maker per deal. See the playbook at <a href="/Desktop/MBA Rock/_Operating System/B2B_Trial_Playbook.pdf" target="_blank">B2B_Trial_Playbook.pdf</a>.</p>
+
+  <div id="issue-msg" class="alert"></div>
+
+  <div class="issue-card">
+    <h3>Issue a new seat</h3>
+    <p class="helper">7-day full course access, single named individual, excludes Capstone certification, Adytum Pipeline access, and Dossier export.</p>
+    <div class="grid2">
+      <div class="field"><label for="iss-email">Decision-maker email *</label><input id="iss-email" type="email" placeholder="president@bushnell.edu"></div>
+      <div class="field"><label for="iss-partner">Partner / company *</label><input id="iss-partner" type="text" placeholder="Bushnell University"></div>
+      <div class="field"><label for="iss-deal">HubSpot deal ID</label><input id="iss-deal" type="text" placeholder="optional, fill once deal exists"></div>
+      <div class="field"><label for="iss-track">Outreach track</label>
+        <select id="iss-track">
+          <option value="institutional">Institutional partnership</option>
+          <option value="corporate">Corporate L&amp;D</option>
+          <option value="personal_connection">Personal connection</option>
+          <option value="media">Media (rare)</option>
+        </select>
+      </div>
+    </div>
+    <div class="field" style="margin-top:10px"><label for="iss-notes">Notes</label><textarea id="iss-notes" placeholder="Context for Jess + Josh"></textarea></div>
+    <button id="iss-btn">Issue 7-day seat</button>
+  </div>
+
+  <h3 style="margin-top:30px;font-size:18px">Active &amp; recent seats</h3>
+  <div class="filters">
+    <span class="chip active" data-filter="active">Active</span>
+    <span class="chip" data-filter="expired">Expired</span>
+    <span class="chip" data-filter="revoked">Revoked</span>
+    <span class="chip" data-filter="all">All</span>
+  </div>
+  <div id="seat-list" class="seat-list"></div>
+
+  <div class="policy">
+    <h4>POLICY REMINDER</h4>
+    <ul>
+      <li><b>No D2C / cohort trials, ever.</b> If a D2C member asks, send to <code>mbarock.com/sample</code>.</li>
+      <li><b>One named individual per deal.</b> Not a team, not a list, not a general inbox.</li>
+      <li><b>7 calendar days, hard expiry.</b> No extensions — expiry triggers the conversion conversation.</li>
+      <li><b>Restrictions: no Capstone, no Adytum, no Dossier export.</b> Enforced server-side via Supabase RLS.</li>
+      <li><b>Trial does not credit against the license fee.</b> Conversion to paid is at standard B2B pricing.</li>
+    </ul>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+const SUPABASE_URL = 'https://ciloqphtencjthkedanw.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const $ = (id) => document.getElementById(id);
+function flash(target, type, msg, ms=4000){
+  const el = $(target);
+  el.className = 'alert ' + type;
+  el.textContent = msg;
+  el.style.display = 'block';
+  if (ms) setTimeout(()=>{ el.style.display = 'none'; }, ms);
+}
+
+// ── Auth flow ───────────────────────────────────────────────────────
+async function signIn() {
+  const email = $('gate-email').value.trim().toLowerCase();
+  if (!email || !/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+    return flash('gate-msg', 'error', 'Enter a valid email');
+  }
+  $('gate-btn').disabled = true;
+  const { error } = await sb.auth.signInWithOtp({
+    email,
+    options: { emailRedirectTo: location.origin + '/admin/trial-seats/' }
+  });
+  $('gate-btn').disabled = false;
+  if (error) return flash('gate-msg', 'error', error.message);
+  flash('gate-msg', 'success', 'Magic link sent. Check your email.', 0);
+}
+$('gate-btn').addEventListener('click', signIn);
+$('gate-email').addEventListener('keydown', e => { if (e.key === 'Enter') signIn(); });
+
+async function checkAuth() {
+  const { data: { session } } = await sb.auth.getSession();
+  if (!session) return;
+  // Verify admin
+  const { data: adminRow, error } = await sb
+    .from('admin_users').select('email').eq('email', session.user.email).maybeSingle();
+  if (error || !adminRow) {
+    flash('gate-msg', 'error', 'Signed in, but not an admin. Contact CEO@trufflebearoil.com.', 0);
+    return;
+  }
+  $('gate').style.display = 'none';
+  $('app').style.display = 'block';
+  loadSeats();
+}
+sb.auth.onAuthStateChange((_e, _s) => checkAuth());
+checkAuth();
+
+// ── Issue a seat ────────────────────────────────────────────────────
+async function issueSeat() {
+  const email   = $('iss-email').value.trim().toLowerCase();
+  const partner = $('iss-partner').value.trim();
+  const deal    = $('iss-deal').value.trim() || null;
+  const track   = $('iss-track').value;
+  const notes   = $('iss-notes').value.trim() || null;
+  if (!email || !partner) return flash('issue-msg', 'error', 'Email and Partner are required.');
+  $('iss-btn').disabled = true;
+  const { data, error } = await sb.rpc('issue_trial_seat', {
+    p_email: email,
+    p_deal_id: deal,
+    p_partner_name: partner,
+    p_outreach_track: track,
+    p_notes: notes,
+  });
+  $('iss-btn').disabled = false;
+  if (error) return flash('issue_msg', 'error', error.message);
+  flash('issue-msg', 'success', `Seat issued for ${email}. Expires in 7 days.`);
+  $('iss-email').value = ''; $('iss-partner').value = ''; $('iss-deal').value = ''; $('iss-notes').value = '';
+  loadSeats();
+}
+$('iss-btn').addEventListener('click', issueSeat);
+
+// ── Load seats ──────────────────────────────────────────────────────
+let _filter = 'active';
+document.querySelectorAll('.chip').forEach(c => {
+  c.addEventListener('click', () => {
+    document.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
+    c.classList.add('active');
+    _filter = c.dataset.filter;
+    loadSeats();
+  });
+});
+
+function fmtDateTime(s) {
+  if (!s) return '—';
+  return new Date(s).toLocaleString('en-US', { month:'short', day:'numeric', hour:'numeric', minute:'2-digit' });
+}
+function daysRemaining(expires_at) {
+  if (!expires_at) return null;
+  const ms = new Date(expires_at) - Date.now();
+  return Math.max(0, Math.floor(ms / 86400000));
+}
+function statusOf(row) {
+  if (row.revoked_at) return 'revoked';
+  if (new Date(row.expires_at) <= new Date()) return 'expired';
+  return 'active';
+}
+
+async function loadSeats() {
+  const { data, error } = await sb.from('trial_seats').select('*').order('created_at', { ascending: false });
+  if (error) return flash('issue-msg', 'error', error.message);
+  const list = $('seat-list');
+  const filtered = (data || []).filter(r => _filter === 'all' ? true : statusOf(r) === _filter);
+  if (filtered.length === 0) {
+    list.innerHTML = '<div class="empty">No seats in this view yet.</div>';
+    return;
+  }
+  list.innerHTML = filtered.map(r => {
+    const st = statusOf(r);
+    const dr = daysRemaining(r.expires_at);
+    return `<div class="seat">
+      <div class="top">
+        <div>
+          <div class="email">${escapeHtml(r.email)}</div>
+          <div class="partner">${escapeHtml(r.partner_name || '—')} &middot; ${escapeHtml(r.outreach_track || '—')}</div>
+        </div>
+        <div class="status ${st}">${st}${st==='active' && dr !== null ? ' · '+dr+'d left' : ''}</div>
+      </div>
+      <div class="meta-row">
+        <span>Started <b>${fmtDateTime(r.started_at)}</b></span>
+        <span>Expires <b>${fmtDateTime(r.expires_at)}</b></span>
+        ${r.deal_id ? `<span>Deal <b>${escapeHtml(r.deal_id)}</b></span>` : ''}
+        <span>By <b>${escapeHtml(r.created_by)}</b></span>
+        ${r.revoked_at ? `<span>Revoked <b>${fmtDateTime(r.revoked_at)}</b> · ${escapeHtml(r.revoked_reason||'')}</span>` : ''}
+      </div>
+      ${r.notes ? `<div style="font-size:13px;color:var(--muted);margin-top:6px;font-style:italic">"${escapeHtml(r.notes)}"</div>` : ''}
+      <div class="actions">
+        ${st === 'active' ? `<button class="btn revoke" data-id="${r.id}" data-action="revoke">Revoke now</button>` : ''}
+        <button class="btn copy" data-email="${escapeHtml(r.email)}" data-action="copy">Copy email</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  list.querySelectorAll('[data-action="revoke"]').forEach(b => {
+    b.addEventListener('click', async () => {
+      if (!confirm('Revoke this seat now? The seat holder loses access immediately.')) return;
+      const reason = prompt('Reason for revocation (logged):', 'revoked by admin');
+      const { error } = await sb.rpc('revoke_trial_seat', { p_id: b.dataset.id, p_reason: reason || 'revoked by admin' });
+      if (error) return flash('issue-msg', 'error', error.message);
+      flash('issue-msg', 'success', 'Seat revoked.');
+      loadSeats();
+    });
+  });
+  list.querySelectorAll('[data-action="copy"]').forEach(b => {
+    b.addEventListener('click', () => {
+      navigator.clipboard.writeText(b.dataset.email);
+      flash('issue-msg', 'success', `Copied ${b.dataset.email}`);
+    });
+  });
+}
+
+function escapeHtml(s) {
+  return String(s || '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+</script>
+</body></html>
