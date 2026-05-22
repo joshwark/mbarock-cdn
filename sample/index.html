@@ -405,6 +405,47 @@ html,body{margin:0;padding:0;background:#FAF8F5;color:#0E1116;font-family:'Inter
 </style>
 </head>
 <body>
+<!-- ── Founders'-rate countdown banner v1 (auto-hides 2026-07-01) ── -->
+<style>
+.mr-cd-banner{position:sticky;top:0;z-index:100;background:linear-gradient(90deg,#F26B1F,#E55A0F);color:#FDFAF1;text-align:center;padding:8px 16px;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:600;letter-spacing:0.04em;display:none}
+.mr-cd-banner b{font-weight:800;color:#fff}
+.mr-cd-banner a{color:#FDFAF1;text-decoration:underline;font-weight:700;margin-left:8px}
+.mr-cd-banner .mr-cd-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#fff;margin:0 8px;vertical-align:middle;animation:mr-cd-pulse 1.6s infinite}
+@keyframes mr-cd-pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+@media(max-width:560px){.mr-cd-banner{font-size:11.5px;padding:7px 12px}}
+</style>
+<div id="mr-cd-banner" class="mr-cd-banner" role="status" aria-live="polite">
+  <span class="mr-cd-dot"></span>
+  <b>Founders' rate</b> &middot; $499 lifetime &middot; <span id="mr-cd-time">expires June 30</span>
+  <a href="https://www.mbarock.com/mba-rock">Join &rarr;</a>
+</div>
+<script>
+(function(){
+  var deadline = new Date('2026-07-01T06:59:59Z').getTime(); // 2026-06-30 23:59:59 PT
+  var el = document.getElementById('mr-cd-banner');
+  var timeEl = document.getElementById('mr-cd-time');
+  if (!el || !timeEl) return;
+  function tick(){
+    var now = Date.now();
+    var ms = deadline - now;
+    if (ms <= 0) { el.style.display = 'none'; return; }
+    el.style.display = 'block';
+    var days = Math.floor(ms / 86400000);
+    var hours = Math.floor((ms % 86400000) / 3600000);
+    var mins = Math.floor((ms % 3600000) / 60000);
+    var label;
+    if (days > 14) label = 'expires June 30 (' + days + ' days)';
+    else if (days > 1) label = days + ' days, ' + hours + ' hours left';
+    else if (days === 1) label = '1 day, ' + hours + ' hours left';
+    else label = hours + 'h ' + mins + 'm left today';
+    timeEl.textContent = label;
+  }
+  tick();
+  setInterval(tick, 60000);
+})();
+</script>
+<!-- ── /Founders' rate countdown banner ── -->
+
 
 <div class="sample-banner">
   <span class="pill">Sample Lesson</span>
