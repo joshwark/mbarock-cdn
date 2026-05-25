@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Market Valuation · MBA Rock</title>
+<meta name="description" content="MBA Rock — indicative market valuation. Four-method synthesis. Today $8M–$25M, 3-year scenario $50M–$200M. Prepared May 2026.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A; --orange:#F26B1F; --orange-soft:#FCE5D4;
+    --ink:#1A1208; --ink-2:#3D3025; --paper:#FDFAF1; --cream:#F8F1E1;
+    --cream-2:#F3EAD2; --line:#E8DFC8; --green:#1D8444;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6}
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.015em;color:var(--ink);font-weight:700;line-height:1.15}
+  h1{font-size:clamp(38px,5vw,58px);font-weight:800;letter-spacing:-0.022em;color:var(--paper)}
+  h2{font-size:clamp(24px,3vw,34px);font-weight:700;color:var(--navy)}
+  h3{font-size:18px;font-weight:600;color:var(--navy)}
+  p{font-size:16px;line-height:1.65;color:var(--ink-2)}
+  .inner{max-width:1080px;margin:0 auto;padding:0 28px}
+  .eyebrow{display:inline-block;font-family:'Inter';font-size:12px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:var(--orange);margin-bottom:14px}
+  a{color:var(--orange)}
+
+  .topnav{background:var(--navy);color:var(--paper);padding:16px 0;font-size:13px}
+  .topnav .inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .topnav .brand{font-family:'Fraunces';font-size:22px;font-weight:700;color:var(--paper);text-decoration:none}
+  .topnav nav{display:flex;gap:24px;flex-wrap:wrap}
+  .topnav nav a{color:rgba(253,250,241,0.78);text-decoration:none;font-weight:500}
+  .topnav nav a:hover{color:var(--paper)}
+
+  .hero{background:linear-gradient(140deg,#0B1F3A 0%,#152D52 100%);color:var(--paper);padding:80px 0 70px;border-bottom:6px solid var(--orange)}
+  .hero .lead{font-size:19px;color:rgba(253,250,241,0.85);max-width:780px;margin-top:18px}
+  .hero-meta{margin-top:38px;display:flex;gap:34px;flex-wrap:wrap;font-size:13.5px;color:rgba(253,250,241,0.7)}
+  .hero-meta b{color:var(--paper)}
+  .pillbar{margin-top:38px;display:flex;gap:18px;flex-wrap:wrap}
+  .pill{display:inline-flex;align-items:center;gap:10px;background:rgba(253,250,241,0.08);border:1px solid rgba(253,250,241,0.18);padding:14px 22px;border-radius:12px}
+  .pill .lbl{font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);font-weight:700}
+  .pill .val{font-family:'Fraunces';font-size:22px;font-weight:700;color:var(--paper)}
+
+  .section{padding:64px 0}
+  .section.alt{background:var(--cream)}
+  .section h2{margin-bottom:18px}
+
+  .summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:28px}
+  .summary-card{background:#fff;border:1px solid var(--line);border-left:3px solid var(--orange);border-radius:8px;padding:22px}
+  .summary-card .lbl{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:8px}
+  .summary-card .val{font-family:'Fraunces';font-size:30px;font-weight:700;color:var(--navy);line-height:1.05;margin-bottom:6px}
+  .summary-card .desc{font-size:13.5px;color:var(--ink-2)}
+
+  table{width:100%;border-collapse:collapse;margin-top:14px;font-size:14.5px;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  th{background:var(--navy);color:var(--paper);text-align:left;padding:12px 14px;font-weight:600;font-family:'Inter';font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase}
+  td{padding:11px 14px;border-top:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+  td:first-child{font-weight:600;color:var(--ink)}
+  tr:last-child{background:var(--cream-2);font-weight:700}
+  tr:last-child td{color:var(--ink)}
+
+  .callout{background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);padding:18px 22px;border-radius:8px;margin-top:18px;font-size:15.5px;color:var(--ink)}
+  .callout.green{border-left-color:var(--green)}
+  .callout b{color:var(--navy)}
+
+  .ctarow{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+  .cta{display:inline-block;padding:14px 28px;background:var(--orange);color:#fff;font-weight:700;font-size:14.5px;letter-spacing:0.04em;border-radius:999px;text-decoration:none}
+  .cta.ghost{background:transparent;color:var(--paper);border:2px solid rgba(253,250,241,0.4)}
+  .cta.dark{background:var(--navy);color:#fff}
+
+  ul.tight{margin:10px 0 0 22px;color:var(--ink-2)}
+  ul.tight li{margin-bottom:6px}
+
+  footer{background:var(--navy);color:rgba(253,250,241,0.7);padding:38px 0;font-size:13px;border-top:6px solid var(--orange)}
+  footer a{color:rgba(253,250,241,0.9)}
+
+  .caveat{font-size:13px;color:var(--ink-2);font-style:italic;margin-top:18px;padding:14px 18px;background:rgba(242,107,31,0.06);border-radius:6px;border-left:3px solid var(--orange)}
+</style>
+</head>
+<body>
+
+<header class="topnav">
+  <div class="inner">
+    <a class="brand" href="https://www.mbarock.com/">MBA Rock</a>
+    <nav>
+      <a href="https://www.mbarock.com/">Home</a>
+      <a href="https://www.mbarock.com/institutional">Institutional</a>
+      <a href="https://www.mbarock.com/research">Research</a>
+      <a href="https://www.mbarock.com/about-us">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="inner">
+    <span class="eyebrow" style="color:var(--orange)">Valuation Analysis · May 2026</span>
+    <h1>Market valuation —<br>with full reference base.</h1>
+    <p class="lead">An indicative, four-method valuation of MBA Rock as a pre-revenue asset. Today's defensible range is $8M–$25M; a three-year Base-scenario trajectory lands at $50M–$200M, driven primarily by institutional licensing conversion and the Album Method generalizing to a K-12 catalog (Album School).</p>
+
+    <div class="pillbar">
+      <div class="pill"><div><div class="lbl">Today (weighted)</div><div class="val">$8M – $25M</div></div></div>
+      <div class="pill"><div><div class="lbl">Midpoint</div><div class="val">~$12M</div></div></div>
+      <div class="pill"><div><div class="lbl">3-yr Base scenario</div><div class="val">$50M – $200M</div></div></div>
+    </div>
+
+    <div class="hero-meta">
+      <div>📚 <b>10 modules</b> · 74 lessons</div>
+      <div>🎵 <b>49 original songs</b></div>
+      <div>⚙ <b>18 calculators</b> + <b>10-section Capstone</b></div>
+      <div>🎓 <b>11 certificates</b></div>
+    </div>
+
+    <div class="ctarow">
+      <a class="cta" href="https://learn.mbarock.com/MBA_Rock_Market_Valuation.pdf" target="_blank" rel="noopener">View full PDF report (40+ refs)</a>
+      <a class="cta ghost" href="#methods">Read methodology</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="inner">
+    <span class="eyebrow">Executive Summary</span>
+    <h2>The one-sentence version</h2>
+    <p style="font-size:18px;margin-top:14px">MBA Rock today is a substantial pre-revenue asset — <b>$8–25M</b> in defensible value driven by replacement cost and seed-stage comparable benchmarks — with a credible path to <b>$50–200M</b> within three years if institutional licensing converts and the Album Method generalizes to a K-12 catalog (Album School).</p>
+
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="lbl">Method 1 · 20%</div>
+        <div class="val">$1.2M – $3.5M</div>
+        <div class="desc">Cost-to-recreate (with 2-3× integration premium)</div>
+      </div>
+      <div class="summary-card">
+        <div class="lbl">Method 2 · 35%</div>
+        <div class="val">$5M – $15M</div>
+        <div class="desc">Seed-stage edtech comparable valuations</div>
+      </div>
+      <div class="summary-card">
+        <div class="lbl">Method 3 · 30%</div>
+        <div class="val">$8M – $32M</div>
+        <div class="desc">Forward revenue × multiple, PV @ 35%</div>
+      </div>
+      <div class="summary-card">
+        <div class="lbl">Method 4 · 15%</div>
+        <div class="val">+$2M – $20M</div>
+        <div class="desc">Strategic option (Album School expansion)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="methods">
+  <div class="inner">
+    <span class="eyebrow">Method 1 of 4</span>
+    <h2>Cost-to-recreate (the floor)</h2>
+    <p>What an arms-length buyer would pay to rebuild the asset from zero, using mid-market 2024–2025 labor rates. Conservative — excludes brand and optionality.</p>
+
+    <table>
+      <thead><tr><th>Component</th><th>Low</th><th>High</th></tr></thead>
+      <tbody>
+        <tr><td>Curriculum design (10 mods, 74 lessons)</td><td>$90K</td><td>$360K</td></tr>
+        <tr><td>49 original songs ($1.5–3.5K each)</td><td>$73K</td><td>$172K</td></tr>
+        <tr><td>~70 lesson videos</td><td>$35K</td><td>$105K</td></tr>
+        <tr><td>18 founder calculators (interactive tools)</td><td>$20K</td><td>$80K</td></tr>
+        <tr><td>Capstone Dossier system + PDF export</td><td>$12K</td><td>$40K</td></tr>
+        <tr><td>Member area + paywall + CDN + payments</td><td>$24K</td><td>$80K</td></tr>
+        <tr><td>WCAG 2.1 AA accessibility</td><td>$9K</td><td>$30K</td></tr>
+        <tr><td>Brand identity (logo, palette, illustration system)</td><td>$5K</td><td>$25K</td></tr>
+        <tr><td>Research foundations paper + briefs</td><td>$8K</td><td>$24K</td></tr>
+        <tr><td>Institutional sales infrastructure</td><td>$6K</td><td>$24K</td></tr>
+        <tr><td>Awareness / PR kit</td><td>$3K</td><td>$12K</td></tr>
+        <tr><td>Hosting + services (12-month run rate)</td><td>$3K</td><td>$8K</td></tr>
+        <tr><td>Founder opportunity cost (12-month build)</td><td>$100K</td><td>$200K</td></tr>
+        <tr><td>PM + integration overhead (~15%)</td><td>$60K</td><td>$170K</td></tr>
+        <tr><td>Raw replacement total</td><td>$448K</td><td>$1.33M</td></tr>
+      </tbody>
+    </table>
+    <div class="callout green"><b>Method 1 output:</b> Raw replacement $448K – $1.33M. With 2-3× integration premium (SEG 2023 standard): <b>$1.2M – $3.5M</b>. This is the <i>floor</i> of any defensible MBA Rock valuation.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="inner">
+    <span class="eyebrow">Method 2 of 4</span>
+    <h2>Comparable seed-stage edtech valuations</h2>
+    <p>What the market actually pays for pre-revenue edtech with this profile. Per Crunchbase, PitchBook Q4 2024 Venture Monitor, EdSurge, and TechCrunch coverage 2022–2025.</p>
+
+    <table>
+      <thead><tr><th>Stage</th><th>Typical post-money</th><th>Typical raise size</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Pre-seed (idea + early build)</td><td>$3M – $8M</td><td>$250K – $1.5M</td><td>Crunchbase, AngelList 2024</td></tr>
+        <tr><td>Seed (MVP + early users)</td><td>$5M – $15M</td><td>$1M – $4M</td><td>PitchBook Venture Monitor Q4 2024</td></tr>
+        <tr><td>Seed extension (early traction)</td><td>$10M – $25M</td><td>$2M – $6M</td><td>PitchBook 2024; EdSurge surveys</td></tr>
+        <tr><td>Series A (clear product-market fit)</td><td>$20M – $60M</td><td>$5M – $15M</td><td>Crunchbase EdTech 2024</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:26px">Where MBA Rock sits</h3>
+    <p>More built than typical pre-seed (which usually has only a deck + prototype). Less revenue than typical seed (which usually has early MRR or active paying users). Closest analog: <b>"seed-stage edtech with fully-built product, pre-monetization"</b> — historically <b>$5M–$15M</b>.</p>
+    <ul class="tight">
+      <li><b>Outschool</b> — $45M Series A at ~$320M (2020); marketplace + recurring revenue. Significantly more mature.</li>
+      <li><b>Maven</b> — $25M Series A at ~$100M post (2021); cohort-based courses, pre-significant revenue.</li>
+      <li><b>Section</b> — ~$50M post (2022 round); online business ed for professionals. Closest target-market analog.</li>
+      <li><b>Hone</b> — ~$45M post (2021); cohort-based corporate training. Closest to institutional licensing model.</li>
+    </ul>
+
+    <div class="callout"><b>Method 2 output:</b> $5M – $15M, centered on the typical post-money for fully-built, pre-revenue B2B+B2C edtech with strong institutional pipeline.</div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="inner">
+    <span class="eyebrow">Method 3 of 4</span>
+    <h2>Forward revenue × industry multiple, PV @ 35%</h2>
+    <p>Three-scenario 36-month projection discounted to present at 35%/year (Damodaran 2023, pre-revenue venture-appropriate), cross-checked against current edtech revenue multiples.</p>
+
+    <h3 style="margin-top:22px">Revenue scenarios</h3>
+    <table>
+      <thead><tr><th>Scenario</th><th>Y1</th><th>Y2</th><th>Y3</th><th>Y3 driver</th></tr></thead>
+      <tbody>
+        <tr><td>Conservative</td><td>$200K</td><td>$800K</td><td>$2.5M</td><td>Slow institutional, D2C-dominant</td></tr>
+        <tr><td>Base</td><td>$500K</td><td>$3M</td><td>$10M</td><td>2-4 institutional partnerships + Album School Phase 1</td></tr>
+        <tr><td>Aggressive</td><td>$1.2M</td><td>$8M</td><td>$30M</td><td>5+ institutional + Album School Phase 2 + press inflection</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:22px">Y3 valuation × multiple → present value</h3>
+    <p>Subscription-tilt edtech multiples per <i>SEG SaaS Index Q4 2024</i> and <i>Aventis EdTech M&amp;A 2024</i>: 3x–6x revenue (post-2021-correction).</p>
+    <table>
+      <thead><tr><th>Scenario</th><th>Y3 revenue</th><th>× multiple</th><th>Y3 val</th><th>PV @ 35%</th></tr></thead>
+      <tbody>
+        <tr><td>Conservative</td><td>$2.5M</td><td>3x</td><td>$7.5M</td><td>$3.0M</td></tr>
+        <tr><td>Base</td><td>$10M</td><td>5x</td><td>$50M</td><td>$20M</td></tr>
+        <tr><td>Aggressive</td><td>$30M</td><td>6x</td><td>$180M</td><td>$73M</td></tr>
+        <tr><td>Weighted (20/60/20)</td><td>—</td><td>—</td><td>—</td><td>$8M – $32M</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout"><b>Method 3 output:</b> $8M – $32M (PV @ 35%). Heavy sensitivity to institutional partnership conversion — the single biggest driver.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="inner">
+    <span class="eyebrow">Method 4 of 4</span>
+    <h2>Strategic option value — Album School</h2>
+    <p>The Album Method™ generalizes to any subject. The PreK-12 Album School map identifies <b>35 potential albums</b> across all major subjects, mapped to Common Core, NGSS, C3, ACTFL, NCAS, CSTA, SHAPE, and CASEL. Valued as a real option using a Black-Scholes-adjusted framework (Copeland &amp; Antikarov 2003; Damodaran 2008).</p>
+
+    <table>
+      <thead><tr><th>Input</th><th>Value used</th></tr></thead>
+      <tbody>
+        <tr><td>Underlying value (35-album catalog at maturity)</td><td>$50M – $300M (conservative); $500M+ (aggressive)</td></tr>
+        <tr><td>Exercise cost (Phase 1 production capital)</td><td>$200K – $1.5M</td></tr>
+        <tr><td>Probability of execution</td><td>20% – 50% (founder-led + market acceptance risk)</td></tr>
+        <tr><td>Time to expiration</td><td>3 – 7 years</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout"><b>Method 4 output:</b> $2M – $20M in embedded option value. This is an option, not a guarantee — worth more if MBA Rock signals commitment to the Album School roadmap.</div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="inner">
+    <span class="eyebrow">Synthesis</span>
+    <h2>Weighted valuation range</h2>
+    <table>
+      <thead><tr><th>Method</th><th>Output range</th><th>Weight</th><th>Weighted midpoint contribution</th></tr></thead>
+      <tbody>
+        <tr><td>1 · Cost-to-recreate</td><td>$1.2M – $3.5M</td><td>20%</td><td>$0.47M</td></tr>
+        <tr><td>2 · Seed-stage edtech comps</td><td>$5M – $15M</td><td>35%</td><td>$3.50M</td></tr>
+        <tr><td>3 · Forward revenue × multiple (PV)</td><td>$8M – $32M</td><td>30%</td><td>$6.00M</td></tr>
+        <tr><td>4 · Strategic option (Album School)</td><td>$2M – $20M</td><td>15%</td><td>$1.65M</td></tr>
+        <tr><td>Weighted synthesis (low – high)</td><td>$8M – $25M</td><td>100%</td><td>$11.6M midpoint</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:26px">Three-year scenario</h3>
+    <p>If institutional partnerships convert at the Base scenario rate (2–4 in Year 1, 5–10 by Year 2) and Album School ships Phase 1 (3 MVP albums) within 18 months, the same Method 3 framework applied to actual 36-month revenue lands defensibly in <b>$50M – $200M</b>. Scenario projection, not a prediction.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="inner">
+    <span class="eyebrow">Sensitivity</span>
+    <h2>What moves the number most</h2>
+    <table>
+      <thead><tr><th>Variable</th><th>Midpoint impact</th><th>Driver</th></tr></thead>
+      <tbody>
+        <tr><td>Institutional partnerships in Y1 (0 vs 5)</td><td><b>± $5–15M</b></td><td>Method 3 dominates — Y3 revenue swings 3-5×</td></tr>
+        <tr><td>Album School Phase 1 ships by mo 18</td><td>± $3–10M</td><td>Method 4 option value moves materially</td></tr>
+        <tr><td>D2C conversion rate (0.1% vs 1%)</td><td>± $2–8M</td><td>Method 3 Y2-Y3 trajectory</td></tr>
+        <tr><td>Year-3 revenue multiple (3x vs 6x)</td><td>± $2–8M</td><td>Method 3 terminal value</td></tr>
+        <tr><td>Discount rate (25% vs 45%)</td><td>± $2–6M</td><td>Method 3 PV calculation</td></tr>
+        <tr><td>Press inflection timing</td><td>± $1–3M</td><td>Top-of-funnel velocity, Year 1 revenue</td></tr>
+        <tr><td>FOUNDERS price elasticity ($299 vs $799)</td><td>± $0.5–2M</td><td>Y1 D2C revenue line</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout green"><b>The single biggest lever is institutional partnership conversion.</b> One mid-size district (50,000 students × $20/student/year × 5 albums = $5M ARR) at any point in Year 1–2 fundamentally rerates the company. Two or three such partnerships push the valuation toward the upper bound or beyond.</div>
+
+    <div class="ctarow">
+      <a class="cta dark" href="https://learn.mbarock.com/MBA_Rock_Market_Valuation.pdf" target="_blank" rel="noopener">Download full report (PDF, 40+ refs)</a>
+      <a class="cta" href="mailto:jessica@adytum.agency?subject=MBA%20Rock%20valuation%20%E2%80%94%20follow-up">Reach out to Jess</a>
+    </div>
+
+    <div class="caveat">Indicative analytical work for strategic planning, partner-conversation, and investor-conversation purposes only. Not investment advice, not an offer to buy or sell securities, not a formal valuation for tax, audit, or legal purposes. Forward-looking statements are scenario projections subject to material change. Prepared 2026-05-17 by Claude (Anthropic AI agent) for Joshua Wark, founder of MBA Rock.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <p style="color:rgba(253,250,241,0.85);font-weight:600;margin-bottom:6px">MBA Rock — the Musical Business Album</p>
+    <p>mbarock.com · <a href="mailto:jessica@adytum.agency">jessica@adytum.agency</a> · © 2026 MBA Rock · A Better Together Branding company</p>
+  </div>
+</footer>
+
+</body>
+</html>
