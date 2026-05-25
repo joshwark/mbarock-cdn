@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- cert-v20260513-033206 -->
+<!-- cert-v20260525-pdfdl -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Certificate · MBA Rock</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@72,400..700,30..100,0..1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@72,400..700,30..100,0..1&family=Inter:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js" defer></script>
 <style>
 :root{
   --navy:#0B1F3A;
@@ -38,6 +39,14 @@ html,body{margin:0;padding:0;background:#E5E0D6;color:var(--ink);font-family:'In
 .chrome .actions .btn-secondary{background:#fff;color:var(--ink);border:1px solid var(--rule);}
 .chrome .actions .btn-secondary:hover{border-color:var(--navy);}
 .chrome .actions .btn-linkedin{background:#0a66c2;color:#fff;}
+.chrome .actions .btn-download{background:var(--orange);color:#fff;}
+.chrome .actions .btn-download:hover{background:#d85a0f;}
+.chrome .actions .btn-download:disabled{background:#bbb;cursor:wait;}
+.chrome .actions button, .chrome .actions a{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:10px 18px;border-radius:30px;border:0;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px;}
+/* PDF capture mode — clean baseline so html2canvas renders identically to print */
+body.pdf-capturing .chrome,body.pdf-capturing .verify-banner{display:none;}
+body.pdf-capturing{background:#fff;}
+body.pdf-capturing .page{padding:0;max-width:none;}
 .chrome .actions .btn-linkedin:hover{background:#004182;}
 
 /* ───────── CERTIFICATE BASE ───────── */
@@ -213,7 +222,8 @@ html,body{margin:0;padding:0;background:#E5E0D6;color:var(--ink);font-family:'In
   <div class="chrome">
     <a class="back" href="/course-dashboard">← Back to MBA Rock</a>
     <div class="actions">
-      <button class="btn-secondary" id="printBtn">Print / Save PDF</button>
+      <button class="btn-download" id="downloadBtn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="margin-right:2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF</button>
+      <button class="btn-secondary" id="printBtn">Print</button>
       <a class="btn-linkedin" id="linkedinBtn" target="_blank" rel="noopener" style="display:none">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.49 2.49 0 1 1-4.96.04 2.48 2.48 0 0 1 4.96-.04zM.04 8.04h4.92V24H.04V8.04zM7.97 8.04h4.72v2.18h.07c.66-1.24 2.27-2.55 4.67-2.55 4.99 0 5.91 3.28 5.91 7.55V24h-4.92v-7.78c0-1.86-.04-4.24-2.59-4.24-2.59 0-2.98 2.02-2.98 4.11V24H7.97V8.04z"/></svg>
         Add to LinkedIn
@@ -351,6 +361,7 @@ async function loadAndRender(){
     }
     html += cert.cert_type === 'operator' ? renderOperator(cert) : renderModuleMark(cert);
     target.innerHTML = html;
+    window.__certFilename = (cert.cert_type === "operator" ? "MBA-Rock-Operators-Cert-" : "MBA-Rock-Module-Mark-") + (cert.member_name || "Member").replace(/\s+/g,"-") + "-" + cert.cert_id;
 
     // Wire "Verify" — points at /verify/?id=… on the public domain
     const verifyUrl = location.origin + '/verify/?id=' + encodeURIComponent(cert.cert_id);
@@ -380,9 +391,69 @@ async function loadAndRender(){
   }
 }
 
+// ────────────── Print / Download PDF handlers ──────────────
 document.getElementById('printBtn').addEventListener('click', ()=>window.print());
 
-loadAndRender();
+async function downloadAsPdf(){
+  const btn = document.getElementById('downloadBtn');
+  const certEl = document.querySelector('.cert-doc');
+  if (!certEl){ alert('Certificate not loaded yet — try again in a moment.'); return; }
+  // Wait for html2pdf bundle if it hasn't loaded yet (defer'd script).
+  if (typeof html2pdf === 'undefined'){
+    btn.disabled = true; btn.textContent = 'Loading…';
+    let waited = 0;
+    while (typeof html2pdf === 'undefined' && waited < 5000){
+      await new Promise(r=>setTimeout(r,100)); waited += 100;
+    }
+    if (typeof html2pdf === 'undefined'){
+      btn.disabled = false; btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="margin-right:2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF';
+      window.print(); return;
+    }
+  }
+  btn.disabled = true; btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="margin-right:2px"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Preparing…';
+  document.body.classList.add('pdf-capturing');
+
+  const isOperator = certEl.classList.contains('operator');
+  // Letter landscape for Operator (11×8.5"), 6×4" for Module Mark
+  const pageFormat = isOperator ? [11, 8.5] : [6, 4];
+  const filenameSafe = (window.__certFilename || 'MBA-Rock-Certificate').replace(/[^a-zA-Z0-9_\-]/g,'-');
+
+  try {
+    await html2pdf().set({
+      margin: 0,
+      filename: filenameSafe + '.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: {
+        scale: 3,           // 3× pixel density → crisp on retina and print
+        useCORS: true,
+        backgroundColor: isOperator ? '#FAF8F5' : '#0E1116',
+        letterRendering: true,
+        logging: false,
+        windowWidth: certEl.offsetWidth,
+        windowHeight: certEl.offsetHeight
+      },
+      jsPDF: { unit: 'in', format: pageFormat, orientation: 'landscape', compress: true }
+    }).from(certEl).save();
+  } catch(e){
+    console.error('PDF generation failed:', e);
+    alert('PDF download failed — falling back to Print. Save as PDF from the print dialog.');
+    window.print();
+  } finally {
+    document.body.classList.remove('pdf-capturing');
+    btn.disabled = false;
+    btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="margin-right:2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF';
+  }
+}
+document.getElementById('downloadBtn').addEventListener('click', downloadAsPdf);
+
+// Auto-trigger download when arriving with ?download=1 (used from /certificates/ list buttons).
+(async ()=>{
+  await loadAndRender();
+  if (params.get('download') === '1'){
+    // give fonts / layout a beat to settle
+    setTimeout(downloadAsPdf, 600);
+  }
+})();
 </script>
     <!-- ADA Accessibility Widget v1.0 -->
     <script>window.__ADA_CONFIG = window.__ADA_CONFIG || { brand: 'mba-rock' };</script>

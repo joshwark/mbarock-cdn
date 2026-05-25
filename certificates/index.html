@@ -95,6 +95,8 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;letter-spacing:-0.018em;color:var(--nav
 .cert-card .actions .btn-claim:hover{filter:brightness(1.1);}
 .cert-card .actions .btn-claim:disabled{background:#ccc;color:#888;cursor:not-allowed;}
 .cert-card .actions .btn-li{background:#0a66c2;color:#fff;}
+.cert-card .actions .btn-download{background:var(--accent,var(--orange));color:#fff;opacity:.9;}
+.cert-card .actions .btn-download:hover{opacity:1;}
 .cert-card .actions .btn-li:hover{background:#004182;}
 .cert-card .actions .btn-secondary{background:#fff;color:var(--ink);border:1px solid var(--rule);}
 .cert-card.locked{opacity:0.55;}
@@ -338,6 +340,7 @@ function renderModules(){
       const liUrl = liUrlFor(earnedCert);
       actionsHtml = `
         <a class="btn-primary" href="/certificate/?id=${encodeURIComponent(earnedCert.cert_id)}">View</a>
+        <a class="btn-download" href="/certificate/?id=${encodeURIComponent(earnedCert.cert_id)}&download=1" target="_blank" rel="noopener" title="Download branded PDF">↓ PDF</a>
         <a class="btn-li" href="${liUrl}" target="_blank" rel="noopener">+ LinkedIn</a>
       `;
     } else if (claimable){
@@ -409,6 +412,7 @@ function renderOperator(){
     const liUrl = liUrlFor(earned);
     actions.innerHTML = `
       <a class="btn-secondary" href="/certificate/?id=${encodeURIComponent(earned.cert_id)}">View certificate</a>
+      <a class="btn-download" href="/certificate/?id=${encodeURIComponent(earned.cert_id)}&download=1" target="_blank" rel="noopener" style="background:var(--orange);color:#fff;padding:9px 18px;border-radius:30px;text-decoration:none;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px">↓ Download PDF</a>
       <a class="btn-li" href="${liUrl}" target="_blank" rel="noopener">+ Add to LinkedIn</a>
       <a class="btn-secondary" href="/verify/?id=${encodeURIComponent(earned.cert_id)}" target="_blank" rel="noopener">Public verify URL</a>
     `;
