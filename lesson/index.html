@@ -425,7 +425,13 @@ html,body{margin:0;padding:0;background:#FAF8F5;color:#0E1116;font-family:'Inter
     var modules = (data && data.modules) || [];
     var L = lessons.find(function(x){
       var ls = (x.legacy_slug||'').toLowerCase(), sv = (x.slug_v2||'').toLowerCase(), id = (x.id||'').toLowerCase();
-      return ls === slug || sv === slug || id === slug;
+      // Exact match on legacy_slug, slug_v2, or id
+      if (ls === slug || sv === slug || id === slug) return true;
+      // Forgiving match: Squarespace chapter slugs may strip the m[N]l[N]- prefix
+      // e.g. "customer-obsession" should match slug_v2 "m4l1-customer-obsession"
+      if (sv && sv.replace(/^m\d+l[\d.]+-/, '') === slug) return true;
+      if (ls && ls.replace(/^m\d+l[\d.]+-/, '') === slug) return true;
+      return false;
     });
     if (!L) {
       document.title = 'Lesson not found · MBA Rock';
@@ -461,6 +467,11 @@ html,body{margin:0;padding:0;background:#FAF8F5;color:#0E1116;font-family:'Inter
       ['LESSON 2 — SAMPLE', 'LESSON ' + (L.lesson_number||L.id)],
       ['56 of 74', (L.order||L.id) + ' of 74'],
       ['Sample preview', L.video_id ? 'YouTube' : (L.video_url ? 'Video' : 'Audio only')],
+      // Additional M7L2-specific text that should swap per-lesson
+      ['M7 Marketing &amp; Brand', (L.module_id || '') + ' ' + (M.title || '')],
+      ['M7 Marketing & Brand', (L.module_id || '') + ' ' + (M.title || '')],
+      ['Module 7', 'Module ' + (L.module_id || '').replace(/^M/,'').replace(/L.*$/,'')],
+      ['the discipline of choosing the one place in the customer\'s mind you intend to own. Positioning precedes copy; copy carries the position.', ''],
     ];
     swaps.forEach(function(pair){
       bodyHtml = bodyHtml.split(pair[0]).join(pair[1] == null ? pair[0] : pair[1]);

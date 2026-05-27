@@ -696,7 +696,8 @@
             "explain": "A pre-arranged line lets you smooth specific red weeks without operating disruption. Open it before you need it."
           }
         ]
-      }
+      },
+      "lesson_number": "M1L2.5"
     },
     {
       "id": "M1L3",
@@ -1907,7 +1908,8 @@
             "explain": "Quarterly cadence catches shifts; annual cadence forces capital reallocation. Without rhythm, portfolios decay."
           }
         ]
-      }
+      },
+      "lesson_number": "M2L2.5.5"
     },
     {
       "id": "M2L3",
@@ -2898,7 +2900,8 @@
             "explain": "Public commitment to what's killed locks in the focus. Quiet de-prioritization keeps zombie work alive."
           }
         ]
-      }
+      },
+      "lesson_number": "M3L3.3.3"
     },
     {
       "id": "M3L4",
@@ -3450,7 +3453,8 @@
             "explain": "First-touch under-credits content; last-touch over-credits paid. Multi-touch is closer to truth."
           }
         ]
-      }
+      },
+      "lesson_number": "M4L2.5"
     },
     {
       "id": "M4L3",
@@ -3784,7 +3788,8 @@
             "explain": "Founders mistake friends, paid spikes, and PR for fit. Real fit shows in retention curves, not single-event spikes."
           }
         ]
-      }
+      },
+      "lesson_number": "M4L4.2.5"
     },
     {
       "id": "M4L4.5",
@@ -3899,7 +3904,8 @@
             "explain": "Loop triggers are product features, not campaigns. Embed them in the natural flow of the funnel."
           }
         ]
-      }
+      },
+      "lesson_number": "M4L4.5"
     },
     {
       "id": "M4L5",
@@ -5445,7 +5451,8 @@
             "explain": "Every quarter someone adds a metric, nobody removes one. Cap and audit quarterly."
           }
         ]
-      }
+      },
+      "lesson_number": "M6L6.3.5"
     },
     {
       "id": "M6L7",
@@ -6425,7 +6432,8 @@
             "explain": "Brand equity compounds with consistency. Drift resets the meter every change."
           }
         ]
-      }
+      },
+      "lesson_number": "M7L2"
     },
     {
       "id": "M7L3",
@@ -6539,7 +6547,8 @@
             "explain": "It asks 4 questions about price perception (too cheap, cheap, expensive, too expensive) and finds the acceptable range."
           }
         ]
-      }
+      },
+      "lesson_number": "M7L3"
     },
     {
       "id": "M7L4",
@@ -6653,7 +6662,8 @@
             "explain": "Content not aligned to positioning fights the brand. Every piece must trace upward."
           }
         ]
-      }
+      },
+      "lesson_number": "M7L4"
     },
     {
       "id": "M7L5",
@@ -6769,7 +6779,8 @@
             "explain": "Each cause has a different fix. Classify churners before launching retention campaigns."
           }
         ]
-      }
+      },
+      "lesson_number": "M7L5"
     },
     {
       "id": "M8L1",
@@ -7235,7 +7246,8 @@
             "explain": "Program-level failure modes are governance, not technical. Weekly cross-project review surfaces them."
           }
         ]
-      }
+      },
+      "lesson_number": "M8L4"
     },
     {
       "id": "M8L5",
@@ -7343,7 +7355,8 @@
             "explain": "Fast scale comes from leverage across networks, not building everything in-house."
           }
         ]
-      }
+      },
+      "lesson_number": "M8L5"
     },
     {
       "id": "M9L1",
@@ -7560,7 +7573,8 @@
             "explain": "Operators need leading indicators (pipeline, NPS, conversion rates) to influence outcomes before they happen."
           }
         ]
-      }
+      },
+      "lesson_number": "M9L2"
     },
     {
       "id": "M9L3",
@@ -7671,7 +7685,8 @@
             "explain": "This rule of thumb gives 80% power for detecting effect size Δ with variance σ²."
           }
         ]
-      }
+      },
+      "lesson_number": "M9L3"
     },
     {
       "id": "M9L4",
@@ -7782,7 +7797,8 @@
             "explain": "Triangulation surfaces hidden assumptions. Two methods catching the same answer build confidence."
           }
         ]
-      }
+      },
+      "lesson_number": "M9L4"
     },
     {
       "id": "M9L5",
@@ -7893,7 +7909,8 @@
             "explain": "It's the operational expression of survival probability over time horizons longer than a quarter."
           }
         ]
-      }
+      },
+      "lesson_number": "M9L5"
     },
     {
       "id": "M10L1",
@@ -8110,7 +8127,8 @@
             "explain": "Technology is the trigger; the business model is what reshapes the industry."
           }
         ]
-      }
+      },
+      "lesson_number": "M10L2"
     },
     {
       "id": "M10L3",
@@ -8215,7 +8233,8 @@
             "explain": "General-purpose tech rewards specific application. Vertical workflow integration captures most of the value."
           }
         ]
-      }
+      },
+      "lesson_number": "M10L3"
     },
     {
       "id": "M10L4",
@@ -8320,7 +8339,8 @@
             "explain": "Companies that win on ESG do it through operational discipline. Marketing alone gets called out as greenwashing."
           }
         ]
-      }
+      },
+      "lesson_number": "M10L4"
     },
     {
       "id": "M10L5",
@@ -8429,7 +8449,8 @@
             "explain": "You now have the frameworks. The next decade is using them in the field."
           }
         ]
-      }
+      },
+      "lesson_number": "M10L5"
     }
   ],
   "capstone_sections": [
