@@ -927,11 +927,9 @@
         html += '<div class="mr5-song-block">';
         html += '<div class="mr5-audio-row"><div><div class="mr5-audio-label" style="font-style:italic;">"' + songLabel + '"</div><span class="mr5-audio-sub">Song · original track</span></div>' + audioPlayer(lesson.audio_url, 'audio/mpeg') + '</div>';
         html += '<div class="mr5-lyrics">';
-        var hasLyrics = !!((lesson.lyrics && String(lesson.lyrics).trim()) || lesson.lyrics_url);
-        if (hasLyrics) {
-          html += '<button class="mr5-lyrics-btn" data-lyrics-toggle="1" aria-expanded="false" aria-controls="mr5-lyrics-panel"><span>View lyrics</span><span class="mr5-chev">▾</span></button>';
-          html += '<div class="mr5-lyrics-panel" id="mr5-lyrics-panel" data-lyrics-panel="1"></div>';
-        }
+        html += '<button class="mr5-lyrics-btn" data-lyrics-toggle="1" aria-expanded="false" aria-controls="mr5-lyrics-panel"><span>View lyrics</span><span class="mr5-chev">▾</span></button>';
+        html += '<div class="mr5-lyrics-panel" id="mr5-lyrics-panel" data-lyrics-panel="1"></div>';
+        html += '</div>';
         html += '</div>';
       }
       html += '</div>';
