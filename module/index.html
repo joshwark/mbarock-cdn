@@ -264,7 +264,7 @@ async function loadCerts(){
 
 function lessonHref(l){
   const slug = l.legacy_slug || l.slug_v2 || '';
-  return slug ? 'https://learn.mbarock.com/lesson/?slug=' + slug : '#';
+  return slug ? '/mba-rock/' + slug : '#';
 }
 
 function render(moduleId){

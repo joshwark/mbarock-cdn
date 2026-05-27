@@ -358,7 +358,7 @@ function nextUnfinishedLesson(){
 function lessonHref(lesson){
   if (!lesson) return '#';
   const slug = lesson.legacy_slug || lesson.slug_v2 || '';
-  return slug ? 'https://learn.mbarock.com/lesson/?slug=' + slug : '#';
+  return slug ? 'https://www.mbarock.com/mba-rock/' + slug : '#';
 }
 
 function setRing(pct){
