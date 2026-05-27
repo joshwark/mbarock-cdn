@@ -454,7 +454,7 @@ html,body{margin:0;padding:0;background:#FAF8F5;color:#0E1116;font-family:'Inter
     }
     
     // Find-and-replace hardcoded M7L2 strings throughout the document body
-    var bodyHtml = document.body.innerHTML;
+    // Walk text nodes and swap matching substrings — preserves event listeners (innerHTML would destroy them)
     var swaps = [
       ['Brand Positioning &amp; Messaging', L.title || L.id],
       ['Brand Positioning & Messaging', L.title || L.id],
@@ -472,11 +472,41 @@ html,body{margin:0;padding:0;background:#FAF8F5;color:#0E1116;font-family:'Inter
       ['M7 Marketing & Brand', (L.module_id || '') + ' ' + (M.title || '')],
       ['Module 7', 'Module ' + (L.module_id || '').replace(/^M/,'').replace(/L.*$/,'')],
       ['the discipline of choosing the one place in the customer\'s mind you intend to own. Positioning precedes copy; copy carries the position.', ''],
-    ];
-    swaps.forEach(function(pair){
-      bodyHtml = bodyHtml.split(pair[0]).join(pair[1] == null ? pair[0] : pair[1]);
+        ];
+    function swapTextNode(node, pairs) {
+      var v = node.nodeValue;
+      if (!v) return;
+      var changed = false;
+      for (var i = 0; i < pairs.length; i++) {
+        var pair = pairs[i];
+        if (pair[1] == null) continue;
+        if (v.indexOf(pair[0]) >= 0) {
+          v = v.split(pair[0]).join(pair[1]);
+          changed = true;
+        }
+      }
+      if (changed) node.nodeValue = v;
+    }
+    // Filter swap pairs to those with simple string keys (skip any with regex objects)
+    var simpleSwaps = swaps.filter(function(p){ return typeof p[0] === 'string'; });
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+    var n;
+    while ((n = walker.nextNode())) {
+      // Skip text inside <script> and <style> tags
+      var parent = n.parentNode;
+      if (parent && (parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE')) continue;
+      swapTextNode(n, simpleSwaps);
+    }
+    // Also swap matching attributes (alt, title, aria-label, placeholder)
+    document.querySelectorAll('[alt],[title],[aria-label],[placeholder]').forEach(function(el){
+      ['alt','title','aria-label','placeholder'].forEach(function(attr){
+        var v = el.getAttribute(attr);
+        if (!v) return;
+        var orig = v;
+        simpleSwaps.forEach(function(p){ if (p[1] != null && v.indexOf(p[0]) >= 0) v = v.split(p[0]).join(p[1]); });
+        if (v !== orig) el.setAttribute(attr, v);
+      });
     });
-    document.body.innerHTML = bodyHtml;
     
     // Now patch audio/video src after the innerHTML swap
     setTimeout(function(){
