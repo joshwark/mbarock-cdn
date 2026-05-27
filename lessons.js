@@ -187,65 +187,6 @@
       html += '</div></div>';
     }
 
-    // ─── MR-FLAT-RENDER (2026-05-27) — fallback for flat lessons.json schema ───
-    // Auth/member strip — Sign in + Forgot password access on every lesson page
-    html += '<div class="mr-member-strip" style="display:flex;justify-content:flex-end;gap:14px;font-size:13px;margin:0 0 14px;color:#5C5C66;">';
-    html += '<a href="https://www.mbarock.com/dashboard" style="color:#0B2545;font-weight:600;text-decoration:none;">My dashboard</a>';
-    html += '<span style="color:#BFBFC9">·</span>';
-    html += '<a href="https://www.mbarock.com/account/login" style="color:#FF6B35;font-weight:600;text-decoration:none;">Sign in</a>';
-    html += '<span style="color:#BFBFC9">·</span>';
-    html += '<a href="https://www.mbarock.com/account/lost-password" style="color:#5C5C66;text-decoration:underline;">Forgot password?</a>';
-    html += '</div>';
-    // Video section (flat: lesson.video_id or lesson.video_url)
-    if (lesson.video_id) {
-      html += '<section class="mr-card mr-video-card"><h2>Lesson Video</h2>';
-      html += '<div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;background:#000;">';
-      html += '<iframe src="https://www.youtube-nocookie.com/embed/' + esc(lesson.video_id) + '?rel=0&modestbranding=1&playsinline=1" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Lesson video"></iframe>';
-      html += '</div></section>';
-    } else if (lesson.video_url) {
-      html += '<section class="mr-card mr-video-card"><h2>Lesson Video</h2>';
-      html += '<video controls preload="none" style="width:100%;border-radius:8px;"><source src="' + esc(lesson.video_url) + '" type="video/mp4"></video>';
-      html += '</section>';
-    }
-    // Audio overview (Notebook-LM style narration)
-    if (lesson.audio_overview_url) {
-      html += '<section class="mr-card mr-overview-card"><h2>Audio Overview</h2>';
-      html += '<p style="color:#5C5C66;margin:0 0 12px;font-size:14px;">A short briefing on what this lesson covers.</p>';
-      html += '<audio controls preload="none" style="width:100%" class="mr-audio-player"><source src="' + esc(lesson.audio_overview_url) + '" type="audio/mp4"></audio>';
-      html += '</section>';
-    }
-    // Core concepts (flat: lesson.core_concepts as array of strings)
-    if (Array.isArray(lesson.core_concepts) && lesson.core_concepts.length) {
-      html += '<section class="mr-card mr-concepts-card"><h2>Core Concepts</h2><ul class="mr-concepts" style="padding-left:0;list-style:none;">';
-      lesson.core_concepts.forEach(function(cc){
-        var s = (cc && typeof cc==='object') ? (cc.title || cc.name || JSON.stringify(cc)) : String(cc);
-        html += '<li style="padding:10px 14px;margin:6px 0;background:#F5F2EC;border-left:3px solid #FF6B35;border-radius:4px;">' + esc(s) + '</li>';
-      });
-      html += '</ul></section>';
-    }
-    // Take action (flat: lesson.take_action as array of strings or {step,...} objects)
-    if (Array.isArray(lesson.take_action) && lesson.take_action.length) {
-      html += '<section class="mr-card mr-action-card"><h2>Take Action</h2><ol class="mr-numbered" style="padding-left:1.2em;">';
-      lesson.take_action.forEach(function(a){
-        var step = (a && typeof a==='object') ? (a.step || a.text || JSON.stringify(a)) : String(a);
-        html += '<li style="padding:8px 0;line-height:1.55;">' + esc(step) + '</li>';
-      });
-      html += '</ol></section>';
-    }
-    // Lyrics link (if present)
-    if (lesson.lyrics_url) {
-      html += '<section class="mr-card mr-lyrics-card"><h2>Lyrics</h2>';
-      html += '<p><a class="mr-btn" href="' + esc(lesson.lyrics_url) + '" target="_blank" rel="noopener" style="display:inline-block;padding:10px 20px;background:#0B2545;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">View Lyrics</a></p>';
-      html += '</section>';
-    }
-    // Worksheet link (if present)
-    if (lesson.worksheet_url) {
-      html += '<section class="mr-card mr-worksheet-card"><h2>Worksheet</h2>';
-      html += '<p><a class="mr-btn" href="' + esc(lesson.worksheet_url) + '" target="_blank" rel="noopener" style="display:inline-block;padding:10px 20px;background:#FF6B35;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">Download Worksheet</a></p>';
-      html += '</section>';
-    }
-    // ─── /MR-FLAT-RENDER ───
-
     if (c.intro || c.core) {
       html += '<section class="mr-card">';
       if (c.intro) { html += '<h2>The Idea</h2><p class="mr-pullquote">' + esc(c.intro) + '</p>'; }
