@@ -263,8 +263,8 @@ async function loadCerts(){
 }
 
 function lessonHref(l){
-  const slug = l.legacy_slug || l.slug_v2 || (l.id||'').toLowerCase();
-  return slug ? 'https://learn.mbarock.com/lesson/?slug=' + slug : '#';
+  const slug = l.legacy_slug || l.slug_v2 || '';
+  return slug ? '/mba-rock/' + slug : '#';
 }
 
 function render(moduleId){

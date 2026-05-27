@@ -5,7 +5,7 @@
 (function() {
   var LESSONS_JSON = 'https://learn.mbarock.com/lessons.json';
   var JSDELIVR_RE  = /cdn\.jsdelivr\.net\/gh\/joshwark\/mbarock-cdn@[^/]+\//;
-  var GH_RAW_BASE  = 'raw.githubusercontent.com/joshwark/mbarock-cdn/main/';
+  var GH_RAW_BASE  = 'learn.mbarock.com/';
 
   function getSlug() {
     var parts = window.location.pathname.split('/').filter(Boolean);
