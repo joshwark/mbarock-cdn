@@ -44,8 +44,12 @@
       '<div style="font-size:14px;color:#888;letter-spacing:.05em;' +
       'text-transform:uppercase;font-weight:600">Loading your Dashboard…</div>';
     document.documentElement.appendChild(flash);
-    var dest = 'https://www.mbarock.com/dashboard';
-    if (lessonSlug) dest += '#' + lessonSlug;
+    var dest;
+    if (lessonSlug) {
+      dest = 'https://learn.mbarock.com/lesson/?slug=' + encodeURIComponent(lessonSlug);
+    } else {
+      dest = 'https://learn.mbarock.com/dashboard/';
+    }
     window.location.replace(dest);
   }
 

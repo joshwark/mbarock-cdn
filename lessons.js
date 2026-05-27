@@ -235,10 +235,10 @@
     if (navIdx !== -1) {
       html += '<nav class="mr-footer-nav">';
       if (navIdx > 0) {
-        html += '<a href="' + esc(lessons[navIdx-1].slug) + '">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ ' + esc(lessons[navIdx-1].title) + '</a>';
+        html += '<a href="https://learn.mbarock.com/lesson/?slug=' + encodeURIComponent(lessons[navIdx-1].slug) + '">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ ' + esc(lessons[navIdx-1].title) + '</a>';
       } else { html += '<span></span>'; }
       if (navIdx < lessons.length - 1) {
-        html += '<a href="' + esc(lessons[navIdx+1].slug) + '">' + esc(lessons[navIdx+1].title) + ' ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ</a>';
+        html += '<a href="https://learn.mbarock.com/lesson/?slug=' + encodeURIComponent(lessons[navIdx+1].slug) + '">' + esc(lessons[navIdx+1].title) + ' ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ</a>';
       } else { html += '<span></span>'; }
       html += '</nav>';
     }
