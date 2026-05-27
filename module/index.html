@@ -263,8 +263,10 @@ async function loadCerts(){
 }
 
 function lessonHref(l){
-  const slug = l.legacy_slug || l.slug_v2 || '';
-  return slug ? '/mba-rock/' + slug : '#';
+  if (!l || !l.id) return '#';
+  // Same-page anchor — scrolls to the lesson tile within the module page.
+  // No dependency on Squarespace chapter URLs (which are sparse / mismatched).
+  return '#lesson-' + l.id;
 }
 
 function render(moduleId){
@@ -321,7 +323,7 @@ function render(moduleId){
       const isPassed = !!state.quizPasses[l.id];
       const statusCls = isPassed ? 'passed' : (i === 0 || state.quizPasses[lessons[i-1]?.id] ? 'open' : 'locked');
       const statusText = isPassed ? 'Passed' : (statusCls === 'open' ? 'Open' : 'Locked');
-      html += `<a class="lesson" href="${lessonHref(l)}">`;
+      html += `<a class="lesson" id="lesson-${l.id}" href="${lessonHref(l)}">`;
       html += `<span class="n">${String(i+1).padStart(2,'0')}</span>`;
       html += `<div class="body"><div class="id">${esc(l.id)}</div><div class="title">${esc(l.title)}</div></div>`;
       html += `<span class="status ${statusCls}">${statusText}</span>`;
@@ -375,6 +377,15 @@ init();
 </script>
     <!-- ADA Accessibility Widget v1.0 -->
     <script>window.__ADA_CONFIG = window.__ADA_CONFIG || { brand: 'mba-rock' };</script>
-    <script src="https://learn.mbarock.com/accessibility/widget.js" defer></script>
+    <script src="https://learn.mbarock.com/accessibility/widget.js" defer>
+// Scroll to deeplinked lesson on page load (e.g. arriving from dashboard CONTINUE).
+window.addEventListener('load', function(){
+  if (location.hash && location.hash.startsWith('#lesson-')){
+    var el = document.getElementById(location.hash.slice(1));
+    if (el && el.scrollIntoView) el.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+});
+
+</script>
 </body>
 </html>

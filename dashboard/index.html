@@ -357,8 +357,13 @@ function nextUnfinishedLesson(){
 }
 function lessonHref(lesson){
   if (!lesson) return '#';
-  const slug = lesson.legacy_slug || lesson.slug_v2 || '';
-  return slug ? 'https://www.mbarock.com/mba-rock/' + slug : '#';
+  // Route to the module page on the CDN — no dependency on Squarespace chapter URLs.
+  // Lesson tile clicks happen inside the module page; CONTINUE lands the user on the
+  // right module page, scrolled to the specific lesson via #lesson-<id> anchor.
+  const lid = lesson.id || '';
+  const mid = lesson.module_id || (lid ? lid.split('L')[0] : '');
+  if (!mid) return '#';
+  return '/module/?id=' + encodeURIComponent(mid) + (lid ? '#lesson-' + lid : '');
 }
 
 function setRing(pct){
