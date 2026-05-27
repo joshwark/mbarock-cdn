@@ -295,7 +295,11 @@
           "capstone_field": "numbers.monthly_burn",
           "input_type": "short-text"
         },
-        "Identify your top 3 cash outflows and ask if each is necessary"
+        {
+          "step": "Identify your top 3 cash outflows and ask if each is necessary",
+          "capstone_field": "numbers.runway_months",
+          "input_type": "short-text"
+        }
       ],
       "placeholder": false,
       "lyrics": "[Verse 1]\nYou can show me profit on a paper page\nBut the ink won't keep the lights on stage\nRevenue rolls in but it's locked up tight\nNeed that cash if you're gonna survive the night\n\n[Pre-Chorus]\nProfit don't pay the rent\nMargin can't make payroll\nYou can win the quarter\nAnd still lose the soul\n\n[Chorus]\nOxygen, oxygen — cash is oxygen\nEvery breath you take is operating cash flow\nHold it tight, watch it move\nEvery dollar in and out\nOxygen, oxygen — that's what business runs on\n\n[Verse 2]\nReceivables stretched ninety days long\nSuppliers wanna get paid in twenty — wrong\nWorking capital's a tightrope walk\nRun outta runway and you're done, no more talk\n\n[Bridge]\nThree months of statements on the table tonight\nCash in, cash out — read the label right\nBurn rate ticking loud, count it down\nStack the runway, stand your ground\n\n[Chorus]\nOxygen, oxygen — cash is oxygen\nEvery breath you take is operating cash flow\nHold it tight, watch it move\nEvery dollar in and out\nOxygen, oxygen — that's what business runs on\n\n[Outro]\nYou can be profitable and still go broke\nYou can be growing and still choke\nWatch the cash, watch the cash\nWatch the cash — that's the lesson",
@@ -360,7 +364,8 @@
           }
         ]
       },
-      "order": 1
+      "order": 1,
+      "song_title": "Oxygen Cash Flow"
     },
     {
       "id": "M1L1.5",
@@ -398,7 +403,11 @@
         }
       ],
       "take_action": [
-        "List all fixed monthly costs",
+        {
+          "step": "List all fixed monthly costs",
+          "capstone_field": "numbers.breakeven_units",
+          "input_type": "short-text"
+        },
         "Calculate contribution margin per unit: Price minus Variable Cost per unit",
         "Find your break-even: Fixed Costs ÷ Contribution Margin per unit"
       ],
@@ -465,7 +474,8 @@
           }
         ]
       },
-      "order": 2
+      "order": 2,
+      "song_title": "Breakeven Point"
     },
     {
       "id": "M1L2",
@@ -503,7 +513,11 @@
         }
       ],
       "take_action": [
-        "Calculate your gross margin % for last month",
+        {
+          "step": "Calculate your gross margin % for last month",
+          "capstone_field": "numbers.gross_margin",
+          "input_type": "short-text"
+        },
         "List every cost between your revenue line and gross profit",
         "Ask: what would happen if you doubled revenue at the same margin?"
       ],
@@ -570,7 +584,8 @@
           }
         ]
       },
-      "order": 3
+      "order": 3,
+      "song_title": "Top Line Lie"
     },
     {
       "id": "M1L2.5",
@@ -578,7 +593,7 @@
       "title": "April Cash Timing (Deep-Dive)",
       "slug_v2": "m1l2.5",
       "legacy_slug": "april-cash-timing",
-      "song_title": null,
+      "song_title": "April Cash Timing",
       "video_url": "https://learn.mbarock.com/video/April_Cash_Timing.mp4",
       "audio_url": "https://learn.mbarock.com/audio/april-cash-timing.mp3",
       "audio_overview_url": "https://learn.mbarock.com/audio/overview/cash-runway-timing.mp4",
@@ -601,7 +616,11 @@
         }
       ],
       "take_action": [
-        "Build a 13-week rolling cash forecast in a spreadsheet. Color any week with negative ending cash red.",
+        {
+          "step": "Build a 13-week rolling cash forecast in a spreadsheet. Color any week with negative ending cash red.",
+          "capstone_field": "numbers.working_capital_days",
+          "input_type": "short-text"
+        },
         "Identify your three largest April-style risk months from the next 12 weeks; list the AR you can pull forward and AP you can push back to flatten them.",
         "Open a working-capital line of credit equal to 1.5x your worst red week before you need it."
       ],
@@ -677,7 +696,8 @@
             "explain": "A pre-arranged line lets you smooth specific red weeks without operating disruption. Open it before you need it."
           }
         ]
-      }
+      },
+      "lesson_number": "M1L2.5"
     },
     {
       "id": "M1L3",
@@ -715,7 +735,11 @@
         }
       ],
       "take_action": [
-        "Choose a discount rate for your business (typical range: 8–15%)",
+        {
+          "step": "Choose a discount rate for your business (typical range: 8–15%)",
+          "capstone_field": "numbers.discount_rate",
+          "input_type": "short-text"
+        },
         "Calculate the present value of a payment you expect in 12 months",
         "Apply NPV thinking to one upcoming investment decision"
       ],
@@ -782,7 +806,8 @@
           }
         ]
       },
-      "order": 5
+      "order": 5,
+      "song_title": "The Discount Rate"
     },
     {
       "id": "M1L3.5",
@@ -820,7 +845,11 @@
         }
       ],
       "take_action": [
-        "Audit all outstanding invoices — flag anything 30+ days overdue",
+        {
+          "step": "Audit all outstanding invoices — flag anything 30+ days overdue",
+          "capstone_field": "numbers.dso_days",
+          "input_type": "short-text"
+        },
         "Calculate DSO: (Accounts Receivable ÷ Annual Revenue) × 365",
         "Implement or enforce a net-15 or net-30 payment policy"
       ],
@@ -887,7 +916,8 @@
           }
         ]
       },
-      "order": 6
+      "order": 6,
+      "song_title": "Receivables in"
     },
     {
       "id": "M1L4",
@@ -925,8 +955,16 @@
         }
       ],
       "take_action": [
-        "Calculate your CAC from last month’s marketing spend",
-        "Estimate LTV: avg purchase value × frequency × avg customer lifespan",
+        {
+          "step": "Calculate your CAC from last month’s marketing spend",
+          "capstone_field": "numbers.cac",
+          "input_type": "short-text"
+        },
+        {
+          "step": "Estimate LTV: avg purchase value × frequency × avg customer lifespan",
+          "capstone_field": "numbers.ltv",
+          "input_type": "short-text"
+        },
         "Target a LTV:CAC ratio of 3:1 or higher as your baseline"
       ],
       "placeholder": false,
@@ -992,7 +1030,8 @@
           }
         ]
       },
-      "order": 7
+      "order": 7,
+      "song_title": "Unit Economics"
     },
     {
       "id": "M1L4.5",
@@ -1030,7 +1069,10 @@
         }
       ],
       "take_action": [
-        "Identify the ratio of fixed to variable costs in your business",
+        {
+          "step": "Identify the ratio of fixed to variable costs in your business",
+          "capstone_field": "numbers.operating_leverage_note"
+        },
         "Calculate DOL: Contribution Margin ÷ Operating Income",
         "Model the impact of a 20% revenue increase on your operating income"
       ],
@@ -1097,7 +1139,8 @@
           }
         ]
       },
-      "order": 8
+      "order": 8,
+      "song_title": "Operating Leverage"
     },
     {
       "id": "M1L5",
@@ -1135,7 +1178,10 @@
         }
       ],
       "take_action": [
-        "List all business assets with their current values",
+        {
+          "step": "List all business assets with their current values",
+          "capstone_field": "numbers.financial_north_star"
+        },
         "List all outstanding liabilities",
         "Calculate working capital: current assets minus current liabilities"
       ],
@@ -1202,7 +1248,8 @@
           }
         ]
       },
-      "order": 9
+      "order": 9,
+      "song_title": "Bones in the Spreadsheets"
     },
     {
       "id": "M2L1",
@@ -1240,7 +1287,10 @@
         }
       ],
       "take_action": [
-        "Identify which type of moat your business has (if any)",
+        {
+          "step": "Identify which type of moat your business has (if any)",
+          "capstone_field": "bet.primary_moat"
+        },
         "Rate your moat’s strength from 1–5 with supporting evidence",
         "List what a competitor would need to overcome your advantage"
       ],
@@ -1307,7 +1357,8 @@
           }
         ]
       },
-      "order": 10
+      "order": 10,
+      "song_title": "Moat Around my Castle Moats Strategy"
     },
     {
       "id": "M2L1.5",
@@ -1345,7 +1396,10 @@
         }
       ],
       "take_action": [
-        "Write a one-sentence strategy statement for your business",
+        {
+          "step": "Write a one-sentence strategy statement for your business",
+          "capstone_field": "bet.pestel_scan"
+        },
         "List 3 things your strategy requires you NOT to do",
         "Map how your current resources align with your stated strategy"
       ],
@@ -1412,7 +1466,8 @@
           }
         ]
       },
-      "order": 11
+      "order": 11,
+      "song_title": "Market Size Mountain"
     },
     {
       "id": "M2L2",
@@ -1450,7 +1505,10 @@
         }
       ],
       "take_action": [
-        "Rate each of Porter’s 5 forces in your industry (High/Medium/Low)",
+        {
+          "step": "Rate each of Porter’s 5 forces in your industry (High/Medium/Low)",
+          "capstone_field": "bet.five_forces_assessment"
+        },
         "Identify the most dangerous force threatening your business today",
         "Choose one force to actively mitigate this quarter"
       ],
@@ -1517,7 +1575,8 @@
           }
         ]
       },
-      "order": 12
+      "order": 12,
+      "song_title": "Strategy"
     },
     {
       "id": "M2L2.1.5",
@@ -1555,7 +1614,10 @@
         }
       ],
       "take_action": [
-        "Conduct a 30-minute honest audit of your biggest strategic weakness",
+        {
+          "step": "Conduct a 30-minute honest audit of your biggest strategic weakness",
+          "capstone_field": "bet.strategic_diagnostics"
+        },
         "Identify one process holding your strategy back",
         "Map the gap between your current state and strategic requirements"
       ],
@@ -1622,7 +1684,8 @@
           }
         ]
       },
-      "order": 13
+      "order": 13,
+      "song_title": "Beneath the Hood"
     },
     {
       "id": "M2L2.3.5",
@@ -1660,7 +1723,10 @@
         }
       ],
       "take_action": [
-        "Fill out the full Business Model Canvas for your business",
+        {
+          "step": "Fill out the full Business Model Canvas for your business",
+          "capstone_field": "bet.business_model_canvas"
+        },
         "Identify your most fragile or at-risk block",
         "Redesign one block to improve overall business model strength"
       ],
@@ -1727,7 +1793,8 @@
           }
         ]
       },
-      "order": 14
+      "order": 14,
+      "song_title": "Business Model Canvas"
     },
     {
       "id": "M2L2.5.5",
@@ -1735,7 +1802,7 @@
       "title": "Portfolio Strategy (Deep-Dive)",
       "slug_v2": "m2l2.5.5",
       "legacy_slug": "m2l2.5.5",
-      "song_title": null,
+      "song_title": "Pick Two",
       "video_url": "https://learn.mbarock.com/video/Portfolio_Strategy.mp4",
       "audio_url": "https://learn.mbarock.com/audio/pick-two.mp3",
       "audio_overview_url": null,
@@ -1758,11 +1825,17 @@
         }
       ],
       "take_action": [
-        "List every product line. Plot each on a growth × share grid. Be honest about share.",
-        "Pick one question mark to invest in this quarter and one to kill. Document the kill criteria.",
+        {
+          "step": "List every product line. Plot each on a growth × share grid. Be honest about share.",
+          "capstone_field": "bet.portfolio_quadrants"
+        },
+        {
+          "step": "Pick one question mark to invest in this quarter and one to kill. Document the kill criteria.",
+          "capstone_field": "bet.kill_criteria"
+        },
         "Set a board-level reporting cadence to re-plot the portfolio every quarter."
       ],
-      "deep_dive": "Most strategic missteps are not bad bets — they are too many bets. The Portfolio framework forces explicit prioritization across products. The discipline is killing what is not winning.",
+      "deep_dive": "Most strategic missteps are not bad bets — they are too many bets. The Portfolio Matrix exists because attention is the scarcest resource a company owns.\n\n**Stars protect the future. Cash Cows fund it. Question Marks shape it. Dogs sell it.** Every business unit, product line, and bet sits in one of these four squares, whether you've drawn the grid or not. The companies that win are the ones that draw the grid and act on what they see.\n\nThe mechanic that matters:\n\n- **Stars** (high growth, high share) demand defensive investment. Under-funding them is how you let a competitor catch up.\n- **Cash Cows** (low growth, high share) are the engine. Harvest, don't reinvest. The temptation is always to keep adding features that customers don't want.\n- **Question Marks** (high growth, low share) are the strategic decision. Pick one to invest in fully. Kill the others — they are how budgets bleed without earning.\n- **Dogs** (low growth, low share) get sold, spun off, or shut down. Holding them costs more than the revenue is worth.\n\nTwo rules that flow from this:\n\n- **One cash cow funding one star and one question mark.** Three question marks means you're an investor, not an operator. Two stars means you're already over-extended.\n- **Re-plot the portfolio every quarter.** Stars degrade to cash cows. Cash cows can become dogs. Question marks resolve to one or the other. The grid moves; your capital allocation should too.\n\nWhere BCG uses growth × share, **GE-McKinsey** uses market-attractiveness × business-strength on a 3×3 grid. Use it when growth and share are too narrow to capture the strategic position. The framework is interchangeable; the discipline of cutting is not.\n\nThe hardest move is the kill. Document the criteria before sentiment makes them negotiable.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": true,
@@ -1835,7 +1908,8 @@
             "explain": "Quarterly cadence catches shifts; annual cadence forces capital reallocation. Without rhythm, portfolios decay."
           }
         ]
-      }
+      },
+      "lesson_number": "M2L2.5.5"
     },
     {
       "id": "M2L3",
@@ -1873,7 +1947,10 @@
         }
       ],
       "take_action": [
-        "List your top 3 internal capabilities or resources",
+        {
+          "step": "List your top 3 internal capabilities or resources",
+          "capstone_field": "bet.vrio_analysis"
+        },
         "Run each through VRIO — which create sustained advantage?",
         "Double down on your highest-scoring VRIO capability this quarter"
       ],
@@ -1940,7 +2017,8 @@
           }
         ]
       },
-      "order": 16
+      "order": 16,
+      "song_title": "Competitive Moat"
     },
     {
       "id": "M2L4",
@@ -1978,7 +2056,10 @@
         }
       ],
       "take_action": [
-        "Map your current competitive factors on a strategy canvas",
+        {
+          "step": "Map your current competitive factors on a strategy canvas",
+          "capstone_field": "bet.errc_grid"
+        },
         "Apply the ERRC grid (Eliminate, Reduce, Raise, Create) to your offering",
         "Identify one segment of non-customers you could realistically attract"
       ],
@@ -2045,7 +2126,8 @@
           }
         ]
       },
-      "order": 17
+      "order": 17,
+      "song_title": "Blue Ocean Creating New Markets"
     },
     {
       "id": "M2L5",
@@ -2083,7 +2165,11 @@
         }
       ],
       "take_action": [
-        "Map your industry's three sustaining-innovation moves the dominant players are making.",
+        {
+          "step": "Map your industry's three sustaining-innovation moves the dominant players are making.",
+          "capstone_field": "bet.one_liner",
+          "input_type": "short-text"
+        },
         "Identify one low-end or non-consumption segment competitors are ignoring.",
         "Decide: defend (which segments) vs. disrupt (where to attack) within 30 days."
       ],
@@ -2150,7 +2236,8 @@
           }
         ]
       },
-      "order": 18
+      "order": 18,
+      "song_title": "Moat Around my Castle"
     },
     {
       "id": "M3L1",
@@ -2188,7 +2275,10 @@
         }
       ],
       "take_action": [
-        "Draft your 90-day plan with 3 priorities × 3 measurable outcomes.",
+        {
+          "step": "Draft your 90-day plan with 3 priorities × 3 measurable outcomes.",
+          "capstone_field": "team.first_90_days_plan"
+        },
         "Schedule listen-only 1:1s with 5 key stakeholders in week 1.",
         "Set 3 'no decisions yet' guardrails to protect early observation time."
       ],
@@ -2255,7 +2345,8 @@
           }
         ]
       },
-      "order": 19
+      "order": 19,
+      "song_title": "White Knuckled Delegation"
     },
     {
       "id": "M3L1.5",
@@ -2263,7 +2354,7 @@
       "lesson_number": "M3L1.5",
       "title": "Worth Aligned (Deep-Dive)",
       "slug_v2": "m3l1-5-worth-aligned",
-      "legacy_slug": null,
+      "legacy_slug": "m3l1-5-worth-aligned",
       "audio_url": "https://learn.mbarock.com/audio/worth-align.mp3",
       "audio_overview_url": null,
       "video_id": null,
@@ -2293,7 +2384,10 @@
         }
       ],
       "take_action": [
-        "List every direct report and rate alignment (1-5) between their work and the org strategy.",
+        {
+          "step": "List every direct report and rate alignment (1-5) between their work and the org strategy.",
+          "capstone_field": "team.values_aligned_note"
+        },
         "Have a 'worth alignment' conversation with the lowest-alignment person this week.",
         "Document one expectation gap you'll close before the next pay cycle."
       ],
@@ -2360,7 +2454,8 @@
           }
         ]
       },
-      "order": 20
+      "order": 20,
+      "song_title": "Worth Align"
     },
     {
       "id": "M3L2",
@@ -2398,7 +2493,10 @@
         }
       ],
       "take_action": [
-        "Write a one-page crisis comms template for your most likely scenario",
+        {
+          "step": "Write a one-page crisis comms template for your most likely scenario",
+          "capstone_field": "team.crisis_playbook"
+        },
         "Run a 30-minute tabletop crisis exercise with your team",
         "Identify who makes decisions when you're unreachable"
       ],
@@ -2465,7 +2563,8 @@
           }
         ]
       },
-      "order": 21
+      "order": 21,
+      "song_title": "Long Game"
     },
     {
       "id": "M3L2.5",
@@ -2503,7 +2602,10 @@
         }
       ],
       "take_action": [
-        "Give one specific, behavior-based piece of feedback to a teammate this week",
+        {
+          "step": "Give one specific, behavior-based piece of feedback to a teammate this week",
+          "capstone_field": "team.feedback_loop_cadence"
+        },
         "Ask for feedback: 'What's one thing I could do differently?'",
         "Schedule a monthly 1:1 with structured feedback built in"
       ],
@@ -2570,7 +2672,8 @@
           }
         ]
       },
-      "order": 22
+      "order": 22,
+      "song_title": "Mirror Map Feedback"
     },
     {
       "id": "M3L3",
@@ -2578,7 +2681,7 @@
       "lesson_number": "M3L3",
       "title": "Hire Slow, Fire Fast",
       "slug_v2": "m3l3-hire-slow-fire-fast",
-      "legacy_slug": null,
+      "legacy_slug": "m3l3-hire-slow-fire-fast",
       "audio_url": "https://learn.mbarock.com/audio/tuckman-storming.mp3",
       "audio_overview_url": null,
       "video_id": null,
@@ -2608,8 +2711,14 @@
         }
       ],
       "take_action": [
-        "Score your last 5 hires on the 'fast vs. slow' axis. Were any rushed?",
-        "Define your hiring scorecard for the next 3 critical roles.",
+        {
+          "step": "Score your last 5 hires on the 'fast vs. slow' axis. Were any rushed?",
+          "capstone_field": "team.hiring_scorecard"
+        },
+        {
+          "step": "Define your hiring scorecard for the next 3 critical roles.",
+          "capstone_field": "team.fire_fast_criteria"
+        },
         "Identify one underperformer; set a 30-day clear-or-coach plan."
       ],
       "placeholder": false,
@@ -2675,7 +2784,8 @@
           }
         ]
       },
-      "order": 23
+      "order": 23,
+      "song_title": "Tuckman Storming"
     },
     {
       "id": "M3L3.3.3",
@@ -2683,7 +2793,7 @@
       "title": "Positioning & Focus (Deep-Dive)",
       "slug_v2": "m3l3.3.3",
       "legacy_slug": "m3l3.3.3",
-      "song_title": null,
+      "song_title": "Don't Be Everything",
       "video_url": "https://learn.mbarock.com/video/Positioning_%26_Focus.mp4",
       "audio_url": "https://learn.mbarock.com/audio/dont-be-everything.mp3",
       "audio_overview_url": null,
@@ -2706,11 +2816,18 @@
         }
       ],
       "take_action": [
-        "Write your one-sentence position. It must include who you serve and who you reject.",
-        "List your top 3 initiatives. Verify every team member knows them by heart.",
+        {
+          "step": "Write your one-sentence position. It must include who you serve and who you reject.",
+          "capstone_field": "team.one_sentence_position",
+          "input_type": "short-text"
+        },
+        {
+          "step": "List your top 3 initiatives. Verify every team member knows them by heart.",
+          "capstone_field": "team.top_three_initiatives"
+        },
         "Identify one current initiative to kill this week. Announce it Monday."
       ],
-      "deep_dive": "Leadership is the art of saying no with precision. Strategy without sacrifice is wishful thinking — and the team feels the absence of priorities as drift.",
+      "deep_dive": "Leadership is the art of saying no with precision. Strategy without sacrifice is wishful thinking with a slide deck.\n\n**If your positioning has no enemies, it has no edge.** A real position requires explicit non-customers, non-features, and non-markets. The moment you can describe who you are NOT for, you've started doing strategy. Until then, you're doing marketing copy.\n\nThe three filters every initiative must pass:\n\n1. **Does it advance the one thing we want to be known for?** Not \"is it good.\" Not \"will it make money.\" Does it deepen the moat that defines us?\n2. **Will killing it free people up for higher-leverage work?** Most companies have more zombie projects than they realize — kept alive by inertia, advocacy, or fear of letting someone down.\n3. **Does it match the proof we already have, or does it require new proof?** Adjacent extensions compound. Pivots reset.\n\nIf an initiative fails all three, it dies this week. If it passes all three, it gets resourced fully. The middle ground is where focus disappears.\n\nThree traps that erode focus every quarter:\n\n- **Revenue from non-core customers.** Money is the most seductive distraction. A $200K deal from outside the position can re-shape a roadmap toward markets you don't intend to win.\n- **Loud internal advocates.** A senior person attached to a zombie project protects it with political capital. Strategy reviews must override seniority on cuts.\n- **Adjacent shiny objects.** \"We could also do X\" is fatal in a company that hasn't yet dominated the original X.\n\nYour one-sentence position should include who you serve AND who you reject. Test it by reading it out loud to a customer. If they nod, it's working. If they ask a clarifying question, sharpen it. Repeat until the answer to \"what does this company do\" takes one breath.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": true,
@@ -2783,7 +2900,8 @@
             "explain": "Public commitment to what's killed locks in the focus. Quiet de-prioritization keeps zombie work alive."
           }
         ]
-      }
+      },
+      "lesson_number": "M3L3.3.3"
     },
     {
       "id": "M3L4",
@@ -2791,7 +2909,7 @@
       "lesson_number": "M3L4",
       "title": "Velocity of Decision / Decide and Commit",
       "slug_v2": "m3l4-velocity-of-decision-rapid-framework",
-      "legacy_slug": null,
+      "legacy_slug": "m3l4-velocity-of-decision-rapid-framework",
       "audio_url": "https://learn.mbarock.com/audio/two-way-door.mp3",
       "audio_overview_url": "https://learn.mbarock.com/audio/overview/velocity-of-decision.mp4",
       "video_id": null,
@@ -2821,7 +2939,10 @@
         }
       ],
       "take_action": [
-        "Categorize your last 10 major decisions: Type 1 (irreversible) or Type 2 (reversible).",
+        {
+          "step": "Categorize your last 10 major decisions: Type 1 (irreversible) or Type 2 (reversible).",
+          "capstone_field": "team.decision_velocity_rule"
+        },
         "Pick one current decision and apply the Decision Quality Six framework.",
         "Set a default 'commit by end of week' rule for any Type 2 decision."
       ],
@@ -2888,7 +3009,8 @@
           }
         ]
       },
-      "order": 25
+      "order": 25,
+      "song_title": "Two Way Door"
     },
     {
       "id": "M3L5",
@@ -2926,7 +3048,10 @@
         }
       ],
       "take_action": [
-        "Write your 3–5 actual (not aspirational) organizational values",
+        {
+          "step": "Write your 3–5 actual (not aspirational) organizational values",
+          "capstone_field": "team.culture_design_principles"
+        },
         "Identify one behavior that contradicts your stated values",
         "Design one ritual or process that reinforces the culture you want"
       ],
@@ -2993,7 +3118,8 @@
           }
         ]
       },
-      "order": 26
+      "order": 26,
+      "song_title": "Culture Eats Strategy"
     },
     {
       "id": "M4L1",
@@ -3031,7 +3157,10 @@
         }
       ],
       "take_action": [
-        "List every customer interaction loop in your business. Rate each for genuine listening (1-5).",
+        {
+          "step": "List every customer interaction loop in your business. Rate each for genuine listening (1-5).",
+          "capstone_field": "engine.customer_obsession_ritual"
+        },
         "Build the customer-obsession metric you'll review weekly.",
         "Interview 3 customers this week using JTBD questions, not feature questions."
       ],
@@ -3098,7 +3227,8 @@
           }
         ]
       },
-      "order": 27
+      "order": 27,
+      "song_title": "Ask Then Listen"
     },
     {
       "id": "M4L2",
@@ -3136,7 +3266,10 @@
         }
       ],
       "take_action": [
-        "Write your brand story in 3 sentences: origin, mission, why it matters",
+        {
+          "step": "Write your brand story in 3 sentences: origin, mission, why it matters",
+          "capstone_field": "engine.brand_story"
+        },
         "Define 3 adjectives that capture your brand voice",
         "Audit your last 5 content pieces against your brand identity"
       ],
@@ -3205,7 +3338,8 @@
       },
       "order": 28,
       "audio_duration": "2:53",
-      "audio_kbps": null
+      "audio_kbps": null,
+      "song_title": "Brand Promise"
     },
     {
       "id": "M4L2.5",
@@ -3213,7 +3347,7 @@
       "title": "Channel Strategy (Deep-Dive)",
       "slug_v2": "m4l2.5",
       "legacy_slug": "m4l2.5",
-      "song_title": null,
+      "song_title": "Distribution Rivers",
       "video_url": "https://learn.mbarock.com/video/The_Builder_s_Blueprint.mp4",
       "audio_url": "https://learn.mbarock.com/audio/distribution-rivers.mp3",
       "audio_overview_url": null,
@@ -3236,11 +3370,17 @@
         }
       ],
       "take_action": [
-        "Build a channel scorecard: CAC, LTV:CAC, payback period, saturation slope. One row per channel.",
-        "Cut the lowest-ratio channel by 50% this month. Reallocate the budget to your highest-ratio channel.",
+        {
+          "step": "Build a channel scorecard: CAC, LTV:CAC, payback period, saturation slope. One row per channel.",
+          "capstone_field": "engine.channel_scorecard"
+        },
+        {
+          "step": "Cut the lowest-ratio channel by 50% this month. Reallocate the budget to your highest-ratio channel.",
+          "capstone_field": "engine.owned_channel_experiment"
+        },
         "Launch one owned-channel experiment (email capture, app, community)."
       ],
-      "deep_dive": "Most growth plateaus come from over-fitting to one channel. The discipline is portfolio thinking applied to acquisition.",
+      "deep_dive": "Most growth plateaus come from over-fitting to one channel. The discipline is portfolio thinking — applied to acquisition.\n\n**Low-consideration products win in high-frequency channels. High-consideration products win in deep ones.** A $19 consumer subscription belongs on paid social and retail end-caps. A $50K enterprise tool belongs in sales-led webinars and analyst reports. Mismatching the channel to the purchase weight burns money on either end of the spectrum.\n\nThe channel scorecard that matters:\n\n1. **CAC** — fully-loaded cost per customer acquired.\n2. **LTV-to-CAC ratio** — under 3:1, you have a unit-economics problem. Over 5:1, you're under-investing.\n3. **Payback period** — how many months until the customer pays you back.\n4. **Saturation slope** — what happens to CAC when you double spend. Steep slope means the channel is dying.\n\nChannels with rising CAC at constant LTV are decaying — pull budget out before the curve flattens you. Channels with stable CAC and rising LTV are compounding — pour in.\n\nTwo rules that flow from this:\n\n- **Allocate at least 30% of budget to owned channels.** Email lists, apps, communities, and retail stores compound over time. Rented channels — Google, Meta, marketplaces — decay the moment you stop paying. Owned is a balance-sheet asset; rented is an expense.\n- **Use multi-touch attribution.** First-touch under-credits content. Last-touch over-credits paid search. Linear or time-decay models are imperfect but they correct the political distortions that come from single-touch reporting.\n\nThe portfolio move is dynamic. Cut the lowest-ratio channel by 50% this month. Reallocate to the highest-ratio. Launch one owned-channel experiment quarterly. The companies that win don't have better channels — they have a faster decision loop on which channels to run hot.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": true,
@@ -3313,7 +3453,8 @@
             "explain": "First-touch under-credits content; last-touch over-credits paid. Multi-touch is closer to truth."
           }
         ]
-      }
+      },
+      "lesson_number": "M4L2.5"
     },
     {
       "id": "M4L3",
@@ -3351,7 +3492,10 @@
         }
       ],
       "take_action": [
-        "Map your funnel with actual conversion rates at each stage",
+        {
+          "step": "Map your funnel with actual conversion rates at each stage",
+          "capstone_field": "engine.funnel_conversion_rates"
+        },
         "Identify your biggest leak in the funnel",
         "Run one A/B test to improve conversion at that stage"
       ],
@@ -3418,7 +3562,8 @@
           }
         ]
       },
-      "order": 30
+      "order": 30,
+      "song_title": "Funnel Rate 118"
     },
     {
       "id": "M4L4",
@@ -3456,7 +3601,11 @@
         }
       ],
       "take_action": [
-        "Calculate your current price using 3 different pricing methods",
+        {
+          "step": "Calculate your current price using 3 different pricing methods",
+          "capstone_field": "engine.pricing_position",
+          "input_type": "short-text"
+        },
         "Identify the max price your best customers would pay",
         "Test a price increase on one product or tier this month"
       ],
@@ -3523,7 +3672,8 @@
           }
         ]
       },
-      "order": 31
+      "order": 31,
+      "song_title": "Price Signal"
     },
     {
       "id": "M4L4.2.5",
@@ -3531,7 +3681,7 @@
       "title": "Product-Market Fit (Deep-Dive)",
       "slug_v2": "m4l4.2.5",
       "legacy_slug": "m4l4.2.5",
-      "song_title": null,
+      "song_title": "Fit Original",
       "video_url": "https://learn.mbarock.com/video/The_Bridge_to_Fit.mp4",
       "audio_url": "https://learn.mbarock.com/audio/fit-original.mp3",
       "audio_overview_url": null,
@@ -3554,11 +3704,18 @@
         }
       ],
       "take_action": [
-        "Run the Sean Ellis PMF survey to your last 200 active users. Calculate the score.",
-        "Plot retention by customer segment. Identify your highest-retaining segment.",
+        {
+          "step": "Run the Sean Ellis PMF survey to your last 200 active users. Calculate the score.",
+          "capstone_field": "engine.pmf_signal"
+        },
+        {
+          "step": "Plot retention by customer segment. Identify your highest-retaining segment.",
+          "capstone_field": "engine.top_retention_segment",
+          "input_type": "short-text"
+        },
         "Stop all new feature work for two weeks. Talk to 25 customers in your top-retention segment."
       ],
-      "deep_dive": "PMF is not a milestone you announce — it's a state you operate in. Get there before scaling.",
+      "deep_dive": "PMF is not a milestone you announce — it's a state you operate in. Get there before you scale, and you build a real business. Scale before you get there, and you build an expensive proof-of-concept.\n\n**Real fit shows up in cohort retention. Everything else is theater.** Friend-funded usage, paid-acquisition spikes, one-time PR — they all look like fit on a snapshot. They don't look like fit on a cohort curve six months out. The curve doesn't lie.\n\nThe two tests that actually work:\n\n1. **Organic referral rate.** When more than 25% of new customers say \"a friend told me about it,\" you have fit. The customer is doing your distribution.\n2. **The Sean Ellis \"very disappointed\" survey.** Ask active users: \"How would you feel if you couldn't use this anymore?\" When 40%+ answer \"very disappointed,\" you have fit. Below 40%, you don't.\n\nTwo rules that flow from this:\n\n- **Pre-fit: stay small, iterate fast.** Hold the team at the minimum size that can ship. Weekly customer interviews. Daily product changes. Burn rate kept low so you have runway to find fit. Hiring growth and ops before fit is how companies die expensively.\n- **Post-fit: lock the product, scale the engine.** Stop feature-thrashing. Build the growth team, the customer success team, the infrastructure to handle 10× volume. The pre-fit muscles (rapid iteration) actively damage a post-fit business.\n\nFit is rarely uniform. **Find the segment where retention and NPS are highest — that's your real fit. Build outward from that beachhead.** Two-week exercise: stop all new feature work, talk to 25 customers in your top-retention segment, then resume building only what they ask for. The clearest fit pattern emerges from the smallest segment.\n\nThe cost of getting this wrong is asymmetric. Pre-fit scaling burns money. Post-fit hesitation lets a competitor own the category. Knowing which side of the line you're on is the highest-stakes diagnosis you'll make.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": true,
@@ -3631,7 +3788,8 @@
             "explain": "Founders mistake friends, paid spikes, and PR for fit. Real fit shows in retention curves, not single-event spikes."
           }
         ]
-      }
+      },
+      "lesson_number": "M4L4.2.5"
     },
     {
       "id": "M4L4.5",
@@ -3639,7 +3797,7 @@
       "title": "Loyalty Loops / The Evolution of Growth (Deep-Dive)",
       "slug_v2": "m4l4.5",
       "legacy_slug": "m4l4.5",
-      "song_title": null,
+      "song_title": "Let the Rivers Run",
       "video_url": "https://learn.mbarock.com/video/The_Evolution_of_Growth.mp4",
       "audio_url": "https://learn.mbarock.com/audio/let-the-rivers-run.mp3",
       "audio_overview_url": null,
@@ -3662,11 +3820,18 @@
         }
       ],
       "take_action": [
-        "Map your current funnel. At each stage, identify one loop opportunity.",
-        "Build one loop this quarter. Measure k weekly.",
+        {
+          "step": "Map your current funnel. At each stage, identify one loop opportunity.",
+          "capstone_field": "engine.primary_loop"
+        },
+        {
+          "step": "Build one loop this quarter. Measure k weekly.",
+          "capstone_field": "engine.viral_coefficient_target",
+          "input_type": "short-text"
+        },
         "Sunset one paid-acquisition channel that doesn't feed back into a loop."
       ],
-      "deep_dive": "Funnels add. Loops multiply. The companies that dominate categories are the ones that converted their funnels into loops early.",
+      "deep_dive": "Funnels add. Loops multiply. The companies that dominate categories are the ones that engineered compounding into their growth architecture — not the ones with the best campaigns.\n\n**Each new user must produce more than one user back into the system for the loop to compound.** The viral coefficient k must exceed 1. Below 1, the loop decays. Above 1, the company prints distribution. The math is unforgiving and exact.\n\nThree loop types worth studying:\n\n1. **Content loop.** Users create artifacts (posts, videos, threads) that pull new users in. Reddit, YouTube, Pinterest. The asset is user-generated; the platform compounds.\n2. **Viral loop.** Users invite users directly. Dropbox's storage-for-referrals, Calendly's shared booking links. The product itself is the invitation.\n3. **Marketplace loop.** Each new buyer attracts more sellers, which attracts more buyers. Two-sided markets compound on both sides simultaneously.\n\nTwo rules that flow from this:\n\n- **Add the loop at every funnel stage, not just the end.** At signup: ask for a referral. At first-value: trigger a shareable asset. At habituation: surface a community connection. Every event is a potential loop trigger. Most teams only think about the post-checkout referral — leaving 80% of leverage on the table.\n- **Refresh the trigger before saturation.** Loops decay as the network fills. The same incentive that drove 30% referral rate in year one drives 5% in year three. Plan the next trigger (new format, new incentive, new social proof type) before the current one flatlines.\n\nSunset one paid-acquisition channel that doesn't feed back into a loop. Paid that doesn't compound is rent; loops are equity. The companies you can name in your category — Notion, Figma, Slack, Linear — built loops first, ads second. Reverse the order and you'll find yourself competing on CAC against a competitor whose CAC is approaching zero.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": true,
@@ -3739,7 +3904,8 @@
             "explain": "Loop triggers are product features, not campaigns. Embed them in the natural flow of the funnel."
           }
         ]
-      }
+      },
+      "lesson_number": "M4L4.5"
     },
     {
       "id": "M4L5",
@@ -3747,7 +3913,7 @@
       "lesson_number": "M4L5",
       "title": "Integrated Marketing Mix",
       "slug_v2": "customer-retention",
-      "legacy_slug": null,
+      "legacy_slug": "customer-retention",
       "audio_url": "https://learn.mbarock.com/audio/adopt-the-loop.mp3",
       "audio_overview_url": null,
       "video_id": null,
@@ -3777,8 +3943,16 @@
         }
       ],
       "take_action": [
-        "Pull your customer list. Calculate monthly churn for the last 6 months. Note the trend.",
-        "Pick one customer cohort. Plot what % are still active each month. Stop when the curve flattens.",
+        {
+          "step": "Pull your customer list. Calculate monthly churn for the last 6 months. Note the trend.",
+          "capstone_field": "engine.activation_event",
+          "input_type": "short-text"
+        },
+        {
+          "step": "Pick one customer cohort. Plot what % are still active each month. Stop when the curve flattens.",
+          "capstone_field": "engine.retention_lever",
+          "input_type": "short-text"
+        },
         {
           "text": "Identify your activation event — the action that, when a customer does it, predicts they’ll stick. One sentence.",
           "capstone_field": "engine.activation_event"
@@ -3855,7 +4029,8 @@
           }
         ]
       },
-      "order": 34
+      "order": 34,
+      "song_title": "Adopt the Loop"
     },
     {
       "id": "M5L1",
@@ -3863,7 +4038,7 @@
       "lesson_number": "M5L1",
       "title": "Flow Not Force",
       "slug_v2": "m5l1-flow-not-force",
-      "legacy_slug": null,
+      "legacy_slug": "m5l1-flow-not-force",
       "audio_url": "https://learn.mbarock.com/audio/lewin-way.mp3",
       "audio_overview_url": null,
       "video_id": null,
@@ -3893,7 +4068,10 @@
         }
       ],
       "take_action": [
-        "Identify your current bottleneck — the single resource limiting total output.",
+        {
+          "step": "Identify your current bottleneck — the single resource limiting total output.",
+          "capstone_field": "stack.flow_constraint"
+        },
         "Audit one non-bottleneck process for over-production / waste.",
         "Implement one daily standup that reports throughput, not activity."
       ],
@@ -3960,7 +4138,8 @@
           }
         ]
       },
-      "order": 35
+      "order": 35,
+      "song_title": "Lewin Way"
     },
     {
       "id": "M5L2",
@@ -3968,7 +4147,7 @@
       "lesson_number": "M5L2",
       "title": "Process Maps: Order from Chaos",
       "slug_v2": "m5l2-process-maps-order-from-chaos",
-      "legacy_slug": null,
+      "legacy_slug": "m5l2-process-maps-order-from-chaos",
       "audio_url": "https://learn.mbarock.com/audio/process-over-outcome.mp3",
       "audio_overview_url": null,
       "video_id": null,
@@ -3998,7 +4177,10 @@
         }
       ],
       "take_action": [
-        "Pick one critical process. Map it end-to-end including handoffs and wait times.",
+        {
+          "step": "Pick one critical process. Map it end-to-end including handoffs and wait times.",
+          "capstone_field": "stack.top_process_map"
+        },
         "Identify the single highest-variance step. Standardize it this sprint.",
         "Create a simple visual dashboard (whiteboard or digital) for that process."
       ],
@@ -4065,7 +4247,8 @@
           }
         ]
       },
-      "order": 36
+      "order": 36,
+      "song_title": "Process Over Outcome"
     },
     {
       "id": "M5L2.5",
@@ -4073,7 +4256,7 @@
       "lesson_number": "M5L2.5",
       "title": "Automation Stack / Micro to Macro Scale (Deep-Dive)",
       "slug_v2": "m5l2-5-automation-stack",
-      "legacy_slug": null,
+      "legacy_slug": "m5l2-5-automation-stack",
       "audio_url": "https://learn.mbarock.com/audio/heroes-dont-scale.mp3",
       "audio_overview_url": null,
       "video_id": null,
@@ -4104,7 +4287,10 @@
         }
       ],
       "take_action": [
-        "List 10 repetitive tasks in the business. Estimate hours/week and error rate.",
+        {
+          "step": "List 10 repetitive tasks in the business. Estimate hours/week and error rate.",
+          "capstone_field": "stack.automation_targets"
+        },
         "Pick the top 3 by leverage. For each, decide: automate, eliminate, or delegate.",
         "Build the first automation this week; measure time-saved within 30 days."
       ],
@@ -4179,7 +4365,7 @@
       "lesson_number": "M5L3",
       "title": "The Quality Engine",
       "slug_v2": "m5l3-the-quality-engine",
-      "legacy_slug": null,
+      "legacy_slug": "m5l3-the-quality-engine",
       "audio_url": "https://learn.mbarock.com/audio/seven-twenty-sum.mp3",
       "audio_overview_url": "https://learn.mbarock.com/audio/overview/the-quality-engine.mp4",
       "video_id": null,
@@ -4209,7 +4395,11 @@
         }
       ],
       "take_action": [
-        "Define what 'quality' means in your business with a single measurable metric.",
+        {
+          "step": "Define what 'quality' means in your business with a single measurable metric.",
+          "capstone_field": "stack.quality_metric",
+          "input_type": "short-text"
+        },
         "Audit one customer-facing process for the gap between intended and delivered quality.",
         "Set a weekly quality review with at least one quantitative measure."
       ],
@@ -4276,7 +4466,8 @@
           }
         ]
       },
-      "order": 38
+      "order": 38,
+      "song_title": "Seven Twenty Sum"
     },
     {
       "id": "M5L4",
@@ -4314,7 +4505,10 @@
         }
       ],
       "take_action": [
-        "Audit your current tech stack — categorize each tool: core, peripheral, dead weight.",
+        {
+          "step": "Audit your current tech stack — categorize each tool: core, peripheral, dead weight.",
+          "capstone_field": "stack.tech_stack_inventory"
+        },
         "Identify one capability you should buy vs. one you should build.",
         "Set a 12-month tech roadmap aligned to business strategy, not vendor hype."
       ],
@@ -4381,7 +4575,8 @@
           }
         ]
       },
-      "order": 39
+      "order": 39,
+      "song_title": "Five Doors"
     },
     {
       "id": "M5L5",
@@ -4389,7 +4584,7 @@
       "lesson_number": "M5L5",
       "title": "Build vs. Buy Matrix",
       "slug_v2": "m5l5-build-vs-buy-matrix",
-      "legacy_slug": null,
+      "legacy_slug": "m5l5-build-vs-buy-matrix",
       "audio_url": "https://learn.mbarock.com/audio/build-vs-buy.mp3",
       "audio_overview_url": "https://learn.mbarock.com/audio/overview/build-vs-buy.mp4",
       "video_id": null,
@@ -4419,7 +4614,10 @@
         }
       ],
       "take_action": [
-        "List your top 5 systems. For each: build, buy, or hybrid? Document the reasoning.",
+        {
+          "step": "List your top 5 systems. For each: build, buy, or hybrid? Document the reasoning.",
+          "capstone_field": "stack.build_buy_decisions"
+        },
         "Calculate the 5-year cost of ownership for the most expensive option.",
         "Pick one 'build' decision to revisit — is it still defensible or has it become commodity?"
       ],
@@ -4486,7 +4684,8 @@
           }
         ]
       },
-      "order": 40
+      "order": 40,
+      "song_title": "Build vs. Buy"
     },
     {
       "id": "M6L1",
@@ -4524,7 +4723,10 @@
         }
       ],
       "take_action": [
-        "Draw your current org chart and identify reporting bottlenecks",
+        {
+          "step": "Draw your current org chart and identify reporting bottlenecks",
+          "capstone_field": "capital.primary_growth_engine"
+        },
         "Calculate your average span of control",
         "Design the org structure you'll need at 2× your current headcount"
       ],
@@ -4591,7 +4793,8 @@
           }
         ]
       },
-      "order": 41
+      "order": 41,
+      "song_title": "Engines"
     },
     {
       "id": "M6L2",
@@ -4629,7 +4832,10 @@
         }
       ],
       "take_action": [
-        "Map your current cap table (or create one if you don't have it)",
+        {
+          "step": "Map your current cap table (or create one if you don't have it)",
+          "capstone_field": "capital.cap_table_snapshot"
+        },
         "Model your ownership % after a typical seed or Series A round",
         "Understand your vesting cliff and acceleration provisions"
       ],
@@ -4696,7 +4902,8 @@
           }
         ]
       },
-      "order": 42
+      "order": 42,
+      "song_title": "Stakeholder Grid"
     },
     {
       "id": "M6L3",
@@ -4704,7 +4911,7 @@
       "lesson_number": "M6L3",
       "title": "Value vs. Terms",
       "slug_v2": "m6l3-value-vs-terms",
-      "legacy_slug": null,
+      "legacy_slug": "m6l3-value-vs-terms",
       "audio_url": "https://learn.mbarock.com/audio/dollar-soldier.mp3",
       "audio_overview_url": null,
       "video_id": null,
@@ -4734,7 +4941,10 @@
         }
       ],
       "take_action": [
-        "For your next raise, list the top 5 terms you'd negotiate over valuation.",
+        {
+          "step": "For your next raise, list the top 5 terms you'd negotiate over valuation.",
+          "capstone_field": "capital.term_sheet_priorities"
+        },
         "Have a securities lawyer review your last term sheet (or template).",
         "Calculate your post-money dilution scenario for next 3 rounds."
       ],
@@ -4801,7 +5011,8 @@
           }
         ]
       },
-      "order": 43
+      "order": 43,
+      "song_title": "Dollar Soldier"
     },
     {
       "id": "M6L4",
@@ -4839,7 +5050,10 @@
         }
       ],
       "take_action": [
-        "Identify your BATNA before your next important negotiation",
+        {
+          "step": "Identify your BATNA before your next important negotiation",
+          "capstone_field": "capital.negotiation_batna"
+        },
         "Research the other party's likely BATNA",
         "Practice anchoring by making the first offer in a low-stakes situation"
       ],
@@ -4906,7 +5120,8 @@
           }
         ]
       },
-      "order": 44
+      "order": 44,
+      "song_title": "Negotiation"
     },
     {
       "id": "M6L5",
@@ -4944,7 +5159,11 @@
         }
       ],
       "take_action": [
-        "Define your preferred exit path (acquisition, IPO, or lifestyle)",
+        {
+          "step": "Define your preferred exit path (acquisition, IPO, or lifestyle)",
+          "capstone_field": "capital.exit_multiple_target",
+          "input_type": "short-text"
+        },
         "Research comparable exits in your industry and their multiples",
         "Identify the top 5 potential acquirers for your business right now"
       ],
@@ -5011,7 +5230,8 @@
           }
         ]
       },
-      "order": 45
+      "order": 45,
+      "song_title": "The Multiple"
     },
     {
       "id": "M6L6",
@@ -5019,7 +5239,7 @@
       "lesson_number": "M6L6",
       "title": "Startup Operating System / Scaling Pains",
       "slug_v2": "m6l6-startup-operating-system-scaling-pains",
-      "legacy_slug": null,
+      "legacy_slug": "m6l6-startup-operating-system-scaling-pains",
       "audio_url": "https://learn.mbarock.com/audio/high-anchor-batna.mp3",
       "audio_overview_url": "https://learn.mbarock.com/audio/overview/startup-operating-system.mp4",
       "video_id": null,
@@ -5049,7 +5269,10 @@
         }
       ],
       "take_action": [
-        "Identify the 3 systems that break first as you scale (people, process, tech).",
+        {
+          "step": "Identify the 3 systems that break first as you scale (people, process, tech).",
+          "capstone_field": "capital.scaling_pain_log"
+        },
         "Build a 90-day operating cadence: weekly metrics, monthly review, quarterly planning.",
         "Pick one founder-dependency point and create a 60-day handoff plan."
       ],
@@ -5116,7 +5339,8 @@
           }
         ]
       },
-      "order": 46
+      "order": 46,
+      "song_title": "High Anchor BATNA"
     },
     {
       "id": "M6L6.3.5",
@@ -5124,7 +5348,7 @@
       "title": "Dashboards (Deep-Dive)",
       "slug_v2": "m6l6.3.5",
       "legacy_slug": "m6l6.3.5",
-      "song_title": null,
+      "song_title": "The Aha",
       "video_url": "https://learn.mbarock.com/video/KPIs_%26_Dashboards.mp4",
       "audio_url": "https://learn.mbarock.com/audio/the-aha.mp3",
       "audio_overview_url": null,
@@ -5147,11 +5371,14 @@
         }
       ],
       "take_action": [
-        "Audit every dashboard. Score each metric: action-driving (1) or vanity (0).",
+        {
+          "step": "Audit every dashboard. Score each metric: action-driving (1) or vanity (0).",
+          "capstone_field": "capital.dashboard_audit"
+        },
         "Cut every vanity metric this week.",
         "Add one lead indicator per team. Wire it to a weekly review."
       ],
-      "deep_dive": "Dashboards exist to compress information so a leader can act. Anything else is decoration.",
+      "deep_dive": "Dashboards exist to compress information so a leader can act. Anything else is dashboard theater — and dashboard theater is how operating culture quietly dies.\n\n**For every metric on a dashboard, two questions must answer cleanly.** (1) What decision does this drive? (2) What's the threshold that triggers action? If a metric can't answer both, it doesn't belong on the dashboard. It belongs in an archive someone can pull when they need it.\n\nThe three-tier hierarchy:\n\n- **Board dashboard** — 5-7 metrics, monthly. Revenue, growth rate, gross margin, runway, NPS, key strategic milestones. The job is governance, not operations.\n- **Executive dashboard** — 10-15 metrics, weekly. Adds funnel-stage conversion, cohort retention, hiring pipeline, top accounts. The job is rhythm and reallocation.\n- **Operational dashboard** — one per team, daily. Specific to the team's loop (engineering velocity, sales activity, support ticket aging). The job is execution.\n\nEach layer abstracts up from the one below. A metric that lives on all three layers usually means none of them has thought hard enough about what they actually need.\n\nTwo rules that flow from this:\n\n- **Lead indicators beat lag indicators for operating decisions.** Revenue and churn are lagging — by the time you see the number, the decision was made months ago. Pipeline coverage, NPS, time-to-first-value, employee engagement — these are leading and they belong on every weekly dashboard.\n- **Set a hard cap and review quarterly.** Dashboards accrete metrics until they're unreadable. 15 metrics per dashboard, maximum. Adding one means cutting one. Quarterly review: every metric defends its slot or gets archived.\n\nAudit every dashboard against the two-question test this week. Cut every vanity metric. The remaining metrics earn the right to be reviewed.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": true,
@@ -5224,7 +5451,8 @@
             "explain": "Every quarter someone adds a metric, nobody removes one. Cap and audit quarterly."
           }
         ]
-      }
+      },
+      "lesson_number": "M6L6.3.5"
     },
     {
       "id": "M6L7",
@@ -5232,7 +5460,7 @@
       "lesson_number": "M6L7",
       "title": "Value Creation Journey / Capital Allocation",
       "slug_v2": "m6l7-value-creation-journey-capital-allocatio",
-      "legacy_slug": null,
+      "legacy_slug": "m6l7-value-creation-journey-capital-allocatio",
       "audio_url": "https://learn.mbarock.com/audio/three-of-a-kind.mp3",
       "audio_overview_url": null,
       "video_id": null,
@@ -5262,7 +5490,10 @@
         }
       ],
       "take_action": [
-        "Map your value creation timeline: 12, 24, 36 months — what milestones drive each valuation step?",
+        {
+          "step": "Map your value creation timeline: 12, 24, 36 months — what milestones drive each valuation step?",
+          "capstone_field": "capital.allocation_rules"
+        },
         "Identify which 2 metrics most affect enterprise value in your category.",
         "Set quarterly capital allocation rules aligned to those metrics."
       ],
@@ -5329,7 +5560,8 @@
           }
         ]
       },
-      "order": 48
+      "order": 48,
+      "song_title": "Three of a Kind"
     },
     {
       "id": "M6L8",
@@ -5337,7 +5569,7 @@
       "lesson_number": "M6L8",
       "title": "Managing Uncertainty / Strategic Bets",
       "slug_v2": "m6l8-managing-uncertainty-strategic-bets",
-      "legacy_slug": null,
+      "legacy_slug": "m6l8-managing-uncertainty-strategic-bets",
       "audio_url": "https://learn.mbarock.com/audio/ten-year-bet.mp3",
       "audio_overview_url": null,
       "video_id": null,
@@ -5367,7 +5599,10 @@
         }
       ],
       "take_action": [
-        "List your 5 highest-impact strategic uncertainties. Rate each for likelihood and impact.",
+        {
+          "step": "List your 5 highest-impact strategic uncertainties. Rate each for likelihood and impact.",
+          "capstone_field": "capital.strategic_bets"
+        },
         "For the top 2, define what observable signal would shift your strategy.",
         "Schedule a quarterly scenario-planning review."
       ],
@@ -5434,7 +5669,8 @@
           }
         ]
       },
-      "order": 49
+      "order": 49,
+      "song_title": "Ten Year Bet"
     },
     {
       "id": "M6L9",
@@ -5442,7 +5678,7 @@
       "lesson_number": "M6L9",
       "title": "Intelligent Risk Selection / Risk Map",
       "slug_v2": "m6l9-intelligent-risk-selection-risk-map",
-      "legacy_slug": null,
+      "legacy_slug": "m6l9-intelligent-risk-selection-risk-map",
       "audio_url": "https://learn.mbarock.com/audio/risk-and-reward.mp3",
       "audio_overview_url": null,
       "video_id": null,
@@ -5472,7 +5708,10 @@
         }
       ],
       "take_action": [
-        "Build a risk register: 10 entries, scored by likelihood × impact.",
+        {
+          "step": "Build a risk register: 10 entries, scored by likelihood × impact.",
+          "capstone_field": "capital.risk_map"
+        },
         "For your top 3 risks, document mitigation strategy + owner.",
         "Run a pre-mortem on your next major commitment this week."
       ],
@@ -5539,7 +5778,8 @@
           }
         ]
       },
-      "order": 50
+      "order": 50,
+      "song_title": "Risk and Reward"
     },
     {
       "id": "M6L10",
@@ -5547,7 +5787,7 @@
       "lesson_number": "M6L10",
       "title": "Exit Strategy / Exit Story",
       "slug_v2": "m6l10-exit-strategy-exit-story",
-      "legacy_slug": "exit",
+      "legacy_slug": "exit-m6l10",
       "audio_url": "https://learn.mbarock.com/audio/saleable.mp3",
       "audio_overview_url": "https://learn.mbarock.com/audio/overview/exit-strategy.mp4",
       "video_id": null,
@@ -5577,7 +5817,10 @@
         }
       ],
       "take_action": [
-        "Write your exit thesis: who buys you, why, at what multiple?",
+        {
+          "step": "Write your exit thesis: who buys you, why, at what multiple?",
+          "capstone_field": "capital.exit_story"
+        },
         "Identify the top 3 strategic acquirers in your category. Map their recent deals.",
         "Set 5-year milestones tied to the multiple you want to achieve."
       ],
@@ -5644,7 +5887,8 @@
           }
         ]
       },
-      "order": 51
+      "order": 51,
+      "song_title": "Saleable"
     },
     {
       "id": "M6L11",
@@ -5652,7 +5896,7 @@
       "lesson_number": "M6L11",
       "title": "Complex Human Systems / Ethics Compass",
       "slug_v2": "m6l11-complex-human-systems-ethics-compass",
-      "legacy_slug": null,
+      "legacy_slug": "m6l11-complex-human-systems-ethics-compass",
       "audio_url": "https://learn.mbarock.com/audio/four-corners.mp3",
       "audio_overview_url": "https://learn.mbarock.com/audio/overview/complex-human-systems.mp4",
       "video_id": null,
@@ -5682,7 +5926,10 @@
         }
       ],
       "take_action": [
-        "Audit your team's psychological safety with an anonymous 3-question survey.",
+        {
+          "step": "Audit your team's psychological safety with an anonymous 3-question survey.",
+          "capstone_field": "capital.ethics_principles"
+        },
         "Identify one ethical edge-case decision you've delayed. Decide this week.",
         "Define your 5 cultural values with observable behaviors per value."
       ],
@@ -5749,7 +5996,8 @@
           }
         ]
       },
-      "order": 52
+      "order": 52,
+      "song_title": "Four Corners"
     },
     {
       "id": "M6L12",
@@ -5757,7 +6005,7 @@
       "lesson_number": "M6L12",
       "title": "Business Anatomy Masterclass / Personal OS",
       "slug_v2": "m6l12-business-anatomy-masterclass-personal-os",
-      "legacy_slug": null,
+      "legacy_slug": "m6l12-business-anatomy-masterclass-personal-os",
       "audio_url": "https://learn.mbarock.com/audio/fifteen-lines.mp3",
       "audio_overview_url": "https://learn.mbarock.com/audio/overview/business-anatomy-masterclass.mp4",
       "video_id": null,
@@ -5787,7 +6035,10 @@
         }
       ],
       "take_action": [
-        "Map your personal operating system: sleep, exercise, deep work, recovery. Score each (1-5).",
+        {
+          "step": "Map your personal operating system: sleep, exercise, deep work, recovery. Score each (1-5).",
+          "capstone_field": "capital.personal_os"
+        },
         "Identify the weakest input and design a 30-day habit installation.",
         "Schedule weekly personal review: what worked, what didn't, what to adjust."
       ],
@@ -5854,7 +6105,8 @@
           }
         ]
       },
-      "order": 53
+      "order": 53,
+      "song_title": "Fifteen Lines"
     },
     {
       "id": "M6L13",
@@ -5892,7 +6144,10 @@
         }
       ],
       "take_action": [
-        "Draft your 90-day capstone plan: 3 strategic priorities × 3 measurable outcomes each.",
+        {
+          "step": "Draft your 90-day capstone plan: 3 strategic priorities × 3 measurable outcomes each.",
+          "capstone_field": "capital.ninety_day_plan"
+        },
         "Identify 1 person in your org who can own each priority.",
         "Set a weekly capstone review for the next 13 weeks."
       ],
@@ -5959,7 +6214,8 @@
           }
         ]
       },
-      "order": 54
+      "order": 54,
+      "song_title": "Calendar is Strategy"
     },
     {
       "id": "M7L1",
@@ -5997,11 +6253,13 @@
         }
       ],
       "take_action": [
-        "Map your current marketing funnel — every stage from awareness to purchase.",
+        {
+          "step": "Map your current marketing funnel — every stage from awareness to purchase.",
+          "capstone_field": "story.funnel_stages"
+        },
         "Identify the single weakest conversion point. Run an experiment to improve it this month.",
         "Build a one-page funnel dashboard reviewed weekly."
       ],
-      "placeholder": true,
       "deep_dive": "**Most growth teams burn money on broken funnels because the broken stages are invisible until measured deliberately.** Top-of-funnel metrics (impressions, clicks, visits) are easy to track and easy to improve. Bottom-of-funnel metrics (conversion, retention, NRR) are harder to track and harder to move. The result: budgets pour into channels that look fine at the top and fail at the bottom.\n\nThe **diagnostic discipline** is mapping every funnel by stage and tracking the conversion rate of each. The lowest stage is the leak — adding more top-of-funnel volume just wastes more money on the leak.\n\nTypical SaaS funnel:\n\n- Visitor → Lead (signup): 5%\n- Lead → Activated (used the product): 30%\n- Activated → Paid: 8%\n- Paid → Retained (90 days): 70%\n\nOverall: 0.05 × 0.30 × 0.08 × 0.70 = **0.084%** of visitors become retained customers.\n\nWhere's the leak? Activated → Paid at 8% is the constraint. Improving Visitor → Lead from 5% to 10% doubles the front of the funnel but only doubles the overall (0.168%) — and it costs 2x more in spend. Improving Activated → Paid from 8% to 16% does the same — but doesn't require any additional spend. **Bottleneck fixes are free leverage.**\n\nThe **channel audit** is the second discipline. Most teams report channel-level cost (CAC) without channel-level retention (LTV). The result: channels look good at the top and bleed cash at the bottom.\n\nThe corrective frame: every channel must be evaluated on **full-funnel value**:\n\n$$\\text{Channel Value} = \\text{LTV}_{channel} - \\text{CAC}_{channel}$$\n\nA channel with $200 CAC and $1,000 LTV is a winner. A channel with $50 CAC and $100 LTV is a loser. Counter-intuitively, the \"expensive\" channel is the better investment.\n\nThe **compounding channels** rule: 30% of growth budget should go to channels that compound (content, SEO, referrals, brand). 70% to paid channels with predictable economics. Most teams reverse this and starve the compounders. After 3 years, the teams that funded compounders have 10x cheaper acquisition than the teams that only paid for clicks.",
       "quiz": {
         "pass_pct": 80,
@@ -6064,7 +6322,8 @@
           }
         ]
       },
-      "order": 55
+      "order": 55,
+      "song_title": "The Funnel"
     },
     {
       "id": "M7L2",
@@ -6072,7 +6331,7 @@
       "title": "Brand Positioning & Messaging",
       "slug_v2": "m7l2",
       "legacy_slug": "m7l2",
-      "song_title": null,
+      "song_title": "Brand is a Promise",
       "video_url": "https://learn.mbarock.com/video/Brand_Positioning_Blueprint.mp4",
       "audio_url": "https://learn.mbarock.com/audio/brand-is-a-promise.mp3",
       "audio_overview_url": null,
@@ -6095,11 +6354,18 @@
         }
       ],
       "take_action": [
-        "Fill in the positioning template. Test it with five customers — they should be able to recite the unique benefit.",
-        "Pick your one word. Audit your last 10 pieces of content for whether they reinforce it.",
+        {
+          "step": "Fill in the positioning template. Test it with five customers — they should be able to recite the unique benefit.",
+          "capstone_field": "story.positioning_template"
+        },
+        {
+          "step": "Pick your one word. Audit your last 10 pieces of content for whether they reinforce it.",
+          "capstone_field": "story.brand_one_word",
+          "input_type": "short-text"
+        },
         "Build the message hierarchy doc. Brief every marketer."
       ],
-      "deep_dive": "Positioning is the most-leveraged decision in marketing. Get it right and copy writes itself. Get it wrong and every campaign fights the brand.",
+      "deep_dive": "Positioning is the most-leveraged decision in marketing. Get it right and copy writes itself. Get it wrong and no amount of clever copy will rescue you.\n\n**Strong brands compress to one word.** Volvo = safety. Disney = magic. Apple = simple. Stripe = developer-first. Your job is not to choose the word later — it's to choose the word now and let everything downstream defend it.\n\nThe positioning template every operator should write before opening a copy doc:\n\n> *For [target] who [problem], we are [category] that [unique benefit], unlike [alternative], because [proof].*\n\nEvery word in that sentence is load-bearing. **Target** says who you serve and — by exclusion — who you reject. **Problem** is the wedge. **Category** is the mental shelf you live on. **Unique benefit** is the promise. **Alternative** names the enemy. **Proof** is what makes the claim non-empty.\n\nThe message hierarchy that flows from a position:\n\n- **Position** (one sentence) → **pillars** (3-5 supporting themes) → **proof points** (3 per pillar — data, customer quotes, case studies) → **channel adaptations** (subject lines, ad copy, landing pages, sales decks).\n\nEvery piece of marketing should be traceable up that ladder. If it can't trace, it's drift.\n\nThree traps that erode positioning:\n\n1. **Trying to be all things.** The diluted word loses the shelf. Better to own one cell than overlap weakly across five.\n2. **Drifting position quarter-to-quarter.** The market needs at least 18 months of consistent message to internalize a position. Pivot more often than that and you reset the meter.\n3. **Copying competitors' words.** If your differentiator describes the category's tablestakes, you don't have a position — you have a tagline.\n\nTest it with five customers. They should be able to recite the unique benefit. If they can't, the position isn't sharp enough yet.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": false,
@@ -6166,7 +6432,8 @@
             "explain": "Brand equity compounds with consistency. Drift resets the meter every change."
           }
         ]
-      }
+      },
+      "lesson_number": "M7L2"
     },
     {
       "id": "M7L3",
@@ -6174,7 +6441,7 @@
       "title": "Pricing Strategy",
       "slug_v2": "m7l3",
       "legacy_slug": "m7l3",
-      "song_title": null,
+      "song_title": "Segmentation Aim",
       "video_url": "https://learn.mbarock.com/video/Pricing_Strategy.mp4",
       "audio_url": "https://learn.mbarock.com/audio/segmentation-aim.mp3",
       "audio_overview_url": null,
@@ -6197,11 +6464,17 @@
         }
       ],
       "take_action": [
-        "Survey 20 customers on willingness-to-pay using the Van Westendorp method.",
-        "Test a 10% price increase on new customers for 30 days. Measure win-rate.",
+        {
+          "step": "Survey 20 customers on willingness-to-pay using the Van Westendorp method.",
+          "capstone_field": "story.pricing_tiers"
+        },
+        {
+          "step": "Test a 10% price increase on new customers for 30 days. Measure win-rate.",
+          "capstone_field": "story.price_test_result"
+        },
         "Build a three-tier pricing page. The middle tier should be the target SKU."
       ],
-      "deep_dive": "Pricing is rarely tested because raising prices feels risky. Yet the data consistently shows under-pricing is the more common error.",
+      "deep_dive": "Pricing is rarely tested because raising prices feels risky. Yet the data consistently shows that price is the single most undertested lever in most businesses — and the one with the highest leverage on profit.\n\n**Cost-plus pricing leaves money on the table. Value-based pricing anchors to the customer's willingness-to-pay.** That number is rarely what you'd guess and almost never what you charge today. A 10% price increase, all else equal, typically beats a 10% volume increase on the bottom line. The catch: most teams test volume, not price.\n\nThe three primary strategies:\n\n1. **Penetration** — price low to gain share. Use when network effects exist, switching costs grow with adoption, or the category is being established.\n2. **Skim** — price high to harvest early adopters, then lower over time as competition arrives. Use when initial buyers are inelastic and supply is constrained.\n3. **Value-tier** — multiple price points capturing distinct willingness-to-pay segments. The default for any product with heterogeneous buyers.\n\nTwo rules that flow from this:\n\n- **Anchoring and decoys are not tricks — they're cognitive scaffolds.** A high-priced \"anchor\" option makes the middle tier feel reasonable. A \"decoy\" — asymmetrically dominated — pushes buyers toward the target SKU. Three tiers is the canonical structure: starter, target, premium. The middle is where you make your money.\n- **Test price elasticity at 3-5 points.** Plot revenue against price across customer segments. The optimum is rarely at either extreme. Most businesses sit well below it, leaving margin on the table because no one wanted to test the upper end.\n\nThe Van Westendorp method — survey 20 customers on willingness-to-pay at four price points — surfaces the price corridor in under an hour. Run it before every major launch and before every annual pricing review. The biggest pricing mistakes are made by people who never asked the customer.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": false,
@@ -6274,7 +6547,8 @@
             "explain": "It asks 4 questions about price perception (too cheap, cheap, expensive, too expensive) and finds the acceptable range."
           }
         ]
-      }
+      },
+      "lesson_number": "M7L3"
     },
     {
       "id": "M7L4",
@@ -6282,7 +6556,7 @@
       "title": "Content & Demand Generation",
       "slug_v2": "m7l4",
       "legacy_slug": "m7l4",
-      "song_title": null,
+      "song_title": "Fit Product Market Fit",
       "video_url": "https://learn.mbarock.com/video/Architecting_Demand.mp4",
       "audio_url": "https://learn.mbarock.com/audio/fit-product-market-fit.mp3",
       "audio_overview_url": null,
@@ -6305,11 +6579,17 @@
         }
       ],
       "take_action": [
-        "Define your 5-10 pillar topics. Map them to positioning pillars.",
-        "Build a distribution checklist: 5 channels per piece, minimum.",
+        {
+          "step": "Define your 5-10 pillar topics. Map them to positioning pillars.",
+          "capstone_field": "story.pillar_topics"
+        },
+        {
+          "step": "Build a distribution checklist: 5 channels per piece, minimum.",
+          "capstone_field": "story.distribution_checklist"
+        },
         "Audit last quarter's content. Cut anything that produced zero attributed pipeline."
       ],
-      "deep_dive": "Demand generation is a compounding asset class. Treat each piece like a node in a growing network, not a one-time campaign.",
+      "deep_dive": "Demand generation is a compounding asset class. Treat each piece like a node in a content network and the math works for you over time. Treat each piece like a one-off campaign and you build expensive distractions.\n\n**Content compounds; ads decay.** A blog post that ranks on Google in month three is still working for you in month thirty. A paid ad stops the moment you stop spending. The strategic move is to build the compounding asset first and use paid to accelerate distribution — not the other way around.\n\nThe funnel-stage architecture:\n\n- **Top** — awareness content for problem-aware audiences. Industry trends, frameworks, hot takes. The job is to bring them into your world.\n- **Middle** — educational content for solution-aware audiences. Comparison guides, deep-dive how-tos, frameworks they can apply. The job is to teach the buying criteria you win on.\n- **Bottom** — comparison content for vendor-aware audiences. Case studies, pricing pages, demo videos. The job is to remove the last objections.\n\nPick 5-10 **pillar topics** aligned to positioning. Each pillar earns one 2,000-word anchor piece plus 10-20 cluster pieces that interlink. The cluster structure tells Google you're authoritative on the pillar. The interlinks transfer authority within the cluster.\n\nTwo rules that flow from this:\n\n- **For every hour of writing, spend three hours distributing.** Most teams over-produce and under-distribute. The same piece can become a blog post, three social threads, a newsletter section, a podcast outline, and a sales-enablement asset. The marginal cost of repurposing is near-zero; the marginal reach is enormous.\n- **Tag every piece by funnel stage and measure attributed pipeline.** Kill anything that produced zero attributed deals in 90 days. Mercy on content that hasn't been distributed properly; ruthlessness on content that has.\n\nAudit last quarter's content. Cut the dead weight. Re-distribute the survivors. Your output won't change; your impact will double.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": false,
@@ -6382,7 +6662,8 @@
             "explain": "Content not aligned to positioning fights the brand. Every piece must trace upward."
           }
         ]
-      }
+      },
+      "lesson_number": "M7L4"
     },
     {
       "id": "M7L5",
@@ -6390,7 +6671,7 @@
       "title": "Customer Retention & Loyalty",
       "slug_v2": "m7l5",
       "legacy_slug": "m7l5",
-      "song_title": null,
+      "song_title": "Cohort",
       "video_url": "https://learn.mbarock.com/video/Customer_Retention.mp4",
       "audio_url": "https://learn.mbarock.com/audio/cohort.mp3",
       "audio_overview_url": null,
@@ -6413,11 +6694,19 @@
         }
       ],
       "take_action": [
-        "Plot cohort retention for the last 6 months. Identify the largest drop point.",
-        "Define your activation event. Measure time-to-activation. Optimize it.",
+        {
+          "step": "Plot cohort retention for the last 6 months. Identify the largest drop point.",
+          "capstone_field": "story.activation_event_definition",
+          "input_type": "short-text"
+        },
+        {
+          "step": "Define your activation event. Measure time-to-activation. Optimize it.",
+          "capstone_field": "story.churn_top_cause",
+          "input_type": "short-text"
+        },
         "Interview 5 churned customers. Classify each to one of the five causes."
       ],
-      "deep_dive": "Retention is the most-leveraged operational metric. Improving retention by 5% raises LTV by 25-95%.",
+      "deep_dive": "Retention is the most-leveraged operational metric. Improving retention by 5% raises customer lifetime value by 25-95% in most categories — yet most companies invest 10× more in acquisition than in keeping the customers they have.\n\n**The retention curve diagnoses the business.** Plot cohort retention by signup month. A curve that flattens above 0% means you have real value — some users stick forever. A curve that declines to 0% means you have a leak. The shape tells you whether the problem is fit, onboarding, or natural lifecycle.\n\nWhere retention is won:\n\n- **The first 7-30 days.** Most churn happens here, and most of it is preventable. Define your **activation event** — the moment a user gets clear value — and engineer the shortest path to it. Cut steps. Default to value. Measure time-to-activation as a primary KPI.\n- **The renewal moment.** B2B: 60-90 days before renewal, the conversation is about expansion, not survival. B2C: the moment of payment is a referendum on the last 30 days of value delivered.\n- **The reactivation window.** Churned users who left for a reason that's now fixed are 2-3× easier to win back than acquiring new users at equivalent CAC.\n\nTwo rules that flow from this:\n\n- **Diagnose churn into five causes:** (1) didn't activate, (2) lost the underlying need, (3) switched to a competitor, (4) couldn't justify the price, (5) bad experience. Each cause has a different fix. Lumping them together produces vague retention initiatives that fix nothing.\n- **A loyalty program is profitable only when it raises frequency or basket size enough to cover its cost.** Most loyalty programs are margin-destroying brand expenses dressed up as retention plays. Run the math before launching.\n\nInterview five churned customers this month. Classify each to one cause. Build the fix for the largest bucket. Retention compounds; one fix in the right place changes the LTV curve for years.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": false,
@@ -6490,7 +6779,8 @@
             "explain": "Each cause has a different fix. Classify churners before launching retention campaigns."
           }
         ]
-      }
+      },
+      "lesson_number": "M7L5"
     },
     {
       "id": "M8L1",
@@ -6498,7 +6788,7 @@
       "lesson_number": "M8L1",
       "title": "Operations Excellence",
       "slug_v2": "m8l1-repeatability-without-employee-heroics",
-      "legacy_slug": null,
+      "legacy_slug": "m8l1-repeatability-without-employee-heroics",
       "audio_url": "https://learn.mbarock.com/audio/five-times-a-week.mp3",
       "audio_overview_url": null,
       "video_id": null,
@@ -6528,11 +6818,13 @@
         }
       ],
       "take_action": [
-        "Identify your top 3 operational metrics. Are they actually leading indicators?",
+        {
+          "step": "Identify your top 3 operational metrics. Are they actually leading indicators?",
+          "capstone_field": "playbook.operating_cadence"
+        },
         "Build a daily operating rhythm: 1 metric, 1 review, 1 standup.",
         "Document one process that lives in someone's head — get it on paper this week."
       ],
-      "placeholder": true,
       "deep_dive": "**Repeatability is the boring discipline that separates compounding companies from one-quarter wonders.** Most early-stage successes are driven by heroes — founders, key engineers, lucky timing. The transition to repeatability — where the company doesn't depend on heroes — is the hardest organizational shift.\n\n**Heroes are essential at startup phase.** Someone has to figure out how to do things for the first time. They make calls without documentation. They fix problems no process exists for. The hero phase is unavoidable and even desirable in the first year or two.\n\nThe trap is when heroes become permanent. The company gets stuck at the size of the hero's bandwidth. New hires can't ramp because the knowledge is in someone's head. Customer experience varies by which hero shows up. The hero burns out, and the dependency surfaces brutally.\n\n**The transition discipline** is converting hero knowledge into process documentation:\n\n- **The hero writes** the first version of the process. They know how it actually works.\n- **A non-hero runs the process** using only the documentation. If they can't, the doc is incomplete.\n- **The non-hero refines** the doc based on what was unclear or missing.\n- **The process gets owned by a role**, not a person. Whoever fills the role inherits the process.\n\nThe **5x/week threshold** is the practical filter for what deserves a process. Tasks done occasionally don't need documentation; the cost of process exceeds the benefit. Tasks done frequently absolutely need documentation; the cost of ad-hoc compounds fast.\n\nThe **format principle**: process docs are only valuable if they get used. A 10-page SOP gets ignored. A one-page checklist gets used. The form factor matters more than the comprehensiveness.\n\nTemplates that work:\n\n- **Checklists** for sequence-sensitive tasks (close a deal, onboard a customer, deploy code)\n- **Decision trees** for branching logic (when to escalate, which path for which input)\n- **Rubrics** for quality calibration (what does a great hire look like, what does great writing look like)\n- **Playbooks** for cross-functional workflows (incident response, launch planning)\n\nThe **continuous improvement layer** is what keeps processes alive. Frozen processes become bureaucracy: \"we do it this way because we've always done it this way.\" Living processes are reviewed quarterly. What's friction? What changed in our business that requires updating the process? Who's the new process owner?\n\nThe practical move: list every task in your business that happens 5+ times a week. For each, ask: is there a written process? If yes, when was it last reviewed? If no, who should write the first version? The list itself is the operating leverage. Working through it is the path to repeatability.",
       "quiz": {
         "pass_pct": 80,
@@ -6595,7 +6887,8 @@
           }
         ]
       },
-      "order": 60
+      "order": 60,
+      "song_title": "Five Times a Week"
     },
     {
       "id": "M8L2",
@@ -6603,7 +6896,7 @@
       "lesson_number": "M8L2",
       "title": "Supply Chain & Inventory Management",
       "slug_v2": "the-buffer-paradox",
-      "legacy_slug": null,
+      "legacy_slug": "the-buffer-paradox",
       "audio_url": "https://learn.mbarock.com/audio/bullwhip.mp3",
       "audio_overview_url": null,
       "video_id": null,
@@ -6629,12 +6922,19 @@
         }
       ],
       "take_action": [
-        "Classify every SKU into the four inventory types. Set distinct policies per type.",
-        "Compute inventory turns and days-of-inventory monthly. Plot the trend.",
+        {
+          "step": "Classify every SKU into the four inventory types. Set distinct policies per type.",
+          "capstone_field": "playbook.inventory_classification"
+        },
+        {
+          "step": "Compute inventory turns and days-of-inventory monthly. Plot the trend.",
+          "capstone_field": "playbook.supply_chain_risk",
+          "input_type": "short-text"
+        },
         "Identify your single biggest supply chain risk. Build one resilience lever this quarter."
       ],
       "placeholder": false,
-      "deep_dive": "Inventory is buffered uncertainty. The cheaper your buffers can be, the more capital you free for growth.",
+      "deep_dive": "Inventory is buffered uncertainty. The cheaper your buffers can be, the more capital you free up for the parts of the business that actually compound. The most efficient supply chains aren't the leanest — they're the ones that buffer uncertainty exactly where uncertainty lives.\n\n**Inventory turns measure the speed of your capital.** $1M in inventory turning 12 times a year is producing 12× the revenue of $1M turning once. Days-of-inventory (365 ÷ turns) is the same metric in human time: how many days of cash are frozen on shelves and in warehouses.\n\nThe four inventory buckets every operator should track separately:\n\n1. **Cycle stock** — covers normal demand between replenishments.\n2. **Safety stock** — protects against demand or supply variability.\n3. **In-transit** — moving through the network. Tied up but unavoidable.\n4. **Obsolete** — past its useful life. Should be written down aggressively, not held hoping for a recovery.\n\nDifferent buckets need different policies. Cycle stock can be optimized with EOQ. Safety stock should be set by service level. Obsolete should be cleared monthly.\n\nTwo rules that flow from this:\n\n- **The bullwhip effect is real and expensive.** Small demand fluctuations at the consumer end amplify upstream — distributors over-order, manufacturers over-produce, suppliers over-stock. The cures: shared forecasts with key suppliers, smaller batch sizes, faster cycle times. Visibility kills the bullwhip; opacity feeds it.\n- **Resilience moves are bets against your bottleneck.** Multi-source critical inputs (never one supplier for a strategic component). Near-shore where lead time matters. Buffer the bottleneck — anywhere else is wasted capital. Visibility tools (real-time dashboards across the chain) pay for themselves the first time they prevent a stockout.\n\nCompute inventory turns monthly. Identify your single largest supply chain risk. Pick one resilience lever per quarter. Most companies discover their fragility only during a disruption; the disciplined ones already know.",
       "audio_overview_script": "Theory of Constraints meets daily operations. The Buffer Paradox: adding slack (time, inventory, capacity) makes a system more reliable and faster overall — not slower. Why high-utilization systems break, where to put buffers, how to size them.",
       "quiz": {
         "pass_pct": 80,
@@ -6711,7 +7011,8 @@
           "latex": "\\text{DOI} = \\frac{365}{\\text{Turns}}",
           "note": "Lower DOI = faster cash recovery."
         }
-      ]
+      ],
+      "song_title": "Bullwhip"
     },
     {
       "id": "M8L3",
@@ -6719,7 +7020,7 @@
       "lesson_number": "M8L3",
       "title": "Quality Management & Six Sigma",
       "slug_v2": "operations-excellence",
-      "legacy_slug": null,
+      "legacy_slug": "operations-excellence",
       "audio_url": "https://learn.mbarock.com/audio/six-sigma-ledge.mp3",
       "audio_overview_url": null,
       "video_id": null,
@@ -6753,7 +7054,10 @@
           "text": "Pick your most important repeatable process. Write a 1-page SOP. Hand it to someone who’s never run the process — can they execute it?",
           "capstone_field": "playbook.first_sop"
         },
-        "Define 3 lead measures for that process. Each = a daily/weekly input number you can track on a whiteboard.",
+        {
+          "step": "Define 3 lead measures for that process. Each = a daily/weekly input number you can track on a whiteboard.",
+          "capstone_field": "dashboard.weekly_kpis"
+        },
         "Schedule a weekly 15-minute retro for the team running that process. What worked, what didn’t, what we’ll change.",
         {
           "text": "Identify the metric you’d want a dashboard to surface every Monday. Build the query (or the spreadsheet) this week.",
@@ -6827,7 +7131,8 @@
           }
         ]
       },
-      "order": 62
+      "order": 62,
+      "song_title": "Six Sigma Ledge"
     },
     {
       "id": "M8L4",
@@ -6835,7 +7140,7 @@
       "title": "Project & Program Management",
       "slug_v2": "m8l4",
       "legacy_slug": "m8l4",
-      "song_title": null,
+      "song_title": "Swim Lanes",
       "video_url": "https://learn.mbarock.com/video/Project_%26_Program_Mgt.mp4",
       "audio_url": "https://learn.mbarock.com/audio/swim-lanes.mp3",
       "audio_overview_url": null,
@@ -6858,11 +7163,17 @@
         }
       ],
       "take_action": [
-        "Pick your most important project. Define the three constraints — which is flexing?",
-        "Build a RACI for every workstream. Verify each row has exactly one A.",
+        {
+          "step": "Pick your most important project. Define the three constraints — which is flexing?",
+          "capstone_field": "playbook.project_constraints"
+        },
+        {
+          "step": "Build a RACI for every workstream. Verify each row has exactly one A.",
+          "capstone_field": "playbook.raci_matrix"
+        },
         "Convert Gantt views to stage-gates with explicit exit criteria."
       ],
-      "deep_dive": "Execution discipline is the multiplier on strategy. Most companies have decent strategies and poor execution governance.",
+      "deep_dive": "Execution discipline is the multiplier on strategy. Most companies have decent strategies and terrible execution. A great strategy executed at 60% beats a mediocre strategy executed at 95% — every time.\n\n**The iron triangle of scope, time, and cost — any two can be fixed; the third must flex.** Pretending all three are fixed produces death-march projects, missed dates, and broken teams. The discipline is to name the flexing variable up front, then make every trade-off against it.\n\nThe RACI clarifies execution:\n\n- **R**esponsible — does the work.\n- **A**ccountable — one neck owns the outcome. Exactly one. If you have two A's, you have zero A's.\n- **C**onsulted — provides input before decisions are made.\n- **I**nformed — kept in the loop after decisions are made.\n\nMost stuck projects have either a missing A or a contested A. Find it and fix it; the project starts moving by the end of the week.\n\nTwo rules that flow from this:\n\n- **Stage-gates beat Gantts.** Define 3-5 stage-gates with explicit exit criteria. At each gate, decide: continue, pivot, or kill. Detailed Gantt charts give the illusion of control while obscuring the only decision that matters — whether to keep going. Stage-gates force the kill conversation early, when it's cheap.\n- **Status reports without decisions are theater.** \"On track\" with no decisions surfaced means no one is thinking critically. Every status report should name three things: what's done, what's blocked (with the decision needed), and what changed in scope or risk. Reports without those three are a tax on attention.\n\nFour traps to watch: (1) no portfolio view across projects, (2) resource conflicts unresolved, (3) dependencies discovered late, (4) optimistic status reporting that hides slippage. Each one compounds; address them at the operating-system level, not project by project.\n\nPick your most important project. Name the flexing variable. Build the RACI. Convert Gantts to stage-gates. The shape of execution changes inside a quarter.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": false,
@@ -6935,7 +7246,8 @@
             "explain": "Program-level failure modes are governance, not technical. Weekly cross-project review surfaces them."
           }
         ]
-      }
+      },
+      "lesson_number": "M8L4"
     },
     {
       "id": "M8L5",
@@ -6943,7 +7255,7 @@
       "title": "Vendor & Partnership Management",
       "slug_v2": "m8l5",
       "legacy_slug": "m8l5",
-      "song_title": null,
+      "song_title": "Tier One",
       "video_url": "https://learn.mbarock.com/video/Vendor_%26_Partner_Management.mp4",
       "audio_url": "https://learn.mbarock.com/audio/tier-one.mp3",
       "audio_overview_url": null,
@@ -6966,11 +7278,17 @@
         }
       ],
       "take_action": [
-        "Tier your top 20 vendors. For each Tier 1, name the strategic risk.",
-        "Build the four-question scorecard. Send to all Tier 1/2 vendors quarterly.",
+        {
+          "step": "Tier your top 20 vendors. For each Tier 1, name the strategic risk.",
+          "capstone_field": "playbook.vendor_tiers"
+        },
+        {
+          "step": "Build the four-question scorecard. Send to all Tier 1/2 vendors quarterly.",
+          "capstone_field": "playbook.partnership_scorecard"
+        },
         "Pick one partnership opportunity. Draft a mutual scorecard before signing."
       ],
-      "deep_dive": "Companies that scale fast operate as orchestrators of vendor and partner networks, not vertical monoliths.",
+      "deep_dive": "Companies that scale fast operate as orchestrators of vendor and partner networks — not as fortresses doing everything in-house. The strategic question isn't whether to outsource; it's which parts of your value chain you trust someone else to own.\n\n**Tier your vendors and treat each tier differently.** Strategic vendors (irreplaceable, deep relationship) need executive sponsors and quarterly business reviews. Preferred vendors (multi-sourced, contracts in place) need active management against a scorecard. Transactional vendors need a procurement process, nothing more. Treating all three the same wastes attention on the bottom and starves it from the top.\n\nThe four-question scorecard for every vendor:\n\n1. **Delivers on time?** Track on-time rate; alert under 95%.\n2. **Quality meets spec?** Defect rate, return rate, complaint rate.\n3. **Pricing competitive vs. market?** Benchmark annually at minimum.\n4. **Risk profile acceptable?** Financial health, security posture, geo-political exposure.\n\nA vendor failing two or more of these is a project — replace, restructure, or absorb the function.\n\nTwo rules that flow from this:\n\n- **Pick the partnership structure that matches the depth.** Reseller (light, fast). Integration partner (medium depth, joint roadmap). Co-marketing (shared audience). Joint venture (true shared P&L). OEM (your product, their brand). Each implies different governance, different commit, different escape clauses. Mismatching structure to intent produces partnerships that look big in the press release and produce nothing operationally.\n- **Build a mutual scorecard before signing.** Most failed partnerships failed because the two sides measured success differently from day one. Force the conversation up front: what does success look like in 90, 180, 365 days? Get it in writing.\n\nFour traps: (1) misaligned incentives, (2) no executive sponsor on either side, (3) no mutual scorecard, (4) channel conflict with existing sales. Each is detectable in the contract phase; each becomes expensive after launch.\n\nTier your top 20 vendors this week. Name the strategic risk for each Tier 1. The vendor stack is part of your competitive moat — most operators treat it like an invoice queue.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": false,
@@ -7037,7 +7355,8 @@
             "explain": "Fast scale comes from leverage across networks, not building everything in-house."
           }
         ]
-      }
+      },
+      "lesson_number": "M8L5"
     },
     {
       "id": "M9L1",
@@ -7045,7 +7364,7 @@
       "lesson_number": "M9L1",
       "title": "Data-Driven Decision Making",
       "slug_v2": "m9l1-analytics-for-decision-speed-and-risk",
-      "legacy_slug": null,
+      "legacy_slug": "m9l1-analytics-for-decision-speed-and-risk",
       "audio_url": "https://learn.mbarock.com/audio/third-way-options.mp3",
       "audio_overview_url": null,
       "video_id": null,
@@ -7075,11 +7394,13 @@
         }
       ],
       "take_action": [
-        "Categorize your last 10 decisions: Type 1 vs Type 2. How many got the right rigor?",
+        {
+          "step": "Categorize your last 10 decisions: Type 1 vs Type 2. How many got the right rigor?",
+          "capstone_field": "dashboard.decision_dataset"
+        },
         "Pick one current decision. Walk it through the Decision Quality Six.",
         "Build a decision log: date, decision, reasoning, expected vs actual outcome."
       ],
-      "placeholder": true,
       "deep_dive": "**Analytics is the discipline of asking the right question, getting the right answer, and making the decision the answer implies — fast enough that the world hasn't moved.** Most organizations are bad at one or more of those three steps, and bad analytics is more expensive than no analytics.\n\nThe **decision speed vs decision quality** trade-off is the foundational dimension. In normal operating contexts, *speed beats marginal quality* — a 75% decision today usually beats a 90% decision in three weeks because the situation has moved. The exception: irreversible decisions, which deserve slow careful analysis.\n\nBezos's framing: **two-way doors vs one-way doors**. Two-way: you can walk back. Hire fast, deploy fast, launch fast. One-way: you can't undo. Sale of the company, major architectural commitments, public statements. Take time.\n\nMost organizational decision drag comes from treating two-way doors like one-way doors. Multiple committees, six weeks of analysis, three approvals — for a decision that could be reversed in a week if it didn't work. The drag compounds across hundreds of decisions and produces glacial organizational pace.\n\n**Leading vs lagging indicators** is the second discipline. Lagging indicators (revenue, profit, churn at quarter-end) tell you what already happened. Leading indicators (product engagement, pipeline coverage, support ticket trends) tell you what's about to happen. The lagging ones are easier to measure; the leading ones are more useful.\n\nThe operator's question for every metric: *what does this tell me about the future? What action does it imply?* Metrics that only describe the past are vanity. Metrics that change today's decisions are operational.\n\n**Statistical vs practical significance** trips up most A/B testing programs:\n\n- A test shows +1.2% conversion improvement with 95% statistical confidence.\n- Is this a win? **Maybe not.**\n- The operational complexity of shipping the change might exceed the value.\n- Variation between days/weeks/seasons often dwarfs the +1.2%.\n- The 1.2% might not persist after segment shifts.\n\nThe filter: **statistical significance is necessary but not sufficient**. Practical significance — does the change matter enough to ship and maintain? — is the harder question. Most teams optimize for the former and forget the latter.\n\n**The 80/20 of metrics**: every business has 3-5 metrics that capture 80% of what matters. For SaaS: ARR, growth rate, NRR, CAC payback, gross margin. For e-commerce: revenue, gross margin, repeat purchase rate, AOV, marketing efficiency. For a marketplace: GMV, take rate, both-side retention, liquidity.\n\nPick yours. Track them religiously in weekly operating reviews. Other metrics are useful for diagnostics; only the core 3-5 drive decisions.\n\nThe practical move: write down your business's 5 core metrics. Make them the focal point of every weekly leadership meeting. Track trend (not just level). Set targets quarterly. The discipline of focusing on the right metrics is more valuable than any tooling — and most organizations skip it.",
       "quiz": {
         "pass_pct": 80,
@@ -7142,7 +7463,8 @@
           }
         ]
       },
-      "order": 65
+      "order": 65,
+      "song_title": "Third Way Options"
     },
     {
       "id": "M9L2",
@@ -7150,7 +7472,7 @@
       "title": "KPIs & Performance Dashboards",
       "slug_v2": "m9l2",
       "legacy_slug": "m9l2",
-      "song_title": null,
+      "song_title": "OKRs Ladder",
       "video_url": "https://learn.mbarock.com/video/KPIs_%26_Dashboards.mp4",
       "audio_url": "https://learn.mbarock.com/audio/okrs-ladder.mp3",
       "audio_overview_url": null,
@@ -7173,11 +7495,18 @@
         }
       ],
       "take_action": [
-        "Identify your North Star metric. Verify every executive can recite it.",
-        "Map 5-10 supporting KPIs that explain the North Star.",
+        {
+          "step": "Identify your North Star metric. Verify every executive can recite it.",
+          "capstone_field": "dashboard.north_star_metric",
+          "input_type": "short-text"
+        },
+        {
+          "step": "Map 5-10 supporting KPIs that explain the North Star.",
+          "capstone_field": "dashboard.supporting_kpis"
+        },
         "Set a quarterly KPI governance review. Add it to the operating calendar."
       ],
-      "deep_dive": "What gets measured gets managed. What gets defined gets measured. Definitions are infrastructure.",
+      "deep_dive": "What gets measured gets managed. What gets defined gets measured. Definitions are upstream of all reporting, and most reporting is broken because the definitions weren't fought over hard enough.\n\n**A KPI is not a metric. A metric becomes a KPI only when three conditions are met:** (1) tied to a strategic objective, (2) measurable with exactly one definition, (3) reviewable on a defined cadence with action thresholds. Without all three, you have a number on a dashboard — not a performance indicator.\n\nThe hierarchy that organizes operating attention:\n\n- **One North Star metric.** A single number that captures the long-term success of the company. Weekly active customers, GMV, ARR — picked once, defended for years.\n- **5-10 supporting KPIs.** Each one explains a different driver of the North Star. Acquisition, activation, retention, monetization, expansion.\n- **Functional dashboards.** Team-level, daily. Specific to the loop the team runs.\n\nIf you have 30 KPIs, you have none — the team has no idea where to focus.\n\nTwo rules that flow from this:\n\n- **Lead beats lag for operating decisions.** Lagging KPIs report outcomes — revenue, churn, NPS. Leading KPIs predict them — pipeline coverage, time-to-first-value, employee engagement, product engagement. Boards primarily need lagging. Operators primarily need leading. Dashboards that mix the two without flagging which is which produce confused decisions.\n- **Definitions over numbers.** Two teams will report \"revenue\" differently — bookings vs. recognized, gross vs. net, with vs. without trial users. Lock the definition in writing. Re-litigate quarterly. The single largest source of dashboard disputes is unfought definitional debt.\n\nSet a quarterly KPI governance review on the operating calendar. Without it, dashboards accrete metrics until they're unreadable. Every quarter, add new strategic priorities and retire obsolete ones. Identify your North Star. Verify every executive can recite it without looking. If they can't, the strategy isn't communicated; the KPI is the symptom.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": false,
@@ -7244,7 +7573,8 @@
             "explain": "Operators need leading indicators (pipeline, NPS, conversion rates) to influence outcomes before they happen."
           }
         ]
-      }
+      },
+      "lesson_number": "M9L2"
     },
     {
       "id": "M9L3",
@@ -7252,7 +7582,7 @@
       "title": "A/B Testing & Experimentation",
       "slug_v2": "m9l3",
       "legacy_slug": "m9l3",
-      "song_title": null,
+      "song_title": "Spreadsheet North Star",
       "video_url": "https://learn.mbarock.com/video/A_B_Testing_%26_Experiments.mp4",
       "audio_url": "https://learn.mbarock.com/audio/spreadsheet-north-star.mp3",
       "audio_overview_url": null,
@@ -7275,11 +7605,14 @@
         }
       ],
       "take_action": [
-        "Pick your three most-trafficked decision points (signup, pricing, checkout). Build an experiment backlog.",
+        {
+          "step": "Pick your three most-trafficked decision points (signup, pricing, checkout). Build an experiment backlog.",
+          "capstone_field": "dashboard.experiment_backlog"
+        },
         "Adopt the design checklist as a requirement before any test goes live.",
         "Set up an experiment scorecard tracking velocity, win rate, and impact."
       ],
-      "deep_dive": "Experimentation is a culture, not a tool. Companies that win at it run hundreds of tests a year and treat each one as a small, scoped, falsifiable claim.",
+      "deep_dive": "Experimentation is a culture, not a tool. Companies that win at it run hundreds of experiments a year; companies that lose run a few high-stakes tests with poorly-designed methodology and get false signal that haunts decisions for years.\n\n**A valid experiment has four properties:** (1) single hypothesis, (2) pre-registered metric (declared before the test, not after), (3) power calculation determining sample size, (4) random assignment. Any test missing one of these is theater; the result will mislead more than it informs.\n\nThe traps that quietly destroy validity:\n\n- **Peeking.** Looking at results mid-test and stopping when you see significance dramatically inflates false-positive rates. Use sequential testing methodology (e.g., always-valid p-values) or commit to a fixed end date before the test starts.\n- **Multiple comparisons.** Test 20 metrics on the same experiment and at least one will look significant by chance. Pre-register your primary metric. Treat secondaries as exploratory, not decisive.\n- **Underpowered tests.** A test that needs 50,000 users to detect a 1% lift won't find it with 2,000. Either run longer, test bigger changes, or accept that you're learning nothing.\n\nTwo rules that flow from this:\n\n- **Statistical significance is necessary but not sufficient.** A 0.5% lift at p<0.05 may be statistically real and practically irrelevant. Set a **minimum detectable effect** (MDE) before the test starts — the smallest lift that would change a business decision. Anything below it is signal you don't care about.\n- **Test where the volume and repeatability are.** Landing pages, pricing pages, onboarding flows, ad creative — all high-volume, recurring decisions. Don't run A/B tests on one-off strategic choices; they need judgment, not statistics.\n\nBuild an experiment backlog. Adopt a design checklist as a gate before any test goes live. Track velocity (tests per quarter), win rate (% of tests that produce lifts), and impact (revenue or retention change attributable to wins). The compound interest of a 20-test-per-quarter shop versus a 2-test-per-quarter shop is visible in retention curves inside 18 months.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": false,
@@ -7352,7 +7685,8 @@
             "explain": "This rule of thumb gives 80% power for detecting effect size Δ with variance σ²."
           }
         ]
-      }
+      },
+      "lesson_number": "M9L3"
     },
     {
       "id": "M9L4",
@@ -7360,7 +7694,7 @@
       "title": "Forecasting & Scenario Planning",
       "slug_v2": "m9l4",
       "legacy_slug": "m9l4",
-      "song_title": null,
+      "song_title": "Pre Mortem",
       "video_url": "https://learn.mbarock.com/video/Forecasting_%26_Scenarios.mp4",
       "audio_url": "https://learn.mbarock.com/audio/pre-mortem.mp3",
       "audio_overview_url": null,
@@ -7383,11 +7717,14 @@
         }
       ],
       "take_action": [
-        "Build your next-quarter forecast using two methods. Compare and reconcile.",
+        {
+          "step": "Build your next-quarter forecast using two methods. Compare and reconcile.",
+          "capstone_field": "dashboard.forecast_scenarios"
+        },
         "Identify your two largest uncertainties. Sketch the four-corner scenario.",
         "Set up a monthly forecast retrospective: actual vs. forecast, what we learned."
       ],
-      "deep_dive": "The best forecasters are calibrated, not precise. Knowing what you don't know is more valuable than a confident point estimate.",
+      "deep_dive": "The best forecasters are calibrated, not precise. Knowing what you don't know is more valuable than guessing precisely. The companies that scale through volatility don't have crystal balls — they have honest uncertainty estimates and the discipline to plan for ranges.\n\n**Calibration > precision.** A forecaster who says \"90% confident revenue will be between $4M and $6M\" and is right 9 times out of 10 is more useful than one who says \"$5M\" and hits it half the time. Calibration is trainable; precision is luck.\n\nThe three forecasting methods worth knowing:\n\n1. **Top-down** — market size × your share. Useful for sanity-checking. Useless for short-horizon planning.\n2. **Bottom-up** — rep × quota, customer × ARPU, channel × volume × conversion. Granular, defensible, slow. The workhorse for quarterly planning.\n3. **Time series** — extrapolate history with seasonality and trend. Best for stable, mature businesses. Dangerous for businesses changing strategy.\n\nBuild the same forecast with two methods. Where they diverge is where you should look. Convergence isn't proof; divergence is information.\n\nTwo rules that flow from this:\n\n- **Forecasts overweight recent history.** Last quarter's outperformance becomes the new baseline. A bad month becomes the new normal. Counter-weight with longer-horizon comparisons (3-year trend, year-over-year, multi-cycle history). The base rate matters more than the latest data point.\n- **Use scenario planning for tail risks.** Identify two critical uncertainties (e.g., regulation × demand, or capital availability × competitive entry). Build four scenarios at the corners of the 2×2. Plan for each. Re-run quarterly. Scenarios don't predict the future; they prepare you to recognize it faster than competitors who built single-point forecasts.\n\nRun a monthly forecast retrospective. Actual vs. forecast, by category, with one sentence on what we learned. The retro is where calibration improves — without it, forecasting becomes the same theater quarter after quarter. Black-swan events are by definition unforecastable; the response capability comes from scenarios, not from sharper point estimates.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": false,
@@ -7460,7 +7797,8 @@
             "explain": "Triangulation surfaces hidden assumptions. Two methods catching the same answer build confidence."
           }
         ]
-      }
+      },
+      "lesson_number": "M9L4"
     },
     {
       "id": "M9L5",
@@ -7468,7 +7806,7 @@
       "title": "Risk Management & Mitigation",
       "slug_v2": "m9l5",
       "legacy_slug": "m9l5",
-      "song_title": null,
+      "song_title": "Risk Register",
       "video_url": "https://learn.mbarock.com/video/Architecture_of_Risk.mp4",
       "audio_url": "https://learn.mbarock.com/audio/risk-register.mp3",
       "audio_overview_url": null,
@@ -7491,11 +7829,14 @@
         }
       ],
       "take_action": [
-        "Build a risk register with at least 10 entries. Score every entry.",
+        {
+          "step": "Build a risk register with at least 10 entries. Score every entry.",
+          "capstone_field": "dashboard.risk_register"
+        },
         "Pick your top three risks. Document the mitigation and the owner.",
         "Run a pre-mortem before the next major launch or commitment."
       ],
-      "deep_dive": "Risk management is not paranoia. It's the operational expression of long-term thinking.",
+      "deep_dive": "Risk management is not paranoia. It's the operational expression of long-term thinking. The companies that survive crises aren't the ones with no risks — they're the ones who named the risks early and built the levers to act when the time came.\n\n**Risk = likelihood × impact.** Score every material risk on both axes. The risks that demand the most attention aren't necessarily the most likely or the most catastrophic — they're the ones in the upper-right quadrant where both are elevated. The bottom-left can usually be accepted. The off-diagonal corners deserve specific strategies.\n\nThe four canonical responses:\n\n1. **Avoid** — don't take the risk. Some markets, customers, or commitments aren't worth entering.\n2. **Transfer** — insurance, contract clauses, hedging. Someone else owns the downside; you pay a premium for the certainty.\n3. **Mitigate** — reduce likelihood (better systems, training, redundancy) or reduce impact (smaller exposures, faster detection).\n4. **Accept** — name the risk, document the acceptance, monitor for change. Accepting is a legitimate strategy; pretending the risk doesn't exist is not.\n\nTwo rules that flow from this:\n\n- **Separate operational from tail risks.** Operational risks are frequent and small — a system outage, a missed delivery, a key hire that doesn't work out. Tail risks are rare and catastrophic — key-customer concentration, regulatory shock, founder dependency, a security breach. Different cadence, different governance. Operational risks belong on weekly reviews. Tail risks belong on quarterly board updates and dedicated tabletops.\n- **Run pre-mortems before major commitments.** Before signing the contract, launching the product, or making the hire, ask the team: \"Imagine it's a year from now and this failed. Why did it fail?\" The exercise surfaces hidden assumptions that no risk register would catch — and it does so in 30 minutes, before the cost of correction goes up by an order of magnitude.\n\nBuild a risk register with at least 10 entries. Score every entry. Document the mitigation strategy and the owner. Review quarterly. The register itself isn't the work — the work is the operating cadence that keeps it alive.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": false,
@@ -7568,7 +7909,8 @@
             "explain": "It's the operational expression of survival probability over time horizons longer than a quarter."
           }
         ]
-      }
+      },
+      "lesson_number": "M9L5"
     },
     {
       "id": "M10L1",
@@ -7576,7 +7918,7 @@
       "lesson_number": "M10L1",
       "title": "Innovation & New Product Development",
       "slug_v2": "m10l1-the-strategic-blueprint",
-      "legacy_slug": null,
+      "legacy_slug": "m10l1-the-strategic-blueprint",
       "audio_url": "https://learn.mbarock.com/audio/blank-page-grace.mp3",
       "audio_overview_url": null,
       "video_id": null,
@@ -7606,7 +7948,10 @@
         }
       ],
       "take_action": [
-        "Audit your top 3 products for sustaining vs. disruptive innovation potential.",
+        {
+          "step": "Audit your top 3 products for sustaining vs. disruptive innovation potential.",
+          "capstone_field": "plan.innovation_pipeline"
+        },
         "Identify one new-market or low-end opportunity adjacent to your business.",
         "Set up a 'separate-from-core' innovation unit charter — even if it's one person."
       ],
@@ -7673,7 +8018,8 @@
           }
         ]
       },
-      "order": 70
+      "order": 70,
+      "song_title": "Blank Page Grace"
     },
     {
       "id": "M10L2",
@@ -7681,7 +8027,7 @@
       "title": "Disruption & The Innovator's Dilemma",
       "slug_v2": "m10l2",
       "legacy_slug": "m10l2",
-      "song_title": null,
+      "song_title": "S-Curves",
       "video_url": "https://learn.mbarock.com/video/Innovator_s_Dilemma.mp4",
       "audio_url": "https://learn.mbarock.com/audio/s-curves.mp3",
       "audio_overview_url": null,
@@ -7704,11 +8050,17 @@
         }
       ],
       "take_action": [
-        "Map your industry's adjacent low-end and non-consumption segments. Who serves them today?",
-        "Identify one disruptive threat to your business. Is there a sustaining-only response, or do you need a separate unit?",
+        {
+          "step": "Map your industry's adjacent low-end and non-consumption segments. Who serves them today?",
+          "capstone_field": "plan.disruption_threat"
+        },
+        {
+          "step": "Identify one disruptive threat to your business. Is there a sustaining-only response, or do you need a separate unit?",
+          "capstone_field": "plan.disruption_response"
+        },
         "Read 'The Innovator's Dilemma' (Christensen). It pays for itself in one strategic decision."
       ],
-      "deep_dive": "Disruption is rarely a technology problem. It's a business-model problem hiding inside a technology shift.",
+      "deep_dive": "Disruption is rarely a technology problem. It's a business-model problem hiding inside a technology trend. Incumbents lose not because they failed to see the technology — they saw it perfectly. They lost because their P&L, their customers, and their incentives all pointed at sustaining the existing model.\n\n**Sustaining innovation makes existing products better for existing customers. Disruptive innovation starts at the bottom of the market — cheaper, simpler, often worse — and improves over time until it eats the mainstream.** Incumbents win at sustaining and lose at disruption. The reason is structural: incumbents are rationally optimized for their best customers, who don't want a worse product at a lower price. By the time the disruptor's product is good enough, the incumbent's cost structure can't compete.\n\nThe three disruption patterns to recognize:\n\n1. **Low-end disruption.** Cheaper, simpler version of the existing product. Steel mini-mills vs. integrated steel. Discount retail vs. department stores.\n2. **New-market disruption.** Serves non-consumers — people who didn't have access before. Personal computers, mobile photography, ride-sharing.\n3. **Business-model disruption.** Same product, fundamentally different pricing or distribution. SaaS subscriptions vs. perpetual licenses. Direct-to-consumer vs. retail wholesale.\n\nRecognizing the pattern early is half the work; the other half is responding.\n\nTwo rules that flow from this:\n\n- **The response to disruptive threat is structural, not strategic.** Set up a separate business unit with its own P&L, its own governance, and its own culture. Let it eat the parent business before someone else does. Trying to incubate the disruptor inside the core organization fails because the existing P&L and customer base will starve it. Spin-outs that look financially painful in the short term are how the strongest companies survive 30-year shifts.\n- **Watch the under-served and the non-consumers.** Today's customers tell you what to build for them. Tomorrow's customers are the ones not buying yet — too price-sensitive, too unsophisticated, or facing some friction your current product doesn't remove. Map the adjacent low-end and non-consumption segments at least annually. The disruption usually shows up there first.\n\nChristensen's *The Innovator's Dilemma* pays for itself in a single strategic decision. Read it before the next major capital allocation.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": false,
@@ -7775,7 +8127,8 @@
             "explain": "Technology is the trigger; the business model is what reshapes the industry."
           }
         ]
-      }
+      },
+      "lesson_number": "M10L2"
     },
     {
       "id": "M10L3",
@@ -7783,7 +8136,7 @@
       "title": "AI & Emerging Technology Strategy",
       "slug_v2": "m10l3",
       "legacy_slug": "m10l3",
-      "song_title": null,
+      "song_title": "Forty Cycles",
       "video_url": "https://learn.mbarock.com/video/AI_%26_Emerging_Tech_Strategy.mp4",
       "audio_url": "https://learn.mbarock.com/audio/forty-cycles.mp3",
       "audio_overview_url": null,
@@ -7806,11 +8159,14 @@
         }
       ],
       "take_action": [
-        "List your top 10 workflows. Tag each as automate / augment / reinvent candidate.",
+        {
+          "step": "List your top 10 workflows. Tag each as automate / augment / reinvent candidate.",
+          "capstone_field": "plan.ai_workflow_targets"
+        },
         "Pick one workflow to ship an AI feature on in 30 days. Measure adoption and impact.",
         "Build a data-quality scorecard. AI is only as good as the data it learns from."
       ],
-      "deep_dive": "AI is general-purpose technology. The economic value will accrue to the companies that integrate it into specific workflows — not the ones that build the foundation models.",
+      "deep_dive": "AI is general-purpose technology. The economic value will accrue to the companies that integrate it into their workflows, products, and operating models — not to the ones that own the underlying models. History suggests this: in every prior general-purpose technology (electricity, the internet, the smartphone), the platform owners captured a slice and the operators who reorganized around the technology captured the rest.\n\n**S-curves drive timing.** Every technology follows the same arc: slow start, rapid adoption, saturation. The strategic question isn't whether to adopt — it's where on the curve you are and where the value will sit when it matures. Too early: you waste capital on capabilities the market can't yet absorb. Too late: incumbents who moved earlier have built the moats.\n\nThe three layers of integration to plan separately:\n\n1. **Automate** — replace repetitive work. Lowest risk, fastest payback. Customer support triage, document summarization, data entry. Measurable savings.\n2. **Augment** — make experts faster. Higher leverage. Code generation for engineers, research synthesis for analysts, design exploration for creatives. Productivity multiplier rather than headcount cut.\n3. **Reinvent** — build products that were impossible before. Highest risk, highest payoff. Voice agents that replace phone trees. Generative video. Custom-tailored education at scale.\n\nDifferent layers warrant different teams, timelines, and metrics.\n\nTwo rules that flow from this:\n\n- **Build vs. buy is a layered decision.** Infrastructure (LLMs, cloud, foundation models): buy from the platform providers. Workflow tools (writing assistants, transcription, summarization): buy or partner with specialists. Your unique differentiator — the thing your competitors can't replicate: build. Don't build foundation models; don't outsource your moat.\n- **Data quality is the upstream input.** Models are only as good as the data they learn from and the data they retrieve at inference. The companies that win on AI are the ones who treated data quality as infrastructure two years before the AI conversation became mainstream. Build the scorecard now.\n\nFour traps to avoid: (1) AI-washing existing features without underlying capability, (2) building before measuring user need, (3) ignoring data quality and governance, (4) no human-in-the-loop for high-stakes outputs. Each one is recoverable once; repeated mistakes signal a culture problem.\n\nList your top 10 workflows. Tag each as automate / augment / reinvent. Pick one to ship in 30 days. Adoption and impact are your only metrics that matter.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": false,
@@ -7877,7 +8233,8 @@
             "explain": "General-purpose tech rewards specific application. Vertical workflow integration captures most of the value."
           }
         ]
-      }
+      },
+      "lesson_number": "M10L3"
     },
     {
       "id": "M10L4",
@@ -7885,7 +8242,7 @@
       "title": "Sustainability & ESG Strategy",
       "slug_v2": "m10l4",
       "legacy_slug": "m10l4",
-      "song_title": null,
+      "song_title": "Stakeholder Compass",
       "video_url": "https://learn.mbarock.com/video/ESG__A_Lens_on_Value.mp4",
       "audio_url": "https://learn.mbarock.com/audio/stakeholder-compass.mp3",
       "audio_overview_url": null,
@@ -7908,11 +8265,14 @@
         }
       ],
       "take_action": [
-        "Build your materiality matrix. Pick the top 3 ESG priorities.",
+        {
+          "step": "Build your materiality matrix. Pick the top 3 ESG priorities.",
+          "capstone_field": "plan.esg_materiality"
+        },
         "Measure Scope 1 and 2 emissions baseline. Plan for Scope 3.",
         "Tie one ESG goal to an executive's annual review."
       ],
-      "deep_dive": "ESG is operations, not marketing. The companies that win on ESG do it through operational discipline, not press releases.",
+      "deep_dive": "ESG is operations, not marketing. The companies that win on ESG do it through operational change — reduced emissions, real labor practices, transparent governance. The companies that lose on ESG do it through marketing campaigns about commitments they never operationally implement.\n\n**Materiality is the discipline that separates real ESG strategy from theater.** Plot every ESG issue on a 2×2: (1) importance to stakeholders, (2) impact on the business. Focus on the upper-right quadrant. Trying to address every issue means addressing none with real intensity. Most companies have three to five material ESG priorities; everything else is reporting overhead.\n\nThe three letters, in operating terms:\n\n- **Environmental.** Carbon, waste, water, biodiversity. Scope 1 (direct emissions — your vehicles, factories), Scope 2 (purchased energy), Scope 3 (supply chain, customer use, end-of-life). Scope 3 is the largest for most companies and the hardest to measure.\n- **Social.** Labor practices, community impact, diversity and inclusion, product safety. The measurable parts (turnover, demographic breakdown, safety incidents) belong on dashboards. The harder parts (culture, community trust) belong in qualitative reviews.\n- **Governance.** Board structure and independence, executive compensation alignment, ethics and compliance programs, transparency. The piece investors look at first; the piece operators often look at last.\n\nTwo rules that flow from this:\n\n- **For some categories, ESG is a competitive advantage; for others, it's table stakes.** Consumer goods, infrastructure, financial services — ESG positioning increasingly drives premium pricing, talent attraction, and customer preference. For commodity B2B inputs, the spread is smaller; ESG is more about avoiding downside risk (regulation, supply-chain disruption) than capturing upside. Know which game you're playing.\n- **Tie ESG goals to executive compensation.** Without that, ESG strategy degrades into reporting. With that, it becomes a real operating priority. Pick one ESG goal per material issue. Add it to the annual review. Move the dial.\n\nBuild the materiality matrix. Measure Scope 1 and Scope 2 baseline this quarter; plan for Scope 3 next year. The companies that operationalize early get the regulatory grandfathering, the customer preference, and the cost-of-capital benefit when the rules tighten.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": false,
@@ -7979,7 +8339,8 @@
             "explain": "Companies that win on ESG do it through operational discipline. Marketing alone gets called out as greenwashing."
           }
         ]
-      }
+      },
+      "lesson_number": "M10L4"
     },
     {
       "id": "M10L5",
@@ -7987,7 +8348,7 @@
       "title": "The Future-Ready Leader (Capstone)",
       "slug_v2": "m10l5",
       "legacy_slug": "m10l5",
-      "song_title": null,
+      "song_title": "Promised Land",
       "video_url": "https://learn.mbarock.com/video/The_Future-Ready_Leader.mp4",
       "audio_url": "https://learn.mbarock.com/audio/promised-land.mp3",
       "audio_overview_url": null,
@@ -8010,11 +8371,18 @@
         }
       ],
       "take_action": [
-        "Audit your last four weeks of calendar. Categorize every hour. Do the percentages match your strategy?",
-        "Pick one personal OS habit to install this month (sleep, exercise, deep work, weekly review).",
+        {
+          "step": "Audit your last four weeks of calendar. Categorize every hour. Do the percentages match your strategy?",
+          "capstone_field": "plan.calendar_audit"
+        },
+        {
+          "step": "Pick one personal OS habit to install this month (sleep, exercise, deep work, weekly review).",
+          "capstone_field": "plan.five_year_reputation",
+          "input_type": "short-text"
+        },
         "Write your 5-year reputation goal. What do you want to be known for? Reverse-engineer the work."
       ],
-      "deep_dive": "You finished the program. The frameworks are now your tools. The capstone is not graduation — it is the start of the next decade of practiced execution.",
+      "deep_dive": "You finished the program. The frameworks are now your tools. The capstone is not the document — it's the operating system you build for yourself, and the discipline to run it every week for the rest of your career.\n\n**Your calendar is your strategy.** Strategy is the part of work that compounds — customer conversations, talent decisions, capital allocation, the writing and refining of how the company thinks. Operations is the part of work that runs the machine. If your time is in operations meetings, you are operating; you are not leading. The audit that reveals this is brutal and useful: categorize every hour of the last four weeks. The percentages either match your strategy or they don't.\n\nThe three leadership modes — and the transitions between them:\n\n1. **Builder.** Early stage. Product-obsessed, customer-obsessed, hands in the code or the design. The leverage is in invention. The risk is staying here too long after the company can't be invented anymore.\n2. **Operator.** Scale stage. Process-obsessed, team-obsessed, system-design-obsessed. The leverage is in repeatability. The risk is process becoming the work itself.\n3. **Strategist.** Mature stage. Market-obsessed, capital-obsessed, future-obsessed. The leverage is in positioning. The risk is detachment from the operational reality that makes the strategy executable.\n\nMost great leaders move through all three. The danger is sticking in the mode that built the early success after the company has out-grown it.\n\nTwo rules that flow from this:\n\n- **The personal OS is not optional.** Sleep, exercise, deep work, recovery. These are not soft skills — they are the inputs to every decision you make at the top of the company. Treat them as professional discipline. The companies that scale into nine figures are run by leaders whose decision quality at week 200 is higher than at week 20. That doesn't happen by accident.\n- **Compounding reputation is the longest-running game.** Every venture, every relationship, every reputation event compounds. Be the kind of leader whose name in five years opens any door. The decisions that build that reputation are the small ones — how you treat a vendor when no one is watching, how you communicate a layoff, how you handle a public miss. They compound slowly and then suddenly.\n\nWrite your five-year reputation goal. What do you want to be known for? Then reverse-engineer the work. The capstone isn't the end of the program. It's the start of operating from a different altitude.",
       "pending_content": false,
       "pending_video": true,
       "is_fractional": false,
@@ -8081,7 +8449,8 @@
             "explain": "You now have the frameworks. The next decade is using them in the field."
           }
         ]
-      }
+      },
+      "lesson_number": "M10L5"
     }
   ],
   "capstone_sections": [
@@ -8090,70 +8459,80 @@
       "key": "numbers",
       "title": "The Numbers",
       "source_module": "M1",
-      "what_you_ship": "Unit economics, runway, simple P&L"
+      "what_you_ship": "Unit economics, runway, simple P&L",
+      "intro": "Every business is a money machine before it is anything else. **The Numbers** is the section where you write down what your machine consumes, what it produces, and how fast. Cash position, burn rate, runway, breakeven, unit economics, financial north star — by the end of this section a stranger could open your operating plan and tell you whether the company is dying, surviving, or compounding."
     },
     {
       "n": 2,
       "key": "bet",
       "title": "The Bet",
       "source_module": "M2",
-      "what_you_ship": "Positioning, edge, core hypothesis"
+      "what_you_ship": "Positioning, edge, core hypothesis",
+      "intro": "Strategy is the part of your business that compounds the slowest and matters the most. **The Bet** is your one-sentence answer to what you uniquely do, what you uniquely refuse to do, and why that combination will still be valuable in five years. Moats, models, portfolio, kill criteria, the one-liner that survives every pivot — they all live here."
     },
     {
       "n": 3,
       "key": "team",
       "title": "The Team",
       "source_module": "M3",
-      "what_you_ship": "Roles, first hires, culture rules"
+      "what_you_ship": "Roles, first hires, culture rules",
+      "intro": "The team is where your strategy either gets executed or quietly dies. **The Team** is the section that names who you are hiring for, who you are firing fast, how you make decisions, and what you refuse to tolerate. Hiring scorecards, decision velocity rules, the culture-by-design principles that survive your departure — they live here."
     },
     {
       "n": 4,
       "key": "engine",
       "title": "The Engine",
       "source_module": "M4",
-      "what_you_ship": "Unit economics, growth model, CAC/LTV"
+      "what_you_ship": "Unit economics, growth model, CAC/LTV",
+      "intro": "Customers are not bought; they are activated. **The Engine** is the system that turns first contact into retained, expanding, referring users. Activation events, retention levers, channel scorecards, loyalty loops, the pricing position that makes the unit economics work — they belong here. When the engine is right, growth follows. When it isn't, no amount of paid acquisition saves you."
     },
     {
       "n": 5,
       "key": "stack",
       "title": "The Stack",
       "source_module": "M5",
-      "what_you_ship": "Tools, workflows, daily operating system"
+      "what_you_ship": "Tools, workflows, daily operating system",
+      "intro": "Speed is what you build before you need it. **The Stack** is the operational and technical infrastructure that lets your team ship without heroics. Process maps, automation targets, quality metrics, build-vs-buy decisions, the tech inventory you actually use — they live here. The companies that scale 10× are the ones whose stack was already built for it."
     },
     {
       "n": 6,
       "key": "capital",
       "title": "The Capital",
       "source_module": "M6",
-      "what_you_ship": "Funding plan, raise vs. bootstrap"
+      "what_you_ship": "Funding plan, raise vs. bootstrap",
+      "intro": "Capital is the fuel and the leash at the same time. **The Capital** is where you write down how you intend to fund the business, what terms you'll accept, what dilution you'll trade for what milestones, and what exit story you're underwriting. Cap table, term-sheet priorities, BATNA, allocation rules, ethics — they live here. Most founders draft this section once, under pressure, in a panic; the ones who win draft it deliberately, in advance."
     },
     {
       "n": 7,
       "key": "story",
       "title": "The Story",
       "source_module": "M7",
-      "what_you_ship": "Brand promise, messaging, channels"
+      "what_you_ship": "Brand promise, messaging, channels",
+      "intro": "Positioning is the most-leveraged decision in marketing. **The Story** is the section that captures the one word you want to own, the message hierarchy that flows from it, the pricing tiers and content pillars that defend it. Brand position, channel-adapted messaging, retention narrative, churn analysis — they live here. Get the story right and copy writes itself; get it wrong and the best marketers in the world can't save you."
     },
     {
       "n": 8,
       "key": "playbook",
       "title": "The Playbook",
       "source_module": "M8",
-      "what_you_ship": "SOPs and repeatable execution"
+      "what_you_ship": "SOPs and repeatable execution",
+      "intro": "Execution discipline is the multiplier on strategy. **The Playbook** is the section that turns intentions into operating rhythm. Operating cadence, project constraints, RACI matrices, vendor tiers, the SOPs that survive turnover — they live here. The companies that ship are the ones whose playbook is written down, defended, and improved every quarter."
     },
     {
       "n": 9,
       "key": "dashboard",
       "title": "The Dashboard",
       "source_module": "M9",
-      "what_you_ship": "KPIs, weekly review rhythm"
+      "what_you_ship": "KPIs, weekly review rhythm",
+      "intro": "What gets measured gets managed. What gets defined gets measured. **The Dashboard** is the section where you write down the metrics that drive your decisions, the thresholds that trigger action, the experiments running this quarter, the risks you are actively monitoring. North star, supporting KPIs, experiment backlog, risk register, forecast scenarios — they live here."
     },
     {
       "n": 10,
       "key": "plan",
       "title": "The Plan",
       "source_module": "M10",
-      "what_you_ship": "1-page plan + 90-day execution roadmap"
+      "what_you_ship": "1-page plan + 90-day execution roadmap",
+      "intro": "The plan is not the document; it is the discipline. **The Plan** is the section that ties everything else together — innovation pipeline, disruption response, AI roadmap, ESG priorities, leadership reputation goal, the calendar audit that proves your time matches your strategy. By the time you've filled this section in, you have a real business operating system. Not a plan you wrote once and filed; a plan you run every Friday."
     }
   ],
   "last_migration": [
@@ -8210,5 +8589,7 @@
       "video_url": "https://learn.mbarock.com/video/Visibility_%26_Dashboards.mp4",
       "added": "2026-05-17"
     }
-  ]
+  ],
+  "last_content_fill": "2026-05-26",
+  "content_fill_note": "Phase 2: song_title × 73, capstone_field tags × 92, section intros × 10"
 }
