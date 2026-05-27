@@ -1661,4 +1661,43 @@ else{setTimeout(init,600);}
   } else {
     run();
   }
+  // ─── MR-404-SUPPRESS (2026-05-27) — hide Squarespace 404 fallback below the lesson takeover ───
+  function hideSqs404Fallback() {
+    try {
+      var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+      var n, target = null;
+      while ((n = walker.nextNode())) {
+        var t = n.nodeValue || '';
+        if (/couldn['’]?t find the page you were looking for/i.test(t)) {
+          target = n.parentElement;
+          break;
+        }
+      }
+      if (!target) return;
+      // Walk up until we find a sibling of the lesson takeover container, then hide it.
+      var hideEl = target;
+      for (var i = 0; i < 12 && hideEl && hideEl.parentElement; i++) {
+        var p = hideEl.parentElement;
+        // Stop when our ancestor is the siteWrapper / body — that level holds the section we want to hide
+        if (p.id === 'siteWrapper' || p.tagName === 'BODY' || p.tagName === 'MAIN') {
+          hideEl.style.display = 'none';
+          // Also hide preceding hr/divider if it's an empty separator
+          var prev = hideEl.previousElementSibling;
+          if (prev && prev.tagName === 'HR') prev.style.display = 'none';
+          return;
+        }
+        hideEl = p;
+      }
+    } catch(e) { /* non-fatal */ }
+  }
+  // Run after DOM settles + after lessons.js's own injection cycle
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    setTimeout(hideSqs404Fallback, 250);
+    setTimeout(hideSqs404Fallback, 1500);
+  } else {
+    document.addEventListener('DOMContentLoaded', function(){ setTimeout(hideSqs404Fallback, 250); });
+    window.addEventListener('load', function(){ setTimeout(hideSqs404Fallback, 1500); });
+  }
+  // ─── /MR-404-SUPPRESS ───
+
 })();
