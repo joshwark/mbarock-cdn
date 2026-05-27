@@ -1,22 +1,33 @@
 /**
- * MBA Rock — Authed /mba-rock → /dashboard redirect
+ * MBA Rock — Authed /mba-rock and /mba-rock/[slug] → /dashboard redirect
  * Reason: Squarespace strips inline <script> blocks from Course Overview template.
  * This external script survives because <script src> tags do load.
  *
- * Auth detection: presence of lesson-link anchors (only rendered when authed).
- * Fallback signal: presence of "0% Progress" text (also authed-only).
+ * Behaviour:
+ *   - On /mba-rock (course root): auth-detect, then redirect to /dashboard
+ *   - On /mba-rock/[slug] (course chapter): always redirect authed users to /dashboard#[slug]
+ *     so they land on the branded dashboard with the specific lesson focused.
  *
- * Deployed: 2026-05-17
+ * Auth detection (same heuristics as before):
+ *   - Primary: presence of /mba-rock/m* links (only rendered when authed)
+ *   - Fallback: "START COURSE" or "Progress" text in body
+ *
+ * Deployed: 2026-05-17 (chapter-slug routing added 2026-05-27)
  */
 (function () {
-  if (!/^\/mba-rock\/?$/.test(location.pathname)) return;
+  var path = location.pathname || '';
+  var rootMatch = /^\/mba-rock\/?$/.test(path);
+  var chapterMatch = path.match(/^\/mba-rock\/([a-z0-9\-]+)\/?$/i);
+  if (!rootMatch && !chapterMatch) return;
+
+  var lessonSlug = chapterMatch ? chapterMatch[1].toLowerCase() : '';
 
   function isAuthedCoursView() {
     // Primary signal: links to specific lessons
-    var lessonLinks = document.querySelectorAll('a[href*="/mba-rock/m"]');
-    if (lessonLinks.length > 5) return true;
+    var lessonLinks = document.querySelectorAll('a[href*="/mba-rock/m"], a[href*="/mba-rock/"]');
+    if (lessonLinks.length > 3) return true;
     // Fallback: "START COURSE" or "Progress" text in body
-    if (document.body && /START COURSE|0%\s*Progress|\bProgress\b/.test(document.body.innerText)) return true;
+    if (document.body && /START COURSE|0%\s*Progress|\bProgress\b|My progress/.test(document.body.innerText)) return true;
     return false;
   }
 
@@ -33,14 +44,17 @@
       '<div style="font-size:14px;color:#888;letter-spacing:.05em;' +
       'text-transform:uppercase;font-weight:600">Loading your Dashboard…</div>';
     document.documentElement.appendChild(flash);
-    window.location.replace('https://www.mbarock.com/dashboard');
+    var dest = 'https://www.mbarock.com/dashboard';
+    if (lessonSlug) dest += '#' + lessonSlug;
+    window.location.replace(dest);
   }
 
   function tryRedirect() {
-    if (isAuthedCoursView()) {
-      doRedirect();
-      return true;
-    }
+    // On chapter pages, always redirect (lesson is paid content; if you got the URL you're either
+    // a member or shouldn't be there — dashboard's own gate will challenge unauthed visitors).
+    if (chapterMatch) { doRedirect(); return true; }
+    // On the course root, only redirect if auth signals are present.
+    if (isAuthedCoursView()) { doRedirect(); return true; }
     return false;
   }
 
