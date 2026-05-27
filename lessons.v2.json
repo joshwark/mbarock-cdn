@@ -365,13 +365,14 @@
         ]
       },
       "order": 1,
-      "song_title": "Oxygen Cash Flow"
+      "song_title": "Oxygen Cash Flow",
+      "module_title": "Finance Fundamentals"
     },
     {
       "id": "M1L1.5",
       "module_id": "M1",
       "lesson_number": "M1L1.5",
-      "title": "The Breakeven Proof (Deep-Dive)",
+      "title": "The Breakeven Proof",
       "slug_v2": "m1l1-5-the-breakeven-proof",
       "legacy_slug": "16-cash-runway",
       "audio_url": "https://learn.mbarock.com/audio/breakeven-point.mp3",
@@ -475,7 +476,8 @@
         ]
       },
       "order": 2,
-      "song_title": "Breakeven Point"
+      "song_title": "Breakeven Point",
+      "module_title": "Finance Fundamentals"
     },
     {
       "id": "M1L2",
@@ -585,12 +587,13 @@
         ]
       },
       "order": 3,
-      "song_title": "Top Line Lie"
+      "song_title": "Top Line Lie",
+      "module_title": "Finance Fundamentals"
     },
     {
       "id": "M1L2.5",
       "module_id": "M1",
-      "title": "April Cash Timing (Deep-Dive)",
+      "title": "April Cash Timing",
       "slug_v2": "m1l2.5",
       "legacy_slug": "april-cash-timing",
       "song_title": "April Cash Timing",
@@ -697,7 +700,8 @@
           }
         ]
       },
-      "lesson_number": "M1L2.5"
+      "lesson_number": "M1L2.5",
+      "module_title": "Finance Fundamentals"
     },
     {
       "id": "M1L3",
@@ -807,13 +811,14 @@
         ]
       },
       "order": 5,
-      "song_title": "The Discount Rate"
+      "song_title": "The Discount Rate",
+      "module_title": "Finance Fundamentals"
     },
     {
       "id": "M1L3.5",
       "module_id": "M1",
       "lesson_number": "M1L3.5",
-      "title": "Receivables In (Deep-Dive)",
+      "title": "Receivables In",
       "slug_v2": "m1l3-5-receivables-in",
       "legacy_slug": "18-receivables-in",
       "audio_url": "https://learn.mbarock.com/audio/receivables-in.mp3",
@@ -917,7 +922,8 @@
         ]
       },
       "order": 6,
-      "song_title": "Receivables in"
+      "song_title": "Receivables in",
+      "module_title": "Finance Fundamentals"
     },
     {
       "id": "M1L4",
@@ -1031,13 +1037,14 @@
         ]
       },
       "order": 7,
-      "song_title": "Unit Economics"
+      "song_title": "Unit Economics",
+      "module_title": "Finance Fundamentals"
     },
     {
       "id": "M1L4.5",
       "module_id": "M1",
       "lesson_number": "M1L4.5",
-      "title": "Operating Leverage (Deep-Dive)",
+      "title": "Operating Leverage",
       "slug_v2": "m1l4-5-operating-leverage",
       "legacy_slug": "19-operating-leverage",
       "audio_url": "https://learn.mbarock.com/audio/operating-leverage.mp3",
@@ -1140,7 +1147,8 @@
         ]
       },
       "order": 8,
-      "song_title": "Operating Leverage"
+      "song_title": "Operating Leverage",
+      "module_title": "Finance Fundamentals"
     },
     {
       "id": "M1L5",
@@ -1249,7 +1257,8 @@
         ]
       },
       "order": 9,
-      "song_title": "Bones in the Spreadsheets"
+      "song_title": "Bones in the Spreadsheets",
+      "module_title": "Finance Fundamentals"
     },
     {
       "id": "M2L1",
@@ -1358,13 +1367,14 @@
         ]
       },
       "order": 10,
-      "song_title": "Moat Around my Castle Moats Strategy"
+      "song_title": "Moat Around my Castle Moats Strategy",
+      "module_title": "Strategy & Competitive Advantage"
     },
     {
       "id": "M2L1.5",
       "module_id": "M2",
       "lesson_number": "M2L1.5",
-      "title": "The Strategic Playbook / PESTEL Scan (Deep-Dive)",
+      "title": "The Strategic Playbook / PESTEL Scan",
       "slug_v2": "m2l1-5-the-strategic-playbook-pestel-scan",
       "legacy_slug": "m2l1-strategy-strut",
       "audio_url": "https://learn.mbarock.com/audio/market-size-mountain.mp3",
@@ -1467,7 +1477,8 @@
         ]
       },
       "order": 11,
-      "song_title": "Market Size Mountain"
+      "song_title": "Market Size Mountain",
+      "module_title": "Strategy & Competitive Advantage"
     },
     {
       "id": "M2L2",
@@ -1576,13 +1587,14 @@
         ]
       },
       "order": 12,
-      "song_title": "Strategy"
+      "song_title": "Strategy",
+      "module_title": "Strategy & Competitive Advantage"
     },
     {
       "id": "M2L2.1.5",
       "module_id": "M2",
       "lesson_number": "M2L2.1.5",
-      "title": "Strategic Diagnostics / Beneath the Hood (Deep-Dive)",
+      "title": "Strategic Diagnostics / Beneath the Hood",
       "slug_v2": "m2l2-1-5-strategic-diagnostics-beneath-the-hood",
       "legacy_slug": "26-beneath-the-hood",
       "audio_url": "https://learn.mbarock.com/audio/beneath-the-hood.mp3",
@@ -1685,13 +1697,14 @@
         ]
       },
       "order": 13,
-      "song_title": "Beneath the Hood"
+      "song_title": "Beneath the Hood",
+      "module_title": "Strategy & Competitive Advantage"
     },
     {
       "id": "M2L2.3.5",
       "module_id": "M2",
       "lesson_number": "M2L2.3.5",
-      "title": "Business Model Canvas (Deep-Dive)",
+      "title": "Business Model Canvas",
       "slug_v2": "m2l2-3-5-business-model-canvas",
       "legacy_slug": "27-business-model-canvas",
       "audio_url": "https://learn.mbarock.com/audio/business-model-canvas.mp3",
@@ -1794,12 +1807,13 @@
         ]
       },
       "order": 14,
-      "song_title": "Business Model Canvas"
+      "song_title": "Business Model Canvas",
+      "module_title": "Strategy & Competitive Advantage"
     },
     {
       "id": "M2L2.5.5",
       "module_id": "M2",
-      "title": "Portfolio Strategy (Deep-Dive)",
+      "title": "Portfolio Strategy",
       "slug_v2": "m2l2.5.5",
       "legacy_slug": "m2l2.5.5",
       "song_title": "Pick Two",
@@ -1909,7 +1923,8 @@
           }
         ]
       },
-      "lesson_number": "M2L2.5.5"
+      "lesson_number": "M2L2.5.5",
+      "module_title": "Strategy & Competitive Advantage"
     },
     {
       "id": "M2L3",
@@ -2018,7 +2033,8 @@
         ]
       },
       "order": 16,
-      "song_title": "Competitive Moat"
+      "song_title": "Competitive Moat",
+      "module_title": "Strategy & Competitive Advantage"
     },
     {
       "id": "M2L4",
@@ -2127,7 +2143,8 @@
         ]
       },
       "order": 17,
-      "song_title": "Blue Ocean Creating New Markets"
+      "song_title": "Blue Ocean Creating New Markets",
+      "module_title": "Strategy & Competitive Advantage"
     },
     {
       "id": "M2L5",
@@ -2237,7 +2254,8 @@
         ]
       },
       "order": 18,
-      "song_title": "Moat Around my Castle"
+      "song_title": "Moat Around my Castle",
+      "module_title": "Strategy & Competitive Advantage"
     },
     {
       "id": "M3L1",
@@ -2346,13 +2364,14 @@
         ]
       },
       "order": 19,
-      "song_title": "White Knuckled Delegation"
+      "song_title": "White Knuckled Delegation",
+      "module_title": "People & Leadership"
     },
     {
       "id": "M3L1.5",
       "module_id": "M3",
       "lesson_number": "M3L1.5",
-      "title": "Worth Aligned (Deep-Dive)",
+      "title": "Worth Aligned",
       "slug_v2": "m3l1-5-worth-aligned",
       "legacy_slug": "310-worth-align",
       "audio_url": "https://learn.mbarock.com/audio/worth-align.mp3",
@@ -2455,7 +2474,8 @@
         ]
       },
       "order": 20,
-      "song_title": "Worth Align"
+      "song_title": "Worth Align",
+      "module_title": "People & Leadership"
     },
     {
       "id": "M3L2",
@@ -2564,13 +2584,14 @@
         ]
       },
       "order": 21,
-      "song_title": "Long Game"
+      "song_title": "Long Game",
+      "module_title": "People & Leadership"
     },
     {
       "id": "M3L2.5",
       "module_id": "M3",
       "lesson_number": "M3L2.5",
-      "title": "Leadership Lifecycle / Feedback Loops (Deep-Dive)",
+      "title": "Leadership Lifecycle / Feedback Loops",
       "slug_v2": "m3l2-5-leadership-lifecycle-feedback-loops",
       "legacy_slug": "m5l3-conflict-cost-estimator",
       "audio_url": "https://learn.mbarock.com/audio/mirror-map-feedback.mp3",
@@ -2673,7 +2694,8 @@
         ]
       },
       "order": 22,
-      "song_title": "Mirror Map Feedback"
+      "song_title": "Mirror Map Feedback",
+      "module_title": "People & Leadership"
     },
     {
       "id": "M3L3",
@@ -2785,12 +2807,13 @@
         ]
       },
       "order": 23,
-      "song_title": "Tuckman Storming"
+      "song_title": "Tuckman Storming",
+      "module_title": "People & Leadership"
     },
     {
       "id": "M3L3.3.3",
       "module_id": "M3",
-      "title": "Positioning & Focus (Deep-Dive)",
+      "title": "Positioning & Focus",
       "slug_v2": "m3l3.3.3",
       "legacy_slug": "m3l3.3.3",
       "song_title": "Don't Be Everything",
@@ -2901,7 +2924,8 @@
           }
         ]
       },
-      "lesson_number": "M3L3.3.3"
+      "lesson_number": "M3L3.3.3",
+      "module_title": "People & Leadership"
     },
     {
       "id": "M3L4",
@@ -3010,7 +3034,8 @@
         ]
       },
       "order": 25,
-      "song_title": "Two Way Door"
+      "song_title": "Two Way Door",
+      "module_title": "People & Leadership"
     },
     {
       "id": "M3L5",
@@ -3119,7 +3144,8 @@
         ]
       },
       "order": 26,
-      "song_title": "Culture Eats Strategy"
+      "song_title": "Culture Eats Strategy",
+      "module_title": "People & Leadership"
     },
     {
       "id": "M4L1",
@@ -3228,7 +3254,8 @@
         ]
       },
       "order": 27,
-      "song_title": "Ask Then Listen"
+      "song_title": "Ask Then Listen",
+      "module_title": "Unit Economics & Growth Metrics"
     },
     {
       "id": "M4L2",
@@ -3339,12 +3366,13 @@
       "order": 28,
       "audio_duration": "2:53",
       "audio_kbps": null,
-      "song_title": "Brand Promise"
+      "song_title": "Brand Promise",
+      "module_title": "Unit Economics & Growth Metrics"
     },
     {
       "id": "M4L2.5",
       "module_id": "M4",
-      "title": "Channel Strategy (Deep-Dive)",
+      "title": "Channel Strategy",
       "slug_v2": "m4l2.5",
       "legacy_slug": "m4l2.5",
       "song_title": "Distribution Rivers",
@@ -3454,7 +3482,8 @@
           }
         ]
       },
-      "lesson_number": "M4L2.5"
+      "lesson_number": "M4L2.5",
+      "module_title": "Unit Economics & Growth Metrics"
     },
     {
       "id": "M4L3",
@@ -3563,7 +3592,8 @@
         ]
       },
       "order": 30,
-      "song_title": "Funnel Rate 118"
+      "song_title": "Funnel Rate 118",
+      "module_title": "Unit Economics & Growth Metrics"
     },
     {
       "id": "M4L4",
@@ -3673,12 +3703,13 @@
         ]
       },
       "order": 31,
-      "song_title": "Price Signal"
+      "song_title": "Price Signal",
+      "module_title": "Unit Economics & Growth Metrics"
     },
     {
       "id": "M4L4.2.5",
       "module_id": "M4",
-      "title": "Product-Market Fit (Deep-Dive)",
+      "title": "Product-Market Fit",
       "slug_v2": "m4l4.2.5",
       "legacy_slug": "m4l4.2.5",
       "song_title": "Fit Original",
@@ -3789,12 +3820,13 @@
           }
         ]
       },
-      "lesson_number": "M4L4.2.5"
+      "lesson_number": "M4L4.2.5",
+      "module_title": "Unit Economics & Growth Metrics"
     },
     {
       "id": "M4L4.5",
       "module_id": "M4",
-      "title": "Loyalty Loops / The Evolution of Growth (Deep-Dive)",
+      "title": "Loyalty Loops / The Evolution of Growth",
       "slug_v2": "m4l4.5",
       "legacy_slug": "m4l4.5",
       "song_title": "Let the Rivers Run",
@@ -3905,7 +3937,8 @@
           }
         ]
       },
-      "lesson_number": "M4L4.5"
+      "lesson_number": "M4L4.5",
+      "module_title": "Unit Economics & Growth Metrics"
     },
     {
       "id": "M4L5",
@@ -4030,7 +4063,8 @@
         ]
       },
       "order": 34,
-      "song_title": "Adopt the Loop"
+      "song_title": "Adopt the Loop",
+      "module_title": "Unit Economics & Growth Metrics"
     },
     {
       "id": "M5L1",
@@ -4139,7 +4173,8 @@
         ]
       },
       "order": 35,
-      "song_title": "Lewin Way"
+      "song_title": "Lewin Way",
+      "module_title": "Operations & Technology"
     },
     {
       "id": "M5L2",
@@ -4248,13 +4283,14 @@
         ]
       },
       "order": 36,
-      "song_title": "Process Over Outcome"
+      "song_title": "Process Over Outcome",
+      "module_title": "Operations & Technology"
     },
     {
       "id": "M5L2.5",
       "module_id": "M5",
       "lesson_number": "M5L2.5",
-      "title": "Automation Stack / Micro to Macro Scale (Deep-Dive)",
+      "title": "Automation Stack / Micro to Macro Scale",
       "slug_v2": "m5l2-5-automation-stack",
       "legacy_slug": "m5l2-5-automation-stack",
       "audio_url": "https://learn.mbarock.com/audio/heroes-dont-scale.mp3",
@@ -4357,7 +4393,8 @@
           }
         ]
       },
-      "order": 37
+      "order": 37,
+      "module_title": "Operations & Technology"
     },
     {
       "id": "M5L3",
@@ -4467,7 +4504,8 @@
         ]
       },
       "order": 38,
-      "song_title": "Seven Twenty Sum"
+      "song_title": "Seven Twenty Sum",
+      "module_title": "Operations & Technology"
     },
     {
       "id": "M5L4",
@@ -4576,7 +4614,8 @@
         ]
       },
       "order": 39,
-      "song_title": "Five Doors"
+      "song_title": "Five Doors",
+      "module_title": "Operations & Technology"
     },
     {
       "id": "M5L5",
@@ -4685,7 +4724,8 @@
         ]
       },
       "order": 40,
-      "song_title": "Build vs. Buy"
+      "song_title": "Build vs. Buy",
+      "module_title": "Operations & Technology"
     },
     {
       "id": "M6L1",
@@ -4794,7 +4834,8 @@
         ]
       },
       "order": 41,
-      "song_title": "Engines"
+      "song_title": "Engines",
+      "module_title": "Growth & Capital"
     },
     {
       "id": "M6L2",
@@ -4903,7 +4944,8 @@
         ]
       },
       "order": 42,
-      "song_title": "Stakeholder Grid"
+      "song_title": "Stakeholder Grid",
+      "module_title": "Growth & Capital"
     },
     {
       "id": "M6L3",
@@ -5012,7 +5054,8 @@
         ]
       },
       "order": 43,
-      "song_title": "Dollar Soldier"
+      "song_title": "Dollar Soldier",
+      "module_title": "Growth & Capital"
     },
     {
       "id": "M6L4",
@@ -5121,7 +5164,8 @@
         ]
       },
       "order": 44,
-      "song_title": "Negotiation"
+      "song_title": "Negotiation",
+      "module_title": "Growth & Capital"
     },
     {
       "id": "M6L5",
@@ -5231,7 +5275,8 @@
         ]
       },
       "order": 45,
-      "song_title": "The Multiple"
+      "song_title": "The Multiple",
+      "module_title": "Growth & Capital"
     },
     {
       "id": "M6L6",
@@ -5340,12 +5385,13 @@
         ]
       },
       "order": 46,
-      "song_title": "High Anchor BATNA"
+      "song_title": "High Anchor BATNA",
+      "module_title": "Growth & Capital"
     },
     {
       "id": "M6L6.3.5",
       "module_id": "M6",
-      "title": "Dashboards (Deep-Dive)",
+      "title": "Dashboards",
       "slug_v2": "m6l6.3.5",
       "legacy_slug": "m6l6.3.5",
       "song_title": "The Aha",
@@ -5452,7 +5498,8 @@
           }
         ]
       },
-      "lesson_number": "M6L6.3.5"
+      "lesson_number": "M6L6.3.5",
+      "module_title": "Growth & Capital"
     },
     {
       "id": "M6L7",
@@ -5561,7 +5608,8 @@
         ]
       },
       "order": 48,
-      "song_title": "Three of a Kind"
+      "song_title": "Three of a Kind",
+      "module_title": "Growth & Capital"
     },
     {
       "id": "M6L8",
@@ -5670,7 +5718,8 @@
         ]
       },
       "order": 49,
-      "song_title": "Ten Year Bet"
+      "song_title": "Ten Year Bet",
+      "module_title": "Growth & Capital"
     },
     {
       "id": "M6L9",
@@ -5779,7 +5828,8 @@
         ]
       },
       "order": 50,
-      "song_title": "Risk and Reward"
+      "song_title": "Risk and Reward",
+      "module_title": "Growth & Capital"
     },
     {
       "id": "M6L10",
@@ -5888,7 +5938,8 @@
         ]
       },
       "order": 51,
-      "song_title": "Saleable"
+      "song_title": "Saleable",
+      "module_title": "Growth & Capital"
     },
     {
       "id": "M6L11",
@@ -5997,7 +6048,8 @@
         ]
       },
       "order": 52,
-      "song_title": "Four Corners"
+      "song_title": "Four Corners",
+      "module_title": "Growth & Capital"
     },
     {
       "id": "M6L12",
@@ -6106,7 +6158,8 @@
         ]
       },
       "order": 53,
-      "song_title": "Fifteen Lines"
+      "song_title": "Fifteen Lines",
+      "module_title": "Growth & Capital"
     },
     {
       "id": "M6L13",
@@ -6215,7 +6268,8 @@
         ]
       },
       "order": 54,
-      "song_title": "Calendar is Strategy"
+      "song_title": "Calendar is Strategy",
+      "module_title": "Growth & Capital"
     },
     {
       "id": "M7L1",
@@ -6323,7 +6377,8 @@
         ]
       },
       "order": 55,
-      "song_title": "The Funnel"
+      "song_title": "The Funnel",
+      "module_title": "Marketing & Brand"
     },
     {
       "id": "M7L2",
@@ -6433,7 +6488,8 @@
           }
         ]
       },
-      "lesson_number": "M7L2"
+      "lesson_number": "M7L2",
+      "module_title": "Marketing & Brand"
     },
     {
       "id": "M7L3",
@@ -6548,7 +6604,8 @@
           }
         ]
       },
-      "lesson_number": "M7L3"
+      "lesson_number": "M7L3",
+      "module_title": "Marketing & Brand"
     },
     {
       "id": "M7L4",
@@ -6663,7 +6720,8 @@
           }
         ]
       },
-      "lesson_number": "M7L4"
+      "lesson_number": "M7L4",
+      "module_title": "Marketing & Brand"
     },
     {
       "id": "M7L5",
@@ -6780,7 +6838,8 @@
           }
         ]
       },
-      "lesson_number": "M7L5"
+      "lesson_number": "M7L5",
+      "module_title": "Marketing & Brand"
     },
     {
       "id": "M8L1",
@@ -6888,7 +6947,8 @@
         ]
       },
       "order": 60,
-      "song_title": "Five Times a Week"
+      "song_title": "Five Times a Week",
+      "module_title": "Operations & Execution"
     },
     {
       "id": "M8L2",
@@ -7012,7 +7072,8 @@
           "note": "Lower DOI = faster cash recovery."
         }
       ],
-      "song_title": "Bullwhip"
+      "song_title": "Bullwhip",
+      "module_title": "Operations & Execution"
     },
     {
       "id": "M8L3",
@@ -7132,7 +7193,8 @@
         ]
       },
       "order": 62,
-      "song_title": "Six Sigma Ledge"
+      "song_title": "Six Sigma Ledge",
+      "module_title": "Operations & Execution"
     },
     {
       "id": "M8L4",
@@ -7247,7 +7309,8 @@
           }
         ]
       },
-      "lesson_number": "M8L4"
+      "lesson_number": "M8L4",
+      "module_title": "Operations & Execution"
     },
     {
       "id": "M8L5",
@@ -7356,7 +7419,8 @@
           }
         ]
       },
-      "lesson_number": "M8L5"
+      "lesson_number": "M8L5",
+      "module_title": "Operations & Execution"
     },
     {
       "id": "M9L1",
@@ -7464,7 +7528,8 @@
         ]
       },
       "order": 65,
-      "song_title": "Third Way Options"
+      "song_title": "Third Way Options",
+      "module_title": "Analytics & Decision Making"
     },
     {
       "id": "M9L2",
@@ -7574,7 +7639,8 @@
           }
         ]
       },
-      "lesson_number": "M9L2"
+      "lesson_number": "M9L2",
+      "module_title": "Analytics & Decision Making"
     },
     {
       "id": "M9L3",
@@ -7686,7 +7752,8 @@
           }
         ]
       },
-      "lesson_number": "M9L3"
+      "lesson_number": "M9L3",
+      "module_title": "Analytics & Decision Making"
     },
     {
       "id": "M9L4",
@@ -7798,7 +7865,8 @@
           }
         ]
       },
-      "lesson_number": "M9L4"
+      "lesson_number": "M9L4",
+      "module_title": "Analytics & Decision Making"
     },
     {
       "id": "M9L5",
@@ -7910,7 +7978,8 @@
           }
         ]
       },
-      "lesson_number": "M9L5"
+      "lesson_number": "M9L5",
+      "module_title": "Analytics & Decision Making"
     },
     {
       "id": "M10L1",
@@ -8019,7 +8088,8 @@
         ]
       },
       "order": 70,
-      "song_title": "Blank Page Grace"
+      "song_title": "Blank Page Grace",
+      "module_title": "Innovation & Future (Capstone)"
     },
     {
       "id": "M10L2",
@@ -8128,7 +8198,8 @@
           }
         ]
       },
-      "lesson_number": "M10L2"
+      "lesson_number": "M10L2",
+      "module_title": "Innovation & Future (Capstone)"
     },
     {
       "id": "M10L3",
@@ -8234,7 +8305,8 @@
           }
         ]
       },
-      "lesson_number": "M10L3"
+      "lesson_number": "M10L3",
+      "module_title": "Innovation & Future (Capstone)"
     },
     {
       "id": "M10L4",
@@ -8340,12 +8412,13 @@
           }
         ]
       },
-      "lesson_number": "M10L4"
+      "lesson_number": "M10L4",
+      "module_title": "Innovation & Future (Capstone)"
     },
     {
       "id": "M10L5",
       "module_id": "M10",
-      "title": "The Future-Ready Leader (Capstone)",
+      "title": "The Future-Ready Leader — Capstone",
       "slug_v2": "m10l5",
       "legacy_slug": "m10l5",
       "song_title": "Promised Land",
@@ -8450,7 +8523,8 @@
           }
         ]
       },
-      "lesson_number": "M10L5"
+      "lesson_number": "M10L5",
+      "module_title": "Innovation & Future (Capstone)"
     }
   ],
   "capstone_sections": [
