@@ -171,7 +171,7 @@
     <div class="mr-music-head">
       <div>
         <h3>3 sample tracks</h3>
-        <div class="sub">From the 74 original songs in the course</div>
+        <div class="sub">From the 49 original songs in the course</div>
       </div>
       <button class="close" aria-label="Close music player">×</button>
     </div>
@@ -195,7 +195,7 @@
       </div>
     </div>
     <div class="mr-foot">
-      <span>Album-paced learning. 74 songs total.</span>
+      <span>Album-paced learning. 49 songs total.</span>
       <a href="https://www.mbarock.com/mba-rock">See pricing →</a>
     </div>
   `;

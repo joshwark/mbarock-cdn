@@ -151,7 +151,7 @@ a{color:inherit;}
 </style>
 </head>
 <body>
-<main class="app" id="mr-protected" hidden>
+<main class="app" id="app" hidden id="mr-protected">
   <div id="content"></div>
 </main>
 
@@ -264,7 +264,7 @@ async function loadCerts(){
 
 function lessonHref(l){
   const slug = l.legacy_slug || l.slug_v2 || '';
-  return slug ? 'https://learn.mbarock.com/lesson/?slug=' + slug : 'https://learn.mbarock.com/dashboard/';
+  return slug ? '/mba-rock/' + slug : '#';
 }
 
 function render(moduleId){
@@ -275,8 +275,8 @@ function render(moduleId){
     return;
   }
   document.title = `${m.num} ${m.title} · MBA Rock`;
-  document.getElementById('mr-protected').style.setProperty('--accent', m.accent);
-  document.getElementById('mr-protected').style.setProperty('--accent-soft', m.soft);
+  document.getElementById('app').style.setProperty('--accent', m.accent);
+  document.getElementById('app').style.setProperty('--accent-soft', m.soft);
 
   const lessons = state.lessonsByModule[moduleId] || [];
   const passed = lessons.filter(l => state.quizPasses[l.id]).length;

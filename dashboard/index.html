@@ -358,7 +358,7 @@ function nextUnfinishedLesson(){
 function lessonHref(lesson){
   if (!lesson) return '#';
   const slug = lesson.legacy_slug || lesson.slug_v2 || '';
-  return slug ? 'https://learn.mbarock.com/lesson/?slug=' + slug : '#';
+  return slug ? 'https://www.mbarock.com/mba-rock/' + slug : '#';
 }
 
 function setRing(pct){
@@ -499,52 +499,6 @@ async function init(){
 }
 
 init();
-
-// ── Lesson deeplink: open / scroll to lesson when URL has #<slug> (set by mba-rock-redirect.js)
-(function(){
-  function openLessonFromHash(){
-    var hash = (location.hash || '').replace(/^#/, '').toLowerCase().trim();
-    if (!hash) return;
-    // Match by legacy_slug, slug_v2, or id (lowercased)
-    var lesson = (state.lessonsCatalog || []).find(function(l){
-      var ls = (l.legacy_slug||'').toLowerCase();
-      var sv = (l.slug_v2||'').toLowerCase();
-      var id = (l.id||'').toLowerCase();
-      return ls === hash || sv === hash || id === hash;
-    });
-    if (!lesson) return;
-    // Try to find a rendered element for this lesson
-    var sels = [
-      '[data-mr-lesson="' + lesson.id + '"]',
-      '#' + (lesson.slug_v2 || ''),
-      '#' + (lesson.legacy_slug || ''),
-      'a[data-lesson-id="' + lesson.id + '"]',
-    ];
-    var target = null;
-    for (var i = 0; i < sels.length && !target; i++) {
-      if (sels[i].length > 2) target = document.querySelector(sels[i]);
-    }
-    if (target) {
-      target.scrollIntoView({behavior:'smooth', block:'start'});
-      if (target.tagName === 'DETAILS') target.open = true;
-      target.classList.add('mr-lesson-highlight');
-      setTimeout(function(){ target.classList.remove('mr-lesson-highlight'); }, 2400);
-    }
-  }
-  // Re-run on hashchange and after dashboard renders
-  window.addEventListener('hashchange', openLessonFromHash);
-  // Re-run after data loads — the loadLessons promise lives inside init();
-  // hook by retrying briefly until lessonsCatalog is populated.
-  var tries = 0;
-  var iv = setInterval(function(){
-    tries++;
-    if ((state.lessonsCatalog||[]).length || tries > 40) {
-      clearInterval(iv);
-      openLessonFromHash();
-    }
-  }, 250);
-})();
-
 
 // CANON sync — pull live denominators from lessons.v2.json
 (function(){

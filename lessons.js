@@ -5,7 +5,7 @@
 (function() {
   var LESSONS_JSON = 'https://learn.mbarock.com/lessons.json';
   var JSDELIVR_RE  = /cdn\.jsdelivr\.net\/gh\/joshwark\/mbarock-cdn@[^/]+\//;
-  var GH_RAW_BASE  = 'learn.mbarock.com/';
+  var GH_RAW_BASE  = 'raw.githubusercontent.com/joshwark/mbarock-cdn/main/';
 
   function getSlug() {
     var parts = window.location.pathname.split('/').filter(Boolean);
@@ -235,10 +235,10 @@
     if (navIdx !== -1) {
       html += '<nav class="mr-footer-nav">';
       if (navIdx > 0) {
-        html += '<a href="https://learn.mbarock.com/lesson/?slug=' + encodeURIComponent(lessons[navIdx-1].slug) + '">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ ' + esc(lessons[navIdx-1].title) + '</a>';
+        html += '<a href="' + esc(lessons[navIdx-1].slug) + '">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ ' + esc(lessons[navIdx-1].title) + '</a>';
       } else { html += '<span></span>'; }
       if (navIdx < lessons.length - 1) {
-        html += '<a href="https://learn.mbarock.com/lesson/?slug=' + encodeURIComponent(lessons[navIdx+1].slug) + '">' + esc(lessons[navIdx+1].title) + ' ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ</a>';
+        html += '<a href="' + esc(lessons[navIdx+1].slug) + '">' + esc(lessons[navIdx+1].title) + ' ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ</a>';
       } else { html += '<span></span>'; }
       html += '</nav>';
     }
@@ -1661,43 +1661,4 @@ else{setTimeout(init,600);}
   } else {
     run();
   }
-  // ─── MR-404-SUPPRESS (2026-05-27) — hide Squarespace 404 fallback below the lesson takeover ───
-  function hideSqs404Fallback() {
-    try {
-      var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
-      var n, target = null;
-      while ((n = walker.nextNode())) {
-        var t = n.nodeValue || '';
-        if (/couldn['’]?t find the page you were looking for/i.test(t)) {
-          target = n.parentElement;
-          break;
-        }
-      }
-      if (!target) return;
-      // Walk up until we find a sibling of the lesson takeover container, then hide it.
-      var hideEl = target;
-      for (var i = 0; i < 12 && hideEl && hideEl.parentElement; i++) {
-        var p = hideEl.parentElement;
-        // Stop when our ancestor is the siteWrapper / body — that level holds the section we want to hide
-        if (p.id === 'siteWrapper' || p.tagName === 'BODY' || p.tagName === 'MAIN') {
-          hideEl.style.display = 'none';
-          // Also hide preceding hr/divider if it's an empty separator
-          var prev = hideEl.previousElementSibling;
-          if (prev && prev.tagName === 'HR') prev.style.display = 'none';
-          return;
-        }
-        hideEl = p;
-      }
-    } catch(e) { /* non-fatal */ }
-  }
-  // Run after DOM settles + after lessons.js's own injection cycle
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    setTimeout(hideSqs404Fallback, 250);
-    setTimeout(hideSqs404Fallback, 1500);
-  } else {
-    document.addEventListener('DOMContentLoaded', function(){ setTimeout(hideSqs404Fallback, 250); });
-    window.addEventListener('load', function(){ setTimeout(hideSqs404Fallback, 1500); });
-  }
-  // ─── /MR-404-SUPPRESS ───
-
 })();

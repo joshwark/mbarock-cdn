@@ -275,12 +275,13 @@ a.btn.ghost:hover{background:var(--soft)}
 
       <div class="tier" data-tier="full-brand">
         <div class="price">$4,999<small>+</small></div>
-        <div class="name">Full Brand Build</div>
+        <div class="name">Full Brand Build + Investor Match</div>
         <div class="promise">Complete visual identity, branded everything — and BTB curates investor introductions matched to your stage and sector.</div>
         <ul>
           <li><strong>Everything in Sprint-Ready Toolkit</strong></li>
           <li><strong>Full visual identity</strong> — logo system, color, type, voice, brand guidelines</li>
           <li><strong>Branded templates</strong> — social, email, presentation, doc</li>
+          <li><strong>Investor matching</strong> — 5–10 introductions matched to your sector + stage</li>
           <li><strong>90-day post-launch advisory</strong> — biweekly working sessions</li>
           <li><strong>Success fee on funding closed</strong> — terms set in onboarding</li>
         </ul>
@@ -453,7 +454,7 @@ let selectedFunding = null;
 const TIER_NAMES = {
   'dossier-pro': 'Dossier Pro ($499)',
   'sprint-ready': 'Sprint-Ready Toolkit ($1,499)',
-  'full-brand': 'Full Brand Build ($4,999+)'
+  'full-brand': 'Full Brand Build + Investor Match ($4,999+)'
 };
 
 function updateConfirmBar(){
@@ -467,7 +468,7 @@ function updateConfirmBar(){
   bar.classList.add('show');
   const parts = [];
   if (selectedTier) parts.push('<strong>' + TIER_NAMES[selectedTier] + '</strong>');
-  if (selectedFunding) parts.push('Path: ' + (selectedFunding === 'self-funded' ? 'self-funded' : 'seeking Full Brand Build'));
+  if (selectedFunding) parts.push('Path: ' + (selectedFunding === 'self-funded' ? 'self-funded' : 'seeking investor match'));
   summary.innerHTML = 'Selected: ' + parts.join(' · ');
 
   // Build BTB handoff URL with attribution + context
