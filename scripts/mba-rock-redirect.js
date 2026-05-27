@@ -9,7 +9,14 @@
  * Deployed: 2026-05-17
  */
 (function () {
-  if (!/^\/mba-rock\/?$/.test(location.pathname)) return;
+  var path = location.pathname || '';
+  var rootMatch = /^\/mba-rock\/?$/.test(path);
+  var chapterMatch = path.match(/^\/mba-rock\/([a-z0-9\-]+)\/?$/i);
+  if (!rootMatch && !chapterMatch) return;
+  if (chapterMatch) {
+    window.location.replace('https://learn.mbarock.com/lesson/?slug=' + encodeURIComponent(chapterMatch[1].toLowerCase()));
+    return;
+  }
 
   function isAuthedCoursView() {
     // Primary signal: links to specific lessons
