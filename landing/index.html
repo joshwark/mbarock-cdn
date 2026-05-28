@@ -329,11 +329,127 @@
           
         </div>
 
-        <div class="hero-auth-row" style="margin-top:14px;font-size:14px;color:#5C5C66;">
-          Already a student? <a href="https://www.mbarock.com/account/login" style="color:#FF6B35;font-weight:600;text-decoration:underline;">Sign in</a>
-          <span style="margin:0 8px;color:#BFBFC9">·</span>
-          <a href="https://www.mbarock.com/account/lost-password" style="color:#5C5C66;text-decoration:underline;">Forgot password?</a>
+        <!-- Inline sign-in section — Supabase magic link, redirects to /dashboard/ on success -->
+        <div id="mr-signin-box" style="margin-top:28px;padding:22px 24px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.18);border-radius:14px;max-width:540px;">
+          <!-- Signed-out view -->
+          <div id="mr-signin-form-view">
+            <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:#FDFAF1;margin-bottom:6px">Already a student? Sign in.</div>
+            <div style="font-size:13px;color:rgba(253,250,241,0.7);margin-bottom:14px">Get a one-tap sign-in link sent to your email — takes you straight to your dashboard.</div>
+            <form id="mr-signin-form" style="display:flex;gap:8px;flex-wrap:wrap">
+              <input id="mr-signin-email" type="email" required autocomplete="email" placeholder="you@email.com" style="flex:1;min-width:200px;padding:14px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.92);color:#0B1F3A;font-size:15px;font-family:'Inter',sans-serif">
+              <button type="submit" id="mr-signin-btn" style="padding:14px 22px;background:#F26B1F;color:#fff;border:0;border-radius:8px;font-weight:700;font-size:15px;letter-spacing:.02em;cursor:pointer;font-family:'Inter',sans-serif">Email me the sign-in link →</button>
+            </form>
+            <div id="mr-signin-msg" style="margin-top:10px;font-size:13px;color:rgba(253,250,241,0.85);min-height:18px"></div>
+          </div>
+          <!-- Signed-in view (hidden by default; revealed by JS if session exists) -->
+          <div id="mr-signin-authed-view" style="display:none">
+            <div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:#FDFAF1;margin-bottom:6px">✓ You're signed in</div>
+            <div id="mr-signin-email-display" style="font-size:13px;color:rgba(253,250,241,0.7);margin-bottom:18px"></div>
+            <a id="mr-enter-dashboard" href="https://learn.mbarock.com/dashboard/" style="display:inline-block;padding:18px 36px;background:#F26B1F;color:#fff;font-weight:800;font-size:17px;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;text-decoration:none;font-family:'Inter',sans-serif;box-shadow:0 12px 28px rgba(242,107,31,0.4);transition:transform .12s">Enter Dashboard →</a>
+            <button type="button" id="mr-signout-btn" style="margin-left:14px;padding:14px 18px;background:transparent;color:rgba(253,250,241,0.7);border:1px solid rgba(255,255,255,0.18);border-radius:999px;font-size:13px;cursor:pointer;font-family:'Inter',sans-serif">Sign out</button>
+          </div>
         </div>
+        <script>
+        (function(){
+          var SB_URL='https://ciloqphtencjthkedanw.supabase.co';
+          var SB_KEY='sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+          var REDIRECT_AFTER='https://learn.mbarock.com/dashboard/';
+          var formView=document.getElementById('mr-signin-form-view');
+          var authedView=document.getElementById('mr-signin-authed-view');
+          var msgEl=document.getElementById('mr-signin-msg');
+          var emailDisplay=document.getElementById('mr-signin-email-display');
+          // Capture access_token from Supabase callback if present in URL hash
+          function captureCallbackSession(){
+            if(!location.hash) return null;
+            var p=new URLSearchParams(location.hash.replace(/^#/,''));
+            var at=p.get('access_token'); var rt=p.get('refresh_token');
+            if(at){
+              var stored={access_token:at, refresh_token:rt, expires_at:Date.now()+3600*1000, user:null};
+              try{ localStorage.setItem('sb-ciloqphtencjthkedanw-auth-token', JSON.stringify(stored)); }catch(e){}
+              // Wipe the hash so we don't redirect-loop
+              history.replaceState({}, document.title, location.pathname + location.search);
+              return at;
+            }
+            return null;
+          }
+          // Resolve a session token from anywhere localStorage might have it
+          function getStoredToken(){
+            try{
+              var raw=localStorage.getItem('sb-ciloqphtencjthkedanw-auth-token');
+              if(!raw) return null;
+              var obj=JSON.parse(raw);
+              return obj && obj.access_token ? obj.access_token : null;
+            }catch(e){ return null; }
+          }
+          function showAuthed(email){
+            formView.style.display='none';
+            authedView.style.display='block';
+            if(email && emailDisplay) emailDisplay.textContent=email;
+            // Persist a member-id signal for /lesson/, /quiz/, /certificates/ scripts
+            if(email){
+              try{
+                localStorage.setItem('mr-member-id', email);
+                localStorage.setItem('mr_member_id', email);
+                localStorage.setItem('mba-rock-member-id', email);
+                localStorage.setItem('memberId', email);
+              }catch(e){}
+            }
+          }
+          function verifyTokenAndShow(token){
+            if(!token) return;
+            fetch(SB_URL+'/auth/v1/user',{headers:{'apikey':SB_KEY,'Authorization':'Bearer '+token}})
+              .then(function(r){ return r.ok ? r.json() : null; })
+              .then(function(u){ if(u && u.email) showAuthed(u.email); })
+              .catch(function(){});
+          }
+          captureCallbackSession();
+          verifyTokenAndShow(getStoredToken());
+
+          var form=document.getElementById('mr-signin-form');
+          if(form){
+            form.addEventListener('submit', function(e){
+              e.preventDefault();
+              var email=document.getElementById('mr-signin-email').value.trim();
+              if(!email){ return; }
+              var btn=document.getElementById('mr-signin-btn');
+              btn.disabled=true; btn.style.opacity='0.6'; btn.textContent='Sending…';
+              fetch(SB_URL+'/auth/v1/otp',{
+                method:'POST',
+                headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json'},
+                body:JSON.stringify({email:email, create_user:false, options:{email_redirect_to:REDIRECT_AFTER}})
+              }).then(function(r){
+                btn.disabled=false; btn.style.opacity='1'; btn.textContent='Email me the sign-in link →';
+                if(r.ok){
+                  msgEl.innerHTML='✓ Check <b style="color:#fff">'+email.replace(/[<>]/g,'')+'</b> — click the link and you\'ll land on your dashboard.';
+                  msgEl.style.color='#9be8b8';
+                } else {
+                  return r.json().then(function(j){
+                    msgEl.textContent=(j && (j.msg||j.message||j.error_description)) || 'Could not send. Try again or email josh@adytum.agency.';
+                    msgEl.style.color='#ffb29d';
+                  });
+                }
+              }).catch(function(err){
+                btn.disabled=false; btn.style.opacity='1'; btn.textContent='Email me the sign-in link →';
+                msgEl.textContent='Network error: '+err;
+                msgEl.style.color='#ffb29d';
+              });
+            });
+          }
+          var signoutBtn=document.getElementById('mr-signout-btn');
+          if(signoutBtn){
+            signoutBtn.addEventListener('click', function(){
+              try{
+                localStorage.removeItem('sb-ciloqphtencjthkedanw-auth-token');
+                localStorage.removeItem('mr-member-id');
+                localStorage.removeItem('mr_member_id');
+                localStorage.removeItem('mba-rock-member-id');
+                localStorage.removeItem('memberId');
+              }catch(e){}
+              location.reload();
+            });
+          }
+        })();
+        </script>
 
         <div class="hero-stats">
           <div class="stat"><div class="num">10</div><div class="lbl">Modules</div></div>
