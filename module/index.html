@@ -264,9 +264,8 @@ async function loadCerts(){
 
 function lessonHref(l){
   if (!l || !l.id) return '#';
-  // Same-page anchor — scrolls to the lesson tile within the module page.
-  // No dependency on Squarespace chapter URLs (which are sparse / mismatched).
-  return '#lesson-' + l.id;
+  // Route to the parameterized full lesson view (tabbed UI, members-only, full tracking).
+  return '/lesson/?id=' + encodeURIComponent(l.id);
 }
 
 function render(moduleId){

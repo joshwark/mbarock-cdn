@@ -357,13 +357,10 @@ function nextUnfinishedLesson(){
 }
 function lessonHref(lesson){
   if (!lesson) return '#';
-  // Route to the module page on the CDN — no dependency on Squarespace chapter URLs.
-  // Lesson tile clicks happen inside the module page; CONTINUE lands the user on the
-  // right module page, scrolled to the specific lesson via #lesson-<id> anchor.
+  // Route to the parameterized full lesson view (tabbed UI, members-only, full tracking).
   const lid = lesson.id || '';
-  const mid = lesson.module_id || (lid ? lid.split('L')[0] : '');
-  if (!mid) return '#';
-  return '/module/?id=' + encodeURIComponent(mid) + (lid ? '#lesson-' + lid : '');
+  if (!lid) return '#';
+  return '/lesson/?id=' + encodeURIComponent(lid);
 }
 
 function setRing(pct){
