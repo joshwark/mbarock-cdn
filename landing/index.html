@@ -334,12 +334,31 @@
           <!-- Signed-out view -->
           <div id="mr-signin-form-view">
             <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:#FDFAF1;margin-bottom:6px">Already a student? Sign in.</div>
-            <div style="font-size:13px;color:rgba(253,250,241,0.7);margin-bottom:14px">Get a one-tap sign-in link sent to your email — takes you straight to your dashboard.</div>
-            <form id="mr-signin-form" style="display:flex;gap:8px;flex-wrap:wrap">
-              <input id="mr-signin-email" type="email" required autocomplete="email" placeholder="you@email.com" style="flex:1;min-width:200px;padding:14px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.92);color:#0B1F3A;font-size:15px;font-family:'Inter',sans-serif">
-              <button type="submit" id="mr-signin-btn" style="padding:14px 22px;background:#F26B1F;color:#fff;border:0;border-radius:8px;font-weight:700;font-size:15px;letter-spacing:.02em;cursor:pointer;font-family:'Inter',sans-serif">Email me the sign-in link →</button>
-            </form>
-            <div id="mr-signin-msg" style="margin-top:10px;font-size:13px;color:rgba(253,250,241,0.85);min-height:18px"></div>
+            <!-- Tabs -->
+            <div id="mr-tabs" role="tablist" style="display:flex;gap:6px;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.12)">
+              <button id="mr-tab-password" type="button" role="tab" aria-selected="true" style="background:transparent;color:#FDFAF1;border:0;border-bottom:2px solid #F26B1F;padding:8px 4px;margin:0 8px 0 0;font:600 13px Inter,sans-serif;cursor:pointer;letter-spacing:.02em">Email + password</button>
+              <button id="mr-tab-magic" type="button" role="tab" aria-selected="false" style="background:transparent;color:rgba(253,250,241,0.65);border:0;border-bottom:2px solid transparent;padding:8px 4px;margin:0;font:600 13px Inter,sans-serif;cursor:pointer;letter-spacing:.02em">Magic link</button>
+            </div>
+            <!-- Password tab -->
+            <div id="mr-tab-pane-password">
+              <form id="mr-password-form" autocomplete="on">
+                <input id="mr-password-email" name="email" type="email" required autocomplete="username" placeholder="you@email.com" style="display:block;width:100%;padding:13px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.92);color:#0B1F3A;font-size:15px;font-family:'Inter',sans-serif;margin-bottom:8px">
+                <input id="mr-password-pwd" name="password" type="password" required autocomplete="current-password" placeholder="Password" style="display:block;width:100%;padding:13px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.92);color:#0B1F3A;font-size:15px;font-family:'Inter',sans-serif;margin-bottom:10px">
+                <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+                  <button type="submit" id="mr-password-btn" style="flex:1;min-width:200px;padding:14px 22px;background:#F26B1F;color:#fff;border:0;border-radius:8px;font-weight:700;font-size:15px;letter-spacing:.02em;cursor:pointer;font-family:'Inter',sans-serif">Sign in →</button>
+                  <button type="button" id="mr-forgot-btn" style="padding:14px 18px;background:transparent;color:rgba(253,250,241,0.75);border:1px solid rgba(255,255,255,0.18);border-radius:8px;font:500 13px Inter,sans-serif;cursor:pointer;white-space:nowrap">Forgot password</button>
+                </div>
+              </form>
+            </div>
+            <!-- Magic link tab (hidden by default) -->
+            <div id="mr-tab-pane-magic" style="display:none">
+              <form id="mr-signin-form">
+                <input id="mr-signin-email" type="email" required autocomplete="email" placeholder="you@email.com" style="display:block;width:100%;padding:13px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.92);color:#0B1F3A;font-size:15px;font-family:'Inter',sans-serif;margin-bottom:10px">
+                <button type="submit" id="mr-signin-btn" style="width:100%;padding:14px 22px;background:#F26B1F;color:#fff;border:0;border-radius:8px;font-weight:700;font-size:15px;letter-spacing:.02em;cursor:pointer;font-family:'Inter',sans-serif">Email me the sign-in link →</button>
+              </form>
+              <div style="margin-top:8px;font-size:11.5px;color:rgba(253,250,241,0.55);line-height:1.4">No password needed. We email you a one-tap link that signs you in for 1 hour.</div>
+            </div>
+            <div id="mr-signin-msg" style="margin-top:12px;font-size:13px;color:rgba(253,250,241,0.85);min-height:18px"></div>
           </div>
           <!-- Signed-in view (hidden by default; revealed by JS if session exists) -->
           <div id="mr-signin-authed-view" style="display:none">
@@ -405,6 +424,27 @@
           captureCallbackSession();
           verifyTokenAndShow(getStoredToken());
 
+          // === Tab switching ===
+          var tabP=document.getElementById('mr-tab-password');
+          var tabM=document.getElementById('mr-tab-magic');
+          var paneP=document.getElementById('mr-tab-pane-password');
+          var paneM=document.getElementById('mr-tab-pane-magic');
+          function activatePassword(){
+            tabP.style.color='#FDFAF1'; tabP.style.borderBottomColor='#F26B1F'; tabP.setAttribute('aria-selected','true');
+            tabM.style.color='rgba(253,250,241,0.65)'; tabM.style.borderBottomColor='transparent'; tabM.setAttribute('aria-selected','false');
+            paneP.style.display='block'; paneM.style.display='none';
+            msgEl.textContent='';
+          }
+          function activateMagic(){
+            tabM.style.color='#FDFAF1'; tabM.style.borderBottomColor='#F26B1F'; tabM.setAttribute('aria-selected','true');
+            tabP.style.color='rgba(253,250,241,0.65)'; tabP.style.borderBottomColor='transparent'; tabP.setAttribute('aria-selected','false');
+            paneM.style.display='block'; paneP.style.display='none';
+            msgEl.textContent='';
+          }
+          if(tabP) tabP.addEventListener('click', activatePassword);
+          if(tabM) tabM.addEventListener('click', activateMagic);
+
+          // === Magic link form ===
           var form=document.getElementById('mr-signin-form');
           if(form){
             form.addEventListener('submit', function(e){
@@ -431,6 +471,91 @@
               }).catch(function(err){
                 btn.disabled=false; btn.style.opacity='1'; btn.textContent='Email me the sign-in link →';
                 msgEl.textContent='Network error: '+err;
+                msgEl.style.color='#ffb29d';
+              });
+            });
+          }
+
+          // === Password form ===
+          var pwdForm=document.getElementById('mr-password-form');
+          if(pwdForm){
+            pwdForm.addEventListener('submit', function(e){
+              e.preventDefault();
+              var email=document.getElementById('mr-password-email').value.trim();
+              var pwd=document.getElementById('mr-password-pwd').value;
+              if(!email || !pwd){ return; }
+              var btn=document.getElementById('mr-password-btn');
+              btn.disabled=true; btn.style.opacity='0.6'; btn.textContent='Signing in…';
+              msgEl.textContent='';
+              fetch(SB_URL+'/auth/v1/token?grant_type=password',{
+                method:'POST',
+                headers:{'apikey':SB_KEY,'Content-Type':'application/json'},
+                body:JSON.stringify({email:email, password:pwd})
+              }).then(function(r){
+                return r.json().then(function(j){ return {ok:r.ok, body:j}; });
+              }).then(function(res){
+                if(res.ok && res.body && res.body.access_token){
+                  // Store full Supabase session shape so our token-detector works
+                  try {
+                    var sess = {
+                      access_token: res.body.access_token,
+                      refresh_token: res.body.refresh_token,
+                      expires_at: Math.floor(Date.now()/1000) + (res.body.expires_in || 3600),
+                      token_type: res.body.token_type || 'bearer',
+                      user: res.body.user || null
+                    };
+                    localStorage.setItem('sb-ciloqphtencjthkedanw-auth-token', JSON.stringify(sess));
+                    var ue = (res.body.user && res.body.user.email) || email;
+                    localStorage.setItem('mr-member-id', ue);
+                    localStorage.setItem('mr_member_id', ue);
+                    localStorage.setItem('mba-rock-member-id', ue);
+                    localStorage.setItem('memberId', ue);
+                  } catch(e){}
+                  msgEl.innerHTML='✓ Signed in — taking you to the dashboard…';
+                  msgEl.style.color='#9be8b8';
+                  setTimeout(function(){ location.href=REDIRECT_AFTER; }, 350);
+                } else {
+                  btn.disabled=false; btn.style.opacity='1'; btn.textContent='Sign in →';
+                  var err = (res.body && (res.body.error_description||res.body.msg||res.body.message||res.body.error)) || 'Incorrect email or password.';
+                  msgEl.textContent='✗ '+err;
+                  msgEl.style.color='#ffb29d';
+                }
+              }).catch(function(err){
+                btn.disabled=false; btn.style.opacity='1'; btn.textContent='Sign in →';
+                msgEl.textContent='Network error: '+err;
+                msgEl.style.color='#ffb29d';
+              });
+            });
+          }
+
+          // === Forgot password ===
+          var forgotBtn=document.getElementById('mr-forgot-btn');
+          if(forgotBtn){
+            forgotBtn.addEventListener('click', function(){
+              var email=document.getElementById('mr-password-email').value.trim();
+              if(!email){
+                msgEl.textContent='Enter your email above first, then click Forgot password.';
+                msgEl.style.color='#ffb29d';
+                document.getElementById('mr-password-email').focus();
+                return;
+              }
+              forgotBtn.disabled=true; forgotBtn.textContent='Sending…';
+              fetch(SB_URL+'/auth/v1/recover',{
+                method:'POST',
+                headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json'},
+                body:JSON.stringify({email:email, options:{redirect_to:'https://learn.mbarock.com/landing/'}})
+              }).then(function(r){
+                forgotBtn.disabled=false; forgotBtn.textContent='Forgot password';
+                if(r.ok){
+                  msgEl.innerHTML='✓ Password reset link sent to <b style="color:#fff">'+email.replace(/[<>]/g,'')+'</b>.';
+                  msgEl.style.color='#9be8b8';
+                } else {
+                  msgEl.textContent='Could not send reset email. Try the Magic link tab instead.';
+                  msgEl.style.color='#ffb29d';
+                }
+              }).catch(function(){
+                forgotBtn.disabled=false; forgotBtn.textContent='Forgot password';
+                msgEl.textContent='Network error. Try Magic link tab.';
                 msgEl.style.color='#ffb29d';
               });
             });
