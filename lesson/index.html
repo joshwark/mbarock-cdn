@@ -1140,8 +1140,9 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
     if (!s[memberId]) s[memberId] = {};
     s[memberId][lessonId] = new Date().toISOString();
     writeStore(QUIZ_KEY, s);
-    // Persist to Supabase user_quiz_attempts so /certificates/ + /dashboard/ can read across devices
+    // Persist to Supabase user_quiz_attempts (schema: member_id, lesson_id, attempt_n, answers, score, passed)
     try {
+      var pctScore = total ? Math.round(((correct || 0) / total) * 100) : 0;
       fetch(SUPABASE_URL + '/rest/v1/user_quiz_attempts', {
         method:'POST',
         headers:{
@@ -1153,10 +1154,10 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
         body: JSON.stringify({
           member_id: memberId,
           lesson_id: lessonId,
-          correct: correct || 0,
-          total: total || 5,
-          passed: true,
-          source: 'lesson-page'
+          attempt_n: 1,
+          answers: {},
+          score: pctScore,
+          passed: true
         }),
         keepalive: true,
       }).catch(function(e){ console.warn('quiz pass push failed', e); });

@@ -190,27 +190,40 @@ h1{font-family:"Fraunces",serif;font-weight:700;font-size:36px;line-height:1.15;
       p[n] = {score:correct, passed:pass, at: new Date().toISOString()};
       saveProgress(p);
 
-      // Persist to Supabase if member is signed in
+      // Persist to Supabase — schema: {member_id, lesson_id, attempt_n, answers, score, passed}
+      // Also write a row for any CANON lesson_id whose quiz_source_num === n, so /certificates/ gate is unlocked.
       try {
-        const memberId = localStorage.getItem('mr-member-id') || localStorage.getItem('mr_member_id') || localStorage.getItem('memberId');
-        if (memberId && window.fetch){
-          // Best-effort fire-and-forget; non-blocking
-          fetch('https://ciloqphtencjthkedanw.supabase.co/rest/v1/user_quiz_attempts', {
-            method:'POST',
-            headers:{
-              'apikey':'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-',
-              'Content-Type':'application/json',
-              'Prefer':'return=minimal'
-            },
-            body: JSON.stringify({
-              member_id: memberId,
-              lesson_id: 'quizbook-' + n,
-              correct: correct,
-              total: 5,
-              passed: pass,
-              source: 'master-quiz-book'
+        const memberId = localStorage.getItem('mr-member-id') || localStorage.getItem('mr_member_id') || localStorage.getItem('memberId') || localStorage.getItem('mba-rock-member-id');
+        if (memberId && window.fetch && pass){
+          const pctScore = Math.round((correct / 5) * 100);
+          const headers = {
+            'apikey':'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-',
+            'Authorization':'Bearer sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-',
+            'Content-Type':'application/json',
+            'Prefer':'return=minimal,resolution=merge-duplicates'
+          };
+          // Find which canon lessons this quiz belongs to via lessons.v2.json
+          fetch('https://learn.mbarock.com/lessons.v2.json?cb=' + Date.now(), {cache:'no-store'})
+            .then(r => r.json())
+            .then(json => {
+              const lessons = (json && json.lessons) || [];
+              const matches = lessons.filter(L => L && L.quiz_source_num === n);
+              // Write a row for each matched canon lesson_id (usually 1)
+              matches.forEach(L => {
+                fetch('https://ciloqphtencjthkedanw.supabase.co/rest/v1/user_quiz_attempts', {
+                  method:'POST', headers,
+                  body: JSON.stringify({ member_id: memberId, lesson_id: L.id, attempt_n: 1, answers: {}, score: pctScore, passed: true }),
+                  keepalive: true,
+                }).catch(()=>{});
+              });
+              // Also write a quizbook-N row for the standalone master quiz book history
+              fetch('https://ciloqphtencjthkedanw.supabase.co/rest/v1/user_quiz_attempts', {
+                method:'POST', headers,
+                body: JSON.stringify({ member_id: memberId, lesson_id: 'quizbook-' + n, attempt_n: 1, answers: {}, score: pctScore, passed: true }),
+                keepalive: true,
+              }).catch(()=>{});
             })
-          }).catch(()=>{});
+            .catch(()=>{});
         }
       } catch(e){}
     });
