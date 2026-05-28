@@ -151,7 +151,7 @@ a{color:inherit;}
 </style>
 </head>
 <body>
-<main class="app" id="app" hidden id="mr-protected">
+<main class="app" id="mr-protected" hidden>
   <div id="content"></div>
 </main>
 
@@ -286,7 +286,7 @@ function render(){
   const pct = total > 0 ? Math.round(((state.idx) / total) * 100) : 0;
 
   const root = document.getElementById('content');
-  document.getElementById('app').style.setProperty('--accent', m.accent);
+  document.querySelector('.app').style.setProperty('--accent', m.accent);
   document.title = `${m.title} Flashcards · MBA Rock`;
 
   let html = '';

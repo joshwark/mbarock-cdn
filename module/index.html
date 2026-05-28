@@ -151,7 +151,7 @@ a{color:inherit;}
 </style>
 </head>
 <body>
-<main class="app" id="app" hidden id="mr-protected">
+<main class="app" id="mr-protected" hidden>
   <div id="content"></div>
 </main>
 
@@ -277,8 +277,8 @@ function render(moduleId){
     return;
   }
   document.title = `${m.num} ${m.title} · MBA Rock`;
-  document.getElementById('app').style.setProperty('--accent', m.accent);
-  document.getElementById('app').style.setProperty('--accent-soft', m.soft);
+  document.querySelector('.app').style.setProperty('--accent', m.accent);
+  document.querySelector('.app').style.setProperty('--accent-soft', m.soft);
 
   const lessons = state.lessonsByModule[moduleId] || [];
   const passed = lessons.filter(l => state.quizPasses[l.id]).length;
