@@ -1,0 +1,80 @@
+"In financial management, what does the term 'runway' represent?",The amount of time a company has before it runs out of cash based on its current spending.
+What is the formula for calculating a business's monthly cash runway?,$Runway = \frac{Cash\ on\ Hand}{Net\ Monthly\ Burn}$
+How is 'monthly burn' defined in the context of cash flow?,The net amount of cash leaving a business each month.
+"According to the 'Oxygen' guide, what runway duration indicates that a business is 'suffocating'?",Fewer than three months.
+List three levers available to a manager to extend a company's cash runway.,"Cutting burn, accelerating collections, and raising capital."
+Why is 'profit on paper' considered distinct from 'cash in the bank'?,Revenue may be recognized before the actual cash is collected from customers.
+Term: Breakeven Point,"Definition: The volume of sales at which total revenue equals total costs, resulting in zero profit or loss."
+What is the formula to determine the breakeven point in units?,$Breakeven\ Units = \frac{Fixed\ Costs}{Price - Variable\ Cost}$
+Formula: Contribution Margin per unit,$Contribution\ Margin = Price - Variable\ Cost$
+How is the Breakeven Revenue calculated?,$Breakeven\ Revenue = \frac{Fixed\ Cost}{Contribution\ Margin\ \%}$
+"In a coffee shop with $\$10,000$ in monthly rent and a $\$3$ margin per cup, how many cups must be sold to break even?","3,334 cups per month."
+What is the financial outcome of every sale made below the breakeven point?,The business loses money on its fixed overhead costs.
+"According to the 'Top Line Lie' framework, what does 'revenue' represent compared to 'cash'?","Revenue is vanity, while cash is reality."
+What remains after subtracting the Cost of Goods Sold (COGS) from total revenue?,Gross Profit.
+"The final amount remaining after all operating expenses, interest, and taxes are paid is called _____.",Net Profit
+Which specific trend serves as a warning sign despite high revenue growth?,Shrinking profit margins.
+List the three metrics included in the 'three-line check' for financial health.,"Revenue trend, Gross Margin trend, and Net Margin trend."
+How does the 'April Cash Timing' lesson explain the discrepancy between profit and cash?,"Profit is recorded when a sale is booked, but cash only arrives when the invoice is collected."
+What is the formula for the Cash Conversion Cycle?,$AR\ days + Inventory\ days - AP\ days$
+Why can fast growth paradoxically lead a profitable company to bankruptcy?,New customers often tie up working capital before they provide the cash to pay for operations.
+Which financial tool is recommended over an annual budget for managing short-term cash needs?,A 13-week rolling cash forecast.
+What is the core principle of the 'Time Value of Money'?,A dollar received today is worth more than a dollar received in the future.
+Term: Net Present Value (NPV),"Definition: The sum of future cash flows discounted back to the present, minus the initial investment."
+What happens to the present value of a future benefit as the discount rate increases?,The present value decreases.
+Which factors typically cause a discount rate to rise?,Higher risk and higher inflation.
+Formula: Net Present Value (NPV),$NPV = \sum \frac{CF}{(1+r)^t}$
+Under what NPV condition should a project be rejected?,When the Net Present Value is negative.
+What does the 'r' variable represent in the NPV formula for a corporation?,The weighted cost of capital.
+Term: Days Sales Outstanding (DSO),Definition: A measure of the average number of days it takes a company to collect payment after a sale has been made.
+What is the formula for Days Sales Outstanding?,$DSO = (\frac{Accounts\ Receivable}{Revenue}) \times Days$
+What is the typical DSO benchmark for a SaaS company?,30 to 45 days.
+Why is a high DSO described as a 'free loan' to a customer?,The company is funding the customer's purchase using its own bank account interest-free.
+What does the payment term '2/10 net 30' imply?,"The customer receives a $2\%$ discount if they pay within 10 days; otherwise, the full amount is due in 30 days."
+Term: Customer Acquisition Cost (CAC),Definition: The total cost spent on sales and marketing to acquire a single new customer.
+What is the formula for calculating CAC?,$CAC = \frac{Sales\ +\ Marketing\ Expenses}{Number\ of\ New\ Customers}$
+Term: Lifetime Value (LTV),Definition: The total gross margin a company expects to earn from a customer over the entire duration of the relationship.
+How is LTV calculated?,$LTV = Gross\ Margin\ per\ Customer \times Average\ Lifespan$
+What is the minimum healthy ratio for $LTV/CAC$ in a scaling business?,3 or higher.
+The amount of time it takes for a customer to generate enough contribution margin to cover their CAC is called the _____.,Payback Period
+Term: Degree of Operating Leverage (DOL),Definition: A measure of how much a company's operating income changes in response to a change in sales.
+How is DOL calculated using contribution margin?,$DOL = \frac{Contribution\ Margin}{Operating\ Income}$
+Formula: DOL using percentage changes,$DOL = \frac{\%\ Change\ in\ EBIT}{\%\ Change\ in\ Sales}$
+Why do software companies typically have high operating leverage?,They have high fixed costs for development but very low variable costs for each additional unit sold.
+What is the primary risk associated with high operating leverage?,Small drops in revenue lead to disproportionately large drops in profit.
+State the fundamental accounting equation for a balance sheet.,$Assets = Liabilities + Equity$
+How are assets and liabilities classified on a balance sheet to distinguish short-term from structural items?,By categorizing them as 'Current' or 'Long-term'.
+What is a generally accepted benchmark for a healthy 'Current Ratio'?,Greater than 1.5.
+A business with $\$5M$ in assets and $\$4M$ in debt is considered _____ compared to one with $\$1M$ in debt.,Riskier
+Which four ratios are recommended for quarterly balance sheet tracking?,"Current, Quick, Debt/Equity, and Working Capital."
+How does the 'Precision Logic' text define a 'Type 1' decision?,"A high-stakes, irreversible decision often referred to as a 'one-way door'."
+"According to Jeff Bezos, how should 'Type 2' decisions be handled?",They should be made quickly by individuals or small groups using judgment.
+What 'tax' do organizations pay when they apply Type 1 processes to Type 2 decisions?,A tax in speed and organizational agility.
+Which cognitive trap involves continuing an activity solely because of resources already invested?,Sunk cost fallacy.
+"In economics, how is revenue calculated at a specific market point?",$Revenue = Price \times Quantity$
+Under what condition is demand considered 'inelastic'?,When an increase in price leads to higher total revenues.
+How do 'accounting costs' differ from 'economic costs'?,Economic costs include both explicit costs and the opportunity costs of alternatives.
+What is another common name for 'marginal revenue' in a market without power?,Price.
+A constraint in the short run that prevents a business from increasing production is known as a(n) _____.,Limiting factor
+What economic concept describes the reduction in average cost per unit as the scale of production increases?,Economies of scale.
+"According to the 'Bones in Spreadsheets' lesson, which financial statement 'tells the truth' compared to the 'story' of the income statement?",The Balance Sheet.
+The formula for the 'Quick Ratio' is most likely used to measure what?,Short-term liquidity using only the most liquid assets.
+"In the 'Oxygen' startup example, if a firm has $\$240K$ and burns $\$40K$ monthly, what is its runway?",6 months.
+Why is capital considered the 'most expensive' lever for extending runway?,It often requires giving up equity or taking on high-interest debt.
+What is the purpose of the 'Decision Quality Six' framework?,"To ensure decisions have the right frame, alternatives, data, values, logic, and commitment."
+Formula: Percent change in price (Midpoint method),$[\frac{(P2 - P1)}{( (P2 + P1) / 2 )}] \times 100$
+"If a firm sells one unit for $\$50$ and two units for $\$45$ each, what is the marginal revenue of the second unit?",$$40$.
+Which level of production maximizes profits in a standard total cost/total revenue graph?,The point where marginal cost equals marginal revenue.
+What does the 'precautionary principle' state regarding policy making?,Policies should err on the side of caution when there is a risk of a catastrophic outcome.
+"In the 'Receivables In' worked example, how much cash is freed by dropping DSO from 60 to 45 days for an agency with $\$1M$ monthly revenue?","$$500,000$."
+Which industry benchmark for DSO is typically the longest?,Construction ($90+$ days).
+What action is recommended for accounts receivable that are over 60 days old?,Chase them aggressively.
+Why should a company avoid 'anchoring' in decision making?,It causes them to rely too heavily on the first piece of information offered.
+"In the LTV formula, what does 'average lifespan' refer to?",The typical duration a customer continues to do business with the company.
+What happens to the breakeven point if fixed costs increase?,The breakeven point increases (more units must be sold).
+How do variable costs behave as production increases?,They increase in total but typically stay constant per unit.
+Which financial metric is defined as NOPAT divided by Invested Capital?,Return on Invested Capital (ROIC).
+A sale is not truly a sale until _____.,The cash is in the bank
+Which type of data analysis answers 'what will happen'?,Predictive analytics.
+What is the primary difference between a 'funnel' and a 'loop' in growth strategy?,"Funnels leak over time, while loops reinvest outputs to create compounding growth."
+"In capital allocation, what should a CEO do with the next dollar if internal ROIC is lower than the cost of capital?",Return the cash to shareholders via dividends or buybacks.

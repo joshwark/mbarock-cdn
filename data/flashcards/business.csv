@@ -1,0 +1,85 @@
+"In the Bezos decision framework, what is the defining characteristic of a 'Type 1' decision?",It is an irreversible 'one-way door' with high stakes.
+How should an organization handle 'Type 2' decisions compared to 'Type 1' decisions?,"Type 2 decisions should be made quickly using judgment, while Type 1 require heavy evidence and deliberation."
+"Which element of the 'Decision Quality Six' involves identifying at least three choices, including 'do nothing'?",Alternatives
+"In the data hierarchy, what is the purpose of 'Prescriptive' analytics?",Determining what specific actions should be taken.
+The cognitive trap where an individual favors information that supports their existing beliefs is called _____.,Confirmation bias
+What is the 'North Star' metric in a KPI hierarchy?,"The single metric that proves customer value, such as weekly active users or ARR."
+"In the KPI hierarchy, how do 'Input metrics' relate to the 'North Star'?","They are the specific levers, such as acquisition or activation rates, that move the North Star metric."
+What is the primary role of 'Health metrics' in a performance dashboard?,"They act as guardrails, measuring factors like NPS or error rates to ensure the business stays stable."
+"According to dashboard design principles, when should color be used on a metric display?","Color should only be used to highlight exceptions, not for decoration."
+"The 'SMART' test for KPIs requires that a metric be Specific, Measurable, Actionable, Relevant, and _____.",Time-bound
+What is the core purpose of A/B testing in a business context?,To replace opinions with evidence by isolating the effect of one change against a control.
+"In the anatomy of an experiment, what defines the 'Decision rule'?",The specific criteria for action that must be set before the test is launched.
+"In statistical literacy for A/B testing, what does the $p$-value represent?",The probability that the observed result is merely due to noise.
+The statistical term for the probability that a test will detect a real effect is _____.,Power
+What is the 'HARKing' pitfall in experimentation?,Hypothesizing after the results are already known.
+How does a 'forecast' differ from a 'scenario' in business planning?,"A forecast is a structured opinion that narrows uncertainty, while a scenario is a story that prepares you for it."
+Which forecast quality metric measures if 90\% confidence intervals contain the truth 90\% of the time?,Calibration
+"In forecasting methods, what is 'Top-down' forecasting?",Estimating future outcomes by multiplying total market size by target market share.
+The 'Base-rate check' guardrail suggests that forecasts are usually wrong if they ignore _____.,Historical base rates for similar outcomes.
+What are 'no-regret moves' in scenario planning?,Strategic actions that remain beneficial across all identified future scenarios.
+"In risk management, how is 'Profit' conceptually defined?",The reward for the risks an organization intelligently chooses to accept.
+"In the risk taxonomy, which category includes risks related to liquidity, foreign exchange (FX), and credit?",Financial risk
+"In the TARA framework for risk response, what does 'Transfer' involve?",Shifting the risk to another party through insurance or contractual agreements.
+What is the 'Reduce' response in the TARA risk framework?,Implementing controls or redundancies to lower the likelihood or impact of a risk.
+How should a company defend against 'Black Swan' events?,"By building resilience, redundancy, and antifragility rather than attempting better forecasting."
+What is the definition of 'Operational Excellence'?,The discipline of consistently delivering customer value with the lowest possible waste through repeatability.
+Which pillar of Operational Excellence emphasizes that the operator owns the process?,Respect for People
+What does the Operational Excellence pillar 'Standard Work' represent?,"The documented, best-known method for performing a task."
+"In supply chain management, what is 'Safety Stock'?",Inventory held as protection against variability in supply or demand.
+What is the formula for 'Inventory Turns'?,$COGS / \text{Average Inventory}$
+The phenomenon where small demand changes amplify as they move upstream in the supply chain is the _____.,Bullwhip Effect
+"In Six Sigma methodology, what is the target maximum number of defects per million opportunities?",3.4
+"In the DMAIC cycle for quality improvement, what occurs during the 'Analyze' phase?",Determining the root cause of defects via methods like the '5 Whys' or fishbone diagrams.
+Which 'Cost of Quality' category includes expenses for training and design?,Prevention cost
+"In quality management, what is 'External failure'?","Defects that reach the customer, resulting in returns, warranty claims, or brand damage."
+"In the 'Iron Triangle' of project management, what three variables are interconnected?","Scope, Time, and Cost."
+How does a 'Program' differ from a 'Project'?,"A project is a temporary effort for a specific outcome, while a program is a set of related projects managed for collective benefits."
+"In the 'Five Cs' of vendor selection, what does 'Commitment' assess?",Whether the organization is considered strategic to the vendor.
+"In the partnership spectrum, what defines a 'Joint venture'?",A relationship involving shared equity and shared governance.
+"According to the 'One-Word Brand' concept, what is a 'Brand'?",The story customers tell themselves when choosing one option over alternatives.
+"In the brand positioning template, what follows the 'Target' and the 'Need'?",The 'Category' and the 'Unique Value'.
+What is the 'RAPID' framework used for in organizations?,"Clarifying decision-making roles: Recommend, Agree, Perform, Input, and Decide."
+"The 'Disagree-and-commit' principle suggests that once a decision is made, team members must _____.",Fully support the execution regardless of their previous personal stance.
+What molecule is produced when glucose is split during the initial stage of cell respiration?,Two molecules of pyruvate.
+"In the AP World History framework, what is the focus of 'Theme 1'?","Interactions in Economy and Politics (trade, international exchange, war, and diplomacy)."
+Which AP World History theme assesses systems of social structure and gender structure?,Theme 4
+What does AP World History Theme 3 address?,"The impact of technology, demography (population shifts), and the environment on people."
+"In statistical decision theory, what is an 'Action Space'?",The set of all possible actions or decisions a statistician can take after observing data.
+"In decision theory, what is the 'Loss Function' used for?",Quantifying the 'loss' or cost incurred when a selected decision is incorrect.
+The average loss incurred by a decision function $\delta$ is known as the _____.,Risk function
+What is the statistical technique of 'Cross-validation'?,Splitting data into a training set to fit a model and a validation set to test its predictive power.
+"In experimental design, what is the purpose of a 'Double-blind' experiment?",Concealing treatment identity from both participants and experimenters to avoid bias.
+"In linear regression, what is the difference between 'Interpolation' and 'Extrapolation'?","Interpolation predicts within the observed data range, while extrapolation predicts outside it."
+What does the statistical method 'ANOVA' decompose?,Total variation in a response variable into parts from predictor variables versus random error.
+"In critical thinking, which intellectual standard asks 'How could we check on that?' or 'How could we verify that?'",Accuracy
+The critical thinking standard that addresses the complexities and difficulties of a problem is called _____.,Depth
+"In the 'Understanding by Design' (UbD) framework, what is the goal of 'Stage 1'?",Identifying desired results and enduring understandings.
+What is the 'Top Line Lie' in business analytics?,The fallacy that revenue growth (vanity) is more important than profit (sanity) or cash (reality).
+"In financial 'Oxygen', how is 'Runway' calculated?",Cash on hand divided by monthly net burn.
+What is the formula for the 'Breakeven' point in units?,$Fixed Costs / (Price - Variable Cost)$
+"In the 'April Cash Timing' concept, what is the 'Cash Conversion Cycle'?",$AR \text{ days} + \text{Inventory days} - AP \text{ days}$
+What does 'NPV' (Net Present Value) do to future cash flows?,It discounts them back to today's value using the cost of capital.
+"In receivables management, what does 'DSO' stand for?",Days Sales Outstanding
+What is a healthy 'LTV/CAC' ratio according to unit economics standards?,A ratio of 3 or higher.
+"In business finance, what is 'Operating Leverage'?",The extent to which fixed costs amplify the effect of revenue changes on operating income.
+What are the five types of 'Moats' that can protect a business from competition?,"Network effects, switching costs, scale, brand, and IP."
+What are 'Porter's Five Forces' used to analyze?,Industry structure and its influence on profit potential.
+"In the 'Blue Ocean' strategy framework, what does 'ERRC' stand for?","Eliminate, Reduce, Raise, Create."
+"In the 'VRIO' framework, what does the 'I' represent?",Inimitable (is the resource difficult for others to copy?)
+What is the '70-20-10' rule for strategic bets?,"Allocating 70\% of resources to core (H1), 20\% to emerging (H2), and 10\% to future (H3) bets."
+"In the 'Personal Operating System', what is the recommended amount of 'Deep Work' time per day?",4 hours
+What is 'Stakeholder Theory' in the context of business ethics?,"The belief that a company must consider customers, employees, suppliers, and the community, not just shareholders."
+"In the 'PESTEL' scan, what does the 'L' stand for?",Legal
+"What are the three lenses of ESG (Environmental, Social, Governance) strategy?","Risk reduction, cost/efficiency, and growth."
+"In the context of 'Growth Engines', what is a 'Loop'?",A self-reinforcing cycle where the output of one step is reinvested as an input for the next.
+What does 'DSO' measure in the 'Receivables In' framework?,The average number of days it takes to collect payment after a sale.
+"In the 'Six Sigma' DMAIC process, what is the 'Control' step?",Locking in the gains of an improvement using standard work.
+"In project management, what is 'Scope creep'?",The uncontrolled expansion of project goals without adjustments to time or cost.
+What is the 'Three-Horizon' model used to manage?,A company's portfolio of innovation bets across different timeframes.
+"In the 'Radical Candor' feedback model, what two axes are required?",Caring personally and challenging directly.
+"In the 'SBI' feedback model, what does each letter represent?","Situation, Behavior, Impact."
+What is 'Working Capital' in the 'Bones in Spreadsheets' ratio analysis?,Current Assets minus Current Liabilities.
+"In 'Funnel Math', what is the impact of a 2x improvement at any single stage?",It doubles the total output of the funnel.
+What is the 'Theory of Constraints' core principle?,"Every system has exactly one bottleneck, and optimizing anything else is wasted effort."
+"In 'Vendor Management', what defines 'Transactional vendors'?","Price-driven, easily swappable suppliers with no joint planning."
