@@ -1376,7 +1376,11 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
           else if (k === 'quiz') val.textContent = L.quiz && L.quiz.questions ? (L.quiz.questions.length + ' questions · ' + (L.quiz.pass_threshold || 80) + '% to pass') : '—';
         });
 
-        // Audio src
+        // Song name + duration sub-line (static HTML elements)
+        setText('.mr5-audio-label', '"' + (L.audio_label || L.song_title || L.title || '') + '"');
+        setText('.mr5-audio-sub', 'The song' + (L.audio_duration ? ' · ' + L.audio_duration : ''));
+
+                // Audio src
         if (L.audio_url){
           var aud = document.querySelector('audio');
           if (aud){
@@ -1432,7 +1436,22 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
           });
         }
 
-        finish();
+        // Hide M7L2-paywall-specific resource blocks + sample-pitch text on real lesson views
+        document.querySelectorAll('.mr5-res').forEach(function(el){
+          // Show a placeholder in its place; resource lists need to be populated from v2 data per lesson
+          var ph = document.createElement('div');
+          ph.style.cssText = 'padding:24px;background:#FAF8F5;border:1px dashed #D4C8B3;border-radius:8px;color:#888;font-family:Inter,sans-serif;font-size:14px;text-align:center;';
+          ph.textContent = 'Lesson-specific companion materials coming soon. Request via the in-product fix queue.';
+          el.parentNode.replaceChild(ph, el);
+        });
+        document.querySelectorAll('.mr5-tasks-pitch').forEach(function(el){
+          // Only hide the pitch lines that contain 'full set unlocks' or 'Sample shown' phrasing.
+          if (/full set unlocks|Sample shown below/i.test(el.textContent)){
+            el.style.display = 'none';
+          }
+        });
+
+                finish();
       })
       .catch(function(e){
         console.warn('lesson hydration failed', e);
