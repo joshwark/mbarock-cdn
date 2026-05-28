@@ -1402,6 +1402,11 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
         });
         samplesBanners.forEach(function(b){ b.style.display = 'none'; });
 
+        // Hide sample-only paywall/upsell content (member view should not see ANY paywall teaser)
+        document.querySelectorAll('.sample-outro, .mr-cd-banner').forEach(function(el){
+          el.style.display = 'none';
+        });
+
         // Re-render core concepts (preserve container, replace children)
         var conceptList = document.querySelector('.mr5-concepts-list');
         if (conceptList && Array.isArray(L.core_concepts) && L.core_concepts.length){
