@@ -113,8 +113,7 @@
     if (!q) {
       // Show all lessons grouped (just titles)
       resultsEl.innerHTML = lessons.map(function(l){
-        return '<a class="result" href="https://panda-reindeer-4akp.squarespace.com/mba-rock/' 
-          + (l.slug_v2 || l.legacy_slug || l.id.toLowerCase()) + '">'
+        return '<a class="result" href="/module/?id=' + l.module_id + '#lesson-' + l.id + '">'
           + '<div class="result-eyebrow">' + (modName[l.module_id] || l.module_id) + ' · ' + l.id + '</div>'
           + '<div class="result-title">' + l.title + '</div>'
           + '<div class="result-snip">' + (l.intro || '').slice(0,180) + '</div>'
@@ -149,8 +148,7 @@
       var snip = getSearchText(l);
       var start = Math.max(0, snip.toLowerCase().indexOf(qLower) - 60);
       var excerpt = (start > 0 ? '… ' : '') + snip.slice(start, start + 240);
-      return '<a class="result" href="https://panda-reindeer-4akp.squarespace.com/mba-rock/' 
-        + (l.slug_v2 || l.legacy_slug || l.id.toLowerCase()) + '">'
+      return '<a class="result" href="/module/?id=' + l.module_id + '#lesson-' + l.id + '">'
         + '<div class="result-eyebrow">' + (modName[l.module_id] || l.module_id) + ' · ' + l.id + '</div>'
         + '<div class="result-title">' + highlight(l.title, q) + '</div>'
         + '<div class="result-snip">' + highlight(excerpt, q) + '</div>'
