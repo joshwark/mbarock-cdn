@@ -306,12 +306,19 @@
         <a href="https://www.mbarock.com/whats-new">What's new</a>
         <a href="https://www.mbarock.com/directory">Directory</a>
         <a href="https://www.mbarock.com/mba-rock">Join</a>
-        <a href="https://www.mbarock.com/account/login" class="nav-signin" style="margin-left:12px;padding:6px 14px;border:1.5px solid #FF6B35;border-radius:999px;color:#FF6B35;font-weight:600;">Sign in</a>
+        <a href="#mr-signin-box" class="nav-signin" style="margin-left:12px;padding:6px 14px;border:1.5px solid #FF6B35;border-radius:999px;color:#FF6B35;font-weight:600;">Sign in</a>
       </nav>
     </div>
 
     <div class="hero-grid">
       <div>
+        <!-- Above-fold sign-in prompt for returning members -->
+        <div id="mr-topbar-signin" style="display:none;margin-bottom:18px;padding:10px 16px;background:rgba(242,107,31,0.12);border:1px solid rgba(242,107,31,0.4);border-radius:10px;color:#FDFAF1;font-family:Inter,sans-serif;font-size:13.5px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <span style="font-size:18px">👋</span>
+          <span style="flex:1">Already a student?</span>
+          <a href="#mr-signin-box" style="background:#F26B1F;color:#fff;padding:8px 18px;border-radius:999px;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.04em;">Sign in below ↓</a>
+        </div>
+        <script>document.getElementById('mr-topbar-signin').style.display='flex';</script>
         <span class="chip">🎟 Founders' Rate · 50% off through June 30</span>
         <span class="chip" style="margin-left:8px;background:rgba(46,125,90,0.18);color:#2E7D5A">✅ Course is 100% complete · 74 lessons · 74 songs · 74 videos</span>
         <h1 style="margin-top:22px">The MBA delivered <span class="underline">as an album.</span></h1>
