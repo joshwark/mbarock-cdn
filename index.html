@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>MBA Rock</title>
+<style>
+  body{background:#0B1F3A;color:#FDFAF1;font-family:-apple-system,BlinkMacSystemFont,Inter,system-ui,sans-serif;margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;font-size:14px;letter-spacing:.04em}
+  p{opacity:.7}
+</style>
+<script>
+/* MBA Rock — CDN root capture/router
+   Handles three cases:
+   1. Supabase auth callback (#access_token=... or #error=...) → forward to /dashboard/ preserving the hash so the dashboard can pick up the session
+   2. Root visit with no auth payload → forward to /landing/
+   3. Existing localStorage session detected → forward to /dashboard/
+   ALL forwards preserve the original ?query and #hash. */
+(function(){
+  try {
+    var h = location.hash || '';
+    var s = location.search || '';
+    // Auth callback — Supabase puts access_token (or error_code) in the URL hash
+    if (h.indexOf('access_token=') !== -1 || h.indexOf('error=') !== -1 || h.indexOf('error_code=') !== -1) {
+      location.replace('/dashboard/' + s + h);
+      return;
+    }
+    // Already signed in (any of our member-id keys) → dashboard
+    var signedIn = false;
+    try {
+      signedIn = !!(
+        localStorage.getItem('sb-ciloqphtencjthkedanw-auth-token') ||
+        localStorage.getItem('mr-member-id') ||
+        localStorage.getItem('mr_member_id') ||
+        localStorage.getItem('mba-rock-member-id') ||
+        localStorage.getItem('memberId')
+      );
+    } catch(e) {}
+    if (signedIn) {
+      location.replace('/dashboard/' + s);
+      return;
+    }
+    // Default: landing
+    location.replace('/landing/' + s + h);
+  } catch(e) {
+    location.replace('/landing/');
+  }
+})();
+</script>
+<noscript>
+  <meta http-equiv="refresh" content="0;url=/landing/">
+</noscript>
+</head>
+<body>
+<p>Loading MBA Rock…</p>
+</body>
+</html>
