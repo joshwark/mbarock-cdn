@@ -410,6 +410,18 @@ html,body{margin:0;padding:0;background:#FAF8F5;color:#0E1116;font-family:'Inter
 .sample-quiz-locked.visible b{color:#F26B1F;}
 
 </style>
+  <!-- MBA Rock: async hydration for /lesson/?id= — hides documentElement, fetches, updates ALL DOM, reveals -->
+  <style id="mr-hyd-style">.mr-hyd-loading{visibility:hidden!important}</style>
+  <script>
+  (function(){
+    var params = new URLSearchParams(location.search);
+    if (params.get('id') || params.get('slug')){
+      document.documentElement.classList.add('mr-hyd-loading');
+      // Safety: even if hydration fails, reveal after 4s so user is never stuck on blank
+      setTimeout(function(){ document.documentElement.classList.remove('mr-hyd-loading'); }, 4000);
+    }
+  })();
+  </script>
 </head>
 <body>
 <!-- ── Founders'-rate countdown banner v1 (auto-hides 2026-07-01) ── -->
@@ -919,54 +931,6 @@ html,body{margin:0;padding:0;background:#FAF8F5;color:#0E1116;font-family:'Inter
 <script>window.__ADA_CONFIG = window.__ADA_CONFIG || { brand: 'mba-rock' };</script>
 <script src="https://learn.mbarock.com/accessibility/widget.js" defer></script>
 
-  <!-- MBA Rock: pre-render hydration — fetch the requested lesson before LESSON renderer runs -->
-  <script>
-  (function(){
-    var params = new URLSearchParams(location.search);
-    var lessonId = params.get('id') || params.get('slug');
-    if (!lessonId) return;  // No override; existing M7L2 default will render.
-    // Synchronous-ish: use XHR sync so LESSON renderer waits.
-    try {
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'https://learn.mbarock.com/lessons.v2.json?cb=' + Date.now(), false);
-      xhr.send();
-      if (xhr.status >= 200 && xhr.status < 300) {
-        var data = JSON.parse(xhr.responseText);
-        var lessons = (data && data.lessons) || data;
-        if (Array.isArray(lessons)) {
-          var match = lessons.find(function(l){
-            return l && (l.id === lessonId || l.legacy_slug === lessonId || l.slug_v2 === lessonId);
-          });
-          if (match) {
-            // Build a LESSON object compatible with the renderer.
-            // Provide safe defaults for fields the renderer expects.
-            window.__LESSON_OVERRIDE = {
-              id: match.id,
-              module_id: match.module_id,
-              module_title: match.module_title || '',
-              module_color: match.module_color || '#F26B1F',
-              title: match.title || '',
-              position: match.position || match.lesson_number || 1,
-              total: 74,
-              audio_url: match.audio_url || '',
-              audio_label: match.audio_label || match.song_title || match.title || '',
-              audio_duration: match.audio_duration || '',
-              audio_overview_url: match.audio_overview_url || '',
-              video_url: match.video_url || '',
-              video_id: match.video_id || null,
-              intro: match.intro || match.subtitle || '',
-              core_concepts: Array.isArray(match.core_concepts) ? match.core_concepts : [],
-              take_action: Array.isArray(match.take_action) ? match.take_action : [],
-              deep_dive: match.deep_dive || '',
-              quiz: match.quiz || null,
-              capstone_field: match.capstone_field || ''
-            };
-          }
-        }
-      }
-    } catch (e) { console.warn('lesson hydration failed:', e); }
-  })();
-  </script>
   <script>
 /* Sample lesson interactive shell — tabs, quiz, notes, concept disclosure */
 const LESSON = window.__LESSON_OVERRIDE || {"id": "M7L2", "module_id": "M7", "module_title": "Marketing & Brand", "module_color": "#F26B1F", "title": "Brand Positioning & Messaging", "position": 56, "total": 74, "audio_url": "https://learn.mbarock.com/audio/brand-is-a-promise.mp3", "audio_label": "Brand Is a Promise", "audio_duration": "3:42", "intro": "Brand Positioning & Messaging is the discipline of choosing the one place in the customer's mind you intend to own. Positioning precedes copy; copy carries the position.", "core_concepts": [{"title": "The positioning template", "body": "'For [target] who [problem], we are [category] that [unique benefit], unlike [alternative], because [proof].' Every word is a choice with explicit non-customers."}, {"title": "The one-word brand", "body": "Volvo = safety. Disney = magic. Apple = simple. Strong brands compress to one word. Your job is to choose the word, then defend it for a decade."}, {"title": "Message hierarchy", "body": "Position (one sentence) → pillars (3-5) → proof points (3 per pillar) → channel adaptations (copy variants). Every piece of content traces upward to the position."}, {"title": "How positioning fails", "body": "(1) Trying to be all things — diluted word. (2) Drifting position quarter to quarter. (3) Copying competitors' words instead of owning your own."}], "take_action": ["Fill in the positioning template. Test it with five customers — they should be able to recite the unique benefit.", "Pick your one word. Audit your last 10 pieces of content for whether they reinforce it.", "Build the message hierarchy doc. Brief every marketer."], "take_action_capstone_fields": [{"step": "Fill in the positioning template. Test it with five customers — they should be able to recite the unique benefit.", "field": "positioning", "long": true, "placeholder": "For [target] who [problem], we are [category] that [unique benefit], unlike [alternative], because [proof]."}, {"step": "Pick your one word. Audit your last 10 pieces of content for whether they reinforce it.", "field": "one_word_brand", "long": false, "placeholder": "e.g. safety, simple, trust"}, {"step": "Build the message hierarchy doc. Brief every marketer.", "field": "message_hierarchy", "long": true, "placeholder": "Position → Pillars → Proof points → Channel adaptations"}], "deep_dive": "Positioning is the most-leveraged decision in marketing. Get it right and copy writes itself. Get it wrong and every campaign fights the brand. The companies that compound brand equity over decades — Patagonia, Costco, Apple, In-N-Out — share one trait: a positioning thesis they refuse to soften, even when growth could come faster by widening the aperture.\n\nThe failure mode is always the same. A founder writes a sharp positioning line in year one. By year three, sales asks for a softer version. By year five, marketing has rewritten it to address three customer types instead of one. By year seven, no one inside the company can recite it, and no one outside the company can remember the brand.\n\nThe discipline isn't drafting the positioning. The discipline is defending it.", "quiz_pass_pct": 80, "quiz": [{"q": "The positioning template requires explicit:", "options": ["Pricing", "Target, problem, category, unique benefit, alternative, proof", "Mission and vision", "Org chart"], "correct": 1, "explain": "Every slot is a choice. Vagueness in any slot collapses the position."}, {"q": "The 'one-word brand' strategy means:", "options": ["Use short ads", "Own a single specific word in the category", "Brevity in everything", "Rename the company"], "correct": 1, "explain": "Volvo=safety, Apple=simple. Owning a word = owning the category in the mind."}, {"q": "Brand message hierarchy goes:", "options": ["Random", "Position → pillars → proof points → channel adaptations", "Ads → social → email", "Strategy → execution"], "correct": 1, "explain": "Every content piece must trace back up to the position. Otherwise content fights the brand."}, {"q": "A position with no enemies has:", "options": ["Broad appeal", "No real edge — too generic", "High budget", "Great copy"], "correct": 1, "explain": "Choosing what you reject is what gives the position teeth."}, {"q": "Drifting position quarter to quarter causes:", "options": ["Faster growth", "Customer confusion and weak brand equity", "Higher margins", "Better hiring"], "correct": 1, "explain": "Brand equity compounds with consistency. Drift resets the meter every change."}], "materials_resources": [{"icon": "📖", "label": "Positioning by Al Ries & Jack Trout", "sub": "The 1981 classic. Still the canonical reference."}, {"icon": "📖", "label": "Obviously Awesome by April Dunford", "sub": "Modern B2B positioning workbook."}, {"icon": "🎯", "label": "JTBD interview guide", "sub": "Jobs to be Done — pairs with Module 7"}, {"icon": "📊", "label": "Message hierarchy worksheet", "sub": "Template you fill in for your brand."}]};
@@ -1345,6 +1309,150 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
+  }
+})();
+</script>
+
+
+<!-- MBA Rock: full DOM hydrator for /lesson/?id= — updates statics + re-renders dynamic sections -->
+<script>
+(function(){
+  var params = new URLSearchParams(location.search);
+  var lessonId = params.get('id') || params.get('slug');
+  if (!lessonId) return; // /lesson/ with no params shows M7L2 default
+
+  function go(){
+    fetch('https://learn.mbarock.com/lessons.v2.json?cb=' + Date.now(), {cache:'no-store'})
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        var lessons = (data && data.lessons) || data;
+        if (!Array.isArray(lessons)) return finish();
+        var L = lessons.find(function(l){
+          return l && (l.id === lessonId || l.legacy_slug === lessonId || l.slug_v2 === lessonId);
+        });
+        if (!L) return finish();
+
+        // Update window.LESSON for tracking block reference
+        window.LESSON = Object.assign({}, window.LESSON || {}, L);
+
+        // === STATIC HTML UPDATES ===
+        try {
+          document.title = (L.title || 'Lesson') + ' · MBA Rock';
+        } catch(e){}
+
+        function setText(sel, txt){
+          var els = document.querySelectorAll(sel);
+          els.forEach(function(el){ if (el && txt != null) el.textContent = txt; });
+        }
+        function setAttr(sel, attr, val){
+          var els = document.querySelectorAll(sel);
+          els.forEach(function(el){ if (el && val) el.setAttribute(attr, val); });
+        }
+
+        setText('.mr5-hero-kicker', (L.module_id || '') + ' · ' + (L.module_title || ''));
+        setText('.mr5-hero h1', L.title || '');
+        setText('.mr5-hero-sub', L.intro || L.subtitle || '');
+
+        // Breadcrumb: replace the two <b> tags
+        var crumbBolds = document.querySelectorAll('.mr5-crumb b');
+        if (crumbBolds.length >= 2){
+          crumbBolds[0].textContent = (L.module_id || '') + ' ' + (L.module_title || '');
+          crumbBolds[1].textContent = L.id + ' — ' + (L.title || '');
+        }
+
+        // Meta row (Lesson, Video, Audio, Song, Concepts, Action steps, Quiz)
+        var metaRows = document.querySelectorAll('.mr5-hero-meta > div');
+        metaRows.forEach(function(row){
+          var lab = row.querySelector('.mr5-meta-l');
+          var val = row.querySelector('.mr5-meta-v');
+          if (!lab || !val) return;
+          var k = lab.textContent.trim().toLowerCase();
+          if (k === 'lesson') val.textContent = (L.position || L.lesson_number || '') + ' of 74';
+          else if (k === 'video') val.textContent = L.video_url ? 'Video' : '—';
+          else if (k === 'audio') val.textContent = L.audio_duration || '—';
+          else if (k === 'song') val.textContent = L.audio_label || L.song_title || L.title || '—';
+          else if (k === 'concepts') val.textContent = String((L.core_concepts || []).length);
+          else if (k === 'action steps') val.textContent = String((L.take_action || []).length);
+          else if (k === 'quiz') val.textContent = L.quiz && L.quiz.questions ? (L.quiz.questions.length + ' questions · ' + (L.quiz.pass_threshold || 80) + '% to pass') : '—';
+        });
+
+        // Audio src
+        if (L.audio_url){
+          var aud = document.querySelector('audio');
+          if (aud){
+            aud.setAttribute('src', L.audio_url);
+            // Force reload
+            try { aud.load(); } catch(e){}
+          }
+        }
+
+        // Video src
+        if (L.video_url){
+          var vid = document.querySelector('video, video source');
+          if (vid) vid.setAttribute('src', L.video_url);
+        }
+
+        // Hide SAMPLE LESSON banner for /lesson/ (meaningful only on /sample/)
+        var samplesBanners = Array.from(document.querySelectorAll('div')).filter(function(d){
+          return /SAMPLE LESSON/i.test(d.textContent) && d.children.length <= 4;
+        });
+        samplesBanners.forEach(function(b){ b.style.display = 'none'; });
+
+        // Re-render core concepts (preserve container, replace children)
+        var conceptList = document.querySelector('.mr5-concepts-list');
+        if (conceptList && Array.isArray(L.core_concepts) && L.core_concepts.length){
+          conceptList.innerHTML = '';
+          L.core_concepts.forEach(function(c, i){
+            var row = document.createElement('div');
+            row.className = 'mr5-concept-row';
+            var btn = document.createElement('button');
+            btn.className = 'mr5-concept-btn';
+            btn.type = 'button';
+            btn.innerHTML = '<span class="mr5-concept-num">' + String(i+1).padStart(2,'0') + '</span><span class="mr5-concept-title">' + escapeHtml(c.title || '') + '</span><span class="mr5-concept-chev">›</span>';
+            var body = document.createElement('div');
+            body.className = 'mr5-concept-body';
+            body.innerHTML = (c.body || '').replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>');
+            if (!body.innerHTML.startsWith('<p>')) body.innerHTML = '<p>' + body.innerHTML + '</p>';
+            row.appendChild(btn); row.appendChild(body);
+            btn.addEventListener('click', function(){
+              row.classList.toggle('open');
+            });
+            conceptList.appendChild(row);
+          });
+        }
+
+        // Re-render take action list
+        var actionList = document.querySelector('.mr5-action-list, .mr5-take-action');
+        if (actionList && Array.isArray(L.take_action) && L.take_action.length){
+          actionList.innerHTML = '';
+          L.take_action.forEach(function(a){
+            var li = document.createElement('li');
+            li.textContent = typeof a === 'string' ? a : (a.step || a.text || '');
+            actionList.appendChild(li);
+          });
+        }
+
+        finish();
+      })
+      .catch(function(e){
+        console.warn('lesson hydration failed', e);
+        finish();
+      });
+  }
+
+  function finish(){
+    document.documentElement.classList.remove('mr-hyd-loading');
+  }
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"\']/g, function(c){
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
+    });
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', go);
+  } else {
+    go();
   }
 })();
 </script>
