@@ -1413,8 +1413,6 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
         });
 
         // Replace the post-quiz paywall block ($499 CTA) with a Next Lesson CTA
-        // The existing quiz-submit handler adds class .visible to #sample-quiz-locked after a pass;
-        // we just rewrite its innerHTML so it shows next-lesson instead of $499.
         try {
           var nextL = null;
           if (typeof L.position === 'number') {
@@ -1424,18 +1422,16 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
           if (sql) {
             if (nextL) {
               var nextHref = '/lesson/?id=' + encodeURIComponent(nextL.id);
-              var nextLabel = (nextL.module_id || '') + ' · ' + (nextL.title || '');
               sql.innerHTML =
                 '<div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between">' +
                   '<div style="flex:1;min-width:220px">' +
-                    '<b>Lesson complete.</b> Keep your momentum — next up is <b style="color:#0B1F3A">' + (nextL.title || '').replace(/[<>]/g,'') + '</b>.' +
+                    '<b>Lesson complete.</b> Keep your momentum — next up is <b style="color:#0B1F3A">' + escapeHtml(nextL.title || '') + '</b>.' +
                   '</div>' +
                   '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
-                    '<a class="mr5-btn mr5-btn-primary" href="' + nextHref + '" style="font-size:13px;padding:10px 18px;text-decoration:none;background:#F26B1F;color:#fff;border-radius:6px;font-weight:600">Next lesson: ' + (nextL.module_id || '') + ' →</a>' +
+                    '<a class="mr5-btn mr5-btn-primary" href="' + nextHref + '" style="font-size:13px;padding:10px 18px;text-decoration:none;background:#F26B1F;color:#fff;border-radius:6px;font-weight:600">Next lesson: ' + escapeHtml(nextL.module_id || '') + ' →</a>' +
                   '</div>' +
                 '</div>';
             } else {
-              // Final lesson — no next; show capstone/certificate CTA instead
               sql.innerHTML =
                 '<div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between">' +
                   '<div style="flex:1;min-width:220px">' +
@@ -1449,6 +1445,52 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
             }
           }
         } catch (e) { console.warn('next-lesson CTA inject failed', e); }
+
+        // RE-RENDER the quiz Q/A from L.quiz (per-lesson questions) — otherwise every lesson shows M7L2's hardcoded Qs
+        try {
+          var quizObj = L.quiz;
+          // Normalize to array of questions whether L.quiz is array OR {questions:[]}
+          var quizQuestions = Array.isArray(quizObj) ? quizObj : (quizObj && Array.isArray(quizObj.questions) ? quizObj.questions : []);
+          if (quizQuestions.length){
+            // Update the in-memory LESSON.quiz that the scoring code reads
+            window.LESSON.quiz = quizQuestions;
+            window.LESSON.quiz_pass_pct = (quizObj && quizObj.pass_pct) || L.quiz_pass_pct || 80;
+
+            // Re-render visible 5-Q form
+            quizQuestions.slice(0,5).forEach(function(q, qi){
+              var stem = document.querySelector('[data-q-idx="' + qi + '"] .mr5-quiz-qn');
+              if (stem) stem.textContent = 'Q' + (qi+1) + '. ' + (q.q || '');
+              var optEls = document.querySelectorAll('[data-q-idx="' + qi + '"] .mr5-quiz-opt');
+              var opts = Array.isArray(q.options) ? q.options : [];
+              optEls.forEach(function(optEl, oi){
+                var txt = optEl.querySelector('.mr5-quiz-opttext');
+                if (txt) txt.textContent = opts[oi] || '';
+                // Reset state — uncheck radios + remove correct/wrong classes
+                var radio = optEl.querySelector('input[type=radio]');
+                if (radio) radio.checked = false;
+                optEl.classList.remove('correct','wrong');
+              });
+              // Hide any leftover feedback
+              var fb = document.querySelector('[data-q-feedback="' + qi + '"]');
+              if (fb) { fb.textContent = ''; fb.classList.remove('show'); }
+            });
+            // Reset result + retake button visibility
+            var rs = document.getElementById('quiz-result');
+            if (rs) { rs.textContent = ''; rs.className = 'mr5-quiz-result'; }
+            var rt = document.getElementById('quiz-retake');
+            if (rt) rt.style.display = 'none';
+
+            // Update Quiz meta in hero — already handled elsewhere but ensure correct count
+            var quizMeta = document.querySelectorAll('.mr5-hero-meta > div');
+            quizMeta.forEach(function(row){
+              var lab = row.querySelector('.mr5-meta-l');
+              var val = row.querySelector('.mr5-meta-v');
+              if (lab && val && lab.textContent.trim().toLowerCase() === 'quiz'){
+                val.textContent = quizQuestions.length + ' questions · ' + (window.LESSON.quiz_pass_pct || 80) + '% to pass';
+              }
+            });
+          }
+        } catch (e) { console.warn('quiz re-render failed', e); }
 
         // Re-render core concepts (preserve container, replace children)
         var conceptList = document.querySelector('.mr5-concepts-list');
