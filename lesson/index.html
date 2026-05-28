@@ -1412,6 +1412,44 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
           el.style.display = 'none';
         });
 
+        // Replace the post-quiz paywall block ($499 CTA) with a Next Lesson CTA
+        // The existing quiz-submit handler adds class .visible to #sample-quiz-locked after a pass;
+        // we just rewrite its innerHTML so it shows next-lesson instead of $499.
+        try {
+          var nextL = null;
+          if (typeof L.position === 'number') {
+            nextL = lessons.find(function(x){ return x && x.position === L.position + 1; });
+          }
+          var sql = document.getElementById('sample-quiz-locked');
+          if (sql) {
+            if (nextL) {
+              var nextHref = '/lesson/?id=' + encodeURIComponent(nextL.id);
+              var nextLabel = (nextL.module_id || '') + ' · ' + (nextL.title || '');
+              sql.innerHTML =
+                '<div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between">' +
+                  '<div style="flex:1;min-width:220px">' +
+                    '<b>Lesson complete.</b> Keep your momentum — next up is <b style="color:#0B1F3A">' + (nextL.title || '').replace(/[<>]/g,'') + '</b>.' +
+                  '</div>' +
+                  '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
+                    '<a class="mr5-btn mr5-btn-primary" href="' + nextHref + '" style="font-size:13px;padding:10px 18px;text-decoration:none;background:#F26B1F;color:#fff;border-radius:6px;font-weight:600">Next lesson: ' + (nextL.module_id || '') + ' →</a>' +
+                  '</div>' +
+                '</div>';
+            } else {
+              // Final lesson — no next; show capstone/certificate CTA instead
+              sql.innerHTML =
+                '<div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between">' +
+                  '<div style="flex:1;min-width:220px">' +
+                    '<b>You\'ve completed the final lesson of MBA Rock.</b> Time to claim your Operator\'s Certificate.' +
+                  '</div>' +
+                  '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
+                    '<a class="mr5-btn mr5-btn-primary" href="/certificates/" style="font-size:13px;padding:10px 18px;text-decoration:none;background:#F26B1F;color:#fff;border-radius:6px;font-weight:600">View certificate →</a>' +
+                    '<a class="mr5-btn mr5-btn-ghost" href="/dashboard/" style="font-size:13px;padding:10px 18px;text-decoration:none;color:#0B1F3A;border:1px solid #ebe6da;border-radius:6px;font-weight:600">Dashboard</a>' +
+                  '</div>' +
+                '</div>';
+            }
+          }
+        } catch (e) { console.warn('next-lesson CTA inject failed', e); }
+
         // Re-render core concepts (preserve container, replace children)
         var conceptList = document.querySelector('.mr5-concepts-list');
         if (conceptList && Array.isArray(L.core_concepts) && L.core_concepts.length){
