@@ -357,12 +357,13 @@ function nextUnfinishedLesson(){
 }
 function lessonHref(lesson){
   if (!lesson) return '#';
-  // Route to the parameterized full lesson view (tabbed UI, members-only).
-  // Members land directly on the lesson; they can hit Back -> module page if they want
-  // the lesson selector.
+  // Route to the module page on the CDN — no dependency on Squarespace chapter URLs.
+  // Lesson tile clicks happen inside the module page; CONTINUE lands the user on the
+  // right module page, scrolled to the specific lesson via #lesson-<id> anchor.
   const lid = lesson.id || '';
-  if (!lid) return '#';
-  return '/lesson/?id=' + encodeURIComponent(lid);
+  const mid = lesson.module_id || (lid ? lid.split('L')[0] : '');
+  if (!mid) return '#';
+  return '/module/?id=' + encodeURIComponent(mid) + (lid ? '#lesson-' + lid : '');
 }
 
 function setRing(pct){
