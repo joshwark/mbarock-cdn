@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>MBA Rock — Master Quiz Book</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#FFFAF2;font-family:"Inter",sans-serif;color:#0E1116;line-height:1.5}
+header{background:#0B1F3A;color:#FFFAF2;padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+header a{color:#FFFAF2;text-decoration:none;font-family:"Fraunces",serif;font-size:20px;font-weight:600}
+header .nav{display:flex;gap:18px;font-family:"Inter",sans-serif;font-size:14px}
+header .nav a{font-family:"Inter",sans-serif;font-weight:500;font-size:14px;opacity:.85}
+header .nav a:hover{opacity:1}
+main{max-width:880px;margin:0 auto;padding:32px 24px 80px}
+h1{font-family:"Fraunces",serif;font-weight:700;font-size:36px;line-height:1.15;letter-spacing:-0.015em;margin:0 0 8px;color:#0B1F3A}
+.subtitle{font-family:"Fraunces",serif;font-style:italic;color:#6b6557;font-size:17px;margin:0 0 32px}
+.hero-stats{display:flex;gap:18px;margin-bottom:36px;padding:18px 22px;background:#fff;border:1px solid #ebe6da;border-radius:14px}
+.hero-stat{flex:1}
+.hero-stat .num{font-family:"Fraunces",serif;font-size:30px;font-weight:600;color:#F26B1F;line-height:1}
+.hero-stat .lbl{font-size:13px;color:#6b6557;margin-top:4px}
+/* TOC */
+.toc{background:#fff;border:1px solid #ebe6da;border-radius:14px;padding:28px 32px;margin-bottom:32px}
+.toc h2{font-family:"Fraunces",serif;font-size:22px;font-weight:600;margin:0 0 18px;color:#0B1F3A}
+.toc-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px 18px}
+.toc-list li{padding:6px 0;border-bottom:1px dashed #f0ebde}
+.toc-list a{color:#0B1F3A;text-decoration:none;font-size:14.5px;display:flex;gap:10px;align-items:baseline}
+.toc-list a:hover{color:#F26B1F}
+.toc-list .num{font-family:"Fraunces",serif;font-weight:600;color:#F26B1F;min-width:32px}
+.toc-list .ttl{flex:1}
+.toc-list .done{color:#1d8444;font-size:12px;margin-left:6px}
+/* Quiz view */
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.quiz-nav a{font-family:"Inter",sans-serif;font-size:14px;color:#0B1F3A;text-decoration:none;font-weight:500;padding:8px 14px;border:1px solid #ebe6da;border-radius:8px;background:#fff}
+.quiz-nav a:hover{border-color:#F26B1F;color:#F26B1F}
+.quiz-nav a.disabled{opacity:.4;pointer-events:none}
+.quiz-card{background:#fff;border:1px solid #ebe6da;border-radius:14px;padding:32px 36px}
+.quiz-header{margin-bottom:8px}
+.quiz-header .kicker{font-family:"Inter",sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:#F26B1F;font-weight:600}
+.quiz-header h1{margin:6px 0 0;font-size:28px}
+.quiz-intro{font-family:"Fraunces",serif;font-style:italic;color:#6b6557;margin:14px 0 28px;font-size:15px}
+.q{margin-bottom:26px;padding-bottom:26px;border-bottom:1px dashed #ebe6da}
+.q:last-of-type{border-bottom:0}
+.qn{font-family:"Fraunces",serif;font-size:17px;font-weight:500;color:#0B1F3A;margin-bottom:12px;line-height:1.5}
+.opts{display:grid;gap:8px}
+.opt{display:grid;grid-template-columns:32px 32px 1fr;align-items:start;gap:10px;padding:11px 14px;border:1px solid #ebe6da;border-radius:8px;cursor:pointer;background:#fff;transition:all .12s}
+.opt:hover{border-color:#F26B1F;background:#FFF8F1}
+.opt input{margin:0;width:16px;height:16px;align-self:center;accent-color:#F26B1F}
+.opt .letter{font-family:"Fraunces",serif;font-size:15px;font-weight:600;color:#F26B1F;text-align:center}
+.opt .otxt{font-family:"Inter",sans-serif;font-size:14.5px;line-height:1.5}
+.opt.correct{background:#e8f5ec;border-color:#1d8444}
+.opt.correct .letter{color:#1d8444}
+.opt.wrong{background:#fde9e7;border-color:#a01a1a}
+.opt.wrong .letter{color:#a01a1a}
+.actions{display:flex;gap:12px;align-items:center;margin-top:24px}
+.btn{padding:11px 22px;border-radius:8px;border:0;font-family:"Inter",sans-serif;font-weight:600;font-size:14.5px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:transform .12s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:#F26B1F;color:#fff}
+.btn-ghost{background:transparent;color:#0B1F3A;border:1px solid #ebe6da}
+.result{font-family:"Fraunces",serif;font-size:16px;font-weight:600;margin-left:auto}
+.result.pass{color:#1d8444}
+.result.fail{color:#a01a1a}
+.passed-badge{display:inline-block;background:#1d8444;color:#fff;font-size:11px;padding:2px 8px;border-radius:10px;margin-left:6px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;font-family:"Inter",sans-serif}
+@media (max-width:680px){
+  main{padding:18px 14px 60px}
+  .quiz-card{padding:22px 18px}
+  h1{font-size:26px}
+}
+</style>
+</head>
+<body>
+<header>
+  <a href="/dashboard/">MBA Rock</a>
+  <nav class="nav"><a href="/dashboard/">Dashboard</a><a href="/docs/global/quiz-book.docx">Download .docx</a></nav>
+</header>
+
+<main id="app">
+  <!-- Dynamic content injected by JS -->
+</main>
+
+<script>
+(function(){
+  const QUIZ_URL = 'https://learn.mbarock.com/data/quizzes.json';
+  const PROGRESS_KEY = 'mba-rock-quiz-book-progress-v1';
+
+  function loadProgress(){
+    try { return JSON.parse(localStorage.getItem(PROGRESS_KEY) || '{}'); }
+    catch(e){ return {}; }
+  }
+  function saveProgress(p){
+    try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(p)); } catch(e){}
+  }
+
+  function renderTOC(data){
+    const progress = loadProgress();
+    const passed = Object.keys(progress).filter(n => progress[n].passed).length;
+    const attempted = Object.keys(progress).length;
+    const app = document.getElementById('app');
+    app.innerHTML = `
+      <h1>Master Quiz Book</h1>
+      <p class="subtitle">74 quizzes · 370 questions · 4 of 5 correct to pass each one.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">${data.total}</div><div class="lbl">Quizzes</div></div>
+        <div class="hero-stat"><div class="num">${data.total*5}</div><div class="lbl">Questions</div></div>
+        <div class="hero-stat"><div class="num">${attempted}</div><div class="lbl">Attempted</div></div>
+        <div class="hero-stat"><div class="num">${passed}</div><div class="lbl">Passed</div></div>
+      </div>
+      <div class="toc">
+        <h2>Browse the 74 quizzes</h2>
+        <ul class="toc-list">
+          ${data.quizzes.map(q => {
+            const p = progress[q.num];
+            const badge = p && p.passed ? '<span class="done">✓ passed</span>' : (p ? '<span class="done" style="color:#a01a1a">tried</span>' : '');
+            return `<li><a href="/quiz/?n=${q.num}"><span class="num">${q.num}.</span><span class="ttl">${escapeHtml(q.title)}</span>${badge}</a></li>`;
+          }).join('')}
+        </ul>
+      </div>
+    `;
+  }
+
+  function renderQuiz(data, n){
+    const quiz = data.quizzes.find(q => q.num === n);
+    if (!quiz){ renderTOC(data); return; }
+    const app = document.getElementById('app');
+    const progress = loadProgress();
+    const prevN = n > 1 ? n-1 : null;
+    const nextN = n < data.total ? n+1 : null;
+    app.innerHTML = `
+      <div class="quiz-nav">
+        <a href="${prevN?'/quiz/?n='+prevN:'#'}" class="${prevN?'':'disabled'}">← Previous</a>
+        <a href="/quiz/">All quizzes (${n}/${data.total})</a>
+        <a href="${nextN?'/quiz/?n='+nextN:'#'}" class="${nextN?'':'disabled'}">Next →</a>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-header">
+          <div class="kicker">Quiz ${n} of ${data.total}</div>
+          <h1>${escapeHtml(quiz.title)}${progress[n] && progress[n].passed ? '<span class="passed-badge">passed</span>' : ''}</h1>
+        </div>
+        <p class="quiz-intro">Pick the best answer. Submit to score yourself. <b>4 of 5 to pass.</b></p>
+        <form id="quizForm">
+          ${quiz.questions.map((q, qi) => `
+            <div class="q" data-qi="${qi}">
+              <div class="qn">Q${qi+1}. ${escapeHtml(q.q)}</div>
+              <div class="opts">
+                ${['A','B','C','D'].map(L => `
+                  <label class="opt">
+                    <input type="radio" name="q${qi}" value="${L}">
+                    <span class="letter">${L}</span>
+                    <span class="otxt">${escapeHtml(q.options[L]||'')}</span>
+                  </label>
+                `).join('')}
+              </div>
+            </div>
+          `).join('')}
+          <div class="actions">
+            <button type="button" class="btn btn-primary" id="submitBtn">Submit answers</button>
+            <button type="button" class="btn btn-ghost" id="retakeBtn">Retake</button>
+            <div class="result" id="result"></div>
+          </div>
+        </form>
+      </div>
+    `;
+
+    const correctMap = {};
+    quiz.questions.forEach((q, qi) => { correctMap[qi] = q.answer; });
+
+    document.getElementById('submitBtn').addEventListener('click', function(){
+      let correct = 0;
+      quiz.questions.forEach((q, qi) => {
+        const sel = document.querySelector(`input[name="q${qi}"]:checked`);
+        const opts = document.querySelectorAll(`[data-qi="${qi}"] .opt`);
+        const correctLetter = correctMap[qi];
+        opts.forEach((opt, oi) => {
+          const letter = ['A','B','C','D'][oi];
+          opt.classList.remove('correct','wrong');
+          if (letter === correctLetter) opt.classList.add('correct');
+          if (sel && sel.value === letter && letter !== correctLetter) opt.classList.add('wrong');
+        });
+        if (sel && sel.value === correctLetter) correct++;
+      });
+      const pass = correct >= 4;
+      const result = document.getElementById('result');
+      result.textContent = `${correct} / 5 — ${pass ? 'PASSED' : 'try again'}`;
+      result.className = 'result ' + (pass ? 'pass' : 'fail');
+
+      // Save progress
+      const p = loadProgress();
+      p[n] = {score:correct, passed:pass, at: new Date().toISOString()};
+      saveProgress(p);
+
+      // Persist to Supabase if member is signed in
+      try {
+        const memberId = localStorage.getItem('mr-member-id') || localStorage.getItem('mr_member_id') || localStorage.getItem('memberId');
+        if (memberId && window.fetch){
+          // Best-effort fire-and-forget; non-blocking
+          fetch('https://ciloqphtencjthkedanw.supabase.co/rest/v1/user_quiz_attempts', {
+            method:'POST',
+            headers:{
+              'apikey':'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-',
+              'Content-Type':'application/json',
+              'Prefer':'return=minimal'
+            },
+            body: JSON.stringify({
+              member_id: memberId,
+              lesson_id: 'quizbook-' + n,
+              correct: correct,
+              total: 5,
+              passed: pass,
+              source: 'master-quiz-book'
+            })
+          }).catch(()=>{});
+        }
+      } catch(e){}
+    });
+
+    document.getElementById('retakeBtn').addEventListener('click', function(){
+      document.querySelectorAll('#quizForm input[type=radio]').forEach(r => r.checked = false);
+      document.querySelectorAll('.opt').forEach(o => o.classList.remove('correct','wrong'));
+      document.getElementById('result').textContent = '';
+      document.getElementById('result').className = 'result';
+    });
+  }
+
+  function escapeHtml(s){
+    if (s == null) return '';
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  // Boot
+  fetch(QUIZ_URL).then(r => r.json()).then(data => {
+    const n = parseInt(new URLSearchParams(location.search).get('n') || '0', 10);
+    if (n >= 1 && n <= data.total) renderQuiz(data, n);
+    else renderTOC(data);
+  }).catch(err => {
+    document.getElementById('app').innerHTML = '<h1>Quiz book failed to load</h1><p>'+escapeHtml(String(err))+'</p>';
+  });
+})();
+</script>
+</body>
+</html>

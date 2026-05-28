@@ -1,0 +1,4150 @@
+{
+  "version": "1.0",
+  "total": 74,
+  "quizzes": [
+    {
+      "num": 1,
+      "title": "The Builder's Blueprint",
+      "questions": [
+        {
+          "q": "A founder is prioritizing high-volume sales before establishing \"Business Anatomy.\" According to the Builder’s Blueprint, what is the most likely risk?",
+          "options": {
+            "A": "Accelerated market share acquisition.",
+            "B": "A \"Top Line Lie\" where revenue growth hides structural fragility.",
+            "C": "Improved unit economics through early scale.",
+            "D": "Enhanced \"Operating Leverage\" due to fixed cost distribution."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In the \"Builder's Blueprint\" framework, what constitutes the \"foundation\" of a scalable entity?",
+          "options": {
+            "A": "The initial seed capital and venture debt.",
+            "B": "The alignment of core operating principles with the execution architecture.",
+            "C": "The brand’s visual identity and social media presence.",
+            "D": "The total addressable market (TAM) identified in the pitch deck."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Why does the Blueprint mandate a \"system-first\" approach before scaling?",
+          "options": {
+            "A": "To satisfy regulatory compliance requirements for IPOs.",
+            "B": "To ensure the business anatomy can handle the \"stress test\" of rapid growth.",
+            "C": "To minimize the need for a human resources department.",
+            "D": "To ensure the company can pivot to a new product every 90 days."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "When identifying \"cornerstone\" principles in the Blueprint, which factor is most critical for long-term durability?",
+          "options": {
+            "A": "Seasonal marketing discounts.",
+            "B": "Sustainable and repeatable operational workflows.",
+            "C": "Temporary \"Employee Heroics\" to meet quarterly quotas.",
+            "D": "Low-cost office space in emerging markets."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The ultimate objective of the Builder's Blueprint is to transition from a \"solo-hustle\" to:",
+          "options": {
+            "A": "A venture that requires constant owner intervention.",
+            "B": "A scalable, durable business entity with integrated systems.",
+            "C": "A lean startup that avoids all long-term planning.",
+            "D": "A consultancy-based model with no fixed assets."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Your MBA Rock Curriculum Owner's Manual",
+      "questions": [
+        {
+          "q": "According to the Owner's Manual, how should the \"Master Studio Asset Directory\" be utilized?",
+          "options": {
+            "A": "As a secondary resource to be consulted only after graduation.",
+            "B": "As a primary roadmap for navigating multi-disciplinary masterclasses.",
+            "C": "As a dictionary for technical coding terms.",
+            "D": "As a historical archive of past business failures."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To achieve \"Mastery\" within the curriculum, the Manual suggests:",
+          "options": {
+            "A": "Focusing exclusively on the Finance and Capital modules.",
+            "B": "Following the structured progression from Fundamentals to Future Innovation.",
+            "C": "Skipping the modules that do not align with your current job title.",
+            "D": "Viewing the videos without completing the Action Workbooks."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The Manual highlights the \"Action Workbook\" as a tool for:",
+          "options": {
+            "A": "Recording lecture notes for rote memorization.",
+            "B": "Translating theoretical frameworks into business application.",
+            "C": "Designing the company’s graphic design standards.",
+            "D": "Tracking daily employee attendance."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "How does the Manual define the \"MBA Rock\" learning philosophy?",
+          "options": {
+            "A": "Theoretical academic study with no practical application.",
+            "B": "A multi-disciplinary approach designed for high-stakes leadership.",
+            "C": "A narrow focus on micro-economics and statistical analysis.",
+            "D": "An introductory course for entry-level administrative staff."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Effective navigation of the curriculum requires the student to:",
+          "options": {
+            "A": "Treat each module as an isolated silo of information.",
+            "B": "Understand how integrated systems like \"Strategy\" and \"Operations\" interconnect.",
+            "C": "Memorize every song lyric before starting the business modules.",
+            "D": "Hire an external consultant to explain the manual."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "The Complete Business Operating System",
+      "questions": [
+        {
+          "q": "What defines a \"Complete Business Operating System\" (BOS) versus a collection of software tools?",
+          "options": {
+            "A": "The BOS is more expensive and requires a dedicated IT team.",
+            "B": "The BOS is an integrated framework aligning people, processes, and technology.",
+            "C": "The BOS is strictly used for financial accounting and tax reporting.",
+            "D": "The BOS replaces the need for a CEO or Board of Directors."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Why is \"integrated logic\" a superior approach in a BOS?",
+          "options": {
+            "A": "It creates departmental silos that protect proprietary information.",
+            "B": "It ensures that every functional area works toward a unified strategic objective.",
+            "C": "It allows the marketing team to operate independently of the finance team.",
+            "D": "It increases the complexity of daily operations to prevent employee turnover."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A business experiencing \"operational friction\" most likely lacks:",
+          "options": {
+            "A": "Sufficient venture capital funding.",
+            "B": "A cohesive and well-implemented Operating System.",
+            "C": "A diverse product line.",
+            "D": "A large enough sales force."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Which component is considered a \"core engine\" within the BOS?",
+          "options": {
+            "A": "The cafeteria management system.",
+            "B": "The Execution Architecture.",
+            "C": "The CEO's personal brand on LinkedIn.",
+            "D": "The company's philanthropic foundation."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The BOS serves as the \"logic layer\" for:",
+          "options": {
+            "A": "Day-to-day tactical execution and long-term scaling.",
+            "B": "Selecting the font for the company logo.",
+            "C": "Managing the personal investments of the founders.",
+            "D": "Deciding which office furniture to purchase."
+          },
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Business Anatomy Masterclass",
+      "questions": [
+        {
+          "q": "In the \"Business Anatomy\" framework, what serves as the \"Skeletal System\" of the organization?",
+          "options": {
+            "A": "The marketing campaign schedule.",
+            "B": "The structural framework, legal entity, and governance.",
+            "C": "The physical desks and equipment in the office.",
+            "D": "The list of prospective customers in the CRM."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A leader identifies that \"resources\" are not moving effectively through the company. Which \"organ\" of the business anatomy should they diagnose first?",
+          "options": {
+            "A": "The Marketing department.",
+            "B": "Finance and Cash Flow management.",
+            "C": "The Public Relations agency.",
+            "D": "The Facilities team."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "How does \"Anatomy Mastery\" assist in crisis leadership?",
+          "options": {
+            "A": "It allows the leader to ignore financial reports.",
+            "B": "It provides a diagnostic lens to identify which specific system is failing.",
+            "C": "It focuses entirely on exterior branding during a PR crisis.",
+            "D": "It requires the leader to take over all entry-level tasks."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"Central Nervous System\" of a business anatomy is best represented by:",
+          "options": {
+            "A": "The inventory in the warehouse.",
+            "B": "The communication loops and data-driven decision architecture.",
+            "C": "The company's payroll provider.",
+            "D": "The social media manager’s content calendar."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Structural Alignment\" in business anatomy occurs when:",
+          "options": {
+            "A": "The company has no hierarchy.",
+            "B": "Every \"organ\" (department) is functioning in support of the whole system.",
+            "C": "The business pivots its strategy every week.",
+            "D": "The founder makes every decision personally."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Startup Operating System",
+      "questions": [
+        {
+          "q": "How does the \"Startup OS\" prioritize activities compared to a mature corporate OS?",
+          "options": {
+            "A": "It prioritizes bureaucratic compliance over product development.",
+            "B": "It prioritizes agility, rapid validation, and product-market fit.",
+            "C": "It prioritizes long-term debt over immediate revenue.",
+            "D": "It prioritizes complex hierarchy over speed."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A critical operational requirement for a venture in the \"Startup OS\" phase is:",
+          "options": {
+            "A": "A 10-year fixed strategic roadmap.",
+            "B": "Fast feedback loops to iterate on customer data.",
+            "C": "Large-scale national television advertising.",
+            "D": "A human resources department with over 20 staff members."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The Startup OS is designed to help a business move through:",
+          "options": {
+            "A": "A period of total stagnation.",
+            "B": "The \"Valley of Death\" by managing burn rate and finding fit.",
+            "C": "A phase of ignoring all competitor data.",
+            "D": "A transition into a non-profit organization."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Fit\" within this OS refers specifically to the alignment between:",
+          "options": {
+            "A": "The office decor and the CEO's taste.",
+            "B": "The product's value proposition and market demand.",
+            "C": "The number of employees and the size of the office.",
+            "D": "The company name and the domain name availability."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "What is the primary output of a successful Startup OS?",
+          "options": {
+            "A": "A business that remains small forever.",
+            "B": "A predictable, scalable model ready for growth capital.",
+            "C": "A complete lack of documentation or processes.",
+            "D": "A dependency on the founder’s 100-hour work weeks."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Strategy & Competitive Advantage (Fundamentals)",
+      "questions": [
+        {
+          "q": "According to the Fundamentals of Strategy, \"Competitive Advantage\" is only sustainable if it is:",
+          "options": {
+            "A": "Based on having the lowest price in the market.",
+            "B": "Valuable, rare, and difficult for competitors to imitate.",
+            "C": "Linked to a single, high-performing sales representative.",
+            "D": "Derived from a one-time viral marketing campaign."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "What is the primary difference between \"Operational Effectiveness\" and \"Strategy\"?",
+          "options": {
+            "A": "Effectiveness is about doing things differently; Strategy is about doing things better.",
+            "B": "Effectiveness is about doing things better; Strategy is about doing things differently.",
+            "C": "They are identical concepts in a modern MBA curriculum.",
+            "D": "Effectiveness is for managers; Strategy is only for the Board of Directors."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A company attempts to serve every customer segment with every possible feature. Which strategic trap have they fallen into?",
+          "options": {
+            "A": "Successful \"Blue Ocean\" expansion.",
+            "B": "Failure to make necessary trade-offs.",
+            "C": "Optimized \"Positioning and Focus.\"",
+            "D": "Hyper-efficient \"VRIO\" alignment."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In the \"MBA Rock\" framework, strategy is defined as:",
+          "options": {
+            "A": "A static document updated once every five years.",
+            "B": "The set of choices that positions the firm to win in its chosen market.",
+            "C": "A reaction to every move made by the market leader.",
+            "D": "The total sum of the company's annual marketing budget."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Strategic positioning requires a firm to:",
+          "options": {
+            "A": "Copy the industry leader’s business model exactly.",
+            "B": "Occupy a distinct and valuable place in the customer's mind.",
+            "C": "Change its mission statement every quarter to stay \"fresh.\"",
+            "D": "Avoid all forms of digital technology."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "title": "Positioning & Focus",
+      "questions": [
+        {
+          "q": "What is the primary benefit of \"narrowing the focus\" of a business?",
+          "options": {
+            "A": "It reduces the total revenue potential to zero.",
+            "B": "It allows the firm to develop deep expertise and dominate a specific niche.",
+            "C": "It makes the brand less recognizable to the general public.",
+            "D": "It increases the cost of acquiring a single customer."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"Bridge to Fit\" concept suggests that positioning is the link between:",
+          "options": {
+            "A": "The product's technical features and the customer's underserved needs.",
+            "B": "The CEO's vision and the company's bank account.",
+            "C": "The marketing team and the engineering team.",
+            "D": "The company’s past failures and its future IPO."
+          },
+          "answer": "A"
+        },
+        {
+          "q": "Which of the following is a symptom of \"Strategic Drift\" (a lack of focus)?",
+          "options": {
+            "A": "Rejecting high-revenue projects that are outside the core mission.",
+            "B": "Chasing every new market trend regardless of core competency.",
+            "C": "Investing heavily in R&D for a specific product line.",
+            "D": "Having a clear, one-sentence value proposition."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Effective positioning helps a company avoid:",
+          "options": {
+            "A": "All forms of competition.",
+            "B": "The \"Commodity Trap\" where price is the only differentiator.",
+            "C": "Paying corporate taxes.",
+            "D": "Having to hire skilled employees."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To \"Own One Word\" in a category, a brand must:",
+          "options": {
+            "A": "Trademark every word in the dictionary.",
+            "B": "Consistently associate its brand with a specific benefit (e.g., \"Safety\" for Volvo).",
+            "C": "Use a different word in every advertisement to show variety.",
+            "D": "Change its brand name once a year."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "title": "Moats, Five Forces, and VRIO Strategy",
+      "questions": [
+        {
+          "q": "Porter’s \"Five Forces\" framework is used to analyze:",
+          "options": {
+            "A": "The internal personality conflicts of the executive team.",
+            "B": "The structural attractiveness and profit potential of an industry.",
+            "C": "The physical strength of the company’s manufacturing equipment.",
+            "D": "The speed at which employees complete their tasks."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Under the \"VRIO\" framework, a resource that is Valuable and Rare, but easy to Imitate, provides:",
+          "options": {
+            "A": "A sustainable competitive advantage.",
+            "B": "A temporary competitive advantage.",
+            "C": "Competitive parity.",
+            "D": "A competitive disadvantage."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Which \"Force\" is being exerted when a large customer demands significant price discounts?",
+          "options": {
+            "A": "Threat of new entrants.",
+            "B": "Bargaining power of buyers.",
+            "C": "Bargaining power of suppliers.",
+            "D": "Threat of substitutes."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Moat\" is strategically designed to:",
+          "options": {
+            "A": "Prevent employees from leaving the company.",
+            "B": "Protect the company's long-term profits from competitive erosion.",
+            "C": "Trap customers in a contract they cannot read.",
+            "D": "Increase the company's physical security at the headquarters."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To be \"Organized\" to capture value (the 'O' in VRIO), a firm must have:",
+          "options": {
+            "A": "A large office with many filing cabinets.",
+            "B": "The systems and processes in place to exploit its resources.",
+            "C": "An alphabetical list of all its employees.",
+            "D": "A subscription to a project management software."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "title": "Blue Ocean Strategy & ERRC",
+      "questions": [
+        {
+          "q": "A \"Blue Ocean\" is defined as:",
+          "options": {
+            "A": "A market with intense competition and bloody price wars.",
+            "B": "Uncontested market space where competition is irrelevant.",
+            "C": "The global shipping industry.",
+            "D": "A market with no customers and no revenue."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In the \"ERRC\" grid, what does the \"Reduce\" quadrant focus on?",
+          "options": {
+            "A": "Reducing the number of employees in the company.",
+            "B": "Lowering factors below industry standards that do not drive value.",
+            "C": "Reducing the total price of the product to zero.",
+            "D": "Reducing the company’s commitment to quality."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Value Innovation\" occurs when a firm:",
+          "options": {
+            "A": "Increases costs to provide slightly more value.",
+            "B": "Simultaneously achieves differentiation and low cost.",
+            "C": "Lowers quality to lower the price for the customer.",
+            "D": "Focuses entirely on marketing without changing the product."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Red Ocean\" strategy is characterized by:",
+          "options": {
+            "A": "Creating new demand.",
+            "B": "Competing in existing market space and beating the competition.",
+            "C": "Breaking the value-cost trade-off.",
+            "D": "Making the competition irrelevant."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In the ERRC grid, \"Create\" refers to:",
+          "options": {
+            "A": "Creating more paperwork for the management team.",
+            "B": "Offering entirely new factors that the industry has never offered.",
+            "C": "Creating more advertisements on traditional television.",
+            "D": "Creating a new logo every month."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "title": "Economic Moats & Five Types of Moats",
+      "questions": [
+        {
+          "q": "Which of the following describes a \"Switching Costs\" moat?",
+          "options": {
+            "A": "It is very expensive for a company to buy new light switches.",
+            "B": "It is difficult or expensive for a customer to move to a competitor’s product.",
+            "C": "The company changes its strategy every six months.",
+            "D": "The price of the product changes every day based on the stock market."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Network Effect\" moat is strengthened when:",
+          "options": {
+            "A": "The company’s internal computer network is very fast.",
+            "B": "The value of the service increases for all users as more people join.",
+            "C": "The CEO has many followers on social media.",
+            "D": "The company hires more salespeople to network at events."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Intangible Assets\" that can form a moat include:",
+          "options": {
+            "A": "Cash in the bank and office furniture.",
+            "B": "Brands, patents, and regulatory licenses.",
+            "C": "The company’s fleet of delivery trucks.",
+            "D": "The physical raw materials in the warehouse."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "How do \"Economies of Scale\" create a cost advantage moat?",
+          "options": {
+            "A": "By increasing the price of the product as production increases.",
+            "B": "By spreading fixed costs over a larger number of units.",
+            "C": "By requiring the company to hire more expensive managers.",
+            "D": "By making the product smaller and easier to ship."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Why are economic moats vital for capital allocation?",
+          "options": {
+            "A": "They allow a company to earn high returns on capital for an extended period.",
+            "B": "They guarantee that the company will never have a bad quarter.",
+            "C": "They prevent the government from taxing the company.",
+            "D": "They allow the company to operate without a budget."
+          },
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "title": "Disrupt or Defend",
+      "questions": [
+        {
+          "q": "\"Disruptive Innovation\" typically originates by:",
+          "options": {
+            "A": "Targeting the most profitable customers of the incumbent.",
+            "B": "Serving over-looked low-end segments or creating a new market.",
+            "C": "Using the most expensive technology available.",
+            "D": "Hiring the CEO of the incumbent company."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "An incumbent company’s \"Defend\" strategy often fails because:",
+          "options": {
+            "A": "They have too little money to fight back.",
+            "B": "They are \"held hostage\" by their most profitable customers who reject new, lower-margin tech.",
+            "C": "They have too few employees.",
+            "D": "Their products are too high in quality."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To \"Disrupt Yourself\" as a market leader, you should:",
+          "options": {
+            "A": "Purposely make mistakes in your accounting.",
+            "B": "Launch a new product that might cannibalize your existing profitable lines.",
+            "C": "Fire your entire product development team.",
+            "D": "Stop talking to your customers."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "What is a key characteristic of a \"Disruptor\"?",
+          "options": {
+            "A": "They always offer a higher price than the incumbent.",
+            "B": "They initially offer a product that is \"good enough\" for a new or low-end segment.",
+            "C": "They use old, outdated business models.",
+            "D": "They focus on maintaining the status quo at all costs."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Response to disruption requires a leader to:",
+          "options": {
+            "A": "Ignore the new entrant until they go away.",
+            "B": "Allocate resources to \"exploit\" the current model while \"exploring\" the new one.",
+            "C": "Sue the disruptor for unfair competition.",
+            "D": "Lower prices on all products until the company goes bankrupt."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "title": "The Strategic Playbook",
+      "questions": [
+        {
+          "q": "What is the primary function of \"The Strategic Playbook\"?",
+          "options": {
+            "A": "To provide a list of historical quotes about war and business.",
+            "B": "To translate high-level strategy into actionable steps and repeatable processes.",
+            "C": "To serve as a legal contract for new employees.",
+            "D": "To list the contact information for all major competitors."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A playbook is ineffective if it:",
+          "options": {
+            "A": "Is updated frequently based on market feedback.",
+            "B": "Stays in the CEO’s drawer and is never shared with the execution team.",
+            "C": "Includes clear Key Performance Indicators (KPIs).",
+            "D": "Focuses on repeatable workflows."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Repeatability\" in a playbook ensures that:",
+          "options": {
+            "A": "The company never tries anything new.",
+            "B": "Consistent results are achieved regardless of which specific team member performs the task.",
+            "C": "Every advertisement looks exactly the same.",
+            "D": "The CEO has to check every single task personally."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Key elements of a high-quality playbook include:",
+          "options": {
+            "A": "Vague suggestions and flexible deadlines.",
+            "B": "Clear ownership, specific triggers, and measurable outcomes.",
+            "C": "A list of the CEO's favorite books.",
+            "D": "Instructions on how to use the office coffee machine."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The Strategic Playbook helps a business bridge the \"Execution Gap\" between:",
+          "options": {
+            "A": "The Marketing department and the Sales department.",
+            "B": "The Strategy (The Plan) and the Tactics (The Action).",
+            "C": "The company and its investors.",
+            "D": "The company and the local government."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "title": "Mastering People and Leadership",
+      "questions": [
+        {
+          "q": "According to the \"Mastering People and Leadership\" infographic, a leader’s primary role is to:",
+          "options": {
+            "A": "Perform every technical task better than their employees.",
+            "B": "Architect systems that enable people to produce consistent results.",
+            "C": "Ensure that everyone in the office is happy at all times.",
+            "D": "Control every conversation that happens in the workplace."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Effective leadership in the \"MBA Rock\" framework is about:",
+          "options": {
+            "A": "Personal charisma and individual \"heroics.\"",
+            "B": "Designing a \"Leadership OS\" that drives organizational alignment.",
+            "C": "Hiring only people who are identical to the founder.",
+            "D": "Making decisions based solely on gut feeling without data."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "What is the \"People\" component of an MBA curriculum focused on?",
+          "options": {
+            "A": "Managing payroll and benefits administration.",
+            "B": "Organizational design, culture, and human dynamics.",
+            "C": "Finding the cheapest labor in the global market.",
+            "D": "Teaching employees how to follow instructions without questioning."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "High-performance cultures are built on:",
+          "options": {
+            "A": "Total conformity and lack of dissent.",
+            "B": "High trust, clear accountability, and shared values.",
+            "C": "Constant fear of being fired.",
+            "D": "Frequent social events with no work-related purpose."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A leader who masters \"Human Systems\" understands that:",
+          "options": {
+            "A": "People are predictable machines that never change.",
+            "B": "Culture is the \"shadow\" of the systems and incentives in place.",
+            "C": "Incentives do not affect human behavior.",
+            "D": "Rules should be kept secret to keep employees alert."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "title": "Hire Slow, Fire Fast",
+      "questions": [
+        {
+          "q": "The philosophy of \"Hire Slow\" is designed to:",
+          "options": {
+            "A": "Frustrate talented candidates so only the desperate remain.",
+            "B": "Ensure a rigorous cultural and technical fit before adding to the team.",
+            "C": "Save money by keeping positions vacant for as long as possible.",
+            "D": "Allow the CEO to interview every single applicant personally."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Why is \"Fire Fast\" considered a compassionate leadership principle?",
+          "options": {
+            "A": "It allows the company to save on severance pay.",
+            "B": "It protects the high-performing team and the culture from toxic or misaligned individuals.",
+            "C": "It keeps employees on edge so they work harder.",
+            "D": "It allows the leader to vent their frustrations."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Bad Hire\" is most damaging because:",
+          "options": {
+            "A": "They might be smarter than the manager.",
+            "B": "They create \"organizational drag\" and can destroy team morale.",
+            "C": "They might use too many office supplies.",
+            "D": "They might ask for a promotion too quickly."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In the \"MBA Rock\" framework, performance management should be:",
+          "options": {
+            "A": "An annual event that employees dread.",
+            "B": "A continuous process of clear expectations and radical candor.",
+            "C": "Avoided at all costs to prevent conflict.",
+            "D": "Based entirely on the employee's personality."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The goal of \"Hire Slow, Fire Fast\" is to curate a:",
+          "options": {
+            "A": "\"B-Player\" team that is easy to manage.",
+            "B": "High-performance \"A-Player\" culture.",
+            "C": "Group of friends who never disagree.",
+            "D": "Large workforce that is difficult to scale."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "title": "Leadership Lifecycle",
+      "questions": [
+        {
+          "q": "The \"Leadership Lifecycle\" suggests that as an organization grows, a leader must:",
+          "options": {
+            "A": "Do more of the technical work themselves.",
+            "B": "Evolve from a \"Doer\" to a \"Manager\" to an \"Architect.\"",
+            "C": "Stay in the same role forever to maintain consistency.",
+            "D": "Focus only on the tasks they enjoyed when they started the company."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A leader who fails to evolve during the lifecycle often becomes:",
+          "options": {
+            "A": "A visionary strategist.",
+            "B": "The \"Bottleneck\" who slows down all decision-making.",
+            "C": "A billionaire investor.",
+            "D": "A professional public speaker."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In the \"Early Stage\" of leadership, the focus is primarily on:",
+          "options": {
+            "A": "Succession planning and legacy.",
+            "B": "Personal output and immediate tactical wins.",
+            "C": "Complex human systems and organizational design.",
+            "D": "Global geopolitical strategy."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Architectural Leadership\" is characterized by:",
+          "options": {
+            "A": "Micromanaging the daily tasks of interns.",
+            "B": "Building the systems and culture that run the business without the leader's constant presence.",
+            "C": "Designing the floor plan of the new office.",
+            "D": "Writing the code for the company's website."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Transitioning between stages of the lifecycle requires:",
+          "options": {
+            "A": "Working more hours than anyone else.",
+            "B": "Letting go of control and delegating to capable systems and people.",
+            "C": "Hiring more managers to do the thinking.",
+            "D": "Ignoring the financial health of the company."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 16,
+      "title": "The Leadership OS",
+      "questions": [
+        {
+          "q": "The \"Leadership OS\" (Operating System) is a framework for:",
+          "options": {
+            "A": "Upgrading the CEO’s laptop and phone.",
+            "B": "Standardizing the rhythms and rituals of how a team is led.",
+            "C": "A new type of software for tracking employee GPS locations.",
+            "D": "Automating all leadership decisions using basic AI."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A core component of a functional Leadership OS is:",
+          "options": {
+            "A": "Random, unscheduled meetings that keep people on their toes.",
+            "B": "A predictable \"Cadence of Accountability\" with regular syncs.",
+            "C": "A policy of never giving feedback to employees.",
+            "D": "Making every decision by a company-wide vote."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The Leadership OS helps a leader move away from \"Management by Crisis\" toward:",
+          "options": {
+            "A": "Management by Silence.",
+            "B": "Management by System.",
+            "C": "Management by Fear.",
+            "D": "Management by Luck."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "How does the Leadership OS handle goal setting?",
+          "options": {
+            "A": "By keeping goals vague to avoid disappointment.",
+            "B": "By using clear, measurable objectives (like OKRs or KPIs) aligned across the team.",
+            "C": "By letting every employee choose their own goals with no oversight.",
+            "D": "By setting goals that are impossible to achieve."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In the \"Leadership OS,\" transparency is used to:",
+          "options": {
+            "A": "Embarrass low-performing employees.",
+            "B": "Ensure everyone has the information needed to make fast, decentralized decisions.",
+            "C": "Show off the CEO's high salary.",
+            "D": "Comply with government surveillance."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 17,
+      "title": "Architecting Human Systems",
+      "questions": [
+        {
+          "q": "\"Architecting Human Systems\" involves the intentional design of:",
+          "options": {
+            "A": "The company’s social media filters.",
+            "B": "Incentives, communication flows, and organizational structure.",
+            "C": "The physical desks and chairs in the office.",
+            "D": "The uniforms worn by the sales team."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A leader acting as a \"Human System Architect\" focuses on:",
+          "options": {
+            "A": "Solving every individual conflict personally.",
+            "B": "Designing the \"Environment\" so that desired behaviors happen naturally.",
+            "C": "Hiring as many people as possible to look successful.",
+            "D": "Avoiding all forms of organizational structure."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Why are \"Feedback Loops\" critical in human systems?",
+          "options": {
+            "A": "They make the office louder and more energetic.",
+            "B": "They allow for self-correction and continuous improvement of behavior and results.",
+            "C": "They are required for the annual tax audit.",
+            "D": "They allow the CEO to hear what people are saying about them."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "An \"Accidental Culture\" is often the result of:",
+          "options": {
+            "A": "High levels of architectural leadership.",
+            "B": "A lack of intentional systems and inconsistent leadership behaviors.",
+            "C": "Too much focus on core values.",
+            "D": "Having a clear mission statement."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The primary goal of human systems architecture is to achieve:",
+          "options": {
+            "A": "Total conformity where everyone thinks the same.",
+            "B": "Organizational alignment where everyone moves in the same strategic direction.",
+            "C": "A lack of any rules or processes.",
+            "D": "A system where the CEO makes every single decision."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 18,
+      "title": "Repeatability Without Employee Heroics",
+      "questions": [
+        {
+          "q": "What are \"Employee Heroics\" in a business context?",
+          "options": {
+            "A": "Employees who win industry awards.",
+            "B": "Unsustainable, extraordinary efforts required to fix broken processes.",
+            "C": "Employees who dress like superheroes for office parties.",
+            "D": "Highly efficient workers who use the company’s systems perfectly."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A business that relies on heroics is considered \"Fragile\" because:",
+          "options": {
+            "A": "It is too profitable.",
+            "B": "It collapses if a few key individuals leave or burn out.",
+            "C": "It has too many systems.",
+            "D": "It uses too much technology."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Repeatability\" is the ability of a business to:",
+          "options": {
+            "A": "Tell the same joke in every meeting.",
+            "B": "Produce consistent results through systems, regardless of who is performing the task.",
+            "C": "Sell the exact same product for 100 years without changing.",
+            "D": "Hire the same people over and over again."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To move away from heroics, a leader must:",
+          "options": {
+            "A": "Ask employees to work 100 hours a week.",
+            "B": "Standardize workflows into \"Standard Operating Procedures\" (SOPs).",
+            "C": "Fire anyone who works too hard.",
+            "D": "Only hire people with low ambitions."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In a \"System-Driven\" business, the leader’s job is to:",
+          "options": {
+            "A": "Do the work for the employees.",
+            "B": "Manage and improve the system that does the work.",
+            "C": "Ignore the work and focus only on the brand.",
+            "D": "Punish employees who make any mistakes."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 19,
+      "title": "Complex Human Systems",
+      "questions": [
+        {
+          "q": "What makes a human system \"Complex\" rather than just \"Complicated\"?",
+          "options": {
+            "A": "It has more than 100 employees.",
+            "B": "It involves non-linear interactions where the whole is different than the sum of parts.",
+            "C": "It uses a lot of complicated software.",
+            "D": "It has a very thick employee handbook."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In a complex system, a small change in incentives can lead to:",
+          "options": {
+            "A": "No change at all.",
+            "B": "Large, unpredictable, and often counter-intuitive outcomes.",
+            "C": "Only the exact outcome the leader predicted.",
+            "D": "Immediate bankruptcy."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Managing a complex system requires a leader to:",
+          "options": {
+            "A": "Use rigid, top-down command and control.",
+            "B": "Monitor patterns and adjust the \"Environment\" and \"Incentives.\"",
+            "C": "Ignore the people and focus only on the machines.",
+            "D": "Stop making any decisions at all."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"MBA Rock\" view on organizational complexity is that:",
+          "options": {
+            "A": "It should be eliminated entirely.",
+            "B": "It must be understood and navigated through systems thinking.",
+            "C": "It is a myth created by consultants.",
+            "D": "It only exists in government agencies."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A leader who ignores the \"Complexity\" of their team will likely face:",
+          "options": {
+            "A": "Unintended consequences and \"Cultural Resistance\" to new initiatives.",
+            "B": "Immediate and total success.",
+            "C": "A very quiet and peaceful office.",
+            "D": "No problems at all."
+          },
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "num": 20,
+      "title": "Brand Positioning Study Guide",
+      "questions": [
+        {
+          "q": "\"Brand Positioning\" is the act of:",
+          "options": {
+            "A": "Placing the product on the highest shelf in a store.",
+            "B": "Designing the company's offering to occupy a distinct place in the target market's mind.",
+            "C": "Choosing the most expensive city for the corporate headquarters.",
+            "D": "Buying the most expensive domain name available."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "According to the Module 4 Study Guide, positioning is the antidote to:",
+          "options": {
+            "A": "Having too much profit.",
+            "B": "Commoditization and being \"stuck in the middle.\"",
+            "C": "Hiring too many employees.",
+            "D": "Paying for digital advertising."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Positioning Statement\" should clearly identify:",
+          "options": {
+            "A": "The CEO's biography and personal interests.",
+            "B": "The target audience, the category, the point of difference, and the reason to believe.",
+            "C": "A list of all the products the company has ever sold.",
+            "D": "The company’s 50-year financial forecast."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Why is \"Emotional Connection\" emphasized in brand positioning?",
+          "options": {
+            "A": "It allows the company to avoid paying for quality.",
+            "B": "It drives loyalty and reduces price sensitivity.",
+            "C": "It is easier to measure than financial data.",
+            "D": "It is required by international trade laws."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Positioning is successful when:",
+          "options": {
+            "A": "Everyone in the world knows the brand name.",
+            "B": "The target customer understands exactly why your brand is the \"only\" solution for their specific problem.",
+            "C": "The logo is the largest in the industry.",
+            "D": "The company has the most followers on social media."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 21,
+      "title": "Brand Architecture",
+      "questions": [
+        {
+          "q": "\"Brand Architecture\" refers to:",
+          "options": {
+            "A": "The blueprint for the company's physical retail locations.",
+            "B": "The organizational structure of a company’s portfolio of brands and products.",
+            "C": "The specific font and color palette used in the brand manual.",
+            "D": "The hierarchy of the marketing department staff."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In a \"House of Brands\" strategy (e.g., Procter & Gamble), the parent company:",
+          "options": {
+            "A": "Is the most prominent brand seen by consumers.",
+            "B": "Is often invisible, while individual product brands (Tide, Crest) are the focus.",
+            "C": "Only owns one single brand.",
+            "D": "Does not do any marketing."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Branded House\" strategy (e.g., Apple or Virgin) uses:",
+          "options": {
+            "A": "A different name for every single product they launch.",
+            "B": "A single master brand to cover all products and services.",
+            "C": "No branding at all.",
+            "D": "Only the name of the founder for every product."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "What is the primary risk of a \"Branded House\" architecture?",
+          "options": {
+            "A": "It is too expensive to maintain.",
+            "B": "A failure in one product area can damage the entire master brand's reputation.",
+            "C": "Customers get confused by the different names.",
+            "D": "It requires too many different logos."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Sub-branding\" (e.g., Microsoft Office) is used to:",
+          "options": {
+            "A": "Hide the master brand from the customer.",
+            "B": "Leverage the master brand’s equity while creating a specific identity for a product line.",
+            "C": "Save money on trademark registrations.",
+            "D": "Replace the master brand entirely over time."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 22,
+      "title": "MBA Rock: Brand Story",
+      "questions": [
+        {
+          "q": "In the \"Brand Story\" framework, the \"Hero\" of the story is always:",
+          "options": {
+            "A": "The CEO/Founder.",
+            "B": "The Customer.",
+            "C": "The Product.",
+            "D": "The Investor."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The role of the Brand in the \"Brand Story\" is to act as:",
+          "options": {
+            "A": "The Hero who saves the day.",
+            "B": "The Guide who provides a plan and calls the hero to action.",
+            "C": "The Villain who creates the problem.",
+            "D": "The Victim who needs help."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A compelling Brand Story must start with:",
+          "options": {
+            "A": "A 50-page history of the company.",
+            "B": "A character (the customer) who wants something but faces a problem.",
+            "C": "A detailed list of product features.",
+            "D": "The company’s quarterly profit report."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Why are stories more effective than facts in branding?",
+          "options": {
+            "A": "They are cheaper to produce.",
+            "B": "Human brains are \"wired\" to remember narratives and emotional arcs.",
+            "C": "They don’t require the company to be honest.",
+            "D": "They allow the company to avoid using data."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"Climax\" of a brand story is when:",
+          "options": {
+            "A": "The company goes public.",
+            "B": "The customer uses the product to solve their problem and achieve success.",
+            "C": "The CEO gives a speech at a conference.",
+            "D": "The company fires its marketing agency."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 23,
+      "title": "Customer Obsession",
+      "questions": [
+        {
+          "q": "\"Customer Obsession\" is a business strategy that prioritizes:",
+          "options": {
+            "A": "Maximizing short-term shareholder returns at any cost.",
+            "B": "Deeply understanding and solving customer problems as the primary driver of value.",
+            "C": "Stalking customers on social media to see what they eat.",
+            "D": "Building the product you personally want, regardless of market feedback."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A customer-obsessed company uses \"Customer Feedback\" to:",
+          "options": {
+            "A": "Argue with customers and prove them wrong.",
+            "B": "Drive the continuous improvement of the product and service \"OS.\"",
+            "C": "Ignore it and follow the original plan.",
+            "D": "Sell more data to third-party advertisers."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "How does Customer Obsession differ from \"Customer Service\"?",
+          "options": {
+            "A": "It is much more expensive.",
+            "B": "It is a proactive, organization-wide philosophy, not just a reactive department.",
+            "C": "It involves giving everything away for free.",
+            "D": "It only applies to high-end luxury brands."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A key metric for a customer-obsessed business is:",
+          "options": {
+            "A": "Total number of Instagram followers.",
+            "B": "Net Promoter Score (NPS) and Customer Lifetime Value (LTV).",
+            "C": "The size of the CEO's office.",
+            "D": "Total number of emails sent by the marketing team."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Customer Obsession creates a competitive advantage by:",
+          "options": {
+            "A": "Lowering the quality of the product.",
+            "B": "Reducing churn and increasing organic \"Word of Mouth\" referrals.",
+            "C": "Making the competition feel bad.",
+            "D": "Spending more on billboards than anyone else."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 24,
+      "title": "Own One Word in Your Category",
+      "questions": [
+        {
+          "q": "The strategic goal of \"Owning One Word\" is to:",
+          "options": {
+            "A": "Trademark a common word so no one else can use it.",
+            "B": "Become the first brand that comes to mind when a specific benefit is mentioned.",
+            "C": "Use only one word in all of your marketing copy.",
+            "D": "Change the brand name to a single-word name."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "If Volvo owns \"Safety,\" what does a competitor do wrong when they also try to claim \"Safety\"?",
+          "options": {
+            "A": "They spend too much money.",
+            "B": "They reinforce the leader’s position because the word is already \"occupied\" in the mind.",
+            "C": "They make the word more valuable for everyone.",
+            "D": "They are legally required to pay Volvo a fee."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Why is \"Focus\" required to own a word?",
+          "options": {
+            "A": "Because it is cheap.",
+            "B": "Because trying to own \"everything\" leads to owning \"nothing\" in the consumer's mind.",
+            "C": "Because the law only allows you to own one word.",
+            "D": "Because managers can only remember one word."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Category Ownership\" occurs when:",
+          "options": {
+            "A": "A company buys every other company in the category.",
+            "B": "The brand becomes the \"Genericized\" term for the category (e.g., Kleenex).",
+            "C": "The company has the most employees in the category.",
+            "D": "The company has the oldest logo in the category."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To successfully own a word, a brand's \"Operating System\" must:",
+          "options": {
+            "A": "Consistently deliver the promise associated with that word at every touchpoint.",
+            "B": "Change the word every few months to keep things interesting.",
+            "C": "Pay influencers to say the word repeatedly.",
+            "D": "Ignore the word in actual product development."
+          },
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "num": 25,
+      "title": "Operations & Technology Study Guide",
+      "questions": [
+        {
+          "q": "The primary focus of Module 5 is:",
+          "options": {
+            "A": "Financial auditing and tax law.",
+            "B": "Building the \"Engine\" of the business through systems and technology.",
+            "C": "Creating viral social media content.",
+            "D": "Managing the CEO's personal schedule."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In the \"MBA Rock\" framework, technology should be:",
+          "options": {
+            "A": "Bolted onto the business as quickly as possible.",
+            "B": "An enabler of well-designed, efficient processes.",
+            "C": "The only thing the company focuses on.",
+            "D": "Managed by a team that never talks to operations."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Operational Excellence\" is defined as:",
+          "options": {
+            "A": "Being the most famous company in the industry.",
+            "B": "The consistent and predictable delivery of value with minimal waste.",
+            "C": "Hiring the most expensive consultants.",
+            "D": "Having the most complex organizational chart."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A core theme of this module is moving from:",
+          "options": {
+            "A": "Profit to Revenue.",
+            "B": "Chaos and \"Heroics\" to Order and \"Systems.\"",
+            "C": "Technology to Manual Labor.",
+            "D": "Strategy to Theory."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Operations and Technology are described as the:",
+          "options": {
+            "A": "\"Exterior Paint\" of the business.",
+            "B": "\"Engine Room\" that powers the value proposition.",
+            "C": "\"Legal Defense\" against competitors.",
+            "D": "\"Optional Extra\" for small businesses."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 26,
+      "title": "Stop Bolting Tech Onto Broken Operations",
+      "questions": [
+        {
+          "q": "What is the \"Top Line Lie\" in the context of technology?",
+          "options": {
+            "A": "Thinking that high revenue means the technology is working.",
+            "B": "Using software to automate a process that is fundamentally inefficient or \"broken.\"",
+            "C": "Lying to the CEO about the cost of a new computer.",
+            "D": "Putting the technology budget at the top of the P&L statement."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"Process-First\" approach dictates that:",
+          "options": {
+            "A": "You buy the best software and then figure out how to work.",
+            "B": "You map and optimize the manual workflow before choosing a tech solution.",
+            "C": "You fire the operations team and replace them with AI.",
+            "D": "You never use technology."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Bolting tech onto broken operations usually results in:",
+          "options": {
+            "A": "Immediate profitability.",
+            "B": "\"Accelerated Chaos\" where errors happen faster and at a larger scale.",
+            "C": "Improved employee morale.",
+            "D": "A simpler business model."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A leader should \"audit\" their operations when:",
+          "options": {
+            "A": "They have too much cash in the bank.",
+            "B": "They see high error rates, manual work-arounds, and \"firefighting.\"",
+            "C": "A competitor launches a new website.",
+            "D": "They want to buy a new software just because it’s trending."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Digital Transformation\" is only effective if it:",
+          "options": {
+            "A": "Costs more than $1 million.",
+            "B": "Simplifies the business logic and enhances the core \"OS.\"",
+            "C": "Takes at least three years to implement.",
+            "D": "Is done without the input of the operations team."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 27,
+      "title": "Process Maps: Order from Chaos",
+      "questions": [
+        {
+          "q": "A \"Process Map\" is a visual tool used to:",
+          "options": {
+            "A": "Show the geographic locations of all customers.",
+            "B": "Illustrate the step-by-step flow of work, information, or materials.",
+            "C": "Design the company's new office layout.",
+            "D": "Track the CEO's travel schedule."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Why is \"Visualization\" key to operational order?",
+          "options": {
+            "A": "It makes the office look more \"tech-focused.\"",
+            "B": "It makes invisible bottlenecks, redundancies, and \"friction\" points visible.",
+            "C": "It is required for a business to be listed on the stock exchange.",
+            "D": "It allows the company to use more colors in their reports."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "When mapping a process, the first step is to document the:",
+          "options": {
+            "A": "\"Ideal State\" (how you wish it worked).",
+            "B": "\"Current State\" (how it actually works today, warts and all).",
+            "C": "\"Future State\" (how it will work in 5 years).",
+            "D": "\"Competitor State\" (how the rival works)."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Order from Chaos\" means that a leader:",
+          "options": {
+            "A": "Ignores the chaos until it goes away.",
+            "B": "Intentionally designs the workflow to remove ambiguity and error.",
+            "C": "Hires a \"Chaos Manager.\"",
+            "D": "Lets every employee choose their own way of working."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A successful process map leads to:",
+          "options": {
+            "A": "More confusion for employees.",
+            "B": "Standardized work and a baseline for continuous improvement.",
+            "C": "More meetings to discuss the map.",
+            "D": "A thicker employee handbook."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 28,
+      "title": "Flow Not Force",
+      "questions": [
+        {
+          "q": "In operations, \"Flow\" is defined as:",
+          "options": {
+            "A": "The amount of water used in the cooling system.",
+            "B": "The smooth, frictionless movement of value through the system.",
+            "C": "Moving the office to a different floor.",
+            "D": "Forcing employees to work faster using threats."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Force\" is a symptom of:",
+          "options": {
+            "A": "A highly optimized system.",
+            "B": "Broken processes that require manual intervention and \"heroics\" to move work along.",
+            "C": "Using too much electricity.",
+            "D": "A very strong marketing campaign."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To achieve \"Flow,\" a leader must identify and remove:",
+          "options": {
+            "A": "All of the employees.",
+            "B": "\"Friction\" and \"Bottlenecks\" that stop the progression of work.",
+            "C": "The company's profit margin.",
+            "D": "The company's core values."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"Buffer Paradox\" (Source 153) suggests that:",
+          "options": {
+            "A": "Buffers (extra time or inventory) are always good and should be maximized.",
+            "B": "Excessive buffers can hide underlying process problems and increase lead times.",
+            "C": "Buffers are only for companies that don't have technology.",
+            "D": "A company should have zero buffers in every situation."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Flow Not Force\" results in a business that is:",
+          "options": {
+            "A": "Stressful and unpredictable.",
+            "B": "Scalable, calm, and highly efficient.",
+            "C": "Very slow to deliver anything.",
+            "D": "Dependent on the owner being present 24/7."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 29,
+      "title": "The Quality Engine & Six Sigma Engine",
+      "questions": [
+        {
+          "q": "The \"Quality Engine\" is a system designed to:",
+          "options": {
+            "A": "Inspect every product at the very end to find mistakes.",
+            "B": "Build quality into the process so that defects are prevented from the start.",
+            "C": "Tell the customers that the product is high quality, even if it isn’t.",
+            "D": "Win the \"Business of the Year\" award."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Six Sigma\" is a methodology focused on:",
+          "options": {
+            "A": "Hiring only six people for the management team.",
+            "B": "Reducing \"Variability\" and defects in a process.",
+            "C": "Spending six percent of revenue on advertising.",
+            "D": "Changing the company’s strategy every six months."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In the \"DMAIC\" framework of Six Sigma, what does the \"M\" stand for?",
+          "options": {
+            "A": "Marketing.",
+            "B": "Measure.",
+            "C": "Management.",
+            "D": "Money."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Why is \"Variability\" the enemy of operational excellence?",
+          "options": {
+            "A": "It makes the job too interesting for employees.",
+            "B": "It creates unpredictable results and inconsistent customer experiences.",
+            "C": "It is required for innovation.",
+            "D": "It reduces the number of meetings needed."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Six Sigma Engine\" aims for:",
+          "options": {
+            "A": "50% accuracy.",
+            "B": "99.99966% defect-free output.",
+            "C": "10 defects per 100 units.",
+            "D": "Zero employees in the manufacturing plant."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 30,
+      "title": "Modern Tech Strategy",
+      "questions": [
+        {
+          "q": "A \"Modern Tech Strategy\" focuses on:",
+          "options": {
+            "A": "Buying the most expensive \"On-Premise\" servers possible.",
+            "B": "Using Cloud-Native, API-first, and scalable software solutions.",
+            "C": "Avoiding all software and using only paper and pencils.",
+            "D": "Letting every employee buy their own favorite apps."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Technical Debt\" is a term used to describe:",
+          "options": {
+            "A": "The money the company owes to Microsoft or Google.",
+            "B": "The future cost of fixing quick, \"dirty\" tech solutions that were implemented instead of a better approach.",
+            "C": "The cost of hiring a Chief Technology Officer.",
+            "D": "The interest rates on loans for new computers."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Interoperability\" in a tech strategy means:",
+          "options": {
+            "A": "All employees can use the software.",
+            "B": "Different software systems can communicate and share data seamlessly.",
+            "C": "The software only works on one specific type of computer.",
+            "D": "The software is very difficult to learn."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The goal of a \"Tech Stack\" is to create a:",
+          "options": {
+            "A": "Large pile of unused software licenses.",
+            "B": "Unified system that provides \"Visibility and Dashboards\" for decision making.",
+            "C": "Reason to increase the price of the product.",
+            "D": "Barrier between the employees and the customers."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In the \"MBA Rock\" framework, a \"Chief Technology Officer\" should be:",
+          "options": {
+            "A": "A purely technical person who doesn't understand the business.",
+            "B": "A strategic partner who aligns technology with operational goals.",
+            "C": "Someone who only fixes broken printers.",
+            "D": "A person who works in a different building."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 31,
+      "title": "Project & Program Management",
+      "questions": [
+        {
+          "q": "What is the difference between a \"Project\" and \"Operations\"?",
+          "options": {
+            "A": "Projects are more expensive than operations.",
+            "B": "Projects have a specific start and end date; Operations are ongoing.",
+            "C": "Operations are for managers; Projects are for workers.",
+            "D": "There is no difference; they are the same thing."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Program Management\" involves:",
+          "options": {
+            "A": "Writing the code for a computer program.",
+            "B": "Coordinating a group of related projects to achieve a strategic goal.",
+            "C": "Managing the television commercials for the company.",
+            "D": "Scheduling the daily tasks of one single employee."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"Triple Constraint\" of project management includes:",
+          "options": {
+            "A": "Strategy, Tactics, and Execution.",
+            "B": "Time, Cost, and Scope (Quality).",
+            "C": "Marketing, Finance, and Sales.",
+            "D": "People, Processes, and Technology."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Scope Creep\" occurs when:",
+          "options": {
+            "A": "The project is finished early.",
+            "B": "New requirements are added to a project without adjusting time or budget.",
+            "C": "The project manager leaves the company.",
+            "D": "The project comes in under budget."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Gantt Chart\" is a tool used to:",
+          "options": {
+            "A": "Calculate the company’s taxes.",
+            "B": "Visualize the project timeline and task dependencies.",
+            "C": "Design the logo for the project.",
+            "D": "Hire the project team."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 32,
+      "title": "Mastering the Operational Engine",
+      "questions": [
+        {
+          "q": "\"Mastering the Operational Engine\" (Source 73) requires:",
+          "options": {
+            "A": "Changing the business model every quarter.",
+            "B": "Continuous maintenance, monitoring of KPIs, and incremental improvement.",
+            "C": "Ignoring the operations and focusing only on fundraising.",
+            "D": "Hiring more people every time there is a problem."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A key indicator that the \"Operational Engine\" is failing is:",
+          "options": {
+            "A": "Too much profit.",
+            "B": "Frequent \"Firefighting,\" missed deadlines, and customer complaints.",
+            "C": "The CEO is on vacation.",
+            "D": "The company is using the latest technology."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"Operational Engine\" is the part of the business that:",
+          "options": {
+            "A": "Thinks about the future.",
+            "B": "Delivers the value to the customer today.",
+            "C": "Manages the stock price.",
+            "D": "Writes the press releases."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To \"Master\" the engine, a leader must focus on:",
+          "options": {
+            "A": "\"Output\" (The Results) and \"Throughput\" (The Speed).",
+            "B": "Only the \"Input\" (The Costs).",
+            "C": "The color of the machines in the factory.",
+            "D": "The CEO's popularity."
+          },
+          "answer": "A"
+        },
+        {
+          "q": "An optimized Operational Engine leads to \"Engineered Excellence,\" which means:",
+          "options": {
+            "A": "Success was a lucky accident.",
+            "B": "Success is a predictable result of the system's design.",
+            "C": "The company has a lot of engineers.",
+            "D": "The company uses expensive engines in its trucks."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 33,
+      "title": "Growth & Capital Study Guide",
+      "questions": [
+        {
+          "q": "The Module 6 Study Guide emphasizes that growth should be:",
+          "options": {
+            "A": "Pursued at all costs, regardless of profitability.",
+            "B": "Sustainable, profitable, and backed by a solid capital strategy.",
+            "C": "Avoided until the company is 10 years old.",
+            "D": "Managed entirely by external investment bankers."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"Growth & Capital\" framework focuses on the relationship between:",
+          "options": {
+            "A": "The CEO and the Board of Directors.",
+            "B": "Scaling the business and the funding required to do so.",
+            "C": "Marketing spend and the number of social media likes.",
+            "D": "The company's age and its revenue."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "According to the guide, \"Capital\" is:",
+          "options": {
+            "A": "Only cash in the bank.",
+            "B": "The resources (debt, equity, or profit) used to fuel expansion.",
+            "C": "A synonym for \"Profit.\"",
+            "D": "Something only large corporations need."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A key theme of this module is:",
+          "options": {
+            "A": "How to sell a business for the highest price.",
+            "B": "Scale and Exit readiness.",
+            "C": "How to avoid paying taxes during growth.",
+            "D": "How to borrow as much money as possible."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Growth without a capital strategy often leads to:",
+          "options": {
+            "A": "Immediate success.",
+            "B": "\"Over-trading\" and a cash flow crisis.",
+            "C": "Higher employee satisfaction.",
+            "D": "A simpler business model."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 34,
+      "title": "Growth Engines",
+      "questions": [
+        {
+          "q": "What are the \"Growth Engines\" in the MBA Rock framework?",
+          "options": {
+            "A": "The physical engines used in company vehicles.",
+            "B": "The repeatable mechanisms (Paid, Viral, or Sticky) that drive new customer acquisition.",
+            "C": "The different departments in the marketing team.",
+            "D": "The different types of software used for sales."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Sticky\" growth engine focuses on:",
+          "options": {
+            "A": "High customer retention and low churn.",
+            "B": "Spending as much as possible on Facebook ads.",
+            "C": "Getting customers to tell their friends about the product.",
+            "D": "Making the product physically sticky."
+          },
+          "answer": "A"
+        },
+        {
+          "q": "A \"Paid\" growth engine is sustainable only if:",
+          "options": {
+            "A": "The LTV (Lifetime Value) is greater than the CAC (Customer Acquisition Cost).",
+            "B": "The company has a lot of venture capital.",
+            "C": "The ads are very colorful.",
+            "D": "The CEO is in the commercials."
+          },
+          "answer": "A"
+        },
+        {
+          "q": "A \"Viral\" growth engine relies on:",
+          "options": {
+            "A": "High-cost celebrity endorsements.",
+            "B": "Existing users bringing in new users as a natural part of using the product.",
+            "C": "A virus infecting the competitors' computers.",
+            "D": "Cold-calling thousands of people."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Scaling a growth engine requires:",
+          "options": {
+            "A": "Turning it off and on frequently.",
+            "B": "Measuring the conversion rates at every step of the funnel.",
+            "C": "Ignoring the data and following your gut.",
+            "D": "Hiring more people to do manual sales."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 35,
+      "title": "Smart Funding and Exit Readiness",
+      "questions": [
+        {
+          "q": "\"Smart Funding\" means:",
+          "options": {
+            "A": "Taking money from anyone who offers it.",
+            "B": "Aligning the type of capital (Debt, Equity, etc.) with the business's goals and stage.",
+            "C": "Only taking money from family and friends.",
+            "D": "Never taking any outside money."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Exit Readiness\" involves:",
+          "options": {
+            "A": "Planning to quit the job tomorrow.",
+            "B": "Building the systems, financials, and documentation so the business can be sold at any time.",
+            "C": "Telling everyone that the company is for sale.",
+            "D": "Firing the employees before a sale."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A company is more valuable to an acquirer if it has:",
+          "options": {
+            "A": "A lot of \"Owner Dependency\" (the owner does everything).",
+            "B": "Repeatable systems and a clean \"Capital Stack.\"",
+            "C": "A very large and messy warehouse.",
+            "D": "No documentation of its processes."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The best time to prepare for an exit is:",
+          "options": {
+            "A": "The day before you want to sell.",
+            "B": "Years in advance, by building a \"saleable\" business anatomy.",
+            "C": "Only after you have reached $100 million in revenue.",
+            "D": "Never; you should never sell."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Smart funding avoids \"Toxic Terms\" that could:",
+          "options": {
+            "A": "Make the CEO too rich.",
+            "B": "Rob the founders of control or future upside during an exit.",
+            "C": "Make the company too successful.",
+            "D": "Force the company to hire more people."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 36,
+      "title": "The Capital Stack",
+      "questions": [
+        {
+          "q": "The \"Capital Stack\" refers to:",
+          "options": {
+            "A": "A physical pile of cash in the office.",
+            "B": "The hierarchy of different types of funding (Senior Debt, Mezzanine, Equity).",
+            "C": "The different types of computers used in the finance department.",
+            "D": "The list of the company's most expensive assets."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In the capital stack, who is paid first during a liquidation?",
+          "options": {
+            "A": "The founders (Common Equity).",
+            "B": "Senior Debt holders (Banks).",
+            "C": "Venture Capitalists (Preferred Equity).",
+            "D": "The employees."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Equity is generally:",
+          "options": {
+            "A": "Cheaper than debt.",
+            "B": "More expensive than debt (in terms of long-term cost of capital and control).",
+            "C": "Only for small businesses.",
+            "D": "A type of loan that must be paid back monthly."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Balanced\" capital stack:",
+          "options": {
+            "A": "Uses only debt.",
+            "B": "Uses only equity.",
+            "C": "Minimizes the cost of capital while maintaining a manageable risk profile.",
+            "D": "Changes every single day."
+          },
+          "answer": "C"
+        },
+        {
+          "q": "Why should a leader understand their capital stack?",
+          "options": {
+            "A": "To know who has the most power and who gets paid in what order.",
+            "B": "To count how many investors they have.",
+            "C": "To decide which office to rent.",
+            "D": "To impress people at parties."
+          },
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "num": 37,
+      "title": "How to Scale Without Going Bankrupt",
+      "questions": [
+        {
+          "q": "The most common cause of bankruptcy during rapid scaling is:",
+          "options": {
+            "A": "Not having enough customers.",
+            "B": "Running out of cash (The \"Oxygen\" problem) due to poor working capital management.",
+            "C": "Having a logo that is the wrong color.",
+            "D": "Hiring too many smart people."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Over-trading\" occurs when a business:",
+          "options": {
+            "A": "Trades its products for other products.",
+            "B": "Grows its sales faster than its ability to fund the required working capital.",
+            "C": "Has too many employees trading stocks.",
+            "D": "Sells its products at too high a price."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To scale safely, a business must monitor its:",
+          "options": {
+            "A": "Total number of Instagram likes.",
+            "B": "\"Cash Conversion Cycle\" (how fast cash goes out and comes back in).",
+            "C": "CEO's personal bank account.",
+            "D": "Office supply inventory."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Cash is Oxygen\" means that:",
+          "options": {
+            "A": "Cash is invisible.",
+            "B": "Without cash, the business dies immediately, regardless of how \"profitable\" it is on paper.",
+            "C": "Cash is free.",
+            "D": "You should spend cash as fast as you breathe."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Buffer\" in finance is:",
+          "options": {
+            "A": "A person who polishes the office floors.",
+            "B": "A reserve of cash to handle unexpected delays or downturns.",
+            "C": "A type of software that slows down the computer.",
+            "D": "A way to avoid talking to investors."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 38,
+      "title": "The Growth Schematic",
+      "questions": [
+        {
+          "q": "The \"Growth Schematic\" is a visual tool used to:",
+          "options": {
+            "A": "Draw a picture of the new factory.",
+            "B": "Map out the relationship between marketing inputs, operational throughput, and financial outputs.",
+            "C": "Design a new organizational chart.",
+            "D": "Track the history of the company's growth."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In the schematic, a \"Loop\" represents:",
+          "options": {
+            "A": "A mistake that keeps happening.",
+            "B": "A self-reinforcing mechanism where growth in one area fuels growth in another.",
+            "C": "A meeting that never ends.",
+            "D": "A circle in the company logo."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The schematic helps a leader identify:",
+          "options": {
+            "A": "Which employee is the most popular.",
+            "B": "Where the \"Constraint\" or \"Bottleneck\" is in the growth process.",
+            "C": "The best place to go for lunch.",
+            "D": "The color of the company's next product."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A growth schematic is more useful than a standard spreadsheet because:",
+          "options": {
+            "A": "It uses more colors.",
+            "B": "It shows the \"Systems Dynamics\" and how different parts of the business affect each other.",
+            "C": "It is easier to print.",
+            "D": "It doesn't require any math."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The ultimate goal of the Growth Schematic is to:",
+          "options": {
+            "A": "Make the business look complicated.",
+            "B": "Create a \"Flywheel\" effect where growth becomes easier over time.",
+            "C": "Draw a map of the world.",
+            "D": "Replace the CEO with a diagram."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 39,
+      "title": "Value vs. Terms",
+      "questions": [
+        {
+          "q": "In a funding deal, \"Value\" (the Valuation) is often:",
+          "options": {
+            "A": "The only thing that matters.",
+            "B": "Less important than the \"Terms\" (the legal clauses and preferences).",
+            "C": "A fixed number that never changes.",
+            "D": "Determined by the company's logo."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"High Valuation\" with \"Bad Terms\" can lead to:",
+          "options": {
+            "A": "Immediate wealth for everyone.",
+            "B": "The founders losing control or receiving nothing during a \"down-side\" exit.",
+            "C": "The company being more successful.",
+            "D": "Higher employee morale."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Which of the following is a \"Term\" in a deal?",
+          "options": {
+            "A": "The price of the stock.",
+            "B": "Liquidation Preferences or Anti-dilution clauses.",
+            "C": "The name of the company.",
+            "D": "The date the deal is signed."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Liquidation Preference\" determines:",
+          "options": {
+            "A": "How much the CEO is liked.",
+            "B": "Who gets paid first and how much when the company is sold.",
+            "C": "The quality of the liquid assets in the warehouse.",
+            "D": "The favorite drink of the investors."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Smart negotiators focus on \"Net Proceeds,\" which is:",
+          "options": {
+            "A": "The total amount the company is sold for.",
+            "B": "The actual cash that goes into the founders' pockets after all terms and preferences are applied.",
+            "C": "The number of people who attend the exit party.",
+            "D": "The total revenue of the company."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 40,
+      "title": "The Evolution of Growth",
+      "questions": [
+        {
+          "q": "The \"Evolution of Growth\" involves transitioning from:",
+          "options": {
+            "A": "\"Micro\" (individual hustle) to \"Macro\" (systematized scale).",
+            "B": "\"Macro\" to \"Micro.\"",
+            "C": "A business to a hobby.",
+            "D": "Profit to Loss."
+          },
+          "answer": "A"
+        },
+        {
+          "q": "As a business evolves, the CEO’s role shifts from:",
+          "options": {
+            "A": "Working \"On\" the business to working \"In\" the business.",
+            "B": "Working \"In\" the business to working \"On\" the business systems.",
+            "C": "Doing everything to doing nothing.",
+            "D": "Managing people to managing machines."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Scale\" is different from \"Growth\" because:",
+          "options": {
+            "A": "Growth is always good; scale is bad.",
+            "B": "Scale is when revenue increases faster than the cost of achieving that revenue.",
+            "C": "Scale only happens in large companies.",
+            "D": "Growth is only about the number of employees."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A business that is \"Scaling\" effectively will see:",
+          "options": {
+            "A": "Decreasing profit margins.",
+            "B": "Increasing \"Operating Leverage\" and higher margins.",
+            "C": "Constant crises and firefighting.",
+            "D": "The founder working 120 hours a week."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The final stage of growth evolution is often:",
+          "options": {
+            "A": "Bankruptcy.",
+            "B": "A \"Self-Managing\" company that can thrive without the founder's daily presence.",
+            "C": "A return to being a solo entrepreneur.",
+            "D": "Becoming a government agency."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 41,
+      "title": "Marketing & Brand Study Guide",
+      "questions": [
+        {
+          "q": "The Module 7 Study Guide defines Marketing as:",
+          "options": {
+            "A": "Spending money on commercials.",
+            "B": "The system for identifying, attracting, and retaining profitable customers.",
+            "C": "Making things look pretty.",
+            "D": "Lying to people so they buy your product."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A core concept in this module is the \"Integrated Marketing Mix,\" which means:",
+          "options": {
+            "A": "Mixing different colors of paint for the logo.",
+            "B": "Ensuring all marketing channels (Product, Price, Place, Promotion) are aligned.",
+            "C": "Hiring a diverse team of marketers.",
+            "D": "Using both Facebook and Instagram for ads."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Marketing is not just about \"Awareness\"; it is about:",
+          "options": {
+            "A": "Conversion and Customer Lifetime Value (LTV).",
+            "B": "How many people know the CEO's name.",
+            "C": "Winning creative awards.",
+            "D": "Having the most expensive website."
+          },
+          "answer": "A"
+        },
+        {
+          "q": "The guide emphasizes that \"Brand\" is:",
+          "options": {
+            "A": "The logo and the name.",
+            "B": "The total sum of every interaction a customer has with the company.",
+            "C": "Something only big companies like Nike need.",
+            "D": "A fancy way of saying \"Marketing.\""
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A successful marketing strategy is built on:",
+          "options": {
+            "A": "Random acts of marketing.",
+            "B": "Deep customer insights and data-driven decisions.",
+            "C": "Copying what the competitor did yesterday.",
+            "D": "The CEO's personal opinion."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 42,
+      "title": "Stop Burning Cash on Leaky Funnels",
+      "questions": [
+        {
+          "q": "A \"Leaky Funnel\" is a marketing process where:",
+          "options": {
+            "A": "Water actually leaks out of the office.",
+            "B": "Potential customers \"drop out\" at high rates due to friction or poor messaging.",
+            "C": "The company is making too much money.",
+            "D": "The marketing team is too small."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Burning Cash\" occurs when a company:",
+          "options": {
+            "A": "Literally sets fire to money.",
+            "B": "Spends money on ads to drive traffic to a funnel that doesn't convert.",
+            "C": "Pays its employees too much.",
+            "D": "Buys a new office building."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To fix a leaky funnel, a leader must first:",
+          "options": {
+            "A": "Buy more ads.",
+            "B": "Use \"Funnel Math\" to identify exactly where customers are leaving.",
+            "C": "Hire a new marketing agency.",
+            "D": "Change the company's name."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Conversion Rate Optimization\" (CRO) is the process of:",
+          "options": {
+            "A": "Changing the company's religion.",
+            "B": "Improving the percentage of visitors who take a desired action.",
+            "C": "Increasing the price of the product.",
+            "D": "Firing the sales team."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Tight\" funnel is characterized by:",
+          "options": {
+            "A": "No customers at all.",
+            "B": "High conversion rates and a clear path from awareness to purchase.",
+            "C": "A very small marketing budget.",
+            "D": "A very short website."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 43,
+      "title": "Integrated Marketing Mix",
+      "questions": [
+        {
+          "q": "The \"Four Ps\" of the marketing mix are:",
+          "options": {
+            "A": "People, Processes, Philosophy, and Profit.",
+            "B": "Product, Price, Place, and Promotion.",
+            "C": "Power, Politics, Performance, and Pay.",
+            "D": "Paper, Pens, Printers, and Phones."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Integration\" means that:",
+          "options": {
+            "A": "All of the Four Ps are working together to support the same positioning.",
+            "B": "The marketing team works in the same room.",
+            "C": "The company uses both digital and print ads.",
+            "D": "The CEO is involved in every decision."
+          },
+          "answer": "A"
+        },
+        {
+          "q": "If the \"Product\" is high-end luxury but the \"Price\" is the lowest in the market, the mix is:",
+          "options": {
+            "A": "Perfect.",
+            "B": "Misaligned and confusing to the customer.",
+            "C": "A great way to grow fast.",
+            "D": "A Blue Ocean strategy."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Place\" (Distribution) refers to:",
+          "options": {
+            "A": "Where the office is located.",
+            "B": "Where and how the customer can buy the product.",
+            "C": "The country where the product is made.",
+            "D": "The specific shelf in the warehouse."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Promotion\" includes:",
+          "options": {
+            "A": "Advertising, Public Relations, and Sales.",
+            "B": "Giving employees a raise.",
+            "C": "Moving the office to a better location.",
+            "D": "Increasing the quality of the raw materials."
+          },
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "num": 44,
+      "title": "Funnel Math & Conversion",
+      "questions": [
+        {
+          "q": "\"Funnel Math\" is the quantitative analysis of:",
+          "options": {
+            "A": "How many funnels the company owns.",
+            "B": "Each step of the customer journey from lead to sale.",
+            "C": "The CEO's math skills.",
+            "D": "The company's tax returns."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "If 1,000 people visit a website and 10 people buy, the conversion rate is:",
+          "options": {
+            "A": "10%.",
+            "B": "1%.",
+            "C": "0.1%.",
+            "D": "100%."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Cost Per Lead\" (CPL) is calculated by:",
+          "options": {
+            "A": "Dividing total ad spend by the number of leads generated.",
+            "B": "Multiplying the number of leads by the price of the product.",
+            "C": "Asking the marketing manager.",
+            "D": "Dividing total revenue by the number of leads."
+          },
+          "answer": "A"
+        },
+        {
+          "q": "Why is funnel math critical for scaling?",
+          "options": {
+            "A": "It makes the CEO look smart.",
+            "B": "It allows you to predict how much revenue you will get for every dollar spent on ads.",
+            "C": "It is required by law.",
+            "D": "It allows you to ignore the customers."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Bottleneck\" in a funnel is:",
+          "options": {
+            "A": "The very top of the funnel.",
+            "B": "The step with the lowest conversion rate that is stopping growth.",
+            "C": "The person who designed the funnel.",
+            "D": "The end of the funnel."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 45,
+      "title": "Architecting Demand",
+      "questions": [
+        {
+          "q": "\"Architecting Demand\" (Source 137) means:",
+          "options": {
+            "A": "Waiting for customers to find you.",
+            "B": "Intentionally designing systems and content to create a desire for your product.",
+            "C": "Hiring an architect to design a store.",
+            "D": "Demanding that people buy from you."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Demand generation is different from \"Sales\" because it:",
+          "options": {
+            "A": "Is much cheaper.",
+            "B": "Focuses on the \"Top of the Funnel\" awareness and interest before the sale.",
+            "C": "Only uses social media.",
+            "D": "Does not involve any data."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A key tool in architecting demand is:",
+          "options": {
+            "A": "Cold-calling people during dinner.",
+            "B": "Creating valuable content that solves a small part of the customer's problem.",
+            "C": "Sending out millions of spam emails.",
+            "D": "Lowering prices every day."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Lead Nurturing\" is the process of:",
+          "options": {
+            "A": "Hiring more salespeople.",
+            "B": "Building a relationship with a lead until they are ready to buy.",
+            "C": "Ignoring a lead until they call you.",
+            "D": "Giving a lead a free product."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Successful demand architecture results in:",
+          "options": {
+            "A": "A \"Pull\" system where customers come to you.",
+            "B": "A \"Push\" system where you have to chase every customer.",
+            "C": "No need for a marketing team.",
+            "D": "Immediate bankruptcy."
+          },
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "num": 46,
+      "title": "Customer Retention",
+      "questions": [
+        {
+          "q": "\"Customer Retention\" is the ability of a company to:",
+          "options": {
+            "A": "Keep its employees from quitting.",
+            "B": "Keep its existing customers buying over time.",
+            "C": "Keep its secrets from competitors.",
+            "D": "Keep its cash in the bank."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "It is generally:",
+          "options": {
+            "A": "Much cheaper to retain an existing customer than to acquire a new one.",
+            "B": "Much more expensive to retain an existing customer.",
+            "C": "The same cost to do both.",
+            "D": "Impossible to retain customers."
+          },
+          "answer": "A"
+        },
+        {
+          "q": "\"Churn Rate\" is the percentage of:",
+          "options": {
+            "A": "Customers who join every month.",
+            "B": "Customers who stop buying or cancel their subscription.",
+            "C": "Employees who leave the company.",
+            "D": "New products that fail."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To improve retention, a company should focus on:",
+          "options": {
+            "A": "Ignoring current customers and focusing only on new ones.",
+            "B": "Improving the \"Post-Purchase Experience\" and delivering ongoing value.",
+            "C": "Raising prices as soon as a customer joins.",
+            "D": "Making it impossible for a customer to cancel."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "High retention leads to a higher:",
+          "options": {
+            "A": "CAC (Customer Acquisition Cost).",
+            "B": "LTV (Lifetime Value).",
+            "C": "Burn rate.",
+            "D": "Number of complaints."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 47,
+      "title": "A/B Testing & Experiments",
+      "questions": [
+        {
+          "q": "\"A/B Testing\" is a scientific method used to:",
+          "options": {
+            "A": "Test two different versions of a marketing asset to see which performs better.",
+            "B": "Test two different employees to see who is faster.",
+            "C": "Test two different types of coffee in the office.",
+            "D": "Test two different tax strategies."
+          },
+          "answer": "A"
+        },
+        {
+          "q": "In an A/B test, you should only change:",
+          "options": {
+            "A": "Everything at once.",
+            "B": "One single variable (e.g., the headline) to know what caused the change in performance.",
+            "C": "The color of the website every day.",
+            "D": "The CEO's mind."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Statistical Significance\" means that:",
+          "options": {
+            "A": "You like the result.",
+            "B": "The result is likely not due to chance and can be trusted.",
+            "C": "The result is very large.",
+            "D": "The result was calculated by a computer."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Why is experimentation important in marketing?",
+          "options": {
+            "A": "It makes the work more fun.",
+            "B": "It replaces \"opinions\" with \"data\" on what actually drives results.",
+            "C": "It is required by the marketing association.",
+            "D": "It allows you to spend more money."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Data-Driven\" marketer:",
+          "options": {
+            "A": "Always follows their gut.",
+            "B": "Uses the results of experiments to continuously optimize the marketing \"OS.\"",
+            "C": "Only looks at the data once a year.",
+            "D": "Ignores the data if it doesn't match their opinion."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 48,
+      "title": "Operations & Execution Study Guide",
+      "questions": [
+        {
+          "q": "The Module 8 Study Guide focuses on:",
+          "options": {
+            "A": "The theory of why businesses exist.",
+            "B": "The \"Raw Mechanics\" of getting things done and building resilience.",
+            "C": "How to write a 100-page business plan.",
+            "D": "How to become a famous influencer."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Execution\" is defined as:",
+          "options": {
+            "A": "Thinking about a great idea.",
+            "B": "The disciplined process of turning strategy into reality.",
+            "C": "Firing a lot of people at once.",
+            "D": "Selling the company."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "According to the guide, a great strategy without execution is:",
+          "options": {
+            "A": "Still very valuable.",
+            "B": "Worthless.",
+            "C": "Better than no strategy at all.",
+            "D": "Something only small businesses worry about."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A key theme of this module is \"Business Resilience,\" which means:",
+          "options": {
+            "A": "The ability to survive and thrive during shocks, crises, and market changes.",
+            "B": "Being the biggest company in the world.",
+            "C": "Having no competitors.",
+            "D": "Never making a mistake."
+          },
+          "answer": "A"
+        },
+        {
+          "q": "Execution requires:",
+          "options": {
+            "A": "A lot of luck.",
+            "B": "Clear ownership, accountability, and systematic follow-through.",
+            "C": "A very large office building.",
+            "D": "Doing everything yourself."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 49,
+      "title": "90 Day Blueprint and Crisis Leadership",
+      "questions": [
+        {
+          "q": "The \"90 Day Blueprint\" (Source 14, 30) is used to:",
+          "options": {
+            "A": "Plan the next 10 years of the company.",
+            "B": "Break down long-term goals into immediate, actionable 90-day sprints.",
+            "C": "Track the daily habits of employees.",
+            "D": "Design the company's 90-page manual."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Why is 90 days the ideal timeframe for a blueprint?",
+          "options": {
+            "A": "Because it is the length of a season.",
+            "B": "It is long enough to achieve significant results, but short enough to maintain urgency and focus.",
+            "C": "Because that is when the taxes are due.",
+            "D": "Because that is how long it takes to hire a new CEO."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Crisis Leadership\" requires a leader to:",
+          "options": {
+            "A": "Panic and hide.",
+            "B": "Be decisive, communicate clearly, and focus on the \"Oxygen\" (Cash).",
+            "C": "Blame everyone else for the problem.",
+            "D": "Wait for someone else to tell them what to do."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "During a crisis, a leader should use \"Radial Candor,\" which means:",
+          "options": {
+            "A": "Being mean to everyone.",
+            "B": "Being brutally honest about the situation while showing that you care about the people.",
+            "C": "Keeping all information secret.",
+            "D": "Lying to keep morale high."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The 90-day blueprint in a crisis focuses on:",
+          "options": {
+            "A": "Long-term brand building.",
+            "B": "Immediate survival, stabilization, and key \"wins.\"",
+            "C": "Hiring a new marketing agency.",
+            "D": "Buying new furniture for the office."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 50,
+      "title": "The Crisis Playbook",
+      "questions": [
+        {
+          "q": "A \"Crisis Playbook\" (Source 48) is:",
+          "options": {
+            "A": "A book of jokes to tell during a crisis.",
+            "B": "A pre-written set of procedures for handling various emergencies.",
+            "C": "A list of all the people to blame.",
+            "D": "A document that is only written  after  the crisis is over."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Why prepare a playbook  before  a crisis happens?",
+          "options": {
+            "A": "Because you have nothing else to do.",
+            "B": "Because \"Decision Fatigue\" and stress during a crisis lead to poor choices.",
+            "C": "Because the law requires it.",
+            "D": "To scare the employees."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A key part of the playbook is the \"Communication Plan,\" which identifies:",
+          "options": {
+            "A": "Who will be fired first.",
+            "B": "Who will say what, to whom, and when (e.g., to employees, customers, and investors).",
+            "C": "Which social media filters to use.",
+            "D": "How to hide the news from the public."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The playbook should include \"Triggers,\" which are:",
+          "options": {
+            "A": "People who get angry easily.",
+            "B": "Specific events or metrics that signal it is time to activate a certain plan.",
+            "C": "The buttons on a computer.",
+            "D": "A type of marketing campaign."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "After a crisis, the playbook should be:",
+          "options": {
+            "A": "Thrown away.",
+            "B": "Updated based on \"Lessons Learned\" from the actual experience.",
+            "C": "Kept exactly the same.",
+            "D": "Published in the local newspaper."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 51,
+      "title": "The Raw Mechanics of Business Resilience",
+      "questions": [
+        {
+          "q": "\"Business Resilience\" is built on:",
+          "options": {
+            "A": "Luck and good timing.",
+            "B": "Robust systems, cash reserves, and \"Anti-Fragile\" structures.",
+            "C": "Having the most expensive office.",
+            "D": "Having only one single customer who pays a lot."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Anti-Fragile\" (a concept from Nassim Taleb mentioned in MBA Rock) means:",
+          "options": {
+            "A": "Being very strong and never breaking.",
+            "B": "Actually getting  stronger  and better when faced with stress and disorder.",
+            "C": "Being very delicate and easy to break.",
+            "D": "Not caring about what happens."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Fragile\" business has:",
+          "options": {
+            "A": "High levels of \"Redundancy\" and \"Buffers.\"",
+            "B": "\"Single Points of Failure\" and no cash reserves.",
+            "C": "Too many customers.",
+            "D": "Too much technology."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To increase resilience, a leader should:",
+          "options": {
+            "A": "\"Stress Test\" their systems to see where they break.",
+            "B": "Hope that nothing ever goes wrong.",
+            "C": "Spend all their cash on marketing.",
+            "D": "Fire the operations team."
+          },
+          "answer": "A"
+        },
+        {
+          "q": "Resilience is the ability to:",
+          "options": {
+            "A": "Avoid all change.",
+            "B": "Adapt and pivot when the environment changes.",
+            "C": "Never change the plan.",
+            "D": "Be the first to go bankrupt."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 52,
+      "title": "Mastering Chaos",
+      "questions": [
+        {
+          "q": "\"Mastering Chaos\" (Source 116) involves:",
+          "options": {
+            "A": "Creating more chaos to keep people busy.",
+            "B": "Maintaining \"Operational Order\" even in high-growth or unstable environments.",
+            "C": "Ignoring the chaos and hoping it stops.",
+            "D": "Letting everyone do whatever they want."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In a chaotic environment, a leader’s most important tool is:",
+          "options": {
+            "A": "A loud voice.",
+            "B": "Clear, simple, and repeatable \"Standard Operating Procedures\" (SOPs).",
+            "C": "A very complex plan.",
+            "D": "No plan at all."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Chaos often occurs when \"Growth\" outpaces:",
+          "options": {
+            "A": "The number of social media followers.",
+            "B": "The company's \"Operational Infrastructure\" and systems.",
+            "C": "The CEO's imagination.",
+            "D": "The local population."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To master chaos, you must \"Standardize the Routine\" so you can:",
+          "options": {
+            "A": "Get bored.",
+            "B": "Focus your mental energy on the \"Exceptions\" and strategic problems.",
+            "C": "Fire the managers.",
+            "D": "Do the same thing every day for 50 years."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The goal of mastering chaos is to move from \"Reactive\" to:",
+          "options": {
+            "A": "\"Inactive.\"",
+            "B": "\"Proactive\" and \"Systematic.\"",
+            "C": "\"Hyperactive.\"",
+            "D": "\"Radioactive.\""
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 53,
+      "title": "Operating Leverage",
+      "questions": [
+        {
+          "q": "\"Operating Leverage\" is a financial concept that measures:",
+          "options": {
+            "A": "How much weight a machine can lift.",
+            "B": "The ratio of fixed costs to variable costs and how it affects profit as revenue grows.",
+            "C": "How much money the CEO can borrow.",
+            "D": "The number of employees per manager."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "High operating leverage means that:",
+          "options": {
+            "A": "Costs increase exactly as fast as revenue.",
+            "B": "After the \"Breakeven Point,\" a large percentage of every new dollar of revenue becomes profit.",
+            "C": "The company has no fixed costs.",
+            "D": "The company is very low risk."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Software companies often have high operating leverage because:",
+          "options": {
+            "A": "They have very high variable costs.",
+            "B": "They have high upfront (fixed) costs to build the software, but very low costs to sell it to one more customer.",
+            "C": "They have no employees.",
+            "D": "They don't pay for marketing."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The risk of high operating leverage is that:",
+          "options": {
+            "A": "Profit grows too fast.",
+            "B": "If revenue drops, losses also increase very rapidly.",
+            "C": "It is too easy to manage.",
+            "D": "It requires no technology."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A leader uses operating leverage to:",
+          "options": {
+            "A": "Scale the business profitably without increasing costs at the same rate as revenue.",
+            "B": "Hire as many people as possible.",
+            "C": "Lower the price of the product to zero.",
+            "D": "Avoid having any fixed costs."
+          },
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "num": 54,
+      "title": "The Execution Architecture",
+      "questions": [
+        {
+          "q": "\"Execution Architecture\" (Source 105) is:",
+          "options": {
+            "A": "The design of the room where people are fired.",
+            "B": "The structural alignment of people, goals, and systems to ensure delivery.",
+            "C": "A new type of office building.",
+            "D": "The way the company's computers are wired."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"Architecture\" ensures that \"Strategy\" actually becomes:",
+          "options": {
+            "A": "A long report.",
+            "B": "\"Action\" and \"Results.\"",
+            "C": "A set of rumors.",
+            "D": "A memory."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A key part of execution architecture is \"Ownership,\" which means:",
+          "options": {
+            "A": "The CEO owns 100% of the company.",
+            "B": "Every task or goal has one single person who is responsible for its success.",
+            "C": "Everyone owns everything together.",
+            "D": "No one is responsible for anything."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Cascading Goals\" in this architecture means that:",
+          "options": {
+            "A": "Goals fall over and break.",
+            "B": "High-level strategic goals are broken down into smaller goals for every level of the company.",
+            "C": "Only the CEO has goals.",
+            "D": "The goals change every day."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Without a clear execution architecture, a business will suffer from:",
+          "options": {
+            "A": "Too much success.",
+            "B": "\"The Strategy Gap\" where plans are made but never completed.",
+            "C": "A lack of paper in the office.",
+            "D": "Too many employees working too hard."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 55,
+      "title": "Analytics & Decision Making Study Guide",
+      "questions": [
+        {
+          "q": "The Module 9 Study Guide focuses on:",
+          "options": {
+            "A": "How to use a calculator.",
+            "B": "Using data to drive faster, more accurate, and less risky decisions.",
+            "C": "How to win an argument with a customer.",
+            "D": "How to write a press release."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In the \"MBA Rock\" framework, data is useless unless it:",
+          "options": {
+            "A": "Is colorful.",
+            "B": "Leads to an \"Insight\" that drives an \"Action.\"",
+            "C": "Is at least 100 pages long.",
+            "D": "Is kept secret."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Analytics\" is defined as:",
+          "options": {
+            "A": "Guessing what will happen next.",
+            "B": "The systematic computational analysis of data or statistics.",
+            "C": "A fancy word for \"Accounting.\"",
+            "D": "Only for large tech companies."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A core goal of this module is to reduce:",
+          "options": {
+            "A": "The amount of work employees do.",
+            "B": "\"Decision Risk\" and \"Analysis Paralysis.\"",
+            "C": "The company's profit.",
+            "D": "The number of customers."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Decision making should be:",
+          "options": {
+            "A": "Based entirely on the CEO's gut feeling.",
+            "B": "A \"Process\" that can be improved over time.",
+            "C": "Different for every person in the company.",
+            "D": "Kept as slow as possible."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 56,
+      "title": "Analytics for Decision Speed and Risk",
+      "questions": [
+        {
+          "q": "\"Analytics for Decision Speed\" (Source 11) means using data to:",
+          "options": {
+            "A": "Take more time to think.",
+            "B": "Shorten the time between \"Signal\" (seeing a problem/opportunity) and \"Decision.\"",
+            "C": "Make the computer run faster.",
+            "D": "Fire people more quickly."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "How does data reduce \"Risk\"?",
+          "options": {
+            "A": "It makes risk go away entirely.",
+            "B": "It allows you to calculate probabilities and make \"Intelligent Bets\" rather than guesses.",
+            "C": "It is required by insurance companies.",
+            "D": "It allows you to blame the computer if things go wrong."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Analysis Paralysis\" occurs when:",
+          "options": {
+            "A": "You have no data.",
+            "B": "You have so much data that you are unable to make any decision at all.",
+            "C": "You are paralyzed by a physical injury.",
+            "D": "The data is all wrong."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To avoid paralysis, a leader should focus on \"The Critical Few\" metrics, which are:",
+          "options": {
+            "A": "The 100 most important numbers.",
+            "B": "The 3-5 key numbers that actually move the needle for the business.",
+            "C": "The numbers that make the CEO look good.",
+            "D": "The numbers from last year."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Decision speed is a competitive advantage because:",
+          "options": {
+            "A": "It makes you look busy.",
+            "B": "It allows you to \"out-iterate\" and \"out-maneuver\" slower competitors.",
+            "C": "It reduces the cost of electricity.",
+            "D": "It is required for a business to be successful."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 57,
+      "title": "Data Driven Decision Architecture",
+      "questions": [
+        {
+          "q": "\"Data Driven Decision Architecture\" (Source 104) is:",
+          "options": {
+            "A": "A building with a lot of computers in it.",
+            "B": "The systematic design of how data flows to the right people at the right time.",
+            "C": "A new type of software for drawing maps.",
+            "D": "A policy of firing anyone who doesn't like math."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In this architecture, data should be \"Democratized,\" which means:",
+          "options": {
+            "A": "Only the CEO can see it.",
+            "B": "Everyone who needs it to make a decision has access to it.",
+            "C": "It is voted on by the employees.",
+            "D": "It is free to the public."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"Architecture\" ensures that decisions are based on:",
+          "options": {
+            "A": "The \"HiPPO\" (Highest Paid Person's Opinion).",
+            "B": "Evidence and objective reality.",
+            "C": "What the competitor is doing.",
+            "D": "What happened 10 years ago."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A key part of this architecture is the \"Single Source of Truth,\" which is:",
+          "options": {
+            "A": "The CEO's brain.",
+            "B": "One unified database or dashboard that everyone agrees is the correct data.",
+            "C": "The Bible.",
+            "D": "The local newspaper."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Without this architecture, a business will suffer from:",
+          "options": {
+            "A": "Too much data.",
+            "B": "\"Information Silos\" where different departments have different (and often conflicting) data.",
+            "C": "Too many customers.",
+            "D": "A lack of office furniture."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 58,
+      "title": "Visibility & Dashboards",
+      "questions": [
+        {
+          "q": "A \"Dashboard\" (Source 7, 127) is a tool used to:",
+          "options": {
+            "A": "Drive a car.",
+            "B": "Visualize Key Performance Indicators (KPIs) in real-time.",
+            "C": "Hide data from the employees.",
+            "D": "Track the company's social media followers only."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Visibility\" in business means:",
+          "options": {
+            "A": "Being able to see out of the office windows.",
+            "B": "Having a clear, accurate, and up-to-date view of the company's vital signs.",
+            "C": "Having a lot of lights in the office.",
+            "D": "Being famous."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A good dashboard should be:",
+          "options": {
+            "A": "Extremely complicated with hundreds of numbers.",
+            "B": "Simple, actionable, and focused on the metrics that drive the business.",
+            "C": "Printed out once a month.",
+            "D": "Only accessible by the CFO."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Leading Indicators\" on a dashboard tell you:",
+          "options": {
+            "A": "What happened last year.",
+            "B": "What is likely to happen in the future (e.g., number of new leads).",
+            "C": "Who the leader of the company is.",
+            "D": "How much money is currently in the bank."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Lagging Indicators\" on a dashboard tell you:",
+          "options": {
+            "A": "What is happening right now.",
+            "B": "The results of past actions (e.g., last month’s revenue).",
+            "C": "What you should do tomorrow.",
+            "D": "How slow the computers are."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 59,
+      "title": "Velocity of Decision",
+      "questions": [
+        {
+          "q": "\"Velocity of Decision\" (Source 151) is:",
+          "options": {
+            "A": "The speed of a falling object.",
+            "B": "The speed and quality of the organization's decision-making process.",
+            "C": "The speed of the company's internet connection.",
+            "D": "How fast the CEO talks."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Jeff Bezos (often cited in this context) distinguishes between \"Type 1\" and \"Type 2\" decisions. Type 2 decisions are:",
+          "options": {
+            "A": "Irreversible and high-stakes.",
+            "B": "Reversible and can be made quickly without perfect data.",
+            "C": "Only made by the Board of Directors.",
+            "D": "Made by a computer."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To increase decision velocity, a leader should \"decentralize\" decisions, which means:",
+          "options": {
+            "A": "Making all decisions themselves.",
+            "B": "Empowering people closer to the work to make choices within clear guidelines.",
+            "C": "Moving the office out of the city center.",
+            "D": "Having no one make any decisions."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "High decision velocity leads to faster:",
+          "options": {
+            "A": "Bankruptcy.",
+            "B": "\"Learning Loops\" and market adaptation.",
+            "C": "Employee turnover.",
+            "D": "Internet speeds."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Bottleneck\" in decision velocity is often:",
+          "options": {
+            "A": "Having too much data.",
+            "B": "A leader who insists on approving every small choice.",
+            "C": "Having no computers.",
+            "D": "The local government."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 60,
+      "title": "Precision Logic",
+      "questions": [
+        {
+          "q": "\"Precision Logic\" (Source 126) is the application of:",
+          "options": {
+            "A": "Guessing.",
+            "B": "Deductive and inductive reasoning to business problems.",
+            "C": "Using a very precise clock.",
+            "D": "Being very mean to employees."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In business logic, an \"Assumption\" should be:",
+          "options": {
+            "A": "Treated as a fact.",
+            "B": "Clearly identified and tested with data.",
+            "C": "Ignored.",
+            "D": "Kept secret."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"First Principles Thinking\" involves:",
+          "options": {
+            "A": "Following the rules of the industry.",
+            "B": "Breaking a problem down into its most basic truths and building up from there.",
+            "C": "Thinking about your first day at work.",
+            "D": "Doing what your parents did."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Precision logic helps a leader avoid \"Logical Fallacies,\" which are:",
+          "options": {
+            "A": "Mistakes in the company's math.",
+            "B": "Common errors in reasoning that lead to bad decisions.",
+            "C": "When the CEO lies.",
+            "D": "When the computer breaks."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The goal of precision logic is to move from \"I think\" to:",
+          "options": {
+            "A": "\"I hope.\"",
+            "B": "\"The data suggests...\" and \"Therefore...\"",
+            "C": "\"I don't know.\"",
+            "D": "\"I wish.\""
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 61,
+      "title": "Intelligent Risk Selection",
+      "questions": [
+        {
+          "q": "\"Intelligent Risk Selection\" (Source 111) is the process of:",
+          "options": {
+            "A": "Avoiding all risk.",
+            "B": "Choosing which risks to take based on the potential \"Upside\" and \"Downside.\"",
+            "C": "Taking every risk possible.",
+            "D": "Letting a computer choose the risks."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "An \"Asymmetric Bet\" is a risk where:",
+          "options": {
+            "A": "The risk and reward are the same.",
+            "B": "The potential reward is much larger than the potential loss.",
+            "C": "There is no reward at all.",
+            "D": "The loss is guaranteed."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To select risk intelligently, a leader must understand \"Probability,\" which is:",
+          "options": {
+            "A": "How much they like the idea.",
+            "B": "The likelihood of a certain outcome occurring.",
+            "C": "A type of marketing campaign.",
+            "D": "How much money the company has."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Risk Mitigation\" involves:",
+          "options": {
+            "A": "Taking more risks.",
+            "B": "Taking steps to reduce the \"Downside\" of a chosen risk.",
+            "C": "Ignoring the risks.",
+            "D": "Firing the person who identified the risk."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A leader who is \"Risk-Averse\" in a fast-changing market:",
+          "options": {
+            "A": "Is very safe.",
+            "B": "Faces the \"Risk of Inaction,\" which can lead to obsolescence.",
+            "C": "Will always be successful.",
+            "D": "Should be the CEO of a startup."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 62,
+      "title": "Forecasting & Scenarios",
+      "questions": [
+        {
+          "q": "\"Forecasting\" (Source 119) is:",
+          "options": {
+            "A": "Telling the future with 100% accuracy.",
+            "B": "Using past data and trends to make an educated guess about the future.",
+            "C": "Looking out the window at the weather.",
+            "D": "A type of social media post."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Scenario Planning\" involves:",
+          "options": {
+            "A": "Writing a movie script.",
+            "B": "Creating multiple \"What-If\" versions of the future (e.g., Best Case, Worst Case, Most Likely).",
+            "C": "Planning the company's next vacation.",
+            "D": "Choosing the best scenario and ignoring the others."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Why is scenario planning better than a single \"Point Forecast\"?",
+          "options": {
+            "A": "It uses more paper.",
+            "B": "It prepares the organization for different market conditions and reduces \"Shock.\"",
+            "C": "It is easier to do.",
+            "D": "It makes the CEO look like a psychic."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Sensitivity Analysis\" shows:",
+          "options": {
+            "A": "How sensitive the employees are to criticism.",
+            "B": "How much a change in one variable (e.g., price) affects the outcome (e.g., profit).",
+            "C": "The quality of the company's microphones.",
+            "D": "The CEO's mood."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Forecasting should be:",
+          "options": {
+            "A": "Done once and never changed.",
+            "B": "A continuous process that is updated as new data becomes available.",
+            "C": "Ignored if the results are bad.",
+            "D": "Done by the lowest-level employee."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 63,
+      "title": "Innovation & Future Study Guide",
+      "questions": [
+        {
+          "q": "The Module 10 Study Guide focuses on:",
+          "options": {
+            "A": "The history of the industrial revolution.",
+            "B": "Identifying emerging trends and building \"Future-Ready\" organizations.",
+            "C": "How to invent a time machine.",
+            "D": "How to retire early."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Innovation\" is defined in this framework as:",
+          "options": {
+            "A": "Coming up with a random idea.",
+            "B": "The creation of new value through the application of new ideas or technologies.",
+            "C": "Buying a new computer for the office.",
+            "D": "Changing the company's logo."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A core theme of this module is:",
+          "options": {
+            "A": "Avoiding all change.",
+            "B": "\"Weaponizing\" emerging technology and navigating disruption.",
+            "C": "How to copy the competitors better.",
+            "D": "How to stop the future from happening."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Future-Ready\" organization is:",
+          "options": {
+            "A": "One that has a lot of clocks.",
+            "B": "One that is designed for agility, continuous learning, and adaptation.",
+            "C": "One that is 100 years old.",
+            "D": "One that only uses old technology."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The study guide emphasizes that the \"Future\" is:",
+          "options": {
+            "A": "Fixed and unchangeable.",
+            "B": "Something that can be shaped by the decisions made today.",
+            "C": "A mystery that no one can understand.",
+            "D": "Only for young people."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 64,
+      "title": "Weaponize AI, ESG, and the Innovators Dilemma",
+      "questions": [
+        {
+          "q": "\"Weaponizing AI\" (Source 29) means:",
+          "options": {
+            "A": "Using AI to build actual weapons.",
+            "B": "Using AI as a strategic tool to gain a massive competitive advantage in operations or marketing.",
+            "C": "Firing all the employees and replacing them with robots.",
+            "D": "Ignoring AI until it is perfect."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In the \"Innovator's Dilemma,\" why do successful companies fail?",
+          "options": {
+            "A": "Because they are lazy.",
+            "B": "Because they focus on their current profitable customers and ignore \"Disruptive\" new technology.",
+            "C": "Because they have no money.",
+            "D": "Because they have no technology."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "ESG (Environmental, Social, and Governance) is used as:",
+          "options": {
+            "A": "A way to avoid paying taxes.",
+            "B": "A lens to identify long-term risks and opportunities that affect value.",
+            "C": "A set of rules that have no impact on business.",
+            "D": "A fancy way of saying \"Marketing.\""
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Weaponizing\" a trend means:",
+          "options": {
+            "A": "Complaining about it.",
+            "B": "Using it to grow your business faster than those who are ignoring it.",
+            "C": "Fighting against the trend.",
+            "D": "Waiting for the trend to pass."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A leader who understands these concepts will:",
+          "options": {
+            "A": "Be very afraid of the future.",
+            "B": "Look for ways to disrupt their own business before someone else does.",
+            "C": "Only focus on the next 90 days.",
+            "D": "Do exactly what they did last year."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 65,
+      "title": "Innovator's Dilemma",
+      "questions": [
+        {
+          "q": "The \"Innovator's Dilemma\" (Source 128) was popularized by:",
+          "options": {
+            "A": "Elon Musk.",
+            "B": "Clayton Christensen.",
+            "C": "Steve Jobs.",
+            "D": "Jeff Bezos."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The dilemma occurs when \"Good Management\" decisions:",
+          "options": {
+            "A": "Lead to the failure of the company.",
+            "B": "Lead to immediate success.",
+            "C": "Have no impact.",
+            "D": "Are made by a computer."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A \"Sustaining Innovation\" is one that:",
+          "options": {
+            "A": "Replaces the whole business.",
+            "B": "Improves an existing product for existing high-end customers.",
+            "C": "Is very cheap.",
+            "D": "No one wants to buy."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To solve the dilemma, a company should often:",
+          "options": {
+            "A": "Ignore the new technology.",
+            "B": "Create a separate, autonomous unit to pursue the disruptive innovation.",
+            "C": "Fire the CEO.",
+            "D": "Spend more on current marketing."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Disruptive technology usually starts:",
+          "options": {
+            "A": "At the very high end of the market.",
+            "B": "As a lower-performance, lower-margin product that serves a new or low-end segment.",
+            "C": "In a government lab.",
+            "D": "With a lot of television commercials."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 66,
+      "title": "AI & Emerging Tech Strategy",
+      "questions": [
+        {
+          "q": "An \"AI Strategy\" (Source 120) should focus on:",
+          "options": {
+            "A": "Using AI just to say you are using AI.",
+            "B": "Identifying specific \"Use Cases\" where AI can drive ROI, efficiency, or better customer experience.",
+            "C": "Replacing the entire management team with a chatbot.",
+            "D": "Buying every AI tool that is advertised on social media."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Generative AI\" is a type of AI that can:",
+          "options": {
+            "A": "Only do math.",
+            "B": "Create new content (text, images, code, etc.) based on data it has learned.",
+            "C": "Drive a car.",
+            "D": "See into the future."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "When implementing emerging tech, a leader should first:",
+          "options": {
+            "A": "Buy the most expensive version.",
+            "B": "Run \"Small Experiments\" (Pilots) to test the value before scaling.",
+            "C": "Tell all the customers about it.",
+            "D": "Fire the IT department."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A major risk of AI is \"Bias,\" which means:",
+          "options": {
+            "A": "The AI is very fast.",
+            "B": "The AI's results are unfairly slanted because of the data it was trained on.",
+            "C": "The AI is very expensive.",
+            "D": "The AI is only available in one language."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The goal of an emerging tech strategy is to:",
+          "options": {
+            "A": "Be the first to use every new tool.",
+            "B": "Build a \"Sustainable Advantage\" by using technology better than the competition.",
+            "C": "Make the company look \"Cool.\"",
+            "D": "Save as much money as possible."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 67,
+      "title": "ESG: A Lens on Value",
+      "questions": [
+        {
+          "q": "ESG stands for:",
+          "options": {
+            "A": "Economic, Social, and Global.",
+            "B": "Environmental, Social, and Governance.",
+            "C": "Employees, Sales, and Growth.",
+            "D": "Every Single Goal."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "In the \"MBA Rock\" framework, ESG is:",
+          "options": {
+            "A": "A \"Nice-to-Have\" for PR purposes only.",
+            "B": "A strategic lens to identify risks (e.g., climate change) and opportunities (e.g., efficiency).",
+            "C": "A burden that reduces profit.",
+            "D": "Something only government agencies care about."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"G\" in ESG (Governance) refers to:",
+          "options": {
+            "A": "The local government.",
+            "B": "The systems, rules, and practices by which the company is directed and controlled.",
+            "C": "The CEO's personal life.",
+            "D": "The company's tax rate."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Companies with high ESG ratings often have:",
+          "options": {
+            "A": "Lower stock prices.",
+            "B": "Lower \"Cost of Capital\" and higher long-term resilience.",
+            "C": "No profit at all.",
+            "D": "Fewer employees."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Using ESG as a \"Lens on Value\" means:",
+          "options": {
+            "A": "Giving all the company's money to charity.",
+            "B": "Understanding how non-financial factors affect long-term financial performance.",
+            "C": "Ignoring the financials and focusing only on the environment.",
+            "D": "Making the company's logo green."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 68,
+      "title": "The Future-Ready Leader",
+      "questions": [
+        {
+          "q": "A \"Future-Ready Leader\" (Source 124) is characterized by:",
+          "options": {
+            "A": "Knowing exactly what will happen in the future.",
+            "B": "\"Learning Agility\" and the ability to adapt to rapid change.",
+            "C": "Having 50 years of experience.",
+            "D": "Doing things the same way they have always been done."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The most important skill for a future leader is:",
+          "options": {
+            "A": "Coding.",
+            "B": "The ability to \"Unlearn\" old models and \"Relearn\" new ones.",
+            "C": "Public speaking.",
+            "D": "Accounting."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A future-ready leader focuses on:",
+          "options": {
+            "A": "Maintaining the status quo.",
+            "B": "Building \"Anti-Fragile\" systems and teams.",
+            "C": "Ignoring the news.",
+            "D": "Being the smartest person in the room."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Emotional Intelligence\" (EQ) is vital for future leaders because:",
+          "options": {
+            "A": "It helps them cry.",
+            "B": "It allows them to navigate complex human systems and drive change.",
+            "C": "It is required for a business license.",
+            "D": "It makes them more popular."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The goal of a future-ready leader is to:",
+          "options": {
+            "A": "Survive the future.",
+            "B": "Architect a future where their organization thrives.",
+            "C": "Stop the future from changing.",
+            "D": "Be the last person to use new technology."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 69,
+      "title": "Why Cash is Oxygen for Business Survival",
+      "questions": [
+        {
+          "q": "Why does the \"MBA Rock\" curriculum describe cash as \"Oxygen\" (Source 16)?",
+          "options": {
+            "A": "Because it is invisible and everywhere.",
+            "B": "Because without it, the business dies immediately, regardless of its \"paper\" profit.",
+            "C": "Because you should spend it as fast as you can.",
+            "D": "Because it is free."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Profit is an opinion; Cash is...\":",
+          "options": {
+            "A": "Also an opinion.",
+            "B": "A Fact.",
+            "C": "A Myth.",
+            "D": "Illegal."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"Cash Conversion Cycle\" measures:",
+          "options": {
+            "A": "The physical speed of the bank.",
+            "B": "The time it takes for a dollar spent on inventory to return as a dollar (plus profit) in the bank.",
+            "C": "How many times a day the CEO checks the balance.",
+            "D": "The interest rate on a loan."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Receivables In\" (Source 133) refers to:",
+          "options": {
+            "A": "Getting mail.",
+            "B": "The critical task of collecting the money that customers owe the company.",
+            "C": "Paying your bills.",
+            "D": "Hiring more people."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To increase your \"Cash Runway,\" you can:",
+          "options": {
+            "A": "Increase your \"Burn Rate.\"",
+            "B": "Increase revenue, decrease expenses, or raise more capital.",
+            "C": "Stop checking the bank account.",
+            "D": "Buy a faster computer."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 70,
+      "title": "Unit Economics: CAC & LTV",
+      "questions": [
+        {
+          "q": "\"CAC\" (Customer Acquisition Cost) is calculated by:",
+          "options": {
+            "A": "Dividing total marketing/sales spend by the number of new customers acquired.",
+            "B": "Multiplying the price of the product by the number of customers.",
+            "C": "Asking the sales manager.",
+            "D": "Dividing total revenue by total employees."
+          },
+          "answer": "A"
+        },
+        {
+          "q": "\"LTV\" (Lifetime Value) is the:",
+          "options": {
+            "A": "Total revenue the company will make in its lifetime.",
+            "B": "Total profit a company expects to earn from a customer over the duration of their relationship.",
+            "C": "The price of one single sale.",
+            "D": "The CEO's personal wealth."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A business is generally considered \"Sustainable\" if the LTV/CAC ratio is:",
+          "options": {
+            "A": "Less than 1.",
+            "B": "At least 3 or higher.",
+            "C": "Exactly 1.",
+            "D": "Zero."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Payback Period\" is the amount of time it takes to:",
+          "options": {
+            "A": "Pay back a bank loan.",
+            "B": "Recover the CAC from the profit generated by a new customer.",
+            "C": "Pay the employees their monthly salary.",
+            "D": "Finish a project."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "If your CAC is higher than your LTV, every new customer:",
+          "options": {
+            "A": "Makes you richer.",
+            "B": "Costs you money and will eventually bankrupt the business.",
+            "C": "Is a \"Viral\" customer.",
+            "D": "Should be given a discount."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 71,
+      "title": "Pricing Power & Strategy",
+      "questions": [
+        {
+          "q": "\"Pricing Power\" (Source 5) is the ability to:",
+          "options": {
+            "A": "Lower your prices to zero.",
+            "B": "Raise prices without a significant loss in sales volume.",
+            "C": "Force people to buy your product at gunpoint.",
+            "D": "Negotiate with your suppliers."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Value-Based Pricing\" means setting the price based on:",
+          "options": {
+            "A": "How much it cost to make the product (Cost-Plus).",
+            "B": "The perceived value and \"Outcome\" the product provides to the customer.",
+            "C": "Whatever the competitor is charging.",
+            "D": "A random number."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Price Elasticity\" measures:",
+          "options": {
+            "A": "How much a price can stretch.",
+            "B": "How sensitive customer demand is to a change in price.",
+            "C": "The quality of the rubber in the product.",
+            "D": "The speed of the sales team."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "A company with \"High Pricing Power\" usually has:",
+          "options": {
+            "A": "A \"Commodity\" product with many competitors.",
+            "B": "A strong brand, high moats, and a unique value proposition.",
+            "C": "No customers at all.",
+            "D": "The lowest price in the market."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Pricing is the most powerful \"Lever\" for:",
+          "options": {
+            "A": "Increasing costs.",
+            "B": "Improving profitability (even a 1% increase in price can have a massive impact on profit).",
+            "C": "Making the brand look cheap.",
+            "D": "Avoiding the \"Oxygen\" problem."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 72,
+      "title": "The Bones of Finance",
+      "questions": [
+        {
+          "q": "The \"Three Core Financial Statements\" are the Balance Sheet, the Cash Flow Statement, and the:",
+          "options": {
+            "A": "Marketing Plan.",
+            "B": "Profit & Loss (Income Statement).",
+            "C": "Employee Handbook.",
+            "D": "Press Release."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"Balance Sheet\" (Source 38) shows:",
+          "options": {
+            "A": "How much money the company made last year.",
+            "B": "The company's Assets, Liabilities, and Equity at a specific moment in time.",
+            "C": "The daily cash spending.",
+            "D": "The CEO's schedule."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Profit & Loss\" (P&L) shows:",
+          "options": {
+            "A": "The company's assets.",
+            "B": "The company's revenues and expenses over a period of time.",
+            "C": "The company's long-term strategy.",
+            "D": "The names of the investors."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"Cash Flow Statement\" is critical because:",
+          "options": {
+            "A": "It shows if the company is \"Profitable.\"",
+            "B": "It shows the actual movement of cash, which can be very different from \"Accounting Profit.\"",
+            "C": "It is the easiest one to read.",
+            "D": "It is only needed for the bank."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "Why are these called \"The Bones\"?",
+          "options": {
+            "A": "Because they are dead.",
+            "B": "Because they provide the structural foundation for understanding the business's health.",
+            "C": "Because they are hidden inside the company.",
+            "D": "Because they are hard to break."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 73,
+      "title": "Time Value & Discount Rate",
+      "questions": [
+        {
+          "q": "The \"Time Value of Money\" (Source 39) principle states that:",
+          "options": {
+            "A": "Time is money.",
+            "B": "A dollar today is worth more than a dollar in the future.",
+            "C": "Money grows on trees over time.",
+            "D": "Future money is always better."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"Discount Rate\" is the interest rate used to:",
+          "options": {
+            "A": "Give a discount to a customer.",
+            "B": "Calculate the \"Present Value\" of future cash flows.",
+            "C": "Reduce the CEO's salary.",
+            "D": "Lower the cost of a new computer."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Present Value\" (PV) is:",
+          "options": {
+            "A": "The current value of a future sum of money.",
+            "B": "The price of a gift.",
+            "C": "The historical cost of an asset.",
+            "D": "The total revenue today."
+          },
+          "answer": "A"
+        },
+        {
+          "q": "\"NPV\" (Net Present Value) is used to:",
+          "options": {
+            "A": "Calculate the total weight of the product.",
+            "B": "Determine if an investment or project is worth pursuing (if NPV &gt; 0, it adds value).",
+            "C": "Count the number of employees.",
+            "D": "Track the history of the company."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "This concept is vital for \"Capital Allocation,\" which is:",
+          "options": {
+            "A": "Choosing where to put the office.",
+            "B": "Deciding where to invest the company's limited resources to get the best return.",
+            "C": "Hiring a new accountant.",
+            "D": "Selling the company's assets."
+          },
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "num": 74,
+      "title": "The Breakeven Proof",
+      "questions": [
+        {
+          "q": "The \"Breakeven Point\" (Source 136) is reached when:",
+          "options": {
+            "A": "The company has $1 million in the bank.",
+            "B": "Total Revenue equals Total Expenses (Profit is exactly zero).",
+            "C": "The CEO retires.",
+            "D": "The company goes public."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "To calculate the breakeven point in units, you divide:",
+          "options": {
+            "A": "Total Costs by Total Revenue.",
+            "B": "Fixed Costs by the \"Contribution Margin\" (Price - Variable Cost).",
+            "C": "Variable Costs by Fixed Costs.",
+            "D": "The CEO's salary by the number of employees."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Fixed Costs\" (like rent) are:",
+          "options": {
+            "A": "Costs that change with every sale.",
+            "B": "Costs that stay the same regardless of how many units you sell.",
+            "C": "Costs that are never paid.",
+            "D": "Costs that are paid by the customer."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "\"Variable Costs\" (like raw materials) are:",
+          "options": {
+            "A": "Costs that never change.",
+            "B": "Costs that increase in direct proportion to the number of units sold.",
+            "C": "Costs that are paid by the government.",
+            "D": "Only for large companies."
+          },
+          "answer": "B"
+        },
+        {
+          "q": "The \"Breakeven Proof\" helps a leader understand:",
+          "options": {
+            "A": "How much risk they are taking and how many sales they  must  make to stay alive.",
+            "B": "How to make as much money as possible.",
+            "C": "The best color for the product.",
+            "D": "How to fire the employees."
+          },
+          "answer": "A"
+        }
+      ]
+    }
+  ]
+}
