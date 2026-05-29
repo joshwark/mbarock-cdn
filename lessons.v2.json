@@ -583,7 +583,7 @@
       "slug_v2": "m1l2.5",
       "legacy_slug": "april-cash-timing",
       "song_title": null,
-      "video_url": null,
+      "video_url": "https://learn.mbarock.com/video/April_Cash_Timing.mp4",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/april-cash-timing.mp3",
       "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/cash-runway-timing.mp4",
       "core_concepts": [
@@ -1751,9 +1751,9 @@
       "title": "Portfolio Strategy (Deep-Dive)",
       "slug_v2": "m2l2.5.5",
       "legacy_slug": "m2l2.5.5",
-      "song_title": null,
-      "video_url": null,
-      "audio_url": null,
+      "song_title": "Pick Two",
+      "video_url": "https://learn.mbarock.com/video/Portfolio_Strategy.mp4",
+      "audio_url": "https://learn.mbarock.com/audio/pick-two.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -1853,7 +1853,8 @@
         ]
       },
       "quiz_source_num": 25,
-      "quiz_source_title": "Operations & Technology Study Guide"
+      "quiz_source_title": "Operations & Technology Study Guide",
+      "audio_label": "Pick Two"
     },
     {
       "id": "M2L3",
@@ -3246,7 +3247,7 @@
       "slug_v2": "m4l2.5",
       "legacy_slug": "m4l2.5",
       "song_title": null,
-      "video_url": null,
+      "video_url": "https://learn.mbarock.com/video/The_Builder_s_Blueprint.mp4",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/distribution-rivers.mp3",
       "audio_overview_url": null,
       "core_concepts": [
@@ -3465,7 +3466,7 @@
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/price-signal.mp3",
       "audio_overview_url": null,
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://learn.mbarock.com/video/Pricing_Power.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
@@ -3568,7 +3569,7 @@
       "slug_v2": "m4l4.2.5",
       "legacy_slug": "m4l4.2.5",
       "song_title": null,
-      "video_url": null,
+      "video_url": "https://learn.mbarock.com/video/The_Bridge_to_Fit.mp4",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/fit-original.mp3",
       "audio_overview_url": null,
       "core_concepts": [
@@ -3678,7 +3679,7 @@
       "slug_v2": "m4l4.5",
       "legacy_slug": "m4l4.5",
       "song_title": null,
-      "video_url": null,
+      "video_url": "https://learn.mbarock.com/video/The_Evolution_of_Growth.mp4",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/let-the-rivers-run.mp3",
       "audio_overview_url": null,
       "core_concepts": [
@@ -3788,7 +3789,7 @@
       "title": "Integrated Marketing Mix",
       "slug_v2": "customer-retention",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://learn.mbarock.com/audio/adopt-the-loop.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Customer_Retention.mp4",
@@ -3896,7 +3897,9 @@
       },
       "order": 34,
       "quiz_source_num": 43,
-      "quiz_source_title": "Integrated Marketing Mix"
+      "quiz_source_title": "Integrated Marketing Mix",
+      "audio_label": "Adopt the Loop",
+      "song_title": "Adopt the Loop"
     },
     {
       "id": "M5L1",
@@ -4011,7 +4014,7 @@
       "title": "Process Maps: Order from Chaos",
       "slug_v2": "m5l2-process-maps-order-from-chaos",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://learn.mbarock.com/audio/process-over-outcome.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Process_Maps__Order_from_Chaos.mp4",
@@ -4108,7 +4111,9 @@
       },
       "order": 36,
       "quiz_source_num": 28,
-      "quiz_source_title": "Flow Not Force"
+      "quiz_source_title": "Flow Not Force",
+      "audio_label": "Process Over Outcome",
+      "song_title": "Process Over Outcome"
     },
     {
       "id": "M5L2.5",
@@ -4117,10 +4122,10 @@
       "title": "Automation Stack / Micro to Macro Scale (Deep-Dive)",
       "slug_v2": "m5l2-5-automation-stack",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://learn.mbarock.com/audio/heroes-dont-scale.mp3",
       "audio_overview_url": null,
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://learn.mbarock.com/video/Micro_to_Macro_Scale.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "song_title": "The Automation Stack",
@@ -4215,7 +4220,8 @@
       },
       "order": 37,
       "quiz_source_num": 18,
-      "quiz_source_title": "Repeatability Without Employee Heroics"
+      "quiz_source_title": "Repeatability Without Employee Heroics",
+      "audio_label": "The Automation Stack"
     },
     {
       "id": "M5L3",
@@ -4330,7 +4336,7 @@
       "title": "Modern Tech Strategy",
       "slug_v2": "m5l4-modern-tech-strategy",
       "legacy_slug": "digital-marketing",
-      "audio_url": null,
+      "audio_url": "https://learn.mbarock.com/audio/five-doors.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Modern_Tech_Strategy.mp4",
@@ -4427,7 +4433,9 @@
       },
       "order": 39,
       "quiz_source_num": 26,
-      "quiz_source_title": "Stop Bolting Tech Onto Broken Operations"
+      "quiz_source_title": "Stop Bolting Tech Onto Broken Operations",
+      "audio_label": "Five Doors",
+      "song_title": "Five Doors"
     },
     {
       "id": "M5L5",
@@ -4436,7 +4444,7 @@
       "title": "Build vs. Buy Matrix",
       "slug_v2": "m5l5-build-vs-buy-matrix",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://learn.mbarock.com/audio/build-vs-buy.mp3",
       "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/build-vs-buy.mp4",
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Build_vs.mp4",
@@ -4533,7 +4541,9 @@
       },
       "order": 40,
       "quiz_source_num": 30,
-      "quiz_source_title": "Modern Tech Strategy"
+      "quiz_source_title": "Modern Tech Strategy",
+      "audio_label": "Build vs. Buy",
+      "song_title": "Build vs. Buy"
     },
     {
       "id": "M6L1",
@@ -4542,7 +4552,7 @@
       "title": "Growth Engines",
       "slug_v2": "m6l1-growth-engines",
       "legacy_slug": "scale",
-      "audio_url": null,
+      "audio_url": "https://learn.mbarock.com/audio/engines.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_Evolution_of_Growth.mp4",
@@ -4639,7 +4649,9 @@
       },
       "order": 41,
       "quiz_source_num": 34,
-      "quiz_source_title": "Growth Engines"
+      "quiz_source_title": "Growth Engines",
+      "audio_label": "Engines",
+      "song_title": "Engines"
     },
     {
       "id": "M6L2",
@@ -4966,7 +4978,7 @@
       "title": "Exit Strategy Architecture / M&A Math",
       "slug_v2": "m6l5-exit-strategy-architecture-m-a-math",
       "legacy_slug": "exit",
-      "audio_url": null,
+      "audio_url": "https://learn.mbarock.com/audio/the-multiple.mp3",
       "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/exit-strategy-architecture.mp4",
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Exit_Strategy_Architecture.mp4",
@@ -5063,7 +5075,9 @@
       },
       "order": 45,
       "quiz_source_num": 57,
-      "quiz_source_title": "Data Driven Decision Architecture"
+      "quiz_source_title": "Data Driven Decision Architecture",
+      "audio_label": "The Multiple",
+      "song_title": "The Multiple"
     },
     {
       "id": "M6L6",
@@ -5177,9 +5191,9 @@
       "title": "Dashboards (Deep-Dive)",
       "slug_v2": "m6l6.3.5",
       "legacy_slug": "m6l6.3.5",
-      "song_title": null,
-      "video_url": null,
-      "audio_url": null,
+      "song_title": "The Aha",
+      "video_url": "https://learn.mbarock.com/video/Visibility_%26_Dashboards.mp4",
+      "audio_url": "https://learn.mbarock.com/audio/the-aha.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -5279,7 +5293,8 @@
         ]
       },
       "quiz_source_num": 58,
-      "quiz_source_title": "Visibility & Dashboards"
+      "quiz_source_title": "Visibility & Dashboards",
+      "audio_label": "The Aha"
     },
     {
       "id": "M6L7",
@@ -5288,7 +5303,7 @@
       "title": "Value Creation Journey / Capital Allocation",
       "slug_v2": "m6l7-value-creation-journey-capital-allocatio",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://learn.mbarock.com/audio/three-of-a-kind.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Value_Creation_Journey.mp4",
@@ -5385,7 +5400,9 @@
       },
       "order": 48,
       "quiz_source_num": 37,
-      "quiz_source_title": "How to Scale Without Going Bankrupt"
+      "quiz_source_title": "How to Scale Without Going Bankrupt",
+      "audio_label": "Three of a Kind",
+      "song_title": "Three of a Kind"
     },
     {
       "id": "M6L8",
@@ -5394,7 +5411,7 @@
       "title": "Managing Uncertainty / Strategic Bets",
       "slug_v2": "m6l8-managing-uncertainty-strategic-bets",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://learn.mbarock.com/audio/ten-year-bet.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Managing_Uncertainty.mp4",
@@ -5491,7 +5508,9 @@
       },
       "order": 49,
       "quiz_source_num": 55,
-      "quiz_source_title": "Analytics & Decision Making Study Guide"
+      "quiz_source_title": "Analytics & Decision Making Study Guide",
+      "audio_label": "Ten Year Bet",
+      "song_title": "Ten Year Bet"
     },
     {
       "id": "M6L9",
@@ -5606,7 +5625,7 @@
       "title": "Exit Strategy / Exit Story",
       "slug_v2": "m6l10-exit-strategy-exit-story",
       "legacy_slug": "exit",
-      "audio_url": null,
+      "audio_url": "https://learn.mbarock.com/audio/saleable.mp3",
       "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/exit-strategy.mp4",
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Exit_Strategy.mp4",
@@ -5703,7 +5722,9 @@
       },
       "order": 51,
       "quiz_source_num": 35,
-      "quiz_source_title": "Smart Funding and Exit Readiness"
+      "quiz_source_title": "Smart Funding and Exit Readiness",
+      "audio_label": "Saleable",
+      "song_title": "Saleable"
     },
     {
       "id": "M6L11",
@@ -5712,7 +5733,7 @@
       "title": "Complex Human Systems / Ethics Compass",
       "slug_v2": "m6l11-complex-human-systems-ethics-compass",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://learn.mbarock.com/audio/four-corners.mp3",
       "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/complex-human-systems.mp4",
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Complex_Human_Systems.mp4",
@@ -5809,7 +5830,9 @@
       },
       "order": 52,
       "quiz_source_num": 4,
-      "quiz_source_title": "Business Anatomy Masterclass"
+      "quiz_source_title": "Business Anatomy Masterclass",
+      "audio_label": "Four Corners",
+      "song_title": "Four Corners"
     },
     {
       "id": "M6L12",
@@ -5818,7 +5841,7 @@
       "title": "Business Anatomy Masterclass / Personal OS",
       "slug_v2": "m6l12-business-anatomy-masterclass-personal-os",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://learn.mbarock.com/audio/fifteen-lines.mp3",
       "audio_overview_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/overview/business-anatomy-masterclass.mp4",
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Business_Anatomy_Masterclass.mp4",
@@ -5915,7 +5938,9 @@
       },
       "order": 53,
       "quiz_source_num": 3,
-      "quiz_source_title": "The Complete Business Operating System"
+      "quiz_source_title": "The Complete Business Operating System",
+      "audio_label": "Fifteen Lines",
+      "song_title": "Fifteen Lines"
     },
     {
       "id": "M6L13",
@@ -5924,7 +5949,7 @@
       "title": "Capstone Encore: 90-Day Plan",
       "slug_v2": "m6l13-video-pending-generation",
       "legacy_slug": "m4-capstone",
-      "audio_url": null,
+      "audio_url": "https://learn.mbarock.com/audio/calendar-is-strategy.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/Capstone_Encore__90-Day_Plan.mp4",
@@ -6021,7 +6046,9 @@
       },
       "order": 54,
       "quiz_source_num": 53,
-      "quiz_source_title": "Operating Leverage"
+      "quiz_source_title": "Operating Leverage",
+      "audio_label": "Calendar is Strategy",
+      "song_title": "Calendar is Strategy"
     },
     {
       "id": "M7L1",
@@ -6240,7 +6267,7 @@
       "slug_v2": "m7l3",
       "legacy_slug": "m7l3",
       "song_title": null,
-      "video_url": null,
+      "video_url": "https://learn.mbarock.com/video/Pricing_Strategy.mp4",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/segmentation-aim.mp3",
       "audio_overview_url": null,
       "core_concepts": [
@@ -6350,7 +6377,7 @@
       "slug_v2": "m7l4",
       "legacy_slug": "m7l4",
       "song_title": null,
-      "video_url": null,
+      "video_url": "https://learn.mbarock.com/video/Architecting_Demand.mp4",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/fit-product-market-fit.mp3",
       "audio_overview_url": null,
       "core_concepts": [
@@ -6459,9 +6486,9 @@
       "title": "Customer Retention & Loyalty",
       "slug_v2": "m7l5",
       "legacy_slug": "m7l5",
-      "song_title": null,
-      "video_url": null,
-      "audio_url": null,
+      "song_title": "Cohort",
+      "video_url": "https://learn.mbarock.com/video/Customer_Retention.mp4",
+      "audio_url": "https://learn.mbarock.com/audio/cohort.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -6561,7 +6588,8 @@
         ]
       },
       "quiz_source_num": 46,
-      "quiz_source_title": "Customer Retention"
+      "quiz_source_title": "Customer Retention",
+      "audio_label": "Cohort"
     },
     {
       "id": "M8L1",
@@ -6570,10 +6598,10 @@
       "title": "Operations Excellence",
       "slug_v2": "m8l1-repeatability-without-employee-heroics",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://learn.mbarock.com/audio/five-times-a-week.mp3",
       "audio_overview_url": null,
       "video_id": null,
-      "video_url": null,
+      "video_url": "https://learn.mbarock.com/video/Operations_Excellence.mp4",
       "worksheet_url": null,
       "lyrics_url": null,
       "core_concepts": [
@@ -6667,7 +6695,9 @@
       },
       "order": 60,
       "quiz_source_num": 49,
-      "quiz_source_title": "90 Day Blueprint and Crisis Leadership"
+      "quiz_source_title": "90 Day Blueprint and Crisis Leadership",
+      "audio_label": "Five Times a Week",
+      "song_title": "Five Times a Week"
     },
     {
       "id": "M8L2",
@@ -6676,7 +6706,7 @@
       "title": "Supply Chain & Inventory Management",
       "slug_v2": "the-buffer-paradox",
       "legacy_slug": null,
-      "audio_url": null,
+      "audio_url": "https://learn.mbarock.com/audio/bullwhip.mp3",
       "audio_overview_url": null,
       "video_id": null,
       "video_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/video/The_Buffer_Paradox.mp4",
@@ -6784,7 +6814,9 @@
         }
       ],
       "quiz_source_num": 51,
-      "quiz_source_title": "The Raw Mechanics of Business Resilience"
+      "quiz_source_title": "The Raw Mechanics of Business Resilience",
+      "audio_label": "Bullwhip",
+      "song_title": "Bullwhip"
     },
     {
       "id": "M8L3",
@@ -6909,9 +6941,9 @@
       "title": "Project & Program Management",
       "slug_v2": "m8l4",
       "legacy_slug": "m8l4",
-      "song_title": null,
-      "video_url": null,
-      "audio_url": null,
+      "song_title": "Swim Lanes",
+      "video_url": "https://learn.mbarock.com/video/Project_%26_Program_Mgt.mp4",
+      "audio_url": "https://learn.mbarock.com/audio/swim-lanes.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -7011,7 +7043,8 @@
         ]
       },
       "quiz_source_num": 52,
-      "quiz_source_title": "Mastering Chaos"
+      "quiz_source_title": "Mastering Chaos",
+      "audio_label": "Swim Lanes"
     },
     {
       "id": "M8L5",
@@ -7019,9 +7052,9 @@
       "title": "Vendor & Partnership Management",
       "slug_v2": "m8l5",
       "legacy_slug": "m8l5",
-      "song_title": null,
-      "video_url": null,
-      "audio_url": null,
+      "song_title": "Tier One",
+      "video_url": "https://learn.mbarock.com/video/Vendor_%26_Partner_Management.mp4",
+      "audio_url": "https://learn.mbarock.com/audio/tier-one.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -7115,7 +7148,8 @@
         ]
       },
       "quiz_source_num": 2,
-      "quiz_source_title": "Your MBA Rock Curriculum Owner's Manual"
+      "quiz_source_title": "Your MBA Rock Curriculum Owner's Manual",
+      "audio_label": "Tier One"
     },
     {
       "id": "M9L1",
@@ -7230,7 +7264,7 @@
       "slug_v2": "m9l2",
       "legacy_slug": "m9l2",
       "song_title": null,
-      "video_url": null,
+      "video_url": "https://learn.mbarock.com/video/KPIs_%26_Dashboards.mp4",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/okrs-ladder.mp3",
       "audio_overview_url": null,
       "core_concepts": [
@@ -7333,7 +7367,7 @@
       "slug_v2": "m9l3",
       "legacy_slug": "m9l3",
       "song_title": null,
-      "video_url": null,
+      "video_url": "https://learn.mbarock.com/video/A_B_Testing_%26_Experiments.mp4",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/spreadsheet-north-star.mp3",
       "audio_overview_url": null,
       "core_concepts": [
@@ -7442,9 +7476,9 @@
       "title": "Forecasting & Scenario Planning",
       "slug_v2": "m9l4",
       "legacy_slug": "m9l4",
-      "song_title": null,
-      "video_url": null,
-      "audio_url": null,
+      "song_title": "Pre Mortem",
+      "video_url": "https://learn.mbarock.com/video/Forecasting_%26_Scenarios.mp4",
+      "audio_url": "https://learn.mbarock.com/audio/pre-mortem.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -7544,7 +7578,8 @@
         ]
       },
       "quiz_source_num": 62,
-      "quiz_source_title": "Forecasting & Scenarios"
+      "quiz_source_title": "Forecasting & Scenarios",
+      "audio_label": "Pre Mortem"
     },
     {
       "id": "M9L5",
@@ -7552,9 +7587,9 @@
       "title": "Risk Management & Mitigation",
       "slug_v2": "m9l5",
       "legacy_slug": "m9l5",
-      "song_title": null,
-      "video_url": null,
-      "audio_url": null,
+      "song_title": "Risk Register",
+      "video_url": "https://learn.mbarock.com/video/Architecture_of_Risk.mp4",
+      "audio_url": "https://learn.mbarock.com/audio/risk-register.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -7654,7 +7689,8 @@
         ]
       },
       "quiz_source_num": 38,
-      "quiz_source_title": "The Growth Schematic"
+      "quiz_source_title": "The Growth Schematic",
+      "audio_label": "Risk Register"
     },
     {
       "id": "M10L1",
@@ -7768,9 +7804,9 @@
       "title": "Disruption & The Innovator's Dilemma",
       "slug_v2": "m10l2",
       "legacy_slug": "m10l2",
-      "song_title": null,
-      "video_url": null,
-      "audio_url": null,
+      "song_title": "S-Curves",
+      "video_url": "https://learn.mbarock.com/video/Innovator_s_Dilemma.mp4",
+      "audio_url": "https://learn.mbarock.com/audio/s-curves.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -7864,7 +7900,8 @@
         ]
       },
       "quiz_source_num": 65,
-      "quiz_source_title": "Innovator's Dilemma"
+      "quiz_source_title": "Innovator's Dilemma",
+      "audio_label": "S-Curves"
     },
     {
       "id": "M10L3",
@@ -7872,9 +7909,9 @@
       "title": "AI & Emerging Technology Strategy",
       "slug_v2": "m10l3",
       "legacy_slug": "m10l3",
-      "song_title": null,
-      "video_url": null,
-      "audio_url": null,
+      "song_title": "Forty Cycles",
+      "video_url": "https://learn.mbarock.com/video/AI_%26_Emerging_Tech_Strategy.mp4",
+      "audio_url": "https://learn.mbarock.com/audio/forty-cycles.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -7968,7 +8005,8 @@
         ]
       },
       "quiz_source_num": 64,
-      "quiz_source_title": "Weaponize AI, ESG, and the Innovators Dilemma"
+      "quiz_source_title": "Weaponize AI, ESG, and the Innovators Dilemma",
+      "audio_label": "Forty Cycles"
     },
     {
       "id": "M10L4",
@@ -7976,9 +8014,9 @@
       "title": "Sustainability & ESG Strategy",
       "slug_v2": "m10l4",
       "legacy_slug": "m10l4",
-      "song_title": null,
-      "video_url": null,
-      "audio_url": null,
+      "song_title": "Stakeholder Compass",
+      "video_url": "https://learn.mbarock.com/video/ESG__A_Lens_on_Value.mp4",
+      "audio_url": "https://learn.mbarock.com/audio/stakeholder-compass.mp3",
       "audio_overview_url": null,
       "core_concepts": [
         {
@@ -8072,7 +8110,8 @@
         ]
       },
       "quiz_source_num": 67,
-      "quiz_source_title": "ESG: A Lens on Value"
+      "quiz_source_title": "ESG: A Lens on Value",
+      "audio_label": "Stakeholder Compass"
     },
     {
       "id": "M10L5",
@@ -8081,7 +8120,7 @@
       "slug_v2": "m10l5",
       "legacy_slug": "m10l5",
       "song_title": null,
-      "video_url": null,
+      "video_url": "https://learn.mbarock.com/video/The_Future-Ready_Leader.mp4",
       "audio_url": "https://raw.githubusercontent.com/joshwark/mbarock-cdn/main/audio/promised-land.mp3",
       "audio_overview_url": null,
       "core_concepts": [
