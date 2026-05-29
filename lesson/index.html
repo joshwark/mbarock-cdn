@@ -409,6 +409,85 @@ html,body{margin:0;padding:0;background:#FAF8F5;color:#0E1116;font-family:'Inter
 .sample-quiz-locked.visible{display:block;margin-top:16px;padding:14px 18px;background:#FFF8F1;border-left:3px solid #F26B1F;border-radius:0 6px 6px 0;font-family:'Inter',sans-serif;font-size:13.5px;color:#0E1116;}
 .sample-quiz-locked.visible b{color:#F26B1F;}
 
+
+/* ---- BR-20260529-09 Notes Drawer additive CSS ---- */
+.mr5-notes-pill{
+  position:fixed;top:14px;right:14px;z-index:9000;
+  background:#0B1F3A;color:#fff;border:1px solid rgba(255,255,255,0.1);
+  border-radius:999px;padding:8px 16px 8px 14px;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em;
+  cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.22);
+  display:flex;align-items:center;gap:8px;
+  transition:background .15s,transform .15s;
+}
+.mr5-notes-pill:hover{background:#F26B1F;transform:translateY(-1px);}
+.mr5-notes-pill .mr5-notes-pill-dot{
+  width:6px;height:6px;border-radius:50%;background:#F26B1F;opacity:0;transition:opacity .15s;
+}
+.mr5-notes-pill.has-content .mr5-notes-pill-dot{opacity:1;}
+.mr5-notes-pill[hidden]{display:none;}
+
+.mr5-notes-backdrop{
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background:rgba(11,31,58,.32);z-index:9001;
+  opacity:0;pointer-events:none;transition:opacity .2s ease;
+}
+.mr5-notes-backdrop.open{opacity:1;pointer-events:auto;}
+
+.mr5-notes-drawer{
+  position:fixed;top:0;right:0;bottom:0;
+  width:40%;min-width:380px;max-width:520px;
+  background:#FDFAF1;z-index:9002;
+  box-shadow:-8px 0 32px rgba(0,0,0,0.18);
+  transform:translateX(105%);transition:transform .22s ease;
+  display:flex;flex-direction:column;
+  font-family:'Inter',sans-serif;
+}
+.mr5-notes-drawer.open{transform:translateX(0);}
+@media (max-width:700px){
+  .mr5-notes-drawer{width:92%;min-width:0;max-width:none;}
+  .mr5-notes-pill{top:10px;right:10px;padding:7px 14px 7px 12px;font-size:12px;}
+}
+
+.mr5-notes-drawer-head{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  padding:16px 18px;border-bottom:1px solid #ebe6da;background:#fff;
+}
+.mr5-notes-drawer-head h3{
+  font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:#0B1F3A;
+  margin:0;letter-spacing:-.01em;
+}
+.mr5-notes-drawer-ctx{
+  font-size:11px;color:#888;letter-spacing:.06em;text-transform:uppercase;
+  margin:4px 0 0;font-weight:500;
+}
+.mr5-notes-drawer-close{
+  background:none;border:0;font-size:22px;line-height:1;color:#888;
+  cursor:pointer;padding:4px 8px;border-radius:4px;
+}
+.mr5-notes-drawer-close:hover{background:#f0ebe0;color:#0B1F3A;}
+
+.mr5-notes-drawer-body{
+  flex:1 1 auto;display:flex;flex-direction:column;
+  padding:14px 18px 18px;overflow:hidden;
+}
+.mr5-notes-drawer-textarea{
+  flex:1 1 auto;width:100%;min-height:240px;
+  padding:14px 16px;border:1px solid #ebe6da;border-radius:6px;
+  font-family:inherit;font-size:14px;line-height:1.6;resize:none;
+  background:#fff;color:#0E1116;
+}
+.mr5-notes-drawer-textarea:focus{
+  outline:none;border-color:#F26B1F;
+  box-shadow:0 0 0 2px rgba(242,107,31,.12);
+}
+.mr5-notes-drawer-foot{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:12px 0 0;font-size:11.5px;color:#888;letter-spacing:.04em;flex-wrap:wrap;
+}
+.mr5-notes-drawer-status.saved{color:#1d8444;}
+.mr5-notes-drawer-hint{font-style:italic;font-family:'Fraunces',serif;}
+/* ---- end BR-20260529-09 additive CSS ---- */
 </style>
   <!-- MBA Rock: async hydration for /lesson/?id= — hides documentElement, fetches, updates ALL DOM, reveals -->
   <style id="mr-hyd-style">.mr-hyd-loading{visibility:hidden!important}</style>
@@ -424,6 +503,41 @@ html,body{margin:0;padding:0;background:#FAF8F5;color:#0E1116;font-family:'Inter
   </script>
 </head>
 <body>
+<!-- BR-20260529-09 Notes Drawer additive markup -->
+<button id="mr5-notes-pill" class="mr5-notes-pill" type="button"
+        aria-label="Open notes (press N)" aria-expanded="false"
+        aria-controls="mr5-notes-drawer">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+    <polyline points="14 3 14 9 20 9"/>
+    <line x1="9" y1="14" x2="15" y2="14"/>
+    <line x1="9" y1="17" x2="13" y2="17"/>
+  </svg>
+  <span>Notes</span>
+  <span class="mr5-notes-pill-dot" aria-hidden="true"></span>
+</button>
+<div id="mr5-notes-backdrop" class="mr5-notes-backdrop"></div>
+<aside id="mr5-notes-drawer" class="mr5-notes-drawer" aria-hidden="true"
+       role="dialog" aria-modal="false" aria-labelledby="mr5-notes-drawer-h3">
+  <div class="mr5-notes-drawer-head">
+    <div>
+      <h3 id="mr5-notes-drawer-h3">Notes</h3>
+      <p class="mr5-notes-drawer-ctx" id="mr5-notes-drawer-ctx">Notes for this lesson</p>
+    </div>
+    <button class="mr5-notes-drawer-close" id="mr5-notes-drawer-close" type="button"
+            aria-label="Close notes">&times;</button>
+  </div>
+  <div class="mr5-notes-drawer-body">
+    <textarea id="mr5-notes-drawer-textarea" class="mr5-notes-drawer-textarea"
+              placeholder="Jot anything as you go. Open this drawer from any tab."></textarea>
+    <div class="mr5-notes-drawer-foot">
+      <span class="mr5-notes-drawer-status" id="mr5-notes-drawer-status">Auto-saving to this browser</span>
+      <span class="mr5-notes-drawer-hint">press N anywhere to toggle</span>
+    </div>
+  </div>
+</aside>
+<!-- end BR-20260529-09 additive markup -->
+
 <!-- ── Founders'-rate countdown banner v1 (auto-hides 2026-07-01) ── -->
 <style>
 .mr-cd-banner{position:sticky;top:0;z-index:100;background:linear-gradient(90deg,#F26B1F,#E55A0F);color:#FDFAF1;text-align:center;padding:8px 16px;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:600;letter-spacing:0.04em;display:none}
@@ -1625,6 +1739,114 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
 </script>
 
 
+
+<!-- BR-20260529-09 Notes Drawer additive script -->
+<script>
+(function(){
+  function getLessonId(){return (window.LESSON && window.LESSON.id) ? String(window.LESSON.id) : 'sample';}
+  function getLessonTitle(){return (window.LESSON && window.LESSON.title) ? String(window.LESSON.title) : 'This lesson';}
+  // Use the SAME storage key as the existing tab textarea so they share state per page.
+  // The existing tab handler hardcodes 'mr-sample-notes-m7l2'. We mirror that for parity.
+  // (A per-lesson key migration is a separate commit.)
+  var STORAGE_KEY = 'mr-sample-notes-m7l2';
+
+  var pill = document.getElementById('mr5-notes-pill');
+  var drawer = document.getElementById('mr5-notes-drawer');
+  var backdrop = document.getElementById('mr5-notes-backdrop');
+  var drawerTA = document.getElementById('mr5-notes-drawer-textarea');
+  var drawerCtx = document.getElementById('mr5-notes-drawer-ctx');
+  var drawerStatus = document.getElementById('mr5-notes-drawer-status');
+  var closeBtn = document.getElementById('mr5-notes-drawer-close');
+  var tabTA = document.getElementById('sample-notes');
+  if(!pill || !drawer || !drawerTA) return;
+
+  function refreshCtx(){
+    try {
+      var label = (window.LESSON && (window.LESSON.id + ' — ' + getLessonTitle())) || 'Sample';
+      drawerCtx.textContent = 'Notes for ' + label;
+    } catch(e){}
+  }
+
+  function loadFromStorage(){
+    var v = '';
+    try { v = localStorage.getItem(STORAGE_KEY) || ''; } catch(e){}
+    if(drawerTA.value !== v) drawerTA.value = v;
+    if(tabTA && tabTA.value !== v) tabTA.value = v;
+    pill.classList.toggle('has-content', v.trim().length > 0);
+  }
+
+  var saveTimer = null;
+  function save(value, source){
+    clearTimeout(saveTimer);
+    if(drawerStatus){
+      drawerStatus.textContent = 'Saving…';
+      drawerStatus.classList.remove('saved');
+    }
+    saveTimer = setTimeout(function(){
+      try { localStorage.setItem(STORAGE_KEY, value); } catch(e){}
+      pill.classList.toggle('has-content', value.trim().length > 0);
+      if(drawerStatus){
+        drawerStatus.textContent = 'Saved to this browser';
+        drawerStatus.classList.add('saved');
+      }
+    }, 350);
+    if(source === 'drawer' && tabTA && tabTA.value !== value){
+      tabTA.value = value;
+    } else if(source === 'tab' && drawerTA.value !== value){
+      drawerTA.value = value;
+    }
+  }
+
+  function openDrawer(){
+    drawer.classList.add('open');
+    backdrop.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    pill.setAttribute('aria-expanded', 'true');
+    loadFromStorage();
+    refreshCtx();
+    setTimeout(function(){ try{ drawerTA.focus(); }catch(e){} }, 230);
+  }
+  function closeDrawer(){
+    drawer.classList.remove('open');
+    backdrop.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    pill.setAttribute('aria-expanded', 'false');
+  }
+  function toggleDrawer(){
+    if(drawer.classList.contains('open')) closeDrawer(); else openDrawer();
+  }
+
+  pill.addEventListener('click', toggleDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+  closeBtn.addEventListener('click', closeDrawer);
+
+  drawerTA.addEventListener('input', function(e){ save(e.target.value, 'drawer'); });
+  if(tabTA){
+    tabTA.addEventListener('input', function(e){ save(e.target.value, 'tab'); });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('open')){
+      e.preventDefault(); closeDrawer(); return;
+    }
+    if(e.key === 'n' || e.key === 'N'){
+      var t = e.target;
+      var inField = t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable);
+      if(!inField){ e.preventDefault(); toggleDrawer(); }
+    }
+  });
+
+  // Initial paint + retry until LESSON canon is hydrated
+  loadFromStorage(); refreshCtx();
+  var tries = 0;
+  var poll = setInterval(function(){
+    tries++;
+    if(window.LESSON){ refreshCtx(); clearInterval(poll); }
+    else if(tries > 25){ clearInterval(poll); }
+  }, 200);
+})();
+</script>
+<!-- end BR-20260529-09 additive script -->
 <script src="https://learn.mbarock.com/scripts/signout.js" defer></script>
 </body>
 </html>
