@@ -33,7 +33,7 @@
     fontBody: "'Inter', system-ui, -apple-system, sans-serif",
     buttonLabel: 'Accessibility',
     statementUrl: '/accessibility-statement',
-    contactEmail: 'help@bettertogetherbranding.ai',
+    contactEmail: 'josh@adytum.agency',
     showBadge: false,
     storageKey: 'mr-ada-prefs',
     features: {
