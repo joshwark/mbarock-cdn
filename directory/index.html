@@ -116,8 +116,8 @@ const SB_KEY='sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
 const sb = window.supabase.createClient(SB_URL, SB_KEY);
 
 let profiles=[], filter='all', query='';
-function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}
-function safeUrl(u){ try{ if(!u) return '#'; var s=String(u).trim(); if(/^javascript:/i.test(s)||/^data:/i.test(s)||/^vbscript:/i.test(s)) return '#'; if(/^[a-z]+:\/\//i.test(s)) return s; if(s.startsWith('mailto:')||s.startsWith('tel:')||s.startsWith('/')||s.startsWith('#')||s.startsWith('?')) return s; return 'https://'+s; }catch(e){return '#';} }[c])); }
+function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function safeUrl(u){ try{ if(!u) return '#'; var s=String(u).trim(); if(/^javascript:/i.test(s)||/^data:/i.test(s)||/^vbscript:/i.test(s)) return '#'; if(/^[a-z]+:\/\//i.test(s)) return s; if(s.startsWith('mailto:')||s.startsWith('tel:')||s.startsWith('/')||s.startsWith('#')||s.startsWith('?')) return s; return 'https://'+s; }catch(e){return '#';} }
 
 function render(){
   const q = query.toLowerCase();
