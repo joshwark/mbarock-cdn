@@ -162,7 +162,7 @@
   <h1>MBA Rock Admin</h1>
   <p class="sub">Sign in with the email on file. We send a magic link — no password.</p>
   <label for="emailInput">Email</label>
-  <input type="email" id="emailInput" autocomplete="email" placeholder="you@bettertogetherbranding.ai" required>
+  <input type="email" id="emailInput" autocomplete="email" placeholder="you@adytum.agency" required>
   <button class="primary" onclick="sendMagicLink()">Send magic link</button>
   <div id="authMsg" class="msg"></div>
   <p class="micro">Only emails on the <code>admin_users</code> table can sign in. If you should have access and don't, ping Josh.</p>
@@ -587,7 +587,7 @@ function renderTasks(){
       <td style="font-size:11px;color:var(--muted);white-space:nowrap">${formatRelTime(new Date(t.created_at))}</td>
       <td><b>${escapeHtml(t.title)}</b>${t.description ? `<div style="color:var(--muted);font-size:11.5px;margin-top:2px;line-height:1.4">${escapeHtml(t.description.slice(0,140))}${t.description.length > 140 ? '…' : ''}</div>` : ''}</td>
       <td><span class="pill ${t.priority||'normal'}">${escapeHtml(t.priority||'normal')}</span></td>
-      <td style="font-size:11.5px">${escapeHtml((t.submitted_by||'').replace('@bettertogetherbranding.ai','@btb'))}</td>
+      <td style="font-size:11.5px">${escapeHtml((t.submitted_by||'').replace('@adytum.agency','@btb'))}</td>
       <td><span class="pill ${pillClass(t.status)}">${escapeHtml(t.status)}</span></td>
     </tr>`).join('');
 }
@@ -634,7 +634,7 @@ async function loadAudit(){
   if (!data || !data.length){ el.innerHTML = '<span class="empty">No audit events yet.</span>'; return; }
   el.innerHTML = data.map(a => {
     const dt = formatRelTime(new Date(a.created_at));
-    const actor = (a.actor||'').replace('@bettertogetherbranding.ai','@btb');
+    const actor = (a.actor||'').replace('@adytum.agency','@btb');
     return `<div style="padding:4px 0"><b style="color:var(--navy)">${escapeHtml(a.action)}</b> · ${escapeHtml(actor)} <span style="font-size:10px">${dt}</span></div>`;
   }).join('');
 }
@@ -700,7 +700,7 @@ async function openDetail(id){
 
     <div class="timeline">
       <h3 style="margin-bottom:8px">Timeline</h3>
-      ${events && events.length ? events.map(e => `<div class="timeline-item"><b>${escapeHtml(e.action)}</b> · ${escapeHtml((e.actor||'').replace('@bettertogetherbranding.ai','@btb'))} · <span style="color:var(--muted)">${new Date(e.created_at).toLocaleString()}</span>${e.detail && e.detail.note ? `<div style="margin-top:3px;color:var(--muted)">"${escapeHtml(e.detail.note)}"</div>` : ''}</div>`).join('') : '<div class="empty">No events yet.</div>'}
+      ${events && events.length ? events.map(e => `<div class="timeline-item"><b>${escapeHtml(e.action)}</b> · ${escapeHtml((e.actor||'').replace('@adytum.agency','@btb'))} · <span style="color:var(--muted)">${new Date(e.created_at).toLocaleString()}</span>${e.detail && e.detail.note ? `<div style="margin-top:3px;color:var(--muted)">"${escapeHtml(e.detail.note)}"</div>` : ''}</div>`).join('') : '<div class="empty">No events yet.</div>'}
     </div>
   `;
   document.getElementById('detailContent').innerHTML = html;
