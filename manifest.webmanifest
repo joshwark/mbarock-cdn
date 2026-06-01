@@ -1,0 +1,22 @@
+{
+  "name": "MBA Rock — The Operator's MBA",
+  "short_name": "MBA Rock",
+  "description": "Your complete MBA, delivered as a rock album. 74 lessons, 10 modules, one real business plan.",
+  "id": "/dashboard/",
+  "start_url": "/dashboard/?utm_source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0B1F3A",
+  "theme_color": "#0B1F3A",
+  "categories": ["education", "business"],
+  "icons": [
+    { "src": "/images/brand/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/images/brand/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/images/brand/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Dashboard", "url": "/dashboard/" },
+    { "name": "What's New", "url": "/whats-new/" }
+  ]
+}
