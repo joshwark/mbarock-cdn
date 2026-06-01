@@ -167,6 +167,7 @@ a.btn.ghost:hover{background:var(--soft)}
   <script src="/track.js" defer></script>
     <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#0B1F3A">
+    <script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("/service-worker.js").catch(function(){});});}</script>
   </head>
 <body>
 
