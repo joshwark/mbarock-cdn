@@ -1036,6 +1036,7 @@ document.getElementById('quiz-submit').addEventListener('click', () => {
   const pass = pct >= LESSON.quiz_pass_pct;
   result.textContent = correct + ' / ' + LESSON.quiz.length + ' correct · ' + (pass ? 'PASSED' : 'try again');
   result.className = 'mr5-quiz-result ' + (pass ? 'pass' : 'fail');
+  try{ if(window.MBATrack) MBATrack.track('quiz_attempt',{pct:pct,passed:pass}); }catch(e){}
   document.getElementById('quiz-retake').style.display = '';
   document.getElementById('sample-quiz-locked').classList.add('visible');
 });
@@ -1310,6 +1311,7 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
         var passed = correct >= passThreshold;
         if (passed){
           setQuizPass(memberId, lessonId, correct, total);
+          try{ if(window.MBATrack){ MBATrack.identify(memberId); MBATrack.track('quiz_pass',{lesson_id:lessonId,correct:correct,total:total}); MBATrack.track('lesson_complete',{lesson_id:lessonId}); } }catch(e){}
           // Mark complete only on quiz pass
           if (!progressFor(memberId, lessonId)){
             setProgress(memberId, lessonId, new Date().toISOString());

@@ -468,6 +468,7 @@ function save(sectionId, fieldId, value, statusKey) {
   cache[sectionId][fieldId] = value;
   try { localStorage.setItem(lsKey, JSON.stringify(cache)); } catch(e){}
   setStatus(statusKey, 'saved', '<span class="saved">Saved</span>');
+  try{ if(window.MBATrack){ if(mid!=='guest')MBATrack.identify(mid); MBATrack.track('capstone_save',{section:sectionId,field:fieldId}); } }catch(e){}
 
   if (mid === 'guest') return;
   fetch(SB_URL + '/rest/v1/user_capstone?on_conflict=member_id', {

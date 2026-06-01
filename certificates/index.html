@@ -315,6 +315,7 @@ async function claimCert(certType, moduleId){
     return null;
   }
   if (payload.already_earned) console.log('[Hub] cert already earned, returning existing ID');
+  try{ if(window.MBATrack){ MBATrack.identify(mid); MBATrack.track('certificate_earned',{cert_type:certType,module_id:moduleId||null,cert_id:payload.cert_id}); } }catch(e){}
   return payload.cert_id;
 }
 
