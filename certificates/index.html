@@ -227,6 +227,9 @@ const SB_URL = 'https://ciloqphtencjthkedanw.supabase.co';
 const SB_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
 const SB_HDR = {'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json'};
 
+function mrSession(){ try{ var o=JSON.parse(localStorage.getItem('sb-ciloqphtencjthkedanw-auth-token')||'null'); return (o&&o.access_token)?o:(o&&o.currentSession)||null; }catch(e){ return null; } }
+function mrEmail(){ var s=mrSession(); if(s&&s.user&&s.user.email) return s.user.email; try{ var m=JSON.parse(localStorage.getItem('mba-rock-member-meta')||'null'); if(m&&m.email) return m.email; }catch(e){} return null; }
+function authHdr(){ var s=mrSession(); var t=s&&s.access_token; var h=Object.assign({},SB_HDR); if(t) h.Authorization='Bearer '+t; return h; }
 function memberId(){ return localStorage.getItem('mba-rock-member-id') || 'guest'; }
 function memberName(){
   return localStorage.getItem('mba-rock-member-name') ||
@@ -471,7 +474,7 @@ async function loadCapstone(){
   try { state.capstone = JSON.parse(localStorage.getItem('mr-capstone:' + mid) || '{}'); } catch(e){ state.capstone = {}; }
   if (mid === 'guest') return;
   try {
-    const r = await fetch(SB_URL + '/rest/v1/user_capstone?select=capstone_data&member_id=eq.' + encodeURIComponent(mid), {headers: SB_HDR});
+    const r = await fetch(SB_URL + '/rest/v1/user_capstone?select=capstone_data&member_id=eq.' + encodeURIComponent(mrEmail()||mid), {headers: authHdr()});
     const rows = r.ok ? await r.json() : [];
     if (rows[0] && rows[0].capstone_data) state.capstone = rows[0].capstone_data;
   } catch(e){ console.warn('[Hub] capstone pull failed', e); }
