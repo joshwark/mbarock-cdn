@@ -239,6 +239,9 @@ const SB_HDR = {
   'Content-Type': 'application/json',
   'Prefer': 'resolution=merge-duplicates,return=minimal'
 };
+function mrSession(){ try{ var o=JSON.parse(localStorage.getItem('sb-ciloqphtencjthkedanw-auth-token')||'null'); return (o&&o.access_token)?o:(o&&o.currentSession)||null; }catch(e){ return null; } }
+function mrEmail(){ var s=mrSession(); if(s&&s.user&&s.user.email) return s.user.email; try{ var m=JSON.parse(localStorage.getItem('mba-rock-member-meta')||'null'); if(m&&m.email) return m.email; }catch(e){} return null; }
+function authHdr(){ var s=mrSession(); var t=s&&s.access_token; var h=Object.assign({},SB_HDR); if(t) h.Authorization='Bearer '+t; return h; }
 function memberId() {
   return localStorage.getItem('mba-rock-member-id') || 'guest';
 }
@@ -867,8 +870,8 @@ function saveScenario(c) {
   // Sync to Supabase
   if (mid !== 'guest') {
     fetch(SB_URL + '/rest/v1/user_calc_scenarios?on_conflict=member_id,calc_id,name', {
-      method: 'POST', headers: SB_HDR,
-      body: JSON.stringify([{member_id: mid, calc_id: c.id, name, inputs, updated_at: new Date().toISOString()}])
+      method: 'POST', headers: authHdr(),
+      body: JSON.stringify([{member_id: (mrEmail()||mid), calc_id: c.id, name, inputs, updated_at: new Date().toISOString()}])
     }).catch(e => console.warn('[Console] Supabase save failed', e));
   }
 }
@@ -1134,6 +1137,9 @@ const SB_HDR = {
   'Content-Type': 'application/json',
   'Prefer': 'resolution=merge-duplicates,return=minimal'
 };
+function mrSession(){ try{ var o=JSON.parse(localStorage.getItem('sb-ciloqphtencjthkedanw-auth-token')||'null'); return (o&&o.access_token)?o:(o&&o.currentSession)||null; }catch(e){ return null; } }
+function mrEmail(){ var s=mrSession(); if(s&&s.user&&s.user.email) return s.user.email; try{ var m=JSON.parse(localStorage.getItem('mba-rock-member-meta')||'null'); if(m&&m.email) return m.email; }catch(e){} return null; }
+function authHdr(){ var s=mrSession(); var t=s&&s.access_token; var h=Object.assign({},SB_HDR); if(t) h.Authorization='Bearer '+t; return h; }
 function memberId() {
   return localStorage.getItem('mba-rock-member-id') || 'guest';
 }
@@ -1762,8 +1768,8 @@ function saveScenario(c) {
   // Sync to Supabase
   if (mid !== 'guest') {
     fetch(SB_URL + '/rest/v1/user_calc_scenarios?on_conflict=member_id,calc_id,name', {
-      method: 'POST', headers: SB_HDR,
-      body: JSON.stringify([{member_id: mid, calc_id: c.id, name, inputs, updated_at: new Date().toISOString()}])
+      method: 'POST', headers: authHdr(),
+      body: JSON.stringify([{member_id: (mrEmail()||mid), calc_id: c.id, name, inputs, updated_at: new Date().toISOString()}])
     }).catch(e => console.warn('[Console] Supabase save failed', e));
   }
 }
