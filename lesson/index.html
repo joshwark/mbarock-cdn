@@ -1123,8 +1123,12 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
   var CAPSTONE_KEY = 'mba-rock-capstone-v1';
   var QUIZ_KEY = 'mba-rock-quiz-passes-v1';
 
+  function mrSession(){ try{ var o=JSON.parse(localStorage.getItem('sb-ciloqphtencjthkedanw-auth-token')||'null'); return (o&&o.access_token)?o:(o&&o.currentSession)||null; }catch(e){ return null; } }
+  function mrEmail(){ var s=mrSession(); if(s&&s.user&&s.user.email) return s.user.email; try{ var m=JSON.parse(localStorage.getItem('mba-rock-member-meta')||'null'); if(m&&m.email) return m.email; }catch(e){} return null; }
+  function mrTok(){ var s=mrSession(); return (s&&s.access_token)||SUPABASE_KEY; }
   function resolveMemberId(){
-    return localStorage.getItem('mr-member-id')
+    return mrEmail()
+        || localStorage.getItem('mr-member-id')
         || localStorage.getItem('mr_member_id')
         || localStorage.getItem('mba-rock-member-id')
         || localStorage.getItem('mba-rock-member')
@@ -1157,7 +1161,7 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
         method:'POST',
         headers:{
           'apikey': SUPABASE_KEY,
-          'Authorization':'Bearer ' + SUPABASE_KEY,
+          'Authorization':'Bearer ' + mrTok(),
           'Content-Type':'application/json',
           'Prefer':'return=minimal,resolution=merge-duplicates'
         },
@@ -1192,7 +1196,7 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
       method: 'POST',
       headers: {
         'apikey': SUPABASE_KEY,
-        'Authorization': 'Bearer ' + SUPABASE_KEY,
+        'Authorization': 'Bearer ' + mrTok(),
         'Content-Type': 'application/json',
         'Prefer': 'resolution=merge-duplicates,return=minimal'
       },
@@ -1220,7 +1224,7 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
   function pullCloudProgress(memberId){
     if (!memberId) return Promise.resolve();
     return fetch(SUPABASE_URL + '/rest/v1/progress?select=lesson_id,completed_at,updated_at&member_id=eq.' + encodeURIComponent(memberId), {
-      headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY }
+      headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + mrTok() }
     }).then(function(r){ return r.ok ? r.json() : []; })
       .then(function(rows){
         if (!Array.isArray(rows) || !rows.length) return;
@@ -1326,7 +1330,7 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
           try {
             fetch(SUPABASE_URL + '/rest/v1/user_quiz_attempts', {
               method:'POST',
-              headers:{ 'apikey':SUPABASE_KEY, 'Authorization':'Bearer '+SUPABASE_KEY, 'Content-Type':'application/json', 'Prefer':'return=minimal' },
+              headers:{ 'apikey':SUPABASE_KEY, 'Authorization':'Bearer ' + mrTok(), 'Content-Type':'application/json', 'Prefer':'return=minimal' },
               body: JSON.stringify({ member_id: memberId, lesson_id: lessonId, correct: correct, total: total, passed: false, source: 'lesson-page' }),
               keepalive: true,
             }).catch(function(){});
