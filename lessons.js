@@ -1211,6 +1211,7 @@ else{setTimeout(init,600);}
       cb.checked = store.get(lid);
       cb.addEventListener('change', function() {
         store.set(lid, cb.checked);
+        try{ if(window.MBATrack){ var __mid=localStorage.getItem('mba-rock-member-id'); if(__mid)MBATrack.identify(__mid); if(cb.checked)MBATrack.track('lesson_complete',{lesson_id:lid}); } }catch(e){}
         paintProgress(v2, store);
       });
       // Don't toggle <details> when checkbox is clicked
