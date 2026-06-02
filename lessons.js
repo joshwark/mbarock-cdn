@@ -1355,8 +1355,11 @@ else{setTimeout(init,600);}
     'Prefer': 'resolution=merge-duplicates,return=minimal',
   };
 
+  function mrSession(){ try{ var o=JSON.parse(localStorage.getItem('sb-ciloqphtencjthkedanw-auth-token')||'null'); return (o&&o.access_token)?o:(o&&o.currentSession)||null; }catch(e){ return null; } }
+  function mrEmail(){ var s=mrSession(); if(s&&s.user&&s.user.email) return s.user.email; try{ var m=JSON.parse(localStorage.getItem('mba-rock-member-meta')||'null'); if(m&&m.email) return m.email; }catch(e){} return null; }
+  function authHdr(){ var s=mrSession(); var t=s&&s.access_token; var h=Object.assign({},HDR); if(t) h.Authorization='Bearer '+t; return h; }
   function currentMemberId() {
-    return localStorage.getItem(MEMBER_KEY) || 'guest';
+    return mrEmail() || localStorage.getItem(MEMBER_KEY) || 'guest';
   }
 
   function localSnapshot() {
@@ -1371,7 +1374,7 @@ else{setTimeout(init,600);}
     var mid = currentMemberId();
     if (mid === 'guest') return Promise.resolve();
     var url = REST + '/progress?select=lesson_id,completed_at&member_id=eq.' + encodeURIComponent(mid);
-    return fetch(url, { headers: HDR })
+    return fetch(url, { headers: authHdr() })
       .then(function(r) { return r.ok ? r.json() : []; })
       .then(function(rows) {
         if (!Array.isArray(rows) || !rows.length) return;
@@ -1417,11 +1420,11 @@ else{setTimeout(init,600);}
     var jobs = [];
     if (rows.length) {
       jobs.push(fetch(REST + '/progress?on_conflict=member_id,lesson_id', {
-        method: 'POST', headers: HDR, body: JSON.stringify(rows),
+        method: 'POST', headers: authHdr(), body: JSON.stringify(rows),
       }));
     }
     jobs.push(fetch(REST + '/members?on_conflict=member_id', {
-      method: 'POST', headers: HDR, body: JSON.stringify([memberRow]),
+      method: 'POST', headers: authHdr(), body: JSON.stringify([memberRow]),
     }));
 
     pendingPush = Promise.all(jobs)
