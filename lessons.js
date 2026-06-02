@@ -1663,3 +1663,13 @@ else{setTimeout(init,600);}
     run();
   }
 })();
+
+/* BR-20260601-19 — first-party media-play events (delegated; 'play' doesn't bubble -> capture). */
+(function(){ try{
+  document.addEventListener('play', function(e){
+    try{ if(!window.MBATrack) return; var tag=(e.target&&e.target.tagName||'').toLowerCase();
+      if(tag==='audio') MBATrack.track('audio_play',{});
+      else if(tag==='video') MBATrack.track('video_play',{});
+    }catch(_){}
+  }, true);
+}catch(_){} })();
