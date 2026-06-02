@@ -240,7 +240,10 @@ const SB_HDR = {
   'Content-Type': 'application/json',
   'Prefer': 'resolution=merge-duplicates,return=minimal'
 };
-function memberId() { return localStorage.getItem('mba-rock-member-id') || 'guest'; }
+function mrSession(){ try{ var o=JSON.parse(localStorage.getItem('sb-ciloqphtencjthkedanw-auth-token')||'null'); return (o&&o.access_token)?o:(o&&o.currentSession)||null; }catch(e){ return null; } }
+function mrEmail(){ var s=mrSession(); if(s&&s.user&&s.user.email) return s.user.email; try{ var m=JSON.parse(localStorage.getItem('mba-rock-member-meta')||'null'); if(m&&m.email) return m.email; }catch(e){} return null; }
+function authHdr(){ var s=mrSession(); var t=s&&s.access_token; var h=Object.assign({},SB_HDR); if(t) h.Authorization='Bearer '+t; return h; }
+function memberId() { return mrEmail() || localStorage.getItem('mba-rock-member-id') || 'guest'; }
 
 // ── The 10-section schema (1:1 with the 10 modules) ──
 // Each section's accent color matches its source module.
@@ -475,7 +478,7 @@ function save(sectionId, fieldId, value, statusKey) {
 
   if (mid === 'guest') return;
   fetch(SB_URL + '/rest/v1/user_capstone?on_conflict=member_id', {
-    method: 'POST', headers: SB_HDR,
+    method: 'POST', headers: authHdr(),
     body: JSON.stringify([{member_id: mid, capstone_data: cache, updated_at: new Date().toISOString()}])
   }).then(r => {
     if (!r.ok) setStatus(statusKey, 'err', 'Save failed');
@@ -534,7 +537,7 @@ function loadState() {
   renderSpine();
 
   if (mid === 'guest') return;
-  fetch(SB_URL + '/rest/v1/user_capstone?select=capstone_data,updated_at&member_id=eq.' + encodeURIComponent(mid), { headers: SB_HDR })
+  fetch(SB_URL + '/rest/v1/user_capstone?select=capstone_data,updated_at&member_id=eq.' + encodeURIComponent(mid), { headers: authHdr() })
     .then(r => r.ok ? r.json() : [])
     .then(rows => {
       if (rows && rows[0] && rows[0].capstone_data) {
