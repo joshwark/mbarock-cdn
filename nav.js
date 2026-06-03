@@ -151,8 +151,9 @@
       '<div class="so"><a class="mbnav-signout" href="#" data-mbnav-signout>Sign out</a></div>';
     document.body.appendChild(drawer);
 
-    // Nudge known fixed top-right widgets below the bar to avoid overlap.
+    // Nudge known fixed/sticky top widgets below the bar to avoid overlap.
     var sp = document.getElementById("streakPill"); if (sp) { sp.style.top = "72px"; }
+    [].forEach.call(document.querySelectorAll(".mr-cd-banner"), function (el) { el.style.top = "56px"; });
 
     var burger = bar.querySelector(".mbnav-burger");
     var closeB = drawer.querySelector(".x");
