@@ -159,7 +159,8 @@ a{color:inherit;}
   <meta name="theme-color" content="#0B1F3A">
     <script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("/service-worker.js").catch(function(){});});}</script>
     <script src="/nav.js" defer></script>
-  </head>
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
 <body>
 
 <!-- ─────────────── MEMBER TOOLS CARD · 2026-05-19 ─────────────── -->
@@ -563,5 +564,42 @@ init();
     <script src="https://learn.mbarock.com/accessibility/widget.js" defer></script>
 
 <script src="https://learn.mbarock.com/scripts/signout.js" defer></script>
+<script>
+/* MBA Rock — dashboard passkey enrollment prompt (additive, feature-gated, magic-link unaffected) */
+(function(){
+  function initPasskeyEnroll(){
+    try{
+      if(!window.PublicKeyCredential) return;
+      if(localStorage.getItem('mr-passkey-done')==='1') return;
+      if(!window.supabase || !window.supabase.createClient) return;
+      var sbPK = window.supabase.createClient('https://ciloqphtencjthkedanw.supabase.co','sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-',{ auth: { experimental: { passkey: true } } });
+      sbPK.auth.getSession().then(function(res){
+        var s = res && res.data && res.data.session;
+        if(!s) return;
+        if(document.getElementById('mr-pk-banner')) return;
+        var anchor = document.getElementById('member-tools-card') || document.body.firstChild;
+        var bar=document.createElement('div'); bar.id='mr-pk-banner';
+        bar.style.cssText='max-width:1080px;margin:18px auto 0;padding:12px 16px;background:#0B1F3A;color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:Inter,system-ui,sans-serif';
+        var span=document.createElement('span'); span.style.cssText='font-size:13.5px;color:#fff'; span.textContent='Sign in faster next time — add a passkey (Face ID / Touch ID / security key) to this device.';
+        var wrap=document.createElement('span'); wrap.style.cssText='display:flex;gap:8px;align-items:center;flex-shrink:0';
+        var b=document.createElement('button'); b.type='button'; b.textContent='Set up a passkey'; b.style.cssText='background:#F26B1F;color:#fff;border:0;border-radius:999px;padding:8px 16px;font:700 13px Inter,system-ui,sans-serif;cursor:pointer;white-space:nowrap';
+        var x=document.createElement('button'); x.type='button'; x.setAttribute('aria-label','Dismiss'); x.textContent='×'; x.style.cssText='background:none;border:0;color:rgba(255,255,255,.65);font-size:22px;line-height:1;cursor:pointer';
+        x.addEventListener('click', function(){ try{localStorage.setItem('mr-passkey-done','1');}catch(e){} bar.remove(); });
+        b.addEventListener('click', function(){
+          b.disabled=true; b.textContent='Waiting…';
+          Promise.resolve(sbPK.auth.registerPasskey()).then(function(r){
+            if(r && r.error){ b.disabled=false; b.textContent='Try again'; span.textContent='Could not add a passkey: '+((r.error&&r.error.message)||'error'); }
+            else { try{localStorage.setItem('mr-passkey-done','1');}catch(e){} span.textContent='✓ Passkey added — you can use it to sign in next time.'; b.remove(); }
+          }).catch(function(){ b.disabled=false; b.textContent='Try again'; });
+        });
+        wrap.appendChild(b); wrap.appendChild(x); bar.appendChild(span); bar.appendChild(wrap);
+        if(anchor && anchor.parentNode) anchor.parentNode.insertBefore(bar, anchor);
+      }).catch(function(){});
+    }catch(e){}
+  }
+  if(document.readyState==='complete') initPasskeyEnroll();
+  else window.addEventListener('load', initPasskeyEnroll);
+})();
+</script>
 </body>
 </html>
