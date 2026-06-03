@@ -82,6 +82,10 @@
 <div id="auth" class="auth">
   <h1>Member Tools</h1>
   <p class="sub">Sign in with your MBA Rock email. We send a magic link — no password.</p>
+  <div id="passkeySignin" style="display:none;margin:0 0 14px">
+    <button class="primary" type="button" onclick="signInPasskey()">Sign in with a passkey</button>
+    <div style="text-align:center;color:#8a8a8a;font-size:12px;margin:10px 0 2px">or use your email</div>
+  </div>
   <label for="emailInput">Email</label>
   <input type="email" id="emailInput" placeholder="you@yourdomain.com" required>
   <button class="primary" onclick="sendMagicLink()">Send magic link</button>
@@ -206,12 +210,13 @@
 <script>
 const SB_URL = 'https://ciloqphtencjthkedanw.supabase.co';
 const SB_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
-const sb = window.supabase.createClient(SB_URL, SB_KEY);
+const sb = window.supabase.createClient(SB_URL, SB_KEY, { auth: { experimental: { passkey: true } } }); /* passkeys require supabase-js v2.105+ */
 let session = null, me = null, bootInitialized = false;
 
 (async function init(){
   const { data } = await sb.auth.getSession();
   session = data.session;
+  revealPasskeyUI();
   if (session) await onSignedIn();
   sb.auth.onAuthStateChange(async (event, s) => {
     if (event === 'SIGNED_OUT'){ session = null; me = null; bootInitialized = false; showAuth(); return; }
@@ -222,6 +227,7 @@ function showAuth(){ document.getElementById('auth').style.display='block'; docu
 async function onSignedIn(){
   if (!session?.user?.email) return;
   me = { email: session.user.email, id: session.user.id };
+  injectPasskeyRegister();
   document.getElementById('whoEmail').textContent = me.email;
   document.getElementById('auth').style.display='none';
   document.getElementById('app').classList.add('show');
@@ -229,6 +235,38 @@ async function onSignedIn(){
     bootInitialized = true;
     await Promise.all([loadPipeline(), loadShares(), loadDirectory(), loadReferral()]);
   }
+}
+const PK_SUPPORTED = !!(window.PublicKeyCredential);
+function revealPasskeyUI(){ try{ if(PK_SUPPORTED){ var el=document.getElementById('passkeySignin'); if(el) el.style.display='block'; } }catch(e){} }
+async function signInPasskey(){
+  if(!PK_SUPPORTED) return setMsg('authMsg','This device doesn\u2019t support passkeys. Use the email magic link.','error');
+  setMsg('authMsg','Waiting for your passkey\u2026','');
+  try{
+    const { error } = await sb.auth.signInWithPasskey();
+    if(error) return setMsg('authMsg',(error.message||'Passkey sign-in failed')+' \u2014 you can use the email magic link instead.','error');
+  }catch(e){ setMsg('authMsg','Passkey sign-in canceled or failed. Use the email magic link.','error'); }
+}
+async function registerPasskey(){
+  if(!PK_SUPPORTED) return;
+  var btn=document.getElementById('passkeyRegister'); if(btn) btn.disabled=true;
+  try{
+    const { error } = await sb.auth.registerPasskey();
+    if(error){ if(btn) btn.textContent='Passkey setup failed'; }
+    else if(btn){ btn.textContent='\u2713 Passkey added'; }
+  }catch(e){ if(btn) btn.textContent='Setup canceled'; }
+  finally{ if(btn) setTimeout(function(){ btn.disabled=false; }, 50); }
+}
+function injectPasskeyRegister(){
+  try{
+    if(!PK_SUPPORTED || document.getElementById('passkeyRegister')) return;
+    var app=document.getElementById('app'); if(!app) return;
+    var bar=document.createElement('div');
+    bar.style.cssText='margin:12px 0;padding:10px 14px;background:#fff;border:1px solid #E5E0D6;border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap';
+    var span=document.createElement('span'); span.style.cssText='font-size:13px;color:#3C2D17'; span.textContent='Sign in faster next time \u2014 add a passkey to this device.';
+    var b=document.createElement('button'); b.id='passkeyRegister'; b.type='button'; b.className='primary'; b.style.cssText='width:auto;padding:8px 16px'; b.textContent='Set up a passkey'; b.addEventListener('click', registerPasskey);
+    bar.appendChild(span); bar.appendChild(b);
+    app.insertBefore(bar, app.firstChild);
+  }catch(e){}
 }
 async function sendMagicLink(){
   const email = document.getElementById('emailInput').value.trim();
