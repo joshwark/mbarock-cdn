@@ -1032,8 +1032,7 @@ document.getElementById('quiz-submit').addEventListener('click', () => {
       if (choice && parseInt(choice.value) === oi && oi !== q.correct) opt.classList.add('wrong');
     });
     if (choice && parseInt(choice.value) === q.correct) correct++;
-    fb.classList.add('show');
-    fb.textContent = q.explain;
+    if (q.explain){ fb.classList.add('show'); fb.textContent = q.explain; } else { fb.classList.remove('show'); fb.textContent = ''; }
   });
   const result = document.getElementById('quiz-result');
   const pct = Math.round((correct / LESSON.quiz.length) * 100);
@@ -1244,13 +1243,24 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
   }
 
   // ── Init: when LESSON is ready and DOM rendered ────────────────
+  function currentLessonId(){
+    try{
+      var p = new URLSearchParams(location.search);
+      var pid = p.get('id') || p.get('slug');
+      var L = window.LESSON || {};
+      var wid = L.id || null;
+      if (!pid) return wid;
+      if (wid && (wid === pid || L.legacy_slug === pid || L.slug_v2 === pid)) return wid;
+      return pid;
+    }catch(e){ return (window.LESSON && window.LESSON.id) || null; }
+  }
   function init(){
     var memberId = resolveMemberId();
     if (!memberId){
       // No member-id — auth gate should have already redirected, but be safe.
       return;
     }
-    var lessonId = (window.LESSON && window.LESSON.id) || null;
+    var lessonId = currentLessonId();
     if (!lessonId) return;
 
     // Pull cloud → merge → paint
@@ -1267,7 +1277,7 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
       var btnDisabled = !done && !quizDone;
       wrap.innerHTML =
         '<div id="mr-mark-msg" style="color:#fff;font-family:Fraunces,Georgia,serif;font-size:22px;line-height:1.3;max-width:520px">' +
-          (done ? 'You\'ve completed this lesson.' : (quizDone ? 'Quiz passed. Mark it done?' : 'Pass the quiz below to unlock Mark Complete.')) +
+          (done ? 'You\'ve completed this lesson.' : (quizDone ? 'Quiz passed. Mark it done?' : 'Pass the quiz (in the Quiz tab above) to unlock Mark Complete.')) +
         '</div>' +
         '<button id="mr-mark-complete" type="button" ' + (btnDisabled ? 'disabled' : '') +
         ' style="font:600 14px/1 Inter,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:14px 28px;border-radius:999px;border:none;cursor:' + (btnDisabled ? 'not-allowed' : 'pointer') + ';background:' + (done ? '#D4AF37' : (btnDisabled ? '#4a5570' : '#F26B1F')) + ';color:' + (done ? '#071e3d' : '#fff') + ';opacity:' + (btnDisabled ? '0.55' : '1') + ';">' +
@@ -1279,7 +1289,7 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
         // Server-of-truth gate: require quiz pass (unless already completed → allow uncomplete)
         var alreadyDone = !!progressFor(memberId, lessonId);
         if (!alreadyDone && !hasQuizPass(memberId, lessonId)){
-          alert('Pass the quiz below first (4 of 5 correct). Mark Complete is gated on quiz pass — that\'s how you earn the Module Mark and the Operator\'s Cert.');
+          alert('Pass the quiz first \u2014 find it in the Quiz tab above (4 of 5 correct). Mark Complete is gated on quiz pass — that\'s how you earn the Module Mark and the Operator\'s Cert.');
           return;
         }
         if (!alreadyDone){
@@ -1363,7 +1373,7 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
   function paintCompleteState(){
     var memberId = resolveMemberId();
     if (!memberId) return;
-    var lessonId = (window.LESSON && window.LESSON.id) || null;
+    var lessonId = currentLessonId();
     if (!lessonId) return;
     var done = !!progressFor(memberId, lessonId);
     var quizDone = hasQuizPass(memberId, lessonId);
@@ -1379,7 +1389,7 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
     }
     var msg = document.getElementById('mr-mark-msg');
     if (msg){
-      msg.textContent = done ? 'You\'ve completed this lesson.' : (quizDone ? 'Quiz passed. Mark it done?' : 'Pass the quiz below to unlock Mark Complete.');
+      msg.textContent = done ? 'You\'ve completed this lesson.' : (quizDone ? 'Quiz passed. Mark it done?' : 'Pass the quiz (in the Quiz tab above) to unlock Mark Complete.');
     }
   }
 
@@ -1411,8 +1421,39 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
         });
         if (!L) return finish();
 
-        // Update window.LESSON for tracking block reference
-        window.LESSON = Object.assign({}, window.LESSON || {}, L);
+        // Update window.LESSON IN PLACE so the static quiz handler sees canonical data (wrong-lesson feedback fix)
+        window.LESSON = Object.assign(window.LESSON || {}, L);
+
+        // Prev / next lesson navigation (course order = canon array order)
+        try {
+          var __idx = lessons.indexOf(L);
+          var __prev = __idx > 0 ? lessons[__idx - 1] : null;
+          var __next = (__idx >= 0 && __idx < lessons.length - 1) ? lessons[__idx + 1] : null;
+          var __mkNavBar = function(){
+            if (document.getElementById('mr-lesson-nav')) return;
+            if (!__prev && !__next) return;
+            var host = document.getElementById('mr-mark-complete-wrap');
+            var parent = host ? host.parentNode : (document.querySelector('.mr5') || document.querySelector('main') || document.body);
+            var bar = document.createElement('div');
+            bar.id = 'mr-lesson-nav';
+            bar.style.cssText = 'display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:24px 0 60px;font-family:Inter,system-ui,sans-serif;';
+            var mk = function(l, label, alignRight){
+              var a = document.createElement('a');
+              a.href = '/lesson/?id=' + encodeURIComponent(l.id);
+              a.style.cssText = 'flex:1;min-width:240px;text-decoration:none;border:1px solid #E5E0D6;border-radius:12px;padding:14px 18px;background:#fff;color:#0B1F3A;' + (alignRight ? 'text-align:right;' : '');
+              var s1 = document.createElement('div'); s1.style.cssText = 'font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#F26B1F;font-weight:700;margin-bottom:4px'; s1.textContent = label;
+              var s2 = document.createElement('div'); s2.style.cssText = 'font-family:Fraunces,Georgia,serif;font-size:17px;font-weight:600'; s2.textContent = l.id + ' \u2014 ' + (l.title || '');
+              a.appendChild(s1); a.appendChild(s2);
+              return a;
+            };
+            if (__prev) bar.appendChild(mk(__prev, '\u2190 Previous lesson', false));
+            if (__next) bar.appendChild(mk(__next, 'Next lesson \u2192', true));
+            if (host && host.parentNode) parent.insertBefore(bar, host.nextSibling);
+            else parent.appendChild(bar);
+          };
+          __mkNavBar();
+          setTimeout(__mkNavBar, 1500);
+        } catch(e){}
 
         // === STATIC HTML UPDATES ===
         try {
