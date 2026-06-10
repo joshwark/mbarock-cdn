@@ -1,0 +1,669 @@
+<!--
+  MBA Rock — The Album (public streaming player)
+  BR-20260610-37. PUBLIC page (decision P1=A) — no member gating anywhere on it.
+  Track data + lyrics hydrate client-side from /album/album.json (not baked into this file).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head><!-- BR-20260529-13 public security headers -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://learn.mbarock.com https://www.mbarock.com; script-src 'self' 'unsafe-inline' https://learn.mbarock.com https://cdn.jsdelivr.net https://www.googletagmanager.com https://browser.sentry-cdn.com; style-src 'self' 'unsafe-inline' https://learn.mbarock.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; media-src 'self' https://learn.mbarock.com; connect-src 'self' https://ciloqphtencjthkedanw.supabase.co wss://ciloqphtencjthkedanw.supabase.co https://learn.mbarock.com https://www.google-analytics.com https://*.ingest.sentry.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- /BR-20260529-13 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Album · MBA Rock</title>
+<meta name="description" content="Stream The Album — the original songs behind MBA Rock, the Musical Business Album. Ten volumes, one for every module of the course.">
+<link rel="canonical" href="https://learn.mbarock.com/album/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="The Album · MBA Rock">
+<meta property="og:description" content="Stream the original songs behind MBA Rock — ten volumes, one for every module of the course.">
+<meta property="og:image" content="https://learn.mbarock.com/images/albums/vol01.jpg">
+<meta property="og:url" content="https://learn.mbarock.com/album/">
+<meta property="og:type" content="music.album">
+<meta property="og:site_name" content="MBA Rock">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Album · MBA Rock">
+<meta name="twitter:description" content="Stream the original songs behind MBA Rock — ten volumes, one for every module of the course.">
+<meta name="twitter:image" content="https://learn.mbarock.com/images/albums/vol01.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+html,body{margin:0;padding:0;background:#FAF8F5;color:#0E1116;font-family:'Inter',-apple-system,sans-serif;line-height:1.6;}
+body{padding-bottom:130px;} /* clearance for the fixed player bar */
+.alb{max-width:1080px;margin:0 auto;padding:0 24px 40px;letter-spacing:-0.005em;}
+.alb h1,.alb h2,.alb h3{font-family:'Fraunces','Tiempos Headline',Georgia,serif;letter-spacing:-0.02em;color:#0B1F3A;font-weight:600;}
+.alb a{color:#0B1F3A;}
+.alb ::selection{background:#FBE2D0;color:#0B1F3A;}
+.alb-crumb-row{display:flex;align-items:center;justify-content:flex-start;padding:32px 0 0;}
+.alb-crumb{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#999;font-weight:600;}
+.alb-crumb a{color:#999;text-decoration:none;transition:color .15s;}
+.alb-crumb a:hover{color:#F26B1F;}
+.alb-crumb b{color:#0B1F3A;font-weight:700;}
+.alb-crumb-sep{margin:0 10px;color:#ccc;}
+.alb-hero{margin:48px 0 40px;}
+.alb-kicker{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#F26B1F;margin:0 0 22px;}
+.alb-kicker::before{content:"";width:36px;height:1.5px;background:#F26B1F;}
+.alb-hero h1{font-size:54px;line-height:1.05;margin:0 0 14px;letter-spacing:-0.028em;}
+.alb-sub{font-family:'Fraunces',serif;font-size:21px;font-weight:400;font-style:italic;color:#3a3a3a;margin:0;}
+#alb-status{font-family:'Inter',sans-serif;font-size:13px;color:#999;padding:18px 0;}
+.alb-noscript p{font-size:15px;color:#3a3a3a;}
+.alb-noscript h2{font-size:22px;margin:28px 0 8px;}
+.alb-noscript ol{margin:0 0 18px;padding-left:22px;font-size:14.5px;}
+.alb-noscript a{color:#0B1F3A;text-decoration:none;border-bottom:1px solid #E5E0D6;}
+/* Volume cards */
+.alb-vol{background:#fff;border:1px solid #E5E0D6;border-top:4px solid #0B1F3A;border-radius:14px;margin:0 0 18px;overflow:hidden;}
+.alb-vol-head{display:grid;grid-template-columns:72px 1fr auto 28px;gap:18px;align-items:center;width:100%;background:transparent;border:0;padding:16px 20px;text-align:left;cursor:pointer;font-family:inherit;}
+.alb-vol-head:hover{background:#FAF8F5;}
+.alb-vol-head img{width:72px;height:72px;border-radius:8px;display:block;background:#0B1F3A;}
+.alb-vol-no{font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#999;font-weight:700;}
+.alb-vol-title{font-family:'Fraunces',serif;font-size:21px;color:#0B1F3A;font-weight:600;line-height:1.2;margin-top:2px;}
+.alb-vol-meta{font-family:'Inter',sans-serif;font-size:12px;color:#999;white-space:nowrap;}
+.alb-vol-chev{display:inline-flex;align-items:center;justify-content:center;color:#F26B1F;font-size:12px;transition:transform .25s ease;}
+.alb-vol-head[aria-expanded="true"] .alb-vol-chev{transform:rotate(180deg);}
+.alb-tracks{border-top:1px solid #ebe6da;}
+.alb-tracks ol{list-style:none;margin:0;padding:0;}
+.alb-tr{padding:0 20px;border-bottom:1px solid #f3efe6;}
+.alb-tr:last-child{border-bottom:0;}
+.alb-tr[aria-current="true"]{background:#FBF3EC;}
+.alb-tr-row{display:grid;grid-template-columns:38px 26px 1fr auto;gap:12px;align-items:center;padding:10px 0;}
+.alb-tr-play{width:34px;height:34px;border-radius:50%;border:1.5px solid #0B1F3A;background:#fff;color:#0B1F3A;cursor:pointer;font-size:11px;display:inline-flex;align-items:center;justify-content:center;padding:0;}
+.alb-tr-play:hover{border-color:#F26B1F;color:#F26B1F;}
+.alb-tr-no{font-family:'Inter',sans-serif;font-size:12px;color:#999;text-align:right;font-variant-numeric:tabular-nums;}
+.alb-tr-title{font-family:'Fraunces',serif;font-size:16.5px;color:#0B1F3A;font-weight:500;line-height:1.3;min-width:0;}
+.alb-tr-dur{font-family:'Inter',sans-serif;font-size:12px;color:#999;font-variant-numeric:tabular-nums;}
+.alb-chip{display:inline-block;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#F26B1F;border:1px solid rgba(242,107,31,.45);border-radius:999px;padding:2px 9px;margin-left:8px;text-decoration:none;white-space:nowrap;vertical-align:2px;}
+.alb-chip:hover{background:#F26B1F;color:#fff;}
+/* Lyrics disclosure — .mr5-lyrics pattern from the lesson page */
+.mr5-lyrics{margin:0 0 12px 76px;border-top:1px dashed #ebe6da;padding-top:10px;}
+.mr5-lyrics-btn{display:inline-flex;align-items:center;gap:10px;background:transparent;border:0;padding:6px 0;cursor:pointer;font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#0B1F3A;transition:color .15s;}
+.mr5-lyrics-btn:hover{color:#F26B1F;}
+.mr5-lyrics-btn .mr5-chev{width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;transition:transform .25s ease;color:#F26B1F;font-size:10px;}
+.mr5-lyrics-btn[aria-expanded="true"] .mr5-chev{transform:rotate(180deg);}
+.mr5-lyrics-panel{max-height:0;overflow:hidden;transition:max-height .35s ease, opacity .25s ease, margin .25s;opacity:0;margin-top:0;}
+.mr5-lyrics-panel.open{max-height:4000px;opacity:1;margin-top:12px;}
+.mr5-lyrics-body{background:#FAF8F5;border-left:3px solid #F26B1F;padding:24px 28px;border-radius:0 4px 4px 0;font-family:'Fraunces',serif;font-size:16px;line-height:1.85;color:#0E1116;letter-spacing:-0.005em;white-space:pre-wrap;word-break:break-word;}
+/* Player bar */
+.alb-bar{position:fixed;left:0;right:0;bottom:0;z-index:9500;background:#0B1F3A;color:#fff;display:flex;align-items:center;gap:14px;padding:10px 18px;padding-bottom:calc(10px + env(safe-area-inset-bottom));box-shadow:0 -12px 30px -18px rgba(7,16,32,.6);font-family:'Inter',sans-serif;}
+.ab-art{width:52px;height:52px;border-radius:6px;flex-shrink:0;background:#152D52;}
+.ab-meta{min-width:0;flex:0 1 240px;}
+.ab-title{font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ab-vol{font-size:11px;color:rgba(255,255,255,.65);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ab-ctrls{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.ab-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:999px;cursor:pointer;font-size:14px;width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;padding:0;font-family:inherit;}
+.ab-btn:hover{background:rgba(255,255,255,.16);}
+.ab-main{width:46px;height:46px;background:#F26B1F;border-color:#F26B1F;font-size:15px;}
+.ab-main:hover{background:#E55A0F;}
+.ab-pill{width:auto;min-width:44px;padding:0 12px;font-size:12px;font-weight:700;}
+.ab-pill[aria-pressed="true"]{background:rgba(242,107,31,.4);border-color:#F26B1F;}
+.ab-seek{display:flex;align-items:center;gap:10px;flex:1;min-width:120px;}
+.ab-time{font-size:11px;color:rgba(255,255,255,.75);font-variant-numeric:tabular-nums;min-width:38px;text-align:center;}
+.ab-seek input[type=range]{flex:1;accent-color:#F26B1F;height:4px;cursor:pointer;}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #F26B1F;outline-offset:2px;}
+@media(max-width:860px){
+  .alb-hero h1{font-size:40px;}
+  .alb-vol-head{grid-template-columns:56px 1fr auto 24px;gap:12px;padding:14px;}
+  .alb-vol-head img{width:56px;height:56px;}
+  .alb-tr{padding:0 14px;}
+  .alb-tr-row{grid-template-columns:34px 22px 1fr auto;gap:8px;}
+  .mr5-lyrics{margin-left:0;}
+  .alb-bar{flex-wrap:wrap;gap:8px 10px;padding:8px 12px;padding-bottom:calc(8px + env(safe-area-inset-bottom));}
+  .ab-art{width:40px;height:40px;}
+  .ab-meta{flex:1 1 auto;}
+  .ab-seek{flex:1 1 100%;order:5;min-width:0;}
+  body{padding-bottom:150px;}
+}
+</style>
+<script src="/track.js" defer></script>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B1F3A">
+<script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("/service-worker.js").catch(function(){});});}</script>
+<script src="/nav.js" defer></script>
+</head>
+<body>
+
+<div class="alb">
+  <div class="alb-crumb-row"><div class="alb-crumb"><a href="/landing/">MBA Rock</a><span class="alb-crumb-sep">/</span><b>The Album</b></div></div>
+  <header class="alb-hero">
+    <div class="alb-kicker">MBA Rock</div>
+    <h1>The Album</h1>
+    <p class="alb-sub">10 volumes</p>
+  </header>
+
+  <noscript>
+    <div class="alb-noscript">
+      <p>This player needs JavaScript. You can still stream every song directly:</p>
+      <h2>Vol. 1 &middot; Finance Fundamentals</h2>
+      <ol>
+        <li><a href="https://learn.mbarock.com/audio/oxygen-cash-flow.mp3">Oxygen</a> (3:14)</li>
+        <li><a href="https://learn.mbarock.com/audio/breakeven-point.mp3">Breakeven Point</a> (2:38)</li>
+        <li><a href="https://learn.mbarock.com/audio/top-line-lie.mp3">Top Line Lie</a> (2:00)</li>
+        <li><a href="https://learn.mbarock.com/audio/april-cash-timing.mp3">April Cash Timing</a> (2:13)</li>
+        <li><a href="https://learn.mbarock.com/audio/the-discount-rate.mp3">The Discount Rate</a> (3:00)</li>
+        <li><a href="https://learn.mbarock.com/audio/receivables-in.mp3">Receivables In</a> (2:22)</li>
+        <li><a href="https://learn.mbarock.com/audio/unit-economics.mp3">Unit Economics</a> (2:10)</li>
+        <li><a href="https://learn.mbarock.com/audio/operating-leverage.mp3">Operating Leverage</a> (2:41)</li>
+        <li><a href="https://learn.mbarock.com/audio/bones-in-the-spreadsheets.mp3">Bones in the Spreadsheets</a> (2:40)</li>
+      </ol>
+      <h2>Vol. 2 &middot; Strategy &amp; Competitive Advantage</h2>
+      <ol>
+        <li><a href="https://learn.mbarock.com/audio/moat-around-my-castle.mp3">Moat Around My Castle</a> (2:21)</li>
+        <li><a href="https://learn.mbarock.com/audio/market-size-mountain.mp3">Market Size Mountain</a> (2:49)</li>
+        <li><a href="https://learn.mbarock.com/audio/strategy.mp3">Strategy</a> (2:35)</li>
+        <li><a href="https://learn.mbarock.com/audio/beneath-the-hood.mp3">Beneath the Hood</a> (3:43)</li>
+        <li><a href="https://learn.mbarock.com/audio/business-model-canvas.mp3">Business Model Canvas</a> (2:40)</li>
+        <li><a href="https://learn.mbarock.com/audio/pick-two.mp3">Pick Two</a> (1:21)</li>
+        <li><a href="https://learn.mbarock.com/audio/competitive-moat.mp3">Competitive Moat</a> (2:11)</li>
+        <li><a href="https://learn.mbarock.com/audio/blue-ocean-creating-new-markets.mp3">Blue Ocean</a> (4:04)</li>
+      </ol>
+      <h2>Vol. 3 &middot; People &amp; Leadership</h2>
+      <ol>
+        <li><a href="https://learn.mbarock.com/audio/white-knuckled-delegation.mp3">White-Knuckle Delegation</a> (3:15)</li>
+        <li><a href="https://learn.mbarock.com/audio/worth-align.mp3">Worth Align</a> (3:59)</li>
+        <li><a href="https://learn.mbarock.com/audio/long-game.mp3">Long Game</a> (4:13)</li>
+        <li><a href="https://learn.mbarock.com/audio/mirror-map-feedback.mp3">Mirror Map It Back</a> (4:12)</li>
+        <li><a href="https://learn.mbarock.com/audio/tuckman-storming.mp3">Tuckman Storming</a> (2:20)</li>
+        <li><a href="https://learn.mbarock.com/audio/dont-be-everything.mp3">Don&#x27;t Be Everything</a> (3:10)</li>
+        <li><a href="https://learn.mbarock.com/audio/two-way-door.mp3">Two-Way Door</a> (3:37)</li>
+        <li><a href="https://learn.mbarock.com/audio/culture-eats-strategy.mp3">Culture Eats Strategy</a> (3:16)</li>
+      </ol>
+      <h2>Vol. 4 &middot; Unit Economics &amp; Growth Metrics</h2>
+      <ol>
+        <li><a href="https://learn.mbarock.com/audio/ask-then-listen.mp3">Ask Then Listen</a> (2:43)</li>
+        <li><a href="https://learn.mbarock.com/audio/brand-promise.mp3">Brand Promise</a> (2:54)</li>
+        <li><a href="https://learn.mbarock.com/audio/distribution-rivers.mp3">Distribution Rivers</a> (2:56)</li>
+        <li><a href="https://learn.mbarock.com/audio/funnel-rate-118.mp3">Funnel Rate 118</a> (2:32)</li>
+        <li><a href="https://learn.mbarock.com/audio/price-signal.mp3">Price Signal</a> (1:52)</li>
+        <li><a href="https://learn.mbarock.com/audio/fit-original.mp3">Fit (Original)</a> (1:27)</li>
+        <li><a href="https://learn.mbarock.com/audio/let-the-rivers-run.mp3">Let the Rivers Run</a> (3:52)</li>
+        <li><a href="https://learn.mbarock.com/audio/adopt-the-loop.mp3">Adopt the Loop</a> (2:34)</li>
+      </ol>
+      <h2>Vol. 5 &middot; Operations &amp; Technology</h2>
+      <ol>
+        <li><a href="https://learn.mbarock.com/audio/lewin-way.mp3">Lewin Way</a> (3:27)</li>
+        <li><a href="https://learn.mbarock.com/audio/process-over-outcome.mp3">Process Over Outcome</a> (2:57)</li>
+        <li><a href="https://learn.mbarock.com/audio/heroes-dont-scale.mp3">Heroes Don&#x27;t Scale</a> (3:15)</li>
+        <li><a href="https://learn.mbarock.com/audio/seven-twenty-sum.mp3">Seven-Twenty Sum</a> (2:50)</li>
+        <li><a href="https://learn.mbarock.com/audio/five-doors.mp3">Five Doors</a> (2:35)</li>
+        <li><a href="https://learn.mbarock.com/audio/build-vs-buy.mp3">Build vs. Buy</a> (2:33)</li>
+      </ol>
+      <h2>Vol. 6 &middot; Growth &amp; Capital</h2>
+      <ol>
+        <li><a href="https://learn.mbarock.com/audio/engines.mp3">Engines</a> (2:25)</li>
+        <li><a href="https://learn.mbarock.com/audio/stakeholder-grid.mp3">Stakeholder Grid</a> (4:05)</li>
+        <li><a href="https://learn.mbarock.com/audio/dollar-soldier.mp3">Dollar Soldier</a> (2:45)</li>
+        <li><a href="https://learn.mbarock.com/audio/negotiation.mp3">Negotiation</a> (4:24)</li>
+        <li><a href="https://learn.mbarock.com/audio/the-multiple.mp3">The Multiple</a> (1:59)</li>
+        <li><a href="https://learn.mbarock.com/audio/high-anchor-batna.mp3">High Anchor BATNA</a> (1:52)</li>
+        <li><a href="https://learn.mbarock.com/audio/the-aha.mp3">The Aha</a> (2:49)</li>
+        <li><a href="https://learn.mbarock.com/audio/three-of-a-kind.mp3">Three of a Kind</a> (2:05)</li>
+        <li><a href="https://learn.mbarock.com/audio/ten-year-bet.mp3">Ten Year Bet</a> (2:38)</li>
+        <li><a href="https://learn.mbarock.com/audio/risk-and-reward.mp3">Risk and Reward</a> (4:14)</li>
+        <li><a href="https://learn.mbarock.com/audio/saleable.mp3">Saleable</a> (2:37)</li>
+        <li><a href="https://learn.mbarock.com/audio/four-corners.mp3">Four Corners</a> (2:59)</li>
+        <li><a href="https://learn.mbarock.com/audio/fifteen-lines.mp3">Fifteen Lines</a> (2:06)</li>
+        <li><a href="https://learn.mbarock.com/audio/calendar-is-strategy.mp3">Calendar Is Strategy</a> (1:36)</li>
+      </ol>
+      <h2>Vol. 7 &middot; Marketing &amp; Brand</h2>
+      <ol>
+        <li><a href="https://learn.mbarock.com/audio/the-funnel.mp3">The Funnel</a> (2:47)</li>
+        <li><a href="https://learn.mbarock.com/audio/brand-is-a-promise.mp3">Brand Is a Promise</a> (3:42)</li>
+        <li><a href="https://learn.mbarock.com/audio/segmentation-aim.mp3">Segmentation Aim</a> (1:35)</li>
+        <li><a href="https://learn.mbarock.com/audio/fit-product-market-fit.mp3">Fit</a> (3:33)</li>
+        <li><a href="https://learn.mbarock.com/audio/cohort.mp3">Cohort</a> (2:16)</li>
+      </ol>
+      <h2>Vol. 8 &middot; Operations &amp; Execution</h2>
+      <ol>
+        <li><a href="https://learn.mbarock.com/audio/five-times-a-week.mp3">Five Times a Week</a> (4:50)</li>
+        <li><a href="https://learn.mbarock.com/audio/bullwhip.mp3">Bullwhip</a> (1:41)</li>
+        <li><a href="https://learn.mbarock.com/audio/six-sigma-ledge.mp3">Six Sigma Ledge</a> (4:10)</li>
+        <li><a href="https://learn.mbarock.com/audio/swim-lanes.mp3">Swim Lanes</a> (1:41)</li>
+        <li><a href="https://learn.mbarock.com/audio/tier-one.mp3">Tier One</a> (2:01)</li>
+      </ol>
+      <h2>Vol. 9 &middot; Analytics &amp; Decision Making</h2>
+      <ol>
+        <li><a href="https://learn.mbarock.com/audio/third-way-options.mp3">Third Way Options</a> (3:04)</li>
+        <li><a href="https://learn.mbarock.com/audio/okrs-ladder.mp3">OKRs Ladder</a> (2:25)</li>
+        <li><a href="https://learn.mbarock.com/audio/spreadsheet-north-star.mp3">Spreadsheet North Star</a> (4:02)</li>
+        <li><a href="https://learn.mbarock.com/audio/pre-mortem.mp3">Pre-Mortem</a> (2:28)</li>
+        <li><a href="https://learn.mbarock.com/audio/risk-register.mp3">Risk Register</a> (3:06)</li>
+      </ol>
+      <h2>Vol. 10 &middot; Innovation &amp; Future</h2>
+      <ol>
+        <li><a href="https://learn.mbarock.com/audio/blank-page-grace.mp3">Blank Page Grace</a> (2:55)</li>
+        <li><a href="https://learn.mbarock.com/audio/s-curves.mp3">S-Curves</a> (2:43)</li>
+        <li><a href="https://learn.mbarock.com/audio/forty-cycles.mp3">Forty Cycles</a> (2:30)</li>
+        <li><a href="https://learn.mbarock.com/audio/stakeholder-compass.mp3">Stakeholder Compass</a> (2:50)</li>
+        <li><a href="https://learn.mbarock.com/audio/promised-land.mp3">Promised Land</a> (4:01)</li>
+      </ol>
+    </div>
+  </noscript>
+
+  <div id="alb-status" role="status" aria-live="polite">Loading the album&hellip;</div>
+  <section id="alb-vols" aria-label="Album volumes"></section>
+</div>
+
+<!-- Persistent player bar (single <audio> engine drives it) -->
+<div class="alb-bar" id="alb-bar" hidden>
+  <img id="ab-art" class="ab-art" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="52" height="52">
+  <div class="ab-meta">
+    <div id="ab-title" class="ab-title">&mdash;</div>
+    <div id="ab-vol" class="ab-vol">&mdash;</div>
+  </div>
+  <div class="ab-ctrls">
+    <button id="ab-prev" class="ab-btn" type="button" aria-label="Previous track">&#9198;</button>
+    <button id="ab-play" class="ab-btn ab-main" type="button" aria-label="Play" aria-pressed="false">&#9654;</button>
+    <button id="ab-next" class="ab-btn" type="button" aria-label="Next track">&#9197;</button>
+  </div>
+  <div class="ab-seek">
+    <span id="ab-cur" class="ab-time">0:00</span>
+    <input id="ab-range" type="range" min="0" max="100" value="0" step="1" aria-label="Seek">
+    <span id="ab-dur" class="ab-time">0:00</span>
+  </div>
+  <button id="ab-rate" class="ab-btn ab-pill" type="button" aria-label="Playback speed">1&times;</button>
+  <button id="ab-shuf" class="ab-btn ab-pill" type="button" aria-label="Shuffle within volume" aria-pressed="false">&#8646;</button>
+</div>
+
+<footer style="margin:60px auto 0;padding:28px 24px;border-top:1px solid #E5E0D6;text-align:center;font-family:Inter,sans-serif;font-size:12px;color:#888;letter-spacing:.04em;max-width:1080px">
+  <span>&copy; 2026 MBA Rock &middot; An Adytum company</span>
+  <span style="margin:0 10px;color:#ccc">&middot;</span>
+  <a href="https://www.mbarock.com/privacy" style="color:#666;text-decoration:none;border-bottom:1px solid #E5E0D6">Privacy</a>
+  <span style="margin:0 10px;color:#ccc">&middot;</span>
+  <a href="https://www.mbarock.com/terms" style="color:#666;text-decoration:none;border-bottom:1px solid #E5E0D6">Terms</a>
+  <span style="margin:0 10px;color:#ccc">&middot;</span>
+  <a href="https://www.mbarock.com/accessibility-statement" style="color:#666;text-decoration:none;border-bottom:1px solid #E5E0D6">Accessibility</a>
+  <span style="margin:0 10px;color:#ccc">&middot;</span>
+  <a href="mailto:jessica@adytum.agency" style="color:#666;text-decoration:none;border-bottom:1px solid #E5E0D6">jessica@adytum.agency</a>
+</footer>
+
+<!-- GA4 analytics — empty ID = no-op. ID set in Squarespace Footer or via window.MR_GA4_ID. -->
+<script>window.MR_GA4_ID = window.MR_GA4_ID || "";</script>
+<script>(function(){var id=window.MR_GA4_ID;if(!id||!/^G-[A-Z0-9]{8,}$/.test(id))return;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+id;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag("js",new Date());gtag("config",id,{send_page_view:true,anonymize_ip:true});})();</script>
+
+<!-- Sentry error logging — set DSN via window.MR_SENTRY_DSN to activate. Empty = no-op. -->
+<script>window.MR_SENTRY_DSN = window.MR_SENTRY_DSN || "";</script>
+<script>(function(){var dsn=window.MR_SENTRY_DSN;if(!dsn||!/^https:\/\/[a-f0-9]+@/.test(dsn))return;var s=document.createElement("script");s.src="https://browser.sentry-cdn.com/7.119.2/bundle.min.js";s.crossOrigin="anonymous";s.onload=function(){if(window.Sentry){Sentry.init({dsn:dsn,tracesSampleRate:0.0,replaysSessionSampleRate:0.0,replaysOnErrorSampleRate:0.1,environment:"production",beforeSend:function(event){if(!event.request)return event;return event;}});}};document.head.appendChild(s);})();</script>
+
+<script src="https://learn.mbarock.com/accessibility/widget.js" defer></script>
+
+<script>
+/* MR_ALBUM_CORE_START — DOM-free player core (queue, shuffle, rate, resume, telemetry, media-session payloads).
+   Tested by the BR-20260610-37 node simulation against the exact bytes shipped here. */
+(function () {
+  'use strict';
+  function mrCreateAlbumCore(data, hooks) {
+    var vols = (data && data.volumes) || [];
+    function identity(v) { return v.tracks.map(function (_, i) { return i; }); }
+    var orders = vols.map(identity);     // per-volume play order (permuted when shuffle is on)
+    var shuffle = false;
+    var RATES = [1, 1.25, 1.5];
+    var rateIdx = 0;
+    var cur = null;                      // { vi, ti }
+    var played = {};                     // 'vi:ti' -> 1 — one album_play per track per page load
+    function rng() { return (hooks.random || Math.random)(); }
+    function reshuffle(vi) {
+      var ord = identity(vols[vi]);
+      for (var i = ord.length - 1; i > 0; i--) {
+        var j = Math.floor(rng() * (i + 1));
+        var t = ord[i]; ord[i] = ord[j]; ord[j] = t;
+      }
+      orders[vi] = ord;
+    }
+    function track(vi, ti) { return vols[vi].tracks[ti]; }
+    function meta(vi, ti) {
+      var v = vols[vi], t = track(vi, ti);
+      return {
+        title: t.title,
+        artist: (data && data.artist) || 'MBA Rock',
+        album: 'MBA Rock, Vol. ' + v.vol + ' — ' + v.title,
+        artwork: [{ src: v.cover, sizes: '640x640', type: 'image/jpeg' }]
+      };
+    }
+    function persist(pos) {
+      try {
+        hooks.save(JSON.stringify({
+          vi: cur ? cur.vi : 0, ti: cur ? cur.ti : 0,
+          pos: pos || 0, rate: RATES[rateIdx], shuffle: shuffle
+        }));
+      } catch (e) {}
+    }
+    function start(vi, ti, pos, autoplay) {
+      cur = { vi: vi, ti: ti };
+      hooks.setTrack(track(vi, ti), vols[vi], vi, ti, pos || 0, !!autoplay);
+      hooks.setMetadata(meta(vi, ti));
+      persist(pos || 0);
+      return true;
+    }
+    function step(dir) {
+      if (!cur) return start(0, orders[0][0], 0, true);
+      var ord = orders[cur.vi];
+      var p = ord.indexOf(cur.ti) + dir;
+      if (p >= 0 && p < ord.length) return start(cur.vi, ord[p], 0, true);
+      var nvi = cur.vi + dir;
+      if (nvi < 0 || nvi >= vols.length) return false;          // album edge — stop, no wrap
+      var nord = orders[nvi];
+      return start(nvi, dir > 0 ? nord[0] : nord[nord.length - 1], 0, true);
+    }
+    return {
+      current: function () { return cur ? { vi: cur.vi, ti: cur.ti, track: track(cur.vi, cur.ti), vol: vols[cur.vi] } : null; },
+      order: function (vi) { return orders[vi].slice(); },
+      rate: function () { return RATES[rateIdx]; },
+      shuffled: function () { return shuffle; },
+      select: function (vi, ti, pos, autoplay) { return start(vi, ti, pos || 0, autoplay !== false); },
+      next: function () { return step(1); },
+      prev: function () { return step(-1); },
+      cycleRate: function () {
+        rateIdx = (rateIdx + 1) % RATES.length;
+        hooks.setRate(RATES[rateIdx]);
+        persist(hooks.position ? hooks.position() : 0);
+        return RATES[rateIdx];
+      },
+      toggleShuffle: function () {
+        shuffle = !shuffle;
+        if (shuffle) { vols.forEach(function (_, vi) { reshuffle(vi); }); }
+        else { orders = vols.map(identity); }
+        persist(hooks.position ? hooks.position() : 0);
+        return shuffle;
+      },
+      notifyPlaying: function () {                               // emit album_play ONCE per track per page load
+        if (!cur) return;
+        var k = cur.vi + ':' + cur.ti;
+        if (played[k]) return;
+        played[k] = 1;
+        hooks.emit('album_play', { track: track(cur.vi, cur.ti).title, vol: vols[cur.vi].vol });
+      },
+      notifyEnded: function () {                                 // emit completion, then auto-advance
+        if (cur) hooks.emit('album_track_complete', { track: track(cur.vi, cur.ti).title, vol: vols[cur.vi].vol });
+        return step(1);
+      },
+      savePosition: persist,
+      resume: function (rawState) {                              // never autoplays
+        var s = null;
+        try { s = JSON.parse(rawState || 'null'); } catch (e) {}
+        if (!s || typeof s.vi !== 'number' || typeof s.ti !== 'number') return false;
+        if (!vols[s.vi] || !vols[s.vi].tracks[s.ti]) return false;
+        if (s.shuffle) { shuffle = true; vols.forEach(function (_, vi) { reshuffle(vi); }); }
+        var ri = RATES.indexOf(s.rate);
+        if (ri > -1) { rateIdx = ri; hooks.setRate(RATES[ri]); }
+        return start(s.vi, s.ti, s.pos || 0, false);
+      }
+    };
+  }
+  if (typeof window !== 'undefined') window.mrCreateAlbumCore = mrCreateAlbumCore;
+})();
+/* MR_ALBUM_CORE_END */
+</script>
+
+<script>
+/* BR-20260610-37 — DOM wiring: renders volumes/tracks from /album/album.json and drives the core. */
+(function () {
+  'use strict';
+  var KEY = 'mr-album-state-v1';
+  function $(s) { return document.querySelector(s); }
+  var statusEl = $('#alb-status'), volsEl = $('#alb-vols'), bar = $('#alb-bar');
+  var artEl = $('#ab-art'), titleEl = $('#ab-title'), volEl = $('#ab-vol');
+  var playBtn = $('#ab-play'), prevBtn = $('#ab-prev'), nextBtn = $('#ab-next');
+  var range = $('#ab-range'), curEl = $('#ab-cur'), durEl = $('#ab-dur');
+  var rateBtn = $('#ab-rate'), shufBtn = $('#ab-shuf');
+
+  var audio = new Audio();
+  audio.preload = 'none';
+  var core = null;
+  var curRate = 1;
+  var pendingSeek = 0;
+  var seeking = false;
+  var lastSave = 0;
+  var rows = [], volBodies = [], volHeads = [];
+  var activeLi = null;
+
+  function fmt(s) { s = Math.max(0, Math.floor(s || 0)); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  // Telemetry — the EXISTING track.js pipeline only (window.MBATrack.track). No new pipeline.
+  function emit(name, props) { try { if (window.MBATrack && window.MBATrack.track) window.MBATrack.track(name, props); } catch (e) {} }
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+
+  function syncPlayUI(playing) {
+    playBtn.textContent = playing ? '❚❚' : '▶';
+    playBtn.setAttribute('aria-label', playing ? 'Pause' : 'Play');
+    playBtn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+    try { if ('mediaSession' in navigator) navigator.mediaSession.playbackState = playing ? 'playing' : 'paused'; } catch (e) {}
+  }
+  function posState() {
+    if (!('mediaSession' in navigator) || !navigator.mediaSession.setPositionState) return;
+    try {
+      if (audio.duration && isFinite(audio.duration)) {
+        navigator.mediaSession.setPositionState({
+          duration: audio.duration,
+          playbackRate: audio.playbackRate || 1,
+          position: Math.min(audio.currentTime || 0, audio.duration)
+        });
+      }
+    } catch (e) {}
+  }
+  function setActiveRow(vi, ti) {
+    if (activeLi) activeLi.removeAttribute('aria-current');
+    activeLi = rows[vi] && rows[vi][ti];
+    if (activeLi) activeLi.setAttribute('aria-current', 'true');
+    var body = volBodies[vi];
+    if (body && body.hidden) { body.hidden = false; volHeads[vi].setAttribute('aria-expanded', 'true'); }
+  }
+
+  var coreHooks = {
+    setTrack: function (t, v, vi, ti, pos, autoplay) {
+      audio.src = t.audio_url;
+      pendingSeek = pos || 0;
+      audio.playbackRate = curRate;
+      titleEl.textContent = t.title;
+      volEl.textContent = 'Vol. ' + v.vol + ' — ' + v.title;
+      artEl.src = v.cover;
+      artEl.alt = '';
+      durEl.textContent = fmt(t.duration_s);
+      range.max = Math.max(1, Math.floor(t.duration_s || 1));
+      range.value = Math.floor(pos || 0);
+      curEl.textContent = fmt(pos || 0);
+      bar.hidden = false;
+      setActiveRow(vi, ti);
+      if (autoplay) { var p = audio.play(); if (p && p.catch) p.catch(function () {}); }
+      else { syncPlayUI(false); }
+    },
+    setMetadata: function (m) {
+      if (!('mediaSession' in navigator)) return;
+      try { navigator.mediaSession.metadata = new MediaMetadata(m); } catch (e) {}
+    },
+    setRate: function (r) {
+      curRate = r;
+      audio.playbackRate = r;
+      rateBtn.textContent = (r === 1 ? '1' : String(r)) + '×';
+    },
+    emit: emit,
+    save: function (s) { try { localStorage.setItem(KEY, s); } catch (e) {} },
+    position: function () { return audio.currentTime || 0; }
+  };
+
+  // ── audio element events ──
+  audio.addEventListener('loadedmetadata', function () {
+    if (audio.duration && isFinite(audio.duration)) {
+      durEl.textContent = fmt(audio.duration);
+      range.max = Math.max(1, Math.floor(audio.duration));
+    }
+    if (pendingSeek > 0 && (!audio.duration || pendingSeek < audio.duration)) {
+      try { audio.currentTime = pendingSeek; } catch (e) {}
+    }
+    pendingSeek = 0;
+    audio.playbackRate = curRate;
+  });
+  audio.addEventListener('play', function () { audio.playbackRate = curRate; });
+  audio.addEventListener('playing', function () { syncPlayUI(true); if (core) core.notifyPlaying(); });
+  audio.addEventListener('pause', function () { syncPlayUI(false); });
+  audio.addEventListener('timeupdate', function () {
+    if (!seeking) { range.value = Math.floor(audio.currentTime || 0); curEl.textContent = fmt(audio.currentTime); }
+    posState();
+    var now = Date.now();
+    if (core && now - lastSave > 5000) { lastSave = now; core.savePosition(audio.currentTime || 0); }
+  });
+  audio.addEventListener('ended', function () {
+    if (!core) return;
+    var more = core.notifyEnded();
+    if (more === false) { syncPlayUI(false); core.savePosition(0); }
+  });
+  audio.addEventListener('error', function () { try { console.warn('album: audio error', audio.error); } catch (e) {} });
+
+  // ── bar controls ──
+  playBtn.addEventListener('click', function () {
+    if (!core) return;
+    if (!core.current()) { core.select(0, 0, 0, true); return; }
+    if (audio.paused) { var p = audio.play(); if (p && p.catch) p.catch(function () {}); }
+    else { audio.pause(); }
+  });
+  prevBtn.addEventListener('click', function () { if (core) core.prev(); });
+  nextBtn.addEventListener('click', function () { if (core) core.next(); });
+  range.addEventListener('input', function () { seeking = true; curEl.textContent = fmt(parseFloat(range.value)); });
+  range.addEventListener('change', function () {
+    seeking = false;
+    try { audio.currentTime = parseFloat(range.value) || 0; } catch (e) {}
+  });
+  rateBtn.addEventListener('click', function () { if (core) core.cycleRate(); });
+  shufBtn.addEventListener('click', function () {
+    if (!core) return;
+    var on = core.toggleShuffle();
+    shufBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+
+  // ── keyboard: space = play/pause, arrows = seek ±10s (never when focus is in a field) ──
+  document.addEventListener('keydown', function (e) {
+    var t = e.target;
+    if (t && (/^(INPUT|TEXTAREA|SELECT|BUTTON)$/.test(t.tagName) || t.isContentEditable)) return;
+    if (e.code === 'Space' || e.key === ' ') { e.preventDefault(); playBtn.click(); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); try { audio.currentTime = Math.max(0, (audio.currentTime || 0) - 10); } catch (err) {} }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); try { audio.currentTime = Math.min(audio.duration || 0, (audio.currentTime || 0) + 10); } catch (err) {} }
+  });
+
+  // ── lock-screen / hardware media keys ──
+  if ('mediaSession' in navigator) {
+    try {
+      navigator.mediaSession.setActionHandler('play', function () { if (audio.paused) { var p = audio.play(); if (p && p.catch) p.catch(function () {}); } });
+      navigator.mediaSession.setActionHandler('pause', function () { audio.pause(); });
+      navigator.mediaSession.setActionHandler('previoustrack', function () { if (core) core.prev(); });
+      navigator.mediaSession.setActionHandler('nexttrack', function () { if (core) core.next(); });
+      navigator.mediaSession.setActionHandler('seekto', function (d) {
+        try { if (d.fastSeek && audio.fastSeek) audio.fastSeek(d.seekTime); else audio.currentTime = d.seekTime; } catch (e) {}
+        posState();
+      });
+    } catch (e) {}
+  }
+
+  window.addEventListener('pagehide', function () { if (core) core.savePosition(audio.currentTime || 0); });
+
+  // ── render (createElement + textContent only — never innerHTML with data) ──
+  function buildTrack(v, vi, t, ti) {
+    var li = el('li', 'alb-tr');
+    var row = el('div', 'alb-tr-row');
+    var btn = el('button', 'alb-tr-play', '▶');
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Play ' + t.title);
+    btn.addEventListener('click', function () {
+      if (!core) return;
+      var c = core.current();
+      if (c && c.vi === vi && c.ti === ti) { playBtn.click(); return; }   // same track = toggle
+      core.select(vi, ti, 0, true);
+    });
+    var no = el('span', 'alb-tr-no', String(t.track));
+    var mid = el('span', 'alb-tr-title', t.title);
+    (t.lessons || []).forEach(function (id) {
+      var a = el('a', 'alb-chip', 'Lesson ' + id + ' →');
+      a.href = '/lesson/?id=' + encodeURIComponent(id);
+      mid.appendChild(a);
+    });
+    var dur = el('span', 'alb-tr-dur', fmt(t.duration_s));
+    row.appendChild(btn); row.appendChild(no); row.appendChild(mid); row.appendChild(dur);
+    li.appendChild(row);
+    if (t.lyrics) {
+      var wrap = el('div', 'mr5-lyrics');
+      var lb = el('button', 'mr5-lyrics-btn');
+      lb.type = 'button';
+      lb.setAttribute('aria-expanded', 'false');
+      var chev = el('span', 'mr5-chev', '▼');
+      chev.setAttribute('aria-hidden', 'true');
+      lb.appendChild(chev);
+      lb.appendChild(document.createTextNode('Lyrics'));
+      var panel = el('div', 'mr5-lyrics-panel');
+      var pid = 'alb-lyr-' + vi + '-' + ti;
+      panel.id = pid;
+      lb.setAttribute('aria-controls', pid);
+      panel.appendChild(el('div', 'mr5-lyrics-body', t.lyrics));
+      lb.addEventListener('click', function () {
+        var open = panel.classList.toggle('open');
+        lb.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      wrap.appendChild(lb); wrap.appendChild(panel);
+      li.appendChild(wrap);
+    }
+    rows[vi][ti] = li;
+    return li;
+  }
+
+  function buildVolume(v, vi) {
+    var card = el('section', 'alb-vol');
+    card.style.borderTopColor = v.color || '#0B1F3A';
+    var head = el('button', 'alb-vol-head');
+    head.type = 'button';
+    head.setAttribute('aria-expanded', 'false');
+    var img = el('img');
+    img.src = v.cover; img.alt = ''; img.loading = 'lazy'; img.width = 72; img.height = 72;
+    var mid = el('div');
+    var no = el('div', 'alb-vol-no', 'Vol. ' + v.vol + ' · ' + v.module_id);
+    if (v.color) no.style.color = v.color;
+    mid.appendChild(no);
+    mid.appendChild(el('div', 'alb-vol-title', v.title));
+    var total = 0;
+    v.tracks.forEach(function (t) { total += t.duration_s || 0; });
+    var meta = el('div', 'alb-vol-meta', v.tracks.length + ' tracks · ' + fmt(total));
+    var chev = el('span', 'alb-vol-chev', '▾');
+    chev.setAttribute('aria-hidden', 'true');
+    head.appendChild(img); head.appendChild(mid); head.appendChild(meta); head.appendChild(chev);
+    var body = el('div', 'alb-tracks');
+    body.hidden = true;
+    body.id = 'alb-vol-body-' + vi;
+    head.setAttribute('aria-controls', body.id);
+    var list = el('ol');
+    rows[vi] = [];
+    v.tracks.forEach(function (t, ti) { list.appendChild(buildTrack(v, vi, t, ti)); });
+    body.appendChild(list);
+    head.addEventListener('click', function () {
+      var open = body.hidden;
+      body.hidden = !open;
+      head.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    card.appendChild(head); card.appendChild(body);
+    volHeads[vi] = head; volBodies[vi] = body;
+    return card;
+  }
+
+  fetch('/album/album.json')
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (data) {
+      var frag = document.createDocumentFragment();
+      (data.volumes || []).forEach(function (v, vi) { frag.appendChild(buildVolume(v, vi)); });
+      volsEl.appendChild(frag);
+      if (statusEl && statusEl.parentNode) statusEl.parentNode.removeChild(statusEl);
+      core = window.mrCreateAlbumCore(data, coreHooks);
+      var resumed = false;
+      try { resumed = core.resume(localStorage.getItem(KEY)); } catch (e) {}
+      if (resumed) { shufBtn.setAttribute('aria-pressed', core.shuffled() ? 'true' : 'false'); }
+      else { core.select(0, 0, 0, false); }                      // bar ready on track 1, paused
+    })
+    .catch(function (e) {
+      if (statusEl) statusEl.textContent = 'The album failed to load — refresh to try again.';
+      try { console.warn('album load failed', e); } catch (e2) {}
+    });
+})();
+</script>
+</body>
+</html>

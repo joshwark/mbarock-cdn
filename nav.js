@@ -30,7 +30,8 @@
     { label: "The Dossier",     href: "/dossier/",      match: "/dossier" },
     { label: "What's New",      href: "/whats-new/",    match: "/whats-new" },
     { label: "Adytum Pipeline", href: "/adytum/",       match: "/adytum" },
-    { label: "Arcade",          href: "/arcade/",       match: "/arcade" }
+    { label: "Arcade",          href: "/arcade/",       match: "/arcade" },
+    { label: "Album",           href: "/album/",        match: "/album" }
   ];
 
   // Auth gate — mirror existing member-page detection. Only members get the nav.
@@ -195,7 +196,7 @@
       (who ? '<div class="who">' + esc(who) + "</div>" : "") +
       '<div class="gl">Learning</div>' + links([PRIMARY[0], PRIMARY[1]], true) +
       '<div class="gl">Tools</div>' + links([PRIMARY[2], PRIMARY[3], PRIMARY[4], MORE[0]], true) +
-      '<div class="gl">More</div>' + links([MORE[1], MORE[2], MORE[3], MORE[4]], true) +
+      '<div class="gl">More</div>' + links(MORE.slice(1), true) + // BR-20260610-37: drawer mirrors the full MORE array (Album rides in)
       '<div class="so"><a class="mbnav-signout" href="#" data-mbnav-signout>Sign out</a></div>';
     document.body.appendChild(drawer);
 
