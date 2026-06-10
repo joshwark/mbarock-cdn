@@ -1053,6 +1053,49 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
 </script>
 
 
+<!-- BR-20260610-35: deterministic seeded quiz-option shuffle (de-bias the fixed answer slot) -->
+<script>
+(function(){
+  function qhash(s){ var x = 2166136261 >>> 0; for (var i = 0; i < s.length; i++){ x ^= s.charCodeAt(i); x = Math.imul(x, 16777619) >>> 0; } return x >>> 0; }
+  function qrng(a){ return function(){ a |= 0; a = (a + 0x6D2B79F5) | 0; var t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+  function shuffleQuestion(q, lessonId, qi){
+    if (!q || q.__mrShuffled || !Array.isArray(q.options) || q.options.length < 2) return;
+    if (typeof q.correct !== 'number') return;
+    var rnd = qrng(qhash(String(lessonId) + ':' + qi));
+    var idx = q.options.map(function(_, i){ return i; });
+    for (var i = idx.length - 1; i > 0; i--){ var j = Math.floor(rnd() * (i + 1)); var t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
+    var src = q.options.slice();
+    q.options = idx.map(function(k){ return src[k]; });        // mutate IN PLACE —
+    q.correct = idx.indexOf(q.correct);                        // both grading handlers read these
+    q.__mrShuffled = true;
+  }
+  function paint(){
+    var L = window.LESSON || {};
+    var qs = Array.isArray(L.quiz) ? L.quiz : ((L.quiz && L.quiz.questions) || []);
+    qs.slice(0, 5).forEach(function(q, qi){
+      var optTexts = document.querySelectorAll('[data-q-idx="' + qi + '"] .mr5-quiz-opttext');
+      optTexts.forEach(function(el, oi){ el.textContent = (q.options && q.options[oi]) || ''; });
+    });
+  }
+  window.__mrQuizShuffle = function(lessonId){
+    var L = window.LESSON || {};
+    var qs = Array.isArray(L.quiz) ? L.quiz : ((L.quiz && L.quiz.questions) || []);
+    if (!qs.length) return;
+    qs.forEach(function(q, qi){ shuffleQuestion(q, lessonId, qi); });
+    paint();
+  };
+  function boot(){
+    var p = new URLSearchParams(location.search);
+    if (!p.get('id') && !p.get('slug')){
+      // Baked M7L2 public sample goes through the same shuffle path (object kept AS IS otherwise).
+      window.__mrQuizShuffle((window.LESSON && window.LESSON.id) || 'M7L2');
+    }
+  }
+  if (document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', boot); }
+  else { boot(); }
+})();
+</script>
+
 <!-- GA4 analytics — empty ID = no-op. ID set in Squarespace Footer or via window.MR_GA4_ID. -->
 <script>window.MR_GA4_ID = window.MR_GA4_ID || "";</script>
 <script>(function(){var id=window.MR_GA4_ID;if(!id||!/^G-[A-Z0-9]{8,}$/.test(id))return;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+id;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag("js",new Date());gtag("config",id,{send_page_view:true,anonymize_ip:true});})();</script>
@@ -1424,6 +1467,15 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
         // Update window.LESSON IN PLACE so the static quiz handler sees canonical data (wrong-lesson feedback fix)
         window.LESSON = Object.assign(window.LESSON || {}, L);
 
+        // BR-20260610-35: canon is stripped (content_access:'member') — drop baked-sample fields
+        // this lesson didn't supply, so stale M7L2 data can never render or grade another lesson.
+        try {
+          ['deep_dive','core_concepts','take_action','take_action_capstone_fields','quiz','materials_resources','lyrics'].forEach(function(k){
+            if (!(k in L)) { try { delete window.LESSON[k]; } catch(e){} }
+          });
+        } catch(e){}
+
+
         // Prev / next lesson navigation (course order = canon array order)
         try {
           var __idx = lessons.indexOf(L);
@@ -1493,7 +1545,7 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
           else if (k === 'song') val.textContent = L.audio_label || L.song_title || L.title || '—';
           else if (k === 'concepts') val.textContent = String((L.core_concepts || []).length);
           else if (k === 'action steps') val.textContent = String((L.take_action || []).length);
-          else if (k === 'quiz') val.textContent = L.quiz && L.quiz.questions ? (L.quiz.questions.length + ' questions · ' + (L.quiz.pass_threshold || 80) + '% to pass') : '—';
+          else if (k === 'quiz') { var __qm = L.quiz_meta || {}; var __qn = (L.quiz && L.quiz.questions && L.quiz.questions.length) || (Array.isArray(L.quiz) ? L.quiz.length : 0) || __qm.question_count || 0; val.textContent = __qn ? (__qn + ' questions · ' + ((L.quiz && (L.quiz.pass_threshold || L.quiz.pass_pct)) || __qm.pass_pct || 80) + '% to pass') : '—'; }
         });
 
         // Song name + duration sub-line (static HTML elements)
@@ -1561,6 +1613,8 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
           }
         } catch (e) { console.warn('next-lesson CTA inject failed', e); }
 
+        // BR-20260610-35: section renders wrapped so the secure-content step can re-run them.
+        function renderSecureSections(L){
         // RE-RENDER the quiz Q/A from L.quiz (per-lesson questions) — otherwise every lesson shows M7L2's hardcoded Qs
         try {
           var quizObj = L.quiz;
@@ -1631,7 +1685,7 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
         }
 
         // Re-render take action list
-        var actionList = document.querySelector('.mr5-action-list, .mr5-take-action');
+        var actionList = document.querySelector('.mr5-action-list, .mr5-take-action, .mr5-lesson-action-preview');
         if (actionList && Array.isArray(L.take_action) && L.take_action.length){
           actionList.innerHTML = '';
           L.take_action.forEach(function(a){
@@ -1640,6 +1694,23 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
             actionList.appendChild(li);
           });
         }
+
+        // BR-20260610-35: deeper-dive render (content arrives via lesson_secure for members)
+        try {
+          if (L.deep_dive){
+            var __dd = document.querySelector('.mr5-deepdive');
+            if (__dd){
+              __dd.innerHTML = '';
+              String(L.deep_dive).split(/\n\n+/).forEach(function(par){
+                var __p = document.createElement('p'); __p.textContent = par; __dd.appendChild(__p);
+              });
+            }
+          }
+        } catch(e){ console.warn('deep dive render failed', e); }
+        } // /renderSecureSections (BR-20260610-35)
+        renderSecureSections(L);
+        try { if (window.__mrQuizShuffle) window.__mrQuizShuffle(L.id || lessonId); } catch(e){}
+        mrSecureContent(L, renderSecureSections);
 
         // Hide M7L2-paywall-specific resource blocks + sample-pitch text on real lesson views
         document.querySelectorAll('.mr5-res').forEach(function(el){
@@ -1662,6 +1733,96 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
         console.warn('lesson hydration failed', e);
         finish();
       });
+  }
+
+  // ── BR-20260610-35: member-gated secure content (lesson_secure behind RLS) ──
+  // Session source = the SAME localStorage key the page's quiz-attempt writer (mrTok) reads:
+  // 'sb-ciloqphtencjthkedanw-auth-token' (supabase-js v2 default store, written at member-tools sign-in).
+  var MR_SB_URL = 'https://ciloqphtencjthkedanw.supabase.co';
+  var MR_SB_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+  var MR_SB_STORE = 'sb-ciloqphtencjthkedanw-auth-token';
+  function mrReadSbSession(){
+    try { var o = JSON.parse(localStorage.getItem(MR_SB_STORE) || 'null'); return (o && o.access_token) ? o : (o && o.currentSession) || null; } catch(e){ return null; }
+  }
+  function mrRefreshSbSession(s){
+    if (!s || !s.refresh_token) return Promise.resolve(null);
+    return fetch(MR_SB_URL + '/auth/v1/token?grant_type=refresh_token', {
+      method: 'POST',
+      headers: { 'apikey': MR_SB_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ refresh_token: s.refresh_token })
+    }).then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(ns){
+        if (ns && ns.access_token){ try { localStorage.setItem(MR_SB_STORE, JSON.stringify(ns)); } catch(e){} return ns; }
+        return null;
+      }).catch(function(){ return null; });
+  }
+  var _mrLockEls = null;
+  function mrLockStripped(){
+    if (_mrLockEls) return;
+    _mrLockEls = [];
+    function hideSec(el){
+      if (!el) return;
+      var sec = (el.closest && el.closest('.mr5-sec')) || el;
+      if (sec && sec.style.display !== 'none'){ sec.style.display = 'none'; _mrLockEls.push(sec); }
+    }
+    hideSec(document.querySelector('.mr5-concepts-list'));
+    hideSec(document.querySelector('.mr5-deepdive'));
+    hideSec(document.querySelector('.mr5-lesson-action-preview'));
+    hideSec(document.querySelector('.mr5-actions'));
+    var form = document.querySelector('.mr5-quiz-form');
+    if (form && form.style.display !== 'none'){ form.style.display = 'none'; _mrLockEls.push(form); }
+    if (!document.getElementById('mr-secure-lock')){
+      var lock = document.createElement('div');                 // fresh node — innerHTML safe (no listeners)
+      lock.id = 'mr-secure-lock';
+      lock.className = 'sample-quiz-locked visible';
+      lock.style.textAlign = 'left';
+      lock.innerHTML = '<b>Member content locked.</b> Sign in to load this lesson\'s concepts, deeper dive, tasks, quiz, and materials. ' +
+        '<a href="/member-tools/?return=' + encodeURIComponent(location.pathname + location.search) + '" style="color:#F26B1F;font-weight:700;text-decoration:none">Sign in →</a>' +
+        '<a href="https://www.mbarock.com/mba-rock" style="color:#0B1F3A;font-weight:700;text-decoration:none;margin-left:14px">Join MBA Rock →</a>';
+      var tabs = document.querySelector('.mr5-tabs');
+      if (tabs && tabs.parentNode) tabs.parentNode.insertBefore(lock, tabs);
+      else { var m = document.querySelector('.mr5') || document.body; m.insertBefore(lock, m.firstChild); }
+    }
+  }
+  function mrUnlockStripped(){
+    if (_mrLockEls){ _mrLockEls.forEach(function(el){ try { el.style.display = ''; } catch(e){} }); _mrLockEls = null; }
+    var lock = document.getElementById('mr-secure-lock');
+    if (lock && lock.parentNode) lock.parentNode.removeChild(lock);
+  }
+  function mrSecureContent(L, render){
+    if (!L || ('quiz' in L)) return;          // canon already carries full content — nothing to fetch
+    var lid = L.id || lessonId;
+    mrLockStripped();                          // hide stale sample DOM now; unlock only on entitled fetch
+    var s = mrReadSbSession();
+    if (!s || !s.access_token) return;         // signed out — stays locked (existing gate UX preserved)
+    function attempt(sess, retried){
+      return fetch(MR_SB_URL + '/rest/v1/lesson_secure?lesson_id=eq.' + encodeURIComponent(lid) + '&select=content', {
+        headers: { 'apikey': MR_SB_KEY, 'Authorization': 'Bearer ' + sess.access_token }
+      }).then(function(r){
+        if (r.status === 401 && !retried){
+          return mrRefreshSbSession(sess).then(function(ns){ return ns ? attempt(ns, true) : null; });
+        }
+        return r.ok ? r.json() : null;
+      });
+    }
+    attempt(s, false).then(function(rows){
+      var content = rows && rows[0] && rows[0].content;
+      if (!content) return;                    // not entitled — stays locked
+      Object.assign(window.LESSON, content);   // in-place merge — NEVER replace window.LESSON wholesale
+      mrUnlockStripped();
+      try { render(window.LESSON); } catch(e){ console.warn('secure section render failed', e); }
+      try { if (window.__mrQuizShuffle) window.__mrQuizShuffle(lid); } catch(e){}
+      try {
+        var metaRows = document.querySelectorAll('.mr5-hero-meta > div');
+        metaRows.forEach(function(row){
+          var lab = row.querySelector('.mr5-meta-l'); var val = row.querySelector('.mr5-meta-v');
+          if (!lab || !val) return;
+          var k = lab.textContent.trim().toLowerCase();
+          if (k === 'concepts') val.textContent = String((window.LESSON.core_concepts || []).length);
+          else if (k === 'action steps') val.textContent = String((window.LESSON.take_action || []).length);
+        });
+      } catch(e){}
+    }).catch(function(e){ console.warn('secure content fetch failed', e); });
   }
 
   function finish(){

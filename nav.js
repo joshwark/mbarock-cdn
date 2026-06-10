@@ -48,6 +48,54 @@
   }
   if (!isMember()) return;
 
+  // ── BR-20260610-35: member badge requires the localStorage flag AND a live Supabase session ──
+  var MEMBER_FLAG_KEYS = ["mba-rock-member-id", "mba-rock-member", "mr-member-id", "mr_member_id", "memberId"];
+  var SB_STORE = "sb-ciloqphtencjthkedanw-auth-token";
+  function readSbSession() {
+    try {
+      var o = JSON.parse(localStorage.getItem(SB_STORE) || "null");
+      return (o && o.access_token) ? o : (o && o.currentSession) || null;
+    } catch (e) { return null; }
+  }
+  function clearStaleFlags() {
+    try { MEMBER_FLAG_KEYS.forEach(function (k) { localStorage.removeItem(k); }); } catch (e) {}
+  }
+  function refreshSbSession(s) {
+    if (!s || !s.refresh_token) return Promise.resolve(null);
+    return fetch(SB_URL + "/auth/v1/token?grant_type=refresh_token", {
+      method: "POST",
+      headers: { "apikey": SB_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({ refresh_token: s.refresh_token })
+    }).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (ns) {
+        if (ns && ns.access_token) { try { localStorage.setItem(SB_STORE, JSON.stringify(ns)); } catch (e) {} return ns; }
+        return null;
+      }).catch(function () { return null; });
+  }
+  function verifyLiveSession() {
+    var s = readSbSession();
+    if (!s || !s.access_token) { clearStaleFlags(); return Promise.resolve(false); } // flag without session = stale
+    function revoke() {
+      clearStaleFlags();
+      try { localStorage.removeItem(SB_STORE); } catch (e) {}
+      return false;
+    }
+    function check(sess, retried) {
+      return fetch(SB_URL + "/auth/v1/user", { headers: { "apikey": SB_KEY, "Authorization": "Bearer " + sess.access_token } })
+        .then(function (r) {
+          if (r.ok) return true;
+          if ((r.status === 401 || r.status === 403) && !retried) {
+            return refreshSbSession(sess).then(function (ns) { return ns ? check(ns, true) : revoke(); });
+          }
+          if (r.status === 401 || r.status === 403) return revoke();
+          return false; // transient server error — signed-out this load, storage kept
+        })
+        .catch(function () { return false; }); // network error — signed-out this load, storage kept
+    }
+    return check(s, false);
+  }
+
+
   function active(a) { try { return location.pathname.indexOf(a.match) === 0; } catch (e) { return false; } }
   function esc(s) { var d = document.createElement("div"); d.textContent = s == null ? "" : String(s); return d.innerHTML; }
   function links(list, drawer) {
@@ -171,6 +219,7 @@
     [].forEach.call(document.querySelectorAll("[data-mbnav-signout]"), function (b) { b.addEventListener("click", signOut); });
   }
 
-  if (document.readyState !== "loading") build();
-  else document.addEventListener("DOMContentLoaded", build);
+  function boot() { verifyLiveSession().then(function (ok) { if (ok) build(); }); } // BR-20260610-35
+  if (document.readyState !== "loading") boot();
+  else document.addEventListener("DOMContentLoaded", boot);
 })();

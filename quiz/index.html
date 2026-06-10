@@ -246,14 +246,90 @@ h1{font-family:"Fraunces",serif;font-weight:700;font-size:36px;line-height:1.15;
     return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
 
-  // Boot
-  fetch(QUIZ_URL).then(r => r.json()).then(data => {
-    const n = parseInt(new URLSearchParams(location.search).get('n') || '0', 10);
-    if (n >= 1 && n <= data.total) renderQuiz(data, n);
-    else renderTOC(data);
-  }).catch(err => {
-    document.getElementById('app').innerHTML = '<h1>Quiz book failed to load</h1><p>'+escapeHtml(String(err))+'</p>';
-  });
+  // ── Boot — BR-20260610-35: quiz content is member-gated (lesson_secure behind RLS) ──
+  const SB_URL = 'https://ciloqphtencjthkedanw.supabase.co';
+  const SB_KEY = 'sb_publishable_qezI6CBipqlcoj3nXV47PQ__4NpVKS-';
+  const SB_STORE = 'sb-ciloqphtencjthkedanw-auth-token';
+  function sbSession(){
+    try { const o = JSON.parse(localStorage.getItem(SB_STORE) || 'null'); return (o && o.access_token) ? o : (o && o.currentSession) || null; }
+    catch(e){ return null; }
+  }
+  function sbRefresh(s){
+    if (!s || !s.refresh_token) return Promise.resolve(null);
+    return fetch(SB_URL + '/auth/v1/token?grant_type=refresh_token', {
+      method:'POST', headers:{ 'apikey': SB_KEY, 'Content-Type':'application/json' },
+      body: JSON.stringify({ refresh_token: s.refresh_token })
+    }).then(r => r.ok ? r.json() : null)
+      .then(ns => { if (ns && ns.access_token){ try { localStorage.setItem(SB_STORE, JSON.stringify(ns)); } catch(e){} return ns; } return null; })
+      .catch(() => null);
+  }
+  function fetchSecure(sess, retried){
+    return fetch(SB_URL + '/rest/v1/lesson_secure?select=lesson_id,content', {
+      headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + sess.access_token }
+    }).then(r => {
+      if (r.status === 401 && !retried) return sbRefresh(sess).then(ns => ns ? fetchSecure(ns, true) : null);
+      return r.ok ? r.json() : null;
+    });
+  }
+  // Seeded shuffle — identical seeds to the lesson page (hash(lessonId+':'+qIdx) → mulberry32).
+  function qhash(s){ let x = 2166136261 >>> 0; for (let i = 0; i < s.length; i++){ x ^= s.charCodeAt(i); x = Math.imul(x, 16777619) >>> 0; } return x >>> 0; }
+  function qrng(a){ return function(){ a |= 0; a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+  function shuffledQuestion(q, lessonId, qi){
+    const opts = Array.isArray(q.options) ? q.options.slice() : [];
+    const idx = opts.map((_, i) => i);
+    const rnd = qrng(qhash(String(lessonId) + ':' + qi));
+    for (let i = idx.length - 1; i > 0; i--){ const j = Math.floor(rnd() * (i + 1)); const t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
+    return { options: idx.map(k => opts[k]), correct: idx.indexOf(q.correct) };
+  }
+  function renderLocked(){
+    document.getElementById('app').innerHTML = `
+      <h1>Master Quiz Book</h1>
+      <p class="subtitle">74 quizzes · 370 questions · members only.</p>
+      <div class="quiz-card" style="text-align:center;padding:48px 36px">
+        <div style="font-family:'Inter',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:#F26B1F;font-weight:600">Members only</div>
+        <h1 style="margin:10px 0 12px">Sign in to open the Quiz Book</h1>
+        <p class="quiz-intro" style="margin:0 0 26px">All 74 quizzes — every lesson in the program — unlock with your member sign-in.</p>
+        <div class="actions" style="justify-content:center">
+          <a class="btn btn-primary" href="/member-tools/?return=${encodeURIComponent('/quiz/' + location.search)}">Sign in →</a>
+          <a class="btn btn-ghost" href="https://www.mbarock.com/mba-rock">Join MBA Rock</a>
+        </div>
+      </div>`;
+  }
+  const sess0 = sbSession();
+  if (!sess0 || !sess0.access_token){ renderLocked(); }
+  else {
+    Promise.all([
+      fetch('https://learn.mbarock.com/lessons.v2.json?cb=' + Date.now(), {cache:'no-store'}).then(r => r.json()),
+      fetchSecure(sess0, false)
+    ]).then(([canon, rows]) => {
+      if (!Array.isArray(rows) || !rows.length){ renderLocked(); return; }
+      const lessons = (canon && canon.lessons) || [];
+      const secure = {};
+      rows.forEach(r => { if (r && r.lesson_id) secure[r.lesson_id] = r.content || {}; });
+      const quizzes = [];
+      lessons.forEach(L => {
+        if (!L || !L.quiz_source_num) return;
+        if (quizzes.some(z => z.num === L.quiz_source_num)) return;
+        const c = secure[L.id];
+        const qs = c && Array.isArray(c.quiz) ? c.quiz : (c && c.quiz && Array.isArray(c.quiz.questions) ? c.quiz.questions : null);
+        if (!qs || !qs.length) return;
+        const questions = qs.map((q, qi) => {
+          const sh = shuffledQuestion(q, L.id, qi);
+          const opts = {}; ['A','B','C','D'].forEach((Lt, i) => { opts[Lt] = sh.options[i] || ''; });
+          return { q: q.q, options: opts, answer: ['A','B','C','D'][sh.correct] || 'A' };
+        });
+        quizzes.push({ num: L.quiz_source_num, title: L.quiz_source_title || L.title, questions });
+      });
+      if (!quizzes.length){ renderLocked(); return; }
+      quizzes.sort((a, b) => a.num - b.num);
+      const data = { total: Math.max.apply(null, quizzes.map(z => z.num)), quizzes };
+      const n = parseInt(new URLSearchParams(location.search).get('n') || '0', 10);
+      if (n >= 1 && n <= data.total) renderQuiz(data, n);
+      else renderTOC(data);
+    }).catch(err => {
+      document.getElementById('app').innerHTML = '<h1>Quiz book failed to load</h1><p>'+escapeHtml(String(err))+'</p>';
+    });
+  }
 })();
 </script>
 
