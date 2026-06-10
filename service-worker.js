@@ -8,14 +8,13 @@
  *   - Kill switch: deploy a SW whose install calls self.registration.unregister() if we ever need to disable.
  */
 'use strict';
-var CACHE_VERSION = 'mbarock-v9';
+var CACHE_VERSION = 'mbarock-v10';
 var SHELL = CACHE_VERSION + '-shell';
 
 // Precache only the safe, public shell + canon (never auth/checkout).
 var PRECACHE = [
   '/dashboard/',
   '/lessons.v2.json',
-  '/lessons.js',
   '/calculators.js'
 ];
 

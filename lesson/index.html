@@ -1143,15 +1143,28 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
   if (hasAuth) {
     gate.hidden = false;
   } else {
-    // Replace gated content with member-only paywall
-    if (gate.parentNode) gate.parentNode.removeChild(gate);
-    var pay = document.createElement('div');
-    pay.style.cssText = 'min-height:60vh;padding:80px 24px;text-align:center;font-family:Inter,system-ui,sans-serif;color:#0B1F3A;';
+    // BR-20260610-36: anon teaser — keep breadcrumb + hero visible (the hydrator fills them from
+    // the PUBLIC stripped canon: title, module eyebrow, intro, audio metadata). Everything else
+    // stays hidden; gated sections still never render (BR-35 secure path untouched).
+    try {
+      Array.prototype.slice.call(gate.children).forEach(function(el){
+        var tag = (el.tagName || '').toUpperCase();
+        if (tag === 'STYLE' || tag === 'SCRIPT') return;
+        if (el.classList && (el.classList.contains('mr5-crumb-row') || el.classList.contains('mr5-hero'))) return;
+        el.style.display = 'none';
+      });
+    } catch(e){}
+    var pay = document.createElement('div');                    // fresh node — innerHTML safe (no listeners)
+    // Same id as BR-35's member-lock notice so mrLockStripped() never adds a second CTA block.
+    pay.id = 'mr-secure-lock';
+    pay.style.cssText = 'padding:48px 24px 72px;text-align:center;font-family:Inter,system-ui,sans-serif;color:#0B1F3A;';
     pay.innerHTML = '<div style="font-family:Fraunces,Georgia,serif;font-size:46px;letter-spacing:-0.02em;margin-bottom:18px">Members only</div>' +
-      '<p style="font-size:18px;color:#3a3a3a;max-width:560px;margin:0 auto 28px">This full lesson view is for course members. Open the free sample lesson or join to unlock all 74.</p>' +
-      '<div><a href="/sample/" style="display:inline-block;background:#F26B1F;color:#fff;padding:14px 28px;border-radius:999px;font-weight:600;text-decoration:none;margin-right:12px">Try the free sample</a>' +
+      '<p style="font-size:18px;color:#3a3a3a;max-width:560px;margin:0 auto 28px">The concepts, deeper dive, tasks, quiz, and materials for this lesson unlock with your member sign-in.</p>' +
+      '<div><a href="/member-tools/?return=' + encodeURIComponent(location.pathname + location.search) + '" style="display:inline-block;background:#F26B1F;color:#fff;padding:14px 28px;border-radius:999px;font-weight:600;text-decoration:none;margin-right:12px">Sign in</a>' +
+      '<a href="/sample/" style="display:inline-block;background:#fff;color:#0B1F3A;border:1.5px solid #0B1F3A;padding:14px 28px;border-radius:999px;font-weight:600;text-decoration:none;margin-right:12px">Try the free sample</a>' +
       '<a href="https://www.mbarock.com/mba-rock" style="display:inline-block;background:#0B1F3A;color:#fff;padding:14px 28px;border-radius:999px;font-weight:600;text-decoration:none">Join MBA Rock</a></div>';
-    document.body.appendChild(pay);
+    gate.appendChild(pay);
+    gate.hidden = false;
   }
 })();
 </script>
@@ -1521,14 +1534,24 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
           els.forEach(function(el){ if (el && val) el.setAttribute(attr, val); });
         }
 
-        setText('.mr5-hero-kicker', (L.module_id || '') + ' · ' + (L.module_title || ''));
+        // BR-20260610-36: stripped canon carries no per-lesson module_title — resolve it from
+        // the canon modules[] meta (titles are "Module N: X"; strip the prefix to match house style).
+        var moduleTitle = L.module_title || '';
+        if (!moduleTitle){
+          try {
+            var __mods = (data && data.modules) || [];
+            var __mod = __mods.find(function(m){ return m && m.id === L.module_id; });
+            if (__mod && __mod.title) moduleTitle = String(__mod.title).replace(/^Module\s*\d+\s*[:\u2014-]\s*/, '');
+          } catch(e){}
+        }
+        setText('.mr5-hero-kicker', (L.module_id || '') + (moduleTitle ? ' · ' + moduleTitle : ''));
         setText('.mr5-hero h1', L.title || '');
         setText('.mr5-hero-sub', L.intro || L.subtitle || '');
 
         // Breadcrumb: replace the two <b> tags
         var crumbBolds = document.querySelectorAll('.mr5-crumb b');
         if (crumbBolds.length >= 2){
-          crumbBolds[0].textContent = (L.module_id || '') + ' ' + (L.module_title || '');
+          crumbBolds[0].textContent = ((L.module_id || '') + ' ' + moduleTitle).trim(); // BR-20260610-36: module title from modules[]
           crumbBolds[1].textContent = L.id + ' — ' + (L.title || '');
         }
 
@@ -1539,12 +1562,12 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
           var val = row.querySelector('.mr5-meta-v');
           if (!lab || !val) return;
           var k = lab.textContent.trim().toLowerCase();
-          if (k === 'lesson') val.textContent = (L.position || L.lesson_number || '') + ' of 74';
+          if (k === 'lesson') val.textContent = (L.position || L.order || L.lesson_number || '') + ' of 74'; // BR-20260610-36: order (1-74) before lesson_number ('M1L1')
           else if (k === 'video') val.textContent = L.video_url ? 'Video' : '—';
-          else if (k === 'audio') val.textContent = L.audio_duration || '—';
+          else if (k === 'audio') { if (L.audio_duration){ val.textContent = L.audio_duration; row.style.display = ''; } else { row.style.display = 'none'; } } // BR-20260610-36: canon has no duration for 73/74 — hide, don't render '—'
           else if (k === 'song') val.textContent = L.audio_label || L.song_title || L.title || '—';
-          else if (k === 'concepts') val.textContent = String((L.core_concepts || []).length);
-          else if (k === 'action steps') val.textContent = String((L.take_action || []).length);
+          else if (k === 'concepts') { var __cc = (L.core_concepts || []).length; if (__cc){ val.textContent = String(__cc); row.style.display = ''; } else { row.style.display = 'none'; } } // BR-20260610-36: stripped canon — hide until the secure fetch fills it
+          else if (k === 'action steps') { var __ta = (L.take_action || []).length; if (__ta){ val.textContent = String(__ta); row.style.display = ''; } else { row.style.display = 'none'; } }
           else if (k === 'quiz') { var __qm = L.quiz_meta || {}; var __qn = (L.quiz && L.quiz.questions && L.quiz.questions.length) || (Array.isArray(L.quiz) ? L.quiz.length : 0) || __qm.question_count || 0; val.textContent = __qn ? (__qn + ' questions · ' + ((L.quiz && (L.quiz.pass_threshold || L.quiz.pass_pct)) || __qm.pass_pct || 80) + '% to pass') : '—'; }
         });
 
@@ -1818,8 +1841,8 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
           var lab = row.querySelector('.mr5-meta-l'); var val = row.querySelector('.mr5-meta-v');
           if (!lab || !val) return;
           var k = lab.textContent.trim().toLowerCase();
-          if (k === 'concepts') val.textContent = String((window.LESSON.core_concepts || []).length);
-          else if (k === 'action steps') val.textContent = String((window.LESSON.take_action || []).length);
+          if (k === 'concepts') { val.textContent = String((window.LESSON.core_concepts || []).length); row.style.display = ''; } // BR-20260610-36: re-show rows hidden at hydrate
+          else if (k === 'action steps') { val.textContent = String((window.LESSON.take_action || []).length); row.style.display = ''; }
         });
       } catch(e){}
     }).catch(function(e){ console.warn('secure content fetch failed', e); });
