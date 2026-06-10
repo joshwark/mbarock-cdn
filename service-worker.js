@@ -8,7 +8,7 @@
  *   - Kill switch: deploy a SW whose install calls self.registration.unregister() if we ever need to disable.
  */
 'use strict';
-var CACHE_VERSION = 'mbarock-v11';
+var CACHE_VERSION = 'mbarock-v12';
 var SHELL = CACHE_VERSION + '-shell';
 
 // Precache only the safe, public shell + canon (never auth/checkout).
@@ -34,11 +34,12 @@ self.addEventListener('activate', function (e) {
   }).then(function () { return self.clients.claim(); }));
 });
 
-function isStatic(url) { return /\.(css|js|png|jpe?g|svg|webp|gif|woff2?|mp3|mp4|json)$/i.test(url.pathname); }
+function isStatic(url) { return /\.(css|js|png|jpe?g|svg|webp|gif|woff2?|json)$/i.test(url.pathname); }  // BR-38: media excluded
 
 self.addEventListener('fetch', function (e) {
   var req = e.request;
   if (req.method !== 'GET') return;                                  // never intercept writes
+  if (req.headers.get('range')) return;                             // BR-38: media/Range streams -> straight to network
   var url = new URL(req.url);
   if (url.origin !== self.location.origin) return;                   // only same-origin (CDN); skip Squarespace/Supabase/CDNs
   if (BYPASS.some(function (re) { return re.test(url.pathname) || re.test(url.href); })) return;
@@ -47,7 +48,7 @@ self.addEventListener('fetch', function (e) {
     // stale-while-revalidate
     e.respondWith(caches.open(SHELL).then(function (c) {
       return c.match(req).then(function (hit) {
-        var net = fetch(req).then(function (res) { if (res && res.ok) c.put(req, res.clone()); return res; }).catch(function () { return hit; });
+        var net = fetch(req).then(function (res) { if (res && res.status === 200) c.put(req, res.clone()); return res; }).catch(function () { return hit; });
         return hit || net;
       });
     }));
