@@ -1605,8 +1605,10 @@ document.getElementById('quiz-retake').addEventListener('click', () => {
         // Replace the post-quiz paywall block ($499 CTA) with a Next Lesson CTA
         try {
           var nextL = null;
-          if (typeof L.position === 'number') {
-            nextL = lessons.find(function(x){ return x && x.position === L.position + 1; });
+          // BR-39: canon has `order` (1..74, complete+unique), not `position` (0/74 lessons).
+          var curOrd = (typeof L.order === 'number') ? L.order : L.position;
+          if (typeof curOrd === 'number') {
+            nextL = lessons.find(function(x){ if (!x) return false; var o = (typeof x.order === 'number') ? x.order : x.position; return o === curOrd + 1; });
           }
           var sql = document.getElementById('sample-quiz-locked');
           if (sql) {
