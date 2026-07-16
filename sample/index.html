@@ -414,46 +414,6 @@ html,body{margin:0;padding:0;background:#FAF8F5;color:#0E1116;font-family:'Inter
     <script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("/service-worker.js").catch(function(){});});}</script>
   </head>
 <body>
-<!-- ── Founders'-rate countdown banner v1 (auto-hides 2026-07-01) ── -->
-<style>
-.mr-cd-banner{position:sticky;top:0;z-index:100;background:linear-gradient(90deg,#F26B1F,#E55A0F);color:#FDFAF1;text-align:center;padding:8px 16px;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:600;letter-spacing:0.04em;display:none}
-.mr-cd-banner b{font-weight:800;color:#fff}
-.mr-cd-banner a{color:#FDFAF1;text-decoration:underline;font-weight:700;margin-left:8px}
-.mr-cd-banner .mr-cd-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#fff;margin:0 8px;vertical-align:middle;animation:mr-cd-pulse 1.6s infinite}
-@keyframes mr-cd-pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-@media(max-width:560px){.mr-cd-banner{font-size:11.5px;padding:7px 12px}}
-</style>
-<div id="mr-cd-banner" class="mr-cd-banner" role="status" aria-live="polite">
-  <span class="mr-cd-dot"></span>
-  <b>Founders' rate</b> &middot; $499 lifetime &middot; code <b>FOUNDERS</b> &middot; <span id="mr-cd-time">expires June 30</span>
-  <a href="https://www.mbarock.com/mba-rock">Join &rarr;</a>
-</div>
-<script>
-(function(){
-  var deadline = new Date('2026-07-01T06:59:59Z').getTime(); // 2026-06-30 23:59:59 PT
-  var el = document.getElementById('mr-cd-banner');
-  var timeEl = document.getElementById('mr-cd-time');
-  if (!el || !timeEl) return;
-  function tick(){
-    var now = Date.now();
-    var ms = deadline - now;
-    if (ms <= 0) { el.style.display = 'none'; return; }
-    el.style.display = 'block';
-    var days = Math.floor(ms / 86400000);
-    var hours = Math.floor((ms % 86400000) / 3600000);
-    var mins = Math.floor((ms % 3600000) / 60000);
-    var label;
-    if (days > 14) label = 'expires June 30 (' + days + ' days)';
-    else if (days > 1) label = days + ' days, ' + hours + ' hours left';
-    else if (days === 1) label = '1 day, ' + hours + ' hours left';
-    else label = hours + 'h ' + mins + 'm left today';
-    timeEl.textContent = label;
-  }
-  tick();
-  setInterval(tick, 60000);
-})();
-</script>
-<!-- ── /Founders' rate countdown banner ── -->
 
 
 <div class="sample-banner">
@@ -774,7 +734,7 @@ html,body{margin:0;padding:0;background:#FAF8F5;color:#0E1116;font-family:'Inter
         <div class="sample-quiz-locked" id="sample-quiz-locked" style="text-align:left">
           <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between">
             <div style="flex:1;min-width:220px">
-              <b>You just passed your first MBA Rock quiz.</b> Share the win — and lock in the full course at the Founders' rate.
+              <b>You just passed your first MBA Rock quiz.</b> Share the win — get the full course — $149, lifetime access.
             </div>
             <div style="display:flex;gap:8px;flex-wrap:wrap">
               <a class="mr5-btn mr5-btn-ghost" target="_blank" rel="noopener"
@@ -783,7 +743,7 @@ html,body{margin:0;padding:0;background:#FAF8F5;color:#0E1116;font-family:'Inter
                  onclick="if(window.gtag)gtag('event','share',{method:'linkedin',content_type:'sample_quiz_pass'});">
                 <span style="font-weight:700">in</span>&nbsp;&nbsp;Share on LinkedIn
               </a>
-              <a class="mr5-btn mr5-btn-primary" href="https://www.mbarock.com/mba-rock" style="font-size:13px;padding:10px 18px;text-decoration:none">Join at $499 →</a>
+              <a class="mr5-btn mr5-btn-primary" href="https://www.mbarock.com/mba-rock" style="font-size:13px;padding:10px 18px;text-decoration:none">Join at $149 →</a>
             </div>
           </div>
         </div>
@@ -904,14 +864,12 @@ html,body{margin:0;padding:0;background:#FAF8F5;color:#0E1116;font-family:'Inter
   <div class="sample-outro">
     <div style="font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#F26B1F;font-weight:700;margin-bottom:14px">The other 73 are waiting</div>
     <h3>One lesson down. A real business plan to go.</h3>
-    <p>This is the architecture of every MBA Rock lesson — built so you finish with a real artifact, not a transcript. 74 lessons. 18 founder calculators. A 10-section Capstone Business Plan. 10 Module Marks + the Operator's Certificate. All locked in for life at the Founders' rate.</p>
+    <p>This is the architecture of every MBA Rock lesson — built so you finish with a real artifact, not a transcript. 74 lessons. 18 founder calculators. A 10-section Capstone Business Plan. 10 Module Marks + the Operator's Certificate. All yours for life.</p>
     <div class="price">
-      <span class="anchor">$999.99</span>
-      <span class="now">$499</span>
-      <span class="code">with code FOUNDERS</span>
+      <span class="now">$149</span><span class="code">lifetime access</span>
     </div>
     <br>
-    <a class="cta" href="https://www.mbarock.com/mba-rock">Join MBA Rock at Founders' rate →</a>
+    <a class="cta" href="https://www.mbarock.com/mba-rock">Join MBA Rock →</a>
     <a class="ghost" href="https://www.mbarock.com/landing">See what's inside</a>
   </div>
 

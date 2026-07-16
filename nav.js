@@ -202,7 +202,7 @@
 
     // Nudge known fixed/sticky top widgets below the bar to avoid overlap.
     var sp = document.getElementById("streakPill"); if (sp) { sp.style.top = "72px"; }
-    // Members already own the course — hide the Founders' upsell countdown entirely (nav.js only runs for members).
+    // Members already own the course — hide any legacy upsell banner (nav.js only runs for members).
     [].forEach.call(document.querySelectorAll(".mr-cd-banner"), function (el) { el.style.display = "none"; });
 
     var burger = bar.querySelector(".mbnav-burger");
